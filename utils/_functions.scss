@@ -1,0 +1,27 @@
+/* ======================================================================================
+   @UTILS -> FUNCTIONS
+   ====================================================================================== */
+
+/* [CONVERT PX TO EM/REM]
+-------------------------------------------------------*/
+/*
+	Usage: to convert `px` to `em`s or `rem`s.
+
+	Credit: https://gist.github.com/2237465
+
+	Example:
+		.foo {margin-left: to-em(8, 20);}
+		.foo {padding: to-rem(8) 0;}
+
+  Note: these functions should only ever be used when declaring `em` / `rem` values within another mixin, the `to-em` / `to-rem` mixins should always be the default use-case.
+*/
+
+/* EM */
+@function to-em($pxval, $context: $font-size) {
+	@return #{$pxval / $context}em;
+}
+
+/* REM */
+@function to-rem($pxval) {
+	@return #{$pxval / $font-size}rem;
+}

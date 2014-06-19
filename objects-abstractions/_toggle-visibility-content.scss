@@ -1,0 +1,27 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> TOGGLE VISIBILITY CONTENT
+   ====================================================================================== */
+
+/*
+  Simply hiding/showing content based on whether an element has `is-active` class (powered by JS).
+
+  Styleguide Toggle Visibility Content
+*/
+
+/* Hide by default */
+.show-when-visible {display: none;}
+
+/* When visible */
+.is-active {
+
+  /* Show elements  */
+  .show-when-visible {display: inline;}
+
+  /* Modifiers: different `display` properties */
+  .show-when-visible--block {display: block;}
+
+  .show-when-visible--inline-block {display: inline-block;}
+
+  /* Hide elements */
+  .hide-when-visible {display: none;}
+}

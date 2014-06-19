@@ -1,0 +1,17 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> OVERLAY
+   ====================================================================================== */
+
+/*
+  A semi-transparent overlay that covers the entire UI, mainly used with dialog's.
+*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-high+3;
+  background-color: rgba($color-grey-light, 0.85);
+}

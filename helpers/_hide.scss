@@ -1,0 +1,106 @@
+/* ======================================================================================
+   @HELPERS -> HIDE
+   ====================================================================================== */
+
+// TODO a nice way to apply all these classes at all the breakpoints which should mean there is no
+// need to use the 'Reverse it.' classes?
+
+/**
+ * Apply different ways of hiding elements and ways to reverse them.
+ */
+
+/**
+ * Hide from both screen readers and the document flow.
+ */
+
+.h-hide {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+/**
+ * Reverse it.
+ */
+
+.h-show {
+	display: block !important;
+  visibility: visible !important;
+}
+
+/**
+ * Hide without affecting the document flow.
+ */
+
+.h-hide-invisible {visibility: hidden !important;}
+
+/**
+ * Reverse it.
+ */
+
+ .h-show-visible {visibility: visible !important;}
+
+/**
+ * Hide only visually but have it available for screen readers.
+ */
+
+.h-hide-visually {
+	position: absolute !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+
+	/**
+	 * Form `legend` needs different treatment.
+	 */
+
+	&.legend {left: $off-screen-distance;}
+}
+
+/**
+ * Reverse it.
+ */
+
+.h-show-visually {
+	position: static !important;
+	height: auto !important;
+	width: auto !important;
+	overflow: visible !important;
+	clip: rect(auto, auto, auto, auto) !important;
+	margin: 0 !important;
+
+	/**
+	 * Form `legend` needs different treatment.
+	 */
+
+	&.legend {left: 0;}
+}
+
+/**
+ * Hide elements based on whether JavaScript is on or off.
+ */
+
+/**
+ * On.
+ */
+
+.js .h-hide-js-on {display: none !important;}
+
+/**
+ * Off.
+ */
+
+.no-js .h-hide-js-off {display: none !important;}
+
+/**
+ * Hide for print related elements.
+ */
+
+@media print {
+	.h-hide-print {display: none !important;}
+
+	.h-show-print {display: block !important;}
+}

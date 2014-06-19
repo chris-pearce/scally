@@ -1,0 +1,116 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> COLUMNS
+   ====================================================================================== */
+
+/*
+	Easily create columns of text using CSS3.
+
+  .txt-cols--2        - 2 columns
+  .txt-cols--3        - 3 columns
+  .txt-cols--4        - 4 columns
+  .txt-cols--5        - 5 columns
+  .txt-cols--6        - 6 columns
+
+	Styleguide Columns
+*/
+
+/* Credit: https://github.com/csswizardry/inuit.css/blob/master/inuit.css/objects/_columns.scss */
+
+@mixin col-classes($namespace: null) {
+  /* 2 cols */
+  .#{$namespace}txt-cols--2 {@include prefix(column-count, 2);}
+
+  /* 3 cols */
+  .#{$namespace}txt-cols--3 {@include prefix(column-count, 3);}
+
+  /* 4 cols */
+  .#{$namespace}txt-cols--4 {@include prefix(column-count, 4);}
+
+  /* 5 cols */
+  .#{$namespace}txt-cols--5 {@include prefix(column-count, 5);}
+
+  /* 6 cols */
+  .#{$namespace}txt-cols--6 {@include prefix(column-count, 6);}
+}
+
+/* Output all the col classes */
+@include col-classes();
+
+/* Base rules */
+.txt-cols {
+	@include prefix(column-gap, to-rem($spacing-base));
+	/* Column rule, if used then increase `column-gap` to `$spacing-dbl` */
+	/*@include prefix(column-rule, 1px dotted black);*/
+}
+
+/* Output col classes under specific breakpoints applied via specific classes (namespaced) e.g. `.non-palm-txt-cols--2` */
+
+/* Palm large */
+@if $col-classes-at-breakpoint-palm-lrg == true {
+  @include respond-min($palm-lrg) {
+    @include col-classes("palm-lrg-");
+  }
+}/* endif */
+
+/* Non palm */
+@if $col-classes-at-breakpoint-non-palm == true {
+  @include respond-min($non-palm) {
+    @include col-classes("non-palm-");
+  }
+}/* endif */
+
+/* Lap */
+@if $col-classes-at-breakpoint-lap == true {
+  @include respond-range-fixed(lap) {
+    @include col-classes("lap-");
+  }
+}/* endif */
+
+/* Lap small */
+@if $col-classes-at-breakpoint-lap-sml == true {
+  @include respond-range-fixed(lap-sml) {
+    @include col-classes("lap-sml-");
+  }
+}/* endif */
+
+/* Lap small middle */
+@if $col-classes-at-breakpoint-lap-sml-middle == true {
+  @include respond-min($lap-sml-middle) {
+    @include col-classes("lap-sml-middle-");
+  }
+}/* endif */
+
+/* Lap large middle */
+@if $col-classes-at-breakpoint-lap-lrg-middle == true {
+  @include respond-min($lap-lrg-middle) {
+    @include col-classes("lap-lrg-middle-");
+  }
+}/* endif */
+
+/* Lap large */
+@if $col-classes-at-breakpoint-lap-lrg == true {
+  @include respond-range-fixed(lap-lrg) {
+    @include col-classes("lap-lrg-");
+  }
+}/* endif */
+
+/* Desk */
+@if $col-classes-at-breakpoint-desk == true {
+  @include respond-min($desk) {
+    @include col-classes("desk-");
+  }
+}/* endif */
+
+/* Desk small */
+@if $col-classes-at-breakpoint-desk-sml == true {
+  @include respond-range-fixed(desk-sml) {
+    @include col-classes("desk-sml-");
+  }
+}/* endif */
+
+/* Desk large */
+@if $col-classes-at-breakpoint-desk-lrg == true {
+  @include respond-min($desk-lrg) {
+    @include col-classes("desk-lrg-");
+  }
+}/* endif */

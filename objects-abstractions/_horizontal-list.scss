@@ -1,0 +1,121 @@
+/* ======================================================================================
+   @ABSTRACTIONS - > HORIZONTAL LIST
+   ====================================================================================== */
+
+/*
+  Make list items for `ul` and `ol` elements render horizontally.
+
+  .horiz-list--dividers          - With dividers
+  .horiz-list--center            - Center align
+  .horiz-list--fit               - Force the items to occupy 100% of the available width of its parent
+  .horiz-list--comma             - Comma separated
+  .horiz-list--slash             - Slash separated
+  .horiz-list--gutter-base			 - Base spacing between list items
+  .horiz-list--gutter-half       - Half spacing between list items
+  .horiz-list--gutter-micro      - Micro spacing between list items
+  .horiz-list--mrg-base          - Base spacing below list items
+  .horiz-list--mrg-half          - Half spacing below list items
+
+  Styleguide Horizontal List
+*/
+
+.horiz-list {
+
+	> li {
+
+		&,
+		> a {display: inline-block;}
+	}
+}
+
+/* Modifier: with dividers */
+.horiz-list--dividers > li {
+	border-left: 1px solid $color-grey-light;
+  @include to-rem(padding-left margin-left, $spacing-half);
+
+	&:first-child {
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+}
+
+/* Modifier: center align */
+.horiz-list--center {text-align: center;}
+
+/* Modifier: fit - force the items to occupy 100% of the available width of its parent */
+.horiz-list--fit {
+	display: table;
+	width: 100%;
+
+	> li {
+		display: table-cell;
+
+		> a {display: block;}
+	}
+
+	/* When combined with the `.horiz-list--dividers` and `.horiz-list--center` modifiers */
+	&.horiz-list--dividers > li {
+		margin-left: 0;
+    @include to-rem(padding-right, $spacing-half);
+	}
+
+	&.horiz-list--center > li {padding: 0;}
+}
+
+/* Modifier: comma/slash seperated */
+.horiz-list--comma,
+.horiz-list--slash {
+
+	> li {
+
+		/* Add right spacing */
+		&:after {@include to-rem(margin-right, $spacing-quarter);}
+
+		/* Remove comma/slash from last child */
+		&:last-child:after {display: none;}
+	}
+}
+
+.horiz-list--slash > li:after {
+	content: "/";
+  @include to-rem(margin-left, $spacing-quarter);
+}
+
+.horiz-list--comma > li:after {content: ",";}
+
+/* Modifier: right spacing base */
+.horiz-list--gutter-base > li {@include to-rem(margin-right, $spacing-base);}
+
+/* Modifier: right spacing half */
+.horiz-list--gutter-half > li {@include to-rem(margin-right, $spacing-half);}
+
+/* Modifier: right spacing micro */
+.horiz-list--gutter-micro > li {@include to-rem(margin-right, $spacing-micro);}
+
+/* Remove right spacing from the last item */
+.horiz-list--gutter-base,
+.horiz-list--gutter-half,
+.horiz-list--gutter-micro {
+  > li:last-child {margin-right: 0;}
+}
+
+/* Modifier: bottom spacing base */
+.horiz-list--mrg-base {
+  /*
+    Note: it is okay to use `!important` here as we're doing it pre-emptively i.e. you know you will always want the rule it's applied too to take precedence.
+  */
+  @include to-rem(margin-bottom, -$spacing-base, !important);
+
+  > li {@include to-rem(margin-bottom, $spacing-base);}
+}
+
+/* Modifier: bottom spacing half */
+.horiz-list--mrg-half {
+  /*
+    Note: it is okay to use `!important` here as we're doing it pre-emptively i.e. you know you will always want the rule it's applied too to take precedence.
+  */
+  @include to-rem(margin-bottom, -$spacing-half, !important);
+
+  > li {@include to-rem(margin-bottom, $spacing-half);}
+}

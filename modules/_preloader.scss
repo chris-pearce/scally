@@ -1,0 +1,79 @@
+/* ======================================================================================
+   @MODULES -> PRELOADER
+   ====================================================================================== */
+
+/*
+  Provides feedback to the user letting them know that their action is being processed e.g. a form submission. It renders an animating spinner (light) but can also include a message with the spinner e.g. "Loading, please wait...".
+
+  .preloader--middle      - Position the loader in the centre of it's parent
+  .preloader--top         - Position the loader near the top of it's parent
+  .preloader--lbl         - Text will accompany the spinner
+
+  Styleguide Preloader
+*/
+
+$preloader-bg-color: lighten($color-grey-light, 5%) !default;
+
+.preloader {
+  background-color: $preloader-bg-color;
+  border-radius: $border-radius;
+  @include to-rem(padding, 8);
+
+  &,
+  & * {display: inline-block;}
+
+  & * {vertical-align: middle;}
+
+  em {font-style: italic;}
+}
+
+/* Modifier: shared rules for position modifiers */
+.preloader--middle,
+.preloader--top {
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+ }
+
+/* Modifier: position the loader in the middle of it's parent */
+.preloader--middle {
+  top: 50%;
+  @include translate(-50%, -50%);
+}
+
+/* Modifier: position the loader near the top of it's parent */
+.preloader--top {
+  @include to-rem(top, $spacing-base);
+  @include translateX(-50%);
+}
+
+  /* Spinner animation */
+  .preloader__spinner {
+    @include to-rem(width height, 24);
+    @include prefix(animation, rotate 1s infinite linear);
+    border-radius: 100%;
+    border: $spacing-micro + px solid $color-grey-dark;
+
+    /* the 'gap' in the preloader circle */
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      @include translate(-50%, -50%);
+      @include to-rem(height, $spacing-third);
+      @include to-rem(width, $spacing-quarter);
+      background-color: $preloader-bg-color;
+    }
+
+    /* Fallback for IE9 */
+    .no-cssanimations & {
+      background: cloudinary-url("img/preloader.gif") no-repeat 50% 50%;
+      border: 0;
+
+      &:after {display: none;}
+    }
+
+    /* Modifier: text will accompany the spinner */
+    .preloader--lbl & {@include to-rem(margin-right, $spacing-quarter);}
+  }

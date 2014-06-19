@@ -1,0 +1,33 @@
+/* ======================================================================================
+   @BASE -> QUOTES
+   ====================================================================================== */
+
+q {
+	quotes: "\2018" "\2019" "\201C" "\201D";
+
+	&:before {
+		/* Left single quotation mark */
+		content: "\2018";
+		content: open-quote;
+	}
+
+	&:after {
+		/* Right single quotation mark */
+		content: "\2019";
+		content: close-quote;
+	}
+
+		q {
+			&:before {
+				/* Left double quotation mark */
+				content: "\201C";
+				content: open-quote;
+			}
+
+			&:after {
+				/* Right double quotation mark */
+				content: "\201D";
+				content: close-quote;
+			}
+		}
+}

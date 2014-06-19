@@ -1,0 +1,13 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> BOTTOM SPACING
+   ====================================================================================== */
+
+/*
+	Applies the default bottom spacing in order to try to keep a consistent vertical rhythm.
+*/
+
+%bottom-spacing {
+	@include to-rem(margin-bottom, $spacing-base);
+
+	&:last-child {margin-bottom: 0;}
+}

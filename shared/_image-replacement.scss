@@ -1,0 +1,25 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> IMAGE REPLACEMENT
+   ====================================================================================== */
+
+/*
+	Usage: for replacing a text element with an image.
+
+	Credit: http://html5boilerplate.com/
+*/
+
+%img-replacement {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
+}
+
+/* Alternate version */
+%img-replacement-alt {text-indent: $off-screen-distance;}

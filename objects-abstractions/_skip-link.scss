@@ -1,0 +1,24 @@
+/* ======================================================================================
+   @BASE -> SKIP LINK
+   ====================================================================================== */
+
+/*
+	An accessibility feature to allow assistive technology users e.g. screen readers to easily skip to the main content, also assists keyboard users.
+*/
+
+.hide-visually.skip-link {
+	&:active,
+	&:focus {
+		@extend %transition-off;
+		@extend %hide-visually-off;
+		position: absolute;
+		z-index: $z-index-high;
+		left: 0;
+		top: 0;
+		width: 100%;
+		@include to-em(padding, $spacing-third 0);
+		background-color: rgba($color-brand, 0.8);
+		color: $color-white;
+		text-align: center;
+	}
+}

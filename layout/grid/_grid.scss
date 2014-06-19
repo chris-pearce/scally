@@ -1,0 +1,139 @@
+/* ======================================================================================
+   @LAYOUT -> GRID
+   ====================================================================================== */
+
+/*
+	Usage: fluid and nestable mobile first grid system.
+
+	Credit: https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
+*/
+
+/* Grid container */
+.grid {
+	/* Negative `margin-left` to negate the columns gutters */
+	@include to-rem(margin-left, -$grid-gutter);
+
+	/* Clear fix */
+	@include clear-fix;
+
+	/* Very infrequently occuring grid rows as children of grid rows */
+	> .grid {margin-left: 0;}
+}
+
+	/* Grid item */
+	.grid__item {
+		width: 100%;
+		float: left;
+		@include to-rem(padding-left, $grid-gutter);
+
+		/* Print - have to re-linearise as all browsers except Chrome will honour any width classes above the `$non-palm` breakpoint */
+		@media print {
+			width: 100% !important;
+		}
+	}
+
+	/* Apply bottom margins between the grid elements for linearised version (at palm) */
+	.grid,
+	.grid__item {
+		@extend %bottom-spacing;
+
+		/* Turn off bottom margin at this breakpoint (non-linearised) and only for 'screen' media so as not to affect 'print' media */
+		@include respond-min($non-palm, $screen-only: true) {
+			margin-bottom: 0;
+		}
+	}
+
+	/* Non-linear (always cols) version - need to offset bottom margin to keep spacing consistent */
+	.grid--non-linear {@include to-rem(margin-bottom, -$grid-gutter);}
+
+/* Modifiers: 'gutterless' and 'center align' */
+.grid--gutterless,
+.grid--center {margin-left: 0;}
+
+/* Modifier: gutterless */
+.grid--gutterless > .grid__item {padding-left: 0;}
+
+/* Modifier: double the gutter */
+.grid--gutter-dbl {
+	/* Negative `margin-left` to negate the columns' gutters */
+	@include to-rem(margin-left, -$grid-gutter-dbl);
+
+	/* Grid item */
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-dbl);}
+}
+
+/* Modifier: half the gutter */
+.grid--gutter-half {
+  /* Negative `margin-left` to negate the columns' gutters */
+  @include to-rem(margin-left, -$grid-gutter-half);
+
+  /* Grid item */
+  > .grid__item {@include to-rem(padding-left, $grid-gutter-half);}
+}
+
+/* Modifier: remove bottom margin */
+.grid--flush {
+	&,
+	> .grid__item {
+		margin-bottom: 0;
+
+		&:last-child {margin-bottom: 0;}
+	}
+}
+
+/* Modifier: apply half bottom margin */
+.grid--mrg-half {
+	&,
+	> .grid__item {
+		@include to-rem(margin-bottom, $grid-gutter-half);
+
+		&:last-child {margin-bottom: 0;}
+	}
+
+	/* Non-linear (always cols) version */
+	&.grid--non-linear {
+		/* Need to offset bottom margin to keep spacing consistent */
+		@include to-rem(margin-bottom, -$grid-gutter-half);
+
+		/* Need to renable bottom margin for `:last-child` */
+		> .grid__item:last-child {@include to-rem(margin-bottom, $grid-gutter-half);}
+	}
+}
+
+/* Modifier: center align */
+.grid--center > .grid__item {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	float: none;
+}
+
+/* Modifier: reversed */
+.grid--rev > .grid__item {float: right;}
+
+/* Change stacking order for 'palm' - only works for 2 cols */
+@include respond-max($palm-end) {
+	.grid--rev-stack {
+		display: table;
+		width: 100%;
+
+		> .grid__item {
+			float: none;
+			width: 100%;
+			display: table-footer-group;
+		}
+
+		> .grid__item + .grid__item {display: table-caption;}
+	}
+}
+
+/* Modifier: table */
+.grid--table {
+	display: table;
+	width: 100%;
+
+	> .grid__item {
+		display: table-cell;
+		float: none;
+	}
+}

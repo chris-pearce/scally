@@ -1,0 +1,33 @@
+/* ======================================================================================
+   @BASE -> VALIDATION
+   ====================================================================================== */
+
+/*
+	Usage: for highlighting text inputs for validation.
+
+	Note: It is okay to use `!important` here as we're doing it pre-emptively i.e. you know you will always want the rule it's applied too to take precedence.
+*/
+
+/* Error */
+.is-input-error {
+	border-color: $color-feedback-error !important;
+	background: lighten($color-feedback-error, 42%) !important;
+	color: $color-feedback-error !important;
+
+	&:focus {
+    border-color: $color-feedback-error !important;
+    box-shadow: 0 0 0 1px $color-feedback-error !important;
+  }
+}
+
+/* Success */
+.is-input-success {
+	border-color: $color-feedback-success !important;
+	background: lighten($color-feedback-success, 62%) !important;
+	color: $color-feedback-success !important;
+
+	&:focus {
+    border-color: $color-feedback-success !important;
+    box-shadow: 0 0 0 1px $color-feedback-success !important;
+  }
+}

@@ -1,0 +1,15 @@
+/* ======================================================================================
+   @BASE -> VIEWPORT
+   ====================================================================================== */
+
+/*
+  Add `@viewport` rule to future proof, leave out `-ms-` prefix, see here: http://nostrongbeliefs.com/why-i-think-we-shouldnt-use-css-viewport-in-ie10-for-now/.
+*/
+
+@-webkit-viewport {width: device-width;}
+
+@-moz-viewport {width: device-width;}
+
+@-o-viewport {width: device-width;}
+
+@viewport {width: device-width;}

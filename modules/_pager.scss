@@ -1,0 +1,62 @@
+/* ======================================================================================
+   @MODULES -> PAGER
+   ====================================================================================== */
+
+/*
+	For paging between sets of pages via 'Prev' and 'Next' links, also includes a page count.
+
+  .pager--pin-board       - Pin board
+  .pager--compact         - Compact
+
+	Styleguide Pager
+*/
+
+.pager {
+  line-height: normal;
+
+  /* Prev and next */
+  .btn--main {
+    position: absolute;
+    top: 0;
+  }
+
+    /* Arrow icons */
+    .icon:before {@include font-size(20, 1);}
+}
+
+  /* Inner container */
+  .pager__inner {
+    position: relative;
+    text-align: center;
+  }
+
+    /* Count */
+    .pager__count {
+      @include to-em(padding-top padding-bottom, $spacing-half);
+      display: inline-block;
+
+      /* Turn off bottom padding when they're no prev/next links */
+      &:only-child {padding: 0;}
+    }
+
+    /* Prev */
+    .pager__prev {
+      left: 0;
+
+      /* Position off-centre at this breakpoint */
+      @include respond-min($non-palm) {
+        left: 50%;
+        @include to-rem(margin-left, -$spacing-dbl*4);
+      }
+    }
+
+    /* Next */
+    .pager__next {
+      right: 0;
+
+      /* Position off-centre at this breakpoint */
+      @include respond-min($non-palm) {
+        right: 50%;
+        @include to-rem(margin-right, -$spacing-dbl*4);
+      }
+    }

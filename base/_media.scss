@@ -1,0 +1,28 @@
+/* ======================================================================================
+   @BASE -> EMBEDDED CONTENT
+   ====================================================================================== */
+
+/* Remove the gap between images and the bottom of their containers */
+audio,
+canvas,
+img,
+svg,
+video {vertical-align: middle;}
+
+/* Images */
+
+/*
+ 	1. Make responsive.
+	2. So that `alt` text is visually offset if images don't load.
+*/
+img {
+	max-width: 100%; /* 1 */
+	height: auto; /* 1 */
+	font-style: italic; /* 2 */
+
+  figure > & {display: block;}
+}
+
+/* Non-fluid images if you specify `width` and/or `height` attributes */
+img[width],
+img[height] {max-width: none;}

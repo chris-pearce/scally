@@ -1,0 +1,31 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> BLOCK LIST
+   ====================================================================================== */
+
+/*
+  Create big blocky lists of content.
+
+  Styleguide Block List
+*/
+
+.block-list {
+  border-top-width: 1px;
+
+  &,
+  > li {
+    border-style: solid;
+    border-color: $color-grey-med;
+  }
+
+  > li {
+    border-bottom-width: 1px;
+    @include to-rem(padding, $spacing-half);
+  }
+}
+
+  /* Links */
+  .block-list__link {
+    display: block;
+    @include to-rem(padding, $spacing-half);
+    @include to-rem(margin, -$spacing-half);
+  }

@@ -1,0 +1,38 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> SLATS
+   ====================================================================================== */
+
+/*
+	Place any image- and text-like content side-by-side.
+
+	.slats--compact					- No spacing between image and text-like content
+	.slats--rev							- Reverse the positioning of image and text-like content
+
+	Styleguide Slats
+*/
+
+/* Credit: http://stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code */
+
+.slats {@extend %clear-fix;}
+
+	.slats__img {
+		float: left;
+		@include to-rem(margin-right, $spacing-base);
+
+		/* Modifier: no spacing between image- and text-like content */
+		.slats--compact & {margin-right: 0;}
+
+		/* Modifier: reverse the positioning of image- and text-like content */
+		.slats--rev & {
+			float: right;
+			margin-right: 0;
+			@include to-rem(margin-left, $spacing-base);
+		}
+
+		/* Modifier: no spacing between image- and text-like content when used with 'Reversed' modifier */
+		.slats--compact.slats--rev & {margin-left: 0;}
+
+			img {display: block;}
+	}
+
+	.slats__body {@extend %new-block-formatting-context;}

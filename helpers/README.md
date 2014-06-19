@@ -1,0 +1,2 @@
+﻿A series of helper classes to use arbitrarily. Only use a helper class if an element/module doesn't already have a class to which you could apply this styling.
+It is okay to use `!important` here as we're doing it pre-emptively i.e. you know you will always want the rule it's applied too to take precedence.

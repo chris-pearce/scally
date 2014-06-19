@@ -1,0 +1,88 @@
+/* ======================================================================================
+   @MODULES -> WIDGETS -> ACCORDION
+   ====================================================================================== */
+
+/*
+	Typically for preserving screen real estate e.g. a complex menu as each item can be expanded to reveal the content associated with that item and it can also be collapsed to hide its associated content. There can be zero or more items expanded at a time, depending on the jQuery plugin configuration.
+*/
+
+.accordion {
+	border: 1px solid $color-grey-med;
+
+	> li {
+		border-top: 1px solid $color-grey-med;
+
+		&:first-child {border-top: 0;}
+	}
+}
+
+	/* Note: have to set a width otherwise animation jumps */
+	.accordion__header,
+	.accordion__content {width: 100%;}
+
+	/* Heading */
+	.accordion__header {
+		@extend %transition-subtle;
+		@include to-em(padding, $spacing-quarter $spacing-half);
+		background-color: $color-grey-med;
+		font-size: 100%;
+		margin: 0;
+
+		/* JS users */
+		.js & {
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				background: $color-grey-dark;
+				color: $color-white;
+			}
+		}
+
+		/* Print */
+		@media print {
+			border-bottom: 1px solid;
+		}
+
+		/* Plus sign */
+		.js &:before {
+			content: "\002B";
+			display: inline-block;
+			speak: none;
+			@include to-em(margin-right, $spacing-quarter);
+			vertical-align: top;
+
+			/* Print */
+			@media print {
+				display: none;
+			}
+		}
+
+		/* Expanded state */
+		.js .is-expanded & {
+			background: $color-brand;
+			color: $color-white;
+
+			/* Minus sign */
+			&:before {content: "\2212";}
+		}
+	}
+
+	/* Content */
+	.accordion__content {
+		@include to-em(padding, $spacing-half);
+		display: none;
+
+		@include respond-min($non-palm) {
+			@include to-em(padding, $spacing-base);
+		}
+
+		/* Non JS users */
+		.no-js & {display: block;}
+
+		/* Print */
+		@media print {
+			/* Note: need to use `!important` in order to override the inline display rule applied by the jQuery plugin */
+			display: block !important;
+		}
+	}

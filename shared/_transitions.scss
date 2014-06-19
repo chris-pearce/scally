@@ -1,0 +1,13 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> TRANSITIONS
+   ====================================================================================== */
+
+/*
+	Common CSS3 transition styles.
+*/
+
+/* Subtle */
+%transition-subtle {@include prefix(transition, all 0.2s);}
+
+/* Off */
+%transition-off {@include prefix(transition, none);}

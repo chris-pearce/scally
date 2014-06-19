@@ -1,0 +1,29 @@
+/* ======================================================================================
+   @IMPORT -> UTILS
+   ====================================================================================== */
+
+/*
+  Import all Util partials.
+*/
+
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/functions";
+@import "../utils/normalize";
+@import "../utils/reset";
+@import "../utils/debug";
+@import "../utils/animations";
+
+  /* Silent placeholders */
+  @import "../utils/placeholders/bottom-spacing";
+  @import "../utils/placeholders/clear-fix";
+  @import "../utils/placeholders/disguised-link";
+  @import "../utils/placeholders/image-replacement";
+  @import "../utils/placeholders/sprite-bg";
+  @import "../utils/placeholders/sprite-icon";
+  @import "../utils/placeholders/transitions";
+  @import "../utils/placeholders/arrows";
+  @import "../utils/placeholders/hide";
+  @import "../utils/placeholders/new-block-formatting-context";
+  @import "../utils/placeholders/hardware-accelerated-css";
+  @import "../utils/placeholders/smooth-touch-scrolling";

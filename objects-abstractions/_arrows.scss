@@ -1,0 +1,48 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> ARROWS
+   ====================================================================================== */
+
+/*
+  Creates CSS arrows.
+
+  .arrow--up          - Up arrow
+  .arrow--down        - Down arrow
+  .arrow--left        - Left arrow
+  .arrow--right       - Right arrow
+
+	Styleguide Arrows
+*/
+
+/*
+  Note: Same as: 'utils/placeholders/arrows' except this version doesn't apply to an existing element rather it's an independent element which is more flexible
+*/
+
+$arrow-width: 8px;
+$arrow-bg: $color-grey-med;
+
+
+.arrow {
+	width: 0;
+	height: 0;
+	border: $arrow-width solid rgba($color-white, 0);
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Modifier: down arrow */
+.arrow--down {
+	border-top-color: $arrow-bg;
+	margin-bottom: -$arrow-width;
+}
+
+/* Modifier: up arrow */
+.arrow--up {
+	border-bottom-color: $arrow-bg;
+	margin-top: -$arrow-width;
+}
+
+/* Modifier: left arrow */
+.arrow--left {border-right-color: $arrow-bg;}
+
+/* Modifier: right arrow */
+.arrow--right {border-left-color: $arrow-bg;}

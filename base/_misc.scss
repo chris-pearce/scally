@@ -1,0 +1,27 @@
+/* ======================================================================================
+   @BASE -> MISCELLANEOUS
+   ====================================================================================== */
+
+/* [HORIZONTAL RULE]
+-------------------------------------------------------*/
+hr {
+	@extend %bottom-spacing;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $color-grey-med;
+  padding: 0;
+}
+
+/* [ABBREVIATION]
+-------------------------------------------------------*/
+abbr[title] {cursor: help;}
+
+/* [CANVAS]
+-------------------------------------------------------*/
+/* Set the default behavior for touch-based browsing in IE 10 on devices running Windows 8 */
+canvas {-ms-touch-action: double-tap-zoom;}
+
+/* [STRIKETHOUGH]
+-------------------------------------------------------*/
+s {text-decoration: line-through;}

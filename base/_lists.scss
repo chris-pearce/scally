@@ -1,0 +1,52 @@
+/* ======================================================================================
+   @BASE -> LISTS
+   ====================================================================================== */
+
+/*
+	Note: we apply `ul` and `ol` list styles via a `list` class as the majority of lists don't require list styles.
+*/
+
+/* [UNORDERED/ORDERED]
+-------------------------------------------------------*/
+.list {
+	@extend %bottom-spacing;
+
+	/* Left indent */
+	&,
+	ul,
+	ol {
+		@include to-rem(margin-left, $spacing-base);
+
+		@include respond-min($non-palm) {
+			@include to-rem(margin-left, $spacing-dbl);
+		}
+	}
+}
+
+	/* Unordered bullets */
+	ul.list {
+		list-style: disc;
+
+		ul {
+			list-style: circle;
+
+				ul {list-style: square;}
+		}
+	}
+
+	/* Ordered bullets */
+	ol.list {
+		list-style: decimal;
+
+		ol {
+			list-style: lower-alpha;
+
+				ol {list-style: lower-roman;}
+		}
+	}
+
+/* [DEFINITION]
+-------------------------------------------------------*/
+dl {@extend %bottom-spacing;}
+
+	dt {font-weight: bold;}

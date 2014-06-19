@@ -1,0 +1,45 @@
+/* ======================================================================================
+   @BUTTONS -> MENU
+   ====================================================================================== */
+
+/*
+	Menu (hamburger).
+
+	Styleguide Menu
+*/
+
+.btn--menu {
+	position: relative;
+	@include to-rem(width, 38);
+	@include to-rem(height, 32);
+}
+
+	/* Create the icon (three lines) */
+	.btn--menu__icon {
+		left: 50%;
+		top: 50%;
+		@include to-rem(margin, -1.5 0 0 -10);
+		pointer-events: none;
+
+		/* Shared rules */
+		&,
+		&:before,
+		&:after {
+			position: absolute;
+			@include to-rem(width, 20);
+			height: 3px;
+			border-radius: 1px;
+			background-color: $color-grey-dark;
+		}
+
+		/* Top and bottom lines */
+		&:before,
+		&:after {
+			content: "";
+			left: 0;
+		}
+
+		&:before {top: -6px;}
+
+		&:after {top: 6px;}
+	}

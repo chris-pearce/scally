@@ -1,0 +1,53 @@
+/* ======================================================================================
+   @MODULES -> WIDGETS -> TABS
+   ====================================================================================== */
+
+/*
+	Similar to the accordion in terms of preserving screen real estate but a tabbed interface is typically rendered horizontally not vertically and rather than 'expanding' and 'collapsing' each item the item simply appears and you can only ever see one item at a time.
+
+	Styleguide Tabs
+*/
+
+/* Tab nav */
+.tab__nav {
+
+	/* Non JS users */
+	.no-js & {display: none;}
+
+	/* Print */
+	@media print {
+		display: none;
+	}
+}
+
+/* Tab Content */
+.tab__content {
+	display: none;
+
+	/* Active tab */
+	&.is-active {display: block;}
+
+	/* Non JS users */
+	.no-js & {
+		@extend %bottom-spacing;
+		display: block;
+	}
+
+	/* Print */
+	@media print {
+		@include to-rem(margin-bottom, $spacing-base);
+		display: block;
+	}
+}
+
+	/* Tab content heading - typically for print media and non JS users */
+	.tab__content__hdr {
+		@extend %bottom-spacing;
+		display: none;
+
+		/* Non JS users */
+		.no-js & {display: block;}
+
+		/* Print */
+		@media print {display: block;}
+	}

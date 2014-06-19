@@ -1,0 +1,1 @@
+﻿These abstractions follow the 'open/closed' principle so they can either be used 'as is' or modified, [read more](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).

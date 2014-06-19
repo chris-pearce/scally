@@ -1,0 +1,52 @@
+/* ======================================================================================
+   @BUTTONS -> BASE
+   ====================================================================================== */
+
+/*
+	Generic button styling. All buttons need to use this base button class as we're resetting all the browser default styles.
+
+	.btn--full                        - Span full width of parent
+	.btn--full-left                   - Span full width of parent and align text to the left
+	.btn--sml-txt								      - Descrease text size
+	.btn--lrg-txt                     - Increase text size
+	.btn--spacing                     - Apply right spacing for adjacent buttons
+
+	Styleguide Base
+*/
+
+.btn {
+	line-height: normal;
+	display: inline-block;
+	vertical-align: middle;
+	background: none;
+	border: 0;
+	padding: 0;
+
+	&,
+	&:before,
+	&:after {@extend %transition-subtle;}
+
+	/* Print */
+	@media print {
+		display: none;
+	}
+}
+
+/* Modifier: make span full width of parent */
+.btn--full {
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn--full-left {text-align: left;}
+
+/* Modifier: small and large sizes */
+.btn--sml-txt {@include font-size($font-size-sml, normal);}
+
+.btn--lrg-txt {@include font-size($font-size-lrg, normal);}
+
+/* Modifier: apply right spacing for adjacent buttons */
+.btn--spacing {@include to-em(margin-right, $spacing-quarter);}

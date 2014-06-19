@@ -1,0 +1,11 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> CLEAR FIX
+   ====================================================================================== */
+
+/*
+	Usage: so parent containers can contain their floated children.
+
+	Credit: http://nicolasgallagher.com/micro-clearfix-hack
+*/
+
+%clear-fix {@include clear-fix;}

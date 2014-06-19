@@ -1,0 +1,214 @@
+/* ======================================================================================
+   @HELPERS -> WIDTHS
+   ====================================================================================== */
+
+/**
+ * Apply percentage based width helper classes with the option to apply at all the main breakpoints.
+ * Mostly used with the grid.
+ */
+
+@mixin width-classes($namespace: null) {
+
+  /**
+   * Whole.
+   */
+  .#{$namespace}h-one-whole {width: $one-whole !important;}
+
+  /**
+   * Halves.
+   */
+  .#{$namespace}h-one-half {width: $one-half !important;}
+
+  /**
+   * Thirds.
+   */
+  .#{$namespace}h-one-third {width: $one-third !important;}
+  .#{$namespace}h-two-thirds {width: $two-thirds !important;}
+
+  /**
+   * Quarters.
+   */
+  .#{$namespace}h-one-quarter {width: $one-quarter !important;}
+  .#{$namespace}h-two-quarters {width: $one-half !important;}
+  .#{$namespace}h-three-quarters {width: $three-quarters !important;}
+
+  /**
+   * Fifths.
+   */
+  .#{$namespace}h-one-fifth {width: $one-fifth !important;}
+  .#{$namespace}h-two-fifths {width: $two-fifths !important;}
+  .#{$namespace}h-three-fifths {width: $three-fifths !important;}
+  .#{$namespace}h-four-fifths {width: $four-fifths !important;}
+
+  /**
+   * Sixths.
+   */
+  .#{$namespace}h-one-sixth {width: $one-sixth !important;}
+  .#{$namespace}h-two-sixths {width: $one-third !important;}
+  .#{$namespace}h-three-sixths {width: $one-half !important;}
+  .#{$namespace}h-four-sixths {width: $two-thirds !important;}
+  .#{$namespace}h-five-sixths {width: $five-sixths !important;}
+
+  /**
+   * Sevenths.
+   */
+  .#{$namespace}h-one-seventh {width: $one-seventh !important;}
+  .#{$namespace}h-two-sevenths {width: $two-sevenths !important;}
+  .#{$namespace}h-three-sevenths {width: $three-sevenths !important;}
+  .#{$namespace}h-four-sevenths {width: $four-sevenths !important;}
+  .#{$namespace}h-five-sevenths {width: $five-sevenths !important;}
+  .#{$namespace}h-six-sevenths {width: $six-sevenths !important;}
+
+  /**
+   * Eighths.
+   */
+  .#{$namespace}h-one-eighth {width: $one-eighth !important;}
+  .#{$namespace}h-two-eighths {width: $one-quarter !important;}
+  .#{$namespace}h-three-eighths {width: $three-eighths !important;}
+  .#{$namespace}h-four-eighths {width: $one-half !important;}
+  .#{$namespace}h-five-eighths {width: $five-eighths !important;}
+  .#{$namespace}h-six-eighths {width: $three-quarters !important;}
+  .#{$namespace}h-seven-eighths {width: $seven-eighths !important;}
+
+  /**
+   * Tenths.
+   */
+  .#{$namespace}h-one-tenth {width: $one-tenth !important;}
+  .#{$namespace}h-two-tenths {width: $one-fifth !important;}
+  .#{$namespace}h-three-tenths {width: $three-tenths !important;}
+  .#{$namespace}h-four-tenths {width: $two-fifths !important;}
+  .#{$namespace}h-five-tenths {width: $one-half !important;}
+  .#{$namespace}h-six-tenths {width: $three-fifths !important;}
+  .#{$namespace}h-seven-tenths {width: $seven-tenths !important;}
+  .#{$namespace}h-eight-tenths {width: $four-fifths !important;}
+  .#{$namespace}h-nine-tenths {width: $nine-tenths !important;}
+
+  /**
+   * Twelfths.
+   */
+  .#{$namespace}h-one-twelfth {width: $one-twelfth !important;}
+  .#{$namespace}h-two-twelfths {width: $one-sixth !important;}
+  .#{$namespace}h-three-twelfths {width: $one-quarter !important;}
+  .#{$namespace}h-four-twelfths {width: $one-third !important;}
+  .#{$namespace}h-five-twelfths {width: $five-twelfths !important;}
+  .#{$namespace}h-six-twelfths {width: $one-half !important;}
+  .#{$namespace}h-seven-twelfths {width: $seven-twelfths !important;}
+  .#{$namespace}h-eight-twelfths {width: $two-thirds !important;}
+  .#{$namespace}h-nine-twelfths {width: $three-quarters !important;}
+  .#{$namespace}h-ten-twelfths {width: $five-sixths !important;}
+  .#{$namespace}h-eleven-twelfths {width: $eleven-twelfths !important;}
+}
+
+/**
+ * Output them all.
+ */
+
+@include width-classes();
+
+/**
+ * Output at specific breakpoints e.g. `.non-palm-one-half`.
+ *
+ * These are turned off by default except for 'non-palm' as it's used extensively with the grid.
+ *
+ * Manage what you want to use in 'utils/config -> SPECIFIC BREAKPOINT CLASSES'.
+ */
+
+/**
+ * Palm large.
+ */
+
+@if $width-classes-at-breakpoint-palm-lrg == true {
+  @include respond-min($palm-lrg) {
+    @include width-classes("palm-lrg-");
+  }
+}/* endif */
+
+/**
+ * Non palm.
+ */
+
+@if $width-classes-at-breakpoint-non-palm == true {
+  @include respond-min($non-palm) {
+    @include width-classes("non-palm-");
+  }
+}/* endif */
+
+/**
+ * Lap.
+ */
+
+@if $width-classes-at-breakpoint-lap == true {
+  @include respond-range-fixed(lap) {
+    @include width-classes("lap-");
+  }
+}/* endif */
+
+/**
+ * Lap small.
+ */
+
+@if $width-classes-at-breakpoint-lap-sml == true {
+  @include respond-range-fixed(lap-sml) {
+    @include width-classes("lap-sml-");
+  }
+}/* endif */
+
+/**
+ * Lap small middle.
+ */
+
+@if $width-classes-at-breakpoint-lap-sml-middle == true {
+  @include respond-min($lap-sml-middle) {
+    @include width-classes("lap-sml-middle-");
+  }
+}/* endif */
+
+/**
+ * Lap large middle.
+ */
+
+@if $width-classes-at-breakpoint-lap-lrg-middle == true {
+  @include respond-min($lap-lrg-middle) {
+    @include width-classes("lap-lrg-middle-");
+  }
+}/* endif */
+
+/**
+ * Lap large.
+ */
+
+@if $width-classes-at-breakpoint-lap-lrg == true {
+  @include respond-range-fixed(lap-lrg) {
+    @include width-classes("lap-lrg-");
+  }
+}/* endif */
+
+/**
+ * Desk.
+ */
+
+@if $width-classes-at-breakpoint-desk == true {
+  @include respond-min($desk) {
+    @include width-classes("desk-");
+  }
+}/* endif */
+
+/**
+ * Desk small.
+ */
+
+@if $width-classes-at-breakpoint-desk-sml == true {
+  @include respond-range-fixed(desk-sml) {
+    @include width-classes("desk-sml-");
+  }
+}/* endif */
+
+/**
+ * Desk large.
+ */
+
+@if $width-classes-at-breakpoint-desk-lrg == true {
+  @include respond-min($desk-lrg) {
+    @include width-classes("desk-lrg-");
+  }
+}/* endif */

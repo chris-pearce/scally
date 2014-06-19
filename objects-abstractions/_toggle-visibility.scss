@@ -1,0 +1,28 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> TOGGLE VISIBILITY
+   ====================================================================================== */
+
+/*
+	Simply hiding/showing an element based on whether the element has `is-active` class (powered by JS).
+
+  .toggle-visibility--palm        - Only apply at palm
+
+	Styleguide Toggle Visibility
+*/
+
+.toggle-visibility {
+  display: none;
+  /* Remove browser outline as we should set focus to this */
+  outline: none;
+
+  /* Show when visible and for non JS users */
+  &.is-active,
+  .no-js & {display: block;}
+}
+
+/* Modifier: only apply at palm */
+@include respond-min($non-palm) {
+  .toggle-visibility--palm {display: block;}
+
+  .toggle-visibility-btn {display: none;}
+}

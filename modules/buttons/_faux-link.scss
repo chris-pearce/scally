@@ -1,0 +1,16 @@
+/* ======================================================================================
+   @BUTTONS -> FAUX LINK
+   ====================================================================================== */
+
+/*
+	Make a button look like a link.
+
+	Styleguide Faux Link
+*/
+
+.btn--faux-link {
+	color: $color-link;
+
+	&:hover,
+	&:focus {color: $color-link-hover;}
+}

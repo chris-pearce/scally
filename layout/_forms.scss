@@ -1,0 +1,74 @@
+/* ======================================================================================
+   @LAYOUT -> FORMS
+   ====================================================================================== */
+
+/*
+	Usage: these form layout styles provide the default form layout which is linear i.e. `label` above `input`. As always major layout is handled by the grid e.g. columns.
+
+	ARIA applications:
+		- `aria-required="true"` to be appended to the `input` if it's required.
+		- `aria-invalid="true"` to be appended once the `input` fails validation, and removed once it passes validation, this is dynamic so back end to implement.
+		- `aria-describedby="helper-text-X"` to be appended to any `input`s that have help text, and the help text needs `id=""`, the value for the attr's will be `help-text-1`, just increment the number at the end of the attr value for each instance.
+
+	HTML anatomy:
+		<form>
+			<fieldset>
+				<legend class="form-hdr">Heading</legend>
+				<div class="form-field">
+					<label class="form-field__lbl" for="input-1">Label <strong class="req-field" title="Required">*</strong></label>
+					[input(s)] e.g.
+					<input type="text" id="input-1" class="txt-input">
+					<p class="form-field__msg form-field__msg--help">Helper notes...</p>
+					<p class="form-field__msg feedback feedback--success feedback--inline" role="alert">Feedback - success</p>
+					<p class="form-field__msg feedback feedback--error feedback--inline" role="alert">Feedback - error</p>
+				</div>
+				....
+				....
+			</fieldset>
+		</form>
+*/
+
+/* Heading - `legend` */
+.form-hdr {
+	/* Add default spacing via `padding` so it works cross browser */
+	@include to-rem(padding-bottom, $spacing-base);
+	margin-bottom: 0;
+}
+
+/* Form field */
+.form-field {
+	@extend %clear-fix;
+	@extend %bottom-spacing;
+
+	/* Resets */
+	p {margin-bottom: 0;}
+
+	/* Make all text inputs full width */
+	.txt-input,
+  textarea {width: 100%;}
+}
+
+	/* Label */
+	.form-field__lbl {
+		display: block;
+		@include to-rem(margin-bottom, $spacing-sixth);
+		color: $color-txt-dark;
+	}
+
+	/* Modifier: inline */
+	.form-field__lbl--inline {
+		display: inline;
+		margin-bottom: 0;
+	}
+
+	/* Messages */
+	.form-field__msg {
+		margin-top: to-em($spacing-micro);
+		@include font-size($font-size-sml);
+	}
+
+	/* Modifier: help */
+	.form-field__msg--help {
+		font-style: italic;
+		color: $color-txt-light;
+	}

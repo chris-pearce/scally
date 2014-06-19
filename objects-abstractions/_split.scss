@@ -1,0 +1,27 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> SPLIT
+   ====================================================================================== */
+
+/*
+	Simple split item for creating two elements floated away from one another.
+
+	Styleguide Split
+*/
+
+/* Credit: https://github.com/csswizardry/inuit.css/blob/master/inuit.css/objects/_split.scss */
+
+@include respond-min($non-palm) {
+	.split {text-align: right;}
+}
+
+	.split__title {
+		float: left;
+		@include to-em(margin-right, $spacing-quarter);
+
+		@include respond-min($non-palm) {
+			text-align: left;
+			clear: left;
+		}
+
+		&:after {content: ":";}
+	}

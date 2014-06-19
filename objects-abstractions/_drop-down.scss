@@ -1,0 +1,34 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> DROP DOWN
+   ====================================================================================== */
+
+/*
+	A generic drop down powered by some JS that should add `is-active` to the drop down trigger/target container, and a version for `:hover`.
+
+  Styleguide Drop Down
+*/
+
+/* Container for the drop down and drop down trigger */
+.drop-down-container {position: relative;}
+
+  /* The drop down */
+  .drop-down {
+    @include drop-down;
+
+    /* Show the drop down when 'toggle visibility' plugin is visible, for hover version, and for non JS users except when it's a hover version */
+    &.is-active,
+    .drop-down-container--hover:hover &,
+    .no-js .drop-down-container:not(.drop-down-container--hover) & {display: block;}
+
+    /* Non JS users - always render in the document flow except when it's a hover version */
+    .no-js .drop-down-container:not(.drop-down-container--hover) & {position: static;}
+  }
+
+  /* Modifier: hover version */
+  .drop-down-container--hover {
+    /* Show the drop down and increase the `z-index` as it's possible for a hover drop down to overlap a non hover drop down */
+    &:hover .drop-down {z-index: $z-index-high+1;}
+
+    /* Hide for touch devices as they don't have hover support */
+    .touch & .drop-down {display: none;}
+  }

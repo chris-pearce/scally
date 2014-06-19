@@ -1,0 +1,93 @@
+/* ======================================================================================
+   @MODULES -> FEEDBACK
+   ====================================================================================== */
+
+/*
+  Provides appropriately designed UI feedback messages for users to acknowledge their actions and to orient users to their location in the site. Most common use case is for errors e.g. form validation errors. Read more here: http://styleguide.yahoo.com/writing/write-clear-user-interface-text/feedback-messages-and-error-messages.
+
+  .feedback--error    - Error feedback
+  .feedback--warning  - Warning feedback
+  .feedback--success  - Success feedback
+  .feedback--info     - Information feedback
+  .feedback--block    - For when you need more than one paragraph of text
+  .feedback--inline   - For when you don't require a background colour and padding.
+
+  Styleguide Feedback
+*/
+
+.feedback {
+	@include to-em(padding, $spacing-quarter $spacing-half);
+
+  &,
+  a {color: $color-white;}
+
+	a {
+		text-decoration: underline;
+
+		&:hover,
+		&:focus {text-decoration: none;}
+	}
+}
+
+/* Modifier: error */
+.feedback--error {
+  background-color: $color-feedback-error;
+
+  /* Modifier: inline */
+  &.feedback--inline {
+    &,
+    a {color: $color-feedback-error;}
+  }
+}
+
+/* Modifier: warning */
+.feedback--warning {
+  background-color: $color-feedback-warning;
+
+  /* Modifier: inline */
+  &.feedback--inline {
+    &,
+    a {color: $color-feedback-warning;}
+  }
+}
+
+/* Modifier: success */
+.feedback--success {
+  background-color: $color-feedback-success;
+
+  /* Modifier: inline */
+  &.feedback--inline {
+    &,
+    a {color: $color-feedback-success;}
+  }
+}
+
+/* Modifier: info */
+.feedback--info {
+  background-color: $color-feedback-info;
+
+  /* Modifier: inline */
+  &.feedback--inline {
+    &,
+    a {color: $color-feedback-info;}
+  }
+}
+
+/* Modifier: block */
+.feedback--block {
+  @extend %bottom-spacing;
+  @include to-em(padding-top padding-bottom, $spacing-half);
+
+  .hn,
+  p,
+  .list {margin-bottom: 0;}
+
+  p,
+  .list {margin-top: to-em($spacing-quarter);}
+}
+
+/* Modifier: inline */
+.feedback--inline {
+  background: none;
+  padding: 0;
+}

@@ -1,0 +1,76 @@
+@if $debug-mode == true {
+
+/* ======================================================================================
+   @UTILS -> @DEBUG
+   ====================================================================================== */
+
+/*
+	Usage: enable this stylesheet to visually detect any improperly nested or potentially invalid markup, or any potentially inaccessible code.
+
+	Note:
+		-	Red 	 = definite error
+ 		-	Yellow = double-check
+ 		- None   = should be fine
+
+	Credit: https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
+*/
+
+/* Are there any empty elements in your page? */
+:empty {outline: 5px solid yellow !important;}
+
+/* Images require `alt` attr's, empty `alt`s are fine but should be double-checked, no `alt` is bad and is flagged red */
+img {outline: 5px solid red !important;}
+
+img[alt] {outline: none !important;}
+
+img[alt=""] {outline: 5px solid yellow !important;}
+
+/* Double-check any links whose `href` is something questionable */
+a[href=""],
+a[href="#"],
+a[href*="javascript"] {outline: 5px solid yellow !important;}
+
+/* The `target` attribute ain't too nice... */
+a[target] {outline: 5px solid yellow !important;}
+
+/* Ensure any lists only contain `li`s as children */
+ul,
+ol {
+  > *:not(li) {outline: 5px solid red !important;}
+}
+
+/* It's always nice to give `th`s `scope` attributes */
+th {outline: 5px solid yellow !important;}
+
+th[scope] {outline: none !important;}
+
+/* `tr`s as children of `table`s ain't great, did you need a `thead`/`tbody`? */
+table > tr {outline: 5px solid yellow !important;}
+
+/* `tfoot` needs to come *before* `tbody` */
+tbody + tfoot {outline: 5px solid yellow !important;}
+
+/* Forms require `action` attributes */
+form {outline: 5px solid red !important;}
+
+form[action] {outline: none !important;}
+
+/*
+  Various form-field types have required attributes. `input`s need `type` attributes, `textarea`s need `rows` and `cols` attributes and submit buttons need a `value` attribute.
+*/
+textarea,
+input {outline: 5px solid red !important;}
+
+input[type] {outline: none !important;}
+
+textarea[rows][cols] {outline: none !important;}
+
+input[type=submit] {outline: 5px solid red !important;}
+
+input[type=submit][value] {outline: none !important;}
+
+
+/* Avoid inline styles where possible */
+[style] {outline: 5px solid yellow !important;}
+
+}/* endif */

@@ -1,0 +1,17 @@
+/* ======================================================================================
+   @BASE -> MAIN
+   ====================================================================================== */
+
+html {
+	font-size: ($font-size/16)+em;
+	line-height: $line-height-ratio;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: $font-family;
+	color: $color-txt-base;
+}

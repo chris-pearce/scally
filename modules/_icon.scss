@@ -1,0 +1,71 @@
+/* ======================================================================================
+   @MODULES -> ICON
+   ====================================================================================== */
+
+/*
+	Applies an icon font and nothing else (similar to the sprite module).
+*/
+
+.icon:before {
+	@extend %sprite-icon;
+	speak: none;
+	font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Set icons */
+
+/*
+  Note: make sure to use the Unicode Private Use Area.
+*/
+
+/* Modifiers */
+
+/* Modifier: apply some spacing between the icon element and adjacent text */
+.icon--spacing:before {@include to-em(margin-right, $spacing-sixth);}
+
+.icon--spacing-lrg:before {@include to-em(margin-right, $spacing-third);}
+
+/* Modifier: remove the negative 1px top positiong */
+.icon--flush-top:before {position: static;}
+
+/* Firefox */
+@include target-mozilla {
+	.icon--flush-top-mozilla:before {position: static;}
+}
+
+/* Modifier: fixed width */
+.icon--fixed-width:before {
+	width: 1em;
+	text-align: center;
+}
+
+/* Modifier: small */
+.icon--sml:before {@include font-size($font-size-sml, 1);}
+
+/* Modifier: large */
+.icon--lrg:before {@include font-size($font-size-lrg, 1);}
+
+.icon--lrger:before {@include font-size($font-size-lrger, 1);}
+
+.icon--xlrg:before {@include font-size($font-size-xlrg, 1);}
+
+/* Modifier: extra large */
+.icon--giga:before {@include font-size($font-size-giga, 1);}
+
+.icon--kilo:before {@include font-size($font-size-kilo, 1);}
+
+.icon--hecto:before {@include font-size($font-size-hecto, 1);}
+
+.icon--deca:before {@include font-size($font-size-deca, 1);}
+
+/* Modifier: restore base font size */
+.icon--base-size:before {font-size: inherit;}
+
+/* Modifier: restore base text colour */
+.icon--base-color:before {color: $color-txt-base;}

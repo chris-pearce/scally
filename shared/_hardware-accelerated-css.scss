@@ -1,0 +1,15 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> HARDWARE ACCELERATED CSS
+   ====================================================================================== */
+
+/*
+	Usage: many browsers provide GPU acceleration by means of certain CSS rules, the 2 methods applied here are the most common.
+
+  Credit: http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+*/
+
+/* 2D */
+%hardware-accelerate-2d {@include translateZ;}
+
+/* 3D */
+%hardware-accelerate-3d {@include translate3d(0, 0, 0);}

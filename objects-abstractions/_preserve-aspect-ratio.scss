@@ -1,0 +1,26 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> PRESERVE ASPECT RATIO
+   ====================================================================================== */
+
+/*
+  To preserve the aspect ratio (16:9) of an element usually a video delivered via an `iframe`.
+
+  Styleguide Preserve Aspect Ratio
+*/
+
+/* Credit: http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+
+.preserve-aspect-ratio {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+	.preserve-aspect-ratio__inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}

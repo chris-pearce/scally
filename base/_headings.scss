@@ -1,0 +1,40 @@
+/* ======================================================================================
+   @BASE -> HEADINGS
+   ====================================================================================== */
+
+/*
+  Note: double stranded for greater reuse.
+*/
+
+/* Set margins */
+h1, .h1,
+h2, .h2,
+h3, .h3 {@extend %bottom-spacing;}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  @include to-rem(margin-bottom, $spacing-half);
+
+  &:last-child {margin-bottom: 0;}
+}
+
+/* H1 */
+h1, .h1 {
+  @include font-size($font-size-hecto);
+  /* This is needed to turn off the top margin set in 'utils/normalize' */
+  margin-top: 0;
+}
+
+/* H2 */
+h2, .h2 {@include font-size($font-size-xlrg, 1.5);}
+
+/* H3 */
+h3, .h3 {@include font-size($font-size-lrg);}
+
+/* H4 */
+h4, .h4 {@include font-size($font-size);}
+
+/* H5 - H6 */
+h5, .h5,
+h6, .h6 {@include font-size($font-size - 1);}

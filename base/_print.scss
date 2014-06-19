@@ -1,0 +1,60 @@
+@media print {
+
+	/* ======================================================================================
+	   @PRINT
+	   ====================================================================================== */
+
+	/*
+		Note: all print styles live in context with their corresponding rule sets except styles set here as they cannot be used in context i.e. they need to be set globally, it is okay to use `!important` here as we're doing it pre-emptively i.e. you know you will always want the rule it's applied too to take precedence.
+	*/
+
+
+	/* =======================================================================
+	   HIDE
+	   ======================================================================= */
+
+	nav,
+	video,
+	audio {display: none !important;}
+
+
+	/* =======================================================================
+	   RESET
+	   ======================================================================= */
+
+	* {
+		background: transparent !important;
+		color: $color-black !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		border-color: $color-black !important;
+		-ms-filter: none !important;
+	}
+
+
+	/* =======================================================================
+	   PAGE BREAKS / ORPHANS and WIDOWS
+	   ======================================================================= */
+
+	/* [PAGE BREAKS]
+	-------------------------------------------------------*/
+	/* After */
+	h2, .h2,
+	h3, .h3 {page-break-after: avoid;}
+
+	/* Inside */
+	tr,
+	img,
+	pre,
+	blockquote {page-break-inside: avoid;}
+
+	/* [ORPHANS and WIDOWS]
+	-------------------------------------------------------*/
+	p,
+	h2, .h2,
+	h3, .h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+}

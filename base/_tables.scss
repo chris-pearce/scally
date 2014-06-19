@@ -1,0 +1,95 @@
+/* ======================================================================================
+   @BASE -> TABLES
+   ====================================================================================== */
+
+/*
+  Table element
+
+  .table-striped            - Striped table
+  .table-bordered           - Bordered table
+  .table-cell-padding-off   - No cell padding
+  .table-horiz-scroll       - Enable horizontal scroll bar on table container
+
+  Styleguide Tables
+*/
+
+/*
+	Note: these are very basic styles hence them being in 'base', if you're needing something more styled then your table should become a 'module' inheriting from here.
+*/
+
+/* Base */
+table {
+  @extend %bottom-spacing;
+	width: 100%;
+}
+
+	/* Cell padding */
+	th,
+	td {
+    @include to-em(padding, $spacing-quarter);
+
+		@include respond-min($non-palm) {
+      @include to-em(padding, $spacing-half);
+		}
+	}
+
+	/* Caption */
+	caption {
+    font-weight: bold;
+    @extend %bottom-spacing;
+  }
+
+	/* Cell header */
+	th {font-weight: bold;}
+
+	/* Alignments */
+	caption,
+	th {text-align: left;}
+
+	[colspan] {text-align: center;}
+
+	[colspan="1"] {text-align: left;}
+
+	[rowspan] {vertical-align: middle;}
+
+	[rowspan="1"] {vertical-align: top;}
+
+	/* Print */
+	@media print {
+		thead {display: table-header-group;}
+	}
+
+/* Striped */
+.table-striped tbody tr:nth-of-type(odd) {background-color: $color-grey-light;}
+
+/* Enable horizontal scroll bar when you have very wide tables */
+.table-horiz-scroll {
+  @extend %bottom-spacing;
+  @extend %smooth-touch-scrolling;
+  overflow-x: auto;
+}
+
+/* Bordered */
+.table-bordered {
+
+  th,
+  td {
+    border: 1px solid $color-grey-light;
+
+    /* No borders for empty cells */
+    &:empty {border: 0;}
+  }
+
+	/* Thicker border for the last row in the `thead` */
+  thead tr:last-child th {border-bottom-width: 2px;}
+}
+
+/* Allows the overflow property to be used to handle content that exceeds the width of a table cell */
+.table-fixed {table-layout: fixed;}
+
+/* Turn off padding on cells */
+.table-cell-padding-off {
+  &,
+  th,
+  td {padding: 0;}
+}

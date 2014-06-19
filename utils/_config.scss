@@ -1,0 +1,387 @@
+/* ======================================================================================
+   @UTILS -> VARIABLES
+   ====================================================================================== */
+
+/* [BASE TYPOGRAPHY]
+-------------------------------------------------------*/
+/* Size */
+$font-size: 14 !default;
+
+/* Line height */
+$line-height: 21 !default;
+
+/* Line height ratio */
+$line-height-ratio: $line-height / $font-size !default;
+
+/* Family */
+$font-family: Arial, sans-serif !default;
+
+/* [MORE TYPOGRAPHY]
+-------------------------------------------------------*/
+/* Small */
+$font-size-sml: $font-size - 1 !default;
+$font-size-smler: $font-size - 2 !default;
+
+/* Extra small */
+$font-size-milli: $font-size - 3 !default;
+$font-size-micro: $font-size - 5 !default;
+
+/* Large */
+$font-size-lrg: $font-size + 2 !default;
+$font-size-lrger: $font-size + 4 !default;
+
+/* Extra large */
+$font-size-xlrg: 24 !default;
+$font-size-deca: 30 !default;
+$font-size-hecto: 36 !default;
+$font-size-kilo: 48 !default;
+$font-size-mega: 72 !default;
+$font-size-giga: 96 !default;
+
+/* Families */
+$font-family-quote: Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif !default;
+$font-family-mono: "Courier New", Courier, monospace !default;
+
+/* [DEBUG MODE]
+-------------------------------------------------------*/
+$debug-mode: false !default;
+
+/* [SPACING]
+-------------------------------------------------------*/
+/* Base */
+$spacing-base: $line-height !default;
+
+/* Double */
+$spacing-dbl: $line-height * 2 !default;
+
+/* Triple */
+$spacing-triple: $line-height * 3 !default;
+
+/* Quadruple */
+$spacing-quadruple: $line-height * 4 !default;
+
+/* Half */
+$spacing-half: $line-height / 2 !default;
+
+/* Third */
+$spacing-third: $line-height / 3 !default;
+
+/* Quarter */
+$spacing-quarter: $line-height / 4 !default;
+
+/* Fifth */
+$spacing-fifth: $line-height / 5 !default;
+
+/* Sixth */
+$spacing-sixth: $line-height / 6 !default;
+
+/* Micro */
+$spacing-micro: 2 !default;
+
+/* [BREAKPOINTS]
+-------------------------------------------------------*/
+/*
+	Note:
+		-	Not ideal to set fixed breakpoints like this rather better let the design dictate breakpoints however they're usually common breakpoints in every build esp. 'Palm', and they need to be used to define the flexible width classes at specific breakpoints for the grid system (see: 'utils/widths').
+		-	The breakdown for the breakpoints uses this chart as a guide: http://static.lukew.com/unified_device_design.png.
+			-	Here's the thinking:
+				-	Palm: smartphones and featurephones i.e. anything that can fit into the palm of a hand.
+				-	Lap: typically tablets, notebooks and laptops i.e. anything that is portable that doesn't include phones.
+					-	Lap small: smaller tablets/notebooks and e-readers e.g. Kindle.
+					-	Lap large: larger tablets and laptops.
+				-	Desk: desktop computers, TV's, etc. i.e. anything that is not portable.
+					-	Desk small: smaller desktop computer monitors.
+					-	Desk large:	larger desktop computer monitors, TV's, and who knows what else?
+			-	Breakpoints:
+				-	Palm: 0 - 640px
+					- Palm large:	480px +
+				-	Lap: 641px - 1199px
+					-	Lap small: 641px - 900px
+						- Lap small middle: 768px +
+					-	Lap large: 901px - 1199px
+						-	Lap large middle: 1024px +
+				-	Desk:	1200px +
+					-	Desk small: 1200px - 1365px
+					-	Desk large:	1366px +
+
+	Credit:
+		-	http://www.lukew.com/ff/entry.asp?1679
+		-	https://developers.google.com/webmasters/smartphone-sites/details?hl=en
+*/
+
+/*
+	Start and end points
+
+	Note: these vars typically won't appear outside of this partial, they're used as a way to set-up all the breakpoints easily, when declaring breakpoints in media queries througout the build most of the time the 'Readable breakpoints' are used, one exception is when media query min/max ranges are used which 'out of the box' is only for defining the flexible width classes at specific breakpoints for the grid system (see: 'utils/widths').
+*/
+
+/* Start points */
+$palm-lrg-start: 480 !default;
+$lap-start: 641 !default;
+$lap-sml-middle-start: 768 !default;
+$lap-lrg-start: 901 !default;
+$lap-lrg-middle-start: 1024 !default;
+$desk-start: 1200 !default;
+$desk-lrg-start: 1366 !default;
+
+/* End points */
+$palm-end: $lap-start - 1 !default;
+$lap-end: $desk-start - 1 !default;
+$lap-sml-end: $lap-lrg-start - 1 !default;
+$desk-sml-end: $desk-lrg-start - 1 !default;
+
+/* Readable breakpoints */
+
+/* Palm */
+$palm: $palm-end !default;
+$palm-lrg: $palm-lrg-start !default;
+
+/* Non-palm */
+$non-palm: $lap-start !default;
+
+/* Lap */
+$lap: $lap-start !default;
+$lap-sml-middle: $lap-sml-middle-start !default;
+$lap-lrg: $lap-lrg-start !default;
+$lap-lrg-middle: $lap-lrg-middle-start !default;
+
+/* Desk */
+$desk: $desk-start !default;
+$desk-lrg: $desk-lrg-start !default;
+
+/* [GRID/LAYOUT]
+-------------------------------------------------------*/
+/* Page container width */
+$page-container-width: 92% !default;
+
+/* Page container min width */
+$page-container-min-width: 220 !default;
+
+/* Page container max width */
+$page-container-max-width: 1600 !default;
+
+/* Page container gutter */
+$page-container-gutter: 4% !default;
+
+/* Grid */
+
+/* Gutter */
+$grid-gutter: $spacing-base !default;
+$grid-gutter-dbl: $spacing-dbl !default;
+$grid-gutter-half: $spacing-half !default;
+
+/* Push */
+$grid-push: false !default;
+
+/* Pull */
+$grid-pull: false !default;
+
+/* [COLOR PALETTE]
+-------------------------------------------------------*/
+/* Brand colour */
+$color-brand: #da291c !default;
+
+/* Black */
+$color-black: #000 !default;
+
+/* White */
+$color-white: #fff !default;
+
+/* Greys */
+
+/* Dark */
+$color-grey-dark: #242424 !default;
+
+/* Medium */
+$color-grey-med: #686868 !default;
+
+/* Light */
+$color-grey-light: #dfdfdf !default;
+
+/* Text */
+
+/* Base */
+$color-txt-base: $color-grey-med !default;
+
+/* Dark */
+$color-txt-dark: $color-grey-dark !default;
+
+/* Light */
+$color-txt-light: darken($color-grey-light, 15%) !default;
+
+/* Button colours */
+
+/* Primary */
+$color-btn-primary: #52c884 !default;
+
+/* Secondary */
+$color-btn-secondary: #256e9e !default;
+
+/* Link colours */
+$color-link: $color-btn-primary !default;
+
+$color-link-hover: darken($color-link, 10%) !default;
+
+/* Feedback colours */
+
+/* Error */
+$color-feedback-error: red !default;
+
+/* Success */
+$color-feedback-success: green !default;
+
+/* Warning */
+$color-feedback-warning: orange !default;
+
+/* Info */
+$color-feedback-info: blue !default;
+
+/* [FORM FEATURES]
+-------------------------------------------------------*/
+
+/* Use form base styles */
+$form-base-styles: true !default;
+
+/* Use disabling of zooming the `input`s and `select`s for iOS/iPhone and Android */
+$disable-zooming-of-form-elements-on-ios-android: true !default;
+
+/* [SPECIFIC BREAKPOINT CLASSES]
+-------------------------------------------------------*/
+
+/* Width classes - mainly used with the grid */
+$width-classes-at-breakpoint-palm-lrg: false !default;
+/* Note: we turn `non-palm` on by default as the grid needs this */
+$width-classes-at-breakpoint-non-palm: true !default;
+$width-classes-at-breakpoint-lap: false !default;
+$width-classes-at-breakpoint-lap-sml: false !default;
+$width-classes-at-breakpoint-lap-sml-middle: false !default;
+$width-classes-at-breakpoint-lap-lrg-middle: false !default;
+$width-classes-at-breakpoint-lap-lrg: false !default;
+$width-classes-at-breakpoint-desk: false !default;
+$width-classes-at-breakpoint-desk-sml: false !default;
+$width-classes-at-breakpoint-desk-lrg: false !default;
+
+/* Grid push/pull classes */
+
+/*
+	Note: be sure to turn on the `$grid-push` and `$grid-pull` booleans in the: 'GRID/LAYOUT -> Grid' section above.
+*/
+
+/* Push */
+$grid-push-classes-at-breakpoint-palm-lrg: false !default;
+$grid-push-classes-at-breakpoint-non-palm: false !default;
+$grid-push-classes-at-breakpoint-lap: false !default;
+$grid-push-classes-at-breakpoint-lap-sml: false !default;
+$grid-push-classes-at-breakpoint-lap-sml-middle: false !default;
+$grid-push-classes-at-breakpoint-lap-lrg-middle: false !default;
+$grid-push-classes-at-breakpoint-lap-lrg: false !default;
+$grid-push-classes-at-breakpoint-desk: false !default;
+$grid-push-classes-at-breakpoint-desk-sml: false !default;
+$grid-push-classes-at-breakpoint-desk-lrg: false !default;
+
+/* Pull */
+$grid-pull-classes-at-breakpoint-palm-lrg: false !default;
+$grid-pull-classes-at-breakpoint-non-palm: false !default;
+$grid-pull-classes-at-breakpoint-lap: false !default;
+$grid-pull-classes-at-breakpoint-lap-sml: false !default;
+$grid-pull-classes-at-breakpoint-lap-sml-middle: false !default;
+$grid-pull-classes-at-breakpoint-lap-lrg-middle: false !default;
+$grid-pull-classes-at-breakpoint-lap-lrg: false !default;
+$grid-pull-classes-at-breakpoint-desk: false !default;
+$grid-pull-classes-at-breakpoint-desk-sml: false !default;
+$grid-pull-classes-at-breakpoint-desk-lrg: false !default;
+
+/* Col classes - from the 'columns' abstraction */
+$col-classes-at-breakpoint-palm-lrg: false !default;
+$col-classes-at-breakpoint-non-palm: false !default;
+$col-classes-at-breakpoint-lap: false !default;
+$col-classes-at-breakpoint-lap-sml: false !default;
+$col-classes-at-breakpoint-lap-sml-middle: false !default;
+$col-classes-at-breakpoint-lap-lrg-middle: true !default;
+$col-classes-at-breakpoint-lap-lrg: false !default;
+$col-classes-at-breakpoint-desk: false !default;
+$col-classes-at-breakpoint-desk-sml: false !default;
+$col-classes-at-breakpoint-desk-lrg: false !default;
+
+/* [FLEXIBLE WIDTHS]
+-------------------------------------------------------*/
+/* Whole */
+$one-whole: 100% !default;
+
+/* Halves */
+$one-half: 50% !default;
+
+/* Thirds */
+$one-third: 33.333% !default;
+$two-thirds: 66.666% !default;
+
+/* Quarters */
+$one-quarter: 25% !default;
+$two-quarters: $one-half !default;
+$three-quarters: 75% !default;
+
+/* Fifths */
+$one-fifth: 20% !default;
+$two-fifths: 40% !default;
+$three-fifths: 60% !default;
+$four-fifths: 80% !default;
+
+/* Sixths */
+$one-sixth: 16.666% !default;
+$two-sixths: $one-third !default;
+$three-sixths: $one-half !default;
+$four-sixths: $two-thirds !default;
+$five-sixths: 83.333% !default;
+
+/* Sevenths */
+$one-seventh: (100/7)*1% !default;
+$two-sevenths: (100/7)*2% !default;
+$three-sevenths: (100/7)*3% !default;
+$four-sevenths: (100/7)*4% !default;
+$five-sevenths: (100/7)*5% !default;
+$six-sevenths: (100/7)*6% !default;
+
+/* Eighths */
+$one-eighth: 12.5% !default;
+$two-eighths: $one-quarter !default;
+$three-eighths: 37.5% !default;
+$four-eighths: $one-half !default;
+$five-eighths: 62.5% !default;
+$six-eighths: $three-quarters !default;
+$seven-eighths: 87.5% !default;
+
+/* Tenths */
+$one-tenth: 10% !default;
+$two-tenths: $one-fifth !default;
+$three-tenths: 30% !default;
+$four-tenths: $two-fifths !default;
+$five-tenths: $one-half !default;
+$six-tenths: $three-fifths !default;
+$seven-tenths: 70% !default;
+$eight-tenths: $four-fifths !default;
+$nine-tenths: 90% !default;
+
+/* Twelfths */
+$one-twelfth: 8.333% !default;
+$two-twelfths: $one-sixth !default;
+$three-twelfths: $one-quarter !default;
+$four-twelfths: $one-third !default;
+$five-twelfths: 41.666% !default;
+$six-twelfths: $one-half !default;
+$seven-twelfths: 58.333% !default;
+$eight-twelfths: $two-thirds !default;
+$nine-twelfths: $three-quarters !default;
+$ten-twelfths: $five-sixths !default;
+$eleven-twelfths: 91.666% !default;
+
+/* [MISC]
+-------------------------------------------------------*/
+/* Off-screen px value */
+$off-screen-distance: -9999px !default;
+
+/* `z-index` values */
+$z-index-high: 1000 !default;
+$z-index-max: 2147483647 !default;
+
+/* Common border radius */
+$border-radius: 3px !default;

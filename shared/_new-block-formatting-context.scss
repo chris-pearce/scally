@@ -1,0 +1,15 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> NEW BLOCK FORMATTING CONTEXT
+   ====================================================================================== */
+
+/*
+  Usage: makes the container take up remaining space next to the floated element, also prevents margin collapse.
+
+  Credit: https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_clearfix-me.scss
+*/
+
+%new-block-formatting-context {
+  display: table-cell;
+  vertical-align: top;
+  width: 10000px;
+}

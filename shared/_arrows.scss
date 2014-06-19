@@ -1,0 +1,126 @@
+/* ======================================================================================
+   @UTILS -> PLACEHOLDERS -> ARROWS
+   ====================================================================================== */
+
+/*
+	Usage: creates a CSS arrow on a given element, they're 12 locations the arrow can be placed. For full details see the 'Credit' URL.
+
+	Credit: https://github.com/csswizardry/inuit.css/blob/master/inuit.css/objects/_arrows.scss
+*/
+
+$arrow-size: $spacing-third !default;
+$arrow-border: 1 !default;
+$border: $arrow-size+px;
+$arrow: ($arrow-size - $arrow-border)+px;
+
+/* Forms the basis for any/all CSS arrows */
+%arrow {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    border-collapse: separate;
+  }
+
+  &:before {border: $border inset transparent;}
+
+  &:after {border: $arrow inset transparent;}
+}
+
+/* Define individual edges so we can combine what we need, when we need */
+
+/* Top */
+%arrow--top {
+  @extend %arrow;
+
+  &:before,
+  &:after {bottom: 100%;}
+}
+
+/* Upper */
+%arrow--upper {
+  @extend %arrow;
+
+  &:before {top: $arrow;}
+
+  &:after {top: $border;}
+}
+
+/* Middle */
+%arrow--middle {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    top: 50%;
+    margin-top: -$border;
+  }
+
+  &:after {margin-top: -$arrow;}
+}
+
+/* Lower */
+%arrow--lower {
+  @extend %arrow;
+
+  &:before {bottom: $arrow;}
+
+  &:after {bottom: $border;}
+}
+
+/* Bottom */
+%arrow--bottom {
+  @extend %arrow;
+
+  &:before,
+  &:after {top: 100%;}
+}
+
+/* Near */
+%arrow--near {
+  @extend %arrow;
+
+  &:before,
+  &:after {right: 100%;}
+}
+
+/* Left */
+%arrow--left {
+  @extend %arrow;
+
+  &:before {left: $arrow;}
+
+  &:after {left: $border;}
+}
+
+/* Center */
+%arrow--center {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    left: 50%;
+    margin-left: -$border;
+  }
+
+  &:after {margin-left: -$arrow;}
+}
+
+/* Right */
+%arrow--right {
+  @extend %arrow;
+
+  &:before {right: $arrow;}
+
+  &:after {right: $border;}
+}
+
+/* Far */
+%arrow--far {
+  @extend %arrow;
+
+  &:before,
+  &:after {left: 100%;}
+}

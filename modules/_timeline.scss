@@ -1,0 +1,101 @@
+/* ======================================================================================
+   @MODULES -> TIMELINE
+   ====================================================================================== */
+
+/*
+  A timeline typically for an event.
+
+  Styleguide Timeline
+*/
+
+.timeline {
+  position: relative;
+  /* Should be even number so it can be divided by 2 which is needed for positioning the line between `.timeline__date` */
+  @include to-rem(padding-left, 116);
+
+  > dt {
+    /* Gives it a bit of spacing between each sets of date */
+    @include to-rem(margin-top, $spacing-base);
+
+    @include respond-min($non-palm) {
+      @include to-rem(margin-top, $spacing-dbl);
+    }
+
+    &:first-child {margin-top: 0;}
+
+    /* Line connecting `.timeline__date` */
+    &:before,
+    &:last-of-type ~ dd:before {
+      content: "";
+      display: block;
+      @include to-rem(width, 4);
+      /* Allows the line to sit under `.timeline__date` */
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      /* left = `.timeline__date` left position + (`.timeline__date` width / 2) - (width of line / 2) */
+      @include to-rem(left, 50);
+      background-color: $color-grey-light;
+    }
+
+    /* Hide the line if there's only 1 instance of the date */
+    &:only-of-type:before {display: none;}
+
+    /*
+      For the last `dt`, display a white line from the `dd` to cover up the bottom part of the line coming from `.timeline dt:before`.
+    */
+    &:last-of-type ~ dd {
+      position: relative;
+
+      &:before {
+        /*
+          left = padding-left of `.timeline` - position left of `.timeline__date` - (width of `.timeline__date` / 2) - width of `.timeline:before`.
+        */
+        @include to-rem(left, -66);
+        /*
+          Needs to match `margin-bottom` of `dd`. This is to shift the line up so it'll cover the the entire line coming from `dt:before`.
+        */
+        @include to-rem(top, -($spacing-half));
+        /* Needs to match background that the timeline sits on */
+        background-color: $color-white;
+      }
+    }
+  }
+
+  /* Start & finish times */
+  > dd {
+    background-color: $color-grey-light;
+    border-radius: 2px;
+    @include to-rem(padding, $spacing-half $spacing-base);
+    @include to-rem(margin-bottom, $spacing-half);
+
+    &:last-child {margin-bottom: 0;}
+  }
+}
+
+  /* Date */
+  .timeline__date {
+    /* Allows the date to sit on top of the line */
+    z-index: 2;
+    position: absolute;
+    /* Should be even number so it can be divided by 2 which is needed for positioning the line between `.timeline__date` */
+    @include to-rem(left, 14);
+    background-color: $color-grey-dark;
+    color: $color-white;
+    text-align: center;
+    border-radius: 50%;
+    text-transform: uppercase;
+    @include to-rem(padding-top, 18);
+    /*
+      `width` and `height` should be even number so it can be divided by 2 which is needed for positioning the line between `timeline__date`.
+    */
+    @include to-rem(width height, 76);
+    @include font-size($font-size);
+    font-weight: normal;
+
+    span {
+      display: block;
+      @include font-size($font-size-deca, 0.8);
+    }
+  }

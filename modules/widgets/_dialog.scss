@@ -1,0 +1,43 @@
+/* ======================================================================================
+   @MODULES -> WIDGETS -> DIALOG
+   ====================================================================================== */
+
+/*
+	A dialog in the form of an overlay i.e. sits on top of the entire UI. They're two types of dialog: default dialog (appears via an action e.g. when a dialog trigger is selected) and an alert dialog (appears on page load and only shows on initial page visit).
+*/
+
+/* Hide dialog and overlay by default */
+.dialog,
+.overlay--dialog {display: none;}
+
+/* When dialog is active (`body` element) */
+.is-dialog-active {
+	/*
+		Prevent scrolling on the `body` element when the dialog is visible, this is in addition to the `.dialog-prevent-overflow-x` hack below as this is applied via JS so applying to the `body` element prevents supported browsers from the lag of JS being applied.
+	*/
+	overflow: hidden;
+
+	/* Show dialog and overlay */
+	.dialog,
+	.overlay--dialog {display: block;}
+}
+
+.dialog {
+	position: fixed;
+	z-index: $z-index-high+4;
+	@include to-rem(top, $spacing-half);
+	left: 4%;
+	right: 4%;
+}
+
+/*
+	A hack to prevent the main UI under the dialog/overlay from being scrolled vertically as iOS/Android do not support `overflow: hidden` on the `body` / `html` elements. This `div` will be injected via JS.
+*/
+.dialog-prevent-overflow-x {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

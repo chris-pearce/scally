@@ -1,0 +1,26 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> VERTICAL ALIGNMENT
+   ====================================================================================== */
+
+/*
+  Vertically align an element within its parent via CSS `display: table`.
+
+  .vert-align--left         - Left alignment
+
+  Styleguide Vertical Alignment
+*/
+
+.vert-align {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+  .vert-align__inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    /* Modifier: left alignment */
+    .vert-align--left & {text-align: left;}
+  }
