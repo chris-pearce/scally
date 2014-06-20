@@ -15,6 +15,12 @@
 	Credit: https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
 */
 
+body {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
+  background-size: $line-height*2 $line-height*2;
+}
+
 /* Are there any empty elements in your page? */
 :empty {outline: 5px solid yellow !important;}
 

@@ -79,11 +79,13 @@ main {
 }
 
 /* Reset `box-sizing` to the nice `border-box` */
-* {
-	&,
-	&:before,
-	&:after {@include prefix(box-sizing, border-box);}
-}
+@if $friendly-box-model == true {
+  * {
+    &,
+    &:before,
+    &:after {@include prefix(box-sizing, border-box);}
+  }
+}/* endif */
 
 /* Lists */
 ol,

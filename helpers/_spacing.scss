@@ -4,6 +4,11 @@
 
 /*
 	Apply spacing via the base bottom margin or variants of it e.g. half/double, can also apply top margins, or to remove spacing applied via margins use any of the `.flush` classes.
+
+  N.B. Should be used to modify the default spacing between objects (not between nodes of the same object)
+ * Please use judiciously. You want to be using defaults most of the time, these are exceptions!
+ *
+ * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/whitespace/_whitespace.scss
 */
 
 /* Base */

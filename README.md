@@ -1,5 +1,7 @@
 # scally v1.0
 
+>> A bit rough around the edges but you don't have to do much work
+
 ## Key features
 
 - Follows [OOCSS](http://oocss.org/) methodologies.

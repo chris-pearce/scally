@@ -13,7 +13,7 @@
  * Hide from both screen readers and the document flow.
  */
 
-.h-hide {
+.h-hide-fully {
 	display: none !important;
 	visibility: hidden !important;
 }
@@ -22,7 +22,7 @@
  * Reverse it.
  */
 
-.h-show {
+.h-show-fully {
 	display: block !important;
   visibility: visible !important;
 }

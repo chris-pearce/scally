@@ -9,13 +9,15 @@
 .icon:before {
 	@extend %sprite-icon;
 	speak: none;
-	font-family: "icons";
+	font-family: "Icons";
   font-style: normal;
   font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	text-decoration: inherit;
 	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Set icons */

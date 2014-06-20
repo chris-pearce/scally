@@ -853,17 +853,6 @@
 	Placeholder selectors cannot be extended within media queries therefore to keep things DRY we use a `@mixin` to contain it's styles and when a selector is in a media query the `@mixin` needs to be called not the placeholder selector.
 */
 
-/* Disguised link */
-@mixin disguised-link {
-	color: inherit;
-	text-decoration: inherit;
-	cursor: text;
-
-	&:visited,
-	&:hover,
-	&:focus {color: inherit;}
-}
-
 /* Clear fix */
 @mixin clear-fix {
 	&:after {
