@@ -1,0 +1,70 @@
+/* ======================================================================================
+   @CORE -> BASE -> QUOTES
+   ====================================================================================== */
+
+/**
+ * Inline
+ *
+ * @credit html5doctor.com/blockquote-q-cite
+ */
+
+q {
+	quotes: "\2018" "\2019" "\201C" "\201D";
+
+	&:before {
+		content: "\2018";
+		content: open-quote;
+	}
+
+	&:after {
+		content: "\2019";
+		content: close-quote;
+	}
+
+	q {
+		&:before {
+			content: "\201C";
+			content: open-quote;
+		}
+
+		&:after {
+			content: "\201D";
+			content: close-quote;
+		}
+	}
+}
+
+/**
+ * Block
+ *
+ * @credit html5doctor.com/blockquote-q-cite
+ */
+
+blockquote {
+  quotes: "\201C" "\201D";
+
+  p:before {
+    content: "\201C";
+    content: open-quote;
+  }
+
+  p:after {
+    content: "";
+    content: no-close-quote;
+  }
+
+  p:last-of-type:after {
+    content: "\201D";
+    content: close-quote;
+  }
+
+  q:before {
+    content: "\2018";
+    content: open-quote;
+  }
+
+  q:after {
+    content: "\2019";
+    content: close-quote;
+  }
+}

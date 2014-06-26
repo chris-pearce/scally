@@ -1,0 +1,25 @@
+/* ======================================================================================
+   @CORE -> MIXINS -> RETINA-READY IMAGES
+   ====================================================================================== */
+
+/**
+ * Adds retina image support.
+ *
+ * @example
+   .foo {
+      background: url("logo.png") no-repeat;
+      @include img-2x("logo@2x.png", 100px, 25px);
+    }
+  *
+  * @credit
+  * http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+ */
+
+@mixin retina-image($image, $width, $height, $sledgehammer: "") {
+  @media (-o-min-device-pixel-ratio: 5/4),
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (min-resolution: 120dpi) {
+            background-image: url($image)#{$sledgehammer};
+            background-size: $width $height#{$sledgehammer};
+  }
+}

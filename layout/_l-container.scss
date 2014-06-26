@@ -1,0 +1,42 @@
+/* ======================================================================================
+   @LAYOUT -> CONTAINER
+   ====================================================================================== */
+
+.l-container,
+.l-container--palm {
+  width: $page-container-width;
+  @include to-rem(min-width, $page-container-min-width);
+  @include to-rem(max-width, $page-container-max-width);
+  margin: 0 auto;
+
+  /* Print */
+  @media print {
+    width: auto;
+  }
+}
+
+/* Modifiers: apply only at palm or non-palm */
+@include respond-min($non-palm) {
+  .l-container--off-non-palm,
+  .l-container--palm {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .l-container-non-palm {
+    width: $page-container-width;
+    @include to-rem(min-width, $page-container-min-width);
+    @include to-rem(max-width, $page-container-max-width);
+    margin: 0 auto;
+  }
+}
+
+/* Modifier: wide container */
+.l-container--wide {
+  width: auto;
+  max-width: none;
+}
+
+/* Modifier: position relative container */
+.l-container--position {position: relative;}

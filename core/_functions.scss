@@ -1,0 +1,73 @@
+/* ======================================================================================
+   @UTILS -> FUNCTIONS
+   ====================================================================================== */
+
+
+/* Maths helpers
+   ========================================================================== */
+
+/**
+ * A few maths helpers mainly used for halving and doubling numbers.
+ *
+ * @example
+   .foo {padding: halve(3.2px);}
+ *
+ */
+
+// Quarter
+@function quarter($number) {
+  @return round($number / 4);
+}
+
+// Third
+@function third($number) {
+  @return round($number / 3);
+}
+
+// Halve
+@function halve($number) {
+  @return round($number / 2);
+}
+
+// Double
+@function double($number) {
+  @return round($number * 2);
+}
+
+// Triple
+@function triple($number) {
+  @return round($number * 3);
+}
+
+// Quadruple
+@function quadruple($number) {
+  @return round($number * 4);
+}
+
+
+/* Convert `px` to `em`s or `rem`s
+   ========================================================================== */
+
+/**
+ * To convert `px` to `em`s or `rem`s.
+ *
+ * N.B. these functions should only ever be used when declaring `em` / `rem` values within another
+ * mixin, the `to-em` / `to-rem` mixins should always be the default use case.
+ *
+ * @credit https://gist.github.com/2237465
+ *
+ * @example
+   .foo {margin-left: to-em(8, 20);}
+   .foo {padding: to-rem(8) 0;}
+ *
+ */
+
+// `em`
+@function to-em($pxval, $context: $font-size) {
+	@return #{$pxval / $context}em;
+}
+
+// `rem`
+@function to-rem($pxval) {
+	@return #{$pxval / $font-size}rem;
+}

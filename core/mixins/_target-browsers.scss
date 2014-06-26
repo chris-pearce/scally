@@ -1,0 +1,44 @@
+/* ======================================================================================
+   @CORE -> MIXINS -> TARGET BROWSERS
+   ====================================================================================== */
+
+/**
+ * Target specific browsers.
+ *
+ * N.B. these mixins should be avoided at all costs (last resort). And Mozilla mixin cannot be
+ * nested in a style declaration, rather it has to exist on it's own rule.
+ *
+ * @example
+   @include target-webkit {
+     .foo {background: red;}
+   }
+
+   @include target-mozilla {
+     .foo {background: red;}
+   }
+
+   @include ie-10-up {
+     .foo {background: red;}
+   }
+ */
+
+// Webkit
+@mixin target-webkit {
+  @media all and (-webkit-min-device-pixel-ratio:0) {
+		@content;
+	}
+}
+
+// Mozilla
+@mixin target-mozilla {
+	@-moz-document url-prefix() {
+		@content;
+	}
+}
+
+// IE 10+
+@mixin ie-10-up {
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+	}
+}

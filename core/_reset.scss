@@ -1,0 +1,135 @@
+/* ======================================================================================
+   @UTILS -> RESET
+   ====================================================================================== */
+
+/**
+ * In addition to normalize.css we also apply a reset which mainly removes all margins, paddings,
+ * and borders, from all elements, and applies the nice `border-box` value for `box-sizing`. And a
+ * few other things.
+ */
+
+
+/**
+ * Remove all margins, paddings, and borders.
+ *
+ * N.B. the complete list of HTML5 elements
+ * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+ */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strong,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+sub,
+sup,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+time,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary,
+main {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/**
+ * Reset the `box-sizing` property to the more friendly `border-box` value.
+ *
+ * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
+ * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
+ * on :)
+ */
+
+@if $friendly-box-model == true {
+  * {
+    &,
+    &:before,
+    &:after {box-sizing: border-box;}
+  }
+}/* endif */
+
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+
+u,
+ins {text-decoration: none;}
+
+
+/**
+ * Ensure `s` elements always get a strikethrough.
+ */
+
+s {text-decoration: line-through;}
+
+
+/**
+ * Suppress the focus outline on links that cannot be accessed via a keyboard. This prevents an
+ * unwanted focus outline from appearing around elements that might still respond to pointer events.
+ *
+ * @credit https://github.com/suitcss/
+ */
+
+[tabindex="-1"]:focus {outline: none !important;}

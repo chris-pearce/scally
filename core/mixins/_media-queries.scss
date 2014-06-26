@@ -1,0 +1,221 @@
+/* ======================================================================================
+   @CORE -> MIXINS -> MEDIA QUERIES
+   ====================================================================================== */
+
+/**
+ * Setup media queries for minimum and maximum widths/heights, with width being the default,
+ * also includes the ability to apply ranges.
+ *
+ * N.B. learn more: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
+ *
+ * @example
+   @include respond-min($lap) {
+     .foo {background: red;}
+   }
+
+   @include respond-min($lap, true) {
+     .foo {background: red;}
+   }
+
+   @include respond-max($palm-end) {
+     .foo {background: red;}
+   }
+
+   @include respond-range(500, 780) {
+     .foo {background: red;}
+   }
+
+   @include respond-range-fixed(lap-lrg) {
+     .foo {background: red;}
+   }
+ */
+
+
+/* Simple minimum and maximum width/height
+   ========================================================================== */
+
+// Minimum
+@mixin respond-min($value, $height: false) {
+
+  // Height
+  @if $height == true {
+    @media (min-height: ($value / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width
+  @else {
+		@media (min-width: ($value / 16)+em) {
+			@content;
+		}
+	}
+}
+
+// Maximum
+@mixin respond-max($value, $height: false) {
+
+  // Height
+  @if $height == true {
+    @media (max-height: ($value / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width
+  @else {
+		@media (max-width: ($value / 16)+em) {
+			@content;
+		}
+	}
+}
+
+/* Ranges
+   ========================================================================== */
+
+/**
+ * Using the `and` logical operator.
+ *
+ * N.B. the media query will only apply when both arguments are true.
+ */
+
+// Accepts a minimum and maximum width and height range
+@mixin respond-range($min-value, $max-value, $height: false) {
+
+  // Height range
+  @if $height == true {
+    @media (min-height: ($min-value / 16)+em) and (max-height: ($max-value / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width range
+  @else {
+		@media (min-width: ($min-value / 16)+em) and (max-width: ($max-value / 16)+em) {
+			@content;
+		}
+	}
+}
+
+// Accepts a minimum width and height range
+@mixin respond-range-mixed-min($value-1, $value-2) {
+  @media (min-width: ($value-1 / 16)+em) and (min-height: ($value-2 / 16)+em) {
+    @content;
+  }
+}
+
+// Accepts a maximum width and height range
+@mixin respond-range-mixed-max($value-1, $value-2) {
+  @media (max-width: ($value-1 / 16)+em) and (max-height: ($value-2 / 16)+em) {
+    @content;
+  }
+}
+
+/**
+ * Grouped (comma-seperated).
+ *
+ * N.B. the media query will apply if any of the arguments are true.
+ */
+
+// Accepts 2 minimum width and height values
+@mixin respond-group-min($value-1, $value-2, $height: false) {
+
+  // Height
+  @if $height == true {
+    @media (min-height: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width
+  @else {
+		@media (min-width: ($value-1 / 16)+em), (min-width: ($value-2 / 16)+em) {
+			@content;
+		}
+	}
+}
+
+// Accepts 2 maximum width and height values
+@mixin respond-group-max($value-1, $value-2, $height: false) {
+
+  // Height
+  @if $height == true {
+    @media (max-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width
+  @else {
+    @media (max-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
+      @content;
+    }
+  }
+}
+
+// Accepts 1 minimum width/height and 1 maximum width/height value */
+@mixin respond-group-min-max($value-1, $value-2, $height: false) {
+
+  // Height
+  @if $height == true {
+    @media (min-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
+      @content;
+    }
+  }
+
+  // Width
+  @else {
+		@media (min-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
+			@content;
+		}
+	}
+}
+
+// Accepts 1 minimum width and 1 minimum height value
+@mixin respond-group-min-width-height($value-1, $value-2) {
+  @media (min-width: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
+    @content;
+  }
+}
+
+// Accepts 1 maximum width and 1 maximum height value
+@mixin respond-group-max-width-height($value-1, $value-2) {
+  @media (max-width: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
+    @content;
+  }
+}
+
+/**
+ * Fixed width ranges using the pre-defined breakpoints
+ */
+
+@mixin respond-range-fixed($respond-range) {
+
+	// Lap
+	@if $respond-range == lap {
+		@media (min-width: ($lap-start / 16)+em) and (max-width: ($lap-end / 16)+em) {
+			@content;
+		}
+	}
+
+	// Lap small
+	@if $respond-range == lap-sml {
+		@media (min-width: ($lap-start / 16)+em) and (max-width: ($lap-sml-end / 16)+em) {
+			@content;
+		}
+	}
+
+	// Lap large
+	@if $respond-range == lap-lrg {
+		@media (min-width: ($lap-lrg-start / 16)+em) and (max-width: ($lap-end / 16)+em) {
+			@content;
+		}
+	}
+
+	// Desk small
+	@if $respond-range == desk-sml {
+		@media (min-width: ($desk-start / 16)+em) and (max-width: ($desk-sml-end / 16)+em) {
+			@content;
+		}
+	}
+}

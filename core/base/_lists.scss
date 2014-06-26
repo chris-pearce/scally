@@ -1,0 +1,64 @@
+/* ======================================================================================
+   @CORE -> BASE -> LISTS
+   ====================================================================================== */
+
+/**
+ * List styles applied by the `list` class rather than being set by default.
+ */
+
+
+/**
+ * Unordered and ordered lists
+ */
+
+.list {
+	@extend %base-bottom-spacing;
+
+	/**
+	 * Left indent
+	 */
+
+	&,
+	ul,
+	ol {
+		@include to-rem(margin-left, $spacing-base);
+
+		@include respond-min($non-palm) {
+			@include to-rem(margin-left, $spacing-double);
+		}
+	}
+}
+
+	/**
+	 * Unordered list bullets
+	 */
+
+	ul.list {
+		list-style: disc;
+
+		ul {
+			list-style: circle;
+
+				ul {list-style: square;}
+		}
+	}
+
+	/**
+	 * Ordered list bullets
+	 */
+
+	ol.list {
+		list-style: decimal;
+
+		ol {
+			list-style: lower-alpha;
+
+				ol {list-style: lower-roman;}
+		}
+	}
+
+/**
+ * Definition list
+ */
+
+dl {@extend %base-bottom-spacing;}

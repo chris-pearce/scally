@@ -1,0 +1,14 @@
+/* ======================================================================================
+   @CORE -> PLACEHOLDERS -> SMOOTH TOUCH SCOLLING
+   ====================================================================================== */
+
+/**
+ * Enable smooth scolling on touch devices.
+ */
+
+.touch {
+  %base-smooth-touch-scrolling {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}

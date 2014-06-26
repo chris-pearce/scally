@@ -1,0 +1,63 @@
+/* ======================================================================================
+   @CORE -> MIXINS -> GRADIENTS
+   ====================================================================================== */
+
+/**
+ * Simple CSS3 linear gradients with IE 9/Webkit fallbacks.
+ *
+ * N.B.
+ * - This mixin is very basic in that it only caters for two colour's ('from' and 'to'), no colour
+ * stops, only linear (no radial), not repeating, etc. in most cases this is all you need.
+ * - Keep an eye on this: http://caniuse.com/#feat=css-gradients to see when the -webkit- vendor
+ * prefix can be removed, in the meantime any direction keywords used need to be reversed, see:
+ * http://generatedcontent.org/post/37949105556/updateyourcss3).
+ * - There is support for IE 9 using the `-ms-filter` property but be mindful that if it's turned on
+ * and there's a `border-radius` property being used then the element will not get rounded corners.
+ * - In order to skip over optional arguments then named arguments need to be used: `$from: #7a7a7a,
+ * $to: #1a1a1a,` so that we avoid having to redundantly redeclare the optional arguments,
+ * see: http://stackoverflow.com/questions/14435927/skipping-an-optional-argument-in-sass-mixin.
+ * - Handy reminders:
+ *   - Direction keywords: 'top', 'right', 'bottom', 'left', 'top left', 'top right', 'bottom left'
+ *   and 'bottom right'.
+ *   - Degree values:
+ *     - 0deg is equivalent to top, 90deg is equivalent to right, 180deg is equivalent to bottom,
+ *     270deg is equivalent to left and 360deg brings you back to to top again.
+ *     - How to support old syntax: "If you use an angle, the starting point of the gradient line
+ *     has shifted. Previously 0deg started at the East position. Angles increased in an
+ *     anticlockwise direction, such that 90deg started at the North position. With the unprefixed
+ *     syntax the gradient line for 0deg starts at the North position and the angle increases
+ *     clockwise. The formula for switching from the old the new degree value is
+ *     abs(oldDegValue − 450) mod 360."
+ *
+ * @example
+   @include linear-gradient(#f63, #ff6);
+   @include linear-gradient(#f63, #ff6, top left, bottom right);
+   @include linear-gradient($from: #f63, $to: #ff6, $ie-9-filter: true);
+   @include linear-gradient(#f63, #ff6, bottom, top, true, true, true, $color-black);
+ */
+
+// Using 'direction' keywords
+@mixin linear-gradient($from, $to, $dir: bottom, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: "") {
+	@if $override-bg-color == true {
+		background-color: $bg-color-override;
+	} @else {
+		background-color: $to;
+	}
+	background-image: linear-gradient(to $dir, $from, $to);
+	@if $ie-9-filter == true {
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($from)}', endColorstr='#{ie-hex-str($to)}'));
+	}
+}
+
+// Using 'degree' values
+@mixin linear-gradient-deg($from, $to, $deg: 180deg, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: "") {
+	@if $override-bg-color == true {
+		background-color: $bg-color-override;
+	} @else {
+		background-color: $to;
+	}
+	background-image: linear-gradient($deg, $from, $to);
+	@if $ie-9-filter == true {
+		-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($from)}', endColorstr='#{ie-hex-str($to)}'));
+	}
+}

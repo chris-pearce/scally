@@ -1,0 +1,64 @@
+/* ======================================================================================
+   @ABSTRACTIONS -> DIVIDER
+   ====================================================================================== */
+
+/*
+  Apply a dividing line between two elements.
+
+  .divider-btm/top--dbl             - Double spacing
+  .divider-btm/top--half            - Half spacing
+  .divider-btm/top--dbl-non-palm    - Double spacing only at non palm
+  .divider-btm/top--palm            - Base spacing only at palm
+
+	Styleguide Divider
+*/
+
+/* Shared */
+.divider-btm,
+.divider-top {
+  border-style: solid;
+  border-color: $$color-grey-medium;
+}
+
+/* Bottom */
+.divider-btm {
+	@include to-rem(padding-bottom margin-bottom, $spacing-base);
+  border-bottom-width: 1px;
+}
+
+/* Top */
+.divider-top {
+  @include to-rem(padding-top margin-top, $spacing-base);
+  border-top-width: 1px;
+}
+
+/* Modifier: larger spacing */
+.divider-btm--dbl {@include to-rem(padding-bottom margin-bottom, $spacing-dbl);}
+
+.divider-top--dbl {@include to-rem(padding-top margin-top, $spacing-dbl);}
+
+/* Modifier: smaller spacing */
+.divider-btm--half {@include to-rem(padding-bottom margin-bottom, $spacing-half);}
+
+.divider-top--half {@include to-rem(padding-top margin-top, $spacing-half);}
+
+/* Modifiers at breakpoints */
+@include respond-min($non-palm) {
+  /* Modifier: base spacing only at non palm */
+  .divider-btm--palm {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .divider-top--palm {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  /* Modifier: larger spacing only at non palm */
+  .divider-btm--dbl-non-palm {@include to-rem(padding-bottom margin-bottom, $spacing-dbl);}
+
+  .divider-top--dbl-non-palm {@include to-rem(padding-top margin-top, $spacing-dbl);}
+}

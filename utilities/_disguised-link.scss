@@ -1,0 +1,18 @@
+/* ======================================================================================
+   @OBJECTS & ABSTRACTIONS -> DISGUISED LINK
+   ====================================================================================== */
+
+/*
+	Make a link not look like a link.
+*/
+
+%disguised-link,
+.disguised-link {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: text;
+
+  &:visited,
+  &:hover,
+  &:focus {color: inherit;}
+}

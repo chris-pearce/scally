@@ -1,0 +1,34 @@
+/* ======================================================================================
+   @CORE -> MIXINS -> FONT SIZE
+   ====================================================================================== */
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm).
+ *
+ * N.B.
+ * - The line height sets the `line-height` to a multiple of `$line-height` that's not smaller than
+ * `$font-size`, this can be overridden.
+ * - `$sledgehammer` is an optional argument that allows for the `!important` keyword to be specified,
+ * when the optional `$line-height-val` argument does not need to be included then it has to be
+ * called using a named argument: `$sledgehammer: !important` so that we can skip over
+ * `$line-height-val` avoiding having to redundantly redeclare it.
+ *
+ * @example
+   @include font-size(18);
+   @include font-size(12, 1.5);
+   @include font-size(24, 1, !important);
+   @include font-size(24, $sledgehammer: !important);
+ *
+ * @credit
+ * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_mixins.scss
+ */
+
+@mixin font-size($font-size-val, $line-height-val: "", $sledgehammer: false) {
+	$important: if($sledgehammer, "!important", "");
+    font-size: ($font-size-val / $font-size)+rem#{$important};
+	@if $line-height-val == "" {
+		line-height: ceil($font-size-val / $line-height) * ($line-height / $font-size-val);
+	} @else {
+		line-height: #{$line-height-val};
+	}
+}
