@@ -1,4 +1,4 @@
-﻿# Core
+﻿# Scally Core
 
 ## Base
 

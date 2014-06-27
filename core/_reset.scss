@@ -111,6 +111,14 @@ main {
 
 
 /**
+ * Reset lists
+ */
+
+ul,
+ol {list-style: none;}
+
+
+/**
  * Remove underlines from potentially troublesome elements
  */
 
