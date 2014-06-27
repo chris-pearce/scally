@@ -23,7 +23,7 @@
 	/* Heading */
 	.accordion__header {
 		@extend %transition-subtle;
-		@include to-em(padding, $spacing-quarter $spacing-half);
+		@include to-rem(padding, $spacing-quarter $spacing-half);
 		background-color: $$color-grey-medium;
 		font-size: 100%;
 		margin: 0;
@@ -70,11 +70,11 @@
 
 	/* Content */
 	.accordion__content {
-		@include to-em(padding, $spacing-half);
+		@include to-rem(padding, $spacing-half);
 		display: none;
 
 		@include respond-min($non-palm) {
-			@include to-em(padding, $spacing-base);
+			@include to-rem(padding, $spacing-base);
 		}
 
 		/* Non JS users */

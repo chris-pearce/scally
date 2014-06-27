@@ -32,7 +32,7 @@
 
     /* Count */
     .pager__count {
-      @include to-em(padding-top padding-bottom, $spacing-half);
+      @include to-rem(padding-top padding-bottom, $spacing-half);
       display: inline-block;
 
       /* Turn off bottom padding when they're no prev/next links */

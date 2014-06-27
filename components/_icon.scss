@@ -29,9 +29,9 @@
 /* Modifiers */
 
 /* Modifier: apply some spacing between the icon element and adjacent text */
-.icon--spacing:before {@include to-em(margin-right, $spacing-sixth);}
+.icon--spacing:before {@include to-rem(margin-right, $spacing-sixth);}
 
-.icon--spacing-lrg:before {@include to-em(margin-right, $spacing-third);}
+.icon--spacing-lrg:before {@include to-rem(margin-right, $spacing-third);}
 
 /* Modifier: remove the negative 1px top positiong */
 .icon--flush-top:before {position: static;}

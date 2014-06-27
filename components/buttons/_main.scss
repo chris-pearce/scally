@@ -13,7 +13,7 @@
 
 .btn--main {
   line-height: normal;
-  @include to-em(padding, $spacing-half $spacing-base);
+  @include to-rem(padding, $spacing-half $spacing-base);
   border-radius: $border-radius;
 
   /* Bg colour combined with disabled state */
@@ -41,4 +41,4 @@
 }
 
 /* Modifier: compact */
-.btn--compact {@include to-em(padding, $spacing-half);}
+.btn--compact {@include to-rem(padding, $spacing-half);}

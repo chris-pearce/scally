@@ -16,7 +16,7 @@
 
 	.split__title {
 		float: left;
-		@include to-em(margin-right, $spacing-quarter);
+		@include to-rem(margin-right, $spacing-quarter);
 
 		@include respond-min($non-palm) {
 			text-align: left;

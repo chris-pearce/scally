@@ -63,7 +63,7 @@
 
 	/* Messages */
 	.form-field__msg {
-		margin-top: to-em($spacing-micro);
+		margin-top: to-rem($spacing-micro);
 		@include font-size($font-size-sml);
 	}
 

@@ -16,7 +16,7 @@
 */
 
 .feedback {
-	@include to-em(padding, $spacing-quarter $spacing-half);
+	@include to-rem(padding, $spacing-quarter $spacing-half);
 
   &,
   a {color: $color-white;}
@@ -76,14 +76,14 @@
 /* Modifier: block */
 .feedback--block {
   @extend %bottom-spacing;
-  @include to-em(padding-top padding-bottom, $spacing-half);
+  @include to-rem(padding-top padding-bottom, $spacing-half);
 
   .hn,
   p,
   .list {margin-bottom: 0;}
 
   p,
-  .list {margin-top: to-em($spacing-quarter);}
+  .list {margin-top: to-rem($spacing-quarter);}
 }
 
 /* Modifier: inline */

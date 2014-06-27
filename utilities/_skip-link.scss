@@ -16,7 +16,7 @@
 		left: 0;
 		top: 0;
 		width: 100%;
-		@include to-em(padding, $spacing-third 0);
+		@include to-rem(padding, $spacing-third 0);
 		background-color: rgba($color-brand, 0.8);
 		color: $color-white;
 		text-align: center;

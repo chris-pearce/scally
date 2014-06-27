@@ -49,4 +49,4 @@
 .btn--lrg-txt {@include font-size($font-size-lrg, normal);}
 
 /* Modifier: apply right spacing for adjacent buttons */
-.btn--spacing {@include to-em(margin-right, $spacing-quarter);}
+.btn--spacing {@include to-rem(margin-right, $spacing-quarter);}
