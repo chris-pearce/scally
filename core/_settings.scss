@@ -1,5 +1,5 @@
 /* ======================================================================================
-   @UTILS -> SETTINGS
+   @CORE -> SETTINGS
    ====================================================================================== */
 
 /**
@@ -161,8 +161,15 @@ $font-family-mono: "Courier New", Courier, monospace !default;
 /* Spacing
    ========================================================================== */
 
-// Base
+/**
+ * Base
+ */
+
 $spacing-base: $line-height !default;
+
+/**
+ * Increase from base
+ */
 
 // Double
 $spacing-double: $spacing-base * 2 !default;
@@ -172,6 +179,10 @@ $spacing-triple: $spacing-base * 3 !default;
 
 // Quadruple
 $spacing-quadruple: $spacing-base * 4 !default;
+
+/**
+ * Decrease from base
+ */
 
 // Half
 $spacing-half: $spacing-base / 2 !default;
@@ -312,13 +323,22 @@ $grid-gutter-half: $spacing-half !default;
 /* Color palette
    ========================================================================== */
 
-// Brand
+/**
+ * Brand
+ */
+
 $color-brand: #da291c !default;
 
-// Black
+/**
+ * Black
+ */
+
 $color-black: #000 !default;
 
-// White
+/**
+ * White
+ */
+
 $color-white: #fff !default;
 
 /**
@@ -495,11 +515,12 @@ $eleven-twelfths: (100/12)*11% !default;
  * N.B. visit here for the full details of this technique:
  * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
  *
- * @credit http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ * @credit
+ * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
  */
 
 // Update according to your project elements
-$z-index-elements: header, main, footer;
+$z-index-elements: header, main, footer !default;
 
 /**
  * High value

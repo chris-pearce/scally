@@ -4,6 +4,9 @@
 
 /**
  * Enable smooth scolling on touch devices.
+ *
+ * N.B. you'll need to apply touch event detection by way of a class being appended to either the
+ * `html` or `body`. We recommend Modernizr for this: http://modernizr.com/.
  */
 
 .touch {

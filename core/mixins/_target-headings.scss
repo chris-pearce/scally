@@ -6,8 +6,8 @@
  * Style any number of headings in one fell swoop.
  *
  * @example
- * @include headings(1, 3) {color: red;}
- * @include headings(1, 3, true) {color: red;}
+   @include headings(1, 3) {color: red;}
+   @include headings(1, 3, true) {color: red;}
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss

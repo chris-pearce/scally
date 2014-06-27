@@ -14,10 +14,7 @@
 .list {
 	@extend %base-bottom-spacing;
 
-	/**
-	 * Left indent
-	 */
-
+	// Left indent
 	&,
 	ul,
 	ol {
@@ -56,6 +53,7 @@
 				ol {list-style: lower-roman;}
 		}
 	}
+
 
 /**
  * Definition list

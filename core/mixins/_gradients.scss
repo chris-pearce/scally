@@ -3,7 +3,7 @@
    ====================================================================================== */
 
 /**
- * Simple CSS3 linear gradients with IE 9/Webkit fallbacks.
+ * Simple CSS3 linear gradients with IE 9 fallback (if required).
  *
  * N.B.
  * - This mixin is very basic in that it only caters for two colour's ('from' and 'to'), no colour
@@ -37,7 +37,7 @@
  */
 
 // Using 'direction' keywords
-@mixin linear-gradient($from, $to, $dir: bottom, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: "") {
+@mixin linear-gradient($from, $to, $dir: bottom, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: null) {
 	@if $override-bg-color == true {
 		background-color: $bg-color-override;
 	} @else {
@@ -50,7 +50,7 @@
 }
 
 // Using 'degree' values
-@mixin linear-gradient-deg($from, $to, $deg: 180deg, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: "") {
+@mixin linear-gradient-deg($from, $to, $deg: 180deg, $ie-9-filter: false, $override-bg-color: false, $bg-color-override: null) {
 	@if $override-bg-color == true {
 		background-color: $bg-color-override;
 	} @else {

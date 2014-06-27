@@ -1,14 +1,17 @@
 @if $debug-mode == true {
 
 /* ======================================================================================
-   @UTILS -> @DEBUG
+   @CORE -> @DEBUG
    ====================================================================================== */
 
 /**
  * Enable this stylesheet to visually detect any improperly nested or potentially invalid markup,
  * or any potentially inaccessible code.
  *
- * N.B. red = definite error, yellow = double-check, none = should be fine
+ * N.B.
+ * - red    = definite error
+ * - yellow = double-check
+ * - none   = should be fine
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
@@ -16,20 +19,11 @@
 
 
 /**
- * Make it *very very* obvious you're in debug mode
- */
-
-body {
-  background-color: #fff !important;
-  background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%) !important;
-  background-size: $line-height*2 $line-height*2 !important;
-}
-
-/**
  * Are there any empty elements in your page?
  */
 
 :empty {outline: 5px solid yellow !important;}
+
 
 /**
  * Images require `alt` attr's, empty `alt`s are fine but should be double-checked, no `alt` is
@@ -42,6 +36,7 @@ img[alt] {outline: none !important;}
 
 img[alt=""] {outline: 5px solid yellow !important;}
 
+
 /**
  * Double-check any links whose `href` is something questionable
  */
@@ -50,11 +45,13 @@ a[href=""],
 a[href="#"],
 a[href*="javascript"] {outline: 5px solid yellow !important;}
 
+
 /**
  * The `target` attribute ain't too nice...
  */
 
 a[target] {outline: 5px solid yellow !important;}
+
 
 /**
  * Ensure any lists only contain `li`s as children
@@ -65,6 +62,7 @@ ol {
   > *:not(li) {outline: 5px solid red !important;}
 }
 
+
 /**
  * It's always nice to give `th`s `scope` attributes
  */
@@ -73,17 +71,20 @@ th {outline: 5px solid yellow !important;}
 
 th[scope] {outline: none !important;}
 
+
 /**
  * `tr`s as children of `table`s ain't great, did you need a `thead`/`tbody`?
  */
 
 table > tr {outline: 5px solid yellow !important;}
 
+
 /**
  * `tfoot` needs to come *before* `tbody`
  */
 
 tbody + tfoot {outline: 5px solid yellow !important;}
+
 
 /**
  * Forms require `action` attributes
@@ -92,6 +93,7 @@ tbody + tfoot {outline: 5px solid yellow !important;}
 form {outline: 5px solid red !important;}
 
 form[action] {outline: none !important;}
+
 
 /**
  * Various form-field types have required attributes. `input`s need `type` attributes, `textarea`s

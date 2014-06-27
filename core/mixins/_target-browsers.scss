@@ -22,21 +22,30 @@
    }
  */
 
-// Webkit
+/**
+ * Webkit
+ */
+
 @mixin target-webkit {
   @media all and (-webkit-min-device-pixel-ratio:0) {
 		@content;
 	}
 }
 
-// Mozilla
+/**
+ * Mozilla
+ */
+
 @mixin target-mozilla {
 	@-moz-document url-prefix() {
 		@content;
 	}
 }
 
-// IE 10+
+/**
+ * IE 10+
+ */
+
 @mixin ie-10-up {
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     @content;

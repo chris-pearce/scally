@@ -23,6 +23,7 @@ h6, .h6 {
   &:last-child {margin-bottom: 0;}
 }
 
+
 /**
  * H1
  */
@@ -30,7 +31,7 @@ h6, .h6 {
 h1, .h1 {
   @include font-size($font-size-heading-1);
 
-  // This is needed to turn off the top margin set in normalize.css
+  // N.B. this is needed to turn off the top margin set in normalize.css
   margin-top: 0;
 }
 
@@ -41,25 +42,25 @@ h1, .h1 {
 h2, .h2 {@include font-size($font-size-heading-2);}
 
 /**
- * H2
+ * H3
  */
 
 h3, .h3 {@include font-size($font-size-heading-3);}
 
 /**
- * H2
+ * H4
  */
 
 h4, .h4 {@include font-size($font-size-heading-4);}
 
 /**
- * H2
+ * H5
  */
 
 h5, .h5 {@include font-size($font-size-heading-5);}
 
 /**
- * H2
+ * H6
  */
 
 h6, .h6 {@include font-size($font-size-heading-6);}

@@ -1,5 +1,5 @@
 /* ======================================================================================
-   @UTILS -> RESET
+   @CORE -> RESET
    ====================================================================================== */
 
 /**
@@ -111,7 +111,7 @@ main {
 
 
 /**
- * Remove underlines from potentially troublesome elements.
+ * Remove underlines from potentially troublesome elements
  */
 
 u,
@@ -119,7 +119,7 @@ ins {text-decoration: none;}
 
 
 /**
- * Ensure `s` elements always get a strikethrough.
+ * Ensure `s` elements always get a strikethrough
  */
 
 s {text-decoration: line-through;}
@@ -128,6 +128,9 @@ s {text-decoration: line-through;}
 /**
  * Suppress the focus outline on links that cannot be accessed via a keyboard. This prevents an
  * unwanted focus outline from appearing around elements that might still respond to pointer events.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
+ * always want the rule it's applied too to take precedence.
  *
  * @credit https://github.com/suitcss/
  */

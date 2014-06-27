@@ -4,9 +4,10 @@
 
  /**
   * All print styles live in context with their corresponding rule sets except styles set here as
-  * they cannot be used in context i.e. they need to be set globally. It is okay to use `!important`
-  * here as we're doing it preemptively i.e. you know you will always want the rule it's applied too
-  * to take precedence.
+  * they cannot be used in context i.e. they need to be set globally.
+  *
+  * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
+  * always want the rule it's applied too to take precedence.
   *
   * @credit http://html5boilerplate.com/
   */

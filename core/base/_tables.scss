@@ -9,7 +9,7 @@
  * .table-striped       - Striped table
  * .table-bordered      - Bordered table
  * .table-compact       - No cell padding
- * .table-horiz-scroll  - Enable horizontal scroll bar on table container
+ * .table-horiz-scroll  - Enable horizontal scrolling within a container for wide tables
  *
  * Styleguide Tables
  */
@@ -23,6 +23,16 @@
   @extend %base-bottom-spacing;
 	width: 100%;
 
+  // Shared
+  th,
+  caption {
+    text-align: left;
+    font-weight: bold;
+  }
+
+  // Caption
+  caption {@extend %base-bottom-spacing;}
+
   // Cells
   th,
   td {
@@ -32,28 +42,6 @@
       @include to-rem(padding, $spacing-half);
     }
   }
-
-  // Cell header
-  th {font-weight: bold;}
-
-  // Caption, if you want this to look like one of the headings then apply the relevant heading
-  // class e.g. `.h2`.
-  caption {
-    font-weight: bold;
-    @extend %base-bottom-spacing;
-  }
-
-  // Alignments
-  caption,
-  th {text-align: left;}
-
-  [colspan] {text-align: center;}
-
-  [colspan="1"] {text-align: left;}
-
-  [rowspan] {vertical-align: middle;}
-
-  [rowspan="1"] {vertical-align: top;}
 }
 
 
@@ -65,7 +53,7 @@
 
 
 /**
- * Modifier: enable horizontal scroll bar when you have very wide tables
+ * Modifier: horizontal scroll; enable horizontal scrolling within a container for wide tables
  */
 
 .table--horiz-scroll {
@@ -88,26 +76,22 @@
     // No borders for empty cells
     &:empty {border: 0;}
   }
-
-	// Thicker border for the last row in the `thead`
-  thead tr:last-child th {border-bottom-width: 2px;}
 }
 
 
 /**
- * Modifier: allows the `overflow` property to be used to handle content that exceeds the width of
- * a table cell.
+ * Modifier: fixed; allows the `overflow` property to be used to handle content that exceeds the
+ * width of a table cell.
  */
 
 .table--fixed {table-layout: fixed;}
 
 
 /**
- * No cell padding
+ * Modifier: compact; no cell padding
  */
 
 .table--compact {
-  &,
   th,
   td {padding: 0;}
 }

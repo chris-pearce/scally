@@ -6,7 +6,8 @@
  * Setup media queries for minimum and maximum widths/heights, with width being the default,
  * also includes the ability to apply ranges.
  *
- * N.B. learn more: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
+ * N.B. learn more about CSS media queries:
+ * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
  *
  * @example
    @include respond-min($lap) {
@@ -31,10 +32,13 @@
  */
 
 
-/* Simple minimum and maximum width/height
+/* Simple minimum and maximum width/height values
    ========================================================================== */
 
-// Minimum
+/**
+ * Minimum
+ */
+
 @mixin respond-min($value, $height: false) {
 
   // Height
@@ -52,7 +56,11 @@
 	}
 }
 
-// Maximum
+
+/**
+ * Maximum
+ */
+
 @mixin respond-max($value, $height: false) {
 
   // Height
@@ -70,6 +78,7 @@
 	}
 }
 
+
 /* Ranges
    ========================================================================== */
 
@@ -79,7 +88,7 @@
  * N.B. the media query will only apply when both arguments are true.
  */
 
-// Accepts a minimum and maximum width and height range
+// Accepts a minimum and maximum width/height range
 @mixin respond-range($min-value, $max-value, $height: false) {
 
   // Height range
@@ -117,7 +126,7 @@
  * N.B. the media query will apply if any of the arguments are true.
  */
 
-// Accepts 2 minimum width and height values
+// Accepts one or both minimum width/height values
 @mixin respond-group-min($value-1, $value-2, $height: false) {
 
   // Height
@@ -135,7 +144,7 @@
 	}
 }
 
-// Accepts 2 maximum width and height values
+// Accepts one or both maximum width/height values
 @mixin respond-group-max($value-1, $value-2, $height: false) {
 
   // Height
@@ -153,7 +162,7 @@
   }
 }
 
-// Accepts 1 minimum width/height and 1 maximum width/height value */
+// Accepts one minimum width/height value and/or one maximum width/height value */
 @mixin respond-group-min-max($value-1, $value-2, $height: false) {
 
   // Height
@@ -171,14 +180,14 @@
 	}
 }
 
-// Accepts 1 minimum width and 1 minimum height value
+// Accepts one minimum width value and/or one minimum height value
 @mixin respond-group-min-width-height($value-1, $value-2) {
   @media (min-width: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
     @content;
   }
 }
 
-// Accepts 1 maximum width and 1 maximum height value
+// Accepts one maximum width value and/or one maximum height value
 @mixin respond-group-max-width-height($value-1, $value-2) {
   @media (max-width: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
     @content;
@@ -186,7 +195,7 @@
 }
 
 /**
- * Fixed width ranges using the pre-defined breakpoints
+ * Fixed width ranges using the predefined breakpoints
  */
 
 @mixin respond-range-fixed($respond-range) {
