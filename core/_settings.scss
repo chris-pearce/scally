@@ -324,10 +324,14 @@ $grid-gutter-half: $spacing-half !default;
    ========================================================================== */
 
 /**
+ * @credit http://ethanschoonover.com/solarized
+ */
+
+/**
  * Brand
  */
 
-$color-brand: #da291c !default;
+$color-brand: #2aa198 !default;
 
 /**
  * Black
@@ -346,23 +350,20 @@ $color-white: #fff !default;
  */
 
 // Dark
-$color-grey-dark: lighten($color-black, 5%) !default;
+$color-grey-dark: #002b36 !default;
 
 // Medium
-$color-grey-medium: lighten($color-black, 60%) !default;
+$color-grey-medium: #586e75 !default;
 
 // Light
-$color-grey-light: lighten($color-black, 80%) !default;
+$color-grey-light: #839496 !default;
 
 /**
  * Text
  */
 
 // Base
-$color-txt-base: $color-grey-medium !default;
-
-// Dark
-$color-txt-dark: $color-grey-dark !default;
+$color-txt-base: $color-grey-dark !default;
 
 // Light
 $color-txt-light: $color-grey-light !default;
@@ -375,13 +376,13 @@ $color-txt-light: $color-grey-light !default;
 $color-btn-primary: $color-brand !default;
 
 // Secondary
-$color-btn-secondary: #256e9e !default;
+$color-btn-secondary: #cb4b16 !default;
 
 /**
  * Links
  */
 
-$color-link: $color-btn-primary !default;
+$color-link: $color-brand !default;
 
 // Hover
 $color-link-hover: darken($color-link, 10%) !default;
@@ -391,16 +392,16 @@ $color-link-hover: darken($color-link, 10%) !default;
  */
 
 // Error
-$color-error: red !default;
+$color-error: #dc322f !default;
 
 // Success
-$color-success: green !default;
+$color-success: #859900 !default;
 
 // Warning
-$color-warning: orange !default;
+$color-warning: #b58900 !default;
 
 // Information
-$color-info: blue !default;
+$color-info: #268bd2 !default;
 
 
 /* Flexible widths

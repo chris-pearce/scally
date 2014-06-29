@@ -1,6 +1,8 @@
-# scally v1.0
+![Scally logo](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/UjRDGVI8H0Lsvbw/Rectangle%202%20%2B%20Scally%203.svg)
 
->> A bit rough around the edges but you don't have to do much work
+# Scally framework
+
+>> has no styling
 
 ## Key features
 
