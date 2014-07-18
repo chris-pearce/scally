@@ -28,3 +28,9 @@
 - [Inuit Framework](https://github.com/csswizardry/inuit.css).
 - [SMACCS](http://smacss.com/).
 - [SUIT CSS](https://github.com/suitcss/suit).
+
+## Licence
+Copyright 2014 Westfield Labs Corporation
+
+Licensed under the [Apache v2.0](https://raw.githubusercontent.com/westfieldlabs/scally/master/LICENSE) licence.
+
