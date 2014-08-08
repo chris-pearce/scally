@@ -1,7 +1,6 @@
 # Specific files #
 ###################
 /.gitignore
-/TODO.md
 /index.html
 /style.scss
 /_overrides.scss
