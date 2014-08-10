@@ -2,7 +2,7 @@
 
 # Scally framework
 
->> has no styling
+>> Has no styling
 
 ## Key features
 
