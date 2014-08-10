@@ -1,38 +1,44 @@
 # TODO
 
+- Replace all instances of `/* endif */` with `// endif`.
+- Have a setting that allows you to dictate when everything goes linear e.g. **Grid**.
+
+
 ---
 
-## STRUCTURE
 
-### Core
+## Core
 
-  - Base:
-    - Make sure all comments are formatted properly.
-    - Move `.list` into Utilities.
-    - Move `.table` into Utilities.
-    - Make font size 16px.
-    - Remove the iOS zoom input fix.
-    - Apply toggles to required base items.
+- Dynamically pull in Normalize?
+- Base:
+  - Make sure all instances of "Note:" is replaced with "N.B.".
+  - Make sure all comments are formatted properly.
+  - Move `.list` into Utilities.
+  - Move `.table` into Utilities.
+  - Move `.quotes` into Utilities.
+  - Make font size 16px.
+  - Remove the iOS zoom input fix.
+  - Apply toggles to required base items.
 
-  #### Mixins
+#### Mixins
 
-  - Size (pass in `width` and `height`).
+## Layout
 
-  ### Components
+## Components
 
-  ### Utilities
+## Utilities
 
-  - Every Utility needs to be applied via all the main breakpoints (see Alec).
-  - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
-  - Positioning:
-    - Top left.
-    - Top right.
-    - Bottom left.
-    - Bottom right.
-    - Stretch (pulls each corner/side so that it stretches to it's parent):
-      - All (`top: 0; bottom: 0; left: 0; right: 0;`).
-      - Sides (`left: 0; right: 0;`).
-      - Ends (`top: 0; bottom: 0;`).
+- Every Utility needs to be applied via all the main breakpoints (see Alec).
+- Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
+- Positioning:
+  - Top left.
+  - Top right.
+  - Bottom left.
+  - Bottom right.
+  - Stretch (pulls each corner/side so that it stretches to it's parent):
+    - All (`top: 0; bottom: 0; left: 0; right: 0;`).
+    - Sides (`left: 0; right: 0;`).
+    - Ends (`top: 0; bottom: 0;`).
 
 
 ---
