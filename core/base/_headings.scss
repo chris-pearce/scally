@@ -8,19 +8,21 @@
 
 
 /**
- * Set margins
+ * Set margins but make optional
  */
 
-h1, .h1,
-h2, .h2,
-h3, .h3 {@extend %base-bottom-spacing;}
+@if $heading-margins {
 
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  @include to-rem(margin-bottom, $spacing-half);
+  // Base
+  h1, .h1,
+  h2, .h2,
+  h3, .h3 {@extend %core-bottom-spacing;}
 
-  &:last-child {margin-bottom: 0;}
+  // Half
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {@extend %core-bottom-spacing-half;}
+
 }
 
 

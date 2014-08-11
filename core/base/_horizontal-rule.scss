@@ -7,14 +7,10 @@
  */
 
 hr {
-  // `hr` elements take up 1px, so we need to deduct that from it's bottom margin to maintain
-  // vertical rhythm.
-  @include to-rem(margin-bottom, $spacing-base - 1px);
+  @extend %core-bottom-spacing;
   display: block;
-  height: 1px;
+  @include to-rem(height, 1);
   border: 0;
-  border-top: 1px solid $color-grey-medium;
+  border-top: 1px solid $color-text-base;
   padding: 0;
-
-  &:last-child {margin-bottom: 0;}
 }

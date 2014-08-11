@@ -1,7 +1,8 @@
 # TODO
 
 - Replace all instances of `/* endif */` with `// endif`.
-- Have a setting that allows you to dictate when everything goes linear e.g. **Grid**.
+- Remove all instances of `== true` for Sass `@if` statements.
+- Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 
 
 ---
@@ -10,16 +11,10 @@
 ## Core
 
 - New `box-sizing` reset technique.
-- Dynamically pull in Normalize?
 - Base:
   - Make sure all instances of "Note:" is replaced with "N.B.".
   - Make sure all comments are formatted properly.
-  - Move `.list` into Utilities.
-  - Move `.table` into Utilities.
-  - Move `.quotes` into Utilities.
-  - Make font size 16px.
-  - Apply toggles to required base items.
-  - Test:
+  - Test in browser:
     - If inputs need `width: 100%;`.
     - Removing top shadow from iOS inputs needs `.ios` hook.
 
@@ -60,3 +55,4 @@
 ### Put to the team
 
 - Form base styles.
+- Dynamically pull in Normalize?
