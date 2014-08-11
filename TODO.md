@@ -3,6 +3,7 @@
 - Replace all instances of `/* endif */` with `// endif`.
 - Remove all instances of `== true` for Sass `@if` statements.
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
+- Make sure all instances of `px` for borders and shadows use `rem`.
 
 
 ---
@@ -10,12 +11,12 @@
 
 ## Core
 
+- `style.scss`.
 - New `box-sizing` reset technique.
+- Make sure all instances of `px` for borders and shadows use `rem`.
 - Base:
-  - README.md.
-  - Test in browser:
-    - If inputs need `width: 100%;`.
-    - Removing top shadow from iOS inputs needs `.ios` hook.
+  - Browser/device test.
+  - `hr` rendering odd in Chrome.
 
 #### Mixins
 

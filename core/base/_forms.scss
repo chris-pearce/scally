@@ -85,14 +85,12 @@ textarea {resize: vertical;}
   .text-input,
   textarea,
   select {
-    @include to-rem(padding, $spacing-half);
+    @include to-rem(padding, $spacing-quarter);
     color: $color-form-input-txt;
     border-radius: $border-radius;
-    border: 1px solid $color-form-input-border;
+    @include to-rem(border, 1 solid $color-form-input-border);
     background: $color-form-input-bg;
     transition: border 0.2s linear;
-    // Remove the top inner shadow for iOS devices
-    -webkit-appearance: caret;
 
     &:focus {
       // N.B. this is usually bad however because we're providing prominent focus styles it's OK

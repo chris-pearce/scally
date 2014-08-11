@@ -11,6 +11,6 @@ hr {
   display: block;
   @include to-rem(height, 1);
   border: 0;
-  border-top: 1px solid $color-text-base;
+  @include to-rem(border, 1 solid $color-text-base);
   padding: 0;
 }

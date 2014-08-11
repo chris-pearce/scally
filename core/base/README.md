@@ -2,14 +2,8 @@
 
 ## Base
 
-Base styles set the core styles for the main HTML elements of a project e.g.
+Base styles set the core styles for the main HTML elements of a project. They're mostly unclassed
+HTML elements e.g. `a {}`, `p {}`, `html {}` and sit right at the bottom of the Cascade
+(specificity) so they can easily be overriden.
 
-- Links: `a`
-- Headings: `h1` - `h6`
-- Lists: `ul`, `ol`, `dl`
-- Paragraphs: `p`
-
-*And more.*
-
-They sit right at the bottom in terms of the CSS Cascade (specificity) so they can easily be
-overriden, with most using just element selectors.
+**Demo: <http://codepen.io/crite/full/gDKpu/>**.
