@@ -6,8 +6,8 @@
  * The root element: `html`
  *
  * 1. Set the default `font-size` and `line-height` for the entire project, sourced from our default
- *    variables. The `font-size` is calculated to exist in ems, the `line-height` is calculated to
- *    exist unitlessly.
+ *    settings (variables). The `font-size` is calculated to exist in ems, the `line-height` is
+ *    calculated to exist unitlessly.
  * 2. Prevent certain mobile browsers from automatically zooming fonts.
  * 3. Fonts on OSX will look more consistent with other systems that do not render text using
  *    sub-pixel anti-aliasing.

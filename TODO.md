@@ -12,8 +12,7 @@
 
 - New `box-sizing` reset technique.
 - Base:
-  - Make sure all instances of "Note:" is replaced with "N.B.".
-  - Make sure all comments are formatted properly.
+  - README.md.
   - Test in browser:
     - If inputs need `width: 100%;`.
     - Removing top shadow from iOS inputs needs `.ios` hook.
