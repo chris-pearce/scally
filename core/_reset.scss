@@ -102,11 +102,13 @@ main {
  */
 
 @if $friendly-box-model == true {
+
   * {
     &,
     &:before,
     &:after {box-sizing: border-box;}
   }
+
 }/* endif */
 
 

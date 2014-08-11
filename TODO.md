@@ -9,6 +9,7 @@
 
 ## Core
 
+- New `box-sizing` reset technique.
 - Dynamically pull in Normalize?
 - Base:
   - Make sure all instances of "Note:" is replaced with "N.B.".
@@ -17,8 +18,10 @@
   - Move `.table` into Utilities.
   - Move `.quotes` into Utilities.
   - Make font size 16px.
-  - Remove the iOS zoom input fix.
   - Apply toggles to required base items.
+  - Test:
+    - If inputs need `width: 100%;`.
+    - Removing top shadow from iOS inputs needs `.ios` hook.
 
 #### Mixins
 
@@ -30,6 +33,8 @@
 
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
+- State:
+- Cursor?
 - Positioning:
   - Top left.
   - Top right.
@@ -51,3 +56,7 @@
 - <http://visuellegedanken.de/2014-03-29/using-bem-syntax-with-sass-3-3/>
 - <http://robots.thoughtbot.com/removing-sass-duplication>
 - <http://viget.com/extend/sass-maps-are-awesome>
+
+### Put to the team
+
+- Form base styles.

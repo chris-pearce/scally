@@ -6,14 +6,33 @@
  * Indicate that `label` will shift focus to the associated `input` element
  */
 
-label {cursor: pointer;}
+label,
+.faux-label {cursor: pointer;}
+
+
+/**
+ * Disable `textarea`s from being resized horizontally
+ */
+
+textarea {resize: vertical;}
 
 
 /**
  * Override `content-box` from normalize.css for search inputs
  */
 
-input[type="search"] {box-sizing: border-box;}
+@if $friendly-box-model == true {
+
+  input[type="search"] {box-sizing: border-box;}
+
+}
+
+
+/**
+ * We use this for `legend`s as they prefer `padding` over `margin`
+ */
+
+.form-heading {@include to-rem(padding-bottom, $spacing-base);}
 
 
 /**
@@ -23,24 +42,25 @@ input[type="search"] {box-sizing: border-box;}
  * always want the rule it's applied too to take precedence.
  */
 
-button[disabled],
-input[disabled],
-select[disabled],
-textarea[disabled],
-.is-disabled {
-  cursor: not-allowed !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-  opacity: $disabled-state-opacity-strength !important;
-}
+@if $disabled-state == true {
 
-/**
- * Modifier: no hover; prevent hover/focus states being applied
- */
+  button[disabled],
+  input[disabled],
+  select[disabled],
+  textarea[disabled],
+  .is-disabled {
+    cursor: not-allowed !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    opacity: $disabled-state-opacity-strength !important;
+  }
 
-.is-disabled--no-hover {
-  color: inherit !important;
-  background: inherit !important;
+  // Modifier: no hover; prevent hover/focus states being applied
+  .is-disabled--no-hover {
+    color: inherit !important;
+    background: inherit !important;
+  }
+
 }
 
 
@@ -49,73 +69,35 @@ textarea[disabled],
  */
 
 .req-field {
-  color: $color-error;
+  color: $color-state-error;
   cursor: help;
 }
 
 
 /**
- * Make these styles optional as they're quite opinionated
+ * Text inputs via the `.text-input` class and `textarea`, and `select` lists
+ *
+ * N.B. make these optional as they're quite opinionated.
  */
 
-@if $form-base-styles == true {
+@if $form-text-input-and-select-styles == true {
 
- /**
-  * Text inputs via the `.txt-input` class, `textarea`s, and `select`s
-  */
-
-  .txt-input,
+  .text-input,
   textarea,
   select {
-    color: $color-txt-base;
+    @include to-rem(padding, $spacing-half);
+    color: $color-form-input-txt;
     border-radius: $border-radius;
-    border: 1px solid lighten($color-black, 50%);
-    background: $color-white;
-    @include to-rem(padding, $spacing-third $spacing-half);
+    border: 1px solid $color-form-input-border;
+    background: $color-form-input-bg;
+    transition: border 0.2s linear;
+    // Remove the top inner shadow for iOS devices
+    -webkit-appearance: caret;
 
     &:focus {
-      border-color: $color-brand;
-      box-shadow: 0 0 0 1px $color-brand;
       // N.B. this is usually bad however because we're providing prominent focus styles it's OK
       outline: none;
-    }
-  }
-
-  textarea {resize: vertical;}
-
-  /**
-   * Placeholder attribute
-   *
-   * N.B. Firefox 19+ sets opacity on placeholder attributes by default so we need to reset it.
-   */
-
-  ::input-placeholder {
-  	color: $color-txt-light;
-  	font-style: italic;
-  }
-
-  ::-moz-placeholder {opacity: 1;}
-
-}/* endif */
-
-
-/**
- * Disable zooming of `input`s and `select`s for iOS/iPhone and Android devices when they're
- * focused, by setting the font size to 16px.
- *
- * N.B. turn this off if your base font size is 16px, and you'll need to apply device detection by
- * way of classes appended to either the `html` or `body`. We recommend Modernizr for this:
- * http://modernizr.com/.
- */
-
-@if $disable-zooming-of-form-elements-on-ios-android == true {
-
-  .iphone,
-  .android {
-    .txt-input,
-    textarea,
-    select {
-      &:focus {font-size: 16px;}
+      border-color: $color-form-input-border-focus;
     }
   }
 
