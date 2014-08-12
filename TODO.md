@@ -14,13 +14,18 @@
 - `style.scss`.
 - New `box-sizing` reset technique.
 - Make sure all instances of `px` for borders and shadows use `rem`.
+- Sass 3.3. application.
 - Base:
+  - CodePen demo styles.
+  - Test `html` text effects e.g. `-webkit-font-smoothing: antialiased;`.
   - Browser/device test.
   - `hr` rendering odd in Chrome.
 
 #### Mixins
 
 ## Layout
+
+- Don't couple `container-bg-color-x` with base `.container`.
 
 ## Components
 
@@ -40,13 +45,22 @@
     - Sides (`left: 0; right: 0;`).
     - Ends (`top: 0; bottom: 0;`).
 
+### Ideas
+
+- <http://jsfiddle.net/csswizardry/25741myb/>.
+
 
 ---
 
 
 ## Other
 
-#### Sass Newness
+
+### Documentation
+
+- Update CSS Guidelines.
+
+### Sass Newness
 
 - <http://visuellegedanken.de/2014-03-29/using-bem-syntax-with-sass-3-3/>
 - <http://robots.thoughtbot.com/removing-sass-duplication>
@@ -54,5 +68,5 @@
 
 ### Put to the team
 
-- Form base styles.
 - Dynamically pull in Normalize?
+- Have a vendor partial for 3rd party styles e.g. Google Map images.

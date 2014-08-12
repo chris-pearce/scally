@@ -86,7 +86,7 @@ textarea {resize: vertical;}
   textarea,
   select {
     @include to-rem(padding, $spacing-quarter);
-    color: $color-form-input-txt;
+    color: $color-form-input-text;
     border-radius: $border-radius;
     @include to-rem(border, 1 solid $color-form-input-border);
     background: $color-form-input-bg;

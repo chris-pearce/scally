@@ -101,7 +101,7 @@ main {
  * on :)
  */
 
-@if $friendly-box-model == true {
+@if $friendly-box-model {
 
   * {
     &,
@@ -109,7 +109,7 @@ main {
     &:after {box-sizing: border-box;}
   }
 
-}/* endif */
+}// endif
 
 
 /**
