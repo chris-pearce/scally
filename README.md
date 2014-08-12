@@ -34,3 +34,7 @@ Copyright 2014 Westfield Labs Corporation
 
 Licensed under the [Apache v2.0](https://raw.githubusercontent.com/westfieldlabs/scally/master/LICENSE) licence.
 
+## Compile Sass
+
+`sass --watch style.scss:style.css --style compressed`
+`sass --watch style.scss:style.css --style expanded`
