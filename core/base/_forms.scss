@@ -90,13 +90,6 @@ textarea {resize: vertical;}
     border-radius: $border-radius;
     @include to-rem(border, 1 solid $color-form-input-border);
     background: $color-form-input-bg;
-    transition: border 0.2s linear;
-
-    &:focus {
-      // N.B. this is usually bad however because we're providing prominent focus styles it's OK
-      outline: none;
-      border-color: $color-form-input-border-focus;
-    }
   }
 
 }// endif
