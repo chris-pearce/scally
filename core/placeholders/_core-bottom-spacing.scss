@@ -15,4 +15,4 @@
 %core-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
 
 // Half
-%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-base);}
+%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
