@@ -4,11 +4,9 @@
 
 
 /**
- * All these variables are Scally default settings; they should not be modified or adjusted, you
- * should redefine the variables in your own overrides file and include it in your project before
- * this file.
- *
- * N.B. your override variables should not use the `!default` keyword.
+ * All these variables are Scally default settings; they should not be modified or adjusted directly,
+ * you should predefine the variables in your own overrides file and include it in your project
+ * before this file.
 */
 
 
@@ -23,14 +21,16 @@
 $font-size: 16 !default;
 
 // Small
-$font-size-small: $font-size - 1 !default;
-$font-size-x-small: $font-size - 2 !default;
-$font-size-xx-small: $font-size - 3 !default;
+$font-size-small:       $font-size - 1 !default;
+$font-size-x-small:     $font-size - 2 !default;
+$font-size-xx-small:    $font-size - 3 !default;
+$font-size-xxx-small:   $font-size - 4 !default;
 
 // Large
-$font-size-large: $font-size + 1 !default;
-$font-size-x-large: $font-size + 2 !default;
-$font-size-xx-large: $font-size + 3 !default;
+$font-size-large:       $font-size + 1 !default;
+$font-size-x-large:     $font-size + 2 !default;
+$font-size-xx-large:    $font-size + 3 !default;
+$font-size-xxx-large:   $font-size + 4 !default;
 
 // Headings
 $font-size-heading-1: 36 !default;
@@ -53,13 +53,13 @@ $line-height: 24 !default;
 $line-height-ratio: $line-height / $font-size !default;
 
 /**
- * Family.
+ * Families.
  */
 
-$font-family-base: Arial, sans-serif !default;
-$font-family-icons: "Icons";
-$font-family-serif: Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif !default;
-$font-family-mono: "Courier New", Courier, monospace !default;
+$font-family-base:   Arial, sans-serif !default;
+$font-family-icons:  "Icons";
+$font-family-serif:  Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif !default;
+$font-family-mono:   Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !default;
 
 
 
@@ -72,19 +72,6 @@ $font-family-mono: "Courier New", Courier, monospace !default;
  */
 
 $spacing-base: $line-height !default;
-
-/**
- * Increase from base.
- */
-
-// Double
-$spacing-double: $spacing-base * 2 !default;
-
-// Triple
-$spacing-triple: $spacing-base * 3 !default;
-
-// Quadruple
-$spacing-quadruple: $spacing-base * 4 !default;
 
 /**
  * Decrease from base.
@@ -107,6 +94,37 @@ $spacing-sixth: $spacing-base / 6 !default;
 
 // Micro
 $spacing-micro: 2 !default;
+
+/**
+ * Increase from base.
+ */
+
+// Double
+$spacing-double: $spacing-base * 2 !default;
+
+// Triple
+$spacing-triple: $spacing-base * 3 !default;
+
+// Quadruple
+$spacing-quadruple: $spacing-base * 4 !default;
+
+// + Half
+$spacing-base-plus-half:      $spacing-base+$spacing-half !default;
+
+// + Third
+$spacing-base-plus-third:     $spacing-base+$spacing-third !default;
+
+// + Quarter
+$spacing-base-plus-quarter:   $spacing-base+$spacing-quarter !default;
+
+// + Fifth
+$spacing-base-plus-fifth:     $spacing-base+$spacing-fifth !default;
+
+// + Sixth
+$spacing-base-plus-sixth:     $spacing-base+$spacing-sixth !default;
+
+// + Micro
+$spacing-base-plus-micro:     $spacing-base+2 !default;
 
 
 
