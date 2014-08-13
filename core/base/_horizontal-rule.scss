@@ -2,6 +2,7 @@
    @CORE -> BASE -> HORIZONTAL RULE
    ====================================================================================== */
 
+
 /**
  * @credit http://html5boilerplate.com/
  */
@@ -9,7 +10,6 @@
 hr {
   @extend %core-bottom-spacing;
   display: block;
-  @include to-rem(height, 1);
   border: 0;
   @include to-rem(border, 1 solid $color-text-base);
   padding: 0;

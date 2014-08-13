@@ -2,13 +2,14 @@
    @CORE -> BASE -> HEADINGS
    ====================================================================================== */
 
+
 /**
  * Double stranded for greater reuse.
  */
 
 
 /**
- * Set margins but make optional
+ * Set margins but make optional.
  */
 
 @if $heading-margins {
@@ -27,7 +28,7 @@
 
 
 /**
- * H1
+ * H1.
  */
 
 h1, .h1 {
@@ -37,32 +38,37 @@ h1, .h1 {
   margin-top: 0;
 }
 
+
 /**
- * H2
+ * H2.
  */
 
 h2, .h2 {@include font-size($font-size-heading-2);}
 
+
 /**
- * H3
+ * H3.
  */
 
 h3, .h3 {@include font-size($font-size-heading-3);}
 
+
 /**
- * H4
+ * H4.
  */
 
 h4, .h4 {@include font-size($font-size-heading-4);}
 
+
 /**
- * H5
+ * H5.
  */
 
 h5, .h5 {@include font-size($font-size-heading-5);}
 
+
 /**
- * H6
+ * H6.
  */
 
 h6, .h6 {@include font-size($font-size-heading-6);}

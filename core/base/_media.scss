@@ -2,8 +2,9 @@
    @CORE -> BASE -> MEDIA
    ====================================================================================== */
 
+
 /**
- * Remove the gap between media elements and the bottom of their containers
+ * Remove the gap between media elements and the bottom of their containers.
  *
  * @credit http://html5boilerplate.com/
  */
@@ -16,7 +17,7 @@ video {vertical-align: middle;}
 
 
 /**
- * Images
+ * Images.
  *
  * 1. Make responsive.
  * 2. So that `alt` text is visually offset if images don't load.
@@ -27,8 +28,11 @@ img {
 	height: auto; // [1]
 	font-style: italic; // [2]
 
-  // Non-responsive images if you specify `width` and/or `height` attributes and Google Maps breaks
-  // if `max-width: 100%` acts upon it; use their selector to remove the effects.
+  /**
+   * Non-responsive images if you specify `width` and/or `height` attributes and Google Maps breaks
+   * if `max-width: 100%` acts upon it; use their selector to remove the effects.
+   */
+
   .gm-style &,
   &[width],
   &[height] {max-width: none;}
@@ -36,7 +40,7 @@ img {
 
 
 /**
- * Set the default behavior for touch-based browsing in IE 10 on devices running Windows 8
+ * Set the default behavior for touch-based browsing in IE 10 on devices running Windows 8.
  */
 
 canvas {-ms-touch-action: double-tap-zoom;}

@@ -2,9 +2,9 @@
    @CORE -> BASE -> PRINT
    ====================================================================================== */
 
+
  /**
-  * All print styles live in context with their corresponding rule sets except styles set here as
-  * they cannot be used in context i.e. they need to be set globally.
+  * All print styles outside of 'Core -> Base' live in context with their corresponding rule sets.
   *
   * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
   * always want the rule it's applied too to take precedence.
@@ -16,7 +16,7 @@
 @media print {
 
 	/**
-	 * Apply print friendly styles to ALL elements
+	 * Apply print friendly styles to ALL elements.
 	 */
 
 	* {
@@ -28,7 +28,7 @@
 
 
 	/**
-	 * Hide elements not really useful on a piece of paper
+	 * Hide elements not really useful on a piece of paper.
 	 */
 
 	nav,
@@ -37,14 +37,14 @@
 
 
 	/**
-	 * Ensure ALL images are responsive
+	 * Ensure ALL images are responsive.
 	 */
 
 	img {max-width: 100% !important;}
 
 
 	/**
-	 * Make links always stand out
+	 * Make links always stand out.
 	 */
 
 	a {
@@ -54,7 +54,7 @@
 
 
 	/**
-	 * Show the `href` and `title` attribute values of links and abbreviations in a pseudo element
+	 * Show the `href` and `title` attribute values of links and abbreviations in a pseudo element.
 	 */
 
 	a[href]:after {content: " (" attr(href) ")";}
@@ -73,7 +73,7 @@
 
 
 	/**
-	 * Set page breaks, orphans and widows
+	 * Set page breaks, orphans and widows.
 	 */
 
 	// Page breaks
@@ -92,4 +92,5 @@
 		orphans: 3;
 		widows: 3;
 	}
+
 }
