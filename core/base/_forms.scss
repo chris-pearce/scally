@@ -31,7 +31,7 @@ textarea {resize: vertical;}
 
 /**
  * Remove rounded corners from iOS search inputs by overriding `appearance: textfield` from
- * normalize.css.
+ * normalize.css. See: https://github.com/necolas/normalize.css/issues/360.
  */
 
 input[type="search"] {appearance: none;}
