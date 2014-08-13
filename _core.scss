@@ -29,18 +29,15 @@
    * Base
    */
 
+  @import "core/base/root";
   @import "core/base/abbreviation";
   @import "core/base/forms";
   @import "core/base/headings";
   @import "core/base/horizontal-rule";
   @import "core/base/links";
-  @import "core/base/lists";
   @import "core/base/media";
   @import "core/base/paragraphs";
   @import "core/base/print";
-  @import "core/base/quotes";
-  @import "core/base/root";
-  @import "core/base/tables";
   @import "core/base/viewport";
 
   /**
@@ -48,8 +45,8 @@
    *
    * N.B. the placeholders in utilities are the frameworks defaults however because we don't want
    * utilities as a framework dependency we have to have separate placeholders for the core.
-   * All these placeholders need to be prefixed with `base-`.
+   * All these placeholders need to be prefixed with `core-`.
    */
 
-  @import "core/placeholders/base-bottom-spacing";
-  @import "core/placeholders/base-smooth-touch-scrolling";
+  @import "core/placeholders/core-bottom-spacing";
+  @import "core/placeholders/core-smooth-touch-scrolling";

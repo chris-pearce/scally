@@ -6,8 +6,13 @@
  * Applies the default bottom spacing in order to try to keep a consistent vertical rhythm.
  */
 
-%base-bottom-spacing {
-	@include to-rem(margin-bottom, $spacing-base);
-
-	&:last-child {margin-bottom: 0;}
+%core-bottom-spacing,
+%core-bottom-spacing-half {
+  &:last-child {margin-bottom: 0;}
 }
+
+// Base
+%core-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+
+// Half
+%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}

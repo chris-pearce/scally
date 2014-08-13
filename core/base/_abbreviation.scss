@@ -2,7 +2,5 @@
    @CORE -> BASE -> ABBREVIATION
    ====================================================================================== */
 
-abbr[title] {
-  cursor: help;
-  border-bottom: 1px dotted $color-txt-base;
-}
+
+abbr[title] {cursor: help;}

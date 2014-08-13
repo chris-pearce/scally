@@ -2,19 +2,15 @@
    @CORE -> BASE -> HORIZONTAL RULE
    ====================================================================================== */
 
+
 /**
  * @credit http://html5boilerplate.com/
  */
 
 hr {
-  // `hr` elements take up 1px, so we need to deduct that from it's bottom margin to maintain
-  // vertical rhythm.
-  @include to-rem(margin-bottom, $spacing-base - 1px);
+  @extend %core-bottom-spacing;
   display: block;
-  height: 1px;
   border: 0;
-  border-top: 1px solid $color-grey-medium;
+  @include to-rem(border, 1 solid $color-text-base);
   padding: 0;
-
-  &:last-child {margin-bottom: 0;}
 }

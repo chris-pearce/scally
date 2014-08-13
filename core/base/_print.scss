@@ -2,9 +2,9 @@
    @CORE -> BASE -> PRINT
    ====================================================================================== */
 
+
  /**
-  * All print styles live in context with their corresponding rule sets except styles set here as
-  * they cannot be used in context i.e. they need to be set globally.
+  * All print styles outside of 'Core -> Base' live in context with their corresponding rule sets.
   *
   * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
   * always want the rule it's applied too to take precedence.
@@ -28,7 +28,7 @@
 
 
 	/**
-	 * Hide elements not really useful on a peice of paper.
+	 * Hide elements not really useful on a piece of paper.
 	 */
 
 	nav,
@@ -57,14 +57,13 @@
 	 * Show the `href` and `title` attribute values of links and abbreviations in a pseudo element.
 	 */
 
-	a[href]:after {content: " (" attr(href) ")" !important;}
+	a[href]:after {content: " (" attr(href) ")";}
 
-	abbr[title]:after {content: " (" attr(title) ")" !important;}
+	abbr[title]:after {content: " (" attr(title) ")";}
 
 	// But don't show for the following links
-	a[href^="tel:"]:after,
 	a[href^="javascript:"]:after,
-	a[href^="#"]:after {content: "" !important;}
+	a[href^="#"]:after {content: "";}
 
 
 	/**
@@ -79,12 +78,12 @@
 
 	// Page breaks
 	h2
-	h3 {page-break-after: avoid !important;}
+	h3 {page-break-after: avoid;}
 
 	tr,
 	img,
 	pre,
-	blockquote {page-break-inside: avoid !important;}
+	blockquote {page-break-inside: avoid;}
 
 	// Orphans and widows
 	p,
@@ -93,4 +92,5 @@
 		orphans: 3;
 		widows: 3;
 	}
+
 }

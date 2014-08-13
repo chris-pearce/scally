@@ -2,7 +2,21 @@
    @CORE -> BASE -> ROOT
    ====================================================================================== */
 
+
+/**
+ * The root element: `html`.
+ *
+ * 1. Set the default `font-size`, `line-height` and `font-family` for the entire project, sourced
+ *    from our default settings (variables). The `font-size` is calculated to exist in ems, the
+ *    `line-height` is calculated to exist unitlessly.
+ * 2. Fonts on OSX will look more consistent with other systems that do not render text using
+ *    sub-pixel anti-aliasing.
+ */
+
 html {
-  font: ($font-size/16)+em/$line-height-ratio $font-family-base;
-  color: $color-txt-base;
+  font: ($font-size/16)+em/$line-height-ratio $font-family-base; // [1]
+  color: $color-text-base;
+  background: $color-html-element-bg;
+  -moz-osx-font-smoothing: grayscale; // [2]
+  -webkit-font-smoothing: antialiased; // [2]
 }
