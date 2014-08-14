@@ -33,6 +33,8 @@
 
 ## Layout
 
+- Grid:
+  - Don't use `non-palm-x` prefix to apply widths.
 - Don't couple `container-bg-color-x` with base `.container`.
 
 ## Components
@@ -57,6 +59,7 @@
     - Ends (`top: 0; bottom: 0;`).
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
+  - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
 
 
 ---
@@ -67,6 +70,7 @@
 ### Documentation
 
 - Update CSS Guidelines.
+- Consistent naming esp. for sizes.
 
 ### Sass Newness
 
@@ -79,6 +83,10 @@
 
 - Dynamically pull in Normalize?
 - Have a vendor partial for 3rd party styles e.g. Google Map images (`.gm-style`)?
+- Settings:
+  - Need that many spacing settings?
+  - `$spacing-micro`?
+  - Lost `$non-palm` breakpoint, instead use `$lap`?
 
 ### CodePen Demo styles
 
