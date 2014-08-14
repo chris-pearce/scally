@@ -20,24 +20,35 @@
 // Base
 $font-size: 16 !default;
 
-// Small
+// Smaller
 $font-size-small:       $font-size - 1 !default;
+
 $font-size-x-small:     $font-size - 2 !default;
+
 $font-size-xx-small:    $font-size - 3 !default;
+
 $font-size-xxx-small:   $font-size - 4 !default;
 
-// Large
+// Larger
 $font-size-large:       $font-size + 1 !default;
+
 $font-size-x-large:     $font-size + 2 !default;
+
 $font-size-xx-large:    $font-size + 3 !default;
+
 $font-size-xxx-large:   $font-size + 4 !default;
 
 // Headings
 $font-size-heading-1: 36 !default;
+
 $font-size-heading-2: 30 !default;
+
 $font-size-heading-3: 24 !default;
+
 $font-size-heading-4: 20 !default;
+
 $font-size-heading-5: 16 !default;
+
 $font-size-heading-6: 14 !default;
 
 /**
@@ -56,9 +67,16 @@ $line-height-ratio: $line-height / $font-size !default;
  * Families.
  */
 
+// Base
 $font-family-base:   Arial, sans-serif !default;
+
+// Icons
 $font-family-icons:  "Icons";
+
+// Serif
 $font-family-serif:  Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif !default;
+
+// Monospaced (good for code)
 $font-family-mono:   Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !default;
 
 
@@ -77,54 +95,67 @@ $spacing-base: $line-height !default;
  * Decrease from base.
  */
 
+                                                            // These values are based on the Scally
+                                                            // default of `16px`.
+
 // Half
-$spacing-half: $spacing-base / 2 !default;
+$spacing-half:             $spacing-base / 2 !default;      // 12
 
-// Third
-$spacing-third: $spacing-base / 3 !default;
+// Thirds
+$spacing-third:            $spacing-base / 3 !default;      // 8
+$spacing-two-thirds:       $spacing-third * 2 !default;     // 16
 
-// Quarter
-$spacing-quarter: $spacing-base / 4 !default;
+// Quarters
+$spacing-quarter:          $spacing-base / 4 !default;      // 6
+$spacing-three-quarters:   $spacing-quarter * 3 !default;   // 18
 
-// Fifth
-$spacing-fifth: $spacing-base / 5 !default;
+// Fifths
+$spacing-fifth:            $spacing-base / 5 !default;      // 4.8
+$spacing-two-fifths:       $spacing-fifth * 2 !default;     // 9.6
+$spacing-three-fifths:     $spacing-fifth * 3 !default;     // 14.4
+$spacing-four-fifths:      $spacing-fifth * 4 !default;     // 19.2
 
 // Sixth
-$spacing-sixth: $spacing-base / 6 !default;
+$spacing-sixth:            $spacing-base / 6 !default;      // 4
 
 // Micro
-$spacing-micro: 2 !default;
+$spacing-micro:            2 !default;                      // 2
 
 /**
  * Increase from base.
  */
 
-// Double
-$spacing-double: $spacing-base * 2 !default;
-
-// Triple
-$spacing-triple: $spacing-base * 3 !default;
-
-// Quadruple
-$spacing-quadruple: $spacing-base * 4 !default;
-
 // + Half
-$spacing-base-plus-half:      $spacing-base+$spacing-half !default;
+$spacing-base-plus-half:            $spacing-base + $spacing-half !default;            // 36
 
-// + Third
-$spacing-base-plus-third:     $spacing-base+$spacing-third !default;
+// + Thirds
+$spacing-base-plus-third:           $spacing-base + $spacing-third !default;           // 32
+$spacing-base-plus-two-thirds:      $spacing-base + ($spacing-third * 2) !default;     // 40
 
-// + Quarter
-$spacing-base-plus-quarter:   $spacing-base+$spacing-quarter !default;
+// + Quarters
+$spacing-base-plus-quarter:         $spacing-base + $spacing-quarter !default;         // 30
+$spacing-base-plus-three-quarters:  $spacing-base + ($spacing-quarter * 3) !default;   // 42
 
-// + Fifth
-$spacing-base-plus-fifth:     $spacing-base+$spacing-fifth !default;
+// + Fifths
+$spacing-base-plus-fifth:           $spacing-base + $spacing-fifth !default;           // 28.8
+$spacing-base-plus-two-fifths:      $spacing-base + ($spacing-fifth * 2) !default;     // 33.6
+$spacing-base-plus-three-fifths:    $spacing-base + ($spacing-fifth * 3) !default;     // 38.4
+$spacing-base-plus-four-fifths:     $spacing-base + ($spacing-fifth * 4) !default;     // 43.2
 
 // + Sixth
-$spacing-base-plus-sixth:     $spacing-base+$spacing-sixth !default;
+$spacing-base-plus-sixth:           $spacing-base + $spacing-sixth !default;           // 28
 
 // + Micro
-$spacing-base-plus-micro:     $spacing-base+2 !default;
+$spacing-base-plus-micro:           $spacing-base + 2 !default;                        // 26
+
+// Double
+$spacing-double:                    $spacing-base * 2 !default;                        // 48
+
+// Triple
+$spacing-triple:                    $spacing-base * 3 !default;                        // 72
+
+// Quadruple
+$spacing-quadruple:                 $spacing-base * 4 !default;                        // 96
 
 
 
