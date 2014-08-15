@@ -14,14 +14,18 @@
  * Spacing
  * Toggles
  * Breakpoints
- * Containers
- * Grid
- * Colour Palette
- * Flexible widths
- * `z-index` values
- * Disabled state opacity strength
- * Off-screen pixel value
- * Border radius
+ * Layout
+ *  Containers
+ *  Grid
+ *  Widths
+ * Colours
+ * Positioning
+ *  `z-index`
+ *  Off-screen pixel value
+ * Forms
+ *  Disabled state opacity strength
+ * Cosmetics
+ *  Border radius
 */
 
 
@@ -314,17 +318,17 @@ $col-classes-at-breakpoint-desk-large:                false !default;
  *
  * The breakpoints:
  *
- * - Palm:                      0 - 640px
+ * - Palm:                0 - 640px
  *
- * - Lap:                       641px - 1199px
- * - Lap and up:                641px +
- * - Lap small:                 641px - 900px
- * - Lap large:                 901px - 1199px
- * - Lap large and up:          901px +
+ * - Lap:                 641px - 1199px
+ * - Lap and up:          641px +
+ * - Lap small:           641px - 900px
+ * - Lap large:           901px - 1199px
+ * - Lap large and up:    901px +
  *
- * - Desk and up:               1200px +
- * - Desk small:                1200px - 1365px
- * - Desk large and up:         1366px +
+ * - Desk and up:         1200px +
+ * - Desk small:          1200px - 1365px
+ * - Desk large and up:   1366px +
  *
  * @credit
  * - http://www.lukew.com/ff/entry.asp?1679
@@ -377,28 +381,22 @@ $breakpoints: (
    ========================================================================== */
 
 /**
- * Page container width.
+ * Container width.
  */
 
-$page-container-width: 92% !default;
+$container-width: 92% !default;
 
 /**
- * Page container min-width.
+ * Container minimum width.
  */
 
-$page-container-min-width: 220 !default;
+$container-min-width: 220 !default;
 
 /**
- * Page container max-width.
+ * Container maximum width.
  */
 
-$page-container-max-width: 1600 !default;
-
-/**
- * Page container gutter.
- */
-
-$page-container-gutter: 4% !default;
+$container-max-width: 1600 !default;
 
 
 
@@ -406,14 +404,23 @@ $page-container-gutter: 4% !default;
 /* Grid
    ========================================================================== */
 
-$grid-gutter: $spacing-base !default;
-$grid-gutter-double: $spacing-double !default;
-$grid-gutter-half: $spacing-half !default;
+/**
+ * Gutter size.
+ */
+
+// Base
+$grid-gutter-size: $spacing-base !default;
+
+// Double
+$grid-gutter-size-double: $spacing-double !default;
+
+// Half
+$grid-gutter-size-half: $spacing-half !default;
 
 
 
 
-/* Color palette
+/* Colors
    ========================================================================== */
 
 /**
@@ -452,14 +459,14 @@ $color-text-base: $color-black !default;
 $color-html-element-bg: $color-white !default;
 
 /**
- * Buttons / CTA's.
+ * Buttons.
  */
 
 // Primary
-$color-btn-cta-primary: $color-brand !default;
+$color-btn-primary: $color-brand !default;
 
 // Secondary
-$color-btn-cta-secondary: lighten($color-brand, 10%) !default;
+$color-btn-secondary: lighten($color-brand, 10%) !default;
 
 /**
  * Links.
@@ -502,106 +509,106 @@ $color-form-input-border: lighten($color-black, 30%) !default;
 
 
 
-/* Flexible widths
+/* Widths
    ========================================================================== */
 
 /**
  * Whole.
  */
 
-$one-whole: 100% !default;
+$one-whole:       100% !default;
 
 /**
- * Halves.
+ * Half.
  */
 
-$one-half: 50% !default;
+$one-half:        50% !default;
 
 /**
  * Thirds.
  */
 
-$one-third: (100/3)*1% !default;
-$two-thirds: (100/3)*2% !default;
+$one-third:       (100/3)*1% !default;
+$two-thirds:      (100/3)*2% !default;
 
 /**
  * Quarters.
  */
 
-$one-quarter: (100/4)*1% !default;
-$two-quarters: $one-half !default;
-$three-quarters: (100/4)*3% !default;
+$one-quarter:     (100/4)*1% !default;
+$two-quarters:    $one-half !default;
+$three-quarters:  (100/4)*3% !default;
 
 /**
  * Fifths.
  */
 
-$one-fifth: (100/5)*1% !default;
-$two-fifths: (100/5)*2% !default;
-$three-fifths: (100/5)*3% !default;
-$four-fifths: (100/5)*4% !default;
+$one-fifth:       (100/5)*1% !default;
+$two-fifths:      (100/5)*2% !default;
+$three-fifths:    (100/5)*3% !default;
+$four-fifths:     (100/5)*4% !default;
 
 /**
  * Sixths.
  */
 
-$one-sixth: (100/6)*1% !default;
-$two-sixths: $one-third !default;
-$three-sixths: $one-half !default;
-$four-sixths: $two-thirds !default;
-$five-sixths: (100/6)*5% !default;
+$one-sixth:       (100/6)*1% !default;
+$two-sixths:      $one-third !default;
+$three-sixths:    $one-half !default;
+$four-sixths:     $two-thirds !default;
+$five-sixths:     (100/6)*5% !default;
 
 /**
  * Sevenths.
  */
 
-$one-seventh: (100/7)*1% !default;
-$two-sevenths: (100/7)*2% !default;
-$three-sevenths: (100/7)*3% !default;
-$four-sevenths: (100/7)*4% !default;
-$five-sevenths: (100/7)*5% !default;
-$six-sevenths: (100/7)*6% !default;
+$one-seventh:     (100/7)*1% !default;
+$two-sevenths:    (100/7)*2% !default;
+$three-sevenths:  (100/7)*3% !default;
+$four-sevenths:   (100/7)*4% !default;
+$five-sevenths:   (100/7)*5% !default;
+$six-sevenths:    (100/7)*6% !default;
 
 /**
  * Eighths.
  */
 
-$one-eighth: (100/8)*1% !default;
-$two-eighths: $one-quarter !default;
-$three-eighths: (100/8)*3% !default;
-$four-eighths: $one-half !default;
-$five-eighths: (100/8)*5% !default;
-$six-eighths: $three-quarters !default;
-$seven-eighths: (100/8)*7% !default;
+$one-eighth:      (100/8)*1% !default;
+$two-eighths:     $one-quarter !default;
+$three-eighths:   (100/8)*3% !default;
+$four-eighths:    $one-half !default;
+$five-eighths:    (100/8)*5% !default;
+$six-eighths:     $three-quarters !default;
+$seven-eighths:   (100/8)*7% !default;
 
 /**
  * Tenths.
  */
 
-$one-tenth: (100/10)*1% !default;
-$two-tenths: $one-fifth !default;
-$three-tenths: (100/10)*3% !default;
-$four-tenths: $two-fifths !default;
-$five-tenths: $one-half !default;
-$six-tenths: $three-fifths !default;
-$seven-tenths: (100/10)*7% !default;
-$eight-tenths: $four-fifths !default;
-$nine-tenths: (100/10)*9% !default;
+$one-tenth:       (100/10)*1% !default;
+$two-tenths:      $one-fifth !default;
+$three-tenths:    (100/10)*3% !default;
+$four-tenths:     $two-fifths !default;
+$five-tenths:     $one-half !default;
+$six-tenths:      $three-fifths !default;
+$seven-tenths:    (100/10)*7% !default;
+$eight-tenths:    $four-fifths !default;
+$nine-tenths:     (100/10)*9% !default;
 
 /**
  * Twelfths.
  */
 
-$one-twelfth: (100/12)*1% !default;
-$two-twelfths: $one-sixth !default;
-$three-twelfths: $one-quarter !default;
-$four-twelfths: $one-third !default;
-$five-twelfths: (100/12)*5% !default;
-$six-twelfths: $one-half !default;
-$seven-twelfths: (100/12)*7% !default;
-$eight-twelfths: $two-thirds !default;
-$nine-twelfths: $three-quarters !default;
-$ten-twelfths: $five-sixths !default;
+$one-twelfth:     (100/12)*1% !default;
+$two-twelfths:    $one-sixth !default;
+$three-twelfths:  $one-quarter !default;
+$four-twelfths:   $one-third !default;
+$five-twelfths:   (100/12)*5% !default;
+$six-twelfths:    $one-half !default;
+$seven-twelfths:  (100/12)*7% !default;
+$eight-twelfths:  $two-thirds !default;
+$nine-twelfths:   $three-quarters !default;
+$ten-twelfths:    $five-sixths !default;
 $eleven-twelfths: (100/12)*11% !default;
 
 
