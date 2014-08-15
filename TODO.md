@@ -27,7 +27,8 @@
 - `style.scss`.
 - New `box-sizing` reset technique.
 - Make sure all instances of `px` for borders and shadows use `rem`.
-- Sass 3.3. application e.g. Sass maps for vars.
+- Settings:
+  - Width toggles.
 - Mixins:
   - xx
 
@@ -84,9 +85,7 @@
 - Dynamically pull in Normalize?
 - Have a vendor partial for 3rd party styles e.g. Google Map images (`.gm-style`)?
 - Settings:
-  - Need that many spacing settings?
-  - `$spacing-micro`?
-  - Lost `$non-palm` breakpoint, instead use `$lap`?
+  - `z-index`.
 
 ### CodePen Demo styles
 
