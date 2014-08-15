@@ -3,14 +3,14 @@
    ====================================================================================== */
 
 
- /**
-  * All print styles outside of 'Core -> Base' live in context with their corresponding rule sets.
-  *
-  * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
-  * always want the rule it's applied too to take precedence.
-  *
-  * @credit http://html5boilerplate.com/
-  */
+/**
+ * All print styles outside of 'Core -> Base' live in context with their corresponding rule sets.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
+ * always want the rule it's applied too to take precedence.
+ *
+ * @credit http://html5boilerplate.com/
+*/
 
 
 @media print {
@@ -21,7 +21,7 @@
 
 	* {
 		background: transparent !important;
-		color: $color-black !important;
+		color: $colour-black !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}

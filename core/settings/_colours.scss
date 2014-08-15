@@ -1,0 +1,96 @@
+/* ======================================================================================
+   @CORE -> SETTINGS -> COLOURS
+   ====================================================================================== */
+
+
+/**
+ * @credit http://ethanschoonover.com/solarized
+ */
+
+
+/**
+ * Brand.
+ */
+
+$colour-brand: #2aa198 !default;
+
+
+/**
+ * Black.
+ */
+
+$colour-black: #000 !default;
+
+
+/**
+ * White.
+ */
+
+$colour-white: #fff !default;
+
+
+/**
+ * Text.
+ */
+
+// Base
+$colour-text-base: $colour-black !default;
+
+
+/**
+ * `html` element background.
+ */
+
+$colour-html-element-background: $colour-white !default;
+
+
+/**
+ * Buttons.
+ */
+
+// Primary
+$colour-button-primary:     $colour-brand !default;
+
+// Secondary
+$colour-button-secondary:   lighten($colour-brand, 10%) !default;
+
+
+/**
+ * Links.
+ */
+
+$colour-link:         $colour-brand !default;
+
+// Hover
+$colour-link-hover:   darken($colour-link, 10%) !default;
+
+
+/**
+ * States.
+ */
+
+// Error
+$colour-state-error:        #dc322f !default;
+
+// Success
+$colour-state-success:      #859900 !default;
+
+// Warning
+$colour-state-warning:      #b58900 !default;
+
+// Information
+$colour-state-information:  #268bd2 !default;
+
+
+/**
+ * Forms.
+ */
+
+// Input text
+$colour-form-input-text:        $colour-text-base !default;
+
+// Input background
+$colour-form-input-background:  $colour-white !default;
+
+// Input border
+$colour-form-input-border:      lighten($colour-black, 30%) !default;

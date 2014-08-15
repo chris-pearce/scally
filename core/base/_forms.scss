@@ -97,7 +97,7 @@ legend {
  */
 
 .required-field {
-  color: $color-state-error;
+  color: $colour-state-error;
   cursor: help;
 }
 
@@ -112,10 +112,10 @@ legend {
   textarea,
   select {
     @include to-rem(padding, $form-text-input-and-select-padding);
-    color: $color-form-input-text;
+    color: $colour-form-input-text;
     border-radius: $border-radius;
-    @include to-rem(border, 1 solid $color-form-input-border);
-    background: $color-form-input-bg;
+    @include to-rem(border, 1 solid $colour-form-input-border);
+    background: $colour-form-input-background;
   }
 
 }// endif

@@ -2,51 +2,91 @@
    @SCALLY CORE
    ====================================================================================== */
 
+
 /**
  * N.B. this is all mandatory for the Scally framework.
  */
 
-@import "core/settings";
+
+/**
+ * Settings.
+ */
+
+@import "core/settings/typography";
+@import "core/settings/spacing";
+@import "core/settings/toggles";
+@import "core/settings/breakpoints";
+@import "core/settings/layout";
+@import "core/settings/colours";
+@import "core/settings/positioning";
+@import "core/settings/cosmetics";
+
+
+/**
+ * Functions.
+ */
+
 @import "core/functions";
+
+
+/**
+ * Normalize.
+ */
+
 @import "core/normalize";
+
+
+/**
+ * Reset.
+ */
+
 @import "core/reset";
+
+
+/**
+ * Debug.
+ */
+
 @import "core/debug";
 
-  /**
-   * Mixins
-   */
 
-  @import "core/mixins/convert-px-to-em-rem";
-  @import "core/mixins/font-size";
-  @import "core/mixins/gradients";
-  @import "core/mixins/media-queries";
-  @import "core/mixins/retina-ready-images";
-  @import "core/mixins/size";
-  @import "core/mixins/target-browsers";
-  @import "core/mixins/target-headings";
+/**
+ * Mixins
+ */
 
-  /**
-   * Base
-   */
+@import "core/mixins/convert-px-to-em-rem";
+@import "core/mixins/font-size";
+@import "core/mixins/gradients";
+@import "core/mixins/media-queries";
+@import "core/mixins/retina-ready-images";
+@import "core/mixins/size";
+@import "core/mixins/target-browsers";
+@import "core/mixins/target-headings";
 
-  @import "core/base/root";
-  @import "core/base/abbreviation";
-  @import "core/base/forms";
-  @import "core/base/headings";
-  @import "core/base/horizontal-rule";
-  @import "core/base/links";
-  @import "core/base/media";
-  @import "core/base/paragraphs";
-  @import "core/base/print";
-  @import "core/base/viewport";
 
-  /**
-   * Placeholders
-   *
-   * N.B. the placeholders in utilities are the frameworks defaults however because we don't want
-   * utilities as a framework dependency we have to have separate placeholders for the core.
-   * All these placeholders need to be prefixed with `core-`.
-   */
+/**
+ * Base
+ */
 
-  @import "core/placeholders/core-bottom-spacing";
-  @import "core/placeholders/core-smooth-touch-scrolling";
+@import "core/base/root";
+@import "core/base/abbreviation";
+@import "core/base/forms";
+@import "core/base/headings";
+@import "core/base/horizontal-rule";
+@import "core/base/links";
+@import "core/base/media";
+@import "core/base/paragraphs";
+@import "core/base/print";
+@import "core/base/viewport";
+
+
+/**
+ * Placeholders
+ *
+ * N.B. the placeholders in utilities are the frameworks defaults however because we don't want
+ * utilities as a framework dependency we have to have separate placeholders for the core.
+ * All these placeholders need to be prefixed with `core-`.
+ */
+
+@import "core/placeholders/core-bottom-spacing";
+@import "core/placeholders/core-smooth-touch-scrolling";

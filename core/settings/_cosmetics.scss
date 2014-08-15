@@ -1,15 +1,17 @@
 /* ======================================================================================
-   @CORE -> BASE -> LINKS
+   @CORE -> SETTINGS -> COSMETICS
    ====================================================================================== */
 
 
-a {
-	color: $colour-link;
-	text-decoration: none;
+/**
+ * Disabled state opacity strength.
+ */
 
-	&:hover,
-	&:focus {
-		color: $colour-link-hover;
-		text-decoration: underline;
-	}
-}
+$disabled-state-opacity-strength: 0.6 !default;
+
+
+/**
+ * Border radius.
+ */
+
+$border-radius: 4 !default;

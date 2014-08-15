@@ -1,0 +1,73 @@
+/* ======================================================================================
+   @CORE -> SETTINGS -> TYPOGRAPHY
+   ====================================================================================== */
+
+
+/**
+ * Size.
+ */
+
+// Base
+$font-size: 16 !default;
+
+// Smaller
+$font-size-small:       $font-size - 1 !default;
+
+$font-size-x-small:     $font-size - 2 !default;
+
+$font-size-xx-small:    $font-size - 3 !default;
+
+$font-size-xxx-small:   $font-size - 4 !default;
+
+// Larger
+$font-size-large:       $font-size + 1 !default;
+
+$font-size-x-large:     $font-size + 2 !default;
+
+$font-size-xx-large:    $font-size + 3 !default;
+
+$font-size-xxx-large:   $font-size + 4 !default;
+
+// Headings
+$font-size-heading-1:   36 !default;
+
+$font-size-heading-2:   30 !default;
+
+$font-size-heading-3:   24 !default;
+
+$font-size-heading-4:   20 !default;
+
+$font-size-heading-5:   16 !default;
+
+$font-size-heading-6:   14 !default;
+
+
+/**
+ * Line height.
+ */
+
+$line-height: 24 !default;
+
+
+/**
+ * Line height ratio.
+ */
+
+$line-height-ratio: $line-height / $font-size !default;
+
+
+/**
+ * Families.
+ */
+
+// Base
+$font-family-base:      Arial, sans-serif !default;
+
+// Icons
+$font-family-icons:     "Icons";
+
+// Serif
+$font-family-serif:     Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif !default;
+
+// Monospaced (good for code)
+$font-family-monospace: Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !default;
