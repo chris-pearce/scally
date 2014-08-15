@@ -1,0 +1,144 @@
+/* ======================================================================================
+   @CORE -> SETTINGS -> LAYOUT
+   ====================================================================================== */
+
+
+/**
+ * Containers.
+ */
+
+// Width
+$container-width:           92% !default;
+
+// Minimum width
+$container-minimum-width:   220 !default;
+
+// Maximum width
+$container-maximum-width:   1600 !default;
+
+
+/**
+ * Grid.
+ */
+
+// Base gutter
+$grid-gutter-size:          $spacing-base !default;
+
+// Double gutter
+$grid-gutter-size-double:   $spacing-double !default;
+
+// Half gutter
+$grid-gutter-size-half:     $spacing-half !default;
+
+
+/**
+ * Widths.
+ */
+
+// One whole
+$one-whole:       100% !default;
+
+// Half
+$one-half:        50% !default;
+
+// Thirds
+$one-third:       (100/3)*1% !default;
+
+$two-thirds:      (100/3)*2% !default;
+
+// Quarters
+$one-quarter:     (100/4)*1% !default;
+
+$two-quarters:    $one-half !default;
+
+$three-quarters:  (100/4)*3% !default;
+
+// Fifths
+$one-fifth:       (100/5)*1% !default;
+
+$two-fifths:      (100/5)*2% !default;
+
+$three-fifths:    (100/5)*3% !default;
+
+$four-fifths:     (100/5)*4% !default;
+
+// Sixths
+$one-sixth:       (100/6)*1% !default;
+
+$two-sixths:      $one-third !default;
+
+$three-sixths:    $one-half !default;
+
+$four-sixths:     $two-thirds !default;
+
+$five-sixths:     (100/6)*5% !default;
+
+// Sevenths
+$one-seventh:     (100/7)*1% !default;
+
+$two-sevenths:    (100/7)*2% !default;
+
+$three-sevenths:  (100/7)*3% !default;
+
+$four-sevenths:   (100/7)*4% !default;
+
+$five-sevenths:   (100/7)*5% !default;
+
+$six-sevenths:    (100/7)*6% !default;
+
+// Eighths
+$one-eighth:      (100/8)*1% !default;
+
+$two-eighths:     $one-quarter !default;
+
+$three-eighths:   (100/8)*3% !default;
+
+$four-eighths:    $one-half !default;
+
+$five-eighths:    (100/8)*5% !default;
+
+$six-eighths:     $three-quarters !default;
+
+$seven-eighths:   (100/8)*7% !default;
+
+// Tenths
+$one-tenth:       (100/10)*1% !default;
+
+$two-tenths:      $one-fifth !default;
+
+$three-tenths:    (100/10)*3% !default;
+
+$four-tenths:     $two-fifths !default;
+
+$five-tenths:     $one-half !default;
+
+$six-tenths:      $three-fifths !default;
+
+$seven-tenths:    (100/10)*7% !default;
+
+$eight-tenths:    $four-fifths !default;
+
+$nine-tenths:     (100/10)*9% !default;
+
+// Twelfths
+$one-twelfth:     (100/12)*1% !default;
+
+$two-twelfths:    $one-sixth !default;
+
+$three-twelfths:  $one-quarter !default;
+
+$four-twelfths:   $one-third !default;
+
+$five-twelfths:   (100/12)*5% !default;
+
+$six-twelfths:    $one-half !default;
+
+$seven-twelfths:  (100/12)*7% !default;
+
+$eight-twelfths:  $two-thirds !default;
+
+$nine-twelfths:   $three-quarters !default;
+
+$ten-twelfths:    $five-sixths !default;
+
+$eleven-twelfths: (100/12)*11% !default;

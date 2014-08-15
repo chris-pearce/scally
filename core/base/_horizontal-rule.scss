@@ -11,6 +11,6 @@ hr {
   @extend %core-bottom-spacing;
   display: block;
   border: 0;
-  @include to-rem(border, 1 solid $color-text-base);
+  @include to-rem(border, 1 solid $colour-text-base);
   padding: 0;
 }
