@@ -28,6 +28,7 @@
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Settings:
   - Width toggles.
+  - Fix breakpoint vars having the `em` math.
 - Mixins:
   - xx
 
