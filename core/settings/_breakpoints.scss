@@ -24,62 +24,30 @@
  *
  * The breakpoints:
  *
- * - Palm:                0 - 640px
+ * - Palm:         0 - 640px
  *
- * - Lap:                 641px - 1199px
- * - Lap and up:          641px +
- * - Lap small:           641px - 900px
- * - Lap large:           901px - 1199px
- * - Lap large and up:    901px +
+ * - Lap:          641px +
+ * - Lap large:    901px +
  *
- * - Desk and up:         1200px +
- * - Desk small:          1200px - 1365px
- * - Desk large and up:   1366px +
+ * - Desk:         1200px +
+ * - Desk large:   1366px +
  *
  * @credit
  * - http://www.lukew.com/ff/entry.asp?1679
  * - https://developers.google.com/webmasters/smartphone-sites/details?hl=en
  */
 
-
-/**
- * Start and end points.
- */
-
-// Start points
-$lap-start:           (641 / 16)+em !default;
-
-$lap-large-start:     (901 / 16)+em !default;
-
-$desk-start:          (1200 / 16)+em !default;
-
-$desk-large-start:    (1366 / 16)+em !default;
-
-// End points
-$palm-end:            $lap-start - 1 !default;
-
-$lap-end:             $desk-start - 1 !default;
-
-$lap-small-end:       $lap-large-start - 1 !default;
-
-$desk-small-end:      $desk-large-start - 1 !default;
-
-
-/**
- * Readable breakpoints.
- */
-
 $breakpoints: (
 
   // Palm
-  "palm"                $palm-end,
+  "palm"         640,
 
   // Lap
-  "lap-and-up"          $lap-start,
-  "lap-large-and-up"    $lap-large-start,
+  "lap"          641,
+  "lap-large"    901,
 
   // Desk
-  "desk-and-up"         $desk-start,
-  "desk-large-and-up"   $desk-large-start
+  "desk"         1200,
+  "desk-large"   1366
 
 ) !default;
