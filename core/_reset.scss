@@ -104,7 +104,8 @@ main {
  * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
  * on :)
  *
- * @credit http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * @credit
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 
 @if $friendly-box-model {
@@ -135,7 +136,8 @@ ol {list-style: none;}
  * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
  * always want the rule it's applied too to take precedence.
  *
- * @credit https://github.com/suitcss/
+ * @credit
+ * https://github.com/suitcss/
  */
 
 [tabindex="-1"]:focus {outline: none !important;}
