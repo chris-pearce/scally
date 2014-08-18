@@ -2,10 +2,14 @@
    @CORE -> RESET
    ====================================================================================== */
 
+
 /**
  * In addition to normalize.css we also apply a reset which mainly removes all margins, paddings,
  * and borders, from all elements, and applies the nice `border-box` value for `box-sizing`. And a
  * few other things.
+ *
+ * @demo
+ * http://codepen.io/crite/full/tmxCd/
  */
 
 
@@ -99,40 +103,30 @@ main {
  * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
  * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
  * on :)
+ *
+ * @credit
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 
 @if $friendly-box-model {
 
+  html {box-sizing: border-box;}
+
   * {
     &,
     &:before,
-    &:after {box-sizing: border-box;}
+    &:after {box-sizing: inherit;}
   }
 
 }// endif
 
 
 /**
- * Reset lists
+ * Reset lists.
  */
 
 ul,
 ol {list-style: none;}
-
-
-/**
- * Remove underlines from potentially troublesome elements
- */
-
-u,
-ins {text-decoration: none;}
-
-
-/**
- * Ensure `s` elements always get a strikethrough
- */
-
-s {text-decoration: line-through;}
 
 
 /**
@@ -142,7 +136,22 @@ s {text-decoration: line-through;}
  * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
  * always want the rule it's applied too to take precedence.
  *
- * @credit https://github.com/suitcss/
+ * @credit
+ * https://github.com/suitcss/
  */
 
 [tabindex="-1"]:focus {outline: none !important;}
+
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+
+u,
+ins {text-decoration: none;}
+
+
+/**
+ * Apply faux underlines to inserted text via `border-bottom`.
+ */
+ins {border-bottom: 1px solid;}

@@ -8,8 +8,8 @@
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
-- Link up CodePen to Scally stylesheet.
 - `_tech-debt.scss` file.
+- Move all CodePen's to Westfield Labs account and update all the URL's in Scally.
 
 
 ---
@@ -25,10 +25,10 @@
   - Full stop after everything except `//` comments and URL's.
   - Bullet list for `@credit` references.
 - `style.scss`.
-- New `box-sizing` reset technique.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Settings:
   - Width toggles.
+  - Fix breakpoint vars having the `em` math.
 - Mixins:
   - xx
 
@@ -89,15 +89,20 @@
 
 ### CodePen Demo styles
 
-    /* DEMO STYLES */
-    body {padding: 40px !important;}
+  /* DEMO STYLES */
+  body {padding: 21px !important;}
 
-    .demo-heading {
-      background: #93a1a1 !important;
-      color: #fff !important;
-      padding: 6px !important;
-      margin: 24px 0 !important;
-      font-family: Georgia, serif !important;
-    }
+  .demo-heading,
+  .demo-heading-main {
+    background: #93a1a1 !important;
+    color: #fff !important;
+    padding: 8px !important;
+    margin: 24px 0 !important;
+    font-family: Georgia, serif !important;
+  }
 
-    .demo-heading:first-child {margin-top: 0 !important;}
+  .demo-heading-main {
+    font-size: 20px;
+    background: #859900 !important;
+    margin-top: 0 !important;
+  }

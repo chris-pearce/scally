@@ -16,10 +16,11 @@ $debug-mode: false !default;
 
 
 /**
- * Border box.
+ * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
- * Do you want all elements to adopt the nicer `box-sizing: border-box;` box model as per
- * http://paulirish.com/2012/box-sizing-border-box-ftw?
+ * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
+ * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
+ * on :)
  */
 
 $friendly-box-model: true !default;
