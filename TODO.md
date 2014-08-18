@@ -2,13 +2,14 @@
 
 ## Global
 
+- Reduce page column width to 80?
 - Create JIRA tickets.
 - Replace all instances of `/* endif */` with `// endif`.
 - Remove all instances of `== true` for Sass `@if` statements.
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
-- `_tech-debt.scss` file.
+- `_tech-debt.scss` file?
 - Move all CodePen's to Westfield Labs account and update all the URL's in Scally.
 
 
@@ -28,7 +29,6 @@
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Settings:
   - Width toggles.
-  - Fix breakpoint vars having the `em` math.
 - Mixins:
   - xx
 

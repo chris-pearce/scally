@@ -1,0 +1,42 @@
+/* ======================================================================================
+   @CORE -> FUNCTIONS -> MATH HELPERS
+   ====================================================================================== */
+
+
+/**
+ * A few maths helpers mainly used for halving and doubling numbers, returning rounded integers.
+ *
+ * @example
+   .foo {padding: halve(3.2px);}
+ *
+ */
+
+// Quarter
+@function quarter($number) {
+  @return round($number / 4);
+}
+
+// Third
+@function third($number) {
+  @return round($number / 3);
+}
+
+// Halve
+@function halve($number) {
+  @return round($number / 2);
+}
+
+// Double
+@function double($number) {
+  @return round($number * 2);
+}
+
+// Triple
+@function triple($number) {
+  @return round($number * 3);
+}
+
+// Quadruple
+@function quadruple($number) {
+  @return round($number * 4);
+}
