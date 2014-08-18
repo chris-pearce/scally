@@ -2,10 +2,14 @@
    @CORE -> RESET
    ====================================================================================== */
 
+
 /**
  * In addition to normalize.css we also apply a reset which mainly removes all margins, paddings,
  * and borders, from all elements, and applies the nice `border-box` value for `box-sizing`. And a
  * few other things.
+ *
+ * @demo
+ * http://codepen.io/crite/full/tmxCd/
  */
 
 
@@ -99,40 +103,29 @@ main {
  * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
  * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
  * on :)
+ *
+ * @credit http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 
 @if $friendly-box-model {
 
+  html {box-sizing: border-box;}
+
   * {
     &,
     &:before,
-    &:after {box-sizing: border-box;}
+    &:after {box-sizing: inherit;}
   }
 
 }// endif
 
 
 /**
- * Reset lists
+ * Reset lists.
  */
 
 ul,
 ol {list-style: none;}
-
-
-/**
- * Remove underlines from potentially troublesome elements
- */
-
-u,
-ins {text-decoration: none;}
-
-
-/**
- * Ensure `s` elements always get a strikethrough
- */
-
-s {text-decoration: line-through;}
 
 
 /**
