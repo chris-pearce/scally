@@ -8,8 +8,8 @@
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
-- Link up CodePen to Scally stylesheet.
 - `_tech-debt.scss` file.
+- Move all CodePen's to Westfield Labs account and update all the URL's in Scally.
 
 
 ---
