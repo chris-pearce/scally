@@ -31,21 +31,16 @@
   @if $from >= 1 and $to <= 6 {
     @for $i from $from through $to {
 
+      $selector: "h#{$i}";
+
       // Double stranded support
       @if $double-stranded {
-      	h#{$i},
-        .h#{$i} {
-          @extend %base-heading;
-        }
+        $selector: "#{$selector},.#{$selector}";
       }
 
-      // Non-double stranded
-      @else {
-        h#{$i} {
-          @extend %base-heading;
-        }
+      #{$selector} {
+        @extend %base-heading;
       }
-
     }
   }
 }
