@@ -2,34 +2,50 @@
    @CORE -> MIXINS -> TARGET HEADINGS
    ====================================================================================== */
 
+
 /**
- * Style any number of headings in one fell swoop.
+ * Style any number of headings in one fell swoop, supports double stranded headings.
  *
  * @example
-   @include headings(1, 3) {color: red;}
-   @include headings(1, 3, true) {color: red;}
+   .foo {
+     @include headings(1, 3) {
+      color: red;
+     }
+    }
+ *
+ * @demo
+ * http://codepen.io/crite/full/syAGf/
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss
  */
 
-@mixin headings($from: 1, $to: 6, $dbl-stranded: true) {
+@mixin headings($from: 1, $to: 6, $double-stranded: false) {
+
+  // Placeholder
   %base-heading {
     @content
   }
 
+  // Loop through 1-6
   @if $from >= 1 and $to <= 6 {
     @for $i from $from through $to {
-      @if $dbl-stranded == true {
+
+      // Double stranded support
+      @if $double-stranded {
       	h#{$i},
         .h#{$i} {
           @extend %base-heading;
         }
-      } @else {
+      }
+
+      // Non-double stranded
+      @else {
         h#{$i} {
           @extend %base-heading;
         }
       }
+
     }
   }
 }
