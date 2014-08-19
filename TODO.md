@@ -30,7 +30,12 @@
 - Settings:
   - Width toggles.
 - Mixins:
-  - xx
+  - Add warnings to all mixins.
+  - Ideas:
+    - <http://gumbyframework.com/docs/mixins/>.
+- Demo's:
+  - Settings -> Breakpoints
+  - More 'Settings'?
 
 ## Layout
 
@@ -42,6 +47,8 @@
 
 - Fancy `select` (see 'Parking project').
 - Block quote.
+- Ideas:
+  - <https://github.com/thoughtbot/bitters/blob/master/app/assets/stylesheets/extends/_flashes.scss>.
 
 ## Utilities
 
@@ -49,15 +56,7 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
-- Positioning:
-  - Top left.
-  - Top right.
-  - Bottom left.
-  - Bottom right.
-  - Stretch (pulls each corner/side so that it stretches to it's parent):
-    - All (`top: 0; bottom: 0; left: 0; right: 0;`).
-    - Sides (`left: 0; right: 0;`).
-    - Ends (`top: 0; bottom: 0;`).
+- Positioning: see CC, consider adding a height paramater for alignment?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
