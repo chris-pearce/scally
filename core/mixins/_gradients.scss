@@ -42,6 +42,9 @@
 
 /**
  * Radial gradient accepting two colours.
+ *
+ * @example
+   @include radial-gradient(blue, red);
  */
 
 @mixin radial-gradient($inner-colour, $outer-colour) {
