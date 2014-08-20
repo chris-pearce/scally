@@ -27,14 +27,17 @@
   - Bullet list for `@credit` references.
 - `style.scss`.
 - Make sure all instances of `px` for borders and shadows use `rem`.
+- Make sure all instances of 'color' is replaced with 'colour'.
 - Settings:
   - Width toggles.
 - Mixins:
-  - Add warnings to all mixins.
+  - Get Alec to tidy em all up.
   - Ideas:
+    - <https://gist.github.com/ykhs/3690526>.
     - <http://gumbyframework.com/docs/mixins/>.
+    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
+    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
 - Demo's:
-  - Settings -> Breakpoints
   - More 'Settings'?
 
 ## Layout
@@ -60,6 +63,7 @@
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
+  - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_center-block.scss>.
 
 
 ---
@@ -71,6 +75,8 @@
 
 - Update CSS Guidelines.
 - Consistent naming esp. for sizes.
+- sass --watch demo-styles.scss:demo-styles.css --style compressed
+  sass --watch style.scss:style.css --style compressed
 
 ### Sass Newness
 
@@ -81,27 +87,4 @@
 
 ### Put to the team
 
-- Dynamically pull in Normalize?
 - Have a vendor partial for 3rd party styles e.g. Google Map images (`.gm-style`)?
-- Settings:
-  - `z-index`.
-
-### CodePen Demo styles
-
-  /* DEMO STYLES */
-  body {padding: 21px !important;}
-
-  .demo-heading,
-  .demo-heading-main {
-    background: #93a1a1 !important;
-    color: #fff !important;
-    padding: 8px !important;
-    margin: 24px 0 !important;
-    font-family: Georgia, serif !important;
-  }
-
-  .demo-heading-main {
-    font-size: 20px;
-    background: #859900 !important;
-    margin-top: 0 !important;
-  }
