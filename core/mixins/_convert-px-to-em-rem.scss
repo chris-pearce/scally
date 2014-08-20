@@ -2,18 +2,13 @@
    @CORE -> MIXINS -> CONVERT PX TO EM/REM
    ====================================================================================== */
 
+
 /**
- * Convert `px` to `em`'s or `rem`'s for multiple properties or values or both.
- *
- * N.B.
- * - Accepts a list of lists (instead a list of values) for properties that accept multiple lists
- * of values. Only numbers are converted; everything else is passed through.
- * - For the `to-em` `@mixin` `$context` is an optional argument that allows making measurements
- * relative to the parent font size rather than the current.
- * - `$sledgehammer` is an optional argument that allows for the `!important` keyword to be
- * specified, when used in the `to-em` `@mixin` and the optional `$context` argument does not need
- * to be included then it has to be called using a named argument: `$sledgehammer: !important` so
- * that we can skip over `$context` avoiding having to redundantly redeclare it.
+ * Convert `px` to `em`'s or `rem`'s for multiple properties or values or both. Accepts a list of
+ * lists (instead a list of values) for properties that accept multiple lists of values. Only
+ * numbers are converted; everything else is passed through. For the `to-em` `@mixin` `$context` is
+ * an optional argument that allows making measurements relative to the parent font size rather than
+ * the current.
  *
  * @example
    @include to-em(line-height, 30)
@@ -25,51 +20,84 @@
    @include to-em(padding margin, $spacing-base, $sledgehammer: !important);
    @include to-rem(margin, $spacing-base, !important);
  *
+ * @demo
+ * http://codepen.io/crite/full/syAGf/
+ *
  * @credit
  * https://gist.github.com/2237465
  */
 
-// `em`
-@mixin to-em($props, $sizes, $context: $font-size, $sledgehammer: false) {
+
+/**
+ * `em`.
+ */
+
+@mixin to-em($properties, $sizes, $context: $font-size, $sledgehammer: false) {
+
 	$values: ();
   $sublists: false;
 	$important: if($sledgehammer, "!important", "");
-    @each $s in $sizes {
-      @if type-of($s) == list {
-        $sublists: true;
-        $vv: ();
-        @each $ss in $s {
-          $vv: append($vv, if(type-of($ss) == number, #{$ss / $context}em, $ss));
-        }
-        $values: append($values, join((), $vv));
-      } @else {
-        $values: append($values, if(type-of($s) == number, #{$s / $context}em, $s));
+
+  @each $s in $sizes {
+
+    @if type-of($s) == list {
+      $sublists: true;
+      $vv: ();
+
+      @each $ss in $s {
+        $vv: append($vv, if(type-of($ss) == number, #{$ss / $context}em, $ss));
       }
+
+      $values: append($values, join((), $vv));
     }
-    $value: join((), $values, if($sublists, comma, space));
-    @each $prop in $props {
-			#{$prop}: $value#{$important}
-	}
+
+    @else {
+      $values: append($values, if(type-of($s) == number, #{$s / $context}em, $s));
+    }
+
+  }
+
+  $value: join((), $values, if($sublists, comma, space));
+
+  @each $prop in $properties {
+    #{$prop}: $value #{$important}
+  }
+
 }
 
-// `rem`
-@mixin to-rem($props, $sizes, $sledgehammer: "") {
+
+/**
+ * `rem`.
+ */
+
+@mixin to-rem($properties, $sizes, $sledgehammer: "") {
+
 	$values: ();
   $sublists: false;
+
   @each $s in $sizes {
+
     @if type-of($s) == list {
     	$sublists: true;
       $vv: ();
+
       @each $ss in $s {
 				$vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem, $ss));
       }
+
       $values: append($values, join((), $vv));
-    } @else {
+    }
+
+    @else {
 		  $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem, $s));
     }
+
   }
+
   $value: join((), $values, if($sublists, comma, space));
-  @each $prop in $props {
-  	#{$prop}: $value#{$sledgehammer};
+
+  @each $prop in $properties {
+    #{$prop}: $value #{$sledgehammer};
 	}
+
 }

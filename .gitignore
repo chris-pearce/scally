@@ -3,8 +3,11 @@
 /.gitignore
 /index.html
 /style.scss
-/_overrides.scss
 /style.css
+/demo-styles.scss
+/demo-styles.css
+/overrides.scss
+
 
 # Compiled source #
 ###################

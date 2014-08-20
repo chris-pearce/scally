@@ -154,4 +154,5 @@ ins {text-decoration: none;}
 /**
  * Apply faux underlines to inserted text via `border-bottom`.
  */
-ins {border-bottom: 1px solid;}
+
+ins {@include to-rem(border-bottom, 1 solid);}

@@ -113,7 +113,7 @@ legend {
   select {
     @include to-rem(padding, $form-text-input-and-select-padding);
     color: $colour-form-input-text;
-    border-radius: $border-radius;
+    @include to-rem(border-radius, $border-radius);
     @include to-rem(border, 1 solid $colour-form-input-border);
     background: $colour-form-input-background;
   }

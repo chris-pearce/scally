@@ -2,17 +2,27 @@
    @CORE -> PLACEHOLDERS -> BOTTOM SPACING
    ====================================================================================== */
 
+
 /**
- * Applies the default bottom spacing in order to try to keep a consistent vertical rhythm.
+ * Applies bottom spacing in order to try to keep a consistent vertical rhythm.
  */
 
+
+/**
+ * Base.
+ */
+
+%core-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+
+
+/**
+ * Half.
+ */
+
+%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
+
+// Remove from the last children
 %core-bottom-spacing,
 %core-bottom-spacing-half {
   &:last-child {margin-bottom: 0;}
 }
-
-// Base
-%core-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
-
-// Half
-%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}

@@ -42,7 +42,7 @@
 @mixin respond-min($value, $height: false) {
 
   // Height
-  @if $height == true {
+  @if $height {
     @media (min-height: ($value / 16)+em) {
       @content;
     }
@@ -64,7 +64,7 @@
 @mixin respond-max($value, $height: false) {
 
   // Height
-  @if $height == true {
+  @if $height {
     @media (max-height: ($value / 16)+em) {
       @content;
     }
@@ -92,7 +92,7 @@
 @mixin respond-range($min-value, $max-value, $height: false) {
 
   // Height range
-  @if $height == true {
+  @if $height {
     @media (min-height: ($min-value / 16)+em) and (max-height: ($max-value / 16)+em) {
       @content;
     }
@@ -130,7 +130,7 @@
 @mixin respond-group-min($value-1, $value-2, $height: false) {
 
   // Height
-  @if $height == true {
+  @if $height {
     @media (min-height: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
       @content;
     }
@@ -148,7 +148,7 @@
 @mixin respond-group-max($value-1, $value-2, $height: false) {
 
   // Height
-  @if $height == true {
+  @if $height {
     @media (max-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
       @content;
     }
@@ -166,7 +166,7 @@
 @mixin respond-group-min-max($value-1, $value-2, $height: false) {
 
   // Height
-  @if $height == true {
+  @if $height {
     @media (min-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
       @content;
     }
