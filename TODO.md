@@ -25,6 +25,7 @@
   - No full stops after URL's.
   - Full stop after everything except `//` comments and URL's.
   - Bullet list for `@credit` references.
+- Device/browser test all.
 - `style.scss`.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Make sure all instances of 'color' is replaced with 'colour'.
@@ -34,7 +35,6 @@
   - Get Alec to tidy em all up.
   - Ideas:
     - <https://gist.github.com/ykhs/3690526>.
-    - <http://gumbyframework.com/docs/mixins/>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
 - Demo's:
