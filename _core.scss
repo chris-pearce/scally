@@ -52,7 +52,7 @@
 
 
 /**
- * Mixins
+ * Mixins.
  */
 
 @import "core/mixins/convert-px-to-em-rem";
@@ -65,7 +65,7 @@
 
 
 /**
- * Base
+ * Base.
  */
 
 @import "core/base/root";
@@ -81,7 +81,7 @@
 
 
 /**
- * Placeholders
+ * Placeholders.
  *
  * N.B. the placeholders in utilities are the frameworks defaults however because we don't want
  * utilities as a framework dependency we have to have separate placeholders for the core.
