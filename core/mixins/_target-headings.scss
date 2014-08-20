@@ -22,18 +22,15 @@
 
 @mixin headings($from: 1, $to: 6, $double-stranded: false) {
 
-  // Placeholder
   %base-heading {
     @content
   }
 
-  // Loop through 1-6
   @if $from >= 1 and $to <= 6 {
     @for $i from $from through $to {
 
       $selector: "h#{$i}";
 
-      // Double stranded support
       @if $double-stranded {
         $selector: "#{$selector},.#{$selector}";
       }
@@ -44,7 +41,6 @@
     }
   }
 
-  // Warning
   else {
     @warn "You can only target headings 1 to 6";
   }
