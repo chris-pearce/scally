@@ -1,5 +1,5 @@
 /* ======================================================================================
-   @CORE -> FUNCTIONS -> CONVERSIONS
+   @CORE -> FUNCTIONS -> CONVERT PX TO EM/REM
    ====================================================================================== */
 
 
@@ -15,12 +15,20 @@
  *
  */
 
-// `em`
+
+/**
+ * `em`.
+ */
+
 @function to-em($value, $context: $font-size) {
 	@return #{$value / $context}em;
 }
 
-// `rem`
+
+/**
+ * `rem`.
+ */
+
 @function to-rem($value) {
 	@return #{$value / $font-size}rem;
 }

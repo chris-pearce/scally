@@ -8,35 +8,58 @@
  *
  * @example
    .foo {padding: halve(3.2px);}
- *
  */
 
-// Quarter
+
+/**
+ * Quarter.
+ */
+
 @function quarter($number) {
   @return round($number / 4);
 }
 
-// Third
+
+/**
+ * Third.
+ */
+
 @function third($number) {
   @return round($number / 3);
 }
 
-// Halve
+
+/**
+ * Halve.
+ */
+
 @function halve($number) {
   @return round($number / 2);
 }
 
-// Double
+
+/**
+ * Double.
+ */
+
 @function double($number) {
   @return round($number * 2);
 }
 
-// Triple
+
+/**
+ * Triple.
+ */
+
 @function triple($number) {
   @return round($number * 3);
 }
 
-// Quadruple
+
+/**
+ * Quadruple.
+ */
+
 @function quadruple($number) {
   @return round($number * 4);
 }

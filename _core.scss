@@ -26,8 +26,21 @@
  * Functions.
  */
 
+@import "core/functions/convert-px-to-em-rem";
 @import "core/functions/math-helpers";
-@import "core/functions/conversions";
+
+
+/**
+ * Mixins.
+ */
+
+@import "core/mixins/convert-px-to-em-rem";
+@import "core/mixins/font-size";
+@import "core/mixins/gradients";
+@import "core/mixins/media-queries";
+@import "core/mixins/retina-bg-image";
+@import "core/mixins/target-browsers";
+@import "core/mixins/target-headings";
 
 
 /**
@@ -49,19 +62,6 @@
  */
 
 @import "core/debug";
-
-
-/**
- * Mixins.
- */
-
-@import "core/mixins/convert-px-to-em-rem";
-@import "core/mixins/font-size";
-@import "core/mixins/gradients";
-@import "core/mixins/media-queries";
-@import "core/mixins/retina-bg-image";
-@import "core/mixins/target-browsers";
-@import "core/mixins/target-headings";
 
 
 /**
@@ -89,4 +89,3 @@
  */
 
 @import "core/placeholders/core-bottom-spacing";
-@import "core/placeholders/core-smooth-touch-scrolling";

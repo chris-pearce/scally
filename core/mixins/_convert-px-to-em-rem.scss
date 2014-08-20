@@ -29,7 +29,7 @@
 
 
 /**
- * EM.
+ * `em`.
  */
 
 @mixin to-em($properties, $sizes, $context: $font-size, $sledgehammer: false) {
@@ -67,7 +67,7 @@
 
 
 /**
- * REM.
+ * `rem`.
  */
 
 @mixin to-rem($properties, $sizes, $sledgehammer: "") {
