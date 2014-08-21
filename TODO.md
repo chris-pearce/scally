@@ -31,6 +31,7 @@
 
 - Grid:
   - Don't use `non-palm-x` prefix to apply widths.
+  - Do this: <https://github.com/inuitcss/objects.layout/blob/master/_objects.layout.scss#L37-L40>.
 - Don't couple `container-bg-color-x` with base `.container`.
 
 ## Components
