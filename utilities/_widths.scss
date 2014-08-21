@@ -117,7 +117,7 @@
  * Palm large.
  */
 
-@if $width-classes-at-breakpoint-palm-lrg == true {
+@if $width-classes-at-breakpoint-palm-lrg }
   @include respond-min($palm-lrg) {
     @include width-classes("palm-lrg-");
   }
@@ -127,7 +127,7 @@
  * Non palm.
  */
 
-@if $width-classes-at-breakpoint-non-palm == true {
+@if $width-classes-at-breakpoint-non-palm }
   @include respond-min($non-palm) {
     @include width-classes("non-palm-");
   }
@@ -137,7 +137,7 @@
  * Lap.
  */
 
-@if $width-classes-at-breakpoint-lap == true {
+@if $width-classes-at-breakpoint-lap }
   @include respond-range-fixed(lap) {
     @include width-classes("lap-");
   }
@@ -147,7 +147,7 @@
  * Lap small.
  */
 
-@if $width-classes-at-breakpoint-lap-sml == true {
+@if $width-classes-at-breakpoint-lap-sml }
   @include respond-range-fixed(lap-sml) {
     @include width-classes("lap-sml-");
   }
@@ -157,7 +157,7 @@
  * Lap small middle.
  */
 
-@if $width-classes-at-breakpoint-lap-sml-middle == true {
+@if $width-classes-at-breakpoint-lap-sml-middle }
   @include respond-min($lap-sml-middle) {
     @include width-classes("lap-sml-middle-");
   }
@@ -167,7 +167,7 @@
  * Lap large middle.
  */
 
-@if $width-classes-at-breakpoint-lap-lrg-middle == true {
+@if $width-classes-at-breakpoint-lap-lrg-middle }
   @include respond-min($lap-lrg-middle) {
     @include width-classes("lap-lrg-middle-");
   }
@@ -177,7 +177,7 @@
  * Lap large.
  */
 
-@if $width-classes-at-breakpoint-lap-lrg == true {
+@if $width-classes-at-breakpoint-lap-lrg }
   @include respond-range-fixed(lap-lrg) {
     @include width-classes("lap-lrg-");
   }
@@ -187,7 +187,7 @@
  * Desk.
  */
 
-@if $width-classes-at-breakpoint-desk == true {
+@if $width-classes-at-breakpoint-desk }
   @include respond-min($desk) {
     @include width-classes("desk-");
   }
@@ -197,7 +197,7 @@
  * Desk small.
  */
 
-@if $width-classes-at-breakpoint-desk-sml == true {
+@if $width-classes-at-breakpoint-desk-sml }
   @include respond-range-fixed(desk-sml) {
     @include width-classes("desk-sml-");
   }
@@ -207,7 +207,7 @@
  * Desk large.
  */
 
-@if $width-classes-at-breakpoint-desk-lrg == true {
+@if $width-classes-at-breakpoint-desk-lrg }
   @include respond-min($desk-lrg) {
     @include width-classes("desk-lrg-");
   }

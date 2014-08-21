@@ -80,7 +80,7 @@
 	.pull-#{$namespace}eleven-twelfths {right: $eleven-twelfths;}
 }
 
-@if $grid-pull == true {
+@if $grid-pull }
 
 	/* Not a particularly great selector, but the DRYest way to do things */
 	[class*="pull-"] {position: relative;}
@@ -91,70 +91,70 @@
 	/* Output push classes under specific breakpoints applied via specific classes (namespaced) e.g. `.push-lap-one-half` */
 
 	/* Palm large */
-	@if $grid-pull-classes-at-breakpoint-palm-lrg == true {
+	@if $grid-pull-classes-at-breakpoint-palm-lrg }
 	  @include respond-min($palm-lrg) {
 	    @include pull-classes("palm-lrg-");
 	  }
 	}// endif
 
 	/* Non palm */
-	@if $grid-pull-classes-at-breakpoint-non-palm == true {
+	@if $grid-pull-classes-at-breakpoint-non-palm }
 	  @include respond-min($non-palm) {
 	    @include pull-classes("non-palm-");
 	  }
 	}// endif
 
 	/* Lap */
-	@if $grid-pull-classes-at-breakpoint-lap == true {
+	@if $grid-pull-classes-at-breakpoint-lap }
 	  @include respond-range-fixed(lap) {
 	    @include pull-classes("lap-");
 	  }
 	}// endif
 
 	/* Lap small */
-	@if $grid-pull-classes-at-breakpoint-lap-sml == true {
+	@if $grid-pull-classes-at-breakpoint-lap-sml }
 	  @include respond-range-fixed(lap-sml) {
 	    @include pull-classes("lap-sml-");
 	  }
 	}// endif
 
 	/* Lap small middle */
-	@if $grid-pull-classes-at-breakpoint-lap-sml-middle == true {
+	@if $grid-pull-classes-at-breakpoint-lap-sml-middle }
 	  @include respond-min($lap-sml-middle) {
 	    @include pull-classes("lap-sml-middle-");
 	  }
 	}// endif
 
 	/* Lap large middle */
-	@if $grid-pull-classes-at-breakpoint-lap-lrg-middle == true {
+	@if $grid-pull-classes-at-breakpoint-lap-lrg-middle }
 	  @include respond-min($lap-lrg-middle) {
 	    @include pull-classes("lap-lrg-middle-");
 	  }
 	}// endif
 
 	/* Lap large */
-	@if $grid-pull-classes-at-breakpoint-lap-lrg == true {
+	@if $grid-pull-classes-at-breakpoint-lap-lrg }
 	  @include respond-range-fixed(lap-lrg) {
 	    @include pull-classes("lap-lrg-");
 	  }
 	}// endif
 
 	/* Desk */
-	@if $grid-pull-classes-at-breakpoint-desk == true {
+	@if $grid-pull-classes-at-breakpoint-desk }
 	  @include respond-min($desk) {
 	    @include pull-classes("desk-");
 	  }
 	}// endif
 
 	/* Desk small */
-	@if $grid-pull-classes-at-breakpoint-desk-sml == true {
+	@if $grid-pull-classes-at-breakpoint-desk-sml }
 	  @include respond-range-fixed(desk-sml) {
 	    @include pull-classes("desk-sml-");
 	  }
 	}// endif
 
 	/* Desk large */
-	@if $grid-pull-classes-at-breakpoint-desk-lrg == true {
+	@if $grid-pull-classes-at-breakpoint-desk-lrg }
 	  @include respond-min($desk-lrg) {
 	    @include pull-classes("desk-lrg-");
 	  }
