@@ -17,11 +17,10 @@
 
 ## Core
 
-- Device/browser test all.
 - Settings:
-  - Width toggles.
+  - Width toggles (Alec TODO).
 - Mixins:
-  - Get Alec to tidy em all up.
+  - Media query mixin (Alec TODO).
   - 2 Bootstrap mixins (see below)?
   - Ideas:
     - <https://gist.github.com/ykhs/3690526>.
