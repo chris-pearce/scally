@@ -2,11 +2,21 @@
    @LAYOUT -> CONTAINER
    ====================================================================================== */
 
-.l-container,
-.l-container--palm {
-  width: $page-container-width;
-  @include to-rem(min-width, $page-container-min-width);
-  @include to-rem(max-width, $page-container-max-width);
+
+/**
+ * The main container that wraps all major layout pieces so that we keep all layout consistent. The
+ * container is responsive in that it will be a fluid width using '%' up until it hits it's
+ * maximum width which is stored in 'Settings -> Layout', along with the minimum width. And it's
+ * center aligned by default.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/GiCzg/
+ */
+
+.l-container {
+  width: $container-width;
+  @include to-rem(min-width, $container-minimum-width);
+  @include to-rem(max-width, $container-maximum-width);
   margin: 0 auto;
 
   /* Print */
@@ -15,28 +25,20 @@
   }
 }
 
-/* Modifiers: apply only at palm or non-palm */
-@include respond-min($non-palm) {
-  .l-container--off-non-palm,
-  .l-container--palm {
-    width: auto;
-    max-width: none;
-    min-width: 0;
-  }
+/**
+ * Modifier: full bleed container.
+ */
 
-  .l-container-non-palm {
-    width: $page-container-width;
-    @include to-rem(min-width, $page-container-min-width);
-    @include to-rem(max-width, $page-container-max-width);
-    margin: 0 auto;
-  }
-}
-
-/* Modifier: wide container */
-.l-container--wide {
+.l-container--full-bleed {
   width: auto;
   max-width: none;
 }
 
-/* Modifier: position relative container */
-.l-container--position {position: relative;}
+/**
+ * Modifier: not centered.
+ */
+
+.l-container--not-centered {
+  margin-left: 0;
+  margin-right: 0;
+}

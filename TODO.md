@@ -7,6 +7,9 @@
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - `_tech-debt.scss` file?
+- CodePen:
+  - Put custom font in CSS.
+  - `$bg-color: #143A8D;`.
 
 
 ---
