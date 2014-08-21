@@ -3,7 +3,6 @@
 ## Global
 
 - `style.scss`.
-- Remove all instances of `== true` for Sass `@if` statements.
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
