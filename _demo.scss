@@ -1,0 +1,55 @@
+$bg-color: #143A8D;
+
+.test-bp {
+  padding: 6px;
+  background: $bg-color;
+  color: #fff;
+
+  .test-bp-palm {display: block;}
+
+  span {display: none;}
+
+  @include respond-min(lap) {
+    background: lighten($bg-color, 5%);
+
+    .test-bp-lap {display: block;}
+
+    .test-bp-palm,
+    .test-bp-lap-large,
+    .test-bp-desk,
+    .test-bp-desk-large {display: none;}
+  }
+
+  @include respond-min(lap-large) {
+    background: lighten($bg-color, 10%);
+
+    .test-bp-lap-large {display: block;}
+
+    .test-bp-palm,
+    .test-bp-lap,
+    .test-bp-desk,
+    .test-bp-desk-large {display: none;}
+  }
+
+  @include respond-min(desk) {
+    background: lighten($bg-color, 15%);
+
+    .test-bp-desk {display: block;}
+
+    .test-bp-palm,
+    .test-bp-lap,
+    .test-bp-lap-large,
+    .test-bp-desk-large {display: none;}
+  }
+
+  @include respond-min(desk-large) {
+    background: lighten($bg-color, 20%);
+
+    .test-bp-desk-large {display: block;}
+
+    .test-bp-palm,
+    .test-bp-lap,
+    .test-bp-lap-large,
+    .test-bp-desk {display: none;}
+  }
+}

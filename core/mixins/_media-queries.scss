@@ -40,42 +40,44 @@
  */
 
 @mixin respond-min($value, $height: false) {
-
-  // Height
-  @if $height {
-    @media (min-height: ($value / 16)+em) {
-      @content;
-    }
+  @include respond($value, $height, "min") {
+    @content;
   }
-
-  // Width
-  @else {
-		@media (min-width: ($value / 16)+em) {
-			@content;
-		}
-	}
 }
-
 
 /**
  * Maximum
  */
 
 @mixin respond-max($value, $height: false) {
-
-  // Height
-  @if $height {
-    @media (max-height: ($value / 16)+em) {
-      @content;
-    }
+  @include respond($value, $height, "max") {
+    @content;
   }
+}
 
-  // Width
-  @else {
-		@media (max-width: ($value / 16)+em) {
-			@content;
-		}
-	}
+@mixin respond($value, $height: false, $min-or-max: "min") {
+  $value-in-em: to-em(map-get($breakpoints, $value));
+  $axis: "width";
+  @if $height {
+    $axis: "height";
+  }
+  @media (#{$min-or-max}-#{$axis}: $value-in-em) {
+    @content;
+  }
+}
+
+@function query($value-in-em, $) {
+
+}
+
+//Credit http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+@function to-string($list, $glue: '') {
+  $result: null;
+  @for $i from 1 through length($list) {
+    $e: nth($list, $i);
+    $result: $result#{to-string($e, $glue, true)};
+  }
+  @return $result;
 }
 
 
