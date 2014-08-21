@@ -9,7 +9,7 @@ $bg-color: #143A8D;
 
   span {display: none;}
 
-  @include respond-min(lap) {
+  @include respond-range(lap, desk) {
     background: lighten($bg-color, 5%);
 
     .test-bp-lap {display: block;}

@@ -75,6 +75,28 @@
  *
  * N.B. the media query will only apply when both arguments are true.
  */
+//Credit http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+  @function to-string($list...) {
+    $result: null;
+    $glue: ' and ';
+    @for $i from 1 through length($list) {
+      $e: nth($list, $i);
+      $result: $result#{to-string($e, $glue, true)};
+    }
+    @return $result;
+  }
+@mixin respond-range-internal($queries...) {
+  $list:();
+  @each $property, $value in $queries {
+    $value-in-em: to-em(map-get($breakpoints, $value));
+    $list: append($list, "(#{$property}: $value-in-em)");
+  }
+  @debug $list;
+  @debug to-string($list);
+  @media (min-width:1px) {@content;}
+}
+
+
 
 // Accepts a minimum and maximum width/height range
 @mixin respond-range($min-value, $max-value, $height: false) {
@@ -88,9 +110,7 @@
 
   // Width range
   @else {
-		@media (min-width: ($min-value / 16)+em) and (max-width: ($max-value / 16)+em) {
-			@content;
-		}
+    @include respond-range-internal(min-width $min-value, max-width $max-value) {@content;}
 	}
 }
 
