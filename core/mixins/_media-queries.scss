@@ -66,20 +66,6 @@
   }
 }
 
-@function query($value-in-em, $) {
-
-}
-
-//Credit http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-@function to-string($list, $glue: '') {
-  $result: null;
-  @for $i from 1 through length($list) {
-    $e: nth($list, $i);
-    $result: $result#{to-string($e, $glue, true)};
-  }
-  @return $result;
-}
-
 
 /* Ranges
    ========================================================================== */
