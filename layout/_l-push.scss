@@ -95,69 +95,69 @@
 	  @include respond-min($palm-lrg) {
 	    @include push-classes("palm-lrg-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Non palm */
 	@if $grid-push-classes-at-breakpoint-non-palm == true {
 	  @include respond-min($non-palm) {
 	    @include push-classes("non-palm-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Lap */
 	@if $grid-push-classes-at-breakpoint-lap == true {
 	  @include respond-range-fixed(lap) {
 	    @include push-classes("lap-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Lap small */
 	@if $grid-push-classes-at-breakpoint-lap-sml == true {
 	  @include respond-range-fixed(lap-sml) {
 	    @include push-classes("lap-sml-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Lap small middle */
 	@if $grid-push-classes-at-breakpoint-lap-sml-middle == true {
 	  @include respond-min($lap-sml-middle) {
 	    @include push-classes("lap-sml-middle-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Lap large middle */
 	@if $grid-push-classes-at-breakpoint-lap-lrg-middle == true {
 	  @include respond-min($lap-lrg-middle) {
 	    @include push-classes("lap-lrg-middle-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Lap large */
 	@if $grid-push-classes-at-breakpoint-lap-lrg == true {
 	  @include respond-range-fixed(lap-lrg) {
 	    @include push-classes("lap-lrg-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Desk */
 	@if $grid-push-classes-at-breakpoint-desk == true {
 	  @include respond-min($desk) {
 	    @include push-classes("desk-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Desk small */
 	@if $grid-push-classes-at-breakpoint-desk-sml == true {
 	  @include respond-range-fixed(desk-sml) {
 	    @include push-classes("desk-sml-");
 	  }
-	}/* endif */
+	}// endif
 
 	/* Desk large */
 	@if $grid-push-classes-at-breakpoint-desk-lrg == true {
 	  @include respond-min($desk-lrg) {
 	    @include push-classes("desk-lrg-");
 	  }
-	}/* endif */
+	}// endif
 
-}/* endif */
+}// endif

@@ -2,9 +2,7 @@
 
 ## Global
 
-- Move all CodePen's to Westfield Labs account and update all the URL's in Scally.
 - `style.scss`.
-- Replace all instances of `/* endif */` with `// endif`.
 - Remove all instances of `== true` for Sass `@if` statements.
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.

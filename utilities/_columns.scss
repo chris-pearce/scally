@@ -50,67 +50,67 @@
   @include respond-min($palm-lrg) {
     @include col-classes("palm-lrg-");
   }
-}/* endif */
+}// endif
 
 /* Non palm */
 @if $col-classes-at-breakpoint-non-palm == true {
   @include respond-min($non-palm) {
     @include col-classes("non-palm-");
   }
-}/* endif */
+}// endif
 
 /* Lap */
 @if $col-classes-at-breakpoint-lap == true {
   @include respond-range-fixed(lap) {
     @include col-classes("lap-");
   }
-}/* endif */
+}// endif
 
 /* Lap small */
 @if $col-classes-at-breakpoint-lap-sml == true {
   @include respond-range-fixed(lap-sml) {
     @include col-classes("lap-sml-");
   }
-}/* endif */
+}// endif
 
 /* Lap small middle */
 @if $col-classes-at-breakpoint-lap-sml-middle == true {
   @include respond-min($lap-sml-middle) {
     @include col-classes("lap-sml-middle-");
   }
-}/* endif */
+}// endif
 
 /* Lap large middle */
 @if $col-classes-at-breakpoint-lap-lrg-middle == true {
   @include respond-min($lap-lrg-middle) {
     @include col-classes("lap-lrg-middle-");
   }
-}/* endif */
+}// endif
 
 /* Lap large */
 @if $col-classes-at-breakpoint-lap-lrg == true {
   @include respond-range-fixed(lap-lrg) {
     @include col-classes("lap-lrg-");
   }
-}/* endif */
+}// endif
 
 /* Desk */
 @if $col-classes-at-breakpoint-desk == true {
   @include respond-min($desk) {
     @include col-classes("desk-");
   }
-}/* endif */
+}// endif
 
 /* Desk small */
 @if $col-classes-at-breakpoint-desk-sml == true {
   @include respond-range-fixed(desk-sml) {
     @include col-classes("desk-sml-");
   }
-}/* endif */
+}// endif
 
 /* Desk large */
 @if $col-classes-at-breakpoint-desk-lrg == true {
   @include respond-min($desk-lrg) {
     @include col-classes("desk-lrg-");
   }
-}/* endif */
+}// endif
