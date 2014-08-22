@@ -14,10 +14,10 @@
   "license": "Apache 2.0",
   "private": true,
   "ignore": [
-    "test",
     "**/.*",
     "bower.json",
     "LICENSE",
+    "Rakefile",
     "**/README.md",
     "TODO.md"
   ]
