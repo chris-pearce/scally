@@ -1,0 +1,7 @@
+language: sass
+rvm:
+  - "2.1.2"
+before_install:
+ - gem install sass rake
+script:
+ - rake test
