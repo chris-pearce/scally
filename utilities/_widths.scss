@@ -3,7 +3,7 @@
    ====================================================================================== */
 
 /**
- * Apply percentage based width helper classes with the option to apply at all the main breakpoints.
+ * Apply percentage based width classes with the option to apply at all the main breakpoints.
  * Mostly used with the grid.
  */
 
@@ -12,91 +12,91 @@
   /**
    * Whole.
    */
-  .#{$namespace}h-one-whole {width: $one-whole !important;}
+  .u-#{$namespace}one-whole {width: $one-whole !important;}
 
   /**
    * Halves.
    */
-  .#{$namespace}h-one-half {width: $one-half !important;}
+  .u-#{$namespace}one-half {width: $one-half !important;}
 
   /**
    * Thirds.
    */
-  .#{$namespace}h-one-third {width: $one-third !important;}
-  .#{$namespace}h-two-thirds {width: $two-thirds !important;}
+  .u-#{$namespace}one-third {width: $one-third !important;}
+  .u-#{$namespace}two-thirds {width: $two-thirds !important;}
 
   /**
    * Quarters.
    */
-  .#{$namespace}h-one-quarter {width: $one-quarter !important;}
-  .#{$namespace}h-two-quarters {width: $one-half !important;}
-  .#{$namespace}h-three-quarters {width: $three-quarters !important;}
+  .u-#{$namespace}one-quarter {width: $one-quarter !important;}
+  .u-#{$namespace}two-quarters {width: $one-half !important;}
+  .u-#{$namespace}three-quarters {width: $three-quarters !important;}
 
   /**
    * Fifths.
    */
-  .#{$namespace}h-one-fifth {width: $one-fifth !important;}
-  .#{$namespace}h-two-fifths {width: $two-fifths !important;}
-  .#{$namespace}h-three-fifths {width: $three-fifths !important;}
-  .#{$namespace}h-four-fifths {width: $four-fifths !important;}
+  .u-#{$namespace}one-fifth {width: $one-fifth !important;}
+  .u-#{$namespace}two-fifths {width: $two-fifths !important;}
+  .u-#{$namespace}three-fifths {width: $three-fifths !important;}
+  .u-#{$namespace}four-fifths {width: $four-fifths !important;}
 
   /**
    * Sixths.
    */
-  .#{$namespace}h-one-sixth {width: $one-sixth !important;}
-  .#{$namespace}h-two-sixths {width: $one-third !important;}
-  .#{$namespace}h-three-sixths {width: $one-half !important;}
-  .#{$namespace}h-four-sixths {width: $two-thirds !important;}
-  .#{$namespace}h-five-sixths {width: $five-sixths !important;}
+  .u-#{$namespace}one-sixth {width: $one-sixth !important;}
+  .u-#{$namespace}two-sixths {width: $one-third !important;}
+  .u-#{$namespace}three-sixths {width: $one-half !important;}
+  .u-#{$namespace}four-sixths {width: $two-thirds !important;}
+  .u-#{$namespace}five-sixths {width: $five-sixths !important;}
 
   /**
    * Sevenths.
    */
-  .#{$namespace}h-one-seventh {width: $one-seventh !important;}
-  .#{$namespace}h-two-sevenths {width: $two-sevenths !important;}
-  .#{$namespace}h-three-sevenths {width: $three-sevenths !important;}
-  .#{$namespace}h-four-sevenths {width: $four-sevenths !important;}
-  .#{$namespace}h-five-sevenths {width: $five-sevenths !important;}
-  .#{$namespace}h-six-sevenths {width: $six-sevenths !important;}
+  .u-#{$namespace}one-seventh {width: $one-seventh !important;}
+  .u-#{$namespace}two-sevenths {width: $two-sevenths !important;}
+  .u-#{$namespace}three-sevenths {width: $three-sevenths !important;}
+  .u-#{$namespace}four-sevenths {width: $four-sevenths !important;}
+  .u-#{$namespace}five-sevenths {width: $five-sevenths !important;}
+  .u-#{$namespace}six-sevenths {width: $six-sevenths !important;}
 
   /**
    * Eighths.
    */
-  .#{$namespace}h-one-eighth {width: $one-eighth !important;}
-  .#{$namespace}h-two-eighths {width: $one-quarter !important;}
-  .#{$namespace}h-three-eighths {width: $three-eighths !important;}
-  .#{$namespace}h-four-eighths {width: $one-half !important;}
-  .#{$namespace}h-five-eighths {width: $five-eighths !important;}
-  .#{$namespace}h-six-eighths {width: $three-quarters !important;}
-  .#{$namespace}h-seven-eighths {width: $seven-eighths !important;}
+  .u-#{$namespace}one-eighth {width: $one-eighth !important;}
+  .u-#{$namespace}two-eighths {width: $one-quarter !important;}
+  .u-#{$namespace}three-eighths {width: $three-eighths !important;}
+  .u-#{$namespace}four-eighths {width: $one-half !important;}
+  .u-#{$namespace}five-eighths {width: $five-eighths !important;}
+  .u-#{$namespace}six-eighths {width: $three-quarters !important;}
+  .u-#{$namespace}seven-eighths {width: $seven-eighths !important;}
 
   /**
    * Tenths.
    */
-  .#{$namespace}h-one-tenth {width: $one-tenth !important;}
-  .#{$namespace}h-two-tenths {width: $one-fifth !important;}
-  .#{$namespace}h-three-tenths {width: $three-tenths !important;}
-  .#{$namespace}h-four-tenths {width: $two-fifths !important;}
-  .#{$namespace}h-five-tenths {width: $one-half !important;}
-  .#{$namespace}h-six-tenths {width: $three-fifths !important;}
-  .#{$namespace}h-seven-tenths {width: $seven-tenths !important;}
-  .#{$namespace}h-eight-tenths {width: $four-fifths !important;}
-  .#{$namespace}h-nine-tenths {width: $nine-tenths !important;}
+  .u-#{$namespace}one-tenth {width: $one-tenth !important;}
+  .u-#{$namespace}two-tenths {width: $one-fifth !important;}
+  .u-#{$namespace}three-tenths {width: $three-tenths !important;}
+  .u-#{$namespace}four-tenths {width: $two-fifths !important;}
+  .u-#{$namespace}five-tenths {width: $one-half !important;}
+  .u-#{$namespace}six-tenths {width: $three-fifths !important;}
+  .u-#{$namespace}seven-tenths {width: $seven-tenths !important;}
+  .u-#{$namespace}eight-tenths {width: $four-fifths !important;}
+  .u-#{$namespace}nine-tenths {width: $nine-tenths !important;}
 
   /**
    * Twelfths.
    */
-  .#{$namespace}h-one-twelfth {width: $one-twelfth !important;}
-  .#{$namespace}h-two-twelfths {width: $one-sixth !important;}
-  .#{$namespace}h-three-twelfths {width: $one-quarter !important;}
-  .#{$namespace}h-four-twelfths {width: $one-third !important;}
-  .#{$namespace}h-five-twelfths {width: $five-twelfths !important;}
-  .#{$namespace}h-six-twelfths {width: $one-half !important;}
-  .#{$namespace}h-seven-twelfths {width: $seven-twelfths !important;}
-  .#{$namespace}h-eight-twelfths {width: $two-thirds !important;}
-  .#{$namespace}h-nine-twelfths {width: $three-quarters !important;}
-  .#{$namespace}h-ten-twelfths {width: $five-sixths !important;}
-  .#{$namespace}h-eleven-twelfths {width: $eleven-twelfths !important;}
+  .u-#{$namespace}one-twelfth {width: $one-twelfth !important;}
+  .u-#{$namespace}two-twelfths {width: $one-sixth !important;}
+  .u-#{$namespace}three-twelfths {width: $one-quarter !important;}
+  .u-#{$namespace}four-twelfths {width: $one-third !important;}
+  .u-#{$namespace}five-twelfths {width: $five-twelfths !important;}
+  .u-#{$namespace}six-twelfths {width: $one-half !important;}
+  .u-#{$namespace}seven-twelfths {width: $seven-twelfths !important;}
+  .u-#{$namespace}eight-twelfths {width: $two-thirds !important;}
+  .u-#{$namespace}nine-twelfths {width: $three-quarters !important;}
+  .u-#{$namespace}ten-twelfths {width: $five-sixths !important;}
+  .u-#{$namespace}eleven-twelfths {width: $eleven-twelfths !important;}
 }
 
 /**
@@ -114,22 +114,12 @@
  */
 
 /**
- * Palm large.
+ * Lap and up.
  */
 
-@if $width-classes-at-breakpoint-palm-lrg }
-  @include respond-min($palm-lrg) {
-    @include width-classes("palm-lrg-");
-  }
-}// endif
-
-/**
- * Non palm.
- */
-
-@if $width-classes-at-breakpoint-non-palm }
-  @include respond-min($non-palm) {
-    @include width-classes("non-palm-");
+@if $width-classes-at-breakpoint-desk {
+  @include respond-min(641) {
+    @include width-classes("lap-");
   }
 }// endif
 
@@ -137,39 +127,9 @@
  * Lap.
  */
 
-@if $width-classes-at-breakpoint-lap }
+@if $width-classes-at-breakpoint-lap {
   @include respond-range-fixed(lap) {
-    @include width-classes("lap-");
-  }
-}// endif
-
-/**
- * Lap small.
- */
-
-@if $width-classes-at-breakpoint-lap-sml }
-  @include respond-range-fixed(lap-sml) {
-    @include width-classes("lap-sml-");
-  }
-}// endif
-
-/**
- * Lap small middle.
- */
-
-@if $width-classes-at-breakpoint-lap-sml-middle }
-  @include respond-min($lap-sml-middle) {
-    @include width-classes("lap-sml-middle-");
-  }
-}// endif
-
-/**
- * Lap large middle.
- */
-
-@if $width-classes-at-breakpoint-lap-lrg-middle }
-  @include respond-min($lap-lrg-middle) {
-    @include width-classes("lap-lrg-middle-");
+    @include width-classes("lap-range-");
   }
 }// endif
 
@@ -177,9 +137,9 @@
  * Lap large.
  */
 
-@if $width-classes-at-breakpoint-lap-lrg }
-  @include respond-range-fixed(lap-lrg) {
-    @include width-classes("lap-lrg-");
+@if $width-classes-at-breakpoint-lap-large {
+  @include respond-range-fixed(lap-large) {
+    @include width-classes("lap-large-range-");
   }
 }// endif
 
@@ -187,19 +147,9 @@
  * Desk.
  */
 
-@if $width-classes-at-breakpoint-desk }
-  @include respond-min($desk) {
+@if $width-classes-at-breakpoint-desk {
+  @include respond-min(1200) {
     @include width-classes("desk-");
-  }
-}// endif
-
-/**
- * Desk small.
- */
-
-@if $width-classes-at-breakpoint-desk-sml }
-  @include respond-range-fixed(desk-sml) {
-    @include width-classes("desk-sml-");
   }
 }// endif
 
@@ -207,8 +157,8 @@
  * Desk large.
  */
 
-@if $width-classes-at-breakpoint-desk-lrg }
-  @include respond-min($desk-lrg) {
-    @include width-classes("desk-lrg-");
+@if $width-classes-at-breakpoint-desk-large {
+  @include respond-min(1366) {
+    @include width-classes("desk-large-");
   }
 }// endif

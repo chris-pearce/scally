@@ -2,135 +2,164 @@
    @LAYOUT -> GRID
    ====================================================================================== */
 
-/*
-	Usage: fluid and nestable mobile first grid system.
 
-	Credit: https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
-*/
+/**
+ * A powerful fluid and nestable mobile first grid system.
+ *
+ * Combine with the viewport specific width classes found in 'Utilities -> Widths' to apply grid
+ * widths at specific viewports, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap device, at which point
+ * it becomes 50% wide, or it is on a desktop device, at which point it becomes 33.333% width.
+ *
+ * N.B. see breakpoints set here: 'Core -> Settings -> Breakpoints'.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/cjyHK/
+ *
+ * @credit
+ * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
+ */
 
-/* Grid container */
+
+/**
+ * Grid settings.
+ */
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set globally. If it has
+ * been previously been defined, the following variable will be overriden and will be set to `true`.
+ */
+
+$friendly-box-model: false !default;
+
+
+/**
+ * Grid container.
+ */
+
 .grid {
-	/* Negative `margin-left` to negate the columns gutters */
-	@include to-rem(margin-left, -$grid-gutter);
+	// Negative `margin-left` to negate the columns gutters
+	@include to-rem(margin-left, -$grid-gutter-base);
 
-	/* Clear fix */
-	@include clear-fix;
+	// Clear fix
+	&:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
-	/* Very infrequently occuring grid rows as children of grid rows */
+  // Very infrequently occuring grid rows as children of grid rows
 	> .grid {margin-left: 0;}
 }
 
-	/* Grid item */
-	.grid__item {
-		width: 100%;
-		float: left;
-		@include to-rem(padding-left, $grid-gutter);
 
-		/* Print - have to re-linearise as all browsers except Chrome will honour any width classes above the `$non-palm` breakpoint */
-		@media print {
-			width: 100% !important;
-		}
-	}
+	/**
+   * 1. Cause columns to stack side-by-side.
+   * 2. Space columns apart.
+   * 3. Full-width unless told to behave otherwise.
+   * 4. Required to combine fluid widths and fixed gutters.
+   */
 
-	/* Apply bottom margins between the grid elements for linearised version (at palm) */
-	.grid,
-	.grid__item {
-		@extend %bottom-spacing;
+  .grid__item {
+    float: left; // [1]
+    @include to-rem(padding-left, $grid-gutter-base); // [2]
+    width: 100%; // [3]
 
-		/* Turn off bottom margin at this breakpoint (non-linearised) and only for 'screen' media so as not to affect 'print' media */
-		@include respond-min($non-palm, $screen-only: true) {
-			margin-bottom: 0;
-		}
-	}
+    @if $friendly-box-model == false {
 
-	/* Non-linear (always cols) version - need to offset bottom margin to keep spacing consistent */
-	.grid--non-linear {@include to-rem(margin-bottom, -$grid-gutter);}
+    	box-sizing: border-box; // [4]
 
-/* Modifiers: 'gutterless' and 'center align' */
-.grid--gutterless,
-.grid--center {margin-left: 0;}
+    }
+  }
 
-/* Modifier: gutterless */
-.grid--gutterless > .grid__item {padding-left: 0;}
 
-/* Modifier: double the gutter */
-.grid--gutter-dbl {
-	/* Negative `margin-left` to negate the columns' gutters */
-	@include to-rem(margin-left, -$grid-gutter-dbl);
+/**
+ * Modifier: gutterless.
+ */
 
-	/* Grid item */
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-dbl);}
+.grid--gutterless {
+	margin-left: 0;
+
+	> .grid__item {padding-left: 0;}
 }
 
-/* Modifier: half the gutter */
+
+/**
+ * Modifier: gutter half.
+ */
+
 .grid--gutter-half {
-  /* Negative `margin-left` to negate the columns' gutters */
-  @include to-rem(margin-left, -$grid-gutter-half);
+	@include to-rem(margin-left, -$grid-gutter-half);
 
-  /* Grid item */
-  > .grid__item {@include to-rem(padding-left, $grid-gutter-half);}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-half);}
 }
 
-/* Modifier: remove bottom margin */
-.grid--flush {
-	&,
-	> .grid__item {
-		margin-bottom: 0;
 
-		&:last-child {margin-bottom: 0;}
-	}
+/**
+ * Modifier: gutter third.
+ */
+
+.grid--gutter-third {
+	@include to-rem(margin-left, -$grid-gutter-third);
+
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-third);}
 }
 
-/* Modifier: apply half bottom margin */
-.grid--mrg-half {
-	&,
-	> .grid__item {
-		@include to-rem(margin-bottom, $grid-gutter-half);
 
-		&:last-child {margin-bottom: 0;}
-	}
+/**
+ * Modifier: gutter quarter.
+ */
 
-	/* Non-linear (always cols) version */
-	&.grid--non-linear {
-		/* Need to offset bottom margin to keep spacing consistent */
-		@include to-rem(margin-bottom, -$grid-gutter-half);
+.grid--gutter-quarter {
+	@include to-rem(margin-left, -$grid-gutter-quarter);
 
-		/* Need to renable bottom margin for `:last-child` */
-		> .grid__item:last-child {@include to-rem(margin-bottom, $grid-gutter-half);}
-	}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-quarter);}
 }
 
-/* Modifier: center align */
-.grid--center > .grid__item {
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 0;
-	float: none;
+
+/**
+ * Modifier: gutter + half.
+ */
+
+.grid--gutter-base-plus-half {
+	@include to-rem(margin-left, -$grid-gutter-base-plus-half);
+
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-base-plus-half);}
 }
 
-/* Modifier: reversed */
-.grid--rev > .grid__item {float: right;}
 
-/* Change stacking order for 'palm' - only works for 2 cols */
-@include respond-max($palm-end) {
-	.grid--rev-stack {
-		display: table;
-		width: 100%;
+/**
+ * Modifier: gutter double.
+ */
 
-		> .grid__item {
-			float: none;
-			width: 100%;
-			display: table-footer-group;
-		}
+.grid--gutter-double {
+	@include to-rem(margin-left, -$grid-gutter-double);
 
-		> .grid__item + .grid__item {display: table-caption;}
-	}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-double);}
 }
 
-/* Modifier: table */
+
+/**
+ * Modifier: reversed.
+ *
+ * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your markup will display in
+ * order 4, 3, 2, 1 on your page.
+ */
+
+.grid--reversed > .grid__item {float: right;}
+
+
+/**
+ * Modifier: table.
+ */
+
 .grid--table {
 	display: table;
-	width: 100%;
 
 	> .grid__item {
 		display: table-cell;
