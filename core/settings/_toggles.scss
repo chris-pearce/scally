@@ -18,9 +18,7 @@ $debug-mode: false !default;
 /**
  * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
- * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
- * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
- * on :)
+ * N.B. It's our recommendation to keep this turned on:)
  */
 
 $friendly-box-model: true !default;
@@ -75,51 +73,25 @@ $viewport-device-width: true !default;
  * Apply classes at specific breakpoints.
  */
 
-// Width classes mainly used with the grid
-$width-classes-at-breakpoint-palm-large:              false !default;
-// N.B. we turn `non-palm` on by default as the grid needs this
-$width-classes-at-breakpoint-non-palm:                true !default;
-$width-classes-at-breakpoint-lap:                     false !default;
-$width-classes-at-breakpoint-lap-small:               false !default;
-$width-classes-at-breakpoint-lap-small-middle:        false !default;
-$width-classes-at-breakpoint-lap-large-middle:        false !default;
-$width-classes-at-breakpoint-lap-large:               false !default;
-$width-classes-at-breakpoint-desk:                    false !default;
-$width-classes-at-breakpoint-desk-small:              false !default;
-$width-classes-at-breakpoint-desk-large:              false !default;
+$width-classes-at-breakpoint-lap:                     true !default;
+$width-classes-at-breakpoint-lap-large:               true !default;
+$width-classes-at-breakpoint-desk:                    true !default;
+$width-classes-at-breakpoint-desk-large:              true !default;
 
 // Grid push
-$grid-push-classes-at-breakpoint-palm-large:          false !default;
-$grid-push-classes-at-breakpoint-non-palm:            false !default;
 $grid-push-classes-at-breakpoint-lap:                 false !default;
-$grid-push-classes-at-breakpoint-lap-small:           false !default;
-$grid-push-classes-at-breakpoint-lap-small-middle:    false !default;
-$grid-push-classes-at-breakpoint-lap-large-middle:    false !default;
 $grid-push-classes-at-breakpoint-lap-large:           false !default;
 $grid-push-classes-at-breakpoint-desk:                false !default;
-$grid-push-classes-at-breakpoint-desk-small:          false !default;
 $grid-push-classes-at-breakpoint-desk-large:          false !default;
 
 // Grid pull
-$grid-pull-classes-at-breakpoint-palm-large:          false !default;
-$grid-pull-classes-at-breakpoint-non-palm:            false !default;
 $grid-pull-classes-at-breakpoint-lap:                 false !default;
-$grid-pull-classes-at-breakpoint-lap-small:           false !default;
-$grid-pull-classes-at-breakpoint-lap-small-middle:    false !default;
-$grid-pull-classes-at-breakpoint-lap-large-middle:    false !default;
 $grid-pull-classes-at-breakpoint-lap-large:           false !default;
 $grid-pull-classes-at-breakpoint-desk:                false !default;
-$grid-pull-classes-at-breakpoint-desk-small:          false !default;
 $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 
 // Column classes for the 'Columns' abstraction
-$col-classes-at-breakpoint-palm-large:                false !default;
-$col-classes-at-breakpoint-non-palm:                  false !default;
 $col-classes-at-breakpoint-lap:                       false !default;
-$col-classes-at-breakpoint-lap-small:                 false !default;
-$col-classes-at-breakpoint-lap-small-middle:          false !default;
-$col-classes-at-breakpoint-lap-large-middle:          false !default;
 $col-classes-at-breakpoint-lap-large:                 false !default;
 $col-classes-at-breakpoint-desk:                      false !default;
-$col-classes-at-breakpoint-desk-small:                false !default;
 $col-classes-at-breakpoint-desk-large:                false !default;

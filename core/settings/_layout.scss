@@ -21,14 +21,25 @@ $container-maximum-width:   1600 !default;
  * Grid.
  */
 
-// Base gutter
-$grid-gutter-size:          $spacing-base !default;
+// Gutters.
 
-// Double gutter
-$grid-gutter-size-double:   $spacing-double !default;
+// Base
+$grid-gutter-base:              $spacing-base !default;
 
-// Half gutter
-$grid-gutter-size-half:     $spacing-half !default;
+// Half
+$grid-gutter-half:              $spacing-half !default;
+
+// Third
+$grid-gutter-third:             $spacing-third !default;
+
+// Quarter
+$grid-gutter-quarter:           $spacing-quarter !default;
+
+// + Half
+$grid-gutter-base-plus-half:    $spacing-base-plus-half !default;
+
+// Double
+$grid-gutter-double:            $spacing-double !default;
 
 
 /**

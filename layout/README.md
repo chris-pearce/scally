@@ -6,6 +6,6 @@ pagination, or forms, or navigation items sit within the scope of major componen
 or footer, or in most cases the main content of the page. The minor components are referred to as
 **Components**. The major components are referred to as **Layout** styles.
 
-Layout styles should be prefixed with `l-`.
+N.B. **Layout** styles should be prefixed with `l-` to be able to easily identify them.
 
 **Credit: <https://smacss.com/book/type-layout>**

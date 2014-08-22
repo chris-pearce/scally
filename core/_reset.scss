@@ -100,10 +100,6 @@ main {
 /**
  * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
- * N.B. it is turned on by default as the grid relies on this. If you turn it off then the grid
- * 'out of the box' will break and possibly other things. So it's our recommendation to keep it
- * on :)
- *
  * @credit
  * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */

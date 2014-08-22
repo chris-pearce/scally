@@ -2,6 +2,7 @@
 
 ## Global
 
+- Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - `style.scss`.
 - Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
@@ -9,6 +10,7 @@
 - `_tech-debt.scss` file?
 - CodePen:
   - Put custom font in CSS.
+  - Turn on Debug styles.
   - `$bg-color: #143A8D;`.
 
 
@@ -47,6 +49,7 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
+- Animations via a lib?
 - Positioning: see CC, consider adding a height paramater for alignment?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
@@ -63,6 +66,15 @@
 
 - Update CSS Guidelines.
 - Consistent naming esp. for sizes.
+- Scally boilerplate:
+  - `style.scss`.
+  - `settings.scss`.
+  - `overrides.scss`.
+  - LICENSE?
+- Westfield Project boilerplate:
+  - `index.html` template.
+  - CSS architecture.
+  - Assets in the DAM.
 - sass --watch demo-styles.scss:demo-styles.css --style compressed
   sass --watch style.scss:style.css --style compressed
 
