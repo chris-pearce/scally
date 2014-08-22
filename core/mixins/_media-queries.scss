@@ -202,28 +202,21 @@
 
 	// Lap
 	@if $respond-range == lap {
-		@media (min-width: ($lap-start / 16)+em) and (max-width: ($lap-end / 16)+em) {
-			@content;
-		}
-	}
-
-	// Lap small
-	@if $respond-range == lap-sml {
-		@media (min-width: ($lap-start / 16)+em) and (max-width: ($lap-sml-end / 16)+em) {
+		@media (min-width: (641 / 16)+em) and (max-width: (1365 / 16)+em) {
 			@content;
 		}
 	}
 
 	// Lap large
-	@if $respond-range == lap-lrg {
-		@media (min-width: ($lap-lrg-start / 16)+em) and (max-width: ($lap-end / 16)+em) {
+	@if $respond-range == lap-large {
+		@media (min-width: (901 / 16)+em) and (max-width: (1365 / 16)+em) {
 			@content;
 		}
 	}
 
 	// Desk small
-	@if $respond-range == desk-sml {
-		@media (min-width: ($desk-start / 16)+em) and (max-width: ($desk-sml-end / 16)+em) {
+	@if $respond-range == desk-small {
+		@media (min-width: (1200 / 16)+em) and (max-width: (1365 / 16)+em) {
 			@content;
 		}
 	}
