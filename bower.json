@@ -1,0 +1,23 @@
+{
+  "name": "Scally",
+  "version": "0.0.1",
+  "homepage": "https://github.com/westfieldlabs/scally",
+  "authors": [
+    "Chris Pearce <CPearce@westfield.com>"
+  ],
+  "description": "Scally CSS framework - has no styling",
+  "keywords": [
+    "css",
+    "oocss",
+    "bem"
+  ],
+  "license": "Apache 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower.json",
+    "LICENSE",
+    "**/README.md",
+    "TODO.md"
+  ]
+}
