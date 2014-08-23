@@ -10,11 +10,11 @@
  * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
  *
  * @example
-   @include respond-min($lap) {
+   @include respond-to($lap) {
      .foo {background: red;}
    }
 
-   @include respond-min($lap, true) {
+   @include respond-to(500) {
      .foo {background: red;}
    }
 
@@ -39,29 +39,11 @@
  * Minimum
  */
 
-@mixin respond-min($value, $height: false) {
-  @include respond($value, $height, "min") {
-    @content;
+@mixin respond-to($value, $axis: "width", $limit: "min") {
+  @if type-of($value) == "string" {
+    $value: map-get($breakpoints, $value);
   }
-}
-
-/**
- * Maximum
- */
-
-@mixin respond-max($value, $height: false) {
-  @include respond($value, $height, "max") {
-    @content;
-  }
-}
-
-@mixin respond($value, $height: false, $min-or-max: "min") {
-  $value-in-em: to-em(map-get($breakpoints, $value));
-  $axis: "width";
-  @if $height {
-    $axis: "height";
-  }
-  @media (#{$min-or-max}-#{$axis}: $value-in-em) {
+  @media (#{$limit}-#{$axis}: to-em($value)) {
     @content;
   }
 }
@@ -71,161 +53,28 @@
    ========================================================================== */
 
 /**
- * Using the `and` logical operator.
- *
- * N.B. the media query will only apply when both arguments are true.
- */
-//Credit http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-  @function to-string($list...) {
-    $result: null;
-    $glue: ' and ';
-    @for $i from 1 through length($list) {
-      $e: nth($list, $i);
-      $result: $result#{to-string($e, $glue, true)};
-    }
-    @return $result;
-  }
-@mixin respond-range-internal($queries...) {
-  $list:();
-  @each $property, $value in $queries {
-    $value-in-em: to-em(map-get($breakpoints, $value));
-    $list: append($list, "(#{$property}: $value-in-em)");
-  }
-  @debug $list;
-  @debug to-string($list);
-  @media (min-width:1px) {@content;}
-}
-
-
-
-// Accepts a minimum and maximum width/height range
-@mixin respond-range($min-value, $max-value, $height: false) {
-
-  // Height range
-  @if $height {
-    @media (min-height: ($min-value / 16)+em) and (max-height: ($max-value / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width range
-  @else {
-    @include respond-range-internal(min-width $min-value, max-width $max-value) {@content;}
-	}
-}
-
-// Accepts a minimum width and height range
-@mixin respond-range-mixed-min($value-1, $value-2) {
-  @media (min-width: ($value-1 / 16)+em) and (min-height: ($value-2 / 16)+em) {
-    @content;
-  }
-}
-
-// Accepts a maximum width and height range
-@mixin respond-range-mixed-max($value-1, $value-2) {
-  @media (max-width: ($value-1 / 16)+em) and (max-height: ($value-2 / 16)+em) {
-    @content;
-  }
-}
-
-/**
- * Grouped (comma-seperated).
- *
- * N.B. the media query will apply if any of the arguments are true.
+ * Ranges
  */
 
-// Accepts one or both minimum width/height values
-@mixin respond-group-min($value-1, $value-2, $height: false) {
+@mixin respond-range($min-value, $max-value: 0, $axis: "width") {
+  // If min-value is a named breakpoint
+  @if type-of($min-value) == "string" {
+    $min-value: map-get($breakpoints, $min-value);
 
-  // Height
-  @if $height {
-    @media (min-height: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
-      @content;
+    // If max-value is omitted, use the next named breakpoint after the min-value breakpoint
+    @if $max-value == 0 {
+      $breakpoint-values: map-values($breakpoints);
+      $breakpoint-index:index($breakpoint-values, $min-value);
+      $max-value: nth($breakpoint-values, $breakpoint-index + 1);
     }
   }
 
-  // Width
-  @else {
-		@media (min-width: ($value-1 / 16)+em), (min-width: ($value-2 / 16)+em) {
-			@content;
-		}
-	}
-}
-
-// Accepts one or both maximum width/height values
-@mixin respond-group-max($value-1, $value-2, $height: false) {
-
-  // Height
-  @if $height {
-    @media (max-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-      @content;
-    }
+  // If max-value is a named breakpoint
+  @if type-of($max-value) == "string" {
+    $max-value: map-get($breakpoints, $max-value);
   }
 
-  // Width
-  @else {
-    @media (max-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
-      @content;
-    }
-  }
-}
-
-// Accepts one minimum width/height value and/or one maximum width/height value */
-@mixin respond-group-min-max($value-1, $value-2, $height: false) {
-
-  // Height
-  @if $height {
-    @media (min-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width
-  @else {
-		@media (min-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
-			@content;
-		}
-	}
-}
-
-// Accepts one minimum width value and/or one minimum height value
-@mixin respond-group-min-width-height($value-1, $value-2) {
-  @media (min-width: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
+  @media (min-#{$axis}: to-em($min-value)) and (max-#{$axis}: to-em($max-value)) {
     @content;
   }
-}
-
-// Accepts one maximum width value and/or one maximum height value
-@mixin respond-group-max-width-height($value-1, $value-2) {
-  @media (max-width: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-    @content;
-  }
-}
-
-/**
- * Fixed width ranges using the predefined breakpoints
- */
-
-@mixin respond-range-fixed($respond-range) {
-
-	// Lap
-	@if $respond-range == lap {
-		@media (min-width: (641 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
-
-	// Lap large
-	@if $respond-range == lap-large {
-		@media (min-width: (901 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
-
-	// Desk small
-	@if $respond-range == desk-small {
-		@media (min-width: (1200 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
 }
