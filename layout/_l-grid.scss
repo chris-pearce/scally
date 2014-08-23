@@ -9,12 +9,19 @@
  * Combine with the viewport specific width classes found in 'Utilities -> Widths' to apply grid
  * widths at specific viewports, for example:
  *
-   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+   <div class="grid__item  lap--one-half  desk--one-third">
  *
  * This would give you a grid item which is 100% width unless it is on a lap device, at which point
- * it becomes 50% wide, or it is on a desktop device, at which point it becomes 33.333% width.
+ * it becomes 50% wide, or it is on a desktop device, at which point it becomes 33.333% width. See
+ * breakpoints set here: 'Core -> Settings -> Breakpoints'.
  *
- * N.B. see breakpoints set here: 'Core -> Settings -> Breakpoints'.
+ * N.B. grid systems should be thought of as shelves. They contain content but are not content in
+ * themselves. You put up your shelves then fill them with your stuff. By setting up our grids
+ * separately to our components you can move components around a lot more easily than if they had
+ * dimensions applied to them; this makes our front-ends a lot more adaptable and quick to work with.
+ *
+ * N.B. you should never apply any styles to a grid item, they are for layout purposes only. Apply
+ * styling to content inside a grid item.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/cjyHK/
@@ -52,9 +59,6 @@ $friendly-box-model: false !default;
     display: table;
     clear: both;
   }
-
-  // Very infrequently occuring grid rows as children of grid rows
-	> .grid {margin-left: 0;}
 }
 
 
@@ -123,7 +127,7 @@ $friendly-box-model: false !default;
 
 
 /**
- * Modifier: gutter + half.
+ * Modifier: gutter base plus half.
  */
 
 .grid--gutter-base-plus-half {
@@ -155,7 +159,7 @@ $friendly-box-model: false !default;
 
 
 /**
- * Modifier: table.
+ * Modifier: table display for all viewports and one forwith different vertical alignment options.
  */
 
 .grid--table {
@@ -166,3 +170,21 @@ $friendly-box-model: false !default;
 		float: none;
 	}
 }
+
+// Only for lap plus (non-palm)
+@include respond-min(641) {
+ .grid--table-for-lap-plus {
+		display: table;
+
+		> .grid__item {
+			display: table-cell;
+			float: none;
+		}
+	}
+}
+
+// Middle vertical alignment
+.grid--table--v-align-middle > .grid__item {vertical-align: middle;}
+
+// Bottom vertical alignment
+.grid--table--v-align-bottom > .grid__item {vertical-align: bottom;}

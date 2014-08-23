@@ -12,91 +12,91 @@
   /**
    * Whole.
    */
-  .u-#{$namespace}one-whole {width: $one-whole !important;}
+  .u-#{$namespace}one-whole {width: $one-whole;}
 
   /**
    * Halves.
    */
-  .u-#{$namespace}one-half {width: $one-half !important;}
+  .u-#{$namespace}one-half {width: $one-half;}
 
   /**
    * Thirds.
    */
-  .u-#{$namespace}one-third {width: $one-third !important;}
-  .u-#{$namespace}two-thirds {width: $two-thirds !important;}
+  .u-#{$namespace}one-third {width: $one-third;}
+  .u-#{$namespace}two-thirds {width: $two-thirds;}
 
   /**
    * Quarters.
    */
-  .u-#{$namespace}one-quarter {width: $one-quarter !important;}
-  .u-#{$namespace}two-quarters {width: $one-half !important;}
-  .u-#{$namespace}three-quarters {width: $three-quarters !important;}
+  .u-#{$namespace}one-quarter {width: $one-quarter;}
+  .u-#{$namespace}two-quarters {width: $one-half;}
+  .u-#{$namespace}three-quarters {width: $three-quarters;}
 
   /**
    * Fifths.
    */
-  .u-#{$namespace}one-fifth {width: $one-fifth !important;}
-  .u-#{$namespace}two-fifths {width: $two-fifths !important;}
-  .u-#{$namespace}three-fifths {width: $three-fifths !important;}
-  .u-#{$namespace}four-fifths {width: $four-fifths !important;}
+  .u-#{$namespace}one-fifth {width: $one-fifth;}
+  .u-#{$namespace}two-fifths {width: $two-fifths;}
+  .u-#{$namespace}three-fifths {width: $three-fifths;}
+  .u-#{$namespace}four-fifths {width: $four-fifths;}
 
   /**
    * Sixths.
    */
-  .u-#{$namespace}one-sixth {width: $one-sixth !important;}
-  .u-#{$namespace}two-sixths {width: $one-third !important;}
-  .u-#{$namespace}three-sixths {width: $one-half !important;}
-  .u-#{$namespace}four-sixths {width: $two-thirds !important;}
-  .u-#{$namespace}five-sixths {width: $five-sixths !important;}
+  .u-#{$namespace}one-sixth {width: $one-sixth;}
+  .u-#{$namespace}two-sixths {width: $one-third;}
+  .u-#{$namespace}three-sixths {width: $one-half;}
+  .u-#{$namespace}four-sixths {width: $two-thirds;}
+  .u-#{$namespace}five-sixths {width: $five-sixths;}
 
   /**
    * Sevenths.
    */
-  .u-#{$namespace}one-seventh {width: $one-seventh !important;}
-  .u-#{$namespace}two-sevenths {width: $two-sevenths !important;}
-  .u-#{$namespace}three-sevenths {width: $three-sevenths !important;}
-  .u-#{$namespace}four-sevenths {width: $four-sevenths !important;}
-  .u-#{$namespace}five-sevenths {width: $five-sevenths !important;}
-  .u-#{$namespace}six-sevenths {width: $six-sevenths !important;}
+  .u-#{$namespace}one-seventh {width: $one-seventh;}
+  .u-#{$namespace}two-sevenths {width: $two-sevenths;}
+  .u-#{$namespace}three-sevenths {width: $three-sevenths;}
+  .u-#{$namespace}four-sevenths {width: $four-sevenths;}
+  .u-#{$namespace}five-sevenths {width: $five-sevenths;}
+  .u-#{$namespace}six-sevenths {width: $six-sevenths;}
 
   /**
    * Eighths.
    */
-  .u-#{$namespace}one-eighth {width: $one-eighth !important;}
-  .u-#{$namespace}two-eighths {width: $one-quarter !important;}
-  .u-#{$namespace}three-eighths {width: $three-eighths !important;}
-  .u-#{$namespace}four-eighths {width: $one-half !important;}
-  .u-#{$namespace}five-eighths {width: $five-eighths !important;}
-  .u-#{$namespace}six-eighths {width: $three-quarters !important;}
-  .u-#{$namespace}seven-eighths {width: $seven-eighths !important;}
+  .u-#{$namespace}one-eighth {width: $one-eighth;}
+  .u-#{$namespace}two-eighths {width: $one-quarter;}
+  .u-#{$namespace}three-eighths {width: $three-eighths;}
+  .u-#{$namespace}four-eighths {width: $one-half;}
+  .u-#{$namespace}five-eighths {width: $five-eighths;}
+  .u-#{$namespace}six-eighths {width: $three-quarters;}
+  .u-#{$namespace}seven-eighths {width: $seven-eighths;}
 
   /**
    * Tenths.
    */
-  .u-#{$namespace}one-tenth {width: $one-tenth !important;}
-  .u-#{$namespace}two-tenths {width: $one-fifth !important;}
-  .u-#{$namespace}three-tenths {width: $three-tenths !important;}
-  .u-#{$namespace}four-tenths {width: $two-fifths !important;}
-  .u-#{$namespace}five-tenths {width: $one-half !important;}
-  .u-#{$namespace}six-tenths {width: $three-fifths !important;}
-  .u-#{$namespace}seven-tenths {width: $seven-tenths !important;}
-  .u-#{$namespace}eight-tenths {width: $four-fifths !important;}
-  .u-#{$namespace}nine-tenths {width: $nine-tenths !important;}
+  .u-#{$namespace}one-tenth {width: $one-tenth;}
+  .u-#{$namespace}two-tenths {width: $one-fifth;}
+  .u-#{$namespace}three-tenths {width: $three-tenths;}
+  .u-#{$namespace}four-tenths {width: $two-fifths;}
+  .u-#{$namespace}five-tenths {width: $one-half;}
+  .u-#{$namespace}six-tenths {width: $three-fifths;}
+  .u-#{$namespace}seven-tenths {width: $seven-tenths;}
+  .u-#{$namespace}eight-tenths {width: $four-fifths;}
+  .u-#{$namespace}nine-tenths {width: $nine-tenths;}
 
   /**
    * Twelfths.
    */
-  .u-#{$namespace}one-twelfth {width: $one-twelfth !important;}
-  .u-#{$namespace}two-twelfths {width: $one-sixth !important;}
-  .u-#{$namespace}three-twelfths {width: $one-quarter !important;}
-  .u-#{$namespace}four-twelfths {width: $one-third !important;}
-  .u-#{$namespace}five-twelfths {width: $five-twelfths !important;}
-  .u-#{$namespace}six-twelfths {width: $one-half !important;}
-  .u-#{$namespace}seven-twelfths {width: $seven-twelfths !important;}
-  .u-#{$namespace}eight-twelfths {width: $two-thirds !important;}
-  .u-#{$namespace}nine-twelfths {width: $three-quarters !important;}
-  .u-#{$namespace}ten-twelfths {width: $five-sixths !important;}
-  .u-#{$namespace}eleven-twelfths {width: $eleven-twelfths !important;}
+  .u-#{$namespace}one-twelfth {width: $one-twelfth;}
+  .u-#{$namespace}two-twelfths {width: $one-sixth;}
+  .u-#{$namespace}three-twelfths {width: $one-quarter;}
+  .u-#{$namespace}four-twelfths {width: $one-third;}
+  .u-#{$namespace}five-twelfths {width: $five-twelfths;}
+  .u-#{$namespace}six-twelfths {width: $one-half;}
+  .u-#{$namespace}seven-twelfths {width: $seven-twelfths;}
+  .u-#{$namespace}eight-twelfths {width: $two-thirds;}
+  .u-#{$namespace}nine-twelfths {width: $three-quarters;}
+  .u-#{$namespace}ten-twelfths {width: $five-sixths;}
+  .u-#{$namespace}eleven-twelfths {width: $eleven-twelfths;}
 }
 
 /**
