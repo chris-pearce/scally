@@ -10,7 +10,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
  *
  * @example
-   @include respond-to($lap) {
+   @include respond-to(lap) {
      .foo {background: red;}
    }
 
@@ -18,7 +18,11 @@
      .foo {background: red;}
    }
 
-   @include respond-max($palm-end) {
+   @include respond-to(palm, $limit: "max") {
+     .foo {background: red;}
+   }
+
+   @include respond-to(500, $axis: "height") {
      .foo {background: red;}
    }
 
@@ -26,7 +30,7 @@
      .foo {background: red;}
    }
 
-   @include respond-range-fixed(lap-lrg) {
+   @include respond-range(lap) {
      .foo {background: red;}
    }
  */
@@ -35,11 +39,8 @@
 /* Simple minimum and maximum width/height values
    ========================================================================== */
 
-/**
- * Minimum
- */
-
 @mixin respond-to($value, $axis: "width", $limit: "min") {
+  // If value is a named breakpoint
   @if type-of($value) == "string" {
     $value: map-get($breakpoints, $value);
   }
@@ -51,10 +52,6 @@
 
 /* Ranges
    ========================================================================== */
-
-/**
- * Ranges
- */
 
 @mixin respond-range($min-value, $max-value: 0, $axis: "width") {
   // If min-value is a named breakpoint
