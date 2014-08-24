@@ -20,7 +20,7 @@ $bg-color: #143A8D;
     .test-bp-desk-large {display: none;}
   }
 
-  @include respond-min(lap-large) {
+  @include respond-to(lap-large) {
     background: lighten($bg-color, 10%);
 
     .test-bp-lap-large {display: block;}
@@ -31,7 +31,7 @@ $bg-color: #143A8D;
     .test-bp-desk-large {display: none;}
   }
 
-  @include respond-min(desk) {
+  @include respond-to(desk) {
     background: lighten($bg-color, 15%);
 
     .test-bp-desk {display: block;}
@@ -42,7 +42,7 @@ $bg-color: #143A8D;
     .test-bp-desk-large {display: none;}
   }
 
-  @include respond-min(desk-large) {
+  @include respond-to(desk-large) {
     background: lighten($bg-color, 20%);
 
     .test-bp-desk-large {display: block;}
