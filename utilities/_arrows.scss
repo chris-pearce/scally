@@ -23,6 +23,7 @@ $arrow-colour:  $colour-text-base !default;
  * Base arrow.
  */
 
+%u-arrow,
 .u-arrow {
   display: inline-block;
 	width: 0;
@@ -35,22 +36,26 @@ $arrow-colour:  $colour-text-base !default;
  * Modifier: down arrow.
  */
 
+%u-arrow--down,
 .u-arrow--down {border-top-color: $arrow-colour;}
 
 /**
  * Modifier: up arrow.
  */
 
+%u-arrow--up,
 .u-arrow--up {border-bottom-color: $arrow-colour;}
 
 /**
  * Modifier: left arrow.
  */
 
+%u-arrow--left,
 .u-arrow--left {border-right-color: $arrow-colour;}
 
 /**
  * Modifier: right arrow.
  */
 
+%u-arrow--right,
 .u-arrow--right {border-left-color: $arrow-colour;}
