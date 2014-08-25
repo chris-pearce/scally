@@ -1,0 +1,53 @@
+/* ======================================================================================
+   @UTILITIES -> LIST BLOCK
+   ====================================================================================== */
+
+
+/**
+ * Creates blocky list items out of a `ul` or `ol`.
+ *
+ * @reminder
+ * The spacer utilities could replace this?
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#list-block
+ *
+ * @credit
+ * https://github.com/inuitcss/objects.list-block/blob/master/_objects.list-block.scss
+ */
+
+
+/**
+ * Base.
+ */
+
+%u-list-block > li,
+.u-list-block > li {@include to-rem(padding, $spacing-base);}
+
+/**
+ * Modifier: tiny padding.
+ */
+
+%u-list-block--tiny > li,
+.u-list-block--tiny > li {@include to-rem(padding, $spacing-quarter);}
+
+/**
+ * Modifier: small padding.
+ */
+
+%u-list-block--small > li,
+.u-list-block--small > li {@include to-rem(padding, $spacing-half);}
+
+/**
+ * Modifier: large padding.
+ */
+
+%u-list-block--large > li,
+.u-list-block--large > li {@include to-rem(padding, $spacing-double);}
+
+/**
+ * Modifier: huge padding.
+ */
+
+%u-list-block--huge > li,
+.u-list-block--huge > li {@include to-rem(padding, $spacing-quadruple);}
