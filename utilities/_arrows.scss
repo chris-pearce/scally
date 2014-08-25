@@ -1,48 +1,56 @@
 /* ======================================================================================
-   @ABSTRACTIONS -> ARROWS
+   @UTILITIES -> ARROWS
    ====================================================================================== */
 
-/*
-  Creates CSS arrows.
 
-  .arrow--up          - Up arrow
-  .arrow--down        - Down arrow
-  .arrow--left        - Left arrow
-  .arrow--right       - Right arrow
-
-	Styleguide Arrows
-*/
-
-/*
-  Note: Same as: 'utils/placeholders/arrows' except this version doesn't apply to an existing element rather it's an independent element which is more flexible
-*/
-
-$arrow-width: 8px;
-$arrow-bg: $$color-grey-medium;
+/**
+ * Creates arrow shapes using only CSS.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#arrows
+ */
 
 
-.arrow {
+/**
+ * Arrow settings.
+ */
+
+$arrow-size:    8;
+$arrow-colour:  $colour-text-base;
+
+
+/**
+ * Base arrow.
+ */
+
+.u-arrow {
+  display: inline-block;
 	width: 0;
 	height: 0;
-	border: $arrow-width solid rgba($color-white, 0);
-	display: inline-block;
+  @include to-rem(border, $arrow-size solid transparent);
 	vertical-align: middle;
 }
 
-/* Modifier: down arrow */
-.arrow--down {
-	border-top-color: $arrow-bg;
-	margin-bottom: -$arrow-width;
-}
+/**
+ * Modifier: down arrow.
+ */
 
-/* Modifier: up arrow */
-.arrow--up {
-	border-bottom-color: $arrow-bg;
-	margin-top: -$arrow-width;
-}
+.u-arrow--down {border-top-color: $arrow-colour;}
 
-/* Modifier: left arrow */
-.arrow--left {border-right-color: $arrow-bg;}
+/**
+ * Modifier: up arrow.
+ */
 
-/* Modifier: right arrow */
-.arrow--right {border-left-color: $arrow-bg;}
+.u-arrow--up {border-bottom-color: $arrow-colour;}
+
+/**
+ * Modifier: left arrow.
+ */
+
+.u-arrow--left {border-right-color: $arrow-colour;}
+
+/**
+ * Modifier: right arrow.
+ */
+
+.u-arrow--right {border-left-color: $arrow-colour;}
