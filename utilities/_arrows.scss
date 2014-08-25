@@ -15,8 +15,8 @@
  * Arrow settings.
  */
 
-$arrow-size:    8;
-$arrow-colour:  $colour-text-base;
+$arrow-size:    8 !default;
+$arrow-colour:  $colour-text-base !default;
 
 
 /**
