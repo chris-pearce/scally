@@ -4,13 +4,10 @@
 
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - `style.scss`.
-- Have a setting that allows you to dictate when everything goes linear e.g. **Grid**?
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
-- `_tech-debt.scss` file?
 - CodePen:
   - Put custom font in CSS.
-  - Turn on Debug styles.
   - `$bg-color: #143A8D;`.
 
 
@@ -21,6 +18,7 @@
 
 - Settings:
   - Width toggles (Alec TODO).
+  - Colors (use a map?).
 - Mixins:
   - Media query mixin (Alec TODO).
   - 2 Bootstrap mixins (see below)?
@@ -28,21 +26,23 @@
     - <https://gist.github.com/ykhs/3690526>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
+    - <http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/>.
 
 ## Layout
 
 - Grid:
-  - Ideas:
-    - <http://flexboxgrid.com/>.
+  - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
+  - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
 - Make sure all media queries are using Alec's version.
-- Documentation.
 
 ## Components
 
 - Fancy `select` (see 'Parking project').
 - Block quote.
+- Icon.
 - Ideas:
   - <https://github.com/thoughtbot/bitters/blob/master/app/assets/stylesheets/extends/_flashes.scss>.
+  - <http://www.sitepoint.com/using-sass-maps/>.
 
 ## Utilities
 
@@ -50,6 +50,7 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
+- Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
 - Positioning: see CC, consider adding a height paramater for alignment?
 - Ideas:
@@ -78,13 +79,15 @@
   - Assets in the DAM.
 - sass --watch demo-styles.scss:demo-styles.css --style compressed
   sass --watch style.scss:style.css --style compressed
+- Inspiration:
+  - <http://web-design-weekly.com/2014/08/20/introduction-to-suit-css/>.
 
 ### Sass newness
 
-- <http://visuellegedanken.de/2014-03-29/using-bem-syntax-with-sass-3-3/>
-- <http://robots.thoughtbot.com/removing-sass-duplication>
-- <http://viget.com/extend/sass-maps-are-awesome>
-- <http://unakravets.tumblr.com/post/78744593423/sass-snippets-the-almighty-ampersand>
+- <http://visuellegedanken.de/2014-03-29/using-bem-syntax-with-sass-3-3/>.
+- <http://robots.thoughtbot.com/removing-sass-duplication>.
+- <http://viget.com/extend/sass-maps-are-awesome>.
+- <http://unakravets.tumblr.com/post/78744593423/sass-snippets-the-almighty-ampersand>.
 
 ### Put to the team
 
