@@ -8,6 +8,7 @@
 - Setup AutoPrefixer.
 - CodePen:
   - Put custom font in CSS.
+  - Apply anchors to **Layout** and **Core**.
   - `$bg-color: #143A8D;`.
 
 
@@ -30,6 +31,7 @@
 
 ## Layout
 
+- Remove 'Credit' reference in README.
 - Grid:
   - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
@@ -46,10 +48,12 @@
 
 ## Utilities
 
+- Put them into categories?
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
+- New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
 - Positioning: see CC, consider adding a height paramater for alignment?
@@ -57,6 +61,7 @@
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
   - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_center-block.scss>.
+  - <https://github.com/suitcss/utils-layout/blob/master/lib/layout.css>.
 
 
 ---
