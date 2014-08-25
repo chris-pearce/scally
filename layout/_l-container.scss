@@ -13,6 +13,11 @@
  * http://codepen.io/team/westfieldlabs/full/GiCzg/
  */
 
+
+/**
+ * Base.
+ */
+
 .l-container {
   width: $container-width;
   @include to-rem(min-width, $container-minimum-width);

@@ -32,12 +32,14 @@ $arrow-colour:  $colour-text-base !default;
 	vertical-align: middle;
 }
 
+
 /**
  * Modifier: down arrow.
  */
 
 %u-arrow--down,
 .u-arrow--down {border-top-color: $arrow-colour;}
+
 
 /**
  * Modifier: up arrow.
@@ -46,12 +48,14 @@ $arrow-colour:  $colour-text-base !default;
 %u-arrow--up,
 .u-arrow--up {border-bottom-color: $arrow-colour;}
 
+
 /**
  * Modifier: left arrow.
  */
 
 %u-arrow--left,
 .u-arrow--left {border-right-color: $arrow-colour;}
+
 
 /**
  * Modifier: right arrow.

@@ -13,6 +13,7 @@
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
  */
 
+
 @mixin pull-classes($namespace: null) {
 
 	/**
@@ -21,11 +22,13 @@
 
 	.l-#{$namespace}pull-one-whole {right: $one-whole;}
 
+
 	/**
 	 * Halves.
 	 */
 
 	.l-#{$namespace}pull-one-half {right: $one-half;}
+
 
 	/**
 	 * Thirds.
@@ -34,6 +37,7 @@
 	.l-#{$namespace}pull-one-third {right: $one-third;}
 	.l-#{$namespace}pull-two-thirds {right: $two-thirds;}
 
+
 	/**
 	 * Quarters.
 	 */
@@ -41,6 +45,7 @@
 	.l-#{$namespace}pull-one-quarter {right: $one-quarter;}
 	.l-#{$namespace}pull-two-quarters {right: $one-half;}
 	.l-#{$namespace}pull-three-quarters {right: $three-quarters;}
+
 
 	/**
 	 * Fifths.
@@ -51,6 +56,7 @@
 	.l-#{$namespace}pull-three-fifths {right: $three-fifths;}
 	.l-#{$namespace}pull-four-fifths {right: $four-fifths;}
 
+
 	/**
 	 * Sixths.
 	 */
@@ -60,6 +66,7 @@
 	.l-#{$namespace}pull-three-sixths {right: $one-half;}
 	.l-#{$namespace}pull-four-sixths {right: $two-thirds;}
 	.l-#{$namespace}pull-five-sixths {right: $five-sixths;}
+
 
 	/**
 	 * Sevenths.
@@ -72,6 +79,7 @@
   .l-#{$namespace}pull-five-sevenths {right: $five-sevenths;}
   .l-#{$namespace}pull-six-sevenths {right: $six-sevenths;}
 
+
 	/**
 	 * Eighths.
 	 */
@@ -83,6 +91,7 @@
 	.l-#{$namespace}pull-five-eighths {right: $five-eighths;}
 	.l-#{$namespace}pull-six-eighths {right: $three-quarters;}
 	.l-#{$namespace}pull-seven-eighths {right: $seven-eighths;}
+
 
 	/**
 	 * Tenths.
@@ -97,6 +106,7 @@
 	.l-#{$namespace}pull-seven-tenths {right: $seven-tenths;}
 	.l-#{$namespace}pull-eight-tenths {right: $four-fifths;}
 	.l-#{$namespace}pull-nine-tenths {right: $nine-tenths;}
+
 
 	/**
 	 * Twelfths.
@@ -138,6 +148,7 @@
 	 * N.B. manage what you want to use in 'Core -> Settings -> Toggles'.
 	 */
 
+
 	/**
 	 * Lap and up.
 	 */
@@ -147,6 +158,7 @@
 	    @include pull-classes("lap-");
 	  }
 	}// endif
+
 
 	/**
 	 * Lap range.
@@ -158,6 +170,7 @@
 	  }
 	}// endif
 
+
 	/**
 	 * Lap large and up.
 	 */
@@ -167,6 +180,7 @@
 	    @include pull-classes("lap-large-");
 	  }
 	}// endif
+
 
 	/**
 	 * Lap large range.
@@ -178,6 +192,7 @@
 	  }
 	}// endif
 
+
 	/**
 	 * Desk and up.
 	 */
@@ -188,6 +203,7 @@
 	  }
 	}// endif
 
+
 	/**
 	 * Desk small range.
 	 */
@@ -197,6 +213,7 @@
 	    @include pull-classes("desk-small-range-");
 	  }
 	}// endif
+
 
 	/**
 	 * Desk large.

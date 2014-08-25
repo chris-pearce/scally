@@ -99,11 +99,13 @@
   .u-#{$namespace}eleven-twelfths {width: $eleven-twelfths;}
 }
 
+
 /**
  * Output them all.
  */
 
 @include width-classes();
+
 
 /**
  * Output at specific breakpoints e.g. `.non-palm-one-half`.
@@ -112,6 +114,7 @@
  *
  * Manage what you want to use in 'utils/config -> SPECIFIC BREAKPOINT CLASSES'.
  */
+
 
 /**
  * Lap and up.
@@ -123,6 +126,7 @@
   }
 }// endif
 
+
 /**
  * Lap range.
  */
@@ -132,6 +136,7 @@
     @include width-classes("lap-range-");
   }
 }// endif
+
 
 /**
  * Lap large and up.
@@ -143,6 +148,7 @@
   }
 }// endif
 
+
 /**
  * Lap large range.
  */
@@ -152,6 +158,7 @@
     @include width-classes("lap-large-range-");
   }
 }// endif
+
 
 /**
  * Desk and up.
@@ -163,6 +170,7 @@
   }
 }// endif
 
+
 /**
  * Desk small range.
  */
@@ -172,6 +180,7 @@
     @include width-classes("desk-small-range-");
   }
 }// endif
+
 
 /**
  * Desk large.

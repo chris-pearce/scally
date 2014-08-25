@@ -24,12 +24,14 @@
 %u-list-block > li,
 .u-list-block > li {@include to-rem(padding, $spacing-base);}
 
+
 /**
  * Modifier: tiny padding.
  */
 
 %u-list-block--tiny > li,
 .u-list-block--tiny > li {@include to-rem(padding, $spacing-quarter);}
+
 
 /**
  * Modifier: small padding.
@@ -38,12 +40,14 @@
 %u-list-block--small > li,
 .u-list-block--small > li {@include to-rem(padding, $spacing-half);}
 
+
 /**
  * Modifier: large padding.
  */
 
 %u-list-block--large > li,
 .u-list-block--large > li {@include to-rem(padding, $spacing-double);}
+
 
 /**
  * Modifier: huge padding.
