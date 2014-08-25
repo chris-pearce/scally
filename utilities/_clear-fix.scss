@@ -1,11 +1,20 @@
 /* ======================================================================================
-   @UTILS -> PLACEHOLDERS -> CLEAR FIX
+   @UTILITIES -> CLEAR FIX
    ====================================================================================== */
 
-/*
-	Usage: so parent containers can contain their floated children.
 
-	Credit: http://nicolasgallagher.com/micro-clearfix-hack
-*/
+/**
+ * Make an element expand to contain floated children.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk
+ */
 
-%clear-fix {@include clear-fix;}
+%u-clear-fix,
+.u-clear-fix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
