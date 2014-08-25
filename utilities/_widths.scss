@@ -117,39 +117,59 @@
  * Lap and up.
  */
 
-@if $width-classes-at-breakpoint-desk {
+@if $width-classes-at-breakpoint-lap {
   @include respond-min(641) {
     @include width-classes("lap-");
   }
 }// endif
 
 /**
- * Lap.
+ * Lap range.
  */
 
-@if $width-classes-at-breakpoint-lap {
+@if $width-classes-at-breakpoint-lap-range {
   @include respond-range-fixed(lap) {
     @include width-classes("lap-range-");
   }
 }// endif
 
 /**
- * Lap large.
+ * Lap large and up.
  */
 
 @if $width-classes-at-breakpoint-lap-large {
+  @include respond-min(901) {
+    @include width-classes("lap-large-");
+  }
+}// endif
+
+/**
+ * Lap large range.
+ */
+
+@if $width-classes-at-breakpoint-lap-large-range {
   @include respond-range-fixed(lap-large) {
     @include width-classes("lap-large-range-");
   }
 }// endif
 
 /**
- * Desk.
+ * Desk and up.
  */
 
 @if $width-classes-at-breakpoint-desk {
   @include respond-min(1200) {
     @include width-classes("desk-");
+  }
+}// endif
+
+/**
+ * Desk small range.
+ */
+
+@if $width-classes-at-breakpoint-desk-small-range {
+  @include respond-range-fixed(desk-small) {
+    @include width-classes("desk-small-range-");
   }
 }// endif
 

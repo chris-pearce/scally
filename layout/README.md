@@ -1,11 +1,13 @@
 ﻿# Scally Layout
 
-CSS, by its very nature, is used to lay elements out on the page. However, there is a distinction
-between layouts dictating the major and minor components of a page. The minor components such as
-pagination, or forms, or navigation items sit within the scope of major components such as a header,
-or footer, or in most cases the main content of the page. The minor components are referred to as
-**Components**. The major components are referred to as **Layout** styles.
+**Layout** exists to prevent you from writing CSS that handles the most common layout patterns in
+user interface design, right down to the component level. Good comparisons for **Layout** are
+permanent scaffolding and Lego.
 
-N.B. **Layout** styles should be prefixed with `l-` to be able to easily identify them.
+The main part of **Layout** is a powerful fluid and nestable mobile first grid system allowing you
+to set custom column widths at different viewports, making responsive layouts a sinch. The other
+part of **Layout** is a generic container that ensures all of your UI uses consistent widths.
+
+N.B. **Layout** styles should be prefixed with `l-` so that they're easily identifiable.
 
 **Credit: <https://smacss.com/book/type-layout>**

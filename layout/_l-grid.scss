@@ -159,7 +159,8 @@ $friendly-box-model: false !default;
 
 
 /**
- * Modifier: table display for all viewports and one forwith different vertical alignment options.
+ * Modifier: table display for all viewports and one for medium to large viewports (non-palm), with
+ * options to set different vertical alignments.
  */
 
 .grid--table {
