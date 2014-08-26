@@ -1,0 +1,21 @@
+@mixin generate-breakpoint-classes($class, $breakpoint-names: map-keys($breakpoints)) {
+  .#{$class} {
+    @content;
+  }
+  @each $breakpoint-name in $breakpoint-names {
+    .#{$class}-at-#{$breakpoint-name} {
+      @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
+        @content;
+      }
+    }
+  }
+}
+
+@include generate-breakpoint-classes(hide-fully) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@include generate-breakpoint-classes(test, palm desk) {
+  color: pink;
+}
