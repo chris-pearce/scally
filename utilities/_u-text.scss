@@ -1,0 +1,229 @@
+/* ======================================================================================
+   @UTILITIES -> TEXT
+   ====================================================================================== */
+
+
+/**
+ * Various handy utilities for text.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#text
+ */
+
+
+/**
+ * Size.
+ */
+
+// Base
+%u-text-size-base,
+.u-text-size-base {@include font-size($font-size);}
+
+// Inherit
+%u-text-size-inherit,
+.u-text-size-inherit {font-size: inherit;}
+
+// Smaller
+%u-text-size-small,
+.u-text-size-small {@include font-size($font-size-small);}
+
+%u-text-size-x-small,
+.u-text-size-x-small {@include font-size($font-size-x-small);}
+
+%u-text-size-xx-small,
+.u-text-size-xx-small {@include font-size($font-size-xx-small);}
+
+%u-text-size-xxx-small,
+.u-text-size-xxx-small {@include font-size($font-size-xxx-small);}
+
+// Larger
+%u-text-size-large,
+.u-text-size-large {@include font-size($font-size-large);}
+
+%u-text-size-x-large,
+.u-text-size-x-large {@include font-size($font-size-x-large);}
+
+%u-text-size-xx-large,
+.u-text-size-xx-large {@include font-size($font-size-xx-large);}
+
+%u-text-size-xxx-large,
+.u-text-size-xxx-large {@include font-size($font-size-xxx-large);}
+
+
+/**
+ * Alignment.
+ */
+
+// Inherit
+%u-text-align-inherit,
+.u-text-align-inherit {text-align: inherit;}
+
+// Center
+%u-text-align-center,
+.u-text-align-center {text-align: center;}
+
+// Left
+%u-text-align-left,
+.u-text-align-left {text-align: left;}
+
+// Right
+%u-text-align-right,
+.u-text-align-right {text-align: right;}
+
+
+/**
+ * Style.
+ */
+
+// Inherit
+%u-text-style-inherit,
+.u-text-style-inherit {font-style: inherit;}
+
+// Italic
+%u-text-style-italic,
+.u-text-style-italic {font-style: italic;}
+
+// Normal
+%u-text-style-normal,
+.u-text-style-normal {font-style: normal;}
+
+
+/**
+ * Weight.
+ */
+
+// Inherit
+%u-text-weight-inherit,
+.u-text-weight-inherit {font-weight: inherit;}
+
+// Lighter
+%u-text-weight-lighter,
+.u-text-weight-lighter {font-weight: lighter;}
+
+// Bolder
+%u-text-weight-bold,
+.u-text-weight-bold {font-weight: bold;}
+
+%u-text-weight-bolder,
+.u-text-weight-bolder {font-weight: bolder;}
+
+// Normal
+%u-text-weight-normal,
+.u-text-weight-normal {font-weight: normal;}
+
+
+/**
+ * Capitalise.
+ */
+
+// Uppercase
+%u-text-capitalise-uppercase,
+.u-text-capitalise-uppercase {text-transform: uppercase;}
+
+// Lowercase
+%u-text-capitalise-lowercase,
+.u-text-capitalise-lowercase {text-transform: lowercase;}
+
+// Capitalise
+%u-text-capitalise-capitalise,
+.u-text-capitalise-capitalise {text-transform: capitalize;}
+
+
+/**
+ * Colour.
+ */
+
+// Inherit
+%u-text-colour-inherit,
+.u-text-colour-inherit {color: inherit;}
+
+// White
+%u-text-colour-white,
+.u-text-colour-white {color: $colour-white;}
+
+// Black
+%u-text-colour-black,
+.u-text-colour-black {color: $colour-black;}
+
+// Brand
+%u-text-colour-brand,
+.u-text-colour-brand {color: $colour-brand;}
+
+// Text base
+%u-text-colour-text-base,
+.u-text-colour-text-base {color: $colour-text-base;}
+
+// Primary
+%u-text-colour-text-primary,
+.u-text-colour-text-primary {color: $colour-button-primary;}
+
+// Secondary
+%u-text-colour-text-secondary,
+.u-text-colour-text-secondary {color: $colour-button-secondary;}
+
+
+/**
+ * Truncation.
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can occur.
+ * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor nodes.
+ *
+ * @credit
+ * https://github.com/suitcss/utils-text/blob/master/lib/text.css
+ */
+
+%u-text-truncate,
+.u-text-truncate {
+  max-width: 100%; // [1]
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // [2]
+}
+
+
+/**
+ * Prevent whitespace wrapping.
+ */
+
+%u-text-no-wrap,
+.u-text-no-wrap {white-space: nowrap;}
+
+
+/**
+ * Enables font kerning in all browsers.
+ *
+ * 1. Chrome (not Windows), Firefox, Safari 6+, iOS, Android.
+ * 2. Chrome (not Windows), Firefox, IE 10+.
+ * 3. Safari 7 and future browsers.
+ *
+ * @credit
+ * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
+ */
+
+%u-text-kern,
+.u-text-kern {
+  text-rendering: optimizeLegibility; // [1]
+  font-feature-settings: "kern" 1; // [2]
+  font-kerning: normal; // [3]
+}
+
+
+/**
+ * Word breaking.
+ *
+ * Break strings when their length exceeds the width of their container.
+ */
+
+%u-text-break-word,
+.u-text-break-word {word-wrap: break-word;}
+
+
+/**
+ * Hyphenation.
+ */
+
+%u-text-hyphenate,
+.u-text-hyphenate {hyphens: auto;}
