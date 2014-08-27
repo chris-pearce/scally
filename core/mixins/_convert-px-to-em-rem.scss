@@ -60,7 +60,7 @@
   $value: join((), $values, if($sublists, comma, space));
 
   @each $prop in $properties {
-    #{$prop}: $value #{$important}
+    #{$prop}: $value#{$important};
   }
 
 }
@@ -97,7 +97,7 @@
   $value: join((), $values, if($sublists, comma, space));
 
   @each $prop in $properties {
-    #{$prop}: $value #{$sledgehammer};
+    #{$prop}: $value#{$sledgehammer};
 	}
 
 }
