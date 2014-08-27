@@ -17,9 +17,15 @@
 
 ## Core
 
+- Base:
+  - Non-responsive images still gets `height: auto` rule.
 - Settings:
   - Width toggles (Alec TODO).
-  - Colors (use a map?).
+  - Rename `_layout.scss` to `_widths.scss` and move **Container** and **Grid** setting into their
+    partials? And move the **Grid** toggles into grid partial.
+  - Colors:
+    - Use a map?.
+    - Update 'Buttons' sections.
 - Mixins:
   - Media query mixin (Alec TODO).
   - 2 Bootstrap mixins (see below)?
@@ -56,7 +62,9 @@
 - New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
-- Positioning: see CC, consider adding a height paramater for alignment?
+- Positioning: see CC, consider adding a height paramater for alignment and for pseudo-elements.
+- Rendering box:
+  - Add 'Flexbox'?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
@@ -84,6 +92,14 @@
   - Assets in the DAM.
 - sass --watch demo-styles.scss:demo-styles.css --style compressed
   sass --watch style.scss:style.css --style compressed
+- Names:
+  - Tiny.
+  - Small.
+  - Large.
+  - Huge.
+  - Compact.
+  - Cosy.
+  - Comfy.
 - Inspiration:
   - <http://web-design-weekly.com/2014/08/20/introduction-to-suit-css/>.
 
