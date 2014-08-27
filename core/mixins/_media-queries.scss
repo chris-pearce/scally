@@ -37,6 +37,7 @@
    }
  */
 
+
 /**
  * Simple minimum and maximum width/height values.
  */
@@ -53,8 +54,8 @@
  */
 
 @mixin respond-range($min-value, $max-value: 0, $axis: "width") {
-  // If min-value is a named breakpoint and max-value is omitted
-  // Use the next named breakpoint after the min-value breakpoint
+  // If min-value is a named breakpoint and max-value is omitted use the next named breakpoint after
+  // the min-value breakpoint.
   @if type-of($min-value) == "string" and $max-value == 0 {
     $breakpoint-values: map-keys($breakpoints);
     $breakpoint-index: index($breakpoint-values, $min-value);
