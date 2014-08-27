@@ -4,7 +4,7 @@
 
 
 /**
- * A generic drop down utility powered by some JavaScript which toggles a class e.g. `is-visible` to
+ * A generic drop down utility powered by some JavaScript which toggles a class e.g. `is-visible` on
  * the drop down trigger (the button that makes the drop down visible and invisible) and the target
  * (the actual drop down). This class will be used to make the drop down target visible when the
  * trigger is selected. There is also a version for showing the drop down via the `:hover` pseudo
@@ -22,8 +22,9 @@
     <div class="drop-down__target"> ... </div>
   </div>
  *
- * @reminder
- * This could be redundant as other utilities could do handle this e.g. 'Position'?
+ * @consideration
+ * This could be redundant as other utilities could do handle this e.g. 'Position' / 'Toggle
+ * Visibility'?
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#drop-down
