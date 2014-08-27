@@ -31,10 +31,10 @@
  */
 
 // The state class that is powered by JavaScript
-$drop-down-state-class: is-visible !default;
+$drop-down-state-class:           is-visible !default;
 
 // Class that is used to identify touch support
-$drop-down-touch-class: is-touch !default;
+$drop-down-touch-support-class:   is-touch !default;
 
 
 /**
@@ -69,4 +69,4 @@ $drop-down-touch-class: is-touch !default;
    * element) if touch is supported.
    */
 
-  .#{$drop-down-touch-class} .drop-down--on-hover .drop-down {display: none;}
+  .#{$drop-down-touch-support-class} .drop-down--on-hover .drop-down {display: none;}
