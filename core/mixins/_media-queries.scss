@@ -2,6 +2,7 @@
    @CORE -> MIXINS -> MEDIA QUERIES
    ====================================================================================== */
 
+
 /**
  * Setup media queries for minimum and maximum widths/heights, with width being the default,
  * also includes the ability to apply ranges.
@@ -45,6 +46,7 @@
     @content;
   }
 }
+
 
 /**
  * Ranges
