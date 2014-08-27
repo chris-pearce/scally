@@ -21,7 +21,15 @@
  */
 
 @function to-em($value, $context: $font-size) {
-	@return #{$value / $context}em;
+  // If value is a named breakpoint
+  @if type-of($value) == "string" {
+    @if map-has-key($breakpoints, $value) {
+      $value: map-get($breakpoints, $value);
+    } @else {
+      @warn "Breakpoint name '#{$value}' not recognised.";
+    }
+  }
+  @return #{$value / $context}em;
 }
 
 

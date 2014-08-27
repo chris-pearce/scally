@@ -2,23 +2,29 @@
    @CORE -> MIXINS -> MEDIA QUERIES
    ====================================================================================== */
 
+
 /**
  * Setup media queries for minimum and maximum widths/heights, with width being the default,
  * also includes the ability to apply ranges.
  *
- * N.B. learn more about CSS media queries:
- * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/pen/flLcJ
  *
  * @example
-   @include respond-min($lap) {
+   @include respond-to(lap) {
      .foo {background: red;}
    }
 
-   @include respond-min($lap, true) {
+   @include respond-to(500) {
      .foo {background: red;}
    }
 
-   @include respond-max($palm-end) {
+   @include respond-to(palm, max) {
+     .foo {background: red;}
+   }
+
+   @include respond-to(500, $axis: height) {
      .foo {background: red;}
    }
 
@@ -26,198 +32,46 @@
      .foo {background: red;}
    }
 
-   @include respond-range-fixed(lap-lrg) {
+   @include respond-range(lap) {
      .foo {background: red;}
    }
  */
 
 
-/* Simple minimum and maximum width/height values
-   ========================================================================== */
-
 /**
- * Minimum
+ * Simple minimum and maximum width/height values.
  */
 
-@mixin respond-min($value, $height: false) {
-
-  // Height
-  @if $height {
-    @media (min-height: ($value / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width
-  @else {
-		@media (min-width: ($value / 16)+em) {
-			@content;
-		}
-	}
-}
-
-
-/**
- * Maximum
- */
-
-@mixin respond-max($value, $height: false) {
-
-  // Height
-  @if $height {
-    @media (max-height: ($value / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width
-  @else {
-		@media (max-width: ($value / 16)+em) {
-			@content;
-		}
-	}
-}
-
-
-/* Ranges
-   ========================================================================== */
-
-/**
- * Using the `and` logical operator.
- *
- * N.B. the media query will only apply when both arguments are true.
- */
-
-// Accepts a minimum and maximum width/height range
-@mixin respond-range($min-value, $max-value, $height: false) {
-
-  // Height range
-  @if $height {
-    @media (min-height: ($min-value / 16)+em) and (max-height: ($max-value / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width range
-  @else {
-		@media (min-width: ($min-value / 16)+em) and (max-width: ($max-value / 16)+em) {
-			@content;
-		}
-	}
-}
-
-// Accepts a minimum width and height range
-@mixin respond-range-mixed-min($value-1, $value-2) {
-  @media (min-width: ($value-1 / 16)+em) and (min-height: ($value-2 / 16)+em) {
+@mixin respond-to($value, $limit: "min", $axis: "width") {
+  @media (#{$limit}-#{$axis}: to-em($value)) {
     @content;
   }
 }
 
-// Accepts a maximum width and height range
-@mixin respond-range-mixed-max($value-1, $value-2) {
-  @media (max-width: ($value-1 / 16)+em) and (max-height: ($value-2 / 16)+em) {
-    @content;
-  }
-}
 
 /**
- * Grouped (comma-seperated).
- *
- * N.B. the media query will apply if any of the arguments are true.
+ * Ranges
  */
 
-// Accepts one or both minimum width/height values
-@mixin respond-group-min($value-1, $value-2, $height: false) {
-
-  // Height
-  @if $height {
-    @media (min-height: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
-      @content;
+@mixin respond-range($min-value, $max-value: 0, $axis: "width") {
+  // If min-value is a named breakpoint and max-value is omitted use the next named breakpoint after
+  // the min-value breakpoint.
+  @if type-of($min-value) == "string" and $max-value == 0 {
+    $breakpoint-values: map-keys($breakpoints);
+    $breakpoint-index: index($breakpoint-values, $min-value);
+    @if type-of($breakpoint-index) == "number" {
+      $next-breakpoint-index: $breakpoint-index + 1;
+      @if $next-breakpoint-index <= length($breakpoint-values) {
+        $max-value: nth($breakpoint-values, $next-breakpoint-index);
+      } @else {
+        @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
+      }
+    } @else {
+      @warn "Breakpoint name '#{$value}' not recognised.";
     }
   }
 
-  // Width
-  @else {
-		@media (min-width: ($value-1 / 16)+em), (min-width: ($value-2 / 16)+em) {
-			@content;
-		}
-	}
-}
-
-// Accepts one or both maximum width/height values
-@mixin respond-group-max($value-1, $value-2, $height: false) {
-
-  // Height
-  @if $height {
-    @media (max-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width
-  @else {
-    @media (max-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
-      @content;
-    }
-  }
-}
-
-// Accepts one minimum width/height value and/or one maximum width/height value */
-@mixin respond-group-min-max($value-1, $value-2, $height: false) {
-
-  // Height
-  @if $height {
-    @media (min-height: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-      @content;
-    }
-  }
-
-  // Width
-  @else {
-		@media (min-width: ($value-1 / 16)+em), (max-width: ($value-2 / 16)+em) {
-			@content;
-		}
-	}
-}
-
-// Accepts one minimum width value and/or one minimum height value
-@mixin respond-group-min-width-height($value-1, $value-2) {
-  @media (min-width: ($value-1 / 16)+em), (min-height: ($value-2 / 16)+em) {
+  @media (min-#{$axis}: to-em($min-value)) and (max-#{$axis}: to-em($max-value)) {
     @content;
   }
-}
-
-// Accepts one maximum width value and/or one maximum height value
-@mixin respond-group-max-width-height($value-1, $value-2) {
-  @media (max-width: ($value-1 / 16)+em), (max-height: ($value-2 / 16)+em) {
-    @content;
-  }
-}
-
-/**
- * Fixed width ranges using the predefined breakpoints
- */
-
-@mixin respond-range-fixed($respond-range) {
-
-	// Lap
-	@if $respond-range == lap {
-		@media (min-width: (641 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
-
-	// Lap large
-	@if $respond-range == lap-large {
-		@media (min-width: (901 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
-
-	// Desk small
-	@if $respond-range == desk-small {
-		@media (min-width: (1200 / 16)+em) and (max-width: (1365 / 16)+em) {
-			@content;
-		}
-	}
 }
