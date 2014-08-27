@@ -55,7 +55,7 @@
   // Use the next named breakpoint after the min-value breakpoint
   @if type-of($min-value) == "string" and $max-value == 0 {
     $breakpoint-values: map-keys($breakpoints);
-    $breakpoint-index:index($breakpoint-values, $min-value);
+    $breakpoint-index: index($breakpoint-values, $min-value);
     @if type-of($breakpoint-index) == "number" {
       $next-breakpoint-index: $breakpoint-index + 1;
       @if $next-breakpoint-index <= length($breakpoint-values) {
