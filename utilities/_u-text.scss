@@ -15,14 +15,6 @@
  * Size.
  */
 
-// Base
-%u-text-size-base,
-.u-text-size-base {@include font-size($font-size);}
-
-// Inherit
-%u-text-size-inherit,
-.u-text-size-inherit {font-size: inherit;}
-
 // Smaller
 %u-text-size-small,
 .u-text-size-small {@include font-size($font-size-small);}
@@ -49,52 +41,49 @@
 %u-text-size-xxx-large,
 .u-text-size-xxx-large {@include font-size($font-size-xxx-large);}
 
+// Base
+%u-text-size-base,
+.u-text-size-base {@include font-size($font-size);}
+
+// Inherit
+%u-text-size-inherit,
+.u-text-size-inherit {font-size: inherit;}
+
 
 /**
  * Alignment.
  */
 
-// Inherit
-%u-text-align-inherit,
-.u-text-align-inherit {text-align: inherit;}
-
-// Center
 %u-text-align-center,
 .u-text-align-center {text-align: center;}
 
-// Left
 %u-text-align-left,
 .u-text-align-left {text-align: left;}
 
-// Right
 %u-text-align-right,
 .u-text-align-right {text-align: right;}
+
+%u-text-align-inherit,
+.u-text-align-inherit {text-align: inherit;}
 
 
 /**
  * Style.
  */
 
-// Inherit
-%u-text-style-inherit,
-.u-text-style-inherit {font-style: inherit;}
-
-// Italic
 %u-text-style-italic,
 .u-text-style-italic {font-style: italic;}
 
-// Normal
 %u-text-style-normal,
 .u-text-style-normal {font-style: normal;}
+
+%u-text-style-inherit,
+.u-text-style-inherit {font-style: inherit;}
 
 
 /**
  * Weight.
  */
-
-// Inherit
-%u-text-weight-inherit,
-.u-text-weight-inherit {font-weight: inherit;}
 
 // Lighter
 %u-text-weight-lighter,
@@ -107,6 +96,10 @@
 %u-text-weight-bolder,
 .u-text-weight-bolder {font-weight: bolder;}
 
+// Inherit
+%u-text-weight-inherit,
+.u-text-weight-inherit {font-weight: inherit;}
+
 // Normal
 %u-text-weight-normal,
 .u-text-weight-normal {font-weight: normal;}
@@ -116,50 +109,46 @@
  * Capitalise.
  */
 
-// Uppercase
 %u-text-capitalise-uppercase,
 .u-text-capitalise-uppercase {text-transform: uppercase;}
 
-// Lowercase
 %u-text-capitalise-lowercase,
 .u-text-capitalise-lowercase {text-transform: lowercase;}
 
-// Capitalise
 %u-text-capitalise-capitalise,
 .u-text-capitalise-capitalise {text-transform: capitalize;}
+
+%u-text-capitalise-inherit,
+.u-text-capitalise-inherit {text-transform: inherit;}
+
+%u-text-capitalise-none,
+.u-text-capitalise-none {text-transform: none;}
 
 
 /**
  * Colour.
  */
 
-// Inherit
-%u-text-colour-inherit,
-.u-text-colour-inherit {color: inherit;}
-
-// White
 %u-text-colour-white,
 .u-text-colour-white {color: $colour-white;}
 
-// Black
 %u-text-colour-black,
 .u-text-colour-black {color: $colour-black;}
 
-// Brand
 %u-text-colour-brand,
 .u-text-colour-brand {color: $colour-brand;}
 
-// Text base
 %u-text-colour-text-base,
 .u-text-colour-text-base {color: $colour-text-base;}
 
-// Primary
 %u-text-colour-text-primary,
 .u-text-colour-text-primary {color: $colour-button-primary;}
 
-// Secondary
 %u-text-colour-text-secondary,
 .u-text-colour-text-secondary {color: $colour-button-secondary;}
+
+%u-text-colour-inherit,
+.u-text-colour-inherit {color: inherit;}
 
 
 /**
