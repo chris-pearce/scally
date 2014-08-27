@@ -6,8 +6,9 @@
  * Setup media queries for minimum and maximum widths/heights, with width being the default,
  * also includes the ability to apply ranges.
  *
- * N.B. learn more about CSS media queries:
- * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/pen/flLcJ
  *
  * @example
    @include respond-to(lap) {
@@ -18,11 +19,11 @@
      .foo {background: red;}
    }
 
-   @include respond-to(palm, $limit: "max") {
+   @include respond-to(palm, max) {
      .foo {background: red;}
    }
 
-   @include respond-to(500, $axis: "height") {
+   @include respond-to(500, $axis: height) {
      .foo {background: red;}
    }
 
@@ -35,40 +36,36 @@
    }
  */
 
+/**
+ * Simple minimum and maximum width/height values.
+ */
 
-/* Simple minimum and maximum width/height values
-   ========================================================================== */
-
-@mixin respond-to($value, $axis: "width", $limit: "min") {
-  // If value is a named breakpoint
-  @if type-of($value) == "string" {
-    $value: map-get($breakpoints, $value);
-  }
+@mixin respond-to($value, $limit: "min", $axis: "width") {
   @media (#{$limit}-#{$axis}: to-em($value)) {
     @content;
   }
 }
 
-
-/* Ranges
-   ========================================================================== */
+/**
+ * Ranges
+ */
 
 @mixin respond-range($min-value, $max-value: 0, $axis: "width") {
-  // If min-value is a named breakpoint
-  @if type-of($min-value) == "string" {
-    $min-value: map-get($breakpoints, $min-value);
-
-    // If max-value is omitted, use the next named breakpoint after the min-value breakpoint
-    @if $max-value == 0 {
-      $breakpoint-values: map-values($breakpoints);
-      $breakpoint-index:index($breakpoint-values, $min-value);
-      $max-value: nth($breakpoint-values, $breakpoint-index + 1);
+  // If min-value is a named breakpoint and max-value is omitted
+  // Use the next named breakpoint after the min-value breakpoint
+  @if type-of($min-value) == "string" and $max-value == 0 {
+    $breakpoint-values: map-keys($breakpoints);
+    $breakpoint-index:index($breakpoint-values, $min-value);
+    @if type-of($breakpoint-index) == "number" {
+      $next-breakpoint-index: $breakpoint-index + 1;
+      @if $next-breakpoint-index <= length($breakpoint-values) {
+        $max-value: nth($breakpoint-values, $next-breakpoint-index);
+      } @else {
+        @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
+      }
+    } @else {
+      @warn "Breakpoint name '#{$value}' not recognised.";
     }
-  }
-
-  // If max-value is a named breakpoint
-  @if type-of($max-value) == "string" {
-    $max-value: map-get($breakpoints, $max-value);
   }
 
   @media (min-#{$axis}: to-em($min-value)) and (max-#{$axis}: to-em($max-value)) {
