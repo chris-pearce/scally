@@ -2,11 +2,13 @@
 
 ## Global
 
+- Wrap at 80 characters.
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - `style.scss`.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
+  - Create styles for sub headings.
   - Put custom font in CSS.
   - Apply anchors to **Layout** and **Core**.
   - `$bg-color: #143A8D;`.
@@ -34,6 +36,7 @@
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
     - <http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/>.
+    - <https://github.com/lolmaus/breakpoint-slicer>.
 
 ## Layout
 
@@ -65,6 +68,9 @@
 - Positioning: see CC, consider adding a height paramater for alignment and for pseudo-elements.
 - Rendering box:
   - Add 'Flexbox'?
+- List:
+  - Add border modifier to 'Block': <https://github.com/inuitcss/objects.list-ui/blob/master/_objects.list-ui.scss>.
+  - Apply `@extend` and `respond-to` mixin to Base list.
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
