@@ -1,0 +1,121 @@
+/* ======================================================================================
+   @UTILITIES -> TABLE
+   ====================================================================================== */
+
+
+/**
+ * A table utility that provides very common table styles which can be extended with a number of
+ * modifiers e.g. `.u-table--striped` which applies a background colour to every odd row.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#table
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Cell padding
+$table-cell-padding:                    $spacing-half !default;
+
+$table-cell-padding-small:              $spacing-quarter !default;
+
+$table-cell-padding-large:              $spacing-base !default;
+
+// Cosmetics
+$table-border-colour:                   darken($colour-white, 10%) !default;
+
+$table-border-thickness:                1 !default;
+
+$table-striped-background-cell-colour:  $table-border-colour !default;
+
+
+/**
+ * Base.
+ */
+
+%u-table,
+.u-table {
+  // Stretch to full width of it's parent
+	width: 100%;
+
+  // Some sensible defaults
+  caption,
+  th {text-align: left;}
+
+  // Cell padding
+  th,
+  td {@include to-rem(padding, $table-cell-padding);}
+}
+
+
+/**
+ * Modifier: striped.
+ *
+ * Applies a background colour to every odd row.
+ */
+
+%u-table--striped,
+.u-table--striped {
+  tbody tr:nth-of-type(odd) td {background-color: $table-striped-background-cell-colour;}
+}
+
+
+/**
+ * Modifier: border.
+ */
+
+%u-table--border,
+.u-table--border {
+  th,
+  td {
+    @include to-rem(border, $table-border-thickness solid $table-border-colour);
+
+    // No borders for empty cells
+    &:empty {border: 0;}
+  }
+}
+
+
+/**
+ * Modifier: layout fixed.
+ *
+ * Force tables into having equal-width column.
+ */
+
+%u-table--fixed,
+.u-table--fixed {table-layout: fixed;}
+
+
+/**
+ * Modifier: small cell padding.
+ */
+
+%u-table--cell-padding-small,
+.u-table--cell-padding-small {
+  th,
+  td {@include to-rem(padding, $table-cell-padding-small);}
+}
+
+
+/**
+ * Modifier: large cell padding.
+ */
+
+%u-table--cell-padding-large,
+.u-table--cell-padding-large {
+  th,
+  td {@include to-rem(padding, $table-cell-padding-large);}
+}
+
+
+/**
+ * Modifier: no cell padding.
+ */
+
+%u-table--no-cell-padding,
+.u-table--no-cell-padding {
+  th,
+  td {padding: 0;}
+}

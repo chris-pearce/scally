@@ -1,0 +1,72 @@
+/* ======================================================================================
+   @UTILITIES -> DROP DOWN
+   ====================================================================================== */
+
+
+/**
+ * A generic drop down utility powered by some JavaScript which toggles a class e.g. `is-visible` to
+ * the drop down trigger (the button that makes the drop down visible and invisible) and the target
+ * (the actual drop down). This class will be used to make the drop down target visible. There is
+ * also a version for showing the drop down via the `:hover` pseudo class.
+ *
+ * HTML structure:
+ *
+  <div class="drop-down">
+    <!-- The trigger -->
+    <button class="drop-down__trigger"> ... </button>
+    <!-- The target -->
+    <div class="drop-down__target"> ... </div>
+  </div>
+ *
+ * @reminder
+ * This could be redundant as other utilities could do handle this e.g. 'Position'?
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#drop-down
+ */
+
+
+/**
+ * Settings.
+ */
+
+// The state class that is powered by JavaScript
+$drop-down-state-class: is-visible !default;
+
+// Class that is used to identify touch support
+$drop-down-touch-class: is-touch !default;
+
+
+/**
+ * Drop down container for the trigger and target.
+ *
+ * Sets the positioning context for the target.
+ */
+
+.drop-down {position: relative;}
+
+
+  /**
+   * The target, the actual drop down.
+   */
+
+  .drop-down__target {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    // Show the drop down via the JavaScript powered state class and the `:hover` pseudo class.
+    &.#{$drop-down-state-class},
+    .drop-down--on-hover .drop-down__trigger:hover & {display: block;}
+  }
+
+
+  /**
+   * Disable for touch devices as they don't have `:hover` support.
+   *
+   * N.B. this will require functionality that can append a hook to an element (typically the `html`
+   * element) if touch is supported.
+   */
+
+  .#{$drop-down-touch-class} .drop-down--on-hover .drop-down {display: none;}
