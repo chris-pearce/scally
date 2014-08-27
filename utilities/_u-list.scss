@@ -1,0 +1,82 @@
+/* ======================================================================================
+   @UTILITIES -> LIST
+   ====================================================================================== */
+
+
+/**
+ * Some standard list styles for unordered and ordered lists as they're removed in the 'Reset'.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#list
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Indent
+$list-indent: 													$spacing-base !default;
+
+// Bullets
+$list-bullet-unordered-base:						disc !default;
+
+$list-bullet-unordered-nested-once:			circle !default;
+
+$list-bullet-unordered-nested-twice:		square !default;
+
+$list-bullet-ordered:										decimal !default;
+
+
+
+/**
+ * Whitespace.
+ */
+
+.u-list {
+	// Default bottom spacing
+	//@extend %u-vertical-rhythm;
+
+	// Left indent including nested lists
+	&,
+	ul,
+	ol {
+		@include to-rem(margin-left, $list-indent);
+
+		// Increse for larger screens
+		/*@include respond-to(lap) {
+			@include to-rem(margin-left, $list-indent * 2);
+		}*/
+	}
+}
+
+
+/**
+ * Bullets.
+ *
+ * For unordered lists we're replicating the native browser bullets:
+ * - disc
+ * 	-- circle
+ *  	--- square
+ */
+
+// Unordered lists
+ul.u-list {list-style-type: $list-bullet-unordered-base;}
+
+// Ordered lists
+ol.u-list {list-style-type: $list-bullet-ordered;}
+
+	// Nested lists
+	ul.u-list,
+	ol.u-list {
+
+		// Unordered lists
+		ul {
+			list-style-type: $list-bullet-unordered-nested-once;
+
+				ul {list-style-type: $list-bullet-unordered-nested-twice;}
+		}
+
+		// Ordered lists
+		ol {list-style-type: $list-bullet-ordered;}
+	}
