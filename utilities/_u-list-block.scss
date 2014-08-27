@@ -4,9 +4,10 @@
 
 
 /**
- * Creates blocky list items out of a `ul` or `ol`.
+ * Creates blocky list items out of a `ul` or `ol` with the option to add a keyline separator
+ * between the list items.
  *
- * @reminder
+ * @consideration
  * The spacer utilities could replace this?
  *
  * @demo
@@ -18,11 +19,32 @@
 
 
 /**
+ * Settings.
+ */
+
+// Whitespace
+$list-block-item-padding-base:    $spacing-half !default;
+
+$list-block-item-padding-tiny:    $spacing-quarter !default;
+
+$list-block-item-padding-small:   $spacing-third !default;
+
+$list-block-item-padding-large:   $spacing-base !default;
+
+$list-block-item-padding-huge:    $spacing-double !default;
+
+// Border
+$list-block-border-colour:        darken($colour-white, 10%) !default;
+
+$list-block-border-thickness:     1 !default;
+
+
+/**
  * Base.
  */
 
 %u-list-block > li,
-.u-list-block > li {@include to-rem(padding, $spacing-base);}
+.u-list-block > li {@include to-rem(padding, $list-block-item-padding-base);}
 
 
 /**
@@ -30,7 +52,7 @@
  */
 
 %u-list-block--tiny > li,
-.u-list-block--tiny > li {@include to-rem(padding, $spacing-quarter);}
+.u-list-block--tiny > li {@include to-rem(padding, $list-block-item-padding-tiny);}
 
 
 /**
@@ -38,7 +60,7 @@
  */
 
 %u-list-block--small > li,
-.u-list-block--small > li {@include to-rem(padding, $spacing-half);}
+.u-list-block--small > li {@include to-rem(padding, $list-block-item-padding-small);}
 
 
 /**
@@ -46,7 +68,7 @@
  */
 
 %u-list-block--large > li,
-.u-list-block--large > li {@include to-rem(padding, $spacing-double);}
+.u-list-block--large > li {@include to-rem(padding, $list-block-item-padding-large);}
 
 
 /**
@@ -54,4 +76,18 @@
  */
 
 %u-list-block--huge > li,
-.u-list-block--huge > li {@include to-rem(padding, $spacing-quadruple);}
+.u-list-block--huge > li {@include to-rem(padding, $list-block-item-padding-huge);}
+
+
+/**
+ * Modifier: border.
+ *
+ * Add a keyline separator between the list items.
+ */
+
+%u-list-block--border,
+.u-list-block--border {
+  @include to-rem(border-top, $list-block-border-thickness solid $list-block-border-colour);
+
+  > li {@include to-rem(border-bottom, $list-block-border-thickness solid $list-block-border-colour);}
+}
