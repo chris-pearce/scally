@@ -1,13 +1,14 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> BASE -> PRINT
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * All print styles outside of 'Core -> Base' live in context with their corresponding rule sets.
+ * All print styles outside of Core -> Base live in context with their
+ * corresponding rule sets.
  *
- * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
- * always want the rule it's applied too to take precedence.
+ * N.B. it is okay to use `!important` here as we're doing it preemptively i.e.
+ * you know you will always want the rule it's applied too to take precedence.
  *
  * @credit
  * http://html5boilerplate.com/
@@ -55,7 +56,8 @@
 
 
 	/**
-	 * Show the `href` and `title` attribute values of links and abbreviations in a pseudo element.
+	 * Show the `href` and `title` attribute values of links and abbreviations
+	 * in a pseudo element.
 	 */
 
 	a[href]:after {content: " (" attr(href) ")";}

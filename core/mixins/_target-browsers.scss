@@ -1,14 +1,14 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> MIXINS -> TARGET BROWSERS
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
  * Target specific browsers.
  *
- * N.B. these mixins should be avoided as it's not good to target styles for different browsers.
- * And the Mozilla mixin cannot be nested in a style declaration like the others, it has to exist
- * by itself.
+ * N.B. these mixins should be avoided as it's not good to target styles for
+ * different browsers. And the Mozilla mixin cannot be nested in a style
+ * declaration like the others, it has to exist by itself.
  *
  * @example
    @include target-webkit {
@@ -24,7 +24,7 @@
    }
   *
   * @demo
-  * http://codepen.io/team/westfieldlabs/full/Bcfyz
+  * http://codepen.io/team/westfieldlabs/full/Bcfyz#target-browsers
  */
 
 

@@ -1,17 +1,18 @@
-/* ======================================================================================
+/* ============================================================================
    @UTILITIES -> DROP DOWN
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * A generic drop down utility powered by some JavaScript which toggles a class e.g. `is-visible` on
- * the drop down trigger (the button that makes the drop down visible and invisible) and the target
- * (the actual drop down). This class will be used to make the drop down target visible when the
- * trigger is selected. There is also a version for showing the drop down via the `:hover` pseudo
- * class.
+ * A generic drop down utility powered by some JavaScript which toggles a
+ * class e.g. `is-visible` on the drop down trigger (the button that makes the
+ * drop down visible and invisible) and the target (the actual drop down).
+ * This class will be used to make the drop down target visible when the
+ * trigger is selected. There is also a version for showing the drop down via
+ * the `:hover` pseudo class.
  *
- * N.B. for the hover version to work the target must come directly after the trigger in the DOM as
- * it relies on an adjacent sibling selector.
+ * N.B. for the hover version to work the target must come directly after the
+ * trigger in the DOM as it relies on an adjacent sibling selector.
  *
  * HTML structure:
  *
@@ -23,8 +24,8 @@
   </div>
  *
  * @consideration
- * This could be redundant as other utilities could do handle this e.g. 'Position' / 'Toggle
- * Visibility'?
+ * This could be redundant as other utilities could do handle this e.g.
+ * Position / Toggle Visibility?
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#drop-down
@@ -61,8 +62,8 @@ $drop-down-touch-support-class:   is-touch !default;
     top: 100%;
     left: 0;
 
-    // Show the drop down via the JavaScript powered state class and the optional `:hover` pseudo
-    // class.
+    // Show the drop down via the JavaScript powered state class and the
+    // optional `:hover` pseudo class.
     &.#{$drop-down-state-class},
     .drop-down--on-hover .drop-down__trigger:hover + & {display: block;}
   }
@@ -71,8 +72,8 @@ $drop-down-touch-support-class:   is-touch !default;
   /**
    * Disable for touch devices as they don't have `:hover` support.
    *
-   * N.B. this will require functionality that can append a hook to an element (typically the `html`
-   * element) if touch is supported.
+   * N.B. this will require functionality that can append a hook to an element
+   * (typically the `html` element) if touch is supported.
    */
 
   .#{$drop-down-touch-support-class} .drop-down--on-hover .drop-down {display: none;}

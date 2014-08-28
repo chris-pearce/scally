@@ -1,18 +1,29 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> BASE -> HORIZONTAL RULE
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * @credit
- * http://html5boilerplate.com/
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/zIgBs/
  */
+
+
+/**
+ * Settings.
+ */
+
+$hr-colour:       $colour-text-base !default;
+
+$hr-style:        solid !default;
+
+$hr-thickness:    1 !default;
 
 
 hr {
   @extend %core-bottom-spacing;
   display: block;
   border: 0;
-  @include to-rem(border, 1 solid $colour-text-base);
+  @include to-rem(border, $hr-thickness $hr-style $hr-colour);
   padding: 0;
 }
