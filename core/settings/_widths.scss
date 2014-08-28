@@ -1,6 +1,6 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> SETTINGS -> WIDTHS
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
@@ -8,25 +8,44 @@
  */
 
 
-// One whole
+/**
+ * Whole.
+ */
+
 $one-whole:       100% !default;
 
-// Half
+
+/**
+ * Half.
+ */
+
 $one-half:        50% !default;
 
-// Thirds
+
+/**
+ * Thirds.
+ */
+
 $one-third:       (100/3)*1% !default;
 
 $two-thirds:      (100/3)*2% !default;
 
-// Quarters
+
+/**
+ * Quarters.
+ */
+
 $one-quarter:     (100/4)*1% !default;
 
 $two-quarters:    $one-half !default;
 
 $three-quarters:  (100/4)*3% !default;
 
-// Fifths
+
+/**
+ * Fifths.
+ */
+
 $one-fifth:       (100/5)*1% !default;
 
 $two-fifths:      (100/5)*2% !default;
@@ -35,7 +54,11 @@ $three-fifths:    (100/5)*3% !default;
 
 $four-fifths:     (100/5)*4% !default;
 
-// Sixths
+
+/**
+ * Sixths.
+ */
+
 $one-sixth:       (100/6)*1% !default;
 
 $two-sixths:      $one-third !default;
@@ -46,7 +69,11 @@ $four-sixths:     $two-thirds !default;
 
 $five-sixths:     (100/6)*5% !default;
 
-// Sevenths
+
+/**
+ * Sevenths.
+ */
+
 $one-seventh:     (100/7)*1% !default;
 
 $two-sevenths:    (100/7)*2% !default;
@@ -59,7 +86,11 @@ $five-sevenths:   (100/7)*5% !default;
 
 $six-sevenths:    (100/7)*6% !default;
 
-// Eighths
+
+/**
+ * Eigths.
+ */
+
 $one-eighth:      (100/8)*1% !default;
 
 $two-eighths:     $one-quarter !default;
@@ -74,7 +105,11 @@ $six-eighths:     $three-quarters !default;
 
 $seven-eighths:   (100/8)*7% !default;
 
-// Tenths
+
+/**
+ * Tenths.
+ */
+
 $one-tenth:       (100/10)*1% !default;
 
 $two-tenths:      $one-fifth !default;
@@ -93,7 +128,11 @@ $eight-tenths:    $four-fifths !default;
 
 $nine-tenths:     (100/10)*9% !default;
 
-// Twelfths
+
+/**
+ * Twelfhs.
+ */
+
 $one-twelfth:     (100/12)*1% !default;
 
 $two-twelfths:    $one-sixth !default;

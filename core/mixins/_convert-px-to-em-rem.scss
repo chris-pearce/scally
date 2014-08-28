@@ -1,14 +1,15 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> MIXINS -> CONVERT PX TO EM/REM
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * Convert `px` to `em`'s or `rem`'s for multiple properties or values or both. Accepts a list of
- * lists (instead a list of values) for properties that accept multiple lists of values. Only
- * numbers are converted; everything else is passed through. For the `to-em` `@mixin` `$context` is
- * an optional argument that allows making measurements relative to the parent font size rather than
- * the current.
+ * Convert `px` to `em`'s or `rem`'s for multiple properties or values or
+ * both. Accepts a list of lists (instead a list of values) for properties
+ * that accept multiple lists of values. Only numbers are converted;
+ * everything else is passed through. For the `to-em` `@mixin` `$context` is
+ * an optional argument that allows making measurements relative to the parent
+ * font size rather than the current.
  *
  * @example
    @include to-em(line-height, 30)
@@ -21,7 +22,7 @@
    @include to-rem(margin, $spacing-base, !important);
  *
  * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz
+ * http://codepen.io/team/westfieldlabs/full/Bcfyz/#convert-px-to-rem
  *
  * @credit
  * https://gist.github.com/2237465

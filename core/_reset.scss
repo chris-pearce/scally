@@ -1,12 +1,12 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> RESET
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * In addition to normalize.css we also apply a reset which mainly removes all margins, paddings,
- * and borders, from all elements, and applies the nice `border-box` value for `box-sizing`. And a
- * few other things.
+ * In addition to normalize.css we also apply a reset which mainly removes all
+ * margins, paddings, and borders, from all elements, and applies the nice
+ * `border-box` value for `box-sizing`. And a few other things.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/wGvdp
@@ -17,7 +17,8 @@
  * Remove all margins, paddings, and borders.
  *
  * N.B. the complete list of HTML5 elements
- * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+ * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/
+ * HTML5_element_list
  */
 
 html,
@@ -101,7 +102,8 @@ main {
  * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
  * @credit
- * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-
+ * practice/
  */
 
 @if $friendly-box-model {
@@ -126,11 +128,13 @@ ol {list-style-type: none;}
 
 
 /**
- * Suppress the focus outline on links that cannot be accessed via a keyboard. This prevents an
- * unwanted focus outline from appearing around elements that might still respond to pointer events.
+ * Suppress the focus outline on links that cannot be accessed via a keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
  *
- * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
- * always want the rule it's applied too to take precedence.
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
+ * i.e. you know you willalways want the rule it's applied too to take
+ * precedence.
  *
  * @credit
  * https://github.com/suitcss/

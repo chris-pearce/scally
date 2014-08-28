@@ -1,6 +1,12 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> BASE -> MEDIA
-   ====================================================================================== */
+   ========================================================================= */
+
+
+/**
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/zIgBs#images
+ */
 
 
 /**
@@ -30,8 +36,9 @@ img {
 	font-style: italic; // [2]
 
   /**
-   * Non-responsive images if you specify `width` and/or `height` attributes and Google Maps breaks
-   * if `max-width: 100%` acts upon it; use their selector to remove the effects.
+   * Non-responsive images if you specify `width` and/or `height` attributes
+   * and Google Maps breaks if `max-width: 100%` acts upon it; use their
+   * selector to remove the effects.
    */
 
   .gm-style &,
@@ -41,7 +48,8 @@ img {
 
 
 /**
- * Set the default behavior for touch-based browsing in IE 10 on devices running Windows 8.
+ * Set the default behavior for touch-based browsing in IE 10 on devices
+ * running Windows 8.
  */
 
 canvas {-ms-touch-action: double-tap-zoom;}

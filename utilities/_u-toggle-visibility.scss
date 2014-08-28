@@ -1,17 +1,19 @@
-/* ======================================================================================
+/* ============================================================================
    @UTILITIES -> TOGGLE VISIBILITY
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * Simply toggling the visibility of an element via a State class: `is-visible` which is powered by
- * JavaScript.
+ * Simply toggling the visibility of an element via a State class:
+ * `is-visible` (or whatever you choose) which is powered by JavaScript.
  */
 
 
 /**
  * Settings.
  */
+
+$toggle-visibility-state-class: is-visible !default;
 
 
 /**
@@ -23,7 +25,7 @@
   // Hide by default
   display: none;
 
-  // Show
-  &.is-visible,
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
   .no-js & {display: block;}
 }

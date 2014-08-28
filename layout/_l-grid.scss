@@ -1,33 +1,37 @@
-/* ======================================================================================
+/* ============================================================================
    @LAYOUT -> GRID
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
  * A powerful fluid and nestable mobile first grid system.
  *
- * Combine with the viewport specific width classes found in 'Utilities -> Widths' to apply grid
- * widths at specific viewports, for example:
+ * Combine with the viewport specific width classes found in Utilities ->
+ * Widths to apply grid widths at specific viewports, for example:
  *
    <div class="grid__item  lap--one-half  desk--one-third">
  *
- * This would give you a grid item which is 100% width unless it is on a lap device, at which point
- * it becomes 50% wide, or it is on a desktop device, at which point it becomes 33.333% width. See
- * breakpoints set here: 'Core -> Settings -> Breakpoints'.
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it becomes 50% wide, or it is on a desktop device,
+ * at which point it becomes 33.333% width. See breakpoints set here: Core ->
+ * Settings -> Breakpoints.
  *
- * N.B. grid systems should be thought of as shelves. They contain content but are not content in
- * themselves. You put up your shelves then fill them with your stuff. By setting up our grids
- * separately to our components you can move components around a lot more easily than if they had
- * dimensions applied to them; this makes our front-ends a lot more adaptable and quick to work with.
+ * N.B. grid systems should be thought of as shelves. They contain content but
+ * are not content in themselves. You put up your shelves then fill them with
+ * your stuff. By setting up our grids separately to our components you can
+ * move components around a lot more easily than if they had dimensions
+ * applied to them; this makes our front-ends a lot more adaptable and quick
+ * to work with.
  *
- * N.B. you should never apply any styles to a grid item, they are for layout purposes only. Apply
- * styling to content inside a grid item.
+ * N.B. you should never apply any styles to a grid item, they are for layout
+ * purposes only. Apply styling to content inside a grid item.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/cjyHK/
  *
  * @credit
- * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
+ * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-
+ * grids.scss
  */
 
 
@@ -36,8 +40,9 @@
  */
 
 // Box sizing.
-// Here we set a variable assuming that `box-sizing: border-box;` is not set globally. If it has
-// been previously been defined, the following variable will be overriden and will be set to `true`.
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable
+// will be overriden and will be set to `true`.
 $friendly-box-model: false !default;
 
 // Gutters
@@ -163,16 +168,16 @@ $grid-gutter-double:            $spacing-double !default;
 /**
  * Modifier: reversed.
  *
- * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your markup will display in
- * order 4, 3, 2, 1 on your page.
+ * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+ * markup will display in order 4, 3, 2, 1 on your page.
  */
 
 .grid--reversed > .grid__item {float: right;}
 
 
 /**
- * Modifier: table display for all viewports and one for medium to large viewports (non-palm), with
- * options to set different vertical alignments.
+ * Modifier: table display for all viewports and one for medium to large
+ * viewports (non-palm), with options to set different vertical alignments.
  */
 
 .grid--table {

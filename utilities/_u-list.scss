@@ -1,10 +1,11 @@
-/* ======================================================================================
+/* ============================================================================
    @UTILITIES -> LIST
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * Some standard list styles for unordered and ordered lists as they're removed in the 'Reset'.
+ * Some standard list styles for unordered and ordered lists as they're
+ * removed in Core -> Reset.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#list
@@ -26,7 +27,6 @@ $list-bullet-unordered-nested-once:			circle !default;
 $list-bullet-unordered-nested-twice:		square !default;
 
 $list-bullet-ordered:										decimal !default;
-
 
 
 /**

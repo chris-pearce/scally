@@ -2,7 +2,7 @@
 
 ## Global
 
-- Wrap at 80 characters.
+- Comment about non-JavaScript, search for `.no-js`.
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - Boilerplate.
 - Make sure all instances of `px` for borders and shadows use `rem`.
@@ -25,8 +25,8 @@
   - Width/Grid push-pull toggles (Alec).
   - Colors:
     - Use a map?.
-    - Update 'Buttons' sections.
 - Mixins:
+  - Test height and max media query mixin.
   - 2 Bootstrap mixins (see below)?
   - Ideas:
     - <https://gist.github.com/ykhs/3690526>.

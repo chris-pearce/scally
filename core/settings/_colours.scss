@@ -1,12 +1,6 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> SETTINGS -> COLOURS
-   ====================================================================================== */
-
-
-/**
- * @credit
- * http://ethanschoonover.com/solarized
- */
+   ========================================================================= */
 
 
 /**
@@ -46,14 +40,12 @@ $colour-html-element-background: $colour-white !default;
 
 
 /**
- * Buttons.
+ * Primary / Secondary.
  */
 
-// Primary
-$colour-button-primary:     $colour-brand !default;
+$colour-primary:     $colour-brand !default;
 
-// Secondary
-$colour-button-secondary:   lighten($colour-brand, 10%) !default;
+$colour-secondary:   lighten($colour-brand, 10%) !default;
 
 
 /**

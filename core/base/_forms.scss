@@ -1,6 +1,12 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> BASE -> FORMS
-   ====================================================================================== */
+   ========================================================================= */
+
+
+/**
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/zIgBs/#forms
+ */
 
 
 /**
@@ -30,21 +36,24 @@ textarea {resize: vertical;}
 
 
 /**
- * Remove rounded corners from iOS search inputs by overriding `appearance: textfield` from
- * normalize.css. See: https://github.com/necolas/normalize.css/issues/360.
+ * Remove rounded corners from iOS search inputs by overriding
+ * `appearance: textfield` from normalize.css.
+ * See: https://github.com/necolas/normalize.css/issues/360.
  */
 
 input[type="search"] {appearance: none;}
 
 
 /**
- * Fix for IE and old versions of some other browsers not wrapping text within a `legend`.
+ * Fix for IE and old versions of some other browsers not wrapping text within
+ * a `legend`.
  *
  * 1. Enable line-wrapping in IE8+.
  * 2. Enable line-wrapping in old versions of some other browsers.
  *
  * @credit
- * http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ * http://www.456bereastreet.com/archive/201210/
+ * how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 
 legend {
@@ -54,8 +63,8 @@ legend {
 
 
 /**
- * Set whitespace for `legend`s via a class, we use `padding` over `margin` as `padding` is the most
- * cross-browser compatible for `legend`s.
+ * Set whitespace for `legend`s via a class, we use `padding` over `margin` as
+ * `padding` is the most cross-browser compatible for `legend`s.
  */
 
 .form-heading {@include to-rem(padding-bottom, $spacing-base);}
@@ -64,8 +73,9 @@ legend {
 /**
  * Disabled state.
  *
- * N.B. it is okay to use `!important` here as we're doing it preemptively i.e. you know you will
- * always want the rule it's applied too to take precedence.
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
  */
 
 @if $disabled-state {
@@ -124,8 +134,9 @@ legend {
 /**
  * Remove the top inner shadow from iOS inputs.
  *
- * N.B. this needs to be isolated to iOS devices so user-agent sniffing needs to happen and the most
- * robust implementation of this is to apply the hook to the `html` element e.g. `.ios`.
+ * N.B. this needs to be isolated to iOS devices so user-agent sniffing needs
+ * to happen and the most robust implementation of this is to apply the hook
+ * to the `html` element e.g. `.ios`.
  */
 
 @if $remove-top-inner-shadow-from-ios-inputs {

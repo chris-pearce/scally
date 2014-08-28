@@ -1,19 +1,19 @@
-/* ======================================================================================
+/* ============================================================================
    @CORE -> MIXINS -> GRADIENTS
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
  * Some simple gradients.
  *
  * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz
+ * http://codepen.io/team/westfieldlabs/full/Bcfyz#gradients
  */
 
 
 /**
- * Linear gradient accepting two colours, directional keywords (default direction is `bottom`), and
- * an optional IE 9 fallback.
+ * Linear gradient accepting two colours, directional keywords (default
+ * direction is `bottom`), and an optional IE 9 fallback.
  *
  * @example
    @include linear-gradient(blue, red);

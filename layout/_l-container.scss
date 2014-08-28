@@ -1,13 +1,13 @@
-/* ======================================================================================
+/* ============================================================================
    @LAYOUT -> CONTAINER
-   ====================================================================================== */
+   ========================================================================= */
 
 
 /**
- * The main container that wraps all major layout pieces so that we keep all layout consistent. The
- * container is responsive in that it will be a fluid width using '%' up until it hits it's
- * maximum width which is stored in 'Settings -> Layout', along with the minimum width. And it's
- * center aligned by default.
+ * The main container that wraps all major layout pieces so that we keep all
+ * layout consistent. The container is responsive in that it will be a fluid
+ * width using '%' up until it hits it's maximum width. And it's center
+ * aligned by default.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/GiCzg/
@@ -18,13 +18,10 @@
  * Settings.
  */
 
-// Width
 $container-width:           92% !default;
 
-// Minimum width
 $container-minimum-width:   220 !default;
 
-// Maximum width
 $container-maximum-width:   1600 !default;
 
 
@@ -38,7 +35,7 @@ $container-maximum-width:   1600 !default;
   @include to-rem(max-width, $container-maximum-width);
   margin: 0 auto;
 
-  /* Print */
+  // Print
   @media print {
     width: auto;
   }
