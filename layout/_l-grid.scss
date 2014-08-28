@@ -109,10 +109,21 @@ $grid-gutter-huge:    $spacing-double !default;
 
 
 /**
- * Modifier: gutter half.
+ * Modifier: gutter tiny.
  */
 
-.grid--gutter-half {
+.grid--gutter-tiny {
+  @include to-rem(margin-left, -$grid-gutter-tiny);
+
+  > .grid__item {@include to-rem(padding-left, $grid-gutter-tiny);}
+}
+
+
+/**
+ * Modifier: gutter small.
+ */
+
+.grid--gutter-small {
 	@include to-rem(margin-left, -$grid-gutter-small);
 
 	> .grid__item {@include to-rem(padding-left, $grid-gutter-small);}
@@ -120,21 +131,10 @@ $grid-gutter-huge:    $spacing-double !default;
 
 
 /**
- * Modifier: gutter third.
+ * Modifier: gutter large.
  */
 
-.grid--gutter-third {
-	@include to-rem(margin-left, -$grid-gutter-tiny);
-
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-tiny);}
-}
-
-
-/**
- * Modifier: gutter base plus half.
- */
-
-.grid--gutter-base-plus-half {
+.grid--gutter-large {
 	@include to-rem(margin-left, -$grid-gutter-large);
 
 	> .grid__item {@include to-rem(padding-left, $grid-gutter-large);}
@@ -142,10 +142,10 @@ $grid-gutter-huge:    $spacing-double !default;
 
 
 /**
- * Modifier: gutter double.
+ * Modifier: gutter huge.
  */
 
-.grid--gutter-double {
+.grid--gutter-huge {
 	@include to-rem(margin-left, -$grid-gutter-huge);
 
 	> .grid__item {@include to-rem(padding-left, $grid-gutter-huge);}
