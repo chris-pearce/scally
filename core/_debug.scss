@@ -1,26 +1,26 @@
+/* ======================================================================================
+   @CORE -> @DEBUG
+   ====================================================================================== */
+
+
+/**
+ * Enable this stylesheet to visually detect any improperly nested or potentially invalid markup,
+ * or any potentially inaccessible code.
+ *
+ * N.B.
+ * - red    = definite error.
+ * - yellow = double-check.
+ * - none   = should be fine.
+ *
+ * @credit
+ * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/GHzvE
+ */
+
+
 @if $debug-mode {
-
-  /* ======================================================================================
-     @CORE -> @DEBUG
-     ====================================================================================== */
-
-
-  /**
-   * Enable this stylesheet to visually detect any improperly nested or potentially invalid markup,
-   * or any potentially inaccessible code.
-   *
-   * N.B.
-   * - red    = definite error.
-   * - yellow = double-check.
-   * - none   = should be fine.
-   *
-   * @credit
-   * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
-   *
-   * @demo
-   * http://codepen.io/team/westfieldlabs/full/GHzvE
-   */
-
 
   /**
    * Images require `alt` attributes, empty `alt`s are fine but should be double-checked, no `alt`

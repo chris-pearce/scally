@@ -7,9 +7,8 @@
  * Setup media queries for minimum and maximum widths/heights, with width being the default,
  * also includes the ability to apply ranges.
  *
- *
  * @demo
- * http://codepen.io/team/westfieldlabs/pen/flLcJ
+ * http://codepen.io/team/westfieldlabs/full/Bcfyz#media-queries
  *
  * @example
    @include respond-to(lap) {
@@ -50,12 +49,12 @@
 
 
 /**
- * Ranges
+ * Ranges.
  */
 
 @mixin respond-range($min-value, $max-value: 0, $axis: "width") {
-  // If min-value is a named breakpoint and max-value is omitted use the next named breakpoint after
-  // the min-value breakpoint.
+  // If `min-value` is a named breakpoint and `max-value` is omitted use the next named breakpoint
+  // after the `min-value` breakpoint.
   @if type-of($min-value) == "string" and $max-value == 0 {
     $breakpoint-values: map-keys($breakpoints);
     $breakpoint-index: index($breakpoint-values, $min-value);
@@ -67,7 +66,7 @@
         @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
       }
     } @else {
-      @warn "Breakpoint name '#{$value}' not recognised.";
+      @warn "Breakpoint name '#{$min-value}' not recognised.";
     }
   }
 

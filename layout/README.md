@@ -9,5 +9,3 @@ to set custom column widths at different viewports, making responsive layouts a 
 part of **Layout** is a generic container that ensures all of your UI uses consistent widths.
 
 N.B. **Layout** styles should be prefixed with `l-` so that they're easily identifiable.
-
-**Credit: <https://smacss.com/book/type-layout>**

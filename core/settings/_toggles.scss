@@ -4,7 +4,8 @@
 
 
 /**
- * Switch things on or off.
+ * Switch things on or off for everything in 'Core', all other toggles are handled at the partial
+ * level.
  */
 
 
@@ -22,17 +23,6 @@ $debug-mode: false !default;
  */
 
 $friendly-box-model: true !default;
-
-
-/**
- * Grid.
- */
-
-// Push
-$grid-push: false !default;
-
-// Pull
-$grid-pull: false !default;
 
 
 /**
@@ -67,41 +57,3 @@ $hide-close-button-for-ie10plus-inputs:     false !default;
  */
 
 $viewport-device-width: true !default;
-
-
-/**
- * Apply classes at specific breakpoints.
- */
-
-// Widths
-$width-classes-at-breakpoint-lap:                     true !default;
-$width-classes-at-breakpoint-lap-range:               true !default;
-$width-classes-at-breakpoint-lap-large:               true !default;
-$width-classes-at-breakpoint-lap-large-range:         true !default;
-$width-classes-at-breakpoint-desk:                    true !default;
-$width-classes-at-breakpoint-desk-small-range:        true !default;
-$width-classes-at-breakpoint-desk-large:              true !default;
-
-// Grid push
-$grid-push-classes-at-breakpoint-lap:                 false !default;
-$grid-push-classes-at-breakpoint-lap-range:           false !default;
-$grid-push-classes-at-breakpoint-lap-large:           false !default;
-$grid-push-classes-at-breakpoint-lap-large-range:     false !default;
-$grid-push-classes-at-breakpoint-desk:                false !default;
-$grid-push-classes-at-breakpoint-desk-small-range:    false !default;
-$grid-push-classes-at-breakpoint-desk-large:          false !default;
-
-// Grid pull
-$grid-pull-classes-at-breakpoint-lap:                 false !default;
-$grid-pull-classes-at-breakpoint-lap-range:           false !default;
-$grid-pull-classes-at-breakpoint-lap-large:           false !default;
-$grid-pull-classes-at-breakpoint-lap-large-range:     false !default;
-$grid-pull-classes-at-breakpoint-desk:                false !default;
-$grid-pull-classes-at-breakpoint-desk-small-range:    false !default;
-$grid-pull-classes-at-breakpoint-desk-large:          false !default;
-
-// Column classes for the 'Columns' abstraction
-$col-classes-at-breakpoint-lap:                       false !default;
-$col-classes-at-breakpoint-lap-large:                 false !default;
-$col-classes-at-breakpoint-desk:                      false !default;
-$col-classes-at-breakpoint-desk-large:                false !default;

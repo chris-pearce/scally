@@ -44,9 +44,9 @@ $list-bullet-ordered:										decimal !default;
 		@include to-rem(margin-left, $list-indent);
 
 		// Increse for larger screens
-		/*@include respond-to(lap) {
+		@include respond-to(lap) {
 			@include to-rem(margin-left, $list-indent * 2);
-		}*/
+		}
 	}
 }
 

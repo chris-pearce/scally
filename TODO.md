@@ -4,7 +4,7 @@
 
 - Wrap at 80 characters.
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
-- `style.scss`.
+- Boilerplate.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
@@ -20,16 +20,13 @@
 ## Core
 
 - Base:
-  - Non-responsive images still gets `height: auto` rule.
+  - Non-responsive images still gets `height: auto` rule? Causes issues in IE 9/10.
 - Settings:
-  - Width toggles (Alec TODO).
-  - Rename `_layout.scss` to `_widths.scss` and move **Container** and **Grid** setting into their
-    partials? And move the **Grid** toggles into grid partial.
+  - Width/Grid push-pull toggles (Alec).
   - Colors:
     - Use a map?.
     - Update 'Buttons' sections.
 - Mixins:
-  - Media query mixin (Alec TODO).
   - 2 Bootstrap mixins (see below)?
   - Ideas:
     - <https://gist.github.com/ykhs/3690526>.
@@ -40,11 +37,11 @@
 
 ## Layout
 
-- Remove 'Credit' reference in README.
 - Grid:
+  - Rename grid gutters to the standards sizing names e.g. tiny, small, large, huge.
   - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
-- Make sure all media queries are using Alec's version.
+  - Apply 'Every breakpoint' option to 'Push' and 'Pull'.
 
 ## Components
 
@@ -62,6 +59,8 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
+- Widths:
+  - Apply 'Every breakpoint' option.
 - New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
@@ -69,8 +68,7 @@
 - Rendering box:
   - Add 'Flexbox'?
 - List:
-  - Add border modifier to 'Block': <https://github.com/inuitcss/objects.list-ui/blob/master/_objects.list-ui.scss>.
-  - Apply `@extend` and `respond-to` mixin to Base list.
+  - Apply `@extend` 'Base' list.
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
@@ -97,8 +95,9 @@
   - `index.html` template.
   - CSS architecture.
   - Assets in the DAM.
-- sass --watch demo-styles.scss:demo-styles.css --style compressed
-  sass --watch style.scss:style.css --style compressed
+- Sass watch:
+  `sass --watch demo-styles.scss:demo-styles.css --style compressed`
+  `sass --watch style.scss:style.css --style compressed`
 - Names:
   - Tiny.
   - Small.
@@ -107,6 +106,7 @@
   - Compact.
   - Cosy.
   - Comfy.
+- Wrap at 80 characters.
 - Inspiration:
   - <http://web-design-weekly.com/2014/08/20/introduction-to-suit-css/>.
 
