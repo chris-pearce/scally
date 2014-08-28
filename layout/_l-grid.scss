@@ -46,17 +46,15 @@
 $friendly-box-model: false !default;
 
 // Gutters
-$grid-gutter-base:              $spacing-base !default;
+$grid-gutter-base:    $spacing-base !default;
 
-$grid-gutter-half:              $spacing-half !default;
+$grid-gutter-small:   $spacing-half !default;
 
-$grid-gutter-third:             $spacing-third !default;
+$grid-gutter-tiny:    $spacing-third !default;
 
-$grid-gutter-quarter:           $spacing-quarter !default;
+$grid-gutter-large:   $spacing-base-plus-half !default;
 
-$grid-gutter-base-plus-half:    $spacing-base-plus-half !default;
-
-$grid-gutter-double:            $spacing-double !default;
+$grid-gutter-huge:    $spacing-double !default;
 
 
 /**
@@ -115,9 +113,9 @@ $grid-gutter-double:            $spacing-double !default;
  */
 
 .grid--gutter-half {
-	@include to-rem(margin-left, -$grid-gutter-half);
+	@include to-rem(margin-left, -$grid-gutter-small);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-half);}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-small);}
 }
 
 
@@ -126,20 +124,9 @@ $grid-gutter-double:            $spacing-double !default;
  */
 
 .grid--gutter-third {
-	@include to-rem(margin-left, -$grid-gutter-third);
+	@include to-rem(margin-left, -$grid-gutter-tiny);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-third);}
-}
-
-
-/**
- * Modifier: gutter quarter.
- */
-
-.grid--gutter-quarter {
-	@include to-rem(margin-left, -$grid-gutter-quarter);
-
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-quarter);}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-tiny);}
 }
 
 
@@ -148,9 +135,9 @@ $grid-gutter-double:            $spacing-double !default;
  */
 
 .grid--gutter-base-plus-half {
-	@include to-rem(margin-left, -$grid-gutter-base-plus-half);
+	@include to-rem(margin-left, -$grid-gutter-large);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-base-plus-half);}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-large);}
 }
 
 
@@ -159,9 +146,9 @@ $grid-gutter-double:            $spacing-double !default;
  */
 
 .grid--gutter-double {
-	@include to-rem(margin-left, -$grid-gutter-double);
+	@include to-rem(margin-left, -$grid-gutter-huge);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-double);}
+	> .grid__item {@include to-rem(padding-left, $grid-gutter-huge);}
 }
 
 
