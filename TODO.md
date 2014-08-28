@@ -2,12 +2,15 @@
 
 ## Global
 
+- Wrap at 80 characters.
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - `style.scss`.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
+  - Create styles for sub headings.
   - Put custom font in CSS.
+  - Apply anchors to **Layout** and **Core**.
   - `$bg-color: #143A8D;`.
 
 
@@ -16,9 +19,15 @@
 
 ## Core
 
+- Base:
+  - Non-responsive images still gets `height: auto` rule.
 - Settings:
   - Width toggles (Alec TODO).
-  - Colors (use a map?).
+  - Rename `_layout.scss` to `_widths.scss` and move **Container** and **Grid** setting into their
+    partials? And move the **Grid** toggles into grid partial.
+  - Colors:
+    - Use a map?.
+    - Update 'Buttons' sections.
 - Mixins:
   - Media query mixin (Alec TODO).
   - 2 Bootstrap mixins (see below)?
@@ -27,9 +36,11 @@
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
     - <http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/>.
+    - <https://github.com/lolmaus/breakpoint-slicer>.
 
 ## Layout
 
+- Remove 'Credit' reference in README.
 - Grid:
   - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
@@ -46,17 +57,26 @@
 
 ## Utilities
 
+- Put them into categories?
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
+- New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
-- Positioning: see CC, consider adding a height paramater for alignment?
+- Positioning: see CC, consider adding a height paramater for alignment and for pseudo-elements.
+- Rendering box:
+  - Add 'Flexbox'?
+- List:
+  - Add border modifier to 'Block': <https://github.com/inuitcss/objects.list-ui/blob/master/_objects.list-ui.scss>.
+  - Apply `@extend` and `respond-to` mixin to Base list.
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
   - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_center-block.scss>.
+  - <https://github.com/suitcss/utils-layout/blob/master/lib/layout.css>.
+  - <https://github.com/suitcss/utils-position/blob/master/lib/position.css>.
 
 
 ---
@@ -79,6 +99,14 @@
   - Assets in the DAM.
 - sass --watch demo-styles.scss:demo-styles.css --style compressed
   sass --watch style.scss:style.css --style compressed
+- Names:
+  - Tiny.
+  - Small.
+  - Large.
+  - Huge.
+  - Compact.
+  - Cosy.
+  - Comfy.
 - Inspiration:
   - <http://web-design-weekly.com/2014/08/20/introduction-to-suit-css/>.
 

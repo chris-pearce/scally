@@ -47,11 +47,14 @@ $friendly-box-model: false !default;
 
 /**
  * Grid container.
+ *
+ * 1. So the grid can work on inline elements e.g. `span`.
  */
 
 .grid {
 	// Negative `margin-left` to negate the columns gutters
 	@include to-rem(margin-left, -$grid-gutter-base);
+  display: block; // [1]
 
 	// Clear fix
 	&:after {

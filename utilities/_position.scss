@@ -1,0 +1,90 @@
+/* ======================================================================================
+   @HELPERS -> POSITION
+   ====================================================================================== */
+/*
+  Using absolute positioning position an element to any side or corner of it's parent, stretch an element to either the sides, ends, or all corners of it's container, and center an element either horizontally, vertically, or both to it's container.
+
+  .position--left                   - Positioned to the left
+  .position--right                  - Positioned to the right
+  .position--top                    - Positioned to the top
+  .position--bottom                 - Positioned to the bottom
+  .position--top-left               - Positioned to the top left corner
+  .position--top-right              - Positioned to the top right corner
+  .position--bottom-left            - Positioned to the bottom left corner
+  .position--bottom-right           - Positioned to the bottom right corner
+  .position--stretch-all            - Stretch to fill it's container
+  .position--stretch-ends           - Stretch to the top and bottom of the container
+  .position--stretch-sides          - Stretch to the left and right of the container
+  .position--horizontally-centered  - Equidistant from the left and right of the container
+  .position--vertically-centered    - Equidistant from the top and bottom of the container
+  .position--centered               - Equidistant from all sides of the container
+
+  Styleguide Position
+*/
+
+.position {position: relative;}
+
+  .position__inner {
+    position: absolute;
+
+    .position--left & {left: 0;}
+
+    .position--right & {right: 0;}
+
+    .position--top & {top: 0;}
+
+    .position--bottom & {bottom: 0;}
+
+    .position--top-left & {
+      top: 0;
+      left: 0;
+    }
+
+    .position--top-right & {
+      top: 0;
+      right: 0;
+    }
+
+    .position--bottom-left & {
+      bottom: 0;
+      left: 0;
+    }
+
+    .position--bottom-right & {
+      bottom: 0;
+      right: 0;
+    }
+
+    .position--stretch-all & {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .position--stretch-ends & {
+      top: 0;
+      bottom: 0;
+    }
+
+    .position--stretch-sides & {
+      left: 0;
+      right: 0;
+    }
+
+    .position--vertically-centered & {
+      top: 50%;
+      @include translateY(-50%);
+    }
+
+    .position--horizontally-centered & {
+      left: 50%;
+      @include translateX(-50%);
+    }
+
+    .position--centered & {
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+    }
+  }

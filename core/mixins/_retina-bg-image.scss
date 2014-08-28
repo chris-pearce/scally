@@ -19,6 +19,7 @@
   * http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
  */
 
+
 @mixin retina-bg-image($image, $width, $height) {
   @media (-o-min-device-pixel-ratio: 5/4),
          (-webkit-min-device-pixel-ratio: 1.25),
