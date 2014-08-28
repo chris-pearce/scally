@@ -29,10 +29,10 @@ $friendly-box-model: true !default;
  */
 
 // Push
-$grid-push: true !default;
+$grid-push: false !default;
 
 // Pull
-$grid-pull: true !default;
+$grid-pull: false !default;
 
 
 /**
@@ -71,37 +71,33 @@ $viewport-device-width: true !default;
 
 /**
  * Apply classes at specific breakpoints.
+ *
+ * N.B. by default we're turning on Lap plus (non-palm).
  */
 
 // Widths
 $width-classes-at-breakpoint-lap:                     true !default;
-$width-classes-at-breakpoint-lap-range:               true !default;
-$width-classes-at-breakpoint-lap-large:               true !default;
-$width-classes-at-breakpoint-lap-large-range:         true !default;
-$width-classes-at-breakpoint-desk:                    true !default;
-$width-classes-at-breakpoint-desk-small-range:        true !default;
-$width-classes-at-breakpoint-desk-large:              true !default;
+$width-classes-at-breakpoint-lap-range:               false !default;
+$width-classes-at-breakpoint-lap-large:               false !default;
+$width-classes-at-breakpoint-lap-large-range:         false !default;
+$width-classes-at-breakpoint-desk:                    false !default;
+$width-classes-at-breakpoint-desk-small-range:        false !default;
+$width-classes-at-breakpoint-desk-large:              false !default;
 
 // Grid push
 $grid-push-classes-at-breakpoint-lap:                 true !default;
-$grid-push-classes-at-breakpoint-lap-range:           true !default;
-$grid-push-classes-at-breakpoint-lap-large:           true !default;
-$grid-push-classes-at-breakpoint-lap-large-range:     true !default;
-$grid-push-classes-at-breakpoint-desk:                true !default;
-$grid-push-classes-at-breakpoint-desk-small-range:    true !default;
-$grid-push-classes-at-breakpoint-desk-large:          true !default;
+$grid-push-classes-at-breakpoint-lap-range:           false !default;
+$grid-push-classes-at-breakpoint-lap-large:           false !default;
+$grid-push-classes-at-breakpoint-lap-large-range:     false !default;
+$grid-push-classes-at-breakpoint-desk:                false !default;
+$grid-push-classes-at-breakpoint-desk-small-range:    false !default;
+$grid-push-classes-at-breakpoint-desk-large:          false !default;
 
 // Grid pull
 $grid-pull-classes-at-breakpoint-lap:                 true !default;
-$grid-pull-classes-at-breakpoint-lap-range:           true !default;
-$grid-pull-classes-at-breakpoint-lap-large:           true !default;
-$grid-pull-classes-at-breakpoint-lap-large-range:     true !default;
-$grid-pull-classes-at-breakpoint-desk:                true !default;
-$grid-pull-classes-at-breakpoint-desk-small-range:    true !default;
-$grid-pull-classes-at-breakpoint-desk-large:          true !default;
-
-// Column classes for the 'Columns' abstraction
-$col-classes-at-breakpoint-lap:                       false !default;
-$col-classes-at-breakpoint-lap-large:                 false !default;
-$col-classes-at-breakpoint-desk:                      false !default;
-$col-classes-at-breakpoint-desk-large:                false !default;
+$grid-pull-classes-at-breakpoint-lap-range:           false !default;
+$grid-pull-classes-at-breakpoint-lap-large:           false !default;
+$grid-pull-classes-at-breakpoint-lap-large-range:     false !default;
+$grid-pull-classes-at-breakpoint-desk:                false !default;
+$grid-pull-classes-at-breakpoint-desk-small-range:    false !default;
+$grid-pull-classes-at-breakpoint-desk-large:          false !default;
