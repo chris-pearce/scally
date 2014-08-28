@@ -1,0 +1,78 @@
+/* ======================================================================================
+   @UTILITIES -> ALIGNMENTS
+   ====================================================================================== */
+
+
+/**
+ * Apply different alignments to elements.
+ *
+ * N.B. text alignments can be found in the 'Text -> Alignment' utility.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#alignments
+ */
+
+
+/**
+ * Inline vertical alignments.
+ *
+ * N.B. these won't work on block level elements (see next section for that).
+ */
+
+%u-align-v-inline-top,
+.u-align-v-inline-top {vertical-align: top;}
+
+%u-align-v-inline-middle,
+.u-align-v-inline-middle {vertical-align: middle;}
+
+%u-align-v-inline-baseline,
+.u-align-v-inline-baseline {vertical-align: baseline;}
+
+%u-align-v-inline-bottom,
+.u-align-v-inline-bottom {vertical-align: bottom;}
+
+%u-align-v-inline-inherit,
+.u-align-v-inline-inherit {vertical-align: inherit;}
+
+
+/**
+ * Block level vertical alignments.
+ */
+
+// Flexbox method
+// N.B. this has limited support so use with caution
+%u-align-v-block-middle-flexbox,
+.u-align-v-block-middle-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// CSS table method
+%u-align-v-block-middle-table,
+.u-align-v-block-middle-table {
+  display: table;
+  vertical-align: middle;
+  height: 100%;
+}
+
+// Position relative method
+%u-align-v-block-middle-position,
+.u-align-v-block-middle-position {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/**
+ * Center align a block level element.
+ *
+ * 1. Make it work on inline elements e.g. `img`.
+ */
+
+%u-align-center-block,
+.u-align-center-block {
+  display: block; // [1]
+  margin: 0 auto;
+}

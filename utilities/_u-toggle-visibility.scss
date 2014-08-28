@@ -1,0 +1,29 @@
+/* ======================================================================================
+   @UTILITIES -> TOGGLE VISIBILITY
+   ====================================================================================== */
+
+
+/**
+ * Simply toggling the visibility of an element via a State class: `is-visible` which is powered by
+ * JavaScript.
+ */
+
+
+/**
+ * Settings.
+ */
+
+
+/**
+ * Base.
+ */
+
+%u-toggle-visibility,
+.u-toggle-visibility {
+  // Hide by default
+  display: none;
+
+  // Show
+  &.is-visible,
+  .no-js & {display: block;}
+}
