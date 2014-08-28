@@ -76,6 +76,7 @@
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
   - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_center-block.scss>.
   - <https://github.com/suitcss/utils-layout/blob/master/lib/layout.css>.
+  - <https://github.com/suitcss/utils-position/blob/master/lib/position.css>.
 
 
 ---
