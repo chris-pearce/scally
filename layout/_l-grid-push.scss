@@ -14,6 +14,28 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+// Turned off by default as this generates a lot of CSS
+$grid-push: false !default;
+
+// Apply push classes at specific breakpoints
+// N.B. by default we're turning on Lap plus (non-palm)
+$grid-push-classes-at-breakpoint-lap:                 true !default;
+$grid-push-classes-at-breakpoint-lap-range:           false !default;
+$grid-push-classes-at-breakpoint-lap-large:           false !default;
+$grid-push-classes-at-breakpoint-lap-large-range:     false !default;
+$grid-push-classes-at-breakpoint-desk:                false !default;
+$grid-push-classes-at-breakpoint-desk-small-range:    false !default;
+$grid-push-classes-at-breakpoint-desk-large:          false !default;
+
+
+/**
+ * Generate all the push classes.
+ */
+
 @mixin push-classes($namespace: null) {
 
 	/**
@@ -144,8 +166,6 @@
 
 	/**
 	 * Output at specific breakpoints e.g. `.l-lap-push-one-half`.
-	 *
-	 * N.B. manage what you want to use in 'Core -> Settings -> Toggles'.
 	 */
 
 

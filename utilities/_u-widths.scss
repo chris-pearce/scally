@@ -1,10 +1,34 @@
 /* ======================================================================================
-   @HELPERS -> WIDTHS
+   @UTILITIES -> WIDTHS
    ====================================================================================== */
 
 /**
  * Apply percentage based width classes with the option to apply at all the main breakpoints.
+ *
  * Mostly used with the grid.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/cjyHK/
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Apply width classes at specific breakpoints
+// N.B. by default we're turning on Lap plus (non-palm)
+$width-classes-at-breakpoint-lap:                 true !default;
+$width-classes-at-breakpoint-lap-range:           false !default;
+$width-classes-at-breakpoint-lap-large:           false !default;
+$width-classes-at-breakpoint-lap-large-range:     false !default;
+$width-classes-at-breakpoint-desk:                false !default;
+$width-classes-at-breakpoint-desk-small-range:    false !default;
+$width-classes-at-breakpoint-desk-large:          false !default;
+
+
+/**
+ * Generate all the width classes.
  */
 
 @mixin width-classes($namespace: null) {
@@ -12,46 +36,59 @@
   /**
    * Whole.
    */
+
   .u-#{$namespace}one-whole {width: $one-whole;}
+
 
   /**
    * Halves.
    */
+
   .u-#{$namespace}one-half {width: $one-half;}
+
 
   /**
    * Thirds.
    */
+
   .u-#{$namespace}one-third {width: $one-third;}
   .u-#{$namespace}two-thirds {width: $two-thirds;}
+
 
   /**
    * Quarters.
    */
+
   .u-#{$namespace}one-quarter {width: $one-quarter;}
   .u-#{$namespace}two-quarters {width: $one-half;}
   .u-#{$namespace}three-quarters {width: $three-quarters;}
 
+
   /**
    * Fifths.
    */
+
   .u-#{$namespace}one-fifth {width: $one-fifth;}
   .u-#{$namespace}two-fifths {width: $two-fifths;}
   .u-#{$namespace}three-fifths {width: $three-fifths;}
   .u-#{$namespace}four-fifths {width: $four-fifths;}
 
+
   /**
    * Sixths.
    */
+
   .u-#{$namespace}one-sixth {width: $one-sixth;}
   .u-#{$namespace}two-sixths {width: $one-third;}
   .u-#{$namespace}three-sixths {width: $one-half;}
   .u-#{$namespace}four-sixths {width: $two-thirds;}
   .u-#{$namespace}five-sixths {width: $five-sixths;}
 
+
   /**
    * Sevenths.
    */
+
   .u-#{$namespace}one-seventh {width: $one-seventh;}
   .u-#{$namespace}two-sevenths {width: $two-sevenths;}
   .u-#{$namespace}three-sevenths {width: $three-sevenths;}
@@ -59,9 +96,11 @@
   .u-#{$namespace}five-sevenths {width: $five-sevenths;}
   .u-#{$namespace}six-sevenths {width: $six-sevenths;}
 
+
   /**
    * Eighths.
    */
+
   .u-#{$namespace}one-eighth {width: $one-eighth;}
   .u-#{$namespace}two-eighths {width: $one-quarter;}
   .u-#{$namespace}three-eighths {width: $three-eighths;}
@@ -70,9 +109,11 @@
   .u-#{$namespace}six-eighths {width: $three-quarters;}
   .u-#{$namespace}seven-eighths {width: $seven-eighths;}
 
+
   /**
    * Tenths.
    */
+
   .u-#{$namespace}one-tenth {width: $one-tenth;}
   .u-#{$namespace}two-tenths {width: $one-fifth;}
   .u-#{$namespace}three-tenths {width: $three-tenths;}
@@ -83,9 +124,11 @@
   .u-#{$namespace}eight-tenths {width: $four-fifths;}
   .u-#{$namespace}nine-tenths {width: $nine-tenths;}
 
+
   /**
    * Twelfths.
    */
+
   .u-#{$namespace}one-twelfth {width: $one-twelfth;}
   .u-#{$namespace}two-twelfths {width: $one-sixth;}
   .u-#{$namespace}three-twelfths {width: $one-quarter;}
@@ -108,11 +151,7 @@
 
 
 /**
- * Output at specific breakpoints e.g. `.non-palm-one-half`.
- *
- * These are turned off by default except for 'non-palm' as it's used extensively with the grid.
- *
- * Manage what you want to use in 'utils/config -> SPECIFIC BREAKPOINT CLASSES'.
+ * Output at specific breakpoints e.g. `.l-lap-one-half`.
  */
 
 

@@ -4,7 +4,7 @@
 
 - Wrap at 80 characters.
 - Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
-- `style.scss`.
+- Boilerplate.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
@@ -23,8 +23,6 @@
   - Non-responsive images still gets `height: auto` rule? Causes issues in IE 9/10.
 - Settings:
   - Width/Grid push-pull toggles (Alec).
-  - Rename `_layout.scss` to `_widths.scss` and move **Container** and **Grid** setting into their
-    partials? And move the **Grid** toggles into grid partial.
   - Colors:
     - Use a map?.
     - Update 'Buttons' sections.
@@ -40,6 +38,7 @@
 ## Layout
 
 - Grid:
+  - Rename grid gutters to the standards sizing names e.g. tiny, small, large, huge.
   - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
   - Apply 'Every breakpoint' option to 'Push' and 'Pull'.

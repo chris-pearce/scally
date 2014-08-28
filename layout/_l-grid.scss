@@ -32,17 +32,26 @@
 
 
 /**
- * Grid settings.
+ * Settings.
  */
 
-/**
- * Box sizing.
- *
- * Here we set a variable assuming that `box-sizing: border-box;` is not set globally. If it has
- * been previously been defined, the following variable will be overriden and will be set to `true`.
- */
-
+// Box sizing.
+// Here we set a variable assuming that `box-sizing: border-box;` is not set globally. If it has
+// been previously been defined, the following variable will be overriden and will be set to `true`.
 $friendly-box-model: false !default;
+
+// Gutters
+$grid-gutter-base:              $spacing-base !default;
+
+$grid-gutter-half:              $spacing-half !default;
+
+$grid-gutter-third:             $spacing-third !default;
+
+$grid-gutter-quarter:           $spacing-quarter !default;
+
+$grid-gutter-base-plus-half:    $spacing-base-plus-half !default;
+
+$grid-gutter-double:            $spacing-double !default;
 
 
 /**

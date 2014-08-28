@@ -1,50 +1,12 @@
 /* ======================================================================================
-   @CORE -> SETTINGS -> LAYOUT
+   @CORE -> SETTINGS -> WIDTHS
    ====================================================================================== */
 
 
 /**
- * Containers.
+ * All the flexible widths.
  */
 
-// Width
-$container-width:           92% !default;
-
-// Minimum width
-$container-minimum-width:   220 !default;
-
-// Maximum width
-$container-maximum-width:   1600 !default;
-
-
-/**
- * Grid.
- */
-
-// Gutters.
-
-// Base
-$grid-gutter-base:              $spacing-base !default;
-
-// Half
-$grid-gutter-half:              $spacing-half !default;
-
-// Third
-$grid-gutter-third:             $spacing-third !default;
-
-// Quarter
-$grid-gutter-quarter:           $spacing-quarter !default;
-
-// + Half
-$grid-gutter-base-plus-half:    $spacing-base-plus-half !default;
-
-// Double
-$grid-gutter-double:            $spacing-double !default;
-
-
-/**
- * Widths.
- */
 
 // One whole
 $one-whole:       100% !default;
