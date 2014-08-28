@@ -176,7 +176,7 @@ $friendly-box-model: false !default;
 }
 
 // Only for lap plus (non-palm)
-@include respond-min(641) {
+@include respond-to(lap) {
  .grid--table-for-lap-plus {
 		display: table;
 

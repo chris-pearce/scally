@@ -29,10 +29,10 @@ $friendly-box-model: true !default;
  */
 
 // Push
-$grid-push: false !default;
+$grid-push: true !default;
 
 // Pull
-$grid-pull: false !default;
+$grid-pull: true !default;
 
 
 /**
@@ -83,22 +83,22 @@ $width-classes-at-breakpoint-desk-small-range:        true !default;
 $width-classes-at-breakpoint-desk-large:              true !default;
 
 // Grid push
-$grid-push-classes-at-breakpoint-lap:                 false !default;
-$grid-push-classes-at-breakpoint-lap-range:           false !default;
-$grid-push-classes-at-breakpoint-lap-large:           false !default;
-$grid-push-classes-at-breakpoint-lap-large-range:     false !default;
-$grid-push-classes-at-breakpoint-desk:                false !default;
-$grid-push-classes-at-breakpoint-desk-small-range:    false !default;
-$grid-push-classes-at-breakpoint-desk-large:          false !default;
+$grid-push-classes-at-breakpoint-lap:                 true !default;
+$grid-push-classes-at-breakpoint-lap-range:           true !default;
+$grid-push-classes-at-breakpoint-lap-large:           true !default;
+$grid-push-classes-at-breakpoint-lap-large-range:     true !default;
+$grid-push-classes-at-breakpoint-desk:                true !default;
+$grid-push-classes-at-breakpoint-desk-small-range:    true !default;
+$grid-push-classes-at-breakpoint-desk-large:          true !default;
 
 // Grid pull
-$grid-pull-classes-at-breakpoint-lap:                 false !default;
-$grid-pull-classes-at-breakpoint-lap-range:           false !default;
-$grid-pull-classes-at-breakpoint-lap-large:           false !default;
-$grid-pull-classes-at-breakpoint-lap-large-range:     false !default;
-$grid-pull-classes-at-breakpoint-desk:                false !default;
-$grid-pull-classes-at-breakpoint-desk-small-range:    false !default;
-$grid-pull-classes-at-breakpoint-desk-large:          false !default;
+$grid-pull-classes-at-breakpoint-lap:                 true !default;
+$grid-pull-classes-at-breakpoint-lap-range:           true !default;
+$grid-pull-classes-at-breakpoint-lap-large:           true !default;
+$grid-pull-classes-at-breakpoint-lap-large-range:     true !default;
+$grid-pull-classes-at-breakpoint-desk:                true !default;
+$grid-pull-classes-at-breakpoint-desk-small-range:    true !default;
+$grid-pull-classes-at-breakpoint-desk-large:          true !default;
 
 // Column classes for the 'Columns' abstraction
 $col-classes-at-breakpoint-lap:                       false !default;

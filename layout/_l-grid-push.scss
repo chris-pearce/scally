@@ -154,7 +154,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-lap {
-	  @include respond-min(641) {
+	  @include respond-to(lap) {
 	    @include push-classes("lap-");
 	  }
 	}// endif
@@ -165,7 +165,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-lap-range {
-	  @include respond-range-fixed(lap) {
+	  @include respond-range(lap) {
 	    @include push-classes("lap-range-");
 	  }
 	}// endif
@@ -176,7 +176,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-lap-large {
-	  @include respond-min(901) {
+	  @include respond-to(lap-large) {
 	    @include push-classes("lap-large-");
 	  }
 	}// endif
@@ -187,7 +187,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-lap-large-range {
-	  @include respond-range-fixed(lap-large) {
+	  @include respond-range(lap-large) {
 	    @include push-classes("lap-large-range-");
 	  }
 	}// endif
@@ -198,7 +198,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-desk {
-	  @include respond-min(1200) {
+	  @include respond-to(desk) {
 	    @include push-classes("desk-");
 	  }
 	}// endif
@@ -209,7 +209,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-desk-small-range {
-	  @include respond-range-fixed(desk-small) {
+	  @include respond-range(desk) {
 	    @include push-classes("desk-small-range-");
 	  }
 	}// endif
@@ -220,7 +220,7 @@
 	 */
 
 	@if $grid-push-classes-at-breakpoint-desk-large {
-	  @include respond-min(1366) {
+	  @include respond-to(desk-large) {
 	    @include push-classes("desk-large-");
 	  }
 	}// endif

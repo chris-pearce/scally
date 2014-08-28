@@ -121,7 +121,7 @@
  */
 
 @if $width-classes-at-breakpoint-lap {
-  @include respond-min(641) {
+  @include respond-to(lap) {
     @include width-classes("lap-");
   }
 }// endif
@@ -132,7 +132,7 @@
  */
 
 @if $width-classes-at-breakpoint-lap-range {
-  @include respond-range-fixed(lap) {
+  @include respond-range(lap) {
     @include width-classes("lap-range-");
   }
 }// endif
@@ -143,7 +143,7 @@
  */
 
 @if $width-classes-at-breakpoint-lap-large {
-  @include respond-min(901) {
+  @include respond-to(lap-large) {
     @include width-classes("lap-large-");
   }
 }// endif
@@ -154,7 +154,7 @@
  */
 
 @if $width-classes-at-breakpoint-lap-large-range {
-  @include respond-range-fixed(lap-large) {
+  @include respond-range(lap-large) {
     @include width-classes("lap-large-range-");
   }
 }// endif
@@ -165,7 +165,7 @@
  */
 
 @if $width-classes-at-breakpoint-desk {
-  @include respond-min(1200) {
+  @include respond-to(desk) {
     @include width-classes("desk-");
   }
 }// endif
@@ -176,7 +176,7 @@
  */
 
 @if $width-classes-at-breakpoint-desk-small-range {
-  @include respond-range-fixed(desk-small) {
+  @include respond-range(desk) {
     @include width-classes("desk-small-range-");
   }
 }// endif
@@ -187,7 +187,7 @@
  */
 
 @if $width-classes-at-breakpoint-desk-large {
-  @include respond-min(1366) {
+  @include respond-to(desk-large) {
     @include width-classes("desk-large-");
   }
 }// endif
