@@ -186,7 +186,7 @@ $grid-gutter-double:            $spacing-double !default;
 
 // Only for lap plus (non-palm)
 @include respond-to(lap) {
- .grid--table-for-lap-plus {
+ .grid--table-for-lap {
 		display: table;
 
 		> .grid__item {
