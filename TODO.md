@@ -3,7 +3,6 @@
 ## Global
 
 - Comment about non-JavaScript, search for `.no-js`.
-- Setup a JIRA epic: <https://jira.westfieldlabs.com/browse/GPP/>
 - Boilerplate.
 - Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
@@ -19,29 +18,21 @@
 
 ## Core
 
-- Base:
-  - Non-responsive images still gets `height: auto` rule? Causes issues in IE 9/10.
+- Base: Non-responsive images still gets `height: auto` rule? Causes issues in IE 9/10.
 - Settings:
   - Width/Grid push-pull toggles (Alec).
-  - Colors:
-    - Use a map?.
+  - Colors: use a Sass map? (Alec)
 - Mixins:
-  - Test height and max media query mixin.
   - 2 Bootstrap mixins (see below)?
   - Ideas:
-    - <https://gist.github.com/ykhs/3690526>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
-    - <http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/>.
-    - <https://github.com/lolmaus/breakpoint-slicer>.
 
 ## Layout
 
-- Grid:
-  - Rename grid gutters to the standards sizing names e.g. tiny, small, large, huge.
-  - Use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
-  - Add Flexbox modifiers, see: <http://flexboxgrid.com/>.
-  - Apply 'Every breakpoint' option to 'Push' and 'Pull'.
+- Grid: use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
+  - Add Flexbox modifiers, see: <http://flexboxgrid.com/>?
+  - Apply 'Every breakpoint' option to 'Push' and 'Pull' (Alec).
 
 ## Components
 
@@ -59,16 +50,15 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
 - State?
 - Cursor?
-- Widths:
-  - Apply 'Every breakpoint' option.
+- Widths: apply 'Every breakpoint' option (Alec).
 - New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
 - Animations via a lib?
 - Positioning: see CC, consider adding a height paramater for alignment and for pseudo-elements.
 - Rendering box:
   - Add 'Flexbox'?
-- List:
-  - Apply `@extend` 'Base' list.
+  - Change name.
+- List: apply `@extend` 'Base' list.
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
@@ -124,6 +114,11 @@
 ### Comment formatting rules
 
 - 2 line breaks after page title comments.
+- 4 line breaks between section heading comments.
+- 2 line breaks between heading comments.
+- No full stops after URL's.
+- Full stop after everything except `//` comments and URL's.
+- Bullet list for `@credit` references.tle comments.
 - 4 line breaks between section heading comments.
 - 2 line breaks between heading comments.
 - No full stops after URL's.

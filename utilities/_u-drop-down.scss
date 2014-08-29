@@ -9,7 +9,7 @@
  * drop down visible and invisible) and the target (the actual drop down).
  * This class will be used to make the drop down target visible when the
  * trigger is selected. There is also a version for showing the drop down via
- * the `:hover` pseudo class.
+ * the `:hover` pseudo class which is turned off for touch devices.
  *
  * N.B. for the hover version to work the target must come directly after the
  * trigger in the DOM as it relies on an adjacent sibling selector.

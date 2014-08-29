@@ -29,6 +29,8 @@ $table-border-colour:                   darken($colour-white, 10%) !default;
 
 $table-border-thickness:                1 !default;
 
+$table-border-style:                    solid !default;
+
 $table-striped-background-cell-colour:  $table-border-colour !default;
 
 
@@ -71,7 +73,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 .u-table--border {
   th,
   td {
-    @include to-rem(border, $table-border-thickness solid $table-border-colour);
+    @include to-rem(border, $table-border-thickness $table-border-style $table-border-colour);
 
     // No borders for empty cells
     &:empty {border: 0;}

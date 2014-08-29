@@ -23,13 +23,20 @@
 $grid-pull: false !default;
 
 // Apply pull classes at specific breakpoints
+//
 // N.B. by default we're turning on Lap plus (non-palm)
 $grid-pull-classes-at-breakpoint-lap:                 true !default;
+
 $grid-pull-classes-at-breakpoint-lap-range:           false !default;
+
 $grid-pull-classes-at-breakpoint-lap-large:           false !default;
+
 $grid-pull-classes-at-breakpoint-lap-large-range:     false !default;
+
 $grid-pull-classes-at-breakpoint-desk:                false !default;
+
 $grid-pull-classes-at-breakpoint-desk-small-range:    false !default;
+
 $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 
 
@@ -58,6 +65,7 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-third {right: $one-third;}
+
 	.l-#{$namespace}pull-two-thirds {right: $two-thirds;}
 
 
@@ -66,7 +74,9 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-quarter {right: $one-quarter;}
+
 	.l-#{$namespace}pull-two-quarters {right: $one-half;}
+
 	.l-#{$namespace}pull-three-quarters {right: $three-quarters;}
 
 
@@ -75,8 +85,11 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-fifth {right: $one-fifth;}
+
 	.l-#{$namespace}pull-two-fifths {right: $two-fifths;}
+
 	.l-#{$namespace}pull-three-fifths {right: $three-fifths;}
+
 	.l-#{$namespace}pull-four-fifths {right: $four-fifths;}
 
 
@@ -85,9 +98,13 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-sixth {right: $one-sixth;}
+
 	.l-#{$namespace}pull-two-sixths {right: $one-third;}
+
 	.l-#{$namespace}pull-three-sixths {right: $one-half;}
+
 	.l-#{$namespace}pull-four-sixths {right: $two-thirds;}
+
 	.l-#{$namespace}pull-five-sixths {right: $five-sixths;}
 
 
@@ -96,10 +113,15 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
   .l-#{$namespace}pull-one-seventh {right: $one-seventh;}
+
   .l-#{$namespace}pull-two-sevenths {right: $two-sevenths;}
+
   .l-#{$namespace}pull-three-sevenths {right: $three-sevenths;}
+
   .l-#{$namespace}pull-four-sevenths {right: $four-sevenths;}
+
   .l-#{$namespace}pull-five-sevenths {right: $five-sevenths;}
+
   .l-#{$namespace}pull-six-sevenths {right: $six-sevenths;}
 
 
@@ -108,11 +130,17 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-eighth {right: $one-eighth;}
+
 	.l-#{$namespace}pull-two-eighths {right: $one-quarter;}
+
 	.l-#{$namespace}pull-three-eighths {right: $three-eighths;}
+
 	.l-#{$namespace}pull-four-eighths {right: $one-half;}
+
 	.l-#{$namespace}pull-five-eighths {right: $five-eighths;}
+
 	.l-#{$namespace}pull-six-eighths {right: $three-quarters;}
+
 	.l-#{$namespace}pull-seven-eighths {right: $seven-eighths;}
 
 
@@ -121,13 +149,21 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-tenth {right: $one-tenth;}
+
 	.l-#{$namespace}pull-two-tenths {right: $one-fifth;}
+
 	.l-#{$namespace}pull-three-tenths {right: $three-tenths;}
+
 	.l-#{$namespace}pull-four-tenths {right: $two-fifths;}
+
 	.l-#{$namespace}pull-five-tenths {right: $one-half;}
+
 	.l-#{$namespace}pull-six-tenths {right: $three-fifths;}
+
 	.l-#{$namespace}pull-seven-tenths {right: $seven-tenths;}
+
 	.l-#{$namespace}pull-eight-tenths {right: $four-fifths;}
+
 	.l-#{$namespace}pull-nine-tenths {right: $nine-tenths;}
 
 
@@ -136,15 +172,25 @@ $grid-pull-classes-at-breakpoint-desk-large:          false !default;
 	 */
 
 	.l-#{$namespace}pull-one-twelfth {right: $one-twelfth;}
+
 	.l-#{$namespace}pull-two-twelfths {right: $one-sixth;}
+
 	.l-#{$namespace}pull-three-twelfths {right: $one-quarter;}
+
 	.l-#{$namespace}pull-four-twelfths {right: $one-third;}
+
 	.l-#{$namespace}pull-five-twelfths {right: $five-twelfths;}
+
 	.l-#{$namespace}pull-six-twelfths {right: $one-half;}
+
 	.l-#{$namespace}pull-seven-twelfths {right: $seven-twelfths;}
+
 	.l-#{$namespace}pull-eight-twelfths {right: $two-thirds;}
+
 	.l-#{$namespace}pull-nine-twelfths {right: $three-quarters;}
+
 	.l-#{$namespace}pull-ten-twelfths {right: $five-sixths;}
+
 	.l-#{$namespace}pull-eleven-twelfths {right: $eleven-twelfths;}
 }
 
