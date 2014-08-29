@@ -4,24 +4,33 @@ task test: ["test:compile", "test:cleanup"]
 desc "SASS test tasks"
 namespace :test do
   desc "Compile SASS files"
-  task :compile do
+  task compile: [:cleanup] do
+    content = ''
     Dir["*.scss"].each do |sass|
-      css = sass.sub('scss', 'css')
-      result = `sass #{sass} #{css}`
-
-      raise result unless $?.to_i == 0
-
-      raise "When compiled the module should output some CSS" unless File.exists?(css)
+      content += "@import \"#{sass}\";\n"
     end
 
+    File.open('test.scss', 'w') {|f| f.write(content) }
+
+    result = `sass test.scss test.css`
+
+    raise result unless $?.to_i == 0
+
+    raise "When compiled the module should output some CSS" unless File.exists?('test.css')
+
     puts "Regular compile worked successfully"
+
+    Rake::Task['test:cleanup'].execute
   end
 
   desc "Clean up CSS files"
   task :cleanup do
     Dir["*.css"].each do |css|
       `rm #{css}`
+      `rm #{css}.map` if File.file?("#{css}.map")
     end
+
+    `rm test.scss` if File.file?('test.scss')
 
     puts "CSS files cleaned up"
   end
