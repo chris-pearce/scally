@@ -29,3 +29,27 @@ $toggle-visibility-state-class: is-visible !default;
   &.#{$toggle-visibility-state-class},
   .no-js & {display: block;}
 }
+
+
+/**
+ * Modifier: for `inline` elements.
+ */
+
+%u-toggle-visibility--inline,
+.u-toggle-visibility--inline {
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
+  .no-js & {display: inline;}
+}
+
+
+/**
+ * Modifier: for `inline-block` elements.
+ */
+
+%u-toggle-visibility--inline-block,
+.u-toggle-visibility--inline-block {
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
+  .no-js & {display: inline-block;}
+}
