@@ -52,9 +52,15 @@
 %u-align-v-block-middle-table,
 .u-align-v-block-middle-table {
   display: table;
-  vertical-align: middle;
   height: 100%;
+  width: 100%;
 }
+
+  %u-align-v-block-middle-table__inner,
+  .u-align-v-block-middle-table__inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
 
 // Position relative method
 %u-align-v-block-middle-position,
