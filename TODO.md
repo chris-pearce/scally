@@ -2,6 +2,7 @@
 
 ## Global
 
+- Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
 - Make sure all instances of `px` for borders and shadows use `rem`.
