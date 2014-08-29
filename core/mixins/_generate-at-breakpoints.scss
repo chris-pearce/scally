@@ -3,7 +3,7 @@
   .#{$class} {
     @content;
   }
-  @if $breakpoint-names == "all" {
+  @if $breakpoint-names == all {
     $breakpoint-names: map-keys($breakpoints);
   }
   @each $breakpoint-name in $breakpoint-names {
