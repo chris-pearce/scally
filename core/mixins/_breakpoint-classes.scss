@@ -1,6 +1,10 @@
-@mixin generate-breakpoint-classes($class, $breakpoint-names: map-keys($breakpoints)) {
+@mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
+  %#{$class},
   .#{$class} {
     @content;
+  }
+  @if $breakpoint-names == "all" {
+    $breakpoint-names: map-keys($breakpoints);
   }
   @each $breakpoint-name in $breakpoint-names {
     .#{$class}-at-#{$breakpoint-name} {
@@ -11,11 +15,20 @@
   }
 }
 
-@include generate-breakpoint-classes(hide-fully) {
+@include generate-at-breakpoints(hide-fully) {
   display: none !important;
   visibility: hidden !important;
 }
 
-@include generate-breakpoint-classes(test, palm desk) {
+@include generate-at-breakpoints(hide-fully-all, all) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@include generate-at-breakpoints(test-some, palm desk) {
   color: pink;
+}
+
+.test-extend {
+  @extend %hide-fully;
 }
