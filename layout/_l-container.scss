@@ -31,7 +31,7 @@ $container-maximum-width:   1600 !default;
 
 .l-container {
   width: $container-width;
-  @include to-rem(min-width, $container-minimum-width);
+  //@include to-rem(min-width, $container-minimum-width);
   @include to-rem(max-width, $container-maximum-width);
   margin: 0 auto;
 
