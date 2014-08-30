@@ -19,10 +19,11 @@
  */
 
 // Apply width classes at specific breakpoints
-
 // N.B. by default we're turning on Lap plus (non-palm)
+$breakpoints-for-width-classes: (lap) !default;
 
-$width-classess: (lap) !default;
+// The denominators to be used for the width classes
+$width-divisions: (1 2 3 4 5 6 8 10 12);
 
 
 /**
@@ -30,159 +31,20 @@ $width-classess: (lap) !default;
  */
 
 @mixin width-classes($namespace: null) {
-
-  /**
-   * Whole.
-   */
-
-  .u-#{$namespace}one-whole {width: $one-whole;}
-
-
-  /**
-   * Halves.
-   */
-
-  .u-#{$namespace}one-half {width: $one-half;}
-
-
-  /**
-   * Thirds.
-   */
-
-  .u-#{$namespace}one-third {width: $one-third;}
-
-  .u-#{$namespace}two-thirds {width: $two-thirds;}
-
-
-  /**
-   * Quarters.
-   */
-
-  .u-#{$namespace}one-quarter {width: $one-quarter;}
-
-  .u-#{$namespace}two-quarters {width: $one-half;}
-
-  .u-#{$namespace}three-quarters {width: $three-quarters;}
-
-
-  /**
-   * Fifths.
-   */
-
-  .u-#{$namespace}one-fifth {width: $one-fifth;}
-
-  .u-#{$namespace}two-fifths {width: $two-fifths;}
-
-  .u-#{$namespace}three-fifths {width: $three-fifths;}
-
-  .u-#{$namespace}four-fifths {width: $four-fifths;}
-
-
-  /**
-   * Sixths.
-   */
-
-  .u-#{$namespace}one-sixth {width: $one-sixth;}
-
-  .u-#{$namespace}two-sixths {width: $one-third;}
-
-  .u-#{$namespace}three-sixths {width: $one-half;}
-
-  .u-#{$namespace}four-sixths {width: $two-thirds;}
-
-  .u-#{$namespace}five-sixths {width: $five-sixths;}
-
-
-  /**
-   * Sevenths.
-   */
-
-  .u-#{$namespace}one-seventh {width: $one-seventh;}
-
-  .u-#{$namespace}two-sevenths {width: $two-sevenths;}
-
-  .u-#{$namespace}three-sevenths {width: $three-sevenths;}
-
-  .u-#{$namespace}four-sevenths {width: $four-sevenths;}
-
-  .u-#{$namespace}five-sevenths {width: $five-sevenths;}
-
-  .u-#{$namespace}six-sevenths {width: $six-sevenths;}
-
-
-  /**
-   * Eighths.
-   */
-
-  .u-#{$namespace}one-eighth {width: $one-eighth;}
-
-  .u-#{$namespace}two-eighths {width: $one-quarter;}
-
-  .u-#{$namespace}three-eighths {width: $three-eighths;}
-
-  .u-#{$namespace}four-eighths {width: $one-half;}
-
-  .u-#{$namespace}five-eighths {width: $five-eighths;}
-
-  .u-#{$namespace}six-eighths {width: $three-quarters;}
-
-  .u-#{$namespace}seven-eighths {width: $seven-eighths;}
-
-
-  /**
-   * Tenths.
-   */
-
-  .u-#{$namespace}one-tenth {width: $one-tenth;}
-
-  .u-#{$namespace}two-tenths {width: $one-fifth;}
-
-  .u-#{$namespace}three-tenths {width: $three-tenths;}
-
-  .u-#{$namespace}four-tenths {width: $two-fifths;}
-
-  .u-#{$namespace}five-tenths {width: $one-half;}
-
-  .u-#{$namespace}six-tenths {width: $three-fifths;}
-
-  .u-#{$namespace}seven-tenths {width: $seven-tenths;}
-
-  .u-#{$namespace}eight-tenths {width: $four-fifths;}
-
-  .u-#{$namespace}nine-tenths {width: $nine-tenths;}
-
-
-  /**
-   * Twelfths.
-   */
-
-  .u-#{$namespace}one-twelfth {width: $one-twelfth;}
-
-  .u-#{$namespace}two-twelfths {width: $one-sixth;}
-
-  .u-#{$namespace}three-twelfths {width: $one-quarter;}
-
-  .u-#{$namespace}four-twelfths {width: $one-third;}
-
-  .u-#{$namespace}five-twelfths {width: $five-twelfths;}
-
-  .u-#{$namespace}six-twelfths {width: $one-half;}
-
-  .u-#{$namespace}seven-twelfths {width: $seven-twelfths;}
-
-  .u-#{$namespace}eight-twelfths {width: $two-thirds;}
-
-  .u-#{$namespace}nine-twelfths {width: $three-quarters;}
-
-  .u-#{$namespace}ten-twelfths {width: $five-sixths;}
-
-  .u-#{$namespace}eleven-twelfths {width: $eleven-twelfths;}
+  @each $denominator in $width-divisions {
+    @for $numerator from 1 through $denominator - 1 {
+      @if $numerator != 0 {
+        .u-#{$namespace}#{$numerator}-#{$denominator} {width: percentage($numerator/$denominator);}
+      }
+    }
+  }
 }
 
 
 /**
  * Output them all.
  */
+
 @include width-classes();
 
 
@@ -190,7 +52,7 @@ $width-classess: (lap) !default;
  * Output at specific breakpoints e.g. `.l-lap-one-half`.
  */
 
-@each $breakpoint in $width-classess {
+@each $breakpoint in $breakpoints-for-width-classes {
   @include respond-to($breakpoint) {
     @include width-classes("#{$breakpoint}-");
   }
