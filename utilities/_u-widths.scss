@@ -22,30 +22,12 @@
 // N.B. by default we're turning on Lap plus (non-palm)
 $breakpoints-for-width-classes: (lap) !default;
 
-// The denominators to be used for the width classes
-$width-divisions: (1 2 3 4 5 6 8 10 12);
-
-
-/**
- * Generate all the width classes.
- */
-
-@mixin width-classes($namespace: null) {
-  @each $denominator in $width-divisions {
-    @for $numerator from 1 through $denominator - 1 {
-      @if $numerator != 0 {
-        .u-#{$namespace}#{$numerator}-#{$denominator} {width: percentage($numerator/$denominator);}
-      }
-    }
-  }
-}
-
 
 /**
  * Output them all.
  */
 
-@include width-classes();
+@include percentage-classes();
 
 
 /**
@@ -54,6 +36,6 @@ $width-divisions: (1 2 3 4 5 6 8 10 12);
 
 @each $breakpoint in $breakpoints-for-width-classes {
   @include respond-to($breakpoint) {
-    @include width-classes("#{$breakpoint}-");
+    @include percentage-classes("#{$breakpoint}-");
   }
 }

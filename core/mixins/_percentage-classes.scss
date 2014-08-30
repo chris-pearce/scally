@@ -1,0 +1,27 @@
+/* ============================================================================
+   @CORE -> MIXINS -> PERCENTAGE CLASSES
+   ========================================================================= */
+
+
+/**
+ * Settings.
+ */
+
+// The denominators to be used for the width classes
+$percentage-divisions: (1 2 3 4 5 6 8 10 12);
+
+
+/**
+ * Generate all the width classes.
+ */
+
+
+@mixin percentage-classes($namespace: null, $secondary-namespace: null, $property: "width", $type: "u") {
+  @each $denominator in $percentage-divisions {
+    @for $numerator from 1 through $denominator - 1 {
+      @if $numerator != 0 {
+        .#{$type}-#{$namespace}#{$secondary-namespace}#{$numerator}-#{$denominator} {#{$property}: percentage($numerator/$denominator);}
+      }
+    }
+  }
+}
