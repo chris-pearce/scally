@@ -1,0 +1,34 @@
+/* ============================================================================
+   @UTILITIES -> IMAGE REPLACEMENT
+   ========================================================================= */
+
+
+/**
+ * Replacing some text with an image.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#image-replacement
+ */
+
+
+%u-image-replacement,
+.u-image-replacement {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
+}
+
+
+/**
+ * Alternate version.
+ */
+
+%u-image-replacement-alt,
+.u-image-replacement-alt {text-indent: $off-screen-distance;}
