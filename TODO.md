@@ -55,11 +55,9 @@
   sides of the box.
 - State?
 - Cursor?
-- Widths: apply 'Every breakpoint' option (Alec).
 - New block formatting context.
 - Overflow container: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-- Animations via a lib?
 - Positioning: see CC, consider adding a height paramater for alignment and
   for pseudo-elements.
 - Rendering box:
