@@ -1,0 +1,54 @@
+/* ============================================================================
+   @UTILITIES -> LINK COMPLEX
+   ========================================================================= */
+
+
+/**
+ * Link complex
+ *
+ * A common pattern is to have a link with several pieces of text and/or an
+ * icon, where only one piece of text should act like a link when the link is
+ * the subject of user interaction.
+ *
+ * HTML structure:
+ *
+   <a class="u-link-complex" href="#">
+    Link complex
+    <span class="u-link-complex__target">target</span>
+   </a>
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#link-complex
+ *
+ * @credit
+ * https://github.com/suitcss/utils-link/blob/master/lib/link.css
+ */
+
+
+/**
+ * The actual link.
+ */
+
+.u-link-complex {
+	&,
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+
+	/**
+	 * The piece of the link that needs to act like a link.
+	 */
+
+	.u-link-complex__target {
+		color: $colour-link;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			color: $colour-link-hover;
+		}
+	}
