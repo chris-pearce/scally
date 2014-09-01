@@ -14,18 +14,24 @@
      @include font-size($font-size-small);
    }
 
-   @include generate-at-breakpoints(u-align-v-inline-top, palm lap) {
+   @include generate-at-breakpoints(u-align-v-inline-top, palm lap, false) {
      vertical-align: top;
    }
  */
 
-
-@mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
+@mixin generate-at-breakpoints($class, $breakpoint-names: (), $placeholder: true) {
   // Output sass placeholder and normal class
-  %#{$class},
-  .#{$class} {
-    @content;
+  @if $placeholder {
+    %#{$class},
+    .#{$class} {
+      @content;
+    }
+  } @else {
+    .#{$class} {
+      @content;
+    }
   }
+
 
   $all-breakpoint-names: map-keys($breakpoints);
 
@@ -36,17 +42,16 @@
   @each $breakpoint-name in $breakpoint-names {
 
     // Check if it's a valid breakpoint
-    @if typeof(index($breakpoints, $breakpoint-name)) != "number" {
+    @if type-of(index($all-breakpoint-names, $breakpoint-name)) == "number" {
 
-      // Output a class which applies the style at a given breakpoint
-      .#{$class}-at-#{$breakpoint-name} {
-        // Palm is a special case where it uses a `max-width` media query
-        @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
+      // Palm is a special case where it uses a `max-width` media query
+      @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
+        // Output a class which applies the style at a given breakpoint
+        .#{$class}-at-#{$breakpoint-name} {
           @content;
         }
       }
-    }
-    @else {
+    } @else {
       @warn "Breakpoint name '#{$breakpoint-name}' not recognised.";
     }
   }
