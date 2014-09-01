@@ -1,34 +1,53 @@
+/* ============================================================================
+   @CORE -> MIXINS -> GENERATE AT BREAKPOINTS
+   ========================================================================= */
+
+
+/**
+ * Generate classes which apply styling at different breakpoints.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/Bcfyz
+ *
+ * @example
+   @include generate-at-breakpoints(u-text-size-small, all) {
+     @include font-size($font-size-small);
+   }
+
+   @include generate-at-breakpoints(u-align-v-inline-top, palm lap) {
+     vertical-align: top;
+   }
+ */
+
+
 @mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
+  // Output sass placeholder and normal class
   %#{$class},
   .#{$class} {
     @content;
   }
+
+  $all-breakpoint-names: map-keys($breakpoints);
+
   @if $breakpoint-names == all {
-    $breakpoint-names: map-keys($breakpoints);
+    $breakpoint-names: $all-breakpoint-names;
   }
+
   @each $breakpoint-name in $breakpoint-names {
-    .#{$class}-at-#{$breakpoint-name} {
-      @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
-        @content;
+
+    // Check if it's a valid breakpoint
+    @if typeof(index($breakpoints, $breakpoint-name)) != "number" {
+
+      // Output a class which applies the style at a given breakpoint
+      .#{$class}-at-#{$breakpoint-name} {
+        // Palm is a special case where it uses a `max-width` media query
+        @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
+          @content;
+        }
       }
     }
+    @else {
+      @warn "Breakpoint name '#{$breakpoint-name}' not recognised.";
+    }
   }
-}
-
-@include generate-at-breakpoints(hide-fully) {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-@include generate-at-breakpoints(hide-fully-all, all) {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-@include generate-at-breakpoints(test-some, palm desk) {
-  color: pink;
-}
-
-.test-extend {
-  @extend %hide-fully;
 }
