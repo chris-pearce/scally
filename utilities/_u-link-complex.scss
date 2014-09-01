@@ -29,6 +29,7 @@
  * The actual link.
  */
 
+%u-link-complex,
 .u-link-complex {
 	&,
 	&:hover,
@@ -43,6 +44,7 @@
 	 * The piece of the link that needs to act like a link.
 	 */
 
+  %u-link-complex__target,
 	.u-link-complex__target {
 		color: $colour-link;
 
