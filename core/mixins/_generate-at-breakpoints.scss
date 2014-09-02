@@ -1,0 +1,59 @@
+/* ============================================================================
+   @CORE -> MIXINS -> GENERATE AT BREAKPOINTS
+   ========================================================================= */
+
+
+/**
+ * Generate classes which apply styling at different breakpoints.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/Bcfyz
+ *
+ * @example
+   @include generate-at-breakpoints(u-text-size-small, all) {
+     @include font-size($font-size-small);
+   }
+
+   @include generate-at-breakpoints(u-align-v-inline-top, palm lap, false) {
+     vertical-align: top;
+   }
+ */
+
+@mixin generate-at-breakpoints($class, $breakpoint-names: (), $placeholder: true) {
+  // Output sass placeholder and normal class
+  @if $placeholder {
+    %#{$class},
+    .#{$class} {
+      @content;
+    }
+  } @else {
+    .#{$class} {
+      @content;
+    }
+  }
+
+
+  $all-breakpoint-names: map-keys($breakpoints);
+
+  @if $breakpoint-names == all {
+    $breakpoint-names: $all-breakpoint-names;
+  }
+
+  @each $breakpoint-name in $breakpoint-names {
+
+    // Check if it's a valid breakpoint
+    @if type-of(index($all-breakpoint-names, $breakpoint-name)) == "number" {
+
+      // Palm is a special case where it uses a `max-width` media query
+      @include respond-to($breakpoint-name, $limit: if($breakpoint-name ==
+        'palm', 'max', 'min')) {
+        // Output a class which applies the style at a given breakpoint
+        .#{$class}-at-#{$breakpoint-name} {
+          @content;
+        }
+      }
+    } @else {
+      @warn "Breakpoint name '#{$breakpoint-name}' not recognised.";
+    }
+  }
+}
