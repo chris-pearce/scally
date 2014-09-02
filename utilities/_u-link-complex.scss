@@ -8,11 +8,10 @@
  * icon, where only one piece of text should act like a link when the link is
  * the subject of user interaction.
  *
- * HTML structure:
- *
+ * @markup
    <a class="u-link-complex" href="#">
-    Link complex
-    <span class="u-link-complex__target">target</span>
+     Link complex
+     <span class="u-link-complex__target">target</span>
    </a>
  *
  * @demo
