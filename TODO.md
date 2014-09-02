@@ -19,7 +19,8 @@
 
 ## Core
 
-- Base: Non-responsive images still gets `height: auto` rule? Causes issues in IE 9/10.
+- Base: Non-responsive images still gets `height: auto` rule? Causes issues
+  in  IE 9/10.
 - Settings:
   - Width/Grid push-pull toggles (Alec).
   - Colors: use a Sass map? (Alec)
@@ -31,7 +32,8 @@
 
 ## Layout
 
-- Grid: use `inline-block` technique, see: <https://github.com/suitcss/components-grid/blob/master/lib/grid.css>.
+- Grid: use `inline-block` technique, see: <https://github.com/suitcss/
+  components-grid/blob/master/lib/grid.css>.
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>?
   - Apply 'Every breakpoint' option to 'Push' and 'Pull' (Alec).
 
@@ -41,29 +43,33 @@
 - Block quote.
 - Icon.
 - Ideas:
-  - <https://github.com/thoughtbot/bitters/blob/master/app/assets/stylesheets/extends/_flashes.scss>.
+  - <https://github.com/thoughtbot/bitters/blob/master/app/assets/stylesheets/
+    extends/_flashes.scss>.
   - <http://www.sitepoint.com/using-sass-maps/>.
 
 ## Utilities
 
 - Put them into categories?
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- Spacing, use all spacing `var`s and apply to `margin` and `padding` on all sides of the box.
+- Spacing, use all spacing `var`s and apply to `margin` and `padding` on all
+  sides of the box.
 - State?
 - Cursor?
-- Widths: apply 'Every breakpoint' option (Alec).
 - New block formatting context.
-- Overflow container: <https://github.com/mrmrs/fluidity/blob/master/sass/_responsive-utilities.scss>.
-- Animations via a lib?
-- Positioning: see CC, consider adding a height paramater for alignment and for pseudo-elements.
+- Overflow container: <https://github.com/mrmrs/fluidity/blob/master/
+  sass/_responsive-utilities.scss>.
+- Positioning: see CC, consider adding a height paramater for alignment and
+  for pseudo-elements.
 - Rendering box:
   - Add 'Flexbox'?
   - Change name.
 - List: apply `@extend` 'Base' list.
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
-  - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css>.
-  - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_center-block.scss>.
+  - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-
+    embed.css>.
+  - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
+    bootstrap/mixins/_center-block.scss>.
   - <https://github.com/suitcss/utils-layout/blob/master/lib/layout.css>.
   - <https://github.com/suitcss/utils-position/blob/master/lib/position.css>.
 
@@ -106,7 +112,8 @@
 - <http://visuellegedanken.de/2014-03-29/using-bem-syntax-with-sass-3-3/>.
 - <http://robots.thoughtbot.com/removing-sass-duplication>.
 - <http://viget.com/extend/sass-maps-are-awesome>.
-- <http://unakravets.tumblr.com/post/78744593423/sass-snippets-the-almighty-ampersand>.
+- <http://unakravets.tumblr.com/post/78744593423/sass-snippets-the-almighty-
+  ampersand>.
 
 ### Put to the team
 

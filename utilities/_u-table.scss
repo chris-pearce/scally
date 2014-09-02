@@ -18,7 +18,7 @@
  */
 
 // Cell padding
-$table-cell-padding:                    $spacing-half !default;
+$table-cell-padding-base:               $spacing-half !default;
 
 $table-cell-padding-small:              $spacing-quarter !default;
 
@@ -49,7 +49,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 
   // Cell padding
   th,
-  td {@include to-rem(padding, $table-cell-padding);}
+  td {@include to-rem(padding, $table-cell-padding-base);}
 }
 
 

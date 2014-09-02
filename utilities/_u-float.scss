@@ -1,0 +1,21 @@
+/* ============================================================================
+   @UTILITIES -> FLOAT
+   ========================================================================= */
+
+
+/**
+ * Simply make an element floated or remove it.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#float
+ */
+
+
+%u-float-left,
+.u-float-left {float: left;}
+
+%u-float-right,
+.u-float-right {float: right;}
+
+%u-float-none,
+.u-float-none {float: none;}

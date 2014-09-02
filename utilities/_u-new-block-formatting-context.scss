@@ -1,0 +1,43 @@
+/* ============================================================================
+   @UTILITIES -> NEW BLOCK FORMATTING CONTEXT (NBFC)
+   ========================================================================= */
+
+
+/**
+ * This affords some useful properties to the element. It won't wrap under
+ * floats. Will also contain any floated children.
+ *
+ * N.B. This is one of the rare occasions where the class/placeholder is
+ * shortened.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#nfbc
+ *
+ * @credit
+ * https://github.com/suitcss/utils-layout/blob/master/lib/layout.css
+ */
+
+
+/**
+ * 1. Create a new block formatting context (NBFC).
+ * 2. Avoid shrink-wrap behaviour of table-cell.
+ *
+ * N.B. This breaks down in some browsers when elements within this element
+ * exceed its width.
+ */
+
+%u-nfbc,
+.u-nbfc {
+  display: table-cell; // [1]
+  width: 10000px; // [2]
+}
+
+
+/**
+ * Alternate version.
+ *
+ * N.B. This will clip overflow. Best to go with the default version above.
+ */
+
+%u-nbfc-alt,
+.u-nbfc-alt {overflow: hidden;}
