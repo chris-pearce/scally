@@ -55,15 +55,14 @@
   sides of the box.
 - State?
 - Cursor?
-- New block formatting context.
-- Overflow container: <https://github.com/mrmrs/fluidity/blob/master/
+- Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
 - Positioning: see CC, consider adding a height paramater for alignment and
   for pseudo-elements.
 - Rendering box:
   - Add 'Flexbox'?
   - Change name.
-- List: apply `@extend` 'Base' list.
+- List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-
