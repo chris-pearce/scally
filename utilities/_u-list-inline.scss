@@ -1,0 +1,218 @@
+/* ============================================================================
+   @UTILITIES -> LIST INLINE
+   ========================================================================= */
+
+
+/**
+ * Make list items for `ul` and `ol` elements render in one line which can be
+ * extended with a number of modifiers.
+ *
+ * N.B. This utility requires that you remove the whitespace between `li`s
+ * especially with the Spacing modifiers. One way to remove whitespace is by
+ * inserting HTML comments between the opening and closing `li`s e.g.
+ *
+   <ul class="u-list-inline">
+     <li>Lorem</li><!--
+     --><li>Aliquam</li><!--
+     --><li>Vestibulum</li>
+   </ul>
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#list-inline
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Spacing between list items
+$list-inline-item-spacing-base:    $spacing-half !default;
+
+$list-inline-item-spacing-tiny:    $spacing-quarter !default;
+
+$list-inline-item-spacing-small:   $spacing-third !default;
+
+$list-inline-item-spacing-large:   $spacing-base !default;
+
+$list-inline-item-spacing-huge:    $spacing-double !default;
+
+// Dividers
+$list-inline-divider-colour:       $colour-text-base !default;
+
+$list-inline-divider-thickness:    1 !default;
+
+
+/**
+ * Base.
+ */
+
+%u-list-inline,
+.u-list-inline > li {display: inline-block;}
+
+
+/**
+ * Modifier: spacing.
+ *
+ * Add spacing between the list items. The default is to apply spacing to the
+ * outside of the list items via `margin-left` but there's a version where the
+ * spacing can be applied to both sides via `margin-left` and `padding-left`.
+ */
+
+/**
+ * Base.
+ */
+
+// One side
+%u-list-inline--spacing-base,
+.u-list-inline--spacing-base {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-base);}
+}
+
+// Both sides
+%u-list-inline--spacing-base-both,
+.u-list-inline--spacing-base-both {
+  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-base);}
+}
+
+/**
+ * Tiny.
+ */
+
+// One side
+%u-list-inline--spacing-tiny,
+.u-list-inline--spacing-tiny {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-tiny);}
+}
+
+// Both sides
+%u-list-inline--spacing-tiny-both,
+.u-list-inline--spacing-tiny-both {
+  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-tiny);}
+}
+
+/**
+ * Small.
+ */
+
+// One side
+%u-list-inline--spacing-small,
+.u-list-inline--spacing-small {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-small);}
+}
+
+// Both sides
+%u-list-inline--spacing-small-both,
+.u-list-inline--spacing-small-both {
+  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-small);}
+}
+
+/**
+ * Large.
+ */
+
+// One side
+%u-list-inline--spacing-large,
+.u-list-inline--spacing-large {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-large);}
+}
+
+// Both sides
+%u-list-inline--spacing-large-both,
+.u-list-inline--spacing-large-both {
+  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-large);}
+}
+
+/**
+ * Huge.
+ */
+
+// One side
+%u-list-inline--spacing-huge,
+.u-list-inline--spacing-huge {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-huge);}
+}
+
+// Both sides
+%u-list-inline--spacing-huge-both,
+.u-list-inline--spacing-huge-both {
+  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-huge);}
+}
+
+
+/**
+ * Modifier: divider.
+ *
+ * Add a keyline separator between the list items.
+ */
+
+%u-list-inline--divider,
+.u-list-inline--divider {
+  > li + li {@include to-rem(border-left, $list-inline-divider-thickness solid $list-inline-divider-colour);}
+}
+
+
+/**
+ * Modifier: fit.
+ *
+ * Force the list items to occupy 100% of the available width of its parent.
+ */
+
+// Flexbox method
+// N.B. this has limited support so use with caution
+%u-list-inline--fit-flexbox,
+.u-list-inline--fit-flexbox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+// CSS table method
+%u-list-inline--fit-table,
+.u-list-inline--fit-table {
+	display: table;
+	width: 100%;
+
+	> li {display: table-cell;}
+}
+
+
+/**
+ * Modifier: delimited.
+ *
+ * List items separated by a few different separators.
+ */
+
+// Slash
+%u-list-inline--delimited-slash > li + li:before,
+.u-list-inline--delimited-slash > li + li:before {content: "/";}
+
+  // When used in conjuction with the Spacing -> Base modifier
+
+  // Make the pseudo element `inline-block` as it needs `margin-right`
+  %u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before,
+  .u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before {display: inline-block;}
+
+  // Base
+  %u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before,
+  .u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-base);}
+
+  // Tiny
+  %u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before,
+  .u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-tiny);}
+
+  // Small
+  %u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before,
+  .u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-small);}
+
+  // Large
+  %u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before,
+  .u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-large);}
+
+  // Huge
+  %u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before,
+  .u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-huge);}
+
+// Comma
+%u-list-inline--delimited-comma > li + li:before,
+.u-list-inline--delimited-comma > li + li:before {content: ",";}
