@@ -45,7 +45,8 @@
     @if type-of(index($all-breakpoint-names, $breakpoint-name)) == "number" {
 
       // Palm is a special case where it uses a `max-width` media query
-      @include respond-to($breakpoint-name, $limit: if($breakpoint-name == 'palm', 'max', 'min')) {
+      @include respond-to($breakpoint-name, $limit: if($breakpoint-name ==
+        'palm', 'max', 'min')) {
         // Output a class which applies the style at a given breakpoint
         .#{$class}-at-#{$breakpoint-name} {
           @content;
