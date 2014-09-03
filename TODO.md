@@ -39,6 +39,7 @@
 
 ## Components
 
+- Circled number.
 - Fancy `select` (see 'Parking project').
 - Block quote.
 - Icon.
@@ -54,6 +55,7 @@
 - Spacing, use all spacing `var`s and apply to `margin` and `padding` on all
   sides of the box.
 - State?
+- Vertical rythm
 - Cursor?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
