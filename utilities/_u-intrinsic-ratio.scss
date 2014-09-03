@@ -1,0 +1,72 @@
+/* ============================================================================
+   @UTILITIES -> INTRINSIC RATIO
+   ========================================================================= */
+
+
+/**
+ * Create an intrinsic ratio that will properly scale on any sized viewport. The
+ * default instrisic ratio is 16:9, and the most common application of this
+ * utility is for embedded videos e.g. YouTube.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#intrinsic-ratio
+ */
+
+
+/**
+ * Base.
+ *
+ * 1. Apply new positioning context for the inner container.
+ * 2. 16:9 aspect ratio.
+ * 3. Catch any spillage.
+ */
+
+%u-intrinsic-ratio,
+.u-intrinsic-ratio {
+  position: relative; // [1]
+  padding-bottom: 56.25%; // [2]
+  height: 0;
+  overflow: hidden; // [3]
+}
+
+
+/**
+ * Modifiers: common aspect ratios.
+ */
+
+// 3:2 aspect ratio
+%u-intrinsic-ratio--3-2,
+.u-intrinsic-ratio--3-2 {padding-bottom: 66.66%;}
+
+// 4:3 aspect ratio
+%u-intrinsic-ratio--4-3,
+.u-intrinsic-ratio--4-3 {padding-bottom: 75%;}
+
+// 8:5 aspect ratio
+%u-intrinsic-ratio--8-5,
+.u-intrinsic-ratio--8-5 {padding-bottom: 62.5%;}
+
+
+/**
+ * Modifier: chrome.
+ *
+ * Account for the chrome at the top of certain video embeds e.g. YouTube and
+ * Vimeo.
+ */
+
+%u-intrinsic-ratio--chrome,
+.u-intrinsic-ratio--chrome {padding-top: 25px;}
+
+
+  /**
+   * Inner container.
+   */
+
+  %u-intrinsic-ratio__inner,
+	.u-intrinsic-ratio__inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
