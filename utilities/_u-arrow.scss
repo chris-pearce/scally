@@ -50,19 +50,19 @@ $arrow-colour:        $colour-text-base !default;
 
 // Tiny
 %u-arrow--tiny,
-.u-arrow--tiny {@include to-rem(border-size, $arrow-size-tiny);}
+.u-arrow--tiny {@include to-rem(border-width, $arrow-size-tiny);}
 
 // Small
-%u-arrow--tiny,
-.u-arrow--tiny {@include to-rem(border-size, $arrow-size-small);}
+%u-arrow--small,
+.u-arrow--small {@include to-rem(border-width, $arrow-size-small);}
 
 // Large
-%u-arrow--tiny,
-.u-arrow--tiny {@include to-rem(border-size, $arrow-size-large);}
+%u-arrow--large,
+.u-arrow--large {@include to-rem(border-width, $arrow-size-large);}
 
 // Huge
-%u-arrow--tiny,
-.u-arrow--tiny {@include to-rem(border-size, $arrow-size-huge);}
+%u-arrow--huge,
+.u-arrow--huge {@include to-rem(border-width, $arrow-size-huge);}
 
 
 /**
