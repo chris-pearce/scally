@@ -5,8 +5,8 @@
 
 /**
  * This utility will trigger browsers into enabling GPU rendering for better
- * rendering performance, but it’s not wise to use them on everything just for
- * the sake of hardware acceleration. So make sure to understand when and when
+ * rendering performance, but it’s not wise to use on everything just for the
+ * sake of hardware acceleration. So make sure to understand when and when
  * not to use this.
  *
  * @demo
@@ -14,6 +14,7 @@
  */
 
 
+%u-gpu-accelerated,
 .u-gpu-accelerated {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
