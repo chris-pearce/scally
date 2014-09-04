@@ -50,17 +50,22 @@
 
 ## Utilities
 
-- Put them into categories?
+- Make sure all bulleted point multi lines are aligned.
+- Alignments: <http://www.w3.org/Style/Examples/007/center>.
+- Review all placeholder usage.
+- Convert to Sass 3.3 BEM syntax.
+- Add toggles for most modifiers?
+- List inline: rethink one-side/both-sides.
+- Review all spacing settings i.e. make sure they match eachother e.g. base = base
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- Spacing, use all spacing `var`s and apply to `margin` and `padding` on all
-  sides of the box.
 - State?
-- Vertical rythm
 - Cursor?
+- Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
+- Arrange: <https://github.com/suitcss/components-arrange/blob/master/lib/arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
 - Positioning: see CC, consider adding a height paramater for alignment and
-  for pseudo-elements.
+  for pseudo-elements. And see: <https://github.com/suitcss/utils-position/blob/master/lib/position.css#L27>.
 - Rendering box:
   - Add 'Flexbox'?
   - Change name.
@@ -133,3 +138,7 @@
 - No full stops after URL's.
 - Full stop after everything except `//` comments and URL's.
 - Bullet list for `@credit` references.
+
+### Demo HTML URL
+
+<https://dl.dropboxusercontent.com/s/9sanlipurkczriw/demo.html?dl=0>
