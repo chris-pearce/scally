@@ -3,13 +3,15 @@
    ========================================================================= */
 
 
-@import "utilities/u-list";
-
 @import "utilities/u-clear-fix";
 
 @import "utilities/u-arrow";
 
+@import "utilities/u-list";
+
 @import "utilities/u-list-block";
+
+@import "utilities/u-list-inline";
 
 @import "utilities/u-text";
 
@@ -36,3 +38,11 @@
 @import "utilities/u-float";
 
 @import "utilities/u-new-block-formatting-context";
+
+@import "utilities/u-flex-embed";
+
+@import "utilities/u-side-by-side";
+
+@import "utilities/u-side-by-side-alt";
+
+@import "utilities/u-gpu-accelerated";

@@ -12,31 +12,31 @@
  * This will generate a rem-based font-size, as well as a unitless line-height
  * which will place the element on your baseline, e.g.:
  *
-  .foo {
-    font-size: 0.75rem;
-    line-height: 2;
-  }
+   .foo {
+     font-size: 0.75rem;
+     line-height: 2;
+   }
  *
  * If you do not want Scally to generate you a line-height automatically, you
  * simply pass in your own as a second paramater:
  *
-  .foo {@include font-size(12, 1.5);}
+   .foo {@include font-size(12, 1.5);}
  *
  * This will yield:
  *
-  .foo {
-    font-size: 0.75rem;
-    line-height: 1.5;
-  }
+   .foo {
+     font-size: 0.75rem;
+     line-height: 1.5;
+   }
  *
  * This parameter can be any integer, ‘inherit’, or ‘normal’. If you don’t
  * want a line-height at all, pass in a second paramater of ‘none’ or ‘false’:
  *
-  .foo {@include font-size(12, none);}
+   .foo {@include font-size(12, none);}
  *
  * This will yield:
  *
-  .foo {font-size: 0.75rem;}
+   .foo {font-size: 0.75rem;}
  *
  * @example
    @include font-size(18);

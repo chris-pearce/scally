@@ -7,7 +7,7 @@
  * Creates arrow shapes using only CSS.
  *
  * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#arrows
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#arrow
  */
 
 
@@ -15,9 +15,19 @@
  * Settings.
  */
 
-$arrow-size:    8 !default;
+// Sizes
+$arrow-size-base:     8 !default;
 
-$arrow-colour:  $colour-text-base !default;
+$arrow-size-tiny:     $arrow-size-base - 4 !default;
+
+$arrow-size-small:    $arrow-size-base - 2 !default;
+
+$arrow-size-large:    $arrow-size-base + 2 !default;
+
+$arrow-size-huge:     $arrow-size-base + 4 !default;
+
+// Colour
+$arrow-colour:        $colour-text-base !default;
 
 
 /**
@@ -29,9 +39,30 @@ $arrow-colour:  $colour-text-base !default;
   display: inline-block;
 	width: 0;
 	height: 0;
-  @include to-rem(border, $arrow-size solid transparent);
+  @include to-rem(border, $arrow-size-base solid transparent);
 	vertical-align: middle;
 }
+
+
+/**
+ * Modifier: sizes.
+ */
+
+// Tiny
+%u-arrow--tiny,
+.u-arrow--tiny {@include to-rem(border-width, $arrow-size-tiny);}
+
+// Small
+%u-arrow--small,
+.u-arrow--small {@include to-rem(border-width, $arrow-size-small);}
+
+// Large
+%u-arrow--large,
+.u-arrow--large {@include to-rem(border-width, $arrow-size-large);}
+
+// Huge
+%u-arrow--huge,
+.u-arrow--huge {@include to-rem(border-width, $arrow-size-huge);}
 
 
 /**

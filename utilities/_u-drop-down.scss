@@ -14,14 +14,13 @@
  * N.B. for the hover version to work the target must come directly after the
  * trigger in the DOM as it relies on an adjacent sibling selector.
  *
- * HTML structure:
- *
-  <div class="drop-down">
-    <!-- The trigger -->
-    <button class="drop-down__trigger"> ... </button>
-    <!-- The target -->
-    <div class="drop-down__target"> ... </div>
-  </div>
+ * @markup
+   <div class="drop-down">
+     <!-- The trigger -->
+     <button class="drop-down__trigger"> ... </button>
+     <!-- The target -->
+     <div class="drop-down__target"> ... </div>
+   </div>
  *
  * @consideration
  * This could be redundant as other utilities could do handle this e.g.
@@ -46,10 +45,10 @@ $drop-down-touch-support-class:   is-touch !default;
 /**
  * Drop down container for the trigger and target.
  *
- * Sets the positioning context for the target.
+ * 1. Sets the positioning context for the target.
  */
 
-.drop-down {position: relative;}
+.drop-down {position: relative;} // [1]
 
 
   /**

@@ -5,14 +5,11 @@
 - Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
-- Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
   - Create styles for sub headings.
   - Put custom font in CSS.
   - Apply anchors to **Layout** and **Core**.
-  - `$bg-color: #143A8D;`.
-
 
 ---
 
@@ -33,13 +30,14 @@
 ## Layout
 
 - Grid: use `inline-block` technique, see: <https://github.com/suitcss/
-  components-grid/blob/master/lib/grid.css>.
+  components-grid/blob/master/lib/grid.css> (KT).
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>?
   - Apply 'Every breakpoint' option to 'Push' and 'Pull' (Alec).
 
 ## Components
 
-- Fancy `select` (see 'Parking project').
+- Circled number.
+- Fancy `select` (see 'Parking' project).
 - Block quote.
 - Icon.
 - Ideas:
@@ -49,21 +47,22 @@
 
 ## Utilities
 
-- Put them into categories?
+- Review all placeholder usage.
+- Convert to Sass 3.3 BEM syntax.
+- Add toggles for most modifiers?
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- Spacing, use all spacing `var`s and apply to `margin` and `padding` on all
-  sides of the box.
 - State?
 - Cursor?
-- New block formatting context.
-- Overflow container: <https://github.com/mrmrs/fluidity/blob/master/
+- Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
+- Arrange: <https://github.com/suitcss/components-arrange/blob/master/lib/arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
+- Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
 - Positioning: see CC, consider adding a height paramater for alignment and
-  for pseudo-elements.
+  for pseudo-elements. And see: <https://github.com/suitcss/utils-position/blob/master/lib/position.css#L27>.
 - Rendering box:
   - Add 'Flexbox'?
   - Change name.
-- List: apply `@extend` 'Base' list.
+- List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-
@@ -132,3 +131,7 @@
 - No full stops after URL's.
 - Full stop after everything except `//` comments and URL's.
 - Bullet list for `@credit` references.
+
+### Demo HTML URL
+
+<https://dl.dropboxusercontent.com/s/9sanlipurkczriw/demo.html?dl=0>
