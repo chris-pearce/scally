@@ -45,10 +45,10 @@ $drop-down-touch-support-class:   is-touch !default;
 /**
  * Drop down container for the trigger and target.
  *
- * Sets the positioning context for the target.
+ * 1. Sets the positioning context for the target.
  */
 
-.drop-down {position: relative;}
+.drop-down {position: relative;} // [1]
 
 
   /**
