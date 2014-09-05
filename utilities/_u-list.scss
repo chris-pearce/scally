@@ -33,6 +33,7 @@ $list-bullet-ordered:										decimal !default;
  * Whitespace.
  */
 
+%u-list,
 .u-list {
 	// Default bottom spacing
 	//@extend %u-vertical-rhythm;
@@ -61,13 +62,17 @@ $list-bullet-ordered:										decimal !default;
  */
 
 // Unordered lists
+%ul.u-list,
 ul.u-list {list-style-type: $list-bullet-unordered-base;}
 
 // Ordered lists
+%ol.u-list,
 ol.u-list {list-style-type: $list-bullet-ordered;}
 
 	// Nested lists
+	%ul.u-list,
 	ul.u-list,
+	%ol.u-list,
 	ol.u-list {
 
 		// Unordered lists
