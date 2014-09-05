@@ -5,14 +5,11 @@
 - Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
-- Make sure all instances of `px` for borders and shadows use `rem`.
 - Setup AutoPrefixer.
 - CodePen:
   - Create styles for sub headings.
   - Put custom font in CSS.
   - Apply anchors to **Layout** and **Core**.
-  - `$bg-color: #143A8D;`.
-
 
 ---
 
@@ -33,14 +30,14 @@
 ## Layout
 
 - Grid: use `inline-block` technique, see: <https://github.com/suitcss/
-  components-grid/blob/master/lib/grid.css>.
+  components-grid/blob/master/lib/grid.css> (KT).
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>?
   - Apply 'Every breakpoint' option to 'Push' and 'Pull' (Alec).
 
 ## Components
 
 - Circled number.
-- Fancy `select` (see 'Parking project').
+- Fancy `select` (see 'Parking' project).
 - Block quote.
 - Icon.
 - Ideas:
@@ -55,8 +52,6 @@
 - Review all placeholder usage.
 - Convert to Sass 3.3 BEM syntax.
 - Add toggles for most modifiers?
-- List inline: rethink one-side/both-sides.
-- Review all spacing settings i.e. make sure they match eachother e.g. base = base
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - State?
 - Cursor?

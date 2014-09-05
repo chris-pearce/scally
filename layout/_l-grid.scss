@@ -45,12 +45,12 @@
 // will be overriden and will be set to `true`.
 $friendly-box-model: false !default;
 
-// Gutters
+// Gutter sizes
 $grid-gutter-base:    $spacing-base !default;
 
-$grid-gutter-small:   $spacing-half !default;
-
 $grid-gutter-tiny:    $spacing-third !default;
+
+$grid-gutter-small:   $spacing-half !default;
 
 $grid-gutter-large:   $spacing-base-plus-half !default;
 
@@ -60,7 +60,7 @@ $grid-gutter-huge:    $spacing-double !default;
 /**
  * Grid container.
  *
- * 1. So the grid can work on inline elements e.g. `span`.
+ * 1. So it can work on inline elements e.g. `span`.
  */
 
 .grid {
