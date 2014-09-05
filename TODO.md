@@ -11,6 +11,7 @@
   - Put custom font in CSS.
   - Apply anchors to **Layout** and **Core**.
 
+
 ---
 
 
@@ -47,9 +48,7 @@
 
 ## Utilities
 
-- Review all placeholder usage.
 - Convert to Sass 3.3 BEM syntax.
-- Add toggles for most modifiers?
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - State?
 - Cursor?
