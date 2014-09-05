@@ -26,23 +26,23 @@
  */
 
 // Gutter sizes
-$side-by-side-gutter-base:								$spacing-base !default;
+$side-by-side-gutter-base:				$spacing-base !default;
 
-$side-by-side-gutter-tiny:    						$spacing-third !default;
+$side-by-side-gutter-tiny:    		$spacing-third !default;
 
-$side-by-side-gutter-small:   						$spacing-half !default;
+$side-by-side-gutter-small:   		$spacing-half !default;
 
-$side-by-side-gutter-large:   						$spacing-base-plus-half !default;
+$side-by-side-gutter-large:   		$spacing-base-plus-half !default;
 
-$side-by-side-gutter-huge:    						$spacing-double !default;
+$side-by-side-gutter-huge:    		$spacing-double !default;
 
-// Remove at palm
-$side-by-side-remove-at-palm:							false !default;
+// Remove i.e. stack them
+$side-by-side-remove:							true !default;
 
-// At what breakpoint to remove at palm, can be one of the main breakpoints or
-// any interger
+// At what breakpoint to remove, can be one of the main breakpoints or any
+// interger
 // N.B. served via a `max-width` media query
-$side-by-side-remove-at-palm-when:				palm !default;
+$side-by-side-remove-when:				palm !default;
 
 
 /**
@@ -121,7 +121,7 @@ $side-by-side-remove-at-palm-when:				palm !default;
 
 
 		/**
-   	 * Modifier: remove at palm.
+   	 * Modifier: remove.
    	 *
    	 * Turn off the side-by-side layout so the two elements stack on top of
    	 * each other at the palm breakpoint (or whatever you specify) and provide
@@ -136,11 +136,11 @@ $side-by-side-remove-at-palm-when:				palm !default;
    	 * than the rule.
      */
 
-    @if $side-by-side-remove-at-palm {
+    @if $side-by-side-remove {
 
-	    @include respond-to($side-by-side-remove-at-palm-when, max) {
+	    @include respond-to($side-by-side-remove-when, max) {
 
-				.u-side-by-side--remove-at-palm > & {
+				.u-side-by-side--remove > & {
 					float: none;
 					margin-right: 0;
 					margin-left: 0;
@@ -153,16 +153,16 @@ $side-by-side-remove-at-palm-when:				palm !default;
 			     */
 
 			    // Tiny
-					.u-side-by-side--remove-at-palm.u-side-by-side--gutter-tiny > & {@include to-rem(margin-bottom, $side-by-side-gutter-tiny);}
+					.u-side-by-side--remove.u-side-by-side--gutter-tiny > & {@include to-rem(margin-bottom, $side-by-side-gutter-tiny);}
 
 					// Small
-					.u-side-by-side--remove-at-palm.u-side-by-side--gutter-small > & {@include to-rem(margin-bottom, $side-by-side-gutter-small);}
+					.u-side-by-side--remove.u-side-by-side--gutter-small > & {@include to-rem(margin-bottom, $side-by-side-gutter-small);}
 
 					// Large
-					.u-side-by-side--remove-at-palm.u-side-by-side--gutter-large > & {@include to-rem(margin-bottom, $side-by-side-gutter-large);}
+					.u-side-by-side--remove.u-side-by-side--gutter-large > & {@include to-rem(margin-bottom, $side-by-side-gutter-large);}
 
 					// Huge
-					.u-side-by-side--remove-at-palm.u-side-by-side--gutter-huge > & {@include to-rem(margin-bottom, $side-by-side-gutter-huge);}
+					.u-side-by-side--remove.u-side-by-side--gutter-huge > & {@include to-rem(margin-bottom, $side-by-side-gutter-huge);}
 
 
 					/**
@@ -171,7 +171,7 @@ $side-by-side-remove-at-palm-when:				palm !default;
 			   	 * Remove the bottom spacing.
 			     */
 
-					.u-side-by-side--remove-at-palm.u-side-by-side--flush > & {margin-bottom: 0;}
+					.u-side-by-side--remove.u-side-by-side--flush > & {margin-bottom: 0;}
 
 			}
 
