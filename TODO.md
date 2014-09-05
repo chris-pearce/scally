@@ -50,17 +50,15 @@
 
 - Convert to Sass 3.3 BEM syntax.
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- State?
-- Cursor?
+- CodePen for Position.
+
+- State.
+- Cursor.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
-- Arrange: <https://github.com/suitcss/components-arrange/blob/master/lib/arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
+- Arrange: <https://github.com/suitcss/components-arrange/blob/master/lib/
+  arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-- Positioning: see CC, consider adding a height paramater for alignment and
-  for pseudo-elements. And see: <https://github.com/suitcss/utils-position/blob/master/lib/position.css#L27>.
-- Rendering box:
-  - Add 'Flexbox'?
-  - Change name.
 - List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
