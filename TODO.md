@@ -47,8 +47,6 @@
 
 ## Utilities
 
-- Make sure all bulleted point multi lines are aligned.
-- Alignments: <http://www.w3.org/Style/Examples/007/center>.
 - Review all placeholder usage.
 - Convert to Sass 3.3 BEM syntax.
 - Add toggles for most modifiers?
