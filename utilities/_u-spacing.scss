@@ -1,0 +1,84 @@
+/* ============================================================================
+   @UTILITIES -> SPACING
+   ========================================================================= */
+
+
+/**
+ * A powerful utility to apply and remove spacing (whitespace) via `margin`
+ * and `padding`. All spacing uses the spacing settings from Core -> Settings
+ * -> Spacing.
+ *
+ * N.B. This is one of the rare occasions where the class/placeholder is
+ * shortened.
+ *
+ * Naming convention:
+ *
+ * [1 | 2 | 3 | 4 | 5 | 6]
+ *
+ * 1. Scally type:        utility [u]
+ * 2. Utility name:       spacing [s]
+ * 3. Spacing type:       margin [m] / padding [p]
+ * 4. Spacing direction:  top [t] / right [r] / bottom [b] / left [l]
+ * 5. Spacing remove:     flush [f]
+ * 6. Spacing amount:     this is explicit
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#spacing
+ *
+ * @credit
+ * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/
+ * whitespace/_whitespace.scss
+ */
+
+
+/**
+ * Settings.
+ */
+
+
+/**
+ * Base.
+ */
+
+
+// Top: apply
+%u-s-m-t-base,
+.u-s-m-t-base {@include to-rem(margin-top, $spacing-base);}
+
+%u-s-p-t-base,
+.u-s-p-t-base {@include to-rem(padding-top, $spacing-base);}
+
+// Top: remove
+%u-s-m-t-f-base,
+.u-s-m-t-f-base {margin-top: 0;}
+
+%u-s-p-t-f-base,
+.u-s-p-t-f-base {padding-top: 0;}
+
+// Right: apply
+%u-s-m-r-base,
+.u-s-m-r-base {@include to-rem(margin-right, $spacing-base);}
+
+%u-s-p-r-base,
+.u-s-p-r-base {@include to-rem(padding-right, $spacing-base);}
+
+// Right: remove
+%u-s-m-r-f-base,
+.u-s-m-r-f-base {@include to-rem(margin-right, $spacing-base);}
+
+%u-s-p-r-f-base,
+.u-s-p-r-f-base {@include to-rem(padding-right, $spacing-base);}
+
+// Bottom
+%u-s-m-b-base,
+.u-s-m-b-base {@include to-rem(margin-bottom, $spacing-base);}
+
+%u-s-p-b-base,
+.u-s-p-b-base {@include to-rem(padding-bottom, $spacing-base);}
+
+// Left
+%u-s-m-l-base,
+.u-s-m-l-base {@include to-rem(margin-left, $spacing-base);}
+
+%u-s-p-l-base,
+.u-s-p-l-base {@include to-rem(padding-left, $spacing-base);}
