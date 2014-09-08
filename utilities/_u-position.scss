@@ -1,0 +1,126 @@
+/* ============================================================================
+   @UTILITIES -> POSITION
+   ========================================================================= */
+
+
+/**
+ * Various utilities for positioning elements.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#position
+ */
+
+
+/**
+ * Set positioning contexts.
+ */
+
+// Relative
+%u-position-relative,
+.u-position-relative {position: relative;}
+
+// Absolute
+%u-position-absolute,
+.u-position-absolute {position: absolute;}
+
+// Fixed
+%u-position-fixed,
+.u-position-fixed {position: fixed;}
+
+// Static
+%u-position-static,
+.u-position-static {position: static;}
+
+
+/**
+ * Different ways to position an element.
+ */
+
+// Left
+%u-position-left,
+.u-position-left {left: 0;}
+
+// Right
+%u-position-right,
+.u-position-right {right: 0;}
+
+// Top
+%u-position-top,
+.u-position-top {top: 0;}
+
+// Bottom
+%u-position-bottom,
+.u-position-bottom {bottom: 0;}
+
+// Top left corner
+%u-position-top-left,
+.u-position-top-left {
+  top: 0;
+  left: 0;
+}
+
+// Top right corner
+%u-position-top-right,
+.u-position-top-right {
+  top: 0;
+  right: 0;
+}
+
+// Bottom left corner
+%u-position-bottom-left,
+.u-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+// Bottom right corner
+%u-position-bottom-right,
+.u-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+// Pin to all corners
+%u-position-pin-all,
+.u-position-pin-all {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+// Pin to top and bottom
+%u-position-pin-ends,
+.u-position-pin-ends {
+  top: 0;
+  bottom: 0;
+}
+
+// Pin to the sides
+%u-position-pin-sides,
+.u-position-pin-sides {
+  left: 0;
+  right: 0;
+}
+
+// Vertically in the middle
+%u-position-v-middle,
+.u-position-v-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Horizontally in the middle
+%u-position-h-middle,
+.u-position-h-middle {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Vertically and horizontally in the middle
+%u-position-middle,
+.u-position-middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
