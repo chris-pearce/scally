@@ -59,6 +59,12 @@
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
+<<<<<<< HEAD
+=======
+- Positioning: see CC, consider adding a height paramater for alignment and
+  for pseudo-elements. And see: <https://github.com/suitcss/utils-position/blob/master/lib/position.css#L27>.
+- Rendering box: add 'Flexbox'?
+>>>>>>> Adding Display utility
 - List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.

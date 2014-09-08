@@ -1,0 +1,147 @@
+/* ============================================================================
+   @UTILITIES -> DISPLAY
+   ========================================================================= */
+
+
+/**
+ * A utility for applying the most common types of box renderings and for
+ * hiding / showing elements.
+ *
+ * @todo
+ * Look at adding 'Flexbox'.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#display
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Classes to detect if JavaScript is on or off
+$display-js-is-on-class:    js !default;
+
+$display-js-is-off-class:		no-js !default;
+
+
+/**
+ * Block, inline, and inline-block display.
+ */
+
+%u-display-block,
+.u-display-block {display: block;}
+
+%u-display-inline,
+.u-display-inline {display: inline;}
+
+%u-display-inline-block,
+.u-display-inline-block {display: inline-block;}
+
+
+/**
+ * Table display.
+ */
+
+%u-display-table,
+.u-display-table {display: table;}
+
+%u-display-table-row,
+.u-display-table-row {display: table-row;}
+
+%u-display-table-cell,
+.u-display-table-cell {display: table-cell;}
+
+
+/**
+ * Inherit.
+ */
+
+%u-display-inherit,
+.u-display-inherit {display: inherit;}
+
+
+/**
+ * Hide elements from both screen readers and the document flow.
+ */
+
+%u-hide,
+.u-hide {
+	display: none;
+	visibility: hidden;
+}
+
+
+/**
+ * Hide elements without affecting the document flow.
+ */
+
+%u-hide-invisible,
+.u-hide-invisible {visibility: hidden;}
+
+
+/**
+ * Hide elements only visually but have it available for screen readers.
+ */
+
+%u-hide-visually,
+.u-hide-visually {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	padding: 0;
+	border: 0;
+
+
+	/**
+	 * Form `legend`s need different treatment.
+	 */
+
+	&.legend {left: $off-screen-distance;}
+}
+
+
+/**
+ * Hide elements for JavaScript users and non-JavaScript users, this is
+ * necessary when building accessibile and progressively enhanced UI's.
+ *
+ * N.B. this will require functionality that can append a hook to an element
+ * (typically the `html` element) if JavaScript is on.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it pre-emptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ */
+
+// Hide / show elements if JavaScript is on
+.#{$display-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
+
+// Hide / show elements if JavaScript is off
+.#{$display-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
+
+
+/**
+ * Hide / show elements for print media.
+ */
+
+// Show
+.u-show-for-print,
+.u-show-for-print-inline,
+.u-show-for-print-inline-block {display: none;}
+
+@media print {
+
+	// Hide
+	.u-hide-for-print {display: none;}
+
+	// Show
+	.u-show-for-print {display: block;}
+
+	.u-show-for-print-inline {display: inline;}
+
+	.u-show-for-print-inline-block {display: inline-block;}
+
+}
