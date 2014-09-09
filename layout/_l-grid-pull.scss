@@ -20,30 +20,18 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$grid-pull: false !default;
+$grid-pull: true !default;
 
-// Apply width classes at specific breakpoints
+// Apply grid pull classes at specific breakpoints
 $breakpoints-for-grid-pull-classes: (lap) !default;
 
 
 @if $grid-pull {
 
   /**
-   * Output them all.
-   */
-
-  @include percentage-classes($secondary-namespace: "pull-", $property: "right", $type: "l");
-
-
-  /**
    * Output at specific breakpoints e.g. `.l-lap-1-2`.
    */
 
-  @each $breakpoint in $breakpoints-for-grid-pull-classes {
-    @include respond-to($breakpoint) {
-      @include percentage-classes("#{$breakpoint}-", $secondary-namespace: "pull-", $property: "right", $type: "l");
-
-    }
-  }
+  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-pull-classes, $name: "pull", $property: "right", $type: "l");
 
 }

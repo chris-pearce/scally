@@ -27,15 +27,5 @@ $breakpoints-for-width-classes: (lap) !default;
  * Output them all.
  */
 
-@include percentage-classes();
+@include generate-percentage-classes-at-breakpoints($breakpoints-for-width-classes);
 
-
-/**
- * Output at specific breakpoints e.g. `.l-lap-one-half`.
- */
-
-@each $breakpoint in $breakpoints-for-width-classes {
-  @include respond-to($breakpoint) {
-    @include percentage-classes("#{$breakpoint}-");
-  }
-}

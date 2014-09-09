@@ -7,20 +7,31 @@
  * Settings.
  */
 
-// The denominators to be used for the width classes
+// The denominators to be used for the classes
 $percentage-divisions: (1 2 3 4 5 6 8 10 12);
 
+@mixin generate-percentage-classes-at-breakpoints($breakpoints, $type: "u", $name: null, $property: "width" ) {
+  @if $name {
+    $name: "#{$name}-"
+  }
 
-/**
- * Generate all the width classes.
- */
-
-
-@mixin percentage-classes($namespace: null, $secondary-namespace: null, $property: "width", $type: "u") {
   @each $denominator in $percentage-divisions {
-    @for $numerator from 1 through $denominator - 1 {
-      @if $numerator != 0 {
-        .#{$type}-#{$namespace}#{$secondary-namespace}#{$numerator}-#{$denominator} {#{$property}: percentage($numerator/$denominator);}
+    @for $numerator from 1 through max($denominator - 1, 1) {
+      .#{$type}-#{$name}#{$numerator}-#{$denominator} {#{$property}: percentage($numerator/$denominator);}
+    }
+  }
+
+  @each $breakpoint in $breakpoints {
+
+    @include respond-to($breakpoint) {
+      @if $breakpoint {
+        $breakpoint: "#{$breakpoint}-"
+      }
+
+      @each $denominator in $percentage-divisions {
+        @for $numerator from 1 through max($denominator - 1, 1) {
+          .#{$type}-#{$breakpoint}#{$name}#{$numerator}-#{$denominator} {#{$property}: percentage($numerator/$denominator);}
+        }
       }
     }
   }
