@@ -20,7 +20,7 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$grid-pull: true !default;
+$grid-pull: false !default;
 
 // Apply grid pull classes at specific breakpoints
 $breakpoints-for-grid-pull-classes: (lap) !default;
