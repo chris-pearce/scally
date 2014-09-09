@@ -26,12 +26,12 @@ $grid-push: false !default;
 $breakpoints-for-grid-push-classes: (lap) !default;
 
 
+/**
+ * Generate all the push classes.
+ */
+
 @if $grid-push {
 
-  /**
-   * Output at specific breakpoints e.g. `.l-lap-1-2`.
-   */
-
-  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-push-classes, $name: "push", $property: "left", $type: "l");
+  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-push-classes, $type: "l", $name: "push", $property: "left");
 
 }

@@ -24,8 +24,7 @@ $breakpoints-for-width-classes: (lap) !default;
 
 
 /**
- * Output them all.
+ * Generate all the width classes.
  */
 
 @include generate-percentage-classes-at-breakpoints($breakpoints-for-width-classes);
-

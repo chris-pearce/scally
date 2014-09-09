@@ -26,12 +26,13 @@ $grid-pull: true !default;
 $breakpoints-for-grid-pull-classes: (lap) !default;
 
 
+
+/**
+ * Generate all the pull classes.
+ */
+
 @if $grid-pull {
 
-  /**
-   * Output at specific breakpoints e.g. `.l-lap-1-2`.
-   */
-
-  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-pull-classes, $name: "pull", $property: "right", $type: "l");
+  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-pull-classes, $type: "l", $name: "pull", $property: "right");
 
 }
