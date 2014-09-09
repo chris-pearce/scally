@@ -13,14 +13,16 @@
  *
  * Naming convention:
  *
- * [1 | 2 | 3 | 4 | 5 | 6]
+ * [1 | 2 | 3 | 4 | 5 | 6 | 7]
  *
  * 1. Scally type:        utility [u]
  * 2. Utility name:       spacing [s]
  * 3. Spacing type:       margin [m] / padding [p]
- * 4. Spacing direction:  top [t] / right [r] / bottom [b] / left [l]
- * 5. Spacing remove:     flush [f]
- * 6. Spacing amount:     this is explicit
+ * 4. Spacing direction:  top [t] / right [r] / bottom [b] / left [l] / sides
+ *                        [s] / ends [e]
+ * 5. Spacing negative:   negative [n] (margin only)
+ * 6. Spacing remove:     this is explicit
+ * 7. Spacing amount:     this is explicit
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#spacing
@@ -31,9 +33,23 @@
  */
 
 
+
+
 /**
  * Settings.
  */
+
+$u-spacing-base:    $spacing-base !default;
+
+$u-spacing-tiny:    $spacing-third !default;
+
+$u-spacing-small:   $spacing-half !default;
+
+$u-spacing-large:   $spacing-base-plus-half !default;
+
+$u-spacing-huge:    $spacing-double !default;
+
+
 
 
 /**
@@ -41,44 +57,455 @@
  */
 
 
-// Top: apply
+// Top
 %u-s-m-t-base,
-.u-s-m-t-base {@include to-rem(margin-top, $spacing-base);}
+.u-s-m-t-base {@include to-rem(margin-top, $u-spacing-base);}
 
 %u-s-p-t-base,
-.u-s-p-t-base {@include to-rem(padding-top, $spacing-base);}
+.u-s-p-t-base {@include to-rem(padding-top, $u-spacing-base);}
 
-// Top: remove
-%u-s-m-t-f-base,
-.u-s-m-t-f-base {margin-top: 0;}
+// Negative
+%u-s-m-t-n-base,
+.u-s-m-t-n-base {@include to-rem(margin-top, -$u-spacing-base);}
 
-%u-s-p-t-f-base,
-.u-s-p-t-f-base {padding-top: 0;}
 
-// Right: apply
+// Right
 %u-s-m-r-base,
-.u-s-m-r-base {@include to-rem(margin-right, $spacing-base);}
+.u-s-m-r-base {@include to-rem(margin-right, $u-spacing-base);}
 
 %u-s-p-r-base,
-.u-s-p-r-base {@include to-rem(padding-right, $spacing-base);}
+.u-s-p-r-base {@include to-rem(padding-right, $u-spacing-base);}
 
-// Right: remove
-%u-s-m-r-f-base,
-.u-s-m-r-f-base {@include to-rem(margin-right, $spacing-base);}
+// Negative
+%u-s-m-r-n-base,
+.u-s-m-r-n-base {@include to-rem(margin-right, -$u-spacing-base);}
 
-%u-s-p-r-f-base,
-.u-s-p-r-f-base {@include to-rem(padding-right, $spacing-base);}
 
 // Bottom
 %u-s-m-b-base,
-.u-s-m-b-base {@include to-rem(margin-bottom, $spacing-base);}
+.u-s-m-b-base {@include to-rem(margin-bottom, $u-spacing-base);}
 
 %u-s-p-b-base,
-.u-s-p-b-base {@include to-rem(padding-bottom, $spacing-base);}
+.u-s-p-b-base {@include to-rem(padding-bottom, $u-spacing-base);}
+
+// Negative
+%u-s-m-b-n-base,
+.u-s-m-b-n-base {@include to-rem(margin-bottom, -$u-spacing-base);}
+
 
 // Left
 %u-s-m-l-base,
-.u-s-m-l-base {@include to-rem(margin-left, $spacing-base);}
+.u-s-m-l-base {@include to-rem(margin-left, $u-spacing-base);}
 
 %u-s-p-l-base,
-.u-s-p-l-base {@include to-rem(padding-left, $spacing-base);}
+.u-s-p-l-base {@include to-rem(padding-left, $u-spacing-base);}
+
+// Negative
+%u-s-m-l-n-base,
+.u-s-m-l-n-base {@include to-rem(margin-left, -$u-spacing-base);}
+
+
+// Sides
+%u-s-m-s-base,
+.u-s-m-s-base {@include to-rem(margin-left margin-right, $u-spacing-base);}
+
+%u-s-p-s-base,
+.u-s-p-s-base {@include to-rem(padding-left padding-right, $u-spacing-base);}
+
+// Negative
+%u-s-m-s-n-base,
+.u-s-m-s-n-base {@include to-rem(margin-left margin-right, -$u-spacing-base);}
+
+// None
+%u-s-m-s-none-base,
+.u-s-m-s-none-base {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+%u-s-p-s-none-base,
+.u-s-p-s-none-base {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+// Ends
+%u-s-m-e-base,
+.u-s-m-e-base {@include to-rem(margin-top margin-bottom, $u-spacing-base);}
+
+%u-s-p-e-base,
+.u-s-p-e-base {@include to-rem(padding-top padding-bottom, $u-spacing-base);}
+
+// Negative
+%u-s-m-e-n-base,
+.u-s-m-e-n-base {@include to-rem(margin-top margin-bottom, -$u-spacing-base);}
+
+
+
+
+/**
+ * Tiny.
+ */
+
+
+// Top
+%u-s-m-t-tiny,
+.u-s-m-t-tiny {@include to-rem(margin-top, $u-spacing-tiny);}
+
+%u-s-p-t-tiny,
+.u-s-p-t-tiny {@include to-rem(padding-top, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-t-n-tiny,
+.u-s-m-t-n-tiny {@include to-rem(margin-top, -$u-spacing-tiny);}
+
+
+// Right
+%u-s-m-r-tiny,
+.u-s-m-r-tiny {@include to-rem(margin-right, $u-spacing-tiny);}
+
+%u-s-p-r-tiny,
+.u-s-p-r-tiny {@include to-rem(padding-right, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-r-n-tiny,
+.u-s-m-r-n-tiny {@include to-rem(margin-right, -$u-spacing-tiny);}
+
+
+// Bottom
+%u-s-m-b-tiny,
+.u-s-m-b-tiny {@include to-rem(margin-bottom, $u-spacing-tiny);}
+
+%u-s-p-b-tiny,
+.u-s-p-b-tiny {@include to-rem(padding-bottom, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-b-n-tiny,
+.u-s-m-b-n-tiny {@include to-rem(margin-bottom, -$u-spacing-tiny);}
+
+
+// Left
+%u-s-m-l-tiny,
+.u-s-m-l-tiny {@include to-rem(margin-left, $u-spacing-tiny);}
+
+%u-s-p-l-tiny,
+.u-s-p-l-tiny {@include to-rem(padding-left, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-l-n-tiny,
+.u-s-m-l-n-tiny {@include to-rem(margin-left, -$u-spacing-tiny);}
+
+
+// Sides
+%u-s-m-s-tiny,
+.u-s-m-s-tiny {@include to-rem(margin-left margin-right, $u-spacing-tiny);}
+
+%u-s-p-s-tiny,
+.u-s-p-s-tiny {@include to-rem(padding-left padding-right, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-s-n-tiny,
+.u-s-m-s-n-tiny {@include to-rem(margin-left margin-right, -$u-spacing-tiny);}
+
+
+// Ends
+%u-s-m-e-tiny,
+.u-s-m-e-tiny {@include to-rem(margin-top margin-bottom, $u-spacing-tiny);}
+
+%u-s-p-e-tiny,
+.u-s-p-e-tiny {@include to-rem(padding-top padding-bottom, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-e-n-tiny,
+.u-s-m-e-n-tiny {@include to-rem(margin-top margin-bottom, -$u-spacing-tiny);}
+
+
+
+
+/**
+ * Small.
+ */
+
+
+// Top
+%u-s-m-t-small,
+.u-s-m-t-small {@include to-rem(margin-top, $u-spacing-small);}
+
+%u-s-p-t-small,
+.u-s-p-t-small {@include to-rem(padding-top, $u-spacing-small);}
+
+// Negative
+%u-s-m-t-n-small,
+.u-s-m-t-n-small {@include to-rem(margin-top, -$u-spacing-small);}
+
+
+// Right
+%u-s-m-r-small,
+.u-s-m-r-small {@include to-rem(margin-right, $u-spacing-small);}
+
+%u-s-p-r-small,
+.u-s-p-r-small {@include to-rem(padding-right, $u-spacing-small);}
+
+// Negative
+%u-s-m-r-n-small,
+.u-s-m-r-n-small {@include to-rem(margin-right, -$u-spacing-small);}
+
+
+// Bottom
+%u-s-m-b-small,
+.u-s-m-b-small {@include to-rem(margin-bottom, $u-spacing-small);}
+
+%u-s-p-b-small,
+.u-s-p-b-small {@include to-rem(padding-bottom, $u-spacing-small);}
+
+// Negative
+%u-s-m-b-n-small,
+.u-s-m-b-n-small {@include to-rem(margin-bottom, -$u-spacing-small);}
+
+
+// Left
+%u-s-m-l-small,
+.u-s-m-l-small {@include to-rem(margin-left, $u-spacing-small);}
+
+%u-s-p-l-small,
+.u-s-p-l-small {@include to-rem(padding-left, $u-spacing-small);}
+
+// Negative
+%u-s-m-l-n-small,
+.u-s-m-l-n-small {@include to-rem(margin-left, -$u-spacing-small);}
+
+
+// Sides
+%u-s-m-s-small,
+.u-s-m-s-small {@include to-rem(margin-left margin-right, $u-spacing-small);}
+
+%u-s-p-s-small,
+.u-s-p-s-small {@include to-rem(padding-left padding-right, $u-spacing-small);}
+
+// Negative
+%u-s-m-s-n-small,
+.u-s-m-s-n-small {@include to-rem(margin-left margin-right, -$u-spacing-small);}
+
+
+// Ends
+%u-s-m-e-small,
+.u-s-m-e-small {@include to-rem(margin-top margin-bottom, $u-spacing-small);}
+
+%u-s-p-e-small,
+.u-s-p-e-small {@include to-rem(padding-top padding-bottom, $u-spacing-small);}
+
+// Negative
+%u-s-m-e-n-small,
+.u-s-m-e-n-small {@include to-rem(margin-top margin-bottom, -$u-spacing-small);}
+
+
+
+
+/**
+ * Large.
+ */
+
+
+// Top
+%u-s-m-t-large,
+.u-s-m-t-large {@include to-rem(margin-top, $u-spacing-large);}
+
+%u-s-p-t-large,
+.u-s-p-t-large {@include to-rem(padding-top, $u-spacing-large);}
+
+// Negative
+%u-s-m-t-n-large,
+.u-s-m-t-n-large {@include to-rem(margin-top, -$u-spacing-large);}
+
+
+// Right
+%u-s-m-r-large,
+.u-s-m-r-large {@include to-rem(margin-right, $u-spacing-large);}
+
+%u-s-p-r-large,
+.u-s-p-r-large {@include to-rem(padding-right, $u-spacing-large);}
+
+// Negative
+%u-s-m-r-n-large,
+.u-s-m-r-n-large {@include to-rem(margin-right, -$u-spacing-large);}
+
+
+// Bottom
+%u-s-m-b-large,
+.u-s-m-b-large {@include to-rem(margin-bottom, $u-spacing-large);}
+
+%u-s-p-b-large,
+.u-s-p-b-large {@include to-rem(padding-bottom, $u-spacing-large);}
+
+// Negative
+%u-s-m-b-n-large,
+.u-s-m-b-n-large {@include to-rem(margin-bottom, -$u-spacing-large);}
+
+
+// Left
+%u-s-m-l-large,
+.u-s-m-l-large {@include to-rem(margin-left, $u-spacing-large);}
+
+%u-s-p-l-large,
+.u-s-p-l-large {@include to-rem(padding-left, $u-spacing-large);}
+
+// Negative
+%u-s-m-l-n-large,
+.u-s-m-l-n-large {@include to-rem(margin-left, -$u-spacing-large);}
+
+
+// Sides
+%u-s-m-s-large,
+.u-s-m-s-large {@include to-rem(margin-left margin-right, $u-spacing-large);}
+
+%u-s-p-s-large,
+.u-s-p-s-large {@include to-rem(padding-left padding-right, $u-spacing-large);}
+
+// Negative
+%u-s-m-s-n-large,
+.u-s-m-s-n-large {@include to-rem(margin-left margin-right, -$u-spacing-large);}
+
+
+// Ends
+%u-s-m-e-large,
+.u-s-m-e-large {@include to-rem(margin-top margin-bottom, $u-spacing-large);}
+
+%u-s-p-e-large,
+.u-s-p-e-large {@include to-rem(padding-top padding-bottom, $u-spacing-large);}
+
+// Negative
+%u-s-m-e-n-large,
+.u-s-m-e-n-large {@include to-rem(margin-top margin-bottom, -$u-spacing-large);}
+
+
+
+
+/**
+ * Huge.
+ */
+
+
+// Top
+%u-s-m-t-huge,
+.u-s-m-t-huge {@include to-rem(margin-top, $u-spacing-huge);}
+
+%u-s-p-t-huge,
+.u-s-p-t-huge {@include to-rem(padding-top, $u-spacing-huge);}
+
+// Negative
+%u-s-m-t-n-huge,
+.u-s-m-t-n-huge {@include to-rem(margin-top, -$u-spacing-huge);}
+
+
+// Right
+%u-s-m-r-huge,
+.u-s-m-r-huge {@include to-rem(margin-right, $u-spacing-huge);}
+
+%u-s-p-r-huge,
+.u-s-p-r-huge {@include to-rem(padding-right, $u-spacing-huge);}
+
+// Negative
+%u-s-m-r-n-huge,
+.u-s-m-r-n-huge {@include to-rem(margin-right, -$u-spacing-huge);}
+
+
+// Bottom
+%u-s-m-b-huge,
+.u-s-m-b-huge {@include to-rem(margin-bottom, $u-spacing-huge);}
+
+%u-s-p-b-huge,
+.u-s-p-b-huge {@include to-rem(padding-bottom, $u-spacing-huge);}
+
+// Negative
+%u-s-m-b-n-huge,
+.u-s-m-b-n-huge {@include to-rem(margin-bottom, -$u-spacing-huge);}
+
+
+// Left
+%u-s-m-l-huge,
+.u-s-m-l-huge {@include to-rem(margin-left, $u-spacing-huge);}
+
+%u-s-p-l-huge,
+.u-s-p-l-huge {@include to-rem(padding-left, $u-spacing-huge);}
+
+// Negative
+%u-s-m-l-n-huge,
+.u-s-m-l-n-huge {@include to-rem(margin-left, -$u-spacing-huge);}
+
+
+// Sides
+%u-s-m-s-huge,
+.u-s-m-s-huge {@include to-rem(margin-left margin-right, $u-spacing-huge);}
+
+%u-s-p-s-huge,
+.u-s-p-s-huge {@include to-rem(padding-left padding-right, $u-spacing-huge);}
+
+// Negative
+%u-s-m-s-n-huge,
+.u-s-m-s-n-huge {@include to-rem(margin-left margin-right, -$u-spacing-huge);}
+
+
+// Ends
+%u-s-m-e-huge,
+.u-s-m-e-huge {@include to-rem(margin-top margin-bottom, $u-spacing-huge);}
+
+%u-s-p-e-huge,
+.u-s-p-e-huge {@include to-rem(padding-top padding-bottom, $u-spacing-huge);}
+
+// Negative
+%u-s-m-e-n-huge,
+.u-s-m-e-n-huge {@include to-rem(margin-top margin-bottom, -$u-spacing-huge);}
+
+
+
+
+/**
+ * None.
+ */
+
+
+// Top
+%u-s-m-t-none,
+.u-s-m-t-none {margin-top: 0;}
+
+%u-s-p-t-none,
+.u-s-p-t-none {padding-top: 0;}
+
+
+// Right
+%u-s-m-r-none,
+.u-s-m-r-none {margin-right: 0;}
+
+%u-s-p-r-none,
+.u-s-p-r-none {padding-right: 0;}
+
+
+// Bottom
+%u-s-m-b-none,
+.u-s-m-b-none {margin-bottom: 0;}
+
+%u-s-p-b-none,
+.u-s-p-b-none {padding-bottom: 0;}
+
+
+// Left
+%u-s-m-l-none,
+.u-s-m-l-none {margin-left: 0;}
+
+%u-s-p-l-none,
+.u-s-p-l-none {padding-left: 0;}
+
+
+// Ends
+%u-s-m-e-none,
+.u-s-m-e-none {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+%u-s-p-e-none,
+.u-s-p-e-none {
+  padding-left: 0;
+  padding-right: 0;
+}

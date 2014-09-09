@@ -2,6 +2,7 @@
 
 ## Global
 
+- `style.scss`.
 - Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
@@ -51,7 +52,6 @@
 - Convert to Sass 3.3 BEM syntax.
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
 - CodePen for Position.
-
 - State.
 - Cursor.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
@@ -59,12 +59,6 @@
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-<<<<<<< HEAD
-=======
-- Positioning: see CC, consider adding a height paramater for alignment and
-  for pseudo-elements. And see: <https://github.com/suitcss/utils-position/blob/master/lib/position.css#L27>.
-- Rendering box: add 'Flexbox'?
->>>>>>> Adding Display utility
 - List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
@@ -105,6 +99,7 @@
   - Compact.
   - Cosy.
   - Comfy.
+  - None.
 - Wrap at 80 characters.
 - Inspiration:
   - <http://web-design-weekly.com/2014/08/20/introduction-to-suit-css/>.
