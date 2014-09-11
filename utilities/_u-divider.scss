@@ -26,6 +26,7 @@ $divider-style:       solid !default;
  * Bottom.
  */
 
+%u-divider-bottom,
 .u-divider-bottom {
   @include to-rem(border-bottom, $divider-thickness $divider-style $divider-color);
 }
@@ -35,6 +36,7 @@ $divider-style:       solid !default;
  * Top.
  */
 
+%u-divider-top,
 .u-divider-top {
   @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
 }
