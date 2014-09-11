@@ -7,6 +7,10 @@
  * Standard list styles for unordered and ordered lists as they're removed in
  * Core -> Reset.
  *
+ * N.B. this utility is dependant on the following utility:
+ *
+ * - Spacing.
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#list
  */
@@ -36,7 +40,7 @@ $list-bullet-ordered:										decimal !default;
 %u-list,
 .u-list {
 	// Default bottom spacing
-	//@extend %u-vertical-rhythm;
+	@extend %u-s-mb-base;
 
 	// Left indent including nested lists
 	&,

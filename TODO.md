@@ -6,7 +6,6 @@
 - Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
-- Setup AutoPrefixer.
 - CodePen:
   - Create styles for sub headings.
   - Put custom font in CSS.
@@ -51,7 +50,7 @@
 
 - Convert to Sass 3.3 BEM syntax.
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- CodePen for Position.
+- CodePen for Position/Spacing ALL.
 - State.
 - Cursor.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
@@ -59,7 +58,6 @@
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-- List: apply `@extend` 'Base' list?
 - Ideas:
   - <http://jsfiddle.net/csswizardry/25741myb/>.
   - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-

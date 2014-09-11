@@ -1,0 +1,40 @@
+/* ============================================================================
+   @UTILITIES -> DIVIDER
+   ========================================================================= */
+
+
+/**
+ * Create a divider between elements.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#divider
+ */
+
+
+/**
+ * Settings.
+ */
+
+$divider-color:       $colour-text-base !default;
+
+$divider-thickness:   1 !default;
+
+$divider-style:       solid !default;
+
+
+/**
+ * Bottom.
+ */
+
+.u-divider-bottom {
+  @include to-rem(border-bottom, $divider-thickness $divider-style $divider-color);
+}
+
+
+/**
+ * Top.
+ */
+
+.u-divider-top {
+  @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
+}
