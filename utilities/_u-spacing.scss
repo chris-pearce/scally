@@ -63,8 +63,8 @@ $u-spacing-huge:    $spacing-double !default;
 .u-s-p-base {@include to-rem(padding, $u-spacing-base);}
 
 // Negative
-%u-s-m-base,
-.u-s-m-base {@include to-rem(margin, -$u-spacing-base);}
+%u-s-m-n-base,
+.u-s-m-n-base {@include to-rem(margin, -$u-spacing-base);}
 
 %u-s-p-base,
 .u-s-p-base {@include to-rem(padding, -$u-spacing-base);}
