@@ -1,0 +1,95 @@
+/* ============================================================================
+   @UTILITIES -> COLUMNS
+   ========================================================================= */
+
+
+/**
+ * Easily create columns out of one element.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#columns
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Gutter sizes
+$column-gap-base:             $spacing-base !default;
+
+$column-gap-tiny:             $spacing-third !default;
+
+$column-gap-small:            $spacing-half !default;
+
+$column-gap-large:            $spacing-base-plus-half !default;
+
+$column-gap-huge:             $spacing-double !default;
+
+// Divider
+$column-divider-thickness:    1 !default;
+
+$column-divider-style:        solid !default;
+
+$column-divider-colour:       $colour-text-base !default;
+
+
+/**
+ * Base.
+ */
+
+%u-columns,
+.u-columns {
+  -webkit-column-count: 2;
+  @include to-rem(-webkit-column-gap, $column-gap-base);
+}
+
+
+/**
+ * Modifiers: number of columns.
+ */
+
+// Three
+%u-columns--three,
+.u-columns--three {-webkit-column-count: 3;}
+
+// Four
+%u-columns--four,
+.u-columns--four {-webkit-column-count: 4;}
+
+// Five
+%u-columns--five,
+.u-columns--five {-webkit-column-count: 5;}
+
+// Six
+%u-columns--six,
+.u-columns--six {-webkit-column-count: 6;}
+
+
+/**
+ * Modifiers: gutter sizes.
+ */
+
+// Tiny
+%u-columns--gutter-tiny,
+.u-columns--gutter-tiny {@include to-rem(-webkit-column-gap, $column-gap-tiny);}
+
+// Small
+%u-columns--gutter-small,
+.u-columns--gutter-small {@include to-rem(-webkit-column-gap, $column-gap-small);}
+
+// Large
+%u-columns--gutter-large,
+.u-columns--gutter-large {@include to-rem(-webkit-column-gap, $column-gap-large);}
+
+// Huge
+%u-columns--gutter-huge,
+.u-columns--gutter-huge {@include to-rem(-webkit-column-gap, $column-gap-huge);}
+
+
+/**
+ * Modifier: column divider.
+ */
+
+%u-columns--divider,
+.u-columns--divider {@include to-rem(-webkit-column-rule, $column-divider-thickness $column-divider-style $column-divider-colour);}
