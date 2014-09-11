@@ -55,6 +55,20 @@ $u-spacing-huge:    $spacing-double !default;
  * Base.
  */
 
+// All
+%u-s-m-base,
+.u-s-m-base {@include to-rem(margin, $u-spacing-base);}
+
+%u-s-p-base,
+.u-s-p-base {@include to-rem(padding, $u-spacing-base);}
+
+// Negative
+%u-s-m-base,
+.u-s-m-base {@include to-rem(margin, -$u-spacing-base);}
+
+%u-s-p-base,
+.u-s-p-base {@include to-rem(padding, -$u-spacing-base);}
+
 
 // Top
 %u-s-mt-base,
@@ -114,19 +128,6 @@ $u-spacing-huge:    $spacing-double !default;
 // Negative
 %u-s-ms-n-base,
 .u-s-ms-n-base {@include to-rem(margin-left margin-right, -$u-spacing-base);}
-
-// None
-%u-s-ms-none-base,
-.u-s-ms-none-base {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-%u-s-ps-none-base,
-.u-s-ps-none-base {
-  padding-left: 0;
-  padding-right: 0;
-}
 
 
 // Ends
@@ -462,6 +463,14 @@ $u-spacing-huge:    $spacing-double !default;
 /**
  * None.
  */
+
+
+// All
+%u-s-m-none,
+.u-s-m-none {margin: 0;}
+
+%u-s-p-none,
+.u-s-p-none {padding: 0;}
 
 
 // Top
