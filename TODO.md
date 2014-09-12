@@ -3,10 +3,10 @@
 ## Global
 
 - `style.scss`.
+- Sass Lint (Alec).
 - Test `z-index` from 'Core'.
 - Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
-- Setup AutoPrefixer.
 - CodePen:
   - Create styles for sub headings.
   - Put custom font in CSS.
@@ -26,8 +26,10 @@
 - Mixins:
   - 2 Bootstrap mixins (see below)?
   - Ideas:
-    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_border-radius.scss>.
-    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_size.scss>.
+    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
+      bootstrap/mixins/_border-radius.scss>.
+    - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
+      bootstrap/mixins/_size.scss>.
 
 ## Layout
 
@@ -46,6 +48,7 @@
   - <https://github.com/thoughtbot/bitters/blob/master/app/assets/stylesheets/
     extends/_flashes.scss>.
   - <http://www.sitepoint.com/using-sass-maps/>.
+  - <http://jsfiddle.net/csswizardry/25741myb/>.
 
 ## Utilities
 
@@ -59,15 +62,6 @@
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-- List: apply `@extend` 'Base' list?
-- Ideas:
-  - <http://jsfiddle.net/csswizardry/25741myb/>.
-  - <https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-
-    embed.css>.
-  - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
-    bootstrap/mixins/_center-block.scss>.
-  - <https://github.com/suitcss/utils-layout/blob/master/lib/layout.css>.
-  - <https://github.com/suitcss/utils-position/blob/master/lib/position.css>.
 
 
 ---
