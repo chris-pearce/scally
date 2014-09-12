@@ -40,8 +40,8 @@ $column-divider-colour:       $colour-text-base !default;
 
 %u-columns,
 .u-columns {
-  -webkit-column-count: 2;
-  @include to-rem(-webkit-column-gap, $column-gap-base);
+  column-count: 2;
+  @include to-rem(column-gap, $column-gap-base);
 }
 
 
@@ -51,19 +51,19 @@ $column-divider-colour:       $colour-text-base !default;
 
 // Three
 %u-columns--three,
-.u-columns--three {-webkit-column-count: 3;}
+.u-columns--three {column-count: 3;}
 
 // Four
 %u-columns--four,
-.u-columns--four {-webkit-column-count: 4;}
+.u-columns--four {column-count: 4;}
 
 // Five
 %u-columns--five,
-.u-columns--five {-webkit-column-count: 5;}
+.u-columns--five {column-count: 5;}
 
 // Six
 %u-columns--six,
-.u-columns--six {-webkit-column-count: 6;}
+.u-columns--six {column-count: 6;}
 
 
 /**
@@ -72,19 +72,19 @@ $column-divider-colour:       $colour-text-base !default;
 
 // Tiny
 %u-columns--gutter-tiny,
-.u-columns--gutter-tiny {@include to-rem(-webkit-column-gap, $column-gap-tiny);}
+.u-columns--gutter-tiny {@include to-rem(column-gap, $column-gap-tiny);}
 
 // Small
 %u-columns--gutter-small,
-.u-columns--gutter-small {@include to-rem(-webkit-column-gap, $column-gap-small);}
+.u-columns--gutter-small {@include to-rem(column-gap, $column-gap-small);}
 
 // Large
 %u-columns--gutter-large,
-.u-columns--gutter-large {@include to-rem(-webkit-column-gap, $column-gap-large);}
+.u-columns--gutter-large {@include to-rem(column-gap, $column-gap-large);}
 
 // Huge
 %u-columns--gutter-huge,
-.u-columns--gutter-huge {@include to-rem(-webkit-column-gap, $column-gap-huge);}
+.u-columns--gutter-huge {@include to-rem(column-gap, $column-gap-huge);}
 
 
 /**
@@ -92,4 +92,4 @@ $column-divider-colour:       $colour-text-base !default;
  */
 
 %u-columns--divider,
-.u-columns--divider {@include to-rem(-webkit-column-rule, $column-divider-thickness $column-divider-style $column-divider-colour);}
+.u-columns--divider {@include to-rem(column-rule, $column-divider-thickness $column-divider-style $column-divider-colour);}
