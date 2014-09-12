@@ -54,7 +54,7 @@
 
 - Convert to Sass 3.3 BEM syntax.
 - Every Utility needs to be applied via all the main breakpoints (see Alec).
-- CodePen for Position/Spacing ALL.
+- CodePen for Position.
 - State.
 - Cursor.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
@@ -62,8 +62,7 @@
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?
 - Overflow / Scroll: <https://github.com/mrmrs/fluidity/blob/master/
   sass/_responsive-utilities.scss>.
-- Ideas:
-  - <http://jsfiddle.net/csswizardry/25741myb/>.
+
 
 ---
 
