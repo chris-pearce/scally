@@ -36,7 +36,7 @@
 
 Requires the [scss-lint](https://github.com/causes/scss-lint) gem.
 
-Run `scss-lint ./` to lint all [*.scss](*.scss) files according to [these lint rules](.scss-lint.yml).
+Run `scss-lint ./` to lint all .scss files according to [these lint rules](.scss-lint.yml).
 
 ## Credits
 
