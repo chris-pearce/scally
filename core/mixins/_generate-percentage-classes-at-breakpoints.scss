@@ -8,11 +8,11 @@
  */
 
 // The fractions to be used for the classes
-$percentage-divisions: (1 2 3 4 5 6 8 10 12) !default;
+$denominators-to-be-generated: (1 2 3 4 5 6 8 10 12) !default;
 
-$numerators: (one two three four five six seven eight nine ten eleven twelve);
+$numerators: (one two three four five six seven eight nine ten eleven twelve) !default;
 
-$denominators: (whole half third quarter fifth sixth seventh eighth nineth tenth eleventh twelfth);
+$denominators: (whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth) !default;
 
 @mixin generate-percentage-classes-at-breakpoints($breakpoints, $type: "u", $name: null, $property: "width") {
   @if $name {
@@ -34,7 +34,7 @@ $denominators: (whole half third quarter fifth sixth seventh eighth nineth tenth
 }
 
 @mixin generate-percentage-classes($breakpoint: "", $type: "u", $name: null, $property: "width") {
-  @each $denominator in $percentage-divisions {
+  @each $denominator in $denominators-to-be-generated {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
       .#{$type}-#{$breakpoint}#{$name}#{nth($numerators, $numerator)}-#{nth($denominators, $denominator)#{$denominator-suffix}} {#{$property}: percentage($numerator/$denominator);}
