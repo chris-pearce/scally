@@ -4,7 +4,8 @@
 
 
 /**
- * Push grid items over to the left by certain amounts.
+ * Push grid items over to the left by certain amounts with the option to
+ * apply at all the main breakpoints.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/cjyHK/
@@ -22,7 +23,7 @@
 // Turned off by default as this generates a lot of CSS
 $grid-push: false !default;
 
-// Apply width classes at specific breakpoints
+// Apply push classes at specific breakpoints
 $breakpoints-for-grid-push-classes: (lap) !default;
 
 
@@ -32,6 +33,11 @@ $breakpoints-for-grid-push-classes: (lap) !default;
 
 @if $grid-push {
 
-  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-push-classes, $type: "l", $name: "push", $property: "left");
+  @include generate-percentage-classes-at-breakpoints(
+    $breakpoints-for-grid-push-classes,
+    $scally-type: "l",
+    $class-name: "push",
+    $css-property: "left"
+  );
 
 }

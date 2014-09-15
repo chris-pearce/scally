@@ -19,7 +19,9 @@
    }
  */
 
+
 @mixin generate-at-breakpoints($class, $breakpoint-names: (), $placeholder: true) {
+
   // Output sass placeholder and normal class
   @if $placeholder {
     %#{$class},
@@ -31,7 +33,6 @@
       @content;
     }
   }
-
 
   $all-breakpoint-names: map-keys($breakpoints);
 

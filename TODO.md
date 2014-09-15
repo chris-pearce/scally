@@ -5,7 +5,6 @@
 - `style.scss`.
 - Sass Lint (Alec).
 - Test `z-index` from 'Core'.
-- Comment about non-JavaScript, search for `.no-js`.
 - Boilerplate.
 - CodePen:
   - Create styles for sub headings.
@@ -19,11 +18,14 @@
 ## Core
 
 - Base: Non-responsive images still gets `height: auto` rule? Causes issues
-  in  IE 9/10.
-- Settings:
-  - Width/Grid push-pull toggles (Alec).
-  - Colors: use a Sass map? (Alec)
+  in IE 9/10.
+- Settings: Colors: use a Sass map? (Alec)
 - Mixins:
+  - 'Generate at percentage classes at breakpoints' (Alec):
+    - `palm` bp needs to be a `max-width` mq.
+    - Need warnings.
+    - Need an option for 'all' bp's.
+  - 'Generate at breakpoints' mixin (Alec).
   - 2 Bootstrap mixins (see below)?
   - Ideas:
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
@@ -52,8 +54,6 @@
 
 ## Utilities
 
-- Convert to Sass 3.3 BEM syntax.
-- Every Utility needs to be applied via all the main breakpoints (see Alec).
 - CodePen for Position.
 - State.
 - Cursor.

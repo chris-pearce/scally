@@ -4,7 +4,8 @@
 
 
 /**
- * Pull grid items over to the right by certain amounts.
+ * Pull grid items over to the right by certain amounts with the option to
+ * apply at all the main breakpoints.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/cjyHK/
@@ -22,7 +23,7 @@
 // Turned off by default as this generates a lot of CSS
 $grid-pull: false !default;
 
-// Apply grid pull classes at specific breakpoints
+// Apply pull classes at specific breakpoints
 $breakpoints-for-grid-pull-classes: (lap) !default;
 
 
@@ -32,6 +33,11 @@ $breakpoints-for-grid-pull-classes: (lap) !default;
 
 @if $grid-pull {
 
-  @include generate-percentage-classes-at-breakpoints($breakpoints-for-grid-pull-classes, $type: "l", $name: "pull", $property: "right");
+  @include generate-percentage-classes-at-breakpoints(
+    $breakpoints-for-grid-pull-classes,
+    $scally-type: "l",
+    $class-name: "pull",
+    $css-property: "right"
+  );
 
 }

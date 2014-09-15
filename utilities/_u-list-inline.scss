@@ -29,13 +29,13 @@
  */
 
 // Spacing between list items
-$list-inline-item-spacing-base:    $spacing-half !default;
+$list-inline-item-spacing-base:    $spacing-base !default;
 
-$list-inline-item-spacing-tiny:    $spacing-quarter !default;
+$list-inline-item-spacing-tiny:    $spacing-third !default;
 
-$list-inline-item-spacing-small:   $spacing-third !default;
+$list-inline-item-spacing-small:   $spacing-half !default;
 
-$list-inline-item-spacing-large:   $spacing-base !default;
+$list-inline-item-spacing-large:   $spacing-base-plus-half !default;
 
 $list-inline-item-spacing-huge:    $spacing-double !default;
 

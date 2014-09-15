@@ -7,10 +7,7 @@
  * Apply percentage based width classes with the option to apply at all the
  * main breakpoints.
  *
- * Mostly used with the grid.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/cjyHK/
+ * N.B. by default we're applying to the Lap breakpoint.
  */
 
 
@@ -19,7 +16,6 @@
  */
 
 // Apply width classes at specific breakpoints
-// N.B. by default we're turning on Lap plus (non-palm)
 $breakpoints-for-width-classes: (lap) !default;
 
 

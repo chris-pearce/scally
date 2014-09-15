@@ -1,6 +1,20 @@
 /* ============================================================================
-   @CORE -> MIXINS -> PERCENTAGE CLASSES
+   @CORE -> MIXINS -> GENERATE PERCENTAGE CLASSES AT BREAKPOINTS
    ========================================================================= */
+
+
+/**
+ * Generate percentage classes with the option to apply at different
+ * breakpoints e.g. `.u-one-whole` / `.u-lap-one-whole`. The percentage classes
+ * are based off the widths defined here: Core -> Settings -> Widths.
+ *
+ * N.B. this application for this mixin is quite unique so it's only used a few
+ * times in the framework.
+ *
+ * @example
+   @include generate-percentage-classes-at-breakpoints($breakpoints-for-width-
+   classes);
+ */
 
 
 /**
@@ -8,18 +22,26 @@
  */
 
 // The fractions to be used for the classes
-$denominators-to-be-generated: (1 2 3 4 5 6 8 10 12) !default;
+$denominators-to-be-generated:  (1 2 3 4 5 6 8 10 12) !default;
 
-$numerators: (one two three four five six seven eight nine ten eleven twelve) !default;
+$numerators:                    (one two three four five six seven eight nine
+                                ten eleven twelve) !default;
 
-$denominators: (whole half third quarter fifth sixth seventh eighth ninth tenth eleventh twelfth) !default;
+$denominators:                  (whole half third quarter fifth sixth seventh
+                                eighth ninth tenth eleventh twelfth) !default;
 
-@mixin generate-percentage-classes-at-breakpoints($breakpoints, $type: "u", $name: null, $property: "width") {
-  @if $name {
-    $name: "#{$name}-"
+
+/**
+ * The mixin.
+ */
+
+@mixin generate-percentage-classes-at-breakpoints($breakpoints, $scally-type: "u", $class-name: null, $css-property: "width") {
+
+  @if $class-name {
+    $class-name: "#{$class-name}-"
   }
 
-  @include generate-percentage-classes("", $type, $name, $property);
+  @include generate-percentage-classes("", $scally-type, $class-name, $css-property);
 
   @each $breakpoint in $breakpoints {
 
@@ -28,16 +50,16 @@ $denominators: (whole half third quarter fifth sixth seventh eighth ninth tenth 
         $breakpoint: "#{$breakpoint}-"
       }
 
-      @include generate-percentage-classes($breakpoint, $type, $name, $property);
+      @include generate-percentage-classes($breakpoint, $scally-type, $class-name, $css-property);
     }
   }
 }
 
-@mixin generate-percentage-classes($breakpoint: "", $type: "u", $name: null, $property: "width") {
+@mixin generate-percentage-classes($breakpoint: "", $scally-type: "u", $class-name: null, $css-property: "width") {
   @each $denominator in $denominators-to-be-generated {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-      .#{$type}-#{$breakpoint}#{$name}#{nth($numerators, $numerator)}-#{nth($denominators, $denominator)#{$denominator-suffix}} {#{$property}: percentage($numerator/$denominator);}
+      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($numerators, $numerator)}-#{nth($denominators, $denominator)#{$denominator-suffix}} {#{$css-property}: percentage($numerator/$denominator);}
     }
   }
 }
