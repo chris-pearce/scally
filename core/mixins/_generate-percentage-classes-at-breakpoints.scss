@@ -8,12 +8,16 @@
  * breakpoints e.g. `.u-one-whole` / `.u-lap-one-whole`. The percentage classes
  * are based off the widths defined here: Core -> Settings -> Widths.
  *
- * N.B. this application for this mixin is quite unique so it's only used a few
- * times in the framework.
+ * N.B. the application for this mixin is quite unique so it's only used in a
+ * few places in the framework.
  *
  * @example
-   @include generate-percentage-classes-at-breakpoints($breakpoints-for-width-
-   classes);
+   @include generate-percentage-classes-at-breakpoints(
+     $breakpoints-for-grid-push-classes,
+     $scally-type: "l",
+     $class-name: "push",
+     $css-property: "left"
+   );
  */
 
 
