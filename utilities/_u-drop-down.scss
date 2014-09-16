@@ -48,14 +48,14 @@ $drop-down-touch-support-class:   is-touch !default;
  * 1. Sets the positioning context for the target.
  */
 
-.drop-down {position: relative;} // [1]
+.u-drop-down {position: relative;} // [1]
 
 
   /**
    * The target, the actual drop down.
    */
 
-  .drop-down__target {
+  .u-drop-down__target {
     display: none;
     position: absolute;
     top: 100%;
@@ -64,7 +64,7 @@ $drop-down-touch-support-class:   is-touch !default;
     // Show the drop down via the JavaScript powered state class and the
     // optional `:hover` pseudo class.
     &.#{$drop-down-state-class},
-    .drop-down--on-hover .drop-down__trigger:hover + & {display: block;}
+    .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
   }
 
 
@@ -75,4 +75,4 @@ $drop-down-touch-support-class:   is-touch !default;
    * (typically the `html` element) if touch is supported.
    */
 
-  .#{$drop-down-touch-support-class} .drop-down--on-hover .drop-down {display: none;}
+  .#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down {display: none;}
