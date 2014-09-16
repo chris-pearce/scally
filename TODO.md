@@ -3,7 +3,6 @@
 ## Global
 
 - `style.scss`.
-- Sass Lint (Alec).
 - Test `z-index` from 'Core'.
 - Boilerplate.
 - CodePen:
@@ -54,6 +53,7 @@
 
 ## Utilities
 
+- Apply `generate-at-breakpoints` mixin to 'Display' utility.
 - CodePen for Position.
 - State.
 - Cursor.
@@ -113,11 +113,6 @@
 ### Comment formatting rules
 
 - 2 line breaks after page title comments.
-- 4 line breaks between section heading comments.
-- 2 line breaks between heading comments.
-- No full stops after URL's.
-- Full stop after everything except `//` comments and URL's.
-- Bullet list for `@credit` references.tle comments.
 - 4 line breaks between section heading comments.
 - 2 line breaks between heading comments.
 - No full stops after URL's.
