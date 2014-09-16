@@ -35,15 +35,21 @@ $denominators:                  (whole half third quarter fifth sixth seventh
  * The mixin.
  */
 
-@mixin generate-percentage-classes-at-breakpoints($breakpoints, $scally-type: "u", $class-name: null, $css-property: "width") {
+@mixin generate-percentage-classes-at-breakpoints($breakpoint-names, $scally-type: "u", $class-name: null, $css-property: "width") {
 
   @if $class-name {
     $class-name: "#{$class-name}-"
   }
 
+  $all-breakpoint-names: map-keys($breakpoints);
+
+  @if $breakpoint-names == all {
+    $breakpoint-names: $all-breakpoint-names;
+  }
+
   @include generate-percentage-classes("", $scally-type, $class-name, $css-property);
 
-  @each $breakpoint in $breakpoints {
+  @each $breakpoint in $breakpoint-names {
 
     @include respond-to($breakpoint) {
       @if $breakpoint {
