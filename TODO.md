@@ -54,7 +54,6 @@
 ## Utilities
 
 - Apply `generate-at-breakpoints` mixin to 'Display' utility.
-- CodePen for Position.
 - State.
 - Cursor.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
