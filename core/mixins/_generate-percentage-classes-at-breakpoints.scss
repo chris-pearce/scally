@@ -51,7 +51,8 @@ $denominators:                  (whole half third quarter fifth sixth seventh
 
   @each $breakpoint in $breakpoint-names {
 
-    @include respond-to($breakpoint) {
+    @include respond-to($breakpoint, $limit: if($breakpoint ==
+        'palm', 'max', 'min')) {
       @if $breakpoint {
         $breakpoint: "#{$breakpoint}-"
       }
