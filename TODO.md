@@ -2,6 +2,7 @@
 
 ## Global
 
+- Overrides file position.
 - `style.scss`.
 - Test `z-index` from 'Core'.
 - Boilerplate.
@@ -53,9 +54,11 @@
 
 ## Utilities
 
+- Widths: write up all the classes in the intro comment.
 - Apply `generate-at-breakpoints` mixin to 'Display' utility.
 - State.
 - Cursor.
+- Transition.
 - Size: <https://github.com/suitcss/utils-size/blob/master/lib/size.css>?
 - Arrange: <https://github.com/suitcss/components-arrange/blob/master/lib/
   arrange.css> or add to Grid Table? Remove 'Fit' modifier from List Inline?

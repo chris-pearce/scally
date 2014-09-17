@@ -50,7 +50,9 @@ $list-inline-divider-thickness:    1 !default;
  */
 
 %u-list-inline,
-.u-list-inline > li {display: inline-block;}
+.u-list-inline {
+  > li {display: inline-block;}
+}
 
 
 /**
