@@ -26,13 +26,15 @@
  */
 
 // The fractions to be used for the classes
-$denominators-to-be-generated:  (1 2 3 4 5 6 8 10 12) !default;
+$mixin-denominator-numbers:   (1 2 3 4 5 6 8 10 12) !default;
 
-$numerators:                    (one two three four five six seven eight nine
-                                ten eleven twelve) !default;
+$mixin-numerators:            (one two three four five six seven eight nine
+                              ten eleven twelve) !default;
 
-$denominators:                  (whole half third quarter fifth sixth seventh
-                                eighth ninth tenth eleventh twelfth) !default;
+$mixin-denominator-words:     (whole half third quarter fifth sixth seventh
+                              eighth ninth tenth eleventh twelfth) !default;
+
+
 
 
 /**
@@ -67,10 +69,10 @@ $denominators:                  (whole half third quarter fifth sixth seventh
 }
 
 @mixin generate-percentage-classes($breakpoint: "", $scally-type: "u", $class-name: null, $css-property: "width") {
-  @each $denominator in $denominators-to-be-generated {
+  @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($numerators, $numerator)}-#{nth($denominators, $denominator)#{$denominator-suffix}} {#{$css-property}: percentage($numerator/$denominator);}
+      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($mixin-numerators, $numerator)}-#{nth($mixin-denominator-words, $denominator)#{$denominator-suffix}} {#{$css-property}: percentage($numerator/$denominator);}
     }
   }
 }
