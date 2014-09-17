@@ -32,6 +32,12 @@
 
 `rake test`
 
+## Linting
+
+Requires the [scss-lint](https://github.com/causes/scss-lint) gem.
+
+Run `scss-lint ./` to lint all .scss files according to [these lint rules](.scss-lint.yml).
+
 ## Credits
 
 - [Inuit Framework](https://github.com/csswizardry/inuit.css).
