@@ -2,14 +2,12 @@
 ###################
 /.gitignore
 /index.html
-/style.scss
 /style.css
 /style.css.map
 /demo-styles.scss
 /demo-styles.css
 /demo-styles.css.map
 /demo.html
-/overrides.scss
 
 
 # Compiled source #

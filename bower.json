@@ -19,6 +19,9 @@
     "LICENSE",
     "Rakefile",
     "**/README.md",
-    "TODO.md"
+    "TODO.md",
+    "overrides.scss",
+    "settings.scss",
+    "style.scss"
   ]
 }
