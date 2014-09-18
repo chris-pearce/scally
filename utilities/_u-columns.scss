@@ -141,9 +141,11 @@ $column-divider-colour:       $colour-text-base !default;
  */
 
 %u-columns--divider,
-.u-columns--divider {@include to-rem(column-rule, $column-divider-thickness $column-divider-style $column-divider-colour);}
+.u-columns--divider {@include to-rem(column-rule, $column-divider-thickness
+  $column-divider-style $column-divider-colour);}
 
 @include generate-at-breakpoints('.u-columns--divider',
   $column-breakpoints) {
-  @include to-rem(column-rule, $column-divider-thickness $column-divider-style $column-divider-colour);
+  @include to-rem(column-rule, $column-divider-thickness $column-divider-style
+    $column-divider-colour);
 }
