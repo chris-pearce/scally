@@ -20,7 +20,7 @@
  */
 
 
-$mixin-breakpoint-name-placeholder: "[bp]";
+$mixin-breakpoint-name-placeholder: "{bp}";
 
 @mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
 
