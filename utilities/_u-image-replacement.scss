@@ -11,6 +11,12 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+$image-replacement-breakpoints: $default-utility-breakpoints !default;
+
 %u-image-replacement,
 .u-image-replacement {
   background-color: transparent;
@@ -25,6 +31,20 @@
 	}
 }
 
+@include generate-at-breakpoints('.u-image-replacement',
+  $image-replacement-breakpoints) {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
 
 /**
  * Alternate version.
@@ -32,3 +52,8 @@
 
 %u-image-replacement-alt,
 .u-image-replacement-alt {text-indent: $off-screen-distance;}
+
+@include generate-at-breakpoints('.u-image-replacement-alt',
+  $image-replacement-breakpoints) {
+  text-indent: $off-screen-distance;
+}
