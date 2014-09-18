@@ -14,25 +14,15 @@
      @include font-size($font-size-small);
    }
 
-   @include generate-at-breakpoints(u-align-v-inline-top, palm lap, false) {
+   @include generate-at-breakpoints('.u-align-v-inline-top[bp] li', palm lap, false) {
      vertical-align: top;
    }
  */
 
 
-@mixin generate-at-breakpoints($class, $breakpoint-names: (), $placeholder: true) {
+$mixin-breakpoint-name-placeholder: "[bp]";
 
-  // Output sass placeholder and normal class
-  @if $placeholder {
-    %#{$class},
-    .#{$class} {
-      @content;
-    }
-  } @else {
-    .#{$class} {
-      @content;
-    }
-  }
+@mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
 
   $all-breakpoint-names: map-keys($breakpoints);
 
@@ -43,10 +33,18 @@
   @each $breakpoint-name in $breakpoint-names {
 
     // Palm is a special case where it uses a `max-width` media query
-    @include respond-to($breakpoint-name, $limit: if($breakpoint-name ==
-      'palm', 'max', 'min')) {
+    $limit: if($breakpoint-name == 'palm', 'max', 'min');
+
+    @include respond-to($breakpoint-name, $limit) {
+      $final-selector: "#{$class}-at-#{$breakpoint-name}";
+
+      // Handle complex selectors by replacing a placeholder with the breakpoint suffix
+      @if str_index($class, $mixin-breakpoint-name-placeholder) != null {
+        $final-selector: str-replace($class, $mixin-breakpoint-name-placeholder, "-at-#{$breakpoint-name}");
+      }
+
       // Output a class which applies the style at a given breakpoint
-      .#{$class}-at-#{$breakpoint-name} {
+      #{$final-selector} {
         @content;
       }
     }
