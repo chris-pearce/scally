@@ -20,6 +20,11 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+// This placeholder will be replaced with the breakpoint name when passed in as an argument
 $mixin-breakpoint-name-placeholder: "{bp}";
 
 @mixin generate-at-breakpoints($class, $breakpoint-names: ()) {
