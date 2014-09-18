@@ -28,6 +28,8 @@
  * Settings.
  */
 
+$list-inline-breakpoints: $default-utility-breakpoints !default;
+
 // Spacing between list items
 $list-inline-item-spacing-base:    $spacing-base !default;
 
@@ -190,7 +192,7 @@ $list-inline-divider-thickness:    1 !default;
 .u-list-inline--delimited-slash > li + li:before {content: "/";}
 
 @include generate-at-breakpoints(".u-list-inline--delimited-slash{bp} > li +
- li:before", palm lap desk) {
+ li:before", $list-inline-breakpoints) {
   content: "/";
 }
 
@@ -202,7 +204,7 @@ $list-inline-divider-thickness:    1 !default;
 
   @include generate-at-breakpoints(
     '.u-list-inline--delimited-slash{bp}[class*="u-list-inline--spacing"] > li
-     + li:before', palm lap desk) {
+     + li:before', $list-inline-breakpoints) {
     display: inline-block;
   }
 
