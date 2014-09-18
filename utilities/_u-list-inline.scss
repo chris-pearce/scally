@@ -191,11 +191,22 @@ $list-inline-divider-thickness:    1 !default;
 %u-list-inline--delimited-slash > li + li:before,
 .u-list-inline--delimited-slash > li + li:before {content: "/";}
 
+@include generate-at-breakpoints(".u-list-inline--delimited-slash{bp} > li +
+ li:before", palm lap desk) {
+  content: "/";
+}
+
   // When used in conjuction with the Spacing -> Base modifier
 
   // Make the pseudo element `inline-block` as it needs `margin-right`
   %u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before,
   .u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before {display: inline-block;}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--delimited-slash{bp}[class*="u-list-inline--spacing"] > li
+     + li:before', palm lap desk) {
+    display: inline-block;
+  }
 
   // Base
   %u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before,

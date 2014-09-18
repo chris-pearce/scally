@@ -1,0 +1,41 @@
+/* ============================================================================
+   @CORE -> FUNCTIONS -> STRING REPLACE
+   ========================================================================= */
+
+
+/**
+ * A string helper which replaces a set of characters in a string.
+ *
+ * @credit
+ * https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
+ *
+ * @example
+   str-replace("my-long-string", "long", "longer");
+ */
+
+@function str-replace($string, $substr, $newsubstr, $all: 0) {
+  $position-found: str-index($string, $substr);
+  $processed: ();
+
+  @while ($position-found and $position-found > 0) {
+    $length-substr: str-length($substr);
+    $processed: append($processed, str-slice($string, 0, $position-found - 1));
+    $processed: append($processed, $newsubstr);
+    $string: str-slice($string, $position-found + $length-substr);
+
+    $position-found: 0;
+
+    @if ($all > 0) {
+      $position-found: str-index($string, $substr);
+    }
+  }
+
+  $processed: append($processed, $string);
+  $string: "";
+
+  @each $s in $processed {
+    $string: #{$string}#{$s};
+  }
+
+  @return $string;
+}
