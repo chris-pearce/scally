@@ -15,8 +15,22 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$momentum-scrolling-breakpoints: $default-utility-breakpoints !default;
+
+
 %u-momentum-scrolling,
 .u-momentum-scrolling {
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@include generate-at-breakpoints('.u-momentum-scrolling',
+  $momentum-scrolling-breakpoints) {
+ overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
