@@ -11,8 +11,25 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$clear-fix-breakpoints: $default-utility-breakpoints !default;
+
+
 %u-clear-fix,
 .u-clear-fix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@include generate-at-breakpoints('.u-clear-fix',
+  $clear-fix-breakpoints) {
   &:after {
     content: "";
     display: table;
