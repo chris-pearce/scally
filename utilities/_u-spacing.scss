@@ -38,18 +38,50 @@
  * Settings.
  */
 
-$u-spacing-base:    $spacing-base !default;
+// Apply at these breakpoints
+$spacing-breakpoints:   $default-utility-breakpoints !default;
 
-$u-spacing-tiny:    $spacing-third !default;
+$u-spacing-base:        $spacing-base !default;
 
-$u-spacing-small:   $spacing-half !default;
+$u-spacing-tiny:        $spacing-third !default;
 
-$u-spacing-large:   $spacing-base-plus-half !default;
+$u-spacing-small:       $spacing-half !default;
 
-$u-spacing-huge:    $spacing-double !default;
+$u-spacing-large:       $spacing-base-plus-half !default;
 
+$u-spacing-huge:        $spacing-double !default;
 
+$u-spacing-sizes: (
+  base: $u-spacing-base,
+  tiny: $u-spacing-tiny,
+  small: $u-spacing-small,
+  large: $u-spacing-large,
+  huge: $u-spacing-huge
+);
 
+$u-spacing-types: (
+  m: margin,
+  m-n: margin,
+  p: padding,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  mt-n: margin-top,
+  mr-n: margin-right,
+  mb-n: margin-bottom,
+  ml-n: margin-left,
+  ms: 'margin-left margin-right',
+  me: 'margin-top margin-bottom',
+  ms-n: 'margin-left margin-right',
+  me-n: 'margin-top margin-bottom',
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  ps: 'padding-left padding-right',
+  pe: 'padding-top padding-bottom'
+);
 
 /**
  * Base.
@@ -516,4 +548,24 @@ $u-spacing-huge:    $spacing-double !default;
 .u-s-pe-none {
   padding-left: 0;
   padding-right: 0;
+}
+
+// Generates all breakpoint classes for the spacing utility
+@each $abbreviation, $type in $u-spacing-types {
+
+  // None
+  .u-s-#{$abbreviation}-none {
+   @include to-rem($type, 0);
+  }
+
+  @each $size in (base tiny small large huge) {
+    @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
+      $spacing-breakpoints) {
+      $size-value: map-get($u-spacing-sizes, $size);
+      @if str_index($abbreviation, '-n') != null {
+        $size-value: $size-value * -1;
+      }
+      @include to-rem($type, $size-value);
+    }
+  }
 }
