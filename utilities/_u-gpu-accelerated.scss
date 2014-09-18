@@ -13,9 +13,20 @@
  * http://codepen.io/team/westfieldlabs/full/xFHfk#gpu-accelerated
  */
 
+/**
+ * Settings.
+ */
+
+$gpu-accelerated-breakpoints: $default-utility-breakpoints !default;
 
 %u-gpu-accelerated,
 .u-gpu-accelerated {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000;
+}
+
+@include generate-at-breakpoints('.u-gpu-accelerated', $gpu-accelerated-breakpoints) {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   perspective: 1000;
