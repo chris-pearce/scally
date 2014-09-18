@@ -189,7 +189,8 @@ $list-inline-divider-thickness:    1 !default;
 %u-list-inline--delimited-slash > li + li:before,
 .u-list-inline--delimited-slash > li + li:before {content: "/";}
 
-@include generate-at-breakpoints(".u-list-inline--delimited-slash{bp} > li + li:before", palm lap desk) {
+@include generate-at-breakpoints(".u-list-inline--delimited-slash{bp} > li +
+ li:before", palm lap desk) {
   content: "/";
 }
 
@@ -199,7 +200,9 @@ $list-inline-divider-thickness:    1 !default;
   %u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before,
   .u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before {display: inline-block;}
 
-  @include generate-at-breakpoints('.u-list-inline--delimited-slash{bp}[class*="u-list-inline--spacing"] > li + li:before', palm lap desk) {
+  @include generate-at-breakpoints(
+    '.u-list-inline--delimited-slash{bp}[class*="u-list-inline--spacing"] > li
+     + li:before', palm lap desk) {
     display: inline-block;
   }
 
