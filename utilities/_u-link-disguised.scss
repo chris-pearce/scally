@@ -11,8 +11,27 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+$link-disguised-breakpoints: $default-utility-breakpoints !default;
+
 %u-link-disguised,
 .u-link-disguised {
+  cursor: text;
+
+  &,
+  &:visited,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@include generate-at-breakpoints('.u-link-disguised',
+  $link-disguised-breakpoints) {
   cursor: text;
 
   &,
