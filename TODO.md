@@ -2,6 +2,7 @@
 
 ## Global
 
+- Namespace Utility and Layout settings.
 - Test `z-index` from 'Core'.
 - Website.
 
