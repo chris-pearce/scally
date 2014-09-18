@@ -10,12 +10,29 @@
  * http://codepen.io/team/westfieldlabs/full/xFHfk#float
  */
 
+/**
+ * Settings.
+ */
+
+$float-breakpoints: $default-utility-breakpoints !default;
 
 %u-float-left,
 .u-float-left {float: left;}
 
+@include generate-at-breakpoints('.u-float-left', $float-breakpoints) {
+  float: left;
+}
+
 %u-float-right,
 .u-float-right {float: right;}
 
+@include generate-at-breakpoints('.u-float-right', $float-breakpoints) {
+  float: right;
+}
+
 %u-float-none,
 .u-float-none {float: none;}
+
+@include generate-at-breakpoints('.u-float-none', $float-breakpoints) {
+  float: none;
+}
