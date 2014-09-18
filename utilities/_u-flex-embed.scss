@@ -16,6 +16,12 @@
  * css
  */
 
+/**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$flex-embed-breakpoints:    $default-utility-breakpoints !default;
 
 /**
  * Base.
@@ -23,6 +29,13 @@
 
 %u-flex-embed,
 .u-flex-embed {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+@include generate-at-breakpoints('.u-flex-embed',
+  $flex-embed-breakpoints) {
   display: block;
   position: relative;
   overflow: hidden;
@@ -43,6 +56,13 @@
     width: 100%;
   }
 
+  @include generate-at-breakpoints('.u-flex-embed__ratio',
+    $flex-embed-breakpoints) {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+  }
+
 
   /**
    * Modifiers: common aspect ratios.
@@ -52,17 +72,37 @@
   %u-flex-embed__ratio--16-by-9,
   .u-flex-embed__ratio--16-by-9 {padding-bottom: 56.25%;}
 
+  @include generate-at-breakpoints('.u-flex-embed__ratio--16-by-9',
+    $flex-embed-breakpoints) {
+    padding-bottom: 56.25%;
+  }
+
   // 3:1 aspect ratio
   %u-flex-embed__ratio--3-by-1,
   .u-flex-embed__ratio--3-by-1 {padding-bottom: (100/3)*1%;}
+
+  @include generate-at-breakpoints('.u-flex-embed__ratio--3-by-1',
+    $flex-embed-breakpoints) {
+    padding-bottom: (100/3)*1%;
+  }
 
   // 2:1 aspect ratio
   %u-flex-embed__ratio--2-by-1,
   .u-flex-embed__ratio--2-by-1 {padding-bottom: 50%;}
 
+  @include generate-at-breakpoints('.u-flex-embed__ratio--2-by-1',
+    $flex-embed-breakpoints) {
+    padding-bottom: 50%;
+  }
+
   // 4:3 aspect ratio
   %u-flex-embed__ratio--4-by-3,
   .u-flex-embed__ratio--4-by-3 {padding-bottom: 75%;}
+
+  @include generate-at-breakpoints('.u-flex-embed__ratio--4-by-3',
+    $flex-embed-breakpoints) {
+    padding-bottom: 75%;
+  }
 
 
   /**
@@ -77,3 +117,12 @@
 		width: 100%;
 		height: 100%;
 	}
+
+  @include generate-at-breakpoints('.u-flex-embed__content',
+    $flex-embed-breakpoints) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
