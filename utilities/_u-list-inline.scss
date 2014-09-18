@@ -56,7 +56,7 @@ $list-inline-divider-thickness:    1 !default;
   > li {display: inline-block;}
 }
 
-@include generate-at-breakpoints('', $list-inline-breakpoints) {
+@include generate-at-breakpoints('.u-list-inline', $list-inline-breakpoints) {
   display: inline-block;
 }
 
