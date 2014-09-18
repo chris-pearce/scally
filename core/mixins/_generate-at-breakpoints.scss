@@ -10,7 +10,7 @@
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
  *
  * @example
-   @include generate-at-breakpoints(u-text-size-small, all) {
+   @include generate-at-breakpoints('.u-text-size-small', all) {
      @include font-size($font-size-small);
    }
 
