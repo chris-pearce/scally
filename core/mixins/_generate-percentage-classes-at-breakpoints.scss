@@ -41,7 +41,8 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
  * The mixin.
  */
 
-@mixin generate-percentage-classes-at-breakpoints($breakpoint-names, $scally-type: "u", $class-name: null, $css-property: "width") {
+@mixin generate-percentage-classes-at-breakpoints($breakpoint-names,
+  $scally-type: "u", $class-name: null, $css-property: "width") {
 
   @if $class-name {
     $class-name: "#{$class-name}-"
@@ -53,7 +54,8 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
     $breakpoint-names: $all-breakpoint-names;
   }
 
-  @include generate-percentage-classes("", $scally-type, $class-name, $css-property);
+  @include generate-percentage-classes("", $scally-type, $class-name,
+    $css-property);
 
   @each $breakpoint in $breakpoint-names {
 
@@ -63,16 +65,21 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
         $breakpoint: "#{$breakpoint}-"
       }
 
-      @include generate-percentage-classes($breakpoint, $scally-type, $class-name, $css-property);
+      @include generate-percentage-classes($breakpoint, $scally-type,
+        $class-name, $css-property);
     }
   }
 }
 
-@mixin generate-percentage-classes($breakpoint: "", $scally-type: "u", $class-name: null, $css-property: "width") {
+@mixin generate-percentage-classes($breakpoint: "", $scally-type: "u",
+  $class-name: null, $css-property: "width") {
   @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($mixin-numerators, $numerator)}-#{nth($mixin-denominator-words, $denominator)#{$denominator-suffix}} {#{$css-property}: percentage($numerator/$denominator);}
+      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($mixin-numerators,
+        $numerator)}-#{nth($mixin-denominator-words,
+          $denominator)#{$denominator-suffix}} {#{$css-property}:
+        percentage($numerator/$denominator);}
     }
   }
 }

@@ -2,8 +2,6 @@
 
 ## Global
 
-- Overrides file position.
-- `style.scss`.
 - Test `z-index` from 'Core'.
 - Boilerplate.
 - CodePen:
@@ -54,8 +52,8 @@
 
 ## Utilities
 
+- README.md.
 - Widths: write up all the classes in the intro comment.
-- Apply `generate-at-breakpoints` mixin to 'Display' utility.
 - State.
 - Cursor.
 - Transition.

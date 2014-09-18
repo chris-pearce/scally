@@ -53,7 +53,8 @@
     }
 
     @else {
-      $values: append($values, if(type-of($s) == number, #{$s / $context}em, $s));
+      $values: append($values, if(type-of($s) == number, #{$s / $context}em,
+        $s));
     }
 
   }
@@ -83,14 +84,16 @@
       $vv: ();
 
       @each $ss in $s {
-				$vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem, $ss));
+				$vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem,
+          $ss));
       }
 
       $values: append($values, join((), $vv));
     }
 
     @else {
-		  $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem, $s));
+		  $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
+        $s));
     }
 
   }

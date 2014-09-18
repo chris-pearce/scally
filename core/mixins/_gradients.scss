@@ -30,7 +30,8 @@
 	background-image: linear-gradient(to $dir, $from, $to);
 
   // IE 9 fallback
-  // N.B. this won't work with rounded corners as the `-ms-filter` will overlap them
+  // N.B. this won't work with rounded corners as the `-ms-filter` will overlap
+  // them
 	@if $ie-9-fallback {
 		-ms-filter: quote(progid:DXImageTransform.Microsoft.gradient(
       startColorstr='#{ie-hex-str($from)}',

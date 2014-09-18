@@ -1,3 +1,4 @@
 ﻿# Modules
 
-Modules are the discrete components of the page e.g. carousel, tabs, pagination, etc. This is the meat of the page.
+Modules are the discrete components of the page e.g. carousel, tabs, pagination,
+etc. This is the meat of the page.

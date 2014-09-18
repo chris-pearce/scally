@@ -14,7 +14,7 @@
      @include font-size($font-size-small);
    }
 
-   @include generate-at-breakpoints('.u-demo[bp] li', palm lap, false) {
+   @include generate-at-breakpoints('.u-demo{bp} li', palm lap, false) {
      vertical-align: top;
    }
  */
@@ -43,8 +43,8 @@ $mixin-breakpoint-name-placeholder: "{bp}";
     @include respond-to($breakpoint-name, $limit) {
       $final-selector: "#{$class}-at-#{$breakpoint-name}";
 
-      // Handle complex selectors by replacing a placeholder with the breakpoint
-      // suffix
+      // Handle complex selectors by replacing a placeholder with the
+      // breakpoint suffix
       @if str_index($class, $mixin-breakpoint-name-placeholder) != null {
         $final-selector: str-replace($class, $mixin-breakpoint-name-placeholder,
          "-at-#{$breakpoint-name}");

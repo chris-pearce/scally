@@ -70,7 +70,8 @@
       }
 
       @else {
-        @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
+        @warn "No max-#{$axis} value specified and no available breakpoints to
+        use as a substitute";
       }
     }
 
@@ -79,7 +80,8 @@
     }
   }
 
-  @media (min-#{$axis}: to-em($min-value)) and (max-#{$axis}: to-em($max-value)) {
+  @media (min-#{$axis}: to-em($min-value)) and (max-#{$axis}: to-em($max-value))
+  {
     @content;
   }
 }
