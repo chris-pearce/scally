@@ -26,7 +26,8 @@ $gpu-accelerated-breakpoints: $default-utility-breakpoints !default;
   perspective: 1000;
 }
 
-@include generate-at-breakpoints('.u-gpu-accelerated', $gpu-accelerated-breakpoints) {
+@include generate-at-breakpoints('.u-gpu-accelerated',
+  $gpu-accelerated-breakpoints) {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   perspective: 1000;
