@@ -23,6 +23,13 @@
 
 
 /**
+ * Settings.
+ */
+
+$link-complex-breakpoints: $default-utility-breakpoints !default;
+
+
+/**
  * The actual link.
  */
 
@@ -36,13 +43,33 @@
 	}
 }
 
+@include generate-at-breakpoints('.u-link-complex',
+  $link-complex-breakpoints) {
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 
 	/**
 	 * The piece of the link that needs to act like a link.
 	 */
 
   %u-link-complex__target,
-	.u-link-complex__target {
+  .u-link-complex__target {
+    color: $colour-link;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $colour-link-hover;
+    }
+  }
+
+  @include generate-at-breakpoints('.u-link-complex__target',
+    $link-complex-breakpoints) {
 		color: $colour-link;
 
 		&:hover,
@@ -50,4 +77,4 @@
 			text-decoration: underline;
 			color: $colour-link-hover;
 		}
-	}
+  }
