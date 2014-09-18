@@ -3,11 +3,7 @@
 ## Global
 
 - Test `z-index` from 'Core'.
-- Boilerplate.
-- CodePen:
-  - Create styles for sub headings.
-  - Put custom font in CSS.
-  - Apply anchors to **Layout** and **Core**.
+- Website.
 
 
 ---
@@ -15,15 +11,8 @@
 
 ## Core
 
-- Base: Non-responsive images still gets `height: auto` rule? Causes issues
-  in IE 9/10.
 - Settings: Colors: use a Sass map? (Alec)
 - Mixins:
-  - 'Generate at percentage classes at breakpoints' (Alec):
-    - `palm` bp needs to be a `max-width` mq.
-    - Need warnings.
-    - Need an option for 'all' bp's.
-  - 'Generate at breakpoints' mixin (Alec).
   - 2 Bootstrap mixins (see below)?
   - Ideas:
     - <https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/
@@ -36,7 +25,6 @@
 - Grid: use `inline-block` technique, see: <https://github.com/suitcss/
   components-grid/blob/master/lib/grid.css> (KT).
   - Add Flexbox modifiers, see: <http://flexboxgrid.com/>?
-  - Apply 'Every breakpoint' option to 'Push' and 'Pull' (Alec).
 
 ## Components
 
@@ -73,15 +61,6 @@
 
 - Update CSS Guidelines.
 - Consistent naming esp. for sizes.
-- Scally boilerplate:
-  - `style.scss`.
-  - `settings.scss`.
-  - `overrides.scss`.
-  - LICENSE?
-- Westfield Project boilerplate:
-  - `index.html` template.
-  - CSS architecture.
-  - Assets in the DAM.
 - Sass watch:
   `sass --watch demo-styles.scss:demo-styles.css --style compressed`
   `sass --watch style.scss:style.css --style compressed`
@@ -90,9 +69,6 @@
   - Small.
   - Large.
   - Huge.
-  - Compact.
-  - Cosy.
-  - Comfy.
   - None.
 - Wrap at 80 characters.
 - Inspiration:
