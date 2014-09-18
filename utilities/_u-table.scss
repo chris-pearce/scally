@@ -17,6 +17,9 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$table-breakpoints:                     $default-utility-breakpoints !default;
+
 // Cell padding
 $table-cell-padding-base:               $spacing-half !default;
 
@@ -52,6 +55,19 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   td {@include to-rem(padding, $table-cell-padding-base);}
 }
 
+@include generate-at-breakpoints('.u-table', $table-breakpoints) {
+  // Stretch to full width of it's parent
+  width: 100%;
+
+  // Some sensible defaults
+  caption,
+  th {text-align: left;}
+
+  // Cell padding
+  th,
+  td {@include to-rem(padding, $table-cell-padding-base);}
+}
+
 
 /**
  * Modifier: striped.
@@ -61,9 +77,14 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 
 %u-table--striped,
 .u-table--striped {
-  tbody tr:nth-of-type(odd) td {background-color: $table-striped-background-cell-colour;}
+  tbody tr:nth-of-type(odd) td {background-color:
+    $table-striped-background-cell-colour;}
 }
 
+@include generate-at-breakpoints('.u-table--striped', $table-breakpoints) {
+  tbody tr:nth-of-type(odd) td {background-color:
+    $table-striped-background-cell-colour;}
+}
 
 /**
  * Modifier: border.
@@ -73,13 +94,24 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 .u-table--border {
   th,
   td {
-    @include to-rem(border, $table-border-thickness $table-border-style $table-border-colour);
+    @include to-rem(border, $table-border-thickness $table-border-style
+      $table-border-colour);
 
     // No borders for empty cells
     &:empty {border: 0;}
   }
 }
 
+@include generate-at-breakpoints('.u-table--border', $table-breakpoints) {
+  th,
+  td {
+    @include to-rem(border, $table-border-thickness $table-border-style
+      $table-border-colour);
+
+    // No borders for empty cells
+    &:empty {border: 0;}
+  }
+}
 
 /**
  * Modifier: layout fixed.
@@ -90,6 +122,8 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 %u-table--fixed,
 .u-table--fixed {table-layout: fixed;}
 
+@include generate-at-breakpoints('.u-table--fixed', $table-breakpoints)
+{table-layout: fixed;}
 
 /**
  * Modifier: small cell padding.
@@ -101,6 +135,11 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   td {@include to-rem(padding, $table-cell-padding-small);}
 }
 
+@include generate-at-breakpoints('.u-table--cell-padding-small',
+  $table-breakpoints) {
+  th,
+  td {@include to-rem(padding, $table-cell-padding-small);}
+}
 
 /**
  * Modifier: large cell padding.
@@ -112,6 +151,11 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   td {@include to-rem(padding, $table-cell-padding-large);}
 }
 
+@include generate-at-breakpoints('.u-table--cell-padding-large',
+  $table-breakpoints) {
+  th,
+  td {@include to-rem(padding, $table-cell-padding-large);}
+}
 
 /**
  * Modifier: no cell padding.
@@ -119,6 +163,12 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 
 %u-table--no-cell-padding,
 .u-table--no-cell-padding {
+  th,
+  td {padding: 0;}
+}
+
+@include generate-at-breakpoints('.u-table--no-cell-padding',
+  $table-breakpoints) {
   th,
   td {padding: 0;}
 }
