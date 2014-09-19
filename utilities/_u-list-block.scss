@@ -63,8 +63,8 @@ $list-block-border-thickness:     1 !default;
 .u-list-block--tiny > li {@include to-rem(padding,
   $list-block-item-padding-tiny);}
 
-@include generate-at-breakpoints('.u-list-block--tiny',
-  $list-block-breakpoints) {
+@include generate-at-breakpoints('.u-list-block--tiny', $list-block-breakpoints
+  ) {
   @include to-rem(padding, $list-block-item-padding-tiny);
 }
 
@@ -77,8 +77,8 @@ $list-block-border-thickness:     1 !default;
 .u-list-block--small > li {@include to-rem(padding,
   $list-block-item-padding-small);}
 
-@include generate-at-breakpoints('.u-list-block--small',
-  $list-block-breakpoints) {
+@include generate-at-breakpoints('.u-list-block--small', $list-block-breakpoints
+  ) {
   @include to-rem(padding, $list-block-item-padding-small);
 }
 
@@ -91,8 +91,8 @@ $list-block-border-thickness:     1 !default;
 .u-list-block--large > li {@include to-rem(padding,
   $list-block-item-padding-large);}
 
-@include generate-at-breakpoints('.u-list-block--large',
-  $list-block-breakpoints) {
+@include generate-at-breakpoints('.u-list-block--large', $list-block-breakpoints
+  ) {
   @include to-rem(padding, $list-block-item-padding-large);
 }
 
@@ -102,11 +102,11 @@ $list-block-border-thickness:     1 !default;
  */
 
 %u-list-block--huge > li,
-.u-list-block--huge > li {@include to-rem(padding,
-  $list-block-item-padding-huge);}
+.u-list-block--huge > li {@include to-rem(padding, $list-block-item-padding-huge
+  );}
 
-@include generate-at-breakpoints('.u-list-block--huge',
-  $list-block-breakpoints) {
+@include generate-at-breakpoints('.u-list-block--huge', $list-block-breakpoints
+  ) {
   @include to-rem(padding, $list-block-item-padding-huge);
 }
 

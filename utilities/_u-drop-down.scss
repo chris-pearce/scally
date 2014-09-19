@@ -35,6 +35,9 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$drop-down-breakpoints:           $default-utility-breakpoints !default;
+
 // The state class that is powered by JavaScript
 $drop-down-state-class:           is-visible !default;
 
@@ -48,14 +51,33 @@ $drop-down-touch-support-class:   is-touch !default;
  * 1. Sets the positioning context for the target.
  */
 
+%u-drop-down,
 .u-drop-down {position: relative;} // [1]
+
+@include generate-at-breakpoints('.u-drop-down', $drop-down-breakpoints) {
+  position: relative;
+}
 
 
   /**
    * The target, the actual drop down.
    */
 
+  %u-drop-down__target,
   .u-drop-down__target {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    // Show the drop down via the JavaScript powered state class and the
+    // optional `:hover` pseudo class.
+    &.#{$drop-down-state-class},
+    .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
+  }
+
+  @include generate-at-breakpoints('.u-drop-down__target',
+    $drop-down-breakpoints) {
     display: none;
     position: absolute;
     top: 100%;
@@ -75,4 +97,11 @@ $drop-down-touch-support-class:   is-touch !default;
    * (typically the `html` element) if touch is supported.
    */
 
-  .#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down {display: none;}
+  %#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down,
+  .#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down
+  {display: none;}
+
+  @include generate-at-breakpoints('.#{$drop-down-touch-support-class}
+    .u-drop-down--on-hover .u-drop-down', $drop-down-breakpoints) {
+    display: none;
+  }

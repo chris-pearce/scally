@@ -15,11 +15,17 @@
  * Settings.
  */
 
-$divider-color:       $colour-text-base !default;
+// Apply at these breakpoints
+$divider-breakpoints:   $default-utility-breakpoints !default;
 
-$divider-thickness:   1 !default;
+// Colour
+$divider-color:         $colour-text-base !default;
 
-$divider-style:       solid !default;
+// Thickness
+$divider-thickness:     1 !default;
+
+// Style
+$divider-style:         solid !default;
 
 
 /**
@@ -28,7 +34,13 @@ $divider-style:       solid !default;
 
 %u-divider-bottom,
 .u-divider-bottom {
-  @include to-rem(border-bottom, $divider-thickness $divider-style $divider-color);
+  @include to-rem(border-bottom, $divider-thickness $divider-style
+    $divider-color);
+}
+
+@include generate-at-breakpoints('.u-divider-bottom', $display-breakpoints) {
+  @include to-rem(border-bottom, $divider-thickness $divider-style
+    $divider-color);
 }
 
 
@@ -38,5 +50,9 @@ $divider-style:       solid !default;
 
 %u-divider-top,
 .u-divider-top {
+  @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
+}
+
+@include generate-at-breakpoints('.u-divider-top', $display-breakpoints) {
   @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
 }

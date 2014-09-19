@@ -14,6 +14,14 @@
 
 
 /**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$alignments-breakpoints: $default-utility-breakpoints !default;
+
+
+/**
  * Inline vertical alignments.
  *
  * N.B. these won't work on block level elements (see next section for that).
@@ -22,17 +30,42 @@
 %u-align-v-inline-top,
 .u-align-v-inline-top {vertical-align: top;}
 
+@include generate-at-breakpoints('.u-align-v-inline-top',
+  $alignments-breakpoints) {
+  vertical-align: top;
+}
+
 %u-align-v-inline-middle,
 .u-align-v-inline-middle {vertical-align: middle;}
+
+@include generate-at-breakpoints('.u-align-v-inline-middle',
+  $alignments-breakpoints) {
+  vertical-align: middle;
+}
 
 %u-align-v-inline-baseline,
 .u-align-v-inline-baseline {vertical-align: baseline;}
 
+@include generate-at-breakpoints('.u-align-v-inline-baseline',
+  $alignments-breakpoints) {
+  vertical-align: baseline;
+}
+
 %u-align-v-inline-bottom,
 .u-align-v-inline-bottom {vertical-align: bottom;}
 
+@include generate-at-breakpoints('.u-align-v-inline-bottom',
+  $alignments-breakpoints) {
+  vertical-align: bottom;
+}
+
 %u-align-v-inline-inherit,
 .u-align-v-inline-inherit {vertical-align: inherit;}
+
+@include generate-at-breakpoints('.u-align-v-inline-inherit',
+  $alignments-breakpoints) {
+  vertical-align: inherit;
+}
 
 
 /**
@@ -48,9 +81,23 @@
   justify-content: center;
 }
 
+@include generate-at-breakpoints('.u-align-v-block-middle-flexbox',
+  $alignments-breakpoints) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // CSS table method
 %u-align-v-block-middle-table,
 .u-align-v-block-middle-table {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+@include generate-at-breakpoints('.u-align-v-block-middle-table',
+  $alignments-breakpoints) {
   display: table;
   height: 100%;
   width: 100%;
@@ -62,9 +109,22 @@
     vertical-align: middle;
   }
 
+  @include generate-at-breakpoints('.u-align-v-block-middle-table__inner',
+    $alignments-breakpoints) {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
 // Position relative method
 %u-align-v-block-middle-position,
 .u-align-v-block-middle-position {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@include generate-at-breakpoints('.u-align-v-block-middle-position',
+  $alignments-breakpoints) {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -79,6 +139,13 @@
 
 %u-align-center-block,
 .u-align-center-block {
+  display: block; // [1]
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include generate-at-breakpoints('.u-align-center-block',
+  $alignments-breakpoints) {
   display: block; // [1]
   margin-left: auto;
   margin-right: auto;

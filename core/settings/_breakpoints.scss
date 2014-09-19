@@ -59,4 +59,6 @@ $breakpoints: (
 
 ) !default;
 
+// Define the breakpoints that we want all utilities to use, by default we set
+// Lap. This can be overriden at the individual utility level.
 $default-utility-breakpoints: (lap) !default;
