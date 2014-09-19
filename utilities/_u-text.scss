@@ -217,7 +217,7 @@ $text-breakpoints: $default-utility-breakpoints !default;
 .u-text-capitalise-lowercase {text-transform: lowercase;}
 
 @include generate-at-breakpoints('.u-text-capitalise-lowercase',
-$text-breakpoints) {
+  $text-breakpoints) {
   text-transform: lowercase;
 }
 
@@ -225,7 +225,7 @@ $text-breakpoints) {
 .u-text-capitalise-capitalise {text-transform: capitalize;}
 
 @include generate-at-breakpoints('.u-text-capitalise-capitalise',
-$text-breakpoints) {
+  $text-breakpoints) {
   text-transform: capitalize;
 }
 
@@ -233,7 +233,7 @@ $text-breakpoints) {
 .u-text-capitalise-inherit {text-transform: inherit;}
 
 @include generate-at-breakpoints('.u-text-capitalise-inherit',
-$text-breakpoints) {
+  $text-breakpoints) {
   text-transform: inherit;
 }
 
@@ -241,7 +241,7 @@ $text-breakpoints) {
 .u-text-capitalise-none {text-transform: none;}
 
 @include generate-at-breakpoints('.u-text-capitalise-none',
-$text-breakpoints) {
+  $text-breakpoints) {
   text-transform: none;
 }
 
@@ -283,7 +283,7 @@ $text-breakpoints) {
 .u-text-colour-text-primary {color: $colour-primary;}
 
 @include generate-at-breakpoints('.u-text-colour-text-primary',
-$text-breakpoints) {
+  $text-breakpoints) {
   color: $colour-primary;
 }
 
@@ -291,7 +291,7 @@ $text-breakpoints) {
 .u-text-colour-text-secondary {color: $colour-secondary;}
 
 @include generate-at-breakpoints('.u-text-colour-text-secondary',
-$text-breakpoints) {
+  $text-breakpoints) {
   color: $colour-secondary;
 }
 
