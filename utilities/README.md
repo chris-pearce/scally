@@ -8,4 +8,7 @@ To apply a trait, or a combination of traits to an element, add the correspondin
 
 Together, they can form a wide variety of UI patterns from simple principles.
 
-**N.B.** nearly all **Utilities** come with the ability to apply at the main breakpoints. And all **Utilities** exist as a class and a Sass silent placeholder selector.
+N.B. nearly all **Utilities** come with the ability to apply at the main breakpoints. And all **Utilities** exist as a class and a Sass silent placeholder selector.
+
+N.B. **Utility** styles should be prefixed with `u-` so that they're easily
+identifiable.
