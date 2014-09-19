@@ -50,35 +50,35 @@ $u-spacing-large:       $spacing-base-plus-half !default;
 $u-spacing-huge:        $spacing-double !default;
 
 $u-spacing-sizes: (
-  base: $u-spacing-base,
-  tiny: $u-spacing-tiny,
+  base:  $u-spacing-base,
+  tiny:  $u-spacing-tiny,
   small: $u-spacing-small,
   large: $u-spacing-large,
-  huge: $u-spacing-huge
+  huge:  $u-spacing-huge
 );
 
 $u-spacing-types: (
-  m: margin,
-  m-n: margin,
-  p: padding,
-  mt: margin-top,
-  mr: margin-right,
-  mb: margin-bottom,
-  ml: margin-left,
+  m:    margin,
+  m-n:  margin,
+  p:    padding,
+  mt:   margin-top,
+  mr:   margin-right,
+  mb:   margin-bottom,
+  ml:   margin-left,
   mt-n: margin-top,
   mr-n: margin-right,
   mb-n: margin-bottom,
   ml-n: margin-left,
-  ms: 'margin-left margin-right',
-  me: 'margin-top margin-bottom',
+  ms:   'margin-left margin-right',
+  me:   'margin-top margin-bottom',
   ms-n: 'margin-left margin-right',
   me-n: 'margin-top margin-bottom',
-  pt: padding-top,
-  pr: padding-right,
-  pb: padding-bottom,
-  pl: padding-left,
-  ps: 'padding-left padding-right',
-  pe: 'padding-top padding-bottom'
+  pt:   padding-top,
+  pr:   padding-right,
+  pb:   padding-bottom,
+  pl:   padding-left,
+  ps:   'padding-left padding-right',
+  pe:   'padding-top padding-bottom'
 );
 
 
