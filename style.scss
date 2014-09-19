@@ -10,18 +10,24 @@
  * Scally, being an OO framework, works in keeping with the open/closed
  * principle. Any custom styles *SHOULD NOT* be added or modified in Scally
  * directly, but added in your project master stylesheet (this stylesheet).
- * This also allows the framework to be updated seamlessly via Bower.
+ * This also allows the framework to be updated seamlessly.
+ *
+ * CONTENTS
+ *
+ * Your settings............your project-specific settings.
+ * Scally framework.........the entire Scally framework.
+ * Your overrides...........override any Scally framework settings.
+ * Your styles..............all your project-specific styles.
+ *
+ * N.B. the above order and the order within the Scally framework section must
+ * always be followed.
  */
 
 
 
 
-/* Your Settings
+/* Your settings
    ========================================================================= */
-
-/**
- * Your project-specific settings (Sass variables).
- */
 
 @import "settings";
 
@@ -34,15 +40,19 @@
 /**
  * By default everything is imported. But if you want to be selective and you
  * definitely should, so your CSS is as lean as possible, then import via each
- * of Scally's sections e.g. Layout or at the individual partial level. If you
- * only want specific partials then grab the relevant `@import` from the
- * relevant file and update the path.
+ * of Scally's sections e.g. Layout, or at the individual partial level within
+ * each section e.g. Layout -> Grid. The Core section is however mandatory.
  *
- * N.B. the order specified below must always be maintained or Scally will
- * break.
+ * N.B. the order specified below must always be followed or Scally will
+ * break and if you're not using Bower or you customise where Bower installs
+ * then you'll need to update the `@import` paths accordingly.
  *
- * N.B. if you're not using Bower or you customise where Bower installs then
- * you'll need to update the `@import` paths accordingly.
+ * CONTENTS
+ *
+ * Core.
+ * Layout.
+ * Components.
+ * Utilities.
  */
 
 
@@ -53,7 +63,6 @@
  */
 
 @import "bower_components/scally/core";
-
 
 
 /**
@@ -79,7 +88,7 @@
 
 
 
-/* Your Overrides
+/* Your overrides
    ========================================================================= */
 
 /**
@@ -96,9 +105,5 @@
 
 
 
-/* Your Styles
+/* Your styles
    ========================================================================= */
-
-/**
- * Import your project specific partials :)
- */
