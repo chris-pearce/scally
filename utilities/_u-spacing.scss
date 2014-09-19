@@ -37,7 +37,7 @@
  */
 
 // Apply at these breakpoints
-$spacing-breakpoints:   $default-utility-breakpoints !default;
+$u-spacing-breakpoints:   $default-utility-breakpoints !default;
 
 $u-spacing-base:        $spacing-base !default;
 
@@ -549,7 +549,14 @@ $u-spacing-types: (
   padding-right: 0;
 }
 
-// Generates all breakpoint classes for the spacing utility
+
+
+
+/**
+ * Generates all breakpoint classes.
+ */
+
+
 @each $abbreviation, $type in $u-spacing-types {
 
   // None
@@ -559,7 +566,7 @@ $u-spacing-types: (
 
   @each $size in (base tiny small large huge) {
     @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
-      $spacing-breakpoints) {
+      $u-spacing-breakpoints) {
       $size-value: map-get($u-spacing-sizes, $size);
       @if str_index($abbreviation, '-n') != null {
         $size-value: $size-value * -1;
