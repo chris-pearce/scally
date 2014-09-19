@@ -23,7 +23,7 @@
  */
 
 // Apply at these breakpoints
-$nbfc-breakpoints: $default-utility-breakpoints !default;
+$u-nbfc-breakpoints: $default-utility-breakpoints !default;
 
 
 /**
@@ -40,7 +40,7 @@ $nbfc-breakpoints: $default-utility-breakpoints !default;
   width: 10000px; // [2]
 }
 
-@include generate-at-breakpoints('.u-nbfc', $nbfc-breakpoints) {
+@include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
  display: table-cell;
  width: 10000px;
 }
@@ -55,6 +55,6 @@ $nbfc-breakpoints: $default-utility-breakpoints !default;
 %u-nbfc-alt,
 .u-nbfc-alt {overflow: hidden;}
 
-@include generate-at-breakpoints('.u-nbfc-alt', $nbfc-breakpoints) {
+@include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-breakpoints) {
   overflow: hidden;
 }

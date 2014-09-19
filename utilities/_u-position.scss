@@ -16,7 +16,7 @@
  */
 
 // Apply at these breakpoints
-$position-breakpoints: $default-utility-breakpoints !default;
+$u-position-breakpoints: $default-utility-breakpoints !default;
 
 
 /**
@@ -27,7 +27,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-relative,
 .u-position-relative {position: relative;}
 
-@include generate-at-breakpoints('.u-position-relative', $position-breakpoints)
+@include generate-at-breakpoints('.u-position-relative', $u-position-breakpoints)
 {
   position: relative;
 }
@@ -36,7 +36,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-absolute,
 .u-position-absolute {position: absolute;}
 
-@include generate-at-breakpoints('.u-position-absolute', $position-breakpoints)
+@include generate-at-breakpoints('.u-position-absolute', $u-position-breakpoints)
 {
   position: absolute;
 }
@@ -45,7 +45,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-fixed,
 .u-position-fixed {position: fixed;}
 
-@include generate-at-breakpoints('.u-position-fixed', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-fixed', $u-position-breakpoints) {
   position: fixed;
 }
 
@@ -53,7 +53,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-static,
 .u-position-static {position: static;}
 
-@include generate-at-breakpoints('.u-position-static', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-static', $u-position-breakpoints) {
   position: static;
 }
 
@@ -65,7 +65,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-left,
 .u-position-left {left: 0;}
 
-@include generate-at-breakpoints('.u-position-left', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-left', $u-position-breakpoints) {
   left: 0;
 }
 
@@ -73,7 +73,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-right,
 .u-position-right {right: 0;}
 
-@include generate-at-breakpoints('.u-position-right', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-right', $u-position-breakpoints) {
   right: 0;
 }
 
@@ -81,7 +81,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-top,
 .u-position-top {top: 0;}
 
-@include generate-at-breakpoints('.u-position-top', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-top', $u-position-breakpoints) {
   top: 0;
 }
 
@@ -89,7 +89,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 %u-position-bottom,
 .u-position-bottom {bottom: 0;}
 
-@include generate-at-breakpoints('.u-position-bottom', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-bottom', $u-position-breakpoints) {
   bottom: 0;
 }
 
@@ -101,7 +101,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-top-left',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   top: 0;
   left: 0;
 }
@@ -114,7 +114,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-top-right',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   top: 0;
   right: 0;
 }
@@ -127,7 +127,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-bottom-left',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   bottom: 0;
   left: 0;
 }
@@ -140,7 +140,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-bottom-right',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   bottom: 0;
   right: 0;
 }
@@ -154,7 +154,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
   bottom: 0;
 }
 
-@include generate-at-breakpoints('.u-position-pin-all', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-pin-all', $u-position-breakpoints) {
   left: 0;
   right: 0;
   top: 0;
@@ -169,7 +169,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-pin-ends',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   top: 0;
   bottom: 0;
 }
@@ -182,7 +182,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-pin-sides',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   left: 0;
   right: 0;
 }
@@ -195,7 +195,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-v-middle',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   top: 50%;
   transform: translateY(-50%);
 }
@@ -208,7 +208,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-position-h-middle',
-  $position-breakpoints) {
+  $u-position-breakpoints) {
   left: 50%;
   transform: translateX(-50%);
 }
@@ -221,7 +221,7 @@ $position-breakpoints: $default-utility-breakpoints !default;
   transform: translate(-50%, -50%);
 }
 
-@include generate-at-breakpoints('.u-position-middle', $position-breakpoints) {
+@include generate-at-breakpoints('.u-position-middle', $u-position-breakpoints) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
