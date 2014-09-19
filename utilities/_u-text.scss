@@ -12,6 +12,14 @@
 
 
 /**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$text-breakpoints: $default-utility-breakpoints !default;
+
+
+/**
  * Size.
  */
 
@@ -19,36 +27,55 @@
 %u-text-size-small,
 .u-text-size-small {@include font-size($font-size-small);}
 
+@include generate-at-breakpoints('.u-table', $text-breakpoints) {@include font-size($font-size-small);}
+
 %u-text-size-x-small,
 .u-text-size-x-small {@include font-size($font-size-x-small);}
+
+@include generate-at-breakpoints('.u-text-size-x-small', $text-breakpoints) {@include font-size($font-size-x-small);}
 
 %u-text-size-xx-small,
 .u-text-size-xx-small {@include font-size($font-size-xx-small);}
 
+@include generate-at-breakpoints('.u-text-size-xx-small', $text-breakpoints) {@include font-size($font-size-xx-small);}
+
 %u-text-size-xxx-small,
 .u-text-size-xxx-small {@include font-size($font-size-xxx-small);}
+
+@include generate-at-breakpoints('.u-text-size-xxx-small', $text-breakpoints) {@include font-size($font-size-xxx-small);}
 
 // Larger
 %u-text-size-large,
 .u-text-size-large {@include font-size($font-size-large);}
 
+@include generate-at-breakpoints('.u-text-size-large', $text-breakpoints) {@include font-size($font-size-large);}
+
 %u-text-size-x-large,
 .u-text-size-x-large {@include font-size($font-size-x-large);}
+
+@include generate-at-breakpoints('.u-text-size-x-large', $text-breakpoints) {@include font-size($font-size-x-large);}
 
 %u-text-size-xx-large,
 .u-text-size-xx-large {@include font-size($font-size-xx-large);}
 
+@include generate-at-breakpoints('.u-text-size-xx-large', $text-breakpoints) {@include font-size($font-size-xx-large);}
+
 %u-text-size-xxx-large,
 .u-text-size-xxx-large {@include font-size($font-size-xxx-large);}
+
+@include generate-at-breakpoints('.u-text-size-xxx-large', $text-breakpoints) {@include font-size($font-size-xxx-large);}
 
 // Base
 %u-text-size-base,
 .u-text-size-base {@include font-size($font-size);}
 
+@include generate-at-breakpoints('.u-text-size-base', $text-breakpoints) {@include font-size($font-size);}
+
 // Inherit
 %u-text-size-inherit,
 .u-text-size-inherit {font-size: inherit;}
 
+@include generate-at-breakpoints('.u-text-size-inherit', $text-breakpoints) {font-size: inherit;}
 
 /**
  * Alignment.
@@ -57,14 +84,22 @@
 %u-text-align-center,
 .u-text-align-center {text-align: center;}
 
+@include generate-at-breakpoints('.u-text-align-center', $text-breakpoints) {text-align: center;}
+
 %u-text-align-left,
 .u-text-align-left {text-align: left;}
+
+@include generate-at-breakpoints('.u-text-align-left', $text-breakpoints) {text-align: left;}
 
 %u-text-align-right,
 .u-text-align-right {text-align: right;}
 
+@include generate-at-breakpoints('.u-text-align-right', $text-breakpoints) {text-align: right;}
+
 %u-text-align-inherit,
 .u-text-align-inherit {text-align: inherit;}
+
+@include generate-at-breakpoints('.u-text-align-inherit', $text-breakpoints) {text-align: inherit;}
 
 
 /**
@@ -74,11 +109,17 @@
 %u-text-style-italic,
 .u-text-style-italic {font-style: italic;}
 
+@include generate-at-breakpoints('.u-text-style-italic', $text-breakpoints) {font-style: italic;}
+
 %u-text-style-normal,
 .u-text-style-normal {font-style: normal;}
 
+@include generate-at-breakpoints('.u-text-style-normal', $text-breakpoints) {font-style: normal;}
+
 %u-text-style-inherit,
 .u-text-style-inherit {font-style: inherit;}
+
+@include generate-at-breakpoints('.u-text-style-inherit', $text-breakpoints) {font-style: inherit;}
 
 
 /**
@@ -89,20 +130,30 @@
 %u-text-weight-lighter,
 .u-text-weight-lighter {font-weight: lighter;}
 
+@include generate-at-breakpoints('.u-text-weight-lighter', $text-breakpoints) {font-weight: lighter;}
+
 // Bolder
 %u-text-weight-bold,
 .u-text-weight-bold {font-weight: bold;}
 
+@include generate-at-breakpoints('.u-text-weight-bold', $text-breakpoints) {font-weight: bold;}
+
 %u-text-weight-bolder,
 .u-text-weight-bolder {font-weight: bolder;}
+
+@include generate-at-breakpoints('.u-text-weight-bolder', $text-breakpoints) {font-weight: bolder;}
 
 // Inherit
 %u-text-weight-inherit,
 .u-text-weight-inherit {font-weight: inherit;}
 
+@include generate-at-breakpoints('.u-text-weight-inherit', $text-breakpoints) {font-weight: inherit;}
+
 // Normal
 %u-text-weight-normal,
 .u-text-weight-normal {font-weight: normal;}
+
+@include generate-at-breakpoints('.u-text-weight-normal', $text-breakpoints) {font-weight: normal;}
 
 
 /**
@@ -112,17 +163,27 @@
 %u-text-capitalise-uppercase,
 .u-text-capitalise-uppercase {text-transform: uppercase;}
 
+@include generate-at-breakpoints('.u-text-capitalise-uppercase', $text-breakpoints) {text-transform: uppercase;}
+
 %u-text-capitalise-lowercase,
 .u-text-capitalise-lowercase {text-transform: lowercase;}
+
+@include generate-at-breakpoints('.u-text-capitalise-uppercase', $text-breakpoints) {text-transform: uppercase;}
 
 %u-text-capitalise-capitalise,
 .u-text-capitalise-capitalise {text-transform: capitalize;}
 
+@include generate-at-breakpoints('.u-text-capitalise-capitalise', $text-breakpoints) {text-transform: capitalize;}
+
 %u-text-capitalise-inherit,
 .u-text-capitalise-inherit {text-transform: inherit;}
 
+@include generate-at-breakpoints('.u-text-capitalise-inherit', $text-breakpoints) {text-transform: inherit;}
+
 %u-text-capitalise-none,
 .u-text-capitalise-none {text-transform: none;}
+
+@include generate-at-breakpoints('.u-text-capitalise-none', $text-breakpoints) {text-transform: none;}
 
 
 /**
@@ -132,23 +193,37 @@
 %u-text-colour-white,
 .u-text-colour-white {color: $colour-white;}
 
+@include generate-at-breakpoints('.u-text-colour-white', $text-breakpoints) {color: $colour-white;}
+
 %u-text-colour-black,
 .u-text-colour-black {color: $colour-black;}
+
+@include generate-at-breakpoints('.u-text-colour-black', $text-breakpoints) {color: $colour-black;}
 
 %u-text-colour-brand,
 .u-text-colour-brand {color: $colour-brand;}
 
+@include generate-at-breakpoints('.u-text-colour-brand', $text-breakpoints) {color: $colour-brand;}
+
 %u-text-colour-text-base,
 .u-text-colour-text-base {color: $colour-text-base;}
+
+@include generate-at-breakpoints('.u-text-colour-text-base', $text-breakpoints) {color: $colour-text-base;}
 
 %u-text-colour-text-primary,
 .u-text-colour-text-primary {color: $colour-primary;}
 
+@include generate-at-breakpoints('.u-text-colour-text-primary', $text-breakpoints) {color: $colour-primary;}
+
 %u-text-colour-text-secondary,
 .u-text-colour-text-secondary {color: $colour-secondary;}
 
+@include generate-at-breakpoints('.u-text-colour-text-secondary', $text-breakpoints) {color: $colour-secondary;}
+
 %u-text-colour-inherit,
 .u-text-colour-inherit {color: inherit;}
+
+@include generate-at-breakpoints('.u-text-colour-inherit', $text-breakpoints) {color: inherit;}
 
 
 /**
@@ -174,6 +249,13 @@
   word-wrap: normal; // [2]
 }
 
+@include generate-at-breakpoints('.u-text-truncate', $text-breakpoints) {
+  max-width: 100%; // [1]
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // [2]
+}
 
 /**
  * Prevent whitespace wrapping.
@@ -181,6 +263,8 @@
 
 %u-text-no-wrap,
 .u-text-no-wrap {white-space: nowrap;}
+
+@include generate-at-breakpoints('.u-text-no-wrap', $text-breakpoints) {white-space: nowrap;}
 
 
 /**
@@ -211,6 +295,8 @@
 %u-text-break-word,
 .u-text-break-word {word-wrap: break-word;}
 
+@include generate-at-breakpoints('.u-text-break-word', $text-breakpoints) {word-wrap: break-word;}
+
 
 /**
  * Hyphenation.
@@ -218,3 +304,5 @@
 
 %u-text-hyphenate,
 .u-text-hyphenate {hyphens: auto;}
+
+@include generate-at-breakpoints('.u-text-hyphenate', $text-breakpoints) {hyphens: auto;}
