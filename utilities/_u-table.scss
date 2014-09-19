@@ -56,14 +56,11 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 }
 
 @include generate-at-breakpoints('.u-table', $table-breakpoints) {
-  // Stretch to full width of it's parent
   width: 100%;
 
-  // Some sensible defaults
   caption,
   th {text-align: left;}
 
-  // Cell padding
   th,
   td {@include to-rem(padding, $table-cell-padding-base);}
 }
@@ -109,7 +106,6 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
     @include to-rem(border, $table-border-thickness $table-border-style
       $table-border-colour);
 
-    // No borders for empty cells
     &:empty {border: 0;}
   }
 }

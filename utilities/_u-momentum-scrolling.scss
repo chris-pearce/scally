@@ -15,14 +15,6 @@
  */
 
 
-/**
- * Settings.
- */
-
-// Apply at these breakpoints
-$momentum-scrolling-breakpoints: $default-utility-breakpoints !default;
-
-
 %u-momentum-scrolling,
 .u-momentum-scrolling {
   overflow: auto;
