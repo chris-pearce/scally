@@ -19,6 +19,14 @@
 
 
 /**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$nbfc-breakpoints: $default-utility-breakpoints !default;
+
+
+/**
  * 1. Create a new block formatting context (NBFC).
  * 2. Avoid shrink-wrap behaviour of table-cell.
  *
@@ -32,6 +40,11 @@
   width: 10000px; // [2]
 }
 
+@include generate-at-breakpoints('.u-nbfc', $nbfc-breakpoints) {
+ display: table-cell;
+ width: 10000px;
+}
+
 
 /**
  * Alternate version.
@@ -41,3 +54,7 @@
 
 %u-nbfc-alt,
 .u-nbfc-alt {overflow: hidden;}
+
+@include generate-at-breakpoints('.u-nbfc-alt', $nbfc-breakpoints) {
+  overflow: hidden;
+}
