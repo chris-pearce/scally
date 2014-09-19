@@ -40,7 +40,6 @@
 
 ## Utilities
 
-- README.md.
 - Widths: write up all the classes in the intro comment.
 - State.
 - Cursor.
@@ -83,8 +82,6 @@
   ampersand>.
 
 ### Put to the team
-
-- Have a vendor partial for 3rd party styles e.g. Google Map images (`.gm-style`)?
 
 ### Comment formatting rules
 
