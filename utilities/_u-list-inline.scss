@@ -28,7 +28,7 @@
  * Settings.
  */
 
- // Apply at these breakpoints
+// Apply at these breakpoints
 $list-inline-breakpoints:          $default-utility-breakpoints !default;
 
 // Spacing between list items
@@ -79,6 +79,7 @@ $list-inline-divider-thickness:    1 !default;
 .u-list-inline--spacing-base {
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-base);}
 }
+
 @include generate-at-breakpoints('.u-list-inline--spacing-base',
   $list-inline-breakpoints) {
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-base);}

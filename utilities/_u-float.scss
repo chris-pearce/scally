@@ -15,7 +15,9 @@
  * Settings.
  */
 
+// Apply at these breakpoints
 $float-breakpoints: $default-utility-breakpoints !default;
+
 
 %u-float-left,
 .u-float-left {float: left;}
