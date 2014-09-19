@@ -13,6 +13,10 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$toggle-visibility-breakpoints: $default-utility-breakpoints !default;
+
+// The state class that is powered by JavaScript
 $toggle-visibility-state-class: is-visible !default;
 
 
@@ -22,6 +26,15 @@ $toggle-visibility-state-class: is-visible !default;
 
 %u-toggle-visibility,
 .u-toggle-visibility {
+  // Hide by default
+  display: none;
+
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
+  .no-js & {display: block;}
+}
+
+@include generate-at-breakpoints('.u-toggle-visibility', $toggle-visibility-breakpoints) {
   // Hide by default
   display: none;
 
@@ -42,6 +55,11 @@ $toggle-visibility-state-class: is-visible !default;
   .no-js & {display: inline;}
 }
 
+@include generate-at-breakpoints('.u-toggle-visibility--inline', $toggle-visibility-breakpoints) {
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
+  .no-js & {display: inline;}
+}
 
 /**
  * Modifier: for `inline-block` elements.
@@ -49,6 +67,12 @@ $toggle-visibility-state-class: is-visible !default;
 
 %u-toggle-visibility--inline-block,
 .u-toggle-visibility--inline-block {
+  // Show via state class and for non-JavaScript
+  &.#{$toggle-visibility-state-class},
+  .no-js & {display: inline-block;}
+}
+
+@include generate-at-breakpoints('.u-toggle-visibility--inline-block', $toggle-visibility-breakpoints) {
   // Show via state class and for non-JavaScript
   &.#{$toggle-visibility-state-class},
   .no-js & {display: inline-block;}
