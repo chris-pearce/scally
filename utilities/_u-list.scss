@@ -52,10 +52,8 @@ $list-bullet-ordered:                   decimal !default;
 }
 
 @include generate-at-breakpoints('.u-list', $list-breakpoints) {
-  // Default bottom spacing
   @include to-rem(margin-bottom, $list-indent);
 
-  // Left indent including nested lists
   &,
   ul,
   ol {@include to-rem(margin-left, $list-indent);}

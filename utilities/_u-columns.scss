@@ -47,8 +47,7 @@ $column-divider-colour:       $colour-text-base !default;
   @include to-rem(column-gap, $column-gap-base);
 }
 
-@include generate-at-breakpoints('.u-columns',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns', $column-breakpoints) {
   column-count: 2;
   @include to-rem(column-gap, $column-gap-base);
 }
@@ -62,8 +61,7 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--three,
 .u-columns--three {column-count: 3;}
 
-@include generate-at-breakpoints('.u-columns--three',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--three', $column-breakpoints) {
   column-count: 3;
 }
 
@@ -71,8 +69,7 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--four,
 .u-columns--four {column-count: 4;}
 
-@include generate-at-breakpoints('.u-columns--four',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--four', $column-breakpoints) {
   column-count: 4;
 }
 
@@ -80,8 +77,7 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--five,
 .u-columns--five {column-count: 5;}
 
-@include generate-at-breakpoints('.u-columns--five',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--five', $column-breakpoints) {
   column-count: 5;
 }
 
@@ -89,8 +85,7 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--six,
 .u-columns--six {column-count: 6;}
 
-@include generate-at-breakpoints('.u-columns--six',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--six', $column-breakpoints) {
   column-count: 6;
 }
 
@@ -103,8 +98,8 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--gutter-tiny,
 .u-columns--gutter-tiny {@include to-rem(column-gap, $column-gap-tiny);}
 
-@include generate-at-breakpoints('.u-columns--gutter-tiny',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--gutter-tiny', $column-breakpoints
+  ) {
   @include to-rem(column-gap, $column-gap-tiny);
 }
 
@@ -112,8 +107,8 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--gutter-small,
 .u-columns--gutter-small {@include to-rem(column-gap, $column-gap-small);}
 
-@include generate-at-breakpoints('.u-columns--gutter-small',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--gutter-small', $column-breakpoints
+  ) {
   @include to-rem(column-gap, $column-gap-small);
 }
 
@@ -121,8 +116,8 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--gutter-large,
 .u-columns--gutter-large {@include to-rem(column-gap, $column-gap-large);}
 
-@include generate-at-breakpoints('.u-columns--gutter-large',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--gutter-large', $column-breakpoints
+  ) {
   @include to-rem(column-gap, $column-gap-large);
 }
 
@@ -130,8 +125,8 @@ $column-divider-colour:       $colour-text-base !default;
 %u-columns--gutter-huge,
 .u-columns--gutter-huge {@include to-rem(column-gap, $column-gap-huge);}
 
-@include generate-at-breakpoints('.u-columns--gutter-huge',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--gutter-huge', $column-breakpoints
+  ) {
   @include to-rem(column-gap, $column-gap-huge);
 }
 
@@ -144,8 +139,7 @@ $column-divider-colour:       $colour-text-base !default;
 .u-columns--divider {@include to-rem(column-rule, $column-divider-thickness
   $column-divider-style $column-divider-colour);}
 
-@include generate-at-breakpoints('.u-columns--divider',
-  $column-breakpoints) {
+@include generate-at-breakpoints('.u-columns--divider', $column-breakpoints) {
   @include to-rem(column-rule, $column-divider-thickness $column-divider-style
     $column-divider-colour);
 }

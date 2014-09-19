@@ -34,8 +34,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   overflow: hidden;
 }
 
-@include generate-at-breakpoints('.u-flex-embed',
-  $flex-embed-breakpoints) {
+@include generate-at-breakpoints('.u-flex-embed', $flex-embed-breakpoints) {
   display: block;
   position: relative;
   overflow: hidden;

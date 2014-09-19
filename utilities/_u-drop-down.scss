@@ -54,8 +54,7 @@ $drop-down-touch-support-class:   is-touch !default;
 %u-drop-down,
 .u-drop-down {position: relative;} // [1]
 
-@include generate-at-breakpoints('.u-drop-down',
-  $drop-down-breakpoints) {
+@include generate-at-breakpoints('.u-drop-down', $drop-down-breakpoints) {
   position: relative;
 }
 

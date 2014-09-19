@@ -30,10 +30,6 @@
 $link-complex-breakpoints: $default-utility-breakpoints !default;
 
 
-/**
- * The actual link.
- */
-
 %u-link-complex,
 .u-link-complex {
 	&,
@@ -44,8 +40,7 @@ $link-complex-breakpoints: $default-utility-breakpoints !default;
 	}
 }
 
-@include generate-at-breakpoints('.u-link-complex',
-  $link-complex-breakpoints) {
+@include generate-at-breakpoints('.u-link-complex', $link-complex-breakpoints) {
   &,
   &:hover,
   &:focus {

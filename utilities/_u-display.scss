@@ -35,24 +35,22 @@ $display-js-is-off-class:		no-js !default;
 %u-display-block,
 .u-display-block {display: block;}
 
-@include generate-at-breakpoints('.u-display-block',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-block', $display-breakpoints) {
   display: block;
 }
 
 %u-display-inline,
 .u-display-inline {display: inline;}
 
-@include generate-at-breakpoints('.u-display-inline',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-inline', $display-breakpoints) {
   display: inline;
 }
 
 %u-display-inline-block,
 .u-display-inline-block {display: inline-block;}
 
-@include generate-at-breakpoints('.u-display-inline-block',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-inline-block', $display-breakpoints
+  ) {
   display: inline-block;
 }
 
@@ -64,24 +62,23 @@ $display-js-is-off-class:		no-js !default;
 %u-display-table,
 .u-display-table {display: table;}
 
-@include generate-at-breakpoints('.u-display-table',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-table', $display-breakpoints) {
   display: table;
 }
 
 %u-display-table-row,
 .u-display-table-row {display: table-row;}
 
-@include generate-at-breakpoints('.u-display-table-row',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-table-row', $display-breakpoints
+  ) {
   display: table-row;
 }
 
 %u-display-table-cell,
 .u-display-table-cell {display: table-cell;}
 
-@include generate-at-breakpoints('.u-display-table-cell',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-table-cell', $display-breakpoints
+  ) {
   display: table-cell;
 }
 
@@ -93,8 +90,7 @@ $display-js-is-off-class:		no-js !default;
 %u-display-inherit,
 .u-display-inherit {display: inherit;}
 
-@include generate-at-breakpoints('.u-display-inherit',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-inherit', $display-breakpoints) {
   display: inherit;
 }
 
@@ -109,8 +105,7 @@ $display-js-is-off-class:		no-js !default;
 	visibility: hidden;
 }
 
-@include generate-at-breakpoints('.u-hide',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide', $display-breakpoints) {
   display: none;
 	visibility: hidden;
 }
@@ -123,8 +118,7 @@ $display-js-is-off-class:		no-js !default;
 %u-hide-invisible,
 .u-hide-invisible {visibility: hidden;}
 
-@include generate-at-breakpoints('.u-hide-invisible',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide-invisible', $display-breakpoints) {
 	visibility: hidden;
 }
 
@@ -152,8 +146,7 @@ $display-js-is-off-class:		no-js !default;
 	&.legend {left: $off-screen-distance;}
 }
 
-@include generate-at-breakpoints('.u-hide-visually',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide-visually', $display-breakpoints) {
 	position: absolute;
 	height: 1px;
 	width: 1px;

@@ -38,8 +38,7 @@ $divider-style:         solid !default;
     $divider-color);
 }
 
-@include generate-at-breakpoints('.u-divider-bottom',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-divider-bottom', $display-breakpoints) {
   @include to-rem(border-bottom, $divider-thickness $divider-style
     $divider-color);
 }
@@ -54,7 +53,6 @@ $divider-style:         solid !default;
   @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
 }
 
-@include generate-at-breakpoints('.u-divider-top',
-  $display-breakpoints) {
+@include generate-at-breakpoints('.u-divider-top', $display-breakpoints) {
   @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
 }
