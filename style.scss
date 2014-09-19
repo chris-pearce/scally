@@ -11,13 +11,6 @@
  * principle. Any custom styles *SHOULD NOT* be added or modified in Scally
  * directly, but added in your project master stylesheet (this stylesheet).
  * This also allows the framework to be updated seamlessly via Bower.
- *
- * CONTENTS
- *
- * Core...................
- * Layout.................
- * Components.............
- * Utilities..............
  */
 
 
@@ -30,7 +23,7 @@
  * Your project-specific settings (Sass variables).
  */
 
-//@import "settings";
+@import "settings";
 
 
 
@@ -43,8 +36,13 @@
  * definitely should, so your CSS is as lean as possible, then import via each
  * of Scally's sections e.g. Layout or at the individual partial level. If you
  * only want specific partials then grab the relevant `@import` from the
- * relevant file and update the path. If you're being selective then make sure
- * to import in the correct order which is specified below.
+ * relevant file and update the path.
+ *
+ * N.B. the order specified below must always be maintained or Scally will
+ * break.
+ *
+ * N.B. if you're not using Bower or you customise where Bower installs then
+ * you'll need to update the `@import` paths accordingly.
  */
 
 
@@ -74,8 +72,6 @@
 
 /**
  * Utilities.
- *
- * N.B. this has to be called last in order to have the highest specificity.
  */
 
 @import "bower_components/scally/utilities";
@@ -87,21 +83,22 @@
    ========================================================================= */
 
 /**
- * Any settings (Sass variables: Core -> Settings) you find set in Scally
- * that you do not wish to keep, simply redefine in your overrides file. This
- * means that if Scally, for example, sets your `$font-size` at `16px` and you
- * wish it to be `14px`, simply redeclare it in your overrides file. Scally
- * ignores its own settings in favour of using your own, so you can completely
- * modify how Scally works without ever having to alter the framework itself.
- *
- * N.B. make sure to declare your overrides here and do not use the `!default`
- * keyword.
+ * Any settings you find set in Scally that you do not wish to keep, simply
+ * redefine in your overrides file. This means that if Scally, for example,
+ * sets your `$font-size` at `16px` and you wish it to be `14px`, simply
+ * redeclare it in your overrides file. Scally ignores its own settings in
+ * favour of using your own, so you can completely modify how Scally works
+ * without ever having to alter the framework itself.
  */
 
-//@import "overrides";
+@import "overrides";
 
 
 
 
 /* Your Styles
    ========================================================================= */
+
+/**
+ * Import your project specific partials :)
+ */
