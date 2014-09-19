@@ -30,7 +30,7 @@ $momentum-scrolling-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-momentum-scrolling',
-  $momentum-scrolling-breakpoints) {
+$momentum-scrolling-breakpoints) {
  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }

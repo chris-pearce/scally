@@ -42,9 +42,9 @@ $new-block-formatting-context-breakpoints: $default-utility-breakpoints
 }
 
 @include generate-at-breakpoints('.u-nbfc',
-  $new-block-formatting-context-breakpoints) {
+$new-block-formatting-context-breakpoints) {
  display: table-cell; // [1]
-  width: 10000px; // [2]
+ width: 10000px; // [2]
 }
 
 
