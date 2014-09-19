@@ -351,7 +351,7 @@ $list-inline-divider-thickness:    1 !default;
   @include generate-at-breakpoints(
     '.u-list-inline--spacing-huge.u-list-inline--delimited-slash{bp} > li +
      li:before', $list-inline-breakpoints) {
-    @include to-rem(margin-right, $list-inline-item-spacing-base);
+    @include to-rem(margin-right, $list-inline-item-spacing-huge);
   }
 
 // Comma
