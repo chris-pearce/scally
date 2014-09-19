@@ -86,6 +86,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
     $table-striped-background-cell-colour;}
 }
 
+
 /**
  * Modifier: border.
  */
@@ -113,6 +114,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   }
 }
 
+
 /**
  * Modifier: layout fixed.
  *
@@ -122,8 +124,10 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
 %u-table--fixed,
 .u-table--fixed {table-layout: fixed;}
 
-@include generate-at-breakpoints('.u-table--fixed', $table-breakpoints)
-{table-layout: fixed;}
+@include generate-at-breakpoints('.u-table--fixed', $table-breakpoints) {
+  table-layout: fixed;
+}
+
 
 /**
  * Modifier: small cell padding.
@@ -141,6 +145,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   td {@include to-rem(padding, $table-cell-padding-small);}
 }
 
+
 /**
  * Modifier: large cell padding.
  */
@@ -156,6 +161,7 @@ $table-striped-background-cell-colour:  $table-border-colour !default;
   th,
   td {@include to-rem(padding, $table-cell-padding-large);}
 }
+
 
 /**
  * Modifier: no cell padding.
