@@ -18,7 +18,7 @@
  */
 
 // Apply at these breakpoints
-$alignments-breakpoints: $default-utility-breakpoints !default;
+$u-alignments-breakpoints: $default-utility-breakpoints !default;
 
 
 /**
@@ -31,7 +31,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 .u-align-v-inline-top {vertical-align: top;}
 
 @include generate-at-breakpoints('.u-align-v-inline-top',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   vertical-align: top;
 }
 
@@ -39,7 +39,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 .u-align-v-inline-middle {vertical-align: middle;}
 
 @include generate-at-breakpoints('.u-align-v-inline-middle',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   vertical-align: middle;
 }
 
@@ -47,7 +47,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 .u-align-v-inline-baseline {vertical-align: baseline;}
 
 @include generate-at-breakpoints('.u-align-v-inline-baseline',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   vertical-align: baseline;
 }
 
@@ -55,7 +55,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 .u-align-v-inline-bottom {vertical-align: bottom;}
 
 @include generate-at-breakpoints('.u-align-v-inline-bottom',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   vertical-align: bottom;
 }
 
@@ -63,7 +63,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 .u-align-v-inline-inherit {vertical-align: inherit;}
 
 @include generate-at-breakpoints('.u-align-v-inline-inherit',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   vertical-align: inherit;
 }
 
@@ -82,7 +82,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-align-v-block-middle-flexbox',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-align-v-block-middle-table',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   display: table;
   height: 100%;
   width: 100%;
@@ -110,7 +110,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
   }
 
   @include generate-at-breakpoints('.u-align-v-block-middle-table__inner',
-    $alignments-breakpoints) {
+    $u-alignments-breakpoints) {
     display: table-cell;
     vertical-align: middle;
   }
@@ -124,7 +124,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-align-v-block-middle-position',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -145,7 +145,7 @@ $alignments-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-align-center-block',
-  $alignments-breakpoints) {
+  $u-alignments-breakpoints) {
   display: block; // [1]
   margin-left: auto;
   margin-right: auto;
