@@ -16,7 +16,7 @@
  */
 
 // Apply at these breakpoints
-$link-disguised-breakpoints: $default-utility-breakpoints !default;
+$u-link-disguised-breakpoints: $default-utility-breakpoints !default;
 
 
 %u-link-disguised,
@@ -33,7 +33,7 @@ $link-disguised-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-link-disguised',
-  $link-disguised-breakpoints) {
+  $u-link-disguised-breakpoints) {
   cursor: text;
 
   &,

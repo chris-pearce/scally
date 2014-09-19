@@ -16,16 +16,16 @@
  */
 
 // Apply at these breakpoints
-$divider-breakpoints:   $default-utility-breakpoints !default;
+$u-divider-breakpoints:   $default-utility-breakpoints !default;
 
 // Colour
-$divider-color:         $colour-text-base !default;
+$u-divider-color:         $colour-text-base !default;
 
 // Thickness
-$divider-thickness:     1 !default;
+$u-divider-thickness:     1 !default;
 
 // Style
-$divider-style:         solid !default;
+$u-divider-style:         solid !default;
 
 
 /**
@@ -34,13 +34,13 @@ $divider-style:         solid !default;
 
 %u-divider-bottom,
 .u-divider-bottom {
-  @include to-rem(border-bottom, $divider-thickness $divider-style
-    $divider-color);
+  @include to-rem(border-bottom, $u-divider-thickness $u-divider-style
+    $u-divider-color);
 }
 
-@include generate-at-breakpoints('.u-divider-bottom', $display-breakpoints) {
-  @include to-rem(border-bottom, $divider-thickness $divider-style
-    $divider-color);
+@include generate-at-breakpoints('.u-divider-bottom', $u-display-breakpoints) {
+  @include to-rem(border-bottom, $u-divider-thickness $u-divider-style
+    $u-divider-color);
 }
 
 
@@ -50,9 +50,9 @@ $divider-style:         solid !default;
 
 %u-divider-top,
 .u-divider-top {
-  @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
+  @include to-rem(border-top, $u-divider-thickness $u-divider-style $u-divider-color);
 }
 
-@include generate-at-breakpoints('.u-divider-top', $display-breakpoints) {
-  @include to-rem(border-top, $divider-thickness $divider-style $divider-color);
+@include generate-at-breakpoints('.u-divider-top', $u-display-breakpoints) {
+  @include to-rem(border-top, $u-divider-thickness $u-divider-style $u-divider-color);
 }

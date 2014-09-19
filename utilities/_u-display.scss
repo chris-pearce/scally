@@ -20,12 +20,12 @@
  */
 
 // Apply at these breakpoints
-$display-breakpoints:     	$default-utility-breakpoints !default;
+$u-display-breakpoints:     	$default-utility-breakpoints !default;
 
 // Classes to detect if JavaScript is on or off
-$display-js-is-on-class:    js !default;
+$u-display-js-is-on-class:    js !default;
 
-$display-js-is-off-class:		no-js !default;
+$u-display-js-is-off-class:		no-js !default;
 
 
 /**
@@ -35,21 +35,21 @@ $display-js-is-off-class:		no-js !default;
 %u-display-block,
 .u-display-block {display: block;}
 
-@include generate-at-breakpoints('.u-display-block', $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-block', $u-display-breakpoints) {
   display: block;
 }
 
 %u-display-inline,
 .u-display-inline {display: inline;}
 
-@include generate-at-breakpoints('.u-display-inline', $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-inline', $u-display-breakpoints) {
   display: inline;
 }
 
 %u-display-inline-block,
 .u-display-inline-block {display: inline-block;}
 
-@include generate-at-breakpoints('.u-display-inline-block', $display-breakpoints
+@include generate-at-breakpoints('.u-display-inline-block', $u-display-breakpoints
   ) {
   display: inline-block;
 }
@@ -62,14 +62,14 @@ $display-js-is-off-class:		no-js !default;
 %u-display-table,
 .u-display-table {display: table;}
 
-@include generate-at-breakpoints('.u-display-table', $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-table', $u-display-breakpoints) {
   display: table;
 }
 
 %u-display-table-row,
 .u-display-table-row {display: table-row;}
 
-@include generate-at-breakpoints('.u-display-table-row', $display-breakpoints
+@include generate-at-breakpoints('.u-display-table-row', $u-display-breakpoints
   ) {
   display: table-row;
 }
@@ -77,7 +77,7 @@ $display-js-is-off-class:		no-js !default;
 %u-display-table-cell,
 .u-display-table-cell {display: table-cell;}
 
-@include generate-at-breakpoints('.u-display-table-cell', $display-breakpoints
+@include generate-at-breakpoints('.u-display-table-cell', $u-display-breakpoints
   ) {
   display: table-cell;
 }
@@ -90,7 +90,7 @@ $display-js-is-off-class:		no-js !default;
 %u-display-inherit,
 .u-display-inherit {display: inherit;}
 
-@include generate-at-breakpoints('.u-display-inherit', $display-breakpoints) {
+@include generate-at-breakpoints('.u-display-inherit', $u-display-breakpoints) {
   display: inherit;
 }
 
@@ -105,7 +105,7 @@ $display-js-is-off-class:		no-js !default;
 	visibility: hidden;
 }
 
-@include generate-at-breakpoints('.u-hide', $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide', $u-display-breakpoints) {
   display: none;
 	visibility: hidden;
 }
@@ -118,7 +118,7 @@ $display-js-is-off-class:		no-js !default;
 %u-hide-invisible,
 .u-hide-invisible {visibility: hidden;}
 
-@include generate-at-breakpoints('.u-hide-invisible', $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide-invisible', $u-display-breakpoints) {
 	visibility: hidden;
 }
 
@@ -146,7 +146,7 @@ $display-js-is-off-class:		no-js !default;
 	&.legend {left: $off-screen-distance;}
 }
 
-@include generate-at-breakpoints('.u-hide-visually', $display-breakpoints) {
+@include generate-at-breakpoints('.u-hide-visually', $u-display-breakpoints) {
 	position: absolute;
 	height: 1px;
 	width: 1px;
@@ -178,10 +178,10 @@ $display-js-is-off-class:		no-js !default;
  */
 
 // Hide / show elements if JavaScript is on
-.#{$display-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
+.#{$u-display-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
 
 // Hide / show elements if JavaScript is off
-.#{$display-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
+.#{$u-display-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
 
 
 /**

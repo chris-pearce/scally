@@ -21,7 +21,7 @@
  */
 
 // Apply at these breakpoints
-$flex-embed-breakpoints:    $default-utility-breakpoints !default;
+$u-flex-embed-breakpoints:    $default-utility-breakpoints !default;
 
 /**
  * Base.
@@ -34,7 +34,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   overflow: hidden;
 }
 
-@include generate-at-breakpoints('.u-flex-embed', $flex-embed-breakpoints) {
+@include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-breakpoints) {
   display: block;
   position: relative;
   overflow: hidden;
@@ -56,7 +56,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   }
 
   @include generate-at-breakpoints('.u-flex-embed__ratio',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     display: block;
     padding-bottom: 100%;
     width: 100%;
@@ -72,7 +72,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   .u-flex-embed__ratio--16-by-9 {padding-bottom: 56.25%;}
 
   @include generate-at-breakpoints('.u-flex-embed__ratio--16-by-9',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     padding-bottom: 56.25%;
   }
 
@@ -81,7 +81,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   .u-flex-embed__ratio--3-by-1 {padding-bottom: (100/3)*1%;}
 
   @include generate-at-breakpoints('.u-flex-embed__ratio--3-by-1',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     padding-bottom: (100/3)*1%;
   }
 
@@ -90,7 +90,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   .u-flex-embed__ratio--2-by-1 {padding-bottom: 50%;}
 
   @include generate-at-breakpoints('.u-flex-embed__ratio--2-by-1',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     padding-bottom: 50%;
   }
 
@@ -99,7 +99,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
   .u-flex-embed__ratio--4-by-3 {padding-bottom: 75%;}
 
   @include generate-at-breakpoints('.u-flex-embed__ratio--4-by-3',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     padding-bottom: 75%;
   }
 
@@ -118,7 +118,7 @@ $flex-embed-breakpoints:    $default-utility-breakpoints !default;
 	}
 
   @include generate-at-breakpoints('.u-flex-embed__content',
-    $flex-embed-breakpoints) {
+    $u-flex-embed-breakpoints) {
     position: absolute;
     top: 0;
     left: 0;
