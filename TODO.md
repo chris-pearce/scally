@@ -41,7 +41,6 @@
 
 ## Utilities
 
-- Widths: write up all the classes in the intro comment.
 - State.
 - Cursor.
 - Transition.
