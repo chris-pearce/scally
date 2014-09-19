@@ -37,7 +37,7 @@
  */
 
 // Apply at these breakpoints
-$u-spacing-breakpoints:   $default-utility-breakpoints !default;
+$u-spacing-breakpoints: $default-utility-breakpoints !default;
 
 $u-spacing-base:        $spacing-base !default;
 
@@ -49,6 +49,7 @@ $u-spacing-large:       $spacing-base-plus-half !default;
 
 $u-spacing-huge:        $spacing-double !default;
 
+// Spacing size map used for breakpoint classes
 $u-spacing-sizes: (
   base:  $u-spacing-base,
   tiny:  $u-spacing-tiny,
@@ -57,6 +58,7 @@ $u-spacing-sizes: (
   huge:  $u-spacing-huge
 );
 
+// Mapping between type abbreviation and full css property
 $u-spacing-types: (
   m:    margin,
   m-n:  margin,
