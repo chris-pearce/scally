@@ -28,7 +28,8 @@
  * Settings.
  */
 
-$list-inline-breakpoints: $default-utility-breakpoints !default;
+// Apply at these breakpoints
+$list-inline-breakpoints:          $default-utility-breakpoints !default;
 
 // Spacing between list items
 $list-inline-item-spacing-base:    $spacing-base !default;
@@ -56,6 +57,10 @@ $list-inline-divider-thickness:    1 !default;
   > li {display: inline-block;}
 }
 
+@include generate-at-breakpoints('.u-list-inline', $list-inline-breakpoints) {
+  display: inline-block;
+}
+
 
 /**
  * Modifier: spacing.
@@ -75,10 +80,22 @@ $list-inline-divider-thickness:    1 !default;
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-base);}
 }
 
+@include generate-at-breakpoints('.u-list-inline--spacing-base',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-base);}
+}
+
 // Both sides
 %u-list-inline--spacing-base-both,
 .u-list-inline--spacing-base-both {
-  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-base);}
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-base);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--spacing-both',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-base);}
 }
 
 /**
@@ -91,10 +108,22 @@ $list-inline-divider-thickness:    1 !default;
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-tiny);}
 }
 
+@include generate-at-breakpoints('.u-list-inline--spacing-tiny',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-tiny);}
+}
+
 // Both sides
 %u-list-inline--spacing-tiny-both,
 .u-list-inline--spacing-tiny-both {
-  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-tiny);}
+  > li + li {@include to-rem(margin-left padding-left,
+   $list-inline-item-spacing-tiny);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--spacing-tiny-both',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left padding-left,
+   $list-inline-item-spacing-tiny);}
 }
 
 /**
@@ -107,10 +136,23 @@ $list-inline-divider-thickness:    1 !default;
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-small);}
 }
 
+@include generate-at-breakpoints('.u-list-inline--spacing-small',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-small);}
+}
+
 // Both sides
 %u-list-inline--spacing-small-both,
 .u-list-inline--spacing-small-both {
-  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-small);}
+  > li + li {@include to-rem(margin-left padding-left,
+   $list-inline-item-spacing-small);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--spacing-small-both',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left padding-left,
+   $list-inline-item-spacing-small);}
+
 }
 
 /**
@@ -123,10 +165,22 @@ $list-inline-divider-thickness:    1 !default;
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-large);}
 }
 
+@include generate-at-breakpoints('.u-list-inline--spacing-large',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-large);}
+}
+
 // Both sides
 %u-list-inline--spacing-large-both,
 .u-list-inline--spacing-large-both {
-  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-large);}
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-large);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--spacing-large',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-large);}
 }
 
 /**
@@ -139,10 +193,22 @@ $list-inline-divider-thickness:    1 !default;
   > li + li {@include to-rem(margin-left, $list-inline-item-spacing-huge);}
 }
 
+@include generate-at-breakpoints('.u-list-inline--spacing-huge',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left, $list-inline-item-spacing-huge);}
+}
+
 // Both sides
 %u-list-inline--spacing-huge-both,
 .u-list-inline--spacing-huge-both {
-  > li + li {@include to-rem(margin-left padding-left, $list-inline-item-spacing-huge);}
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-huge);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--spacing-huge-both',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(margin-left padding-left,
+    $list-inline-item-spacing-huge);}
 }
 
 
@@ -154,7 +220,14 @@ $list-inline-divider-thickness:    1 !default;
 
 %u-list-inline--divider,
 .u-list-inline--divider {
-  > li + li {@include to-rem(border-left, $list-inline-divider-thickness solid $list-inline-divider-colour);}
+  > li + li {@include to-rem(border-left, $list-inline-divider-thickness
+    solid $list-inline-divider-colour);}
+}
+
+@include generate-at-breakpoints('.u-list-inline--divider',
+  $list-inline-breakpoints) {
+  > li + li {@include to-rem(border-left, $list-inline-divider-thickness
+    solid $list-inline-divider-colour);}
 }
 
 
@@ -173,6 +246,13 @@ $list-inline-divider-thickness:    1 !default;
   justify-content: space-around;
 }
 
+@include generate-at-breakpoints('.u-list-inline--fit-flexbox',
+  $list-inline-breakpoints) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
 // CSS table method
 %u-list-inline--fit-table,
 .u-list-inline--fit-table {
@@ -180,6 +260,14 @@ $list-inline-divider-thickness:    1 !default;
 	width: 100%;
 
 	> li {display: table-cell;}
+}
+
+@include generate-at-breakpoints('.u-list-inline--fit-table',
+  $list-inline-breakpoints) {
+  display: table;
+  width: 100%;
+
+  > li {display: table-cell;}
 }
 
 
@@ -201,8 +289,10 @@ $list-inline-divider-thickness:    1 !default;
   // When used in conjuction with the Spacing -> Base modifier
 
   // Make the pseudo element `inline-block` as it needs `margin-right`
-  %u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before,
-  .u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li + li:before {display: inline-block;}
+  %u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li +
+  li:before,
+  .u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li +
+  li:before {display: inline-block;}
 
   @include generate-at-breakpoints(
     '.u-list-inline--delimited-slash{bp}[class*="u-list-inline--spacing"] > li
@@ -212,24 +302,65 @@ $list-inline-divider-thickness:    1 !default;
 
   // Base
   %u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before,
-  .u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-base);}
+  .u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before
+  {@include to-rem(margin-right, $list-inline-item-spacing-base);}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--spacing-base.u-list-inline--delimited-slash{bp} > li +
+     li:before', $list-inline-breakpoints) {
+    @include to-rem(margin-right, $list-inline-item-spacing-base);
+  }
 
   // Tiny
   %u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before,
-  .u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-tiny);}
+  .u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before
+  {@include to-rem(margin-right, $list-inline-item-spacing-tiny);}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--spacing-tiny.u-list-inline--delimited-slash{bp} > li +
+     li:before', $list-inline-breakpoints) {
+    @include to-rem(margin-right, $list-inline-item-spacing-tiny);
+  }
 
   // Small
   %u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before,
-  .u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-small);}
+  .u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before
+  {@include to-rem(margin-right, $list-inline-item-spacing-small);}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--spacing-small.u-list-inline--delimited-slash{bp} > li +
+     li:before', $list-inline-breakpoints) {
+    @include to-rem(margin-right, $list-inline-item-spacing-small);
+  }
 
   // Large
   %u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before,
-  .u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-large);}
+  .u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before
+  {@include to-rem(margin-right, $list-inline-item-spacing-large);}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--spacing-large.u-list-inline--delimited-slash{bp} > li +
+     li:before', $list-inline-breakpoints) {
+    @include to-rem(margin-right, $list-inline-item-spacing-large);
+  }
 
   // Huge
   %u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before,
-  .u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before {@include to-rem(margin-right, $list-inline-item-spacing-huge);}
+  .u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before
+  {@include to-rem(margin-right, $list-inline-item-spacing-huge);}
+
+  @include generate-at-breakpoints(
+    '.u-list-inline--spacing-huge.u-list-inline--delimited-slash{bp} > li +
+     li:before', $list-inline-breakpoints) {
+    @include to-rem(margin-right, $list-inline-item-spacing-huge);
+  }
 
 // Comma
 %u-list-inline--delimited-comma > li + li:before,
 .u-list-inline--delimited-comma > li + li:before {content: ",";}
+
+@include generate-at-breakpoints('.u-list-inline--delimited-comma > li +
+  li:before',
+   $list-inline-breakpoints) {
+  content: ",";
+}
