@@ -5,12 +5,8 @@ desc "SASS test tasks"
 namespace :test do
   desc "Compile SASS files"
   task compile: [:cleanup] do
-    content = "@import \"core.scss\";\n"
-    content += "@import \"layout.scss\";\n"
-    content += "@import \"components.scss\";\n"
-    content += "@import \"utilities.scss\";\n"
 
-    File.open('test.scss', 'w') {|f| f.write(content) }
+    File.open('test.scss', 'w')
 
     result = `sass test.scss test.css`
 
