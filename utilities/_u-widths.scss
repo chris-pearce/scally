@@ -5,7 +5,8 @@
 
 /**
  * Apply percentage based width classes with the option to apply at all the
- * main breakpoints.
+ * main breakpoints. All the classes are the same as the Width settings found
+ * in: Core -> Settings -> Widths, so `$one-whole` would be `.one-whole`.
  *
  * N.B. by default we're applying to the Lap breakpoint.
  */
