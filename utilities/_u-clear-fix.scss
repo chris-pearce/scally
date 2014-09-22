@@ -16,7 +16,7 @@
  */
 
 // Apply at these breakpoints
-$clear-fix-breakpoints: $default-utility-breakpoints !default;
+$u-clear-fix-breakpoints: $default-utility-breakpoints !default;
 
 
 %u-clear-fix,
@@ -29,7 +29,7 @@ $clear-fix-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-clear-fix',
-  $clear-fix-breakpoints) {
+  $u-clear-fix-breakpoints) {
   &:after {
     content: "";
     display: table;

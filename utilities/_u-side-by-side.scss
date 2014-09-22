@@ -26,23 +26,23 @@
  */
 
 // Gutter sizes
-$side-by-side-gutter-base:				$spacing-base !default;
+$u-side-by-side-gutter-base:				$spacing-base !default;
 
-$side-by-side-gutter-tiny:    		$spacing-third !default;
+$u-side-by-side-gutter-tiny:    		$spacing-third !default;
 
-$side-by-side-gutter-small:   		$spacing-half !default;
+$u-side-by-side-gutter-small:   		$spacing-half !default;
 
-$side-by-side-gutter-large:   		$spacing-base-plus-half !default;
+$u-side-by-side-gutter-large:   		$spacing-base-plus-half !default;
 
-$side-by-side-gutter-huge:    		$spacing-double !default;
+$u-side-by-side-gutter-huge:    		$spacing-double !default;
 
 // Remove i.e. stack them
-$side-by-side-remove:							true !default;
+$u-side-by-side-remove:							true !default;
 
 // At what breakpoint to remove, can be one of the main breakpoints or any
 // interger
 // N.B. served via a `max-width` media query
-$side-by-side-remove-when:				palm !default;
+$u-side-by-side-remove-when:				palm !default;
 
 
 /**
@@ -63,7 +63,7 @@ $side-by-side-remove-when:				palm !default;
 
 	.u-side-by-side__left {
 	  float: left;
-	  @include to-rem(margin-right, $side-by-side-gutter-base);
+	  @include to-rem(margin-right, $u-side-by-side-gutter-base);
 
 
 	  /**
@@ -71,16 +71,16 @@ $side-by-side-remove-when:				palm !default;
      */
 
     // Tiny
-		.u-side-by-side--gutter-tiny > & {@include to-rem(margin-right, $side-by-side-gutter-tiny);}
+		.u-side-by-side--gutter-tiny > & {@include to-rem(margin-right, $u-side-by-side-gutter-tiny);}
 
 		// Small
-		.u-side-by-side--gutter-small > & {@include to-rem(margin-right, $side-by-side-gutter-small);}
+		.u-side-by-side--gutter-small > & {@include to-rem(margin-right, $u-side-by-side-gutter-small);}
 
 		// Large
-		.u-side-by-side--gutter-large > & {@include to-rem(margin-right, $side-by-side-gutter-large);}
+		.u-side-by-side--gutter-large > & {@include to-rem(margin-right, $u-side-by-side-gutter-large);}
 
 		// Huge
-		.u-side-by-side--gutter-huge > & {@include to-rem(margin-right, $side-by-side-gutter-huge);}
+		.u-side-by-side--gutter-huge > & {@include to-rem(margin-right, $u-side-by-side-gutter-huge);}
 
 
 		/**
@@ -92,20 +92,20 @@ $side-by-side-remove-when:				palm !default;
 		.u-side-by-side--reversed > & {
 			float: right;
 			margin-right: 0;
-			@include to-rem(margin-left, $side-by-side-gutter-base);
+			@include to-rem(margin-left, $u-side-by-side-gutter-base);
 		}
 
 		// Reversed tiny gutter
-		.u-side-by-side--reversed.u-side-by-side--gutter-tiny > & {@include to-rem(margin-left, $side-by-side-gutter-tiny);}
+		.u-side-by-side--reversed.u-side-by-side--gutter-tiny > & {@include to-rem(margin-left, $u-side-by-side-gutter-tiny);}
 
 		// Reversed small gutter
-		.u-side-by-side--reversed.u-side-by-side--gutter-small > & {@include to-rem(margin-left, $side-by-side-gutter-small);}
+		.u-side-by-side--reversed.u-side-by-side--gutter-small > & {@include to-rem(margin-left, $u-side-by-side-gutter-small);}
 
 		// Reversed large gutter
-		.u-side-by-side--reversed.u-side-by-side--gutter-large > & {@include to-rem(margin-left, $side-by-side-gutter-large);}
+		.u-side-by-side--reversed.u-side-by-side--gutter-large > & {@include to-rem(margin-left, $u-side-by-side-gutter-large);}
 
 		// Reversed huge gutter
-		.u-side-by-side--reversed.u-side-by-side--gutter-huge > & {@include to-rem(margin-left, $side-by-side-gutter-huge);}
+		.u-side-by-side--reversed.u-side-by-side--gutter-huge > & {@include to-rem(margin-left, $u-side-by-side-gutter-huge);}
 
 
 		/**
@@ -136,15 +136,15 @@ $side-by-side-remove-when:				palm !default;
    	 * than the rule.
      */
 
-    @if $side-by-side-remove {
+    @if $u-side-by-side-remove {
 
-	    @include respond-to($side-by-side-remove-when, max) {
+	    @include respond-to($u-side-by-side-remove-when, max) {
 
 				.u-side-by-side--remove > & {
 					float: none;
 					margin-right: 0;
 					margin-left: 0;
-					@include to-rem(margin-bottom, $side-by-side-gutter-base);
+					@include to-rem(margin-bottom, $u-side-by-side-gutter-base);
 				}
 
 
@@ -153,16 +153,16 @@ $side-by-side-remove-when:				palm !default;
 			     */
 
 			    // Tiny
-					.u-side-by-side--remove.u-side-by-side--gutter-tiny > & {@include to-rem(margin-bottom, $side-by-side-gutter-tiny);}
+					.u-side-by-side--remove.u-side-by-side--gutter-tiny > & {@include to-rem(margin-bottom, $u-side-by-side-gutter-tiny);}
 
 					// Small
-					.u-side-by-side--remove.u-side-by-side--gutter-small > & {@include to-rem(margin-bottom, $side-by-side-gutter-small);}
+					.u-side-by-side--remove.u-side-by-side--gutter-small > & {@include to-rem(margin-bottom, $u-side-by-side-gutter-small);}
 
 					// Large
-					.u-side-by-side--remove.u-side-by-side--gutter-large > & {@include to-rem(margin-bottom, $side-by-side-gutter-large);}
+					.u-side-by-side--remove.u-side-by-side--gutter-large > & {@include to-rem(margin-bottom, $u-side-by-side-gutter-large);}
 
 					// Huge
-					.u-side-by-side--remove.u-side-by-side--gutter-huge > & {@include to-rem(margin-bottom, $side-by-side-gutter-huge);}
+					.u-side-by-side--remove.u-side-by-side--gutter-huge > & {@include to-rem(margin-bottom, $u-side-by-side-gutter-huge);}
 
 
 					/**

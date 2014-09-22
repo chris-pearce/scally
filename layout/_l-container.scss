@@ -18,11 +18,11 @@
  * Settings.
  */
 
-$container-width:           92% !default;
+$l-container-width:           92% !default;
 
-$container-minimum-width:   220 !default;
+$l-container-minimum-width:   220 !default;
 
-$container-maximum-width:   1600 !default;
+$l-container-maximum-width:   1600 !default;
 
 
 /**
@@ -30,9 +30,9 @@ $container-maximum-width:   1600 !default;
  */
 
 .l-container {
-  width: $container-width;
-  @include to-rem(min-width, $container-minimum-width);
-  @include to-rem(max-width, $container-maximum-width);
+  width: $l-container-width;
+  @include to-rem(min-width, $l-container-minimum-width);
+  @include to-rem(max-width, $l-container-maximum-width);
   margin: 0 auto;
 
   // Print

@@ -21,20 +21,20 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$grid-pull: false !default;
+$l-grid-pull: false !default;
 
 // Apply pull classes at specific breakpoints
-$breakpoints-for-grid-pull-classes: (lap) !default;
+$l-breakpoints-for-grid-pull-classes: (lap) !default;
 
 
 /**
  * Generate all the pull classes.
  */
 
-@if $grid-pull {
+@if $l-grid-pull {
 
   @include generate-percentage-classes-at-breakpoints(
-    $breakpoints-for-grid-pull-classes,
+    $l-breakpoints-for-grid-pull-classes,
     $scally-type: "l",
     $class-name: "pull",
     $css-property: "right"

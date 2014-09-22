@@ -16,7 +16,7 @@
  */
 
 // Apply at these breakpoints
-$image-replacement-breakpoints: $default-utility-breakpoints !default;
+$u-image-replacement-breakpoints: $default-utility-breakpoints !default;
 
 
 %u-image-replacement,
@@ -34,7 +34,7 @@ $image-replacement-breakpoints: $default-utility-breakpoints !default;
 }
 
 @include generate-at-breakpoints('.u-image-replacement',
-  $image-replacement-breakpoints) {
+  $u-image-replacement-breakpoints) {
   background-color: transparent;
   border: 0;
   overflow: hidden;
@@ -56,6 +56,6 @@ $image-replacement-breakpoints: $default-utility-breakpoints !default;
 .u-image-replacement-alt {text-indent: $off-screen-distance;}
 
 @include generate-at-breakpoints('.u-image-replacement-alt',
-  $image-replacement-breakpoints) {
+  $u-image-replacement-breakpoints) {
   text-indent: $off-screen-distance;
 }

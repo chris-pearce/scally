@@ -23,23 +23,23 @@
  */
 
 // Gutter sizes
-$side-by-side-alt-gutter-base:				$spacing-base !default;
+$u-side-by-side-alt-gutter-base:				$spacing-base !default;
 
-$side-by-side-alt-gutter-tiny:    		$spacing-third !default;
+$u-side-by-side-alt-gutter-tiny:    		$spacing-third !default;
 
-$side-by-side-alt-gutter-small:   		$spacing-half !default;
+$u-side-by-side-alt-gutter-small:   		$spacing-half !default;
 
-$side-by-side-alt-gutter-large:   		$spacing-base-plus-half !default;
+$u-side-by-side-alt-gutter-large:   		$spacing-base-plus-half !default;
 
-$side-by-side-alt-gutter-huge:    		$spacing-double !default;
+$u-side-by-side-alt-gutter-huge:    		$spacing-double !default;
 
 // Remove i.e. stack them
-$side-by-side-alt-remove:							true !default;
+$u-side-by-side-alt-remove:							true !default;
 
 // At what breakpoint to remove, can be one of the main breakpoints or any
 // interger
 // N.B. served via a `max-width` media query
-$side-by-side-alt-remove-when:				palm !default;
+$u-side-by-side-alt-remove-when:				palm !default;
 
 
 
@@ -96,9 +96,9 @@ $side-by-side-alt-remove-when:				palm !default;
  * 		a stacked layout.
  */
 
-@if $side-by-side-alt-remove {
+@if $u-side-by-side-alt-remove {
 
-	@include respond-to($side-by-side-alt-remove-when, max) {
+	@include respond-to($u-side-by-side-alt-remove-when, max) {
 		.u-side-by-side-alt--remove {direction: ltr;} // [1]
 	}
 
@@ -145,9 +145,9 @@ $side-by-side-alt-remove-when:				palm !default;
    	 * Modifier: remove.
      */
 
-    @if $side-by-side-alt-remove {
+    @if $u-side-by-side-alt-remove {
 
-			@include respond-to($side-by-side-alt-remove-when, max) {
+			@include respond-to($u-side-by-side-alt-remove-when, max) {
 				.u-side-by-side-alt--remove > & {display: block;}
 			}
 
@@ -163,7 +163,7 @@ $side-by-side-alt-remove-when:				palm !default;
 	 */
 
 	.u-side-by-side-alt__left {
-	  @include to-rem(padding-right, $side-by-side-alt-gutter-base);
+	  @include to-rem(padding-right, $u-side-by-side-alt-gutter-base);
 
 
 	  /**
@@ -171,16 +171,16 @@ $side-by-side-alt-remove-when:				palm !default;
      */
 
     // Tiny
-		.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right, $side-by-side-alt-gutter-tiny);}
+		.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-tiny);}
 
 		// Small
-		.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-right, $side-by-side-alt-gutter-small);}
+		.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-small);}
 
 		// Large
-		.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-right, $side-by-side-alt-gutter-large);}
+		.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-large);}
 
 		// Huge
-		.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right, $side-by-side-alt-gutter-huge);}
+		.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-huge);}
 
 
 		/**
@@ -191,20 +191,20 @@ $side-by-side-alt-remove-when:				palm !default;
 
 		.u-side-by-side-alt--reversed > & {
 			padding-right: 0; // [1]
-			@include to-rem(padding-left, $side-by-side-alt-gutter-base); // [1]
+			@include to-rem(padding-left, $u-side-by-side-alt-gutter-base); // [1]
 		}
 
 		// Reversed tiny gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-left, $side-by-side-alt-gutter-tiny);}
+		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-tiny);}
 
 		// Reversed small gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-left, $side-by-side-alt-gutter-small);}
+		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-small);}
 
 		// Reversed large gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-left, $side-by-side-alt-gutter-large);}
+		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-large);}
 
 		// Reversed huge gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-left, $side-by-side-alt-gutter-huge);}
+		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-huge);}
 
 
 		/**
@@ -223,14 +223,14 @@ $side-by-side-alt-remove-when:				palm !default;
    	 * Modifier: remove.
      */
 
-    @if $side-by-side-alt-remove {
+    @if $u-side-by-side-alt-remove {
 
-	    @include respond-to($side-by-side-alt-remove-when, max) {
+	    @include respond-to($u-side-by-side-alt-remove-when, max) {
 
 				.u-side-by-side-alt--remove > & {
 					padding-right: 0;
 					padding-left: 0;
-					@include to-rem(margin-bottom, $side-by-side-alt-gutter-base);
+					@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-base);
 				}
 
 
@@ -239,16 +239,16 @@ $side-by-side-alt-remove-when:				palm !default;
 			     */
 
 			    // Tiny
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-tiny > & {@include to-rem(margin-bottom, $side-by-side-alt-gutter-tiny);}
+					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-tiny > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-tiny);}
 
 					// Small
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-small > & {@include to-rem(margin-bottom, $side-by-side-alt-gutter-small);}
+					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-small > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-small);}
 
 					// Large
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-large > & {@include to-rem(margin-bottom, $side-by-side-alt-gutter-large);}
+					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-large > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-large);}
 
 					// Huge
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-huge > & {@include to-rem(margin-bottom, $side-by-side-alt-gutter-huge);}
+					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-huge > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-huge);}
 
 
 					/**
@@ -278,9 +278,9 @@ $side-by-side-alt-remove-when:				palm !default;
 		   	 * Bring back responsive images for stacked version.
 		     */
 
-		    @if $side-by-side-alt-remove {
+		    @if $u-side-by-side-alt-remove {
 
-					@include respond-to($side-by-side-alt-remove-when, max) {
+					@include respond-to($u-side-by-side-alt-remove-when, max) {
 						& {max-width: 100%;}
 					}
 

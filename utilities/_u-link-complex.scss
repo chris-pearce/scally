@@ -27,7 +27,7 @@
  */
 
 // Apply at these breakpoints
-$link-complex-breakpoints: $default-utility-breakpoints !default;
+$u-link-complex-breakpoints: $default-utility-breakpoints !default;
 
 
 %u-link-complex,
@@ -40,7 +40,7 @@ $link-complex-breakpoints: $default-utility-breakpoints !default;
 	}
 }
 
-@include generate-at-breakpoints('.u-link-complex', $link-complex-breakpoints) {
+@include generate-at-breakpoints('.u-link-complex', $u-link-complex-breakpoints) {
   &,
   &:hover,
   &:focus {
@@ -65,7 +65,7 @@ $link-complex-breakpoints: $default-utility-breakpoints !default;
   }
 
   @include generate-at-breakpoints('.u-link-complex__target',
-    $link-complex-breakpoints) {
+    $u-link-complex-breakpoints) {
 		color: $colour-link;
 
 		&:hover,

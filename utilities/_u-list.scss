@@ -21,19 +21,19 @@
  */
 
 // Apply at these breakpoints
-$list-breakpoints:                      $default-utility-breakpoints !default;
+$u-list-breakpoints:                      $default-utility-breakpoints !default;
 
 // Indent
-$list-indent:                           $spacing-base !default;
+$u-list-indent:                           $spacing-base !default;
 
 // Bullets
-$list-bullet-unordered-base:            disc !default;
+$u-list-bullet-unordered-base:            disc !default;
 
-$list-bullet-unordered-nested-once:     circle !default;
+$u-list-bullet-unordered-nested-once:     circle !default;
 
-$list-bullet-unordered-nested-twice:    square !default;
+$u-list-bullet-unordered-nested-twice:    square !default;
 
-$list-bullet-ordered:                   decimal !default;
+$u-list-bullet-ordered:                   decimal !default;
 
 
 /**
@@ -48,15 +48,15 @@ $list-bullet-ordered:                   decimal !default;
   // Left indent including nested lists
   &,
   ul,
-  ol {@include to-rem(margin-left, $list-indent);}
+  ol {@include to-rem(margin-left, $u-list-indent);}
 }
 
-@include generate-at-breakpoints('.u-list', $list-breakpoints) {
-  @include to-rem(margin-bottom, $list-indent);
+@include generate-at-breakpoints('.u-list', $u-list-breakpoints) {
+  @include to-rem(margin-bottom, $u-list-indent);
 
   &,
   ul,
-  ol {@include to-rem(margin-left, $list-indent);}
+  ol {@include to-rem(margin-left, $u-list-indent);}
 }
 
 
@@ -71,18 +71,18 @@ $list-bullet-ordered:                   decimal !default;
 
 // Unordered lists
 %ul.u-list,
-ul.u-list {list-style-type: $list-bullet-unordered-base;}
+ul.u-list {list-style-type: $u-list-bullet-unordered-base;}
 
-@include generate-at-breakpoints('ul.u-list', $list-breakpoints) {
-  list-style-type: $list-bullet-unordered-base;
+@include generate-at-breakpoints('ul.u-list', $u-list-breakpoints) {
+  list-style-type: $u-list-bullet-unordered-base;
 }
 
 // Ordered lists
 %ol.u-list,
-ol.u-list {list-style-type: $list-bullet-ordered;}
+ol.u-list {list-style-type: $u-list-bullet-ordered;}
 
-@include generate-at-breakpoints('ol.u-list', $list-breakpoints) {
-  list-style-type: $list-bullet-ordered;
+@include generate-at-breakpoints('ol.u-list', $u-list-breakpoints) {
+  list-style-type: $u-list-bullet-ordered;
 }
 
   // Nested lists
@@ -93,28 +93,28 @@ ol.u-list {list-style-type: $list-bullet-ordered;}
 
     // Unordered lists
     ul {
-      list-style-type: $list-bullet-unordered-nested-once;
+      list-style-type: $u-list-bullet-unordered-nested-once;
 
-      ul {list-style-type: $list-bullet-unordered-nested-twice;}
+      ul {list-style-type: $u-list-bullet-unordered-nested-twice;}
     }
 
     // Ordered lists
-    ol {list-style-type: $list-bullet-ordered;}
+    ol {list-style-type: $u-list-bullet-ordered;}
   }
 
   // Nested lists
-  @each $list-type in (ul ol) {
-    @include generate-at-breakpoints("#{$list-type}.u-list{bp}",
-      $list-breakpoints) {
+  @each $u-list-type in (ul ol) {
+    @include generate-at-breakpoints("#{$u-list-type}.u-list{bp}",
+      $u-list-breakpoints) {
 
       // Unordered lists
       ul {
-        list-style-type: $list-bullet-unordered-nested-once;
+        list-style-type: $u-list-bullet-unordered-nested-once;
 
-        ul {list-style-type: $list-bullet-unordered-nested-twice;}
+        ul {list-style-type: $u-list-bullet-unordered-nested-twice;}
       }
 
       // Ordered lists
-      ol {list-style-type: $list-bullet-ordered;}
+      ol {list-style-type: $u-list-bullet-ordered;}
     }
   }

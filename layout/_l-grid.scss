@@ -46,15 +46,15 @@
 $friendly-box-model: false !default;
 
 // Gutter sizes
-$grid-gutter-base:    $spacing-base !default;
+$l-grid-gutter-base:    $spacing-base !default;
 
-$grid-gutter-tiny:    $spacing-third !default;
+$l-grid-gutter-tiny:    $spacing-third !default;
 
-$grid-gutter-small:   $spacing-half !default;
+$l-grid-gutter-small:   $spacing-half !default;
 
-$grid-gutter-large:   $spacing-base-plus-half !default;
+$l-grid-gutter-large:   $spacing-base-plus-half !default;
 
-$grid-gutter-huge:    $spacing-double !default;
+$l-grid-gutter-huge:    $spacing-double !default;
 
 
 /**
@@ -65,7 +65,7 @@ $grid-gutter-huge:    $spacing-double !default;
 
 .grid {
 	// Negative `margin-left` to negate the columns gutters
-	@include to-rem(margin-left, -$grid-gutter-base);
+	@include to-rem(margin-left, -$l-grid-gutter-base);
   display: block; // [1]
 
 	// Clear fix
@@ -86,7 +86,7 @@ $grid-gutter-huge:    $spacing-double !default;
 
   .grid__item {
     float: left; // [1]
-    @include to-rem(padding-left, $grid-gutter-base); // [2]
+    @include to-rem(padding-left, $l-grid-gutter-base); // [2]
     width: 100%; // [3]
 
     @if $friendly-box-model == false {
@@ -113,9 +113,9 @@ $grid-gutter-huge:    $spacing-double !default;
  */
 
 .grid--gutter-tiny {
-  @include to-rem(margin-left, -$grid-gutter-tiny);
+  @include to-rem(margin-left, -$l-grid-gutter-tiny);
 
-  > .grid__item {@include to-rem(padding-left, $grid-gutter-tiny);}
+  > .grid__item {@include to-rem(padding-left, $l-grid-gutter-tiny);}
 }
 
 
@@ -124,9 +124,9 @@ $grid-gutter-huge:    $spacing-double !default;
  */
 
 .grid--gutter-small {
-	@include to-rem(margin-left, -$grid-gutter-small);
+	@include to-rem(margin-left, -$l-grid-gutter-small);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-small);}
+	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
 }
 
 
@@ -135,9 +135,9 @@ $grid-gutter-huge:    $spacing-double !default;
  */
 
 .grid--gutter-large {
-	@include to-rem(margin-left, -$grid-gutter-large);
+	@include to-rem(margin-left, -$l-grid-gutter-large);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-large);}
+	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
 }
 
 
@@ -146,9 +146,9 @@ $grid-gutter-huge:    $spacing-double !default;
  */
 
 .grid--gutter-huge {
-	@include to-rem(margin-left, -$grid-gutter-huge);
+	@include to-rem(margin-left, -$l-grid-gutter-huge);
 
-	> .grid__item {@include to-rem(padding-left, $grid-gutter-huge);}
+	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
 }
 
 

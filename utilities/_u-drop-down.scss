@@ -36,13 +36,13 @@
  */
 
 // Apply at these breakpoints
-$drop-down-breakpoints:           $default-utility-breakpoints !default;
+$u-drop-down-breakpoints:           $default-utility-breakpoints !default;
 
 // The state class that is powered by JavaScript
-$drop-down-state-class:           is-visible !default;
+$u-drop-down-state-class:           is-visible !default;
 
 // Class that is used to identify touch support
-$drop-down-touch-support-class:   is-touch !default;
+$u-drop-down-touch-support-class:   is-touch !default;
 
 
 /**
@@ -54,7 +54,7 @@ $drop-down-touch-support-class:   is-touch !default;
 %u-drop-down,
 .u-drop-down {position: relative;} // [1]
 
-@include generate-at-breakpoints('.u-drop-down', $drop-down-breakpoints) {
+@include generate-at-breakpoints('.u-drop-down', $u-drop-down-breakpoints) {
   position: relative;
 }
 
@@ -72,12 +72,12 @@ $drop-down-touch-support-class:   is-touch !default;
 
     // Show the drop down via the JavaScript powered state class and the
     // optional `:hover` pseudo class.
-    &.#{$drop-down-state-class},
+    &.#{$u-drop-down-state-class},
     .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
   }
 
   @include generate-at-breakpoints('.u-drop-down__target',
-    $drop-down-breakpoints) {
+    $u-drop-down-breakpoints) {
     display: none;
     position: absolute;
     top: 100%;
@@ -85,7 +85,7 @@ $drop-down-touch-support-class:   is-touch !default;
 
     // Show the drop down via the JavaScript powered state class and the
     // optional `:hover` pseudo class.
-    &.#{$drop-down-state-class},
+    &.#{$u-drop-down-state-class},
     .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
   }
 
@@ -97,11 +97,11 @@ $drop-down-touch-support-class:   is-touch !default;
    * (typically the `html` element) if touch is supported.
    */
 
-  %#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down,
-  .#{$drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down
+  %#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down,
+  .#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down
   {display: none;}
 
-  @include generate-at-breakpoints('.#{$drop-down-touch-support-class}
-    .u-drop-down--on-hover .u-drop-down', $drop-down-breakpoints) {
+  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class}
+    .u-drop-down--on-hover .u-drop-down', $u-drop-down-breakpoints) {
     display: none;
   }
