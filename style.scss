@@ -93,80 +93,80 @@
  */
 
 // Settings
-@import "core/settings/typography";
+@import "bower_components/scally/core/settings/typography";
 
-@import "core/settings/spacing";
+@import "bower_components/scally/core/settings/spacing";
 
-@import "core/settings/toggles";
+@import "bower_components/scally/core/settings/toggles";
 
-@import "core/settings/breakpoints";
+@import "bower_components/scally/core/settings/breakpoints";
 
-@import "core/settings/widths";
+@import "bower_components/scally/core/settings/widths";
 
-@import "core/settings/colours";
+@import "bower_components/scally/core/settings/colours";
 
-@import "core/settings/positioning";
+@import "bower_components/scally/core/settings/positioning";
 
-@import "core/settings/cosmetics";
+@import "bower_components/scally/core/settings/cosmetics";
 
 // Functions
-@import "core/functions/convert-px-to-em-rem";
+@import "bower_components/scally/core/functions/convert-px-to-em-rem";
 
-@import "core/functions/math-helpers";
+@import "bower_components/scally/core/functions/math-helpers";
 
-@import "core/functions/string-replace";
+@import "bower_components/scally/core/functions/string-replace";
 
 // Mixins
-@import "core/mixins/convert-px-to-em-rem";
+@import "bower_components/scally/core/mixins/convert-px-to-em-rem";
 
-@import "core/mixins/font-size";
+@import "bower_components/scally/core/mixins/font-size";
 
-@import "core/mixins/gradients";
+@import "bower_components/scally/core/mixins/gradients";
 
-@import "core/mixins/media-queries";
+@import "bower_components/scally/core/mixins/media-queries";
 
-@import "core/mixins/generate-at-breakpoints";
+@import "bower_components/scally/core/mixins/generate-at-breakpoints";
 
-@import "core/mixins/generate-percentage-classes-at-breakpoints";
+@import "bower_components/scally/core/mixins/generate-percentage-classes-at-breakpoints";
 
-@import "core/mixins/retina-bg-image";
+@import "bower_components/scally/core/mixins/retina-bg-image";
 
-@import "core/mixins/target-browsers";
+@import "bower_components/scally/core/mixins/target-browsers";
 
-@import "core/mixins/target-headings";
+@import "bower_components/scally/core/mixins/target-headings";
 
 // Normalize
-@import "core/normalize";
+@import "bower_components/scally/core/normalize";
 
 // Reset
-@import "core/reset";
+@import "bower_components/scally/core/reset";
 
 // Debug
-@import "core/debug";
+@import "bower_components/scally/core/debug";
 
 // Base
-@import "core/base/root";
+@import "bower_components/scally/core/base/root";
 
-@import "core/base/abbreviation";
+@import "bower_components/scally/core/base/abbreviation";
 
-@import "core/base/forms";
+@import "bower_components/scally/core/base/forms";
 
-@import "core/base/headings";
+@import "bower_components/scally/core/base/headings";
 
-@import "core/base/horizontal-rule";
+@import "bower_components/scally/core/base/horizontal-rule";
 
-@import "core/base/links";
+@import "bower_components/scally/core/base/links";
 
-@import "core/base/media";
+@import "bower_components/scally/core/base/media";
 
-@import "core/base/paragraphs";
+@import "bower_components/scally/core/base/paragraphs";
 
-@import "core/base/print";
+@import "bower_components/scally/core/base/print";
 
-@import "core/base/viewport";
+@import "bower_components/scally/core/base/viewport";
 
 // Placeholders
-@import "core/placeholders/core-bottom-spacing";
+@import "bower_components/scally/core/placeholders/core-bottom-spacing";
 
 
 /**
@@ -174,14 +174,14 @@
  */
 
 // Main container
-@import "layout/l-container";
+@import "bower_components/scally/layout/l-container";
 
 // Grid
-@import "layout/l-grid";
+@import "bower_components/scally/layout/l-grid";
 
-@import "layout/l-grid-pull";
+@import "bower_components/scally/layout/l-grid-pull";
 
-@import "layout/l-grid-push";
+@import "bower_components/scally/layout/l-grid-push";
 
 
 /**
@@ -193,57 +193,57 @@
  * UTILITIES.
  */
 
-@import "utilities/u-clear-fix";
+@import "bower_components/scally/utilities/u-clear-fix";
 
-@import "utilities/u-arrow";
+@import "bower_components/scally/utilities/u-arrow";
 
-@import "utilities/u-list";
+@import "bower_components/scally/utilities/u-list";
 
-@import "utilities/u-list-block";
+@import "bower_components/scally/utilities/u-list-block";
 
-@import "utilities/u-list-inline";
+@import "bower_components/scally/utilities/u-list-inline";
 
-@import "utilities/u-text";
+@import "bower_components/scally/utilities/u-text";
 
-@import "utilities/u-widths";
+@import "bower_components/scally/utilities/u-widths";
 
-@import "utilities/u-table";
+@import "bower_components/scally/utilities/u-table";
 
-@import "utilities/u-drop-down";
+@import "bower_components/scally/utilities/u-drop-down";
 
-@import "utilities/u-alignments";
+@import "bower_components/scally/utilities/u-alignments";
 
-@import "utilities/u-toggle-visibility";
+@import "bower_components/scally/utilities/u-toggle-visibility";
 
-@import "utilities/u-image-replacement";
+@import "bower_components/scally/utilities/u-image-replacement";
 
-@import "utilities/u-link-complex";
+@import "bower_components/scally/utilities/u-link-complex";
 
-@import "utilities/u-link-disguised";
+@import "bower_components/scally/utilities/u-link-disguised";
 
-@import "utilities/u-momentum-scrolling";
+@import "bower_components/scally/utilities/u-momentum-scrolling";
 
-@import "utilities/u-float";
+@import "bower_components/scally/utilities/u-float";
 
-@import "utilities/u-new-block-formatting-context";
+@import "bower_components/scally/utilities/u-new-block-formatting-context";
 
-@import "utilities/u-flex-embed";
+@import "bower_components/scally/utilities/u-flex-embed";
 
-@import "utilities/u-side-by-side";
+@import "bower_components/scally/utilities/u-side-by-side";
 
-@import "utilities/u-side-by-side-alt";
+@import "bower_components/scally/utilities/u-side-by-side-alt";
 
-@import "utilities/u-gpu-accelerated";
+@import "bower_components/scally/utilities/u-gpu-accelerated";
 
-@import "utilities/u-position";
+@import "bower_components/scally/utilities/u-position";
 
-@import "utilities/u-display";
+@import "bower_components/scally/utilities/u-display";
 
-@import "utilities/u-spacing";
+@import "bower_components/scally/utilities/u-spacing";
 
-@import "utilities/u-divider";
+@import "bower_components/scally/utilities/u-divider";
 
-@import "utilities/u-columns";
+@import "bower_components/scally/utilities/u-columns";
 
 
 
