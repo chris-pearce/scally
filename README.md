@@ -1,4 +1,4 @@
-![Scally logo](https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png)
+<img src="https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png" width="260">
 
 # Scally framework
 
@@ -12,7 +12,6 @@ An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework
 - Is responsive and built Mobile First.
 - Uses [Sass](http://sass-lang.com/).
 - Built on a [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)-style naming convention.
-- [KSS](http://warpspire.com/kss/) ready.
 
 ## Browser support
 
@@ -25,10 +24,12 @@ An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework
 
 ## Compile Sass
 
-`sass --watch style.scss:style.css --style compressed`
-`sass --watch style.scss:style.css --style expanded`
+Doing a simple sass watch requires you to `cd` into the directory where your `style.scss` lives and run one of the following commands in your terminal:
 
-## Testing
+- `sass --watch style.scss:style.css --style compressed` - minified
+- `sass --watch style.scss:style.css --style expanded` - non-minified
+
+## Build test
 
 `rake test`
 
@@ -45,6 +46,7 @@ Run `scss-lint ./` to lint all .scss files according to [these lint rules](.scss
 - [SUIT CSS](https://github.com/suitcss/suit).
 
 ## Licence
+
 Copyright 2014 Westfield Labs Corporation
 
 Licensed under the [Apache v2.0](https://raw.githubusercontent.com/westfieldlabs/scally/master/LICENSE) licence.

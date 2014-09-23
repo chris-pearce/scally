@@ -2,6 +2,7 @@
   "name": "Scally",
   "version": "0.0.3-355",
   "homepage": "https://github.com/westfieldlabs/scally",
+  "main": "style.scss",
   "authors": [
     "Chris Pearce <cpearce@westfield.com>",
     "Alec Raeside <araeside@westfield.com>",
