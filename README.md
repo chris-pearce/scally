@@ -1,4 +1,4 @@
-![Scally logo](https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png)
+<img src="https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png" width="260">
 
 # Scally framework
 
