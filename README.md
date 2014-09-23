@@ -1,8 +1,8 @@
-![Scally logo](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/UjRDGVI8H0Lsvbw/Rectangle%202%20%2B%20Scally%203.svg)
+![Scally logo](https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png)
 
 # Scally framework
 
->> Has no styling
+An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework
 
 ## Key features
 

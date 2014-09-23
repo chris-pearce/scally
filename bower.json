@@ -3,12 +3,16 @@
   "version": "0.0.3-355",
   "homepage": "https://github.com/westfieldlabs/scally",
   "authors": [
-    "Chris Pearce <CPearce@westfield.com>"
+    "Chris Pearce <cpearce@westfield.com>",
+    "Alec Raeside <araeside@westfield.com>",
+    "Kate Levin <klevin@westfield.com>"
   ],
-  "description": "Scally CSS framework - has no styling",
+  "description": "An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework",
   "keywords": [
+    "scally",
     "css",
     "oocss",
+    "sass",
     "bem"
   ],
   "license": "Apache 2.0",
