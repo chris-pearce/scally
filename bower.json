@@ -16,7 +16,6 @@
     "bem"
   ],
   "license": "Apache 2.0",
-  "private": true,
   "ignore": [
     "**/.*",
     "bower.json",
@@ -24,8 +23,11 @@
     "Rakefile",
     "**/README.md",
     "TODO.md",
-    "overrides.scss",
     "settings.scss",
-    "style.scss"
+    "style.scss",
+    "style-test.scss",
+    "demo-style.css",
+    "demo-styles.scss",
+    "demo.html"
   ]
 }
