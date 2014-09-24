@@ -1,7 +1,6 @@
 # Specific files #
 ###################
 /.gitignore
-/index.html
 /style.css
 /style.css.map
 /style-test.scss

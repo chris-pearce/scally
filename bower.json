@@ -19,16 +19,9 @@
   "license": "Apache 2.0",
   "ignore": [
     "**/.*",
-    "bower.json",
-    "LICENSE",
     "Rakefile",
-    "**/README.md",
     "TODO.md",
     "settings.scss",
-    "style.scss",
-    "style-test.scss",
-    "demo-style.css",
-    "demo-styles.scss",
-    "demo.html"
+    "style.scss"
   ]
 }
