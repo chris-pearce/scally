@@ -2,7 +2,6 @@
 
 ## Global
 
-- Test `z-index` from 'Core'.
 - Website.
 
 
