@@ -4,7 +4,15 @@
 
 
 /**
- * Generate classes which apply styling at different breakpoints.
+ * Generate classes which apply styling at different breakpoints which is fed
+ * from the breakpoints defined here: Core -> Settings -> Breakpoints. The
+ * format of the generated class is:
+ *
+   .[class-selector]-at-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-list-inline-at-lap
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
