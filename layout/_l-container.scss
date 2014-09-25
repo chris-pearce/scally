@@ -18,6 +18,10 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$l-container-breakpoints:    $default-breakpoints !default;
+
+// Widths
 $l-container-width:           92% !default;
 
 $l-container-minimum-width:   220 !default;
@@ -41,6 +45,18 @@ $l-container-maximum-width:   1600 !default;
   }
 }
 
+@include generate-at-breakpoints('.l-container', $l-container-breakpoints) {
+  width: $l-container-width;
+  @include to-rem(min-width, $l-container-minimum-width);
+  @include to-rem(max-width, $l-container-maximum-width);
+  margin: 0 auto;
+
+  // Print
+  @media print {
+    width: auto;
+  }
+}
+
 
 /**
  * Modifier: full bleed.
@@ -51,12 +67,22 @@ $l-container-maximum-width:   1600 !default;
   max-width: none;
 }
 
+@include generate-at-breakpoints('.l-container--full-bleed', $l-container-breakpoints) {
+  width: auto;
+  max-width: none;
+}
+
 
 /**
  * Modifier: not centered.
  */
 
 .l-container--not-centered {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@include generate-at-breakpoints('.l-container--not-centered', $l-container-breakpoints) {
   margin-left: 0;
   margin-right: 0;
 }

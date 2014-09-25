@@ -36,7 +36,7 @@
  */
 
 // Apply at these breakpoints
-$u-drop-down-breakpoints:           $default-utility-breakpoints !default;
+$u-drop-down-breakpoints:           $default-breakpoints !default;
 
 // The state class that is powered by JavaScript
 $u-drop-down-state-class:           is-visible !default;

@@ -14,7 +14,7 @@
  */
 
 // Apply at these breakpoints
-$u-toggle-visibility-breakpoints:   $default-utility-breakpoints !default;
+$u-toggle-visibility-breakpoints:   $default-breakpoints !default;
 
 // The state class that is powered by JavaScript
 $u-toggle-visibility-state-class:   is-visible !default;
