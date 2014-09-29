@@ -123,8 +123,21 @@ legend {
   select {
     @include to-rem(padding, $form-text-input-and-select-padding);
     color: $colour-form-input-text;
-    @include to-rem(border-radius, $border-radius);
-    @include to-rem(border, 1 solid $colour-form-input-border);
+
+    // Apply a border but make it optional
+    @if $form-text-input-and-select-border {
+
+      @include to-rem(border-radius, $border-radius);
+      @include to-rem(border, 1 solid $colour-form-input-border);
+
+    }
+
+    @else {
+
+      border: 0;
+
+    }
+
     background: $colour-form-input-background;
   }
 

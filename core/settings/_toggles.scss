@@ -42,8 +42,8 @@ $disabled-state:                            true !default;
 // Text input and select styles
 $form-text-input-and-select-styles:         true !default;
 
-// Text input and select padding
-$form-text-input-and-select-padding:        $spacing-quarter !default;
+// Apply border for text input and selects
+$form-text-input-and-select-border:         true !default;
 
 // Remove the top inner shadow from iOS inputs
 $remove-top-inner-shadow-from-ios-inputs:   false !default;
