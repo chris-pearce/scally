@@ -1,0 +1,39 @@
+/* ============================================================================
+   @UTILITIES -> LINK NO UNDERLINE
+   ========================================================================= */
+
+
+/**
+ * An underlined link set via `text-decoration: underline;` is a very common
+ * style however they're times when the underline isn't required.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#link-no-underline
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$u-link-no-underline-breakpoints: $default-breakpoints !default;
+
+
+%u-link-no-underline,
+.u-link-no-underline {
+  &,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {text-decoration: none;}
+}
+
+@include generate-at-breakpoints('.u-link-no-underline',
+  $u-link-no-underline-breakpoints) {
+  &,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {text-decoration: none;}
+}
