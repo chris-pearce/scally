@@ -1,0 +1,30 @@
+/* ============================================================================
+   @UTILITIES -> NAKED BUTTON
+   ========================================================================= */
+
+
+/**
+ * Strip away all browser default styles.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#naked-button
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Apply at these breakpoints
+$u-button-naked: $default-breakpoints !default;
+
+
+%u-button-naked,
+.u-button-naked {
+
+}
+
+@include generate-at-breakpoints('.u-button-naked',
+  $u-button-naked) {
+
+}
