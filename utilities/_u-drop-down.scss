@@ -101,7 +101,6 @@ $u-drop-down-touch-support-class:   is-touch !default;
   .#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down
   {display: none;}
 
-  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class}
-    .u-drop-down--on-hover .u-drop-down', $u-drop-down-breakpoints) {
+  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down', $u-drop-down-breakpoints) {
     display: none;
   }
