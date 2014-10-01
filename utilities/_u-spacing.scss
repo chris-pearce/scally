@@ -559,22 +559,74 @@ $u-spacing-types: (
  * Generates all breakpoint classes.
  */
 
+// Spacing size map used for breakpoint classes
+
+/*
+$u-spacing-sizes: (
+  base:  $u-spacing-base,
+  tiny:  $u-spacing-tiny,
+  small: $u-spacing-small,
+  large: $u-spacing-large,
+  huge:  $u-spacing-huge
+);
+*/
+
+
+$u-spacing-types: (
+  m:    margin,
+  m-n:  margin,
+  p:    padding,
+  mt:   margin-top,
+  mr:   margin-right,
+  mb:   margin-bottom,
+  ml:   margin-left,
+  mt-n: margin-top,
+  mr-n: margin-right,
+  mb-n: margin-bottom,
+  ml-n: margin-left,
+  ms:   ('margin-left', 'margin-right'),
+  me:   ('margin-top', 'margin-bottom'),
+  ms-n: ('margin-left', 'margin-right'),
+  me-n: ('margin-top', 'margin-bottom'),
+  pt:   padding-top,
+  pr:   padding-right,
+  pb:   padding-bottom,
+  pl:   padding-left,
+  ps:   'padding-left padding-right',
+  pe:   'padding-top padding-bottom'
+);
 
 @each $abbreviation, $type in $u-spacing-types {
 
   // None
-  .u-s-#{$abbreviation}-none {
-   @include to-rem($type, 0);
-  }
+  .u-s-#{$abbreviation}-none {@include to-rem($type, 0);}
 
   @each $size in (base tiny small large huge) {
     @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
       $u-spacing-breakpoints) {
-      $size-value: map-get($u-spacing-sizes, $size);
+
+      $size-value:    map-get($u-spacing-sizes, $size);
+
+      //$margin-sides:  map-get($u-spacing-types, "ms");
+
+      //str_index($margin-sides);
+
+      // Negative spacing
       @if str_index($abbreviation, '-n') != null {
         $size-value: $size-value * -1;
       }
-      @include to-rem($type, $size-value);
+
+      // @if $abbreviation == $margin-ends {
+      //   @include to-rem($type, $size-value);
+      // }
+
+      // $props: split-string($type, ' ');
+
+      // @each $prop in $type {
+        @include to-rem($type, $size-value);
+      // }
+      // Everything else
+      // @include to-rem($type, $size-value);
     }
   }
 }
