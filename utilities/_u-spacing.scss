@@ -19,7 +19,7 @@
  * 2. Utility name:             spacing [s]
  * 3. Spacing type/direction:   margin [m] / padding [p] | top [t] / right [r]
  *                              / bottom [b] / left [l] / sides [s] / ends [e]
- * 5. Spacing negative:         negative [n] (margin only)
+ * 5. Spacing negative:         negative [n]
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
  *
@@ -50,7 +50,9 @@ $u-spacing-large:       $spacing-base-plus-half !default;
 
 $u-spacing-huge:        $spacing-double !default;
 
-// Spacing size map used for breakpoint classes
+// Maps for the generate at breakpoint mixin
+
+// Spacing size map
 $u-spacing-sizes: (
   base:  $u-spacing-base,
   tiny:  $u-spacing-tiny,
@@ -59,29 +61,66 @@ $u-spacing-sizes: (
   huge:  $u-spacing-huge
 );
 
-// Mapping between type abbreviation and full css property
+// Spacing type map (abbreviation + css property)
 $u-spacing-types: (
-  m:    margin,
-  m-n:  margin,
-  p:    padding,
-  mt:   margin-top,
-  mr:   margin-right,
-  mb:   margin-bottom,
-  ml:   margin-left,
-  mt-n: margin-top,
-  mr-n: margin-right,
-  mb-n: margin-bottom,
-  ml-n: margin-left,
-  ms:   'margin-left margin-right',
-  me:   'margin-top margin-bottom',
-  ms-n: 'margin-left margin-right',
-  me-n: 'margin-top margin-bottom',
-  pt:   padding-top,
-  pr:   padding-right,
-  pb:   padding-bottom,
-  pl:   padding-left,
-  ps:   'padding-left padding-right',
-  pe:   'padding-top padding-bottom'
+
+  // All
+  m:      margin,
+  m-n:    margin,
+  p:      padding,
+  p-n:    padding,
+
+  // Top
+  mt:     margin-top,
+  mt-n:   margin-top,
+  pt:     padding-top,
+  pt-n:   padding-top,
+
+  // Right
+  mr:     margin-right,
+  mr-n:   margin-right,
+  pr:     padding-right,
+  pr-n:   padding-right,
+
+  // Bottom
+  mb:     margin-bottom,
+  mb-n:   margin-bottom,
+  pb:     padding-bottom,
+  pb-n:   padding-bottom,
+
+  // Left
+  ml:     margin-left,
+  ml-n:   margin-left,
+  pl:     padding-left,
+  pl-n:   padding-left,
+
+  // Sides
+  ms:     (margin-left, margin-right),
+  ms-n:   (margin-left, margin-right),
+  ps:     (padding-left, padding-right),
+  ps-n:   (padding-left, padding-right),
+
+  // Ends
+  me:     (margin-top, margin-bottom),
+  me-n:   (margin-top, margin-bottom),
+  pe:     (padding-top, padding-bottom),
+  pe-n:   (padding-top, padding-bottom),
+
+  // None
+  m-none:  margin,
+  p-none:  padding,
+  mt-none: margin-top,
+  pt-none: padding-top,
+  mr-none: margin-right,
+  pr-none: padding-right,
+  mb-none: margin-bottom,
+  pb-none: padding-bottom,
+  ml-none: margin-left,
+  pl-none: padding-left,
+  ms-none: (margin-left, margin-right),
+  ps-none: (padding-left, padding-right),
+  me-none: (margin-top, margin-bottom),
+  pe-none: (padding-top, padding-bottom)
 );
 
 
@@ -115,6 +154,9 @@ $u-spacing-types: (
 %u-s-mt-n-base,
 .u-s-mt-n-base {@include to-rem(margin-top, -$u-spacing-base);}
 
+%u-s-pt-n-base,
+.u-s-pt-n-base {@include to-rem(padding-top, -$u-spacing-base);}
+
 
 // Right
 %u-s-mr-base,
@@ -126,6 +168,9 @@ $u-spacing-types: (
 // Negative
 %u-s-mr-n-base,
 .u-s-mr-n-base {@include to-rem(margin-right, -$u-spacing-base);}
+
+%u-s-pr-n-base,
+.u-s-pr-n-base {@include to-rem(padding-right, -$u-spacing-base);}
 
 
 // Bottom
@@ -139,6 +184,9 @@ $u-spacing-types: (
 %u-s-mb-n-base,
 .u-s-mb-n-base {@include to-rem(margin-bottom, -$u-spacing-base);}
 
+%u-s-pb-n-base,
+.u-s-pb-n-base {@include to-rem(padding-bottom, -$u-spacing-base);}
+
 
 // Left
 %u-s-ml-base,
@@ -150,6 +198,9 @@ $u-spacing-types: (
 // Negative
 %u-s-ml-n-base,
 .u-s-ml-n-base {@include to-rem(margin-left, -$u-spacing-base);}
+
+%u-s-pl-n-base,
+.u-s-pl-n-base {@include to-rem(padding-left, -$u-spacing-base);}
 
 
 // Sides
@@ -163,6 +214,9 @@ $u-spacing-types: (
 %u-s-ms-n-base,
 .u-s-ms-n-base {@include to-rem(margin-left margin-right, -$u-spacing-base);}
 
+%u-s-ps-n-base,
+.u-s-ps-n-base {@include to-rem(padding-left padding-right, -$u-spacing-base);}
+
 
 // Ends
 %u-s-me-base,
@@ -175,12 +229,29 @@ $u-spacing-types: (
 %u-s-me-n-base,
 .u-s-me-n-base {@include to-rem(margin-top margin-bottom, -$u-spacing-base);}
 
+%u-s-pe-n-base,
+.u-s-pe-n-base {@include to-rem(padding-top padding-bottom, -$u-spacing-base);}
+
 
 
 
 /**
  * Tiny.
  */
+
+// All
+%u-s-m-tiny,
+.u-s-m-tiny {@include to-rem(margin, $u-spacing-tiny);}
+
+%u-s-p-tiny,
+.u-s-p-tiny {@include to-rem(padding, $u-spacing-tiny);}
+
+// Negative
+%u-s-m-n-tiny,
+.u-s-m-n-tiny {@include to-rem(margin, -$u-spacing-tiny);}
+
+%u-s-p-n-tiny,
+.u-s-p-n-tiny {@include to-rem(padding, -$u-spacing-tiny);}
 
 
 // Top
@@ -194,6 +265,9 @@ $u-spacing-types: (
 %u-s-mt-n-tiny,
 .u-s-mt-n-tiny {@include to-rem(margin-top, -$u-spacing-tiny);}
 
+%u-s-pt-n-tiny,
+.u-s-pt-n-tiny {@include to-rem(padding-top, -$u-spacing-tiny);}
+
 
 // Right
 %u-s-mr-tiny,
@@ -205,6 +279,9 @@ $u-spacing-types: (
 // Negative
 %u-s-mr-n-tiny,
 .u-s-mr-n-tiny {@include to-rem(margin-right, -$u-spacing-tiny);}
+
+%u-s-pr-n-tiny,
+.u-s-pr-n-tiny {@include to-rem(padding-right, -$u-spacing-tiny);}
 
 
 // Bottom
@@ -218,6 +295,9 @@ $u-spacing-types: (
 %u-s-mb-n-tiny,
 .u-s-mb-n-tiny {@include to-rem(margin-bottom, -$u-spacing-tiny);}
 
+%u-s-pb-n-tiny,
+.u-s-pb-n-tiny {@include to-rem(padding-bottom, -$u-spacing-tiny);}
+
 
 // Left
 %u-s-ml-tiny,
@@ -229,6 +309,9 @@ $u-spacing-types: (
 // Negative
 %u-s-ml-n-tiny,
 .u-s-ml-n-tiny {@include to-rem(margin-left, -$u-spacing-tiny);}
+
+%u-s-pl-n-tiny,
+.u-s-pl-n-tiny {@include to-rem(padding-left, -$u-spacing-tiny);}
 
 
 // Sides
@@ -242,6 +325,9 @@ $u-spacing-types: (
 %u-s-ms-n-tiny,
 .u-s-ms-n-tiny {@include to-rem(margin-left margin-right, -$u-spacing-tiny);}
 
+%u-s-ps-n-tiny,
+.u-s-ps-n-tiny {@include to-rem(padding-left padding-right, -$u-spacing-tiny);}
+
 
 // Ends
 %u-s-me-tiny,
@@ -254,12 +340,29 @@ $u-spacing-types: (
 %u-s-me-n-tiny,
 .u-s-me-n-tiny {@include to-rem(margin-top margin-bottom, -$u-spacing-tiny);}
 
+%u-s-pe-n-tiny,
+.u-s-pe-n-tiny {@include to-rem(padding-top padding-bottom, -$u-spacing-tiny);}
+
 
 
 
 /**
  * Small.
  */
+
+// All
+%u-s-m-small,
+.u-s-m-small {@include to-rem(margin, $u-spacing-small);}
+
+%u-s-p-small,
+.u-s-p-small {@include to-rem(padding, $u-spacing-small);}
+
+// Negative
+%u-s-m-n-small,
+.u-s-m-n-small {@include to-rem(margin, -$u-spacing-small);}
+
+%u-s-p-n-small,
+.u-s-p-n-small {@include to-rem(padding, -$u-spacing-small);}
 
 
 // Top
@@ -273,6 +376,9 @@ $u-spacing-types: (
 %u-s-mt-n-small,
 .u-s-mt-n-small {@include to-rem(margin-top, -$u-spacing-small);}
 
+%u-s-pt-n-small,
+.u-s-pt-n-small {@include to-rem(padding-top, -$u-spacing-small);}
+
 
 // Right
 %u-s-mr-small,
@@ -284,6 +390,9 @@ $u-spacing-types: (
 // Negative
 %u-s-mr-n-small,
 .u-s-mr-n-small {@include to-rem(margin-right, -$u-spacing-small);}
+
+%u-s-pr-n-small,
+.u-s-pr-n-small {@include to-rem(padding-right, -$u-spacing-small);}
 
 
 // Bottom
@@ -297,6 +406,9 @@ $u-spacing-types: (
 %u-s-mb-n-small,
 .u-s-mb-n-small {@include to-rem(margin-bottom, -$u-spacing-small);}
 
+%u-s-pb-n-small,
+.u-s-pb-n-small {@include to-rem(padding-bottom, -$u-spacing-small);}
+
 
 // Left
 %u-s-ml-small,
@@ -308,6 +420,9 @@ $u-spacing-types: (
 // Negative
 %u-s-ml-n-small,
 .u-s-ml-n-small {@include to-rem(margin-left, -$u-spacing-small);}
+
+%u-s-pl-n-small,
+.u-s-pl-n-small {@include to-rem(padding-left, -$u-spacing-small);}
 
 
 // Sides
@@ -321,6 +436,9 @@ $u-spacing-types: (
 %u-s-ms-n-small,
 .u-s-ms-n-small {@include to-rem(margin-left margin-right, -$u-spacing-small);}
 
+%u-s-ps-n-small,
+.u-s-ps-n-small {@include to-rem(padding-left padding-right, -$u-spacing-small);}
+
 
 // Ends
 %u-s-me-small,
@@ -333,12 +451,29 @@ $u-spacing-types: (
 %u-s-me-n-small,
 .u-s-me-n-small {@include to-rem(margin-top margin-bottom, -$u-spacing-small);}
 
+%u-s-pe-n-small,
+.u-s-pe-n-small {@include to-rem(padding-top padding-bottom, -$u-spacing-small);}
+
 
 
 
 /**
  * Large.
  */
+
+// All
+%u-s-m-large,
+.u-s-m-large {@include to-rem(margin, $u-spacing-large);}
+
+%u-s-p-large,
+.u-s-p-large {@include to-rem(padding, $u-spacing-large);}
+
+// Negative
+%u-s-m-n-large,
+.u-s-m-n-large {@include to-rem(margin, -$u-spacing-large);}
+
+%u-s-p-n-large,
+.u-s-p-n-large {@include to-rem(padding, -$u-spacing-large);}
 
 
 // Top
@@ -352,6 +487,9 @@ $u-spacing-types: (
 %u-s-mt-n-large,
 .u-s-mt-n-large {@include to-rem(margin-top, -$u-spacing-large);}
 
+%u-s-pt-n-large,
+.u-s-pt-n-large {@include to-rem(padding-top, -$u-spacing-large);}
+
 
 // Right
 %u-s-mr-large,
@@ -363,6 +501,9 @@ $u-spacing-types: (
 // Negative
 %u-s-mr-n-large,
 .u-s-mr-n-large {@include to-rem(margin-right, -$u-spacing-large);}
+
+%u-s-pr-n-large,
+.u-s-pr-n-large {@include to-rem(padding-right, -$u-spacing-large);}
 
 
 // Bottom
@@ -376,6 +517,9 @@ $u-spacing-types: (
 %u-s-mb-n-large,
 .u-s-mb-n-large {@include to-rem(margin-bottom, -$u-spacing-large);}
 
+%u-s-pb-n-large,
+.u-s-pb-n-large {@include to-rem(padding-bottom, -$u-spacing-large);}
+
 
 // Left
 %u-s-ml-large,
@@ -387,6 +531,9 @@ $u-spacing-types: (
 // Negative
 %u-s-ml-n-large,
 .u-s-ml-n-large {@include to-rem(margin-left, -$u-spacing-large);}
+
+%u-s-pl-n-large,
+.u-s-pl-n-large {@include to-rem(padding-left, -$u-spacing-large);}
 
 
 // Sides
@@ -400,6 +547,9 @@ $u-spacing-types: (
 %u-s-ms-n-large,
 .u-s-ms-n-large {@include to-rem(margin-left margin-right, -$u-spacing-large);}
 
+%u-s-ps-n-large,
+.u-s-ps-n-large {@include to-rem(padding-left padding-right, -$u-spacing-large);}
+
 
 // Ends
 %u-s-me-large,
@@ -412,12 +562,29 @@ $u-spacing-types: (
 %u-s-me-n-large,
 .u-s-me-n-large {@include to-rem(margin-top margin-bottom, -$u-spacing-large);}
 
+%u-s-pe-n-large,
+.u-s-pe-n-large {@include to-rem(padding-top padding-bottom, -$u-spacing-large);}
+
 
 
 
 /**
  * Huge.
  */
+
+// All
+%u-s-m-huge,
+.u-s-m-huge {@include to-rem(margin, $u-spacing-huge);}
+
+%u-s-p-huge,
+.u-s-p-huge {@include to-rem(padding, $u-spacing-huge);}
+
+// Negative
+%u-s-m-n-huge,
+.u-s-m-n-huge {@include to-rem(margin, -$u-spacing-huge);}
+
+%u-s-p-n-huge,
+.u-s-p-n-huge {@include to-rem(padding, -$u-spacing-huge);}
 
 
 // Top
@@ -431,6 +598,9 @@ $u-spacing-types: (
 %u-s-mt-n-huge,
 .u-s-mt-n-huge {@include to-rem(margin-top, -$u-spacing-huge);}
 
+%u-s-pt-n-huge,
+.u-s-pt-n-huge {@include to-rem(padding-top, -$u-spacing-huge);}
+
 
 // Right
 %u-s-mr-huge,
@@ -442,6 +612,9 @@ $u-spacing-types: (
 // Negative
 %u-s-mr-n-huge,
 .u-s-mr-n-huge {@include to-rem(margin-right, -$u-spacing-huge);}
+
+%u-s-pr-n-huge,
+.u-s-pr-n-huge {@include to-rem(padding-right, -$u-spacing-huge);}
 
 
 // Bottom
@@ -455,6 +628,9 @@ $u-spacing-types: (
 %u-s-mb-n-huge,
 .u-s-mb-n-huge {@include to-rem(margin-bottom, -$u-spacing-huge);}
 
+%u-s-pb-n-huge,
+.u-s-pb-n-huge {@include to-rem(padding-bottom, -$u-spacing-huge);}
+
 
 // Left
 %u-s-ml-huge,
@@ -466,6 +642,9 @@ $u-spacing-types: (
 // Negative
 %u-s-ml-n-huge,
 .u-s-ml-n-huge {@include to-rem(margin-left, -$u-spacing-huge);}
+
+%u-s-pl-n-huge,
+.u-s-pl-n-huge {@include to-rem(padding-left, -$u-spacing-huge);}
 
 
 // Sides
@@ -479,6 +658,9 @@ $u-spacing-types: (
 %u-s-ms-n-huge,
 .u-s-ms-n-huge {@include to-rem(margin-left margin-right, -$u-spacing-huge);}
 
+%u-s-ps-n-huge,
+.u-s-ps-n-huge {@include to-rem(padding-left padding-right, -$u-spacing-huge);}
+
 
 // Ends
 %u-s-me-huge,
@@ -490,6 +672,9 @@ $u-spacing-types: (
 // Negative
 %u-s-me-n-huge,
 .u-s-me-n-huge {@include to-rem(margin-top margin-bottom, -$u-spacing-huge);}
+
+%u-s-pe-n-huge,
+.u-s-pe-n-huge {@include to-rem(padding-top padding-bottom, -$u-spacing-huge);}
 
 
 
@@ -539,6 +724,20 @@ $u-spacing-types: (
 .u-s-pl-none {padding-left: 0;}
 
 
+// Sides
+%u-s-ms-none,
+.u-s-ms-none {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+%u-s-ps-none,
+.u-s-ps-none {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
 // Ends
 %u-s-me-none,
 .u-s-me-none {
@@ -548,8 +747,8 @@ $u-spacing-types: (
 
 %u-s-pe-none,
 .u-s-pe-none {
-  padding-left: 0;
-  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 
@@ -559,22 +758,35 @@ $u-spacing-types: (
  * Generates all breakpoint classes.
  */
 
-
 @each $abbreviation, $type in $u-spacing-types {
 
-  // None
-  .u-s-#{$abbreviation}-none {
-   @include to-rem($type, 0);
+  // No spacing classes
+  @if str_index($abbreviation, '-none') != null {
+    @include generate-at-breakpoints(".u-s-#{$abbreviation}",
+        $u-spacing-breakpoints) {
+        @include to-rem($type, 0);
+      }
   }
 
-  @each $size in (base tiny small large huge) {
-    @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
-      $u-spacing-breakpoints) {
-      $size-value: map-get($u-spacing-sizes, $size);
-      @if str_index($abbreviation, '-n') != null {
-        $size-value: $size-value * -1;
+  // Everything else
+  @else {
+
+    // Loop through the sizes
+    @each $size in (base tiny small large huge) {
+      @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
+        $u-spacing-breakpoints) {
+
+        // Get all the sizes
+        $size-value: map-get($u-spacing-sizes, $size);
+
+        // Negative spacing
+        @if str_index($abbreviation, '-n') != null {
+          $size-value: $size-value * -1;
+        }
+
+        // All other spacing
+        @include to-rem($type, $size-value);
       }
-      @include to-rem($type, $size-value);
     }
   }
 }
