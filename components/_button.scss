@@ -1,0 +1,45 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON
+   ========================================================================= */
+
+
+/**
+ * Button component.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#button
+ */
+
+
+/**
+ * Settings.
+ */
+
+
+/**
+ * Base styles most buttons will need. This mostly normalises/resets styles
+ * applied by the browser.
+ *
+ * N.B. normalize.css takes care of a lot of the styles needed for this.
+ *
+ * 1. Prevent button text from being selectable.
+ * 2. Make sure `input` will wrap text across multiple lines.
+ * 3. Allow us to style box model properties.
+ * 4. Line different sized buttons up a little nicer.
+ */
+
+%btn,
+.btn {
+  user-select: none; // [1]
+  white-space: normal; // [2]
+  display: inline-block; // [3]
+  vertical-align: middle; // [4]
+  border: 0;
+  padding: 0;
+  background: transparent;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {text-decoration: none;}
+}
