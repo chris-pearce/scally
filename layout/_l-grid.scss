@@ -43,7 +43,7 @@
 // Here we set a variable assuming that `box-sizing: border-box;` is not set
 // globally. If it has been previously been defined, the following variable
 // will be overriden and will be set to `true`.
-$friendly-box-model: false !default;
+$friendly-box-model:    false !default;
 
 // Gutter sizes
 $l-grid-gutter-base:    $spacing-base !default;
@@ -93,7 +93,7 @@ $l-grid-gutter-huge:    $spacing-double !default;
 
     	box-sizing: border-box; // [4]
 
-    }
+    }//endif
   }
 
 
