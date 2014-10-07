@@ -112,6 +112,9 @@ $friendly-box-model:                      false !default;
  *
  * In addition to the base styles above here we apply the main button styles
  * for your project.
+ *
+ * N.B. we keep the base and main styles separate so that any button can
+ * access the base styles.
  */
 
 %btn-main,
