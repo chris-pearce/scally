@@ -25,6 +25,10 @@
    @include generate-at-breakpoints('.u-demo{bp} li', palm lap, false) {
      vertical-align: top;
    }
+
+   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min, desk max)) {
+     position: fixed;
+   }
  */
 
 
@@ -45,17 +49,29 @@ $mixin-breakpoint-name-placeholder: "{bp}";
 
   @each $breakpoint-name in $breakpoint-names {
 
-    // Palm is a special case where it uses a `max-width` media query
-    $limit: if($breakpoint-name == 'palm', 'max', 'min');
+    $limit: "min";
+    $joiner: "at";
+
+    @if type-of($breakpoint-name) == list {
+      $limit: nth($breakpoint-name, 2);
+      $breakpoint-name: nth($breakpoint-name, 1);
+    } @else {
+      // Palm is a special case where it uses a `max-width` media query
+      $limit: if($breakpoint-name == 'palm', 'max', 'min');
+    }
+
+    @if $limit == max {
+      $joiner: "up-to";
+    }
 
     @include respond-to($breakpoint-name, $limit) {
-      $final-selector: "#{$class}-at-#{$breakpoint-name}";
+      $final-selector: "#{$class}-#{$joiner}-#{$breakpoint-name}";
 
       // Handle complex selectors by replacing a placeholder with the
       // breakpoint suffix
       @if str_index($class, $mixin-breakpoint-name-placeholder) != null {
         $final-selector: str-replace($class, $mixin-breakpoint-name-placeholder,
-         "-at-#{$breakpoint-name}");
+         "-#{$joiner}-#{$breakpoint-name}");
       }
 
       // Output a class which applies the style at a given breakpoint
