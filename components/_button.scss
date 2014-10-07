@@ -29,6 +29,8 @@ $c-btn-background-colour-secondary:       $colour-secondary !default;
 
 $c-btn-foreground-colour:                 $colour-white !default;
 
+$c-btn-foreground-colour-secondary:       $c-btn-foreground-colour !default;
+
 // Padding
 $c-btn-padding-base:                      $spacing-base !default;
 
@@ -165,6 +167,12 @@ $friendly-box-model:                      false !default;
     @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour-secondary);
 
   }// endif
+
+  // Foreground colour
+  &,
+  &:hover,
+  &:focus,
+  &:active {color: $c-btn-foreground-colour-secondary;}
 }
 
 
