@@ -2,7 +2,9 @@
 
 # Scally framework
 
-An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework
+An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework.
+
+**NOTE:** a more detailed README along with a proper web site will be coming shortly.
 
 ## Key features
 
