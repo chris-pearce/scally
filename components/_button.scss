@@ -4,10 +4,10 @@
 
 
 /**
- * Button component.
+ * Button component with a bunch of modifiers.
  *
  * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#button
+ * http://codepen.io/team/westfieldlabs/full/Fvxju#button
  */
 
 
@@ -15,17 +15,72 @@
  * Settings.
  */
 
+// Toggles
+$c-btn-hover-styles:                      true !default;
+
+$c-btn-border:                            false !default;
+
+$c-btn-rounded-corners:                   false !default;
+
+// Colours
+$c-btn-background-colour:                 $colour-primary !default;
+
+$c-btn-background-colour-secondary:       $colour-secondary !default;
+
+$c-btn-foreground-colour:                 $colour-white !default;
+
+// Padding
+$c-btn-padding-base:                      $spacing-base !default;
+
+$c-btn-padding-tiny:                      $spacing-third !default;
+
+$c-btn-padding-small:                     $spacing-half !default;
+
+$c-btn-padding-large:                     $spacing-base-plus-half !default;
+
+$c-btn-padding-huge:                      $spacing-double !default;
+
+// Border
+$c-btn-border-thickness:                  1 !default;
+
+$c-btn-border-style:                      solid !default;
+
+$c-btn-border-colour:                     darken($c-btn-background-colour, 10%)!default;
+
+$c-btn-border-colour-secondary:           darken($c-btn-background-colour-secondary, 10%)!default;
+
+// Rounded corners
+$c-btn-rounded-corners-size:              $border-radius !default;
+
+// Hover/focus styles
+// Simple fade out affect via `opacity`
+$c-btn-hover-opacity-strength:            0.7 !default;
+
+$c-btn-hover-transition-duration:         0.1 !default;
+
+$c-btn-hover-transition-timing-function:  linear !default;
+
+// Box sizing.
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$friendly-box-model:                      false !default;
+
 
 /**
- * Base styles most buttons will need. This mostly normalises/resets styles
- * applied by the browser.
- *
- * N.B. normalize.css takes care of a lot of the styles needed for this.
+ * Base styles most buttons will need.
  *
  * 1. Prevent button text from being selectable.
  * 2. Make sure `input` will wrap text across multiple lines.
  * 3. Allow us to style box model properties.
  * 4. Line different sized buttons up a little nicer.
+ * 5. Correct font family not being inherited in all browsers.
+ * 6. Correct font size not being inherited in all browsers.
+ * 7. Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ *    the UA stylesheet.
+ * 8. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 9. Reset/normalize styles from the UA stylesheet.
  */
 
 %btn,
@@ -34,12 +89,136 @@
   white-space: normal; // [2]
   display: inline-block; // [3]
   vertical-align: middle; // [4]
-  border: 0;
-  padding: 0;
-  background: transparent;
+  font-family: inherit; // [5]
+  font-size: 100%; // [6]
+  line-height: normal; // [7]
+  cursor: pointer; // [8]
+  border: 0; // [9]
+  padding: 0; // [9]
+  margin: 0; // [9]
+  background: transparent; // [9]
 
   &,
   &:hover,
   &:focus,
   &:active {text-decoration: none;}
+}
+
+
+/**
+ * Main.
+ *
+ * In addition to the base styles above here we apply the main button styles
+ * for your project.
+ */
+
+%btn-main,
+.btn-main {
+  text-align: center;
+  background-color: $c-btn-background-colour;
+  @include to-rem(padding, $c-btn-padding-base / 2 $c-btn-padding-base);
+
+  // Apply a border
+  @if $c-btn-border {
+
+    @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+
+  }// endif
+
+  // Apply rounded corners
+  @if $c-btn-rounded-corners {
+
+    @include to-rem(border-radius, $c-btn-rounded-corners-size);
+
+  }// endif
+
+  // Foreground colour
+  &,
+  &:hover,
+  &:focus,
+  &:active {color: $c-btn-foreground-colour;}
+
+  // Apply hover/focus styles
+  @if $c-btn-hover-styles {
+
+    &:hover,
+    &:focus {
+      opacity: $c-btn-hover-opacity-strength;
+      transition: opacity #{$c-btn-hover-transition-duration}s $c-btn-hover-transition-timing-function;
+    }
+
+  }// endif
+}
+
+
+/**
+ * Modifier: secondary colour.
+ */
+
+%btn-main--secondary,
+.btn-main--secondary {
+  background-color: $c-btn-background-colour-secondary;
+
+  // Apply a border
+  @if $c-btn-border {
+
+    @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour-secondary);
+
+  }// endif
+}
+
+
+/**
+ * Modifier: tiny padding.
+ */
+
+%btn-main--tiny,
+.btn-main--tiny {@include to-rem(padding, $c-btn-padding-tiny / 2 $c-btn-padding-tiny);}
+
+
+/**
+ * Modifier: small padding.
+ */
+
+%btn-main--small,
+.btn-main--small {@include to-rem(padding, $c-btn-padding-small / 2 $c-btn-padding-small);}
+
+
+/**
+ * Modifier: large padding.
+ */
+
+%btn-main--large,
+.btn-main--large {@include to-rem(padding, $c-btn-padding-large / 2 $c-btn-padding-large);}
+
+
+/**
+ * Modifier: huge padding.
+ */
+
+%btn-main--huge,
+.btn-main--huge {@include to-rem(padding, $c-btn-padding-huge / 2 $c-btn-padding-huge);}
+
+
+/**
+ * Modifier: full bleed.
+ */
+
+%btn-main--full-bleed,
+.btn-main--full-bleed {
+  display: block;
+  width: 100%;
+
+  @if $friendly-box-model == false {
+
+    /**
+     * Remove paddings so that widths and paddings don’t conflict.
+     *
+     * N.B. if you're applying a border then that will conflict with the width
+     * however Scally can't turn off your border in this case.
+     */
+    padding-right: 0;
+    padding-left: 0;
+
+  }// endif
 }
