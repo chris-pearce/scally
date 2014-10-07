@@ -6,13 +6,21 @@
 /**
  * Generate classes which apply styling at different breakpoints which is fed
  * from the breakpoints defined here: Core -> Settings -> Breakpoints. The
- * format of the generated class is:
+ * format of the generated class with a `min-width` media query is:
  *
-   .[class-selector]-at-[breakpoint]
+   .[class-selector]-from-[breakpoint]
  *
  * E.g.
  *
-   .u-list-inline-at-lap
+   .u-list-inline-from-lap
+ *
+ * The format of the generated class with a `max-width` media query is:
+ *
+   .[class-selector]-up-to-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-list-inline-up-to-lap
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
@@ -22,7 +30,7 @@
      @include font-size($font-size-small);
    }
 
-   @include generate-at-breakpoints('.u-demo{bp} li', palm lap, false) {
+   @include generate-at-breakpoints('.u-demo{bp} li', palm lap) {
      vertical-align: top;
    }
 
@@ -50,7 +58,7 @@ $mixin-breakpoint-name-placeholder: "{bp}";
   @each $breakpoint-name in $breakpoint-names {
 
     $limit: "min";
-    $joiner: "at";
+    $joiner: "from";
 
     @if type-of($breakpoint-name) == list {
       $limit: nth($breakpoint-name, 2);
