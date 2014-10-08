@@ -5,14 +5,22 @@
 
 /**
  * Generate classes which apply styling at different breakpoints which is fed
- * from the breakpoints defined here: Core -> Settings -> Breakpoints. The
- * format of the generated class is:
+ * from the breakpoints defined here: Core -> Settings -> Breakpoints or any custom breakpoint. The
+ * format of the generated class with a `min-width` media query is:
  *
-   .[class-selector]-at-[breakpoint]
+   .[class-selector]-from-[breakpoint]
  *
  * E.g.
  *
-   .u-list-inline-at-lap
+   .u-list-inline-from-lap
+ *
+ * The format of the generated class with a `max-width` media query is:
+ *
+   .[class-selector]-up-to-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-list-inline-up-to-lap
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
@@ -22,8 +30,12 @@
      @include font-size($font-size-small);
    }
 
-   @include generate-at-breakpoints('.u-demo{bp} li', palm lap, false) {
+   @include generate-at-breakpoints('.u-demo{bp} li', palm lap) {
      vertical-align: top;
+   }
+
+   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min, desk max)) {
+     position: fixed;
    }
  */
 
@@ -45,17 +57,29 @@ $mixin-breakpoint-name-placeholder: "{bp}";
 
   @each $breakpoint-name in $breakpoint-names {
 
-    // Palm is a special case where it uses a `max-width` media query
-    $limit: if($breakpoint-name == 'palm', 'max', 'min');
+    $limit: "min";
+    $joiner: "from";
+
+    @if type-of($breakpoint-name) == list {
+      $limit: nth($breakpoint-name, 2);
+      $breakpoint-name: nth($breakpoint-name, 1);
+    } @else {
+      // Palm is a special case where it uses a `max-width` media query
+      $limit: if($breakpoint-name == 'palm', 'max', 'min');
+    }
+
+    @if $limit == max {
+      $joiner: "up-to";
+    }
 
     @include respond-to($breakpoint-name, $limit) {
-      $final-selector: "#{$class}-at-#{$breakpoint-name}";
+      $final-selector: "#{$class}-#{$joiner}-#{$breakpoint-name}";
 
       // Handle complex selectors by replacing a placeholder with the
       // breakpoint suffix
       @if str_index($class, $mixin-breakpoint-name-placeholder) != null {
         $final-selector: str-replace($class, $mixin-breakpoint-name-placeholder,
-         "-at-#{$breakpoint-name}");
+         "-#{$joiner}-#{$breakpoint-name}");
       }
 
       // Output a class which applies the style at a given breakpoint
