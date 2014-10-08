@@ -5,7 +5,7 @@
 
 /**
  * Generate classes which apply styling at different breakpoints which is fed
- * from the breakpoints defined here: Core -> Settings -> Breakpoints. The
+ * from the breakpoints defined here: Core -> Settings -> Breakpoints or any custom breakpoint. The
  * format of the generated class with a `min-width` media query is:
  *
    .[class-selector]-from-[breakpoint]
