@@ -37,6 +37,10 @@
    @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min, desk max)) {
      position: fixed;
    }
+
+   @include generate-at-breakpoints('.u-position-fixed', 400 max) {
+     position: fixed;
+   }
  */
 
 
