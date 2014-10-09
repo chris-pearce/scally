@@ -15,11 +15,11 @@
  * trigger in the DOM as it relies on an adjacent sibling selector.
  *
  * @markup
-   <div class="drop-down">
+   <div class="u-drop-down">
      <!-- The trigger -->
-     <button class="drop-down__trigger"> ... </button>
+     <button class="u-drop-down__trigger"> ... </button>
      <!-- The target -->
-     <div class="drop-down__target"> ... </div>
+     <div class="u-drop-down__target"> ... </div>
    </div>
  *
  * @consideration
