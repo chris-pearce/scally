@@ -5,8 +5,9 @@
 
 /**
  * Generate classes which apply styling at different breakpoints which is fed
- * from the breakpoints defined here: Core -> Settings -> Breakpoints or any custom breakpoint. The
- * format of the generated class with a `min-width` media query is:
+ * from the breakpoints defined here: Core -> Settings -> Breakpoints or any
+ * custom breakpoint. The format of the generated class with a `min-width`
+ * media query is:
  *
    .[class-selector]-from-[breakpoint]
  *
@@ -22,6 +23,12 @@
  *
    .u-list-inline-up-to-lap
  *
+ * If the selector is more complex that a single class, and the `-from-lap`
+ * suffix should not be appended to the end of the selector, the put `{bp}` in
+ * the selector where it should be inserted
+ *
+ * Passing in '.u-demo{bp} li' will produce the selector `.u-demo-from-lap li`
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
  *
@@ -34,7 +41,8 @@
      vertical-align: top;
    }
 
-   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min, desk max)) {
+   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min,
+    desk max)) {
      position: fixed;
    }
 
