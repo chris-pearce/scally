@@ -23,11 +23,12 @@
  *
    .u-list-inline-up-to-lap
  *
- * If the selector is more complex that a single class, and the `-from-lap`
- * suffix should not be appended to the end of the selector, the put `{bp}` in
- * the selector where it should be inserted
+ * Sometimes the selector that is passed into this mixin is more complex than a
+ * single class. In these cases the `-from-lap` or `-up-to-` suffix usually 
+ * should not be appended to the end of the selector. To account for this, 
+ * put `{bp}` in the selector where `-from-lap` or `-up-to-` should be inserted.
  *
- * Passing in '.u-demo{bp} li' will produce the selector `.u-demo-from-lap li`
+ * Passing in `'.u-demo{bp} li'` will produce the selector `.u-demo-from-lap li`
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
