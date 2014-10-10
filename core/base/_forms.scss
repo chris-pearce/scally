@@ -45,6 +45,17 @@ input[type="search"] {appearance: none;}
 
 
 /**
+ * Remove rounded corners that iOS applies to all `input` buttons.
+ * See: https://github.com/necolas/normalize.css/issues/178
+ */
+
+input[type="submit"],
+input[type="button"],
+input[type="image"],
+input[type="reset"] {border-radius: 0;}
+
+
+/**
  * Fix for IE and old versions of some other browsers not wrapping text within
  * a `legend`.
  *

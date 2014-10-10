@@ -133,7 +133,10 @@ $friendly-box-model:                      false !default;
   // Apply rounded corners
   @if $c-btn-rounded-corners {
 
-    @include to-rem(border-radius, $c-btn-rounded-corners-size);
+    // N.B. ugly hack in order to increase the specificty to override the
+    // removal of rounded corners that iOS applies set in Core -> Base ->
+    // Forms
+    html & {@include to-rem(border-radius, $c-btn-rounded-corners-size);}
 
   }// endif
 
