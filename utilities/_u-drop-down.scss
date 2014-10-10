@@ -11,9 +11,6 @@
  * trigger is selected. There is also a version for showing the drop down via
  * the `:hover` pseudo class which is turned off for touch devices.
  *
- * N.B. for the hover version to work the target must come directly after the
- * trigger in the DOM as it relies on an adjacent sibling selector.
- *
  * @markup
    <div class="u-drop-down">
      <!-- The trigger -->
@@ -21,10 +18,6 @@
      <!-- The target -->
      <div class="u-drop-down__target"> ... </div>
    </div>
- *
- * @consideration
- * This could be redundant as other utilities could do handle this e.g.
- * Position / Toggle Visibility?
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#drop-down
@@ -70,10 +63,10 @@ $u-drop-down-touch-support-class:   is-touch !default;
     top: 100%;
     left: 0;
 
-    // Show the drop down via the JavaScript powered state class and the
-    // optional `:hover` pseudo class.
+    // Show the drop down via the JavaScript powered state class and via the
+    // hover modifier.
     &.#{$u-drop-down-state-class},
-    .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
+    .u-drop-down--on-hover:hover & {display: block;}
   }
 
   @include generate-at-breakpoints('.u-drop-down__target',
@@ -83,10 +76,8 @@ $u-drop-down-touch-support-class:   is-touch !default;
     top: 100%;
     left: 0;
 
-    // Show the drop down via the JavaScript powered state class and the
-    // optional `:hover` pseudo class.
     &.#{$u-drop-down-state-class},
-    .u-drop-down--on-hover .u-drop-down__trigger:hover + & {display: block;}
+    .u-drop-down--on-hover:hover & {display: block;}
   }
 
 
@@ -97,10 +88,10 @@ $u-drop-down-touch-support-class:   is-touch !default;
    * (typically the `html` element) if touch is supported.
    */
 
-  %#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down,
-  .#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down
+  %#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target,
+  .#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target
   {display: none;}
 
-  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down', $u-drop-down-breakpoints) {
+  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target', $u-drop-down-breakpoints) {
     display: none;
   }
