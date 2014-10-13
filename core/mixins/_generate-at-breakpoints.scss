@@ -5,8 +5,9 @@
 
 /**
  * Generate classes which apply styling at different breakpoints which is fed
- * from the breakpoints defined here: Core -> Settings -> Breakpoints or any custom breakpoint. The
- * format of the generated class with a `min-width` media query is:
+ * from the breakpoints defined here: Core -> Settings -> Breakpoints or any
+ * custom breakpoint. The format of the generated class with a `min-width`
+ * media query is:
  *
    .[class-selector]-from-[breakpoint]
  *
@@ -22,6 +23,13 @@
  *
    .u-list-inline-up-to-lap
  *
+ * Sometimes the selector that is passed into this mixin is more complex than a
+ * single class. In these cases the `-from-lap` or `-up-to-` suffix usually 
+ * should not be appended to the end of the selector. To account for this, 
+ * put `{bp}` in the selector where `-from-lap` or `-up-to-` should be inserted.
+ *
+ * Passing in `'.u-demo{bp} li'` will produce the selector `.u-demo-from-lap li`
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz
  *
@@ -34,7 +42,12 @@
      vertical-align: top;
    }
 
-   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min, desk max)) {
+   @include generate-at-breakpoints('.u-position-fixed', (400 max, 401 min,
+    desk max)) {
+     position: fixed;
+   }
+
+   @include generate-at-breakpoints('.u-position-fixed', 400 max) {
      position: fixed;
    }
  */
@@ -53,6 +66,17 @@ $mixin-breakpoint-name-placeholder: "{bp}";
 
   @if $breakpoint-names == all {
     $breakpoint-names: $all-breakpoint-names;
+  }
+
+  // When specifying one breakpoint with an explicit limit, it needs to be
+  // casted into a list of lists, otherwise the mixin assumes there is a
+  // breakpoint called 'max'
+  @if length($breakpoint-names) == 2 and
+      index((min max), nth($breakpoint-names, 2)) {
+    $breakpoint-names-copy: $breakpoint-names;
+    $breakpoint-names: ();
+    $breakpoint-names: append($breakpoint-names, (nth($breakpoint-names-copy, 1)
+     nth($breakpoint-names-copy, 2)) );
   }
 
   @each $breakpoint-name in $breakpoint-names {
