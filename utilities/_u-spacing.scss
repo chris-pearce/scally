@@ -42,6 +42,8 @@ $u-spacing-breakpoints: $default-breakpoints !default;
 // Spacing sizes
 $u-spacing-base:        $spacing-base !default;
 
+$u-spacing-micro:       $spacing-micro !default;
+
 $u-spacing-tiny:        $spacing-third !default;
 
 $u-spacing-small:       $spacing-half !default;
@@ -55,6 +57,7 @@ $u-spacing-huge:        $spacing-double !default;
 // Spacing size map
 $u-spacing-sizes: (
   base:  $u-spacing-base,
+  micro: $u-spacing-micro,
   tiny:  $u-spacing-tiny,
   small: $u-spacing-small,
   large: $u-spacing-large,
@@ -231,6 +234,117 @@ $u-spacing-types: (
 
 %u-s-pe-n-base,
 .u-s-pe-n-base {@include to-rem(padding-top padding-bottom, -$u-spacing-base);}
+
+
+
+
+/**
+ * Micro.
+ */
+
+// All
+%u-s-m-micro,
+.u-s-m-micro {@include to-rem(margin, $u-spacing-micro);}
+
+%u-s-p-micro,
+.u-s-p-micro {@include to-rem(padding, $u-spacing-micro);}
+
+// Negative
+%u-s-m-n-micro,
+.u-s-m-n-micro {@include to-rem(margin, -$u-spacing-micro);}
+
+%u-s-p-n-micro,
+.u-s-p-n-micro {@include to-rem(padding, -$u-spacing-micro);}
+
+
+// Top
+%u-s-mt-micro,
+.u-s-mt-micro {@include to-rem(margin-top, $u-spacing-micro);}
+
+%u-s-pt-micro,
+.u-s-pt-micro {@include to-rem(padding-top, $u-spacing-micro);}
+
+// Negative
+%u-s-mt-n-micro,
+.u-s-mt-n-micro {@include to-rem(margin-top, -$u-spacing-micro);}
+
+%u-s-pt-n-micro,
+.u-s-pt-n-micro {@include to-rem(padding-top, -$u-spacing-micro);}
+
+
+// Right
+%u-s-mr-micro,
+.u-s-mr-micro {@include to-rem(margin-right, $u-spacing-micro);}
+
+%u-s-pr-micro,
+.u-s-pr-micro {@include to-rem(padding-right, $u-spacing-micro);}
+
+// Negative
+%u-s-mr-n-micro,
+.u-s-mr-n-micro {@include to-rem(margin-right, -$u-spacing-micro);}
+
+%u-s-pr-n-micro,
+.u-s-pr-n-micro {@include to-rem(padding-right, -$u-spacing-micro);}
+
+
+// Bottom
+%u-s-mb-micro,
+.u-s-mb-micro {@include to-rem(margin-bottom, $u-spacing-micro);}
+
+%u-s-pb-micro,
+.u-s-pb-micro {@include to-rem(padding-bottom, $u-spacing-micro);}
+
+// Negative
+%u-s-mb-n-micro,
+.u-s-mb-n-micro {@include to-rem(margin-bottom, -$u-spacing-micro);}
+
+%u-s-pb-n-micro,
+.u-s-pb-n-micro {@include to-rem(padding-bottom, -$u-spacing-micro);}
+
+
+// Left
+%u-s-ml-micro,
+.u-s-ml-micro {@include to-rem(margin-left, $u-spacing-micro);}
+
+%u-s-pl-micro,
+.u-s-pl-micro {@include to-rem(padding-left, $u-spacing-micro);}
+
+// Negative
+%u-s-ml-n-micro,
+.u-s-ml-n-micro {@include to-rem(margin-left, -$u-spacing-micro);}
+
+%u-s-pl-n-micro,
+.u-s-pl-n-micro {@include to-rem(padding-left, -$u-spacing-micro);}
+
+
+// Sides
+%u-s-ms-micro,
+.u-s-ms-micro {@include to-rem(margin-left margin-right, $u-spacing-micro);}
+
+%u-s-ps-micro,
+.u-s-ps-micro {@include to-rem(padding-left padding-right, $u-spacing-micro);}
+
+// Negative
+%u-s-ms-n-micro,
+.u-s-ms-n-micro {@include to-rem(margin-left margin-right, -$u-spacing-micro);}
+
+%u-s-ps-n-micro,
+.u-s-ps-n-micro {@include to-rem(padding-left padding-right, -$u-spacing-micro);}
+
+
+// Ends
+%u-s-me-micro,
+.u-s-me-micro {@include to-rem(margin-top margin-bottom, $u-spacing-micro);}
+
+%u-s-pe-micro,
+.u-s-pe-micro {@include to-rem(padding-top padding-bottom, $u-spacing-micro);}
+
+// Negative
+%u-s-me-n-micro,
+.u-s-me-n-micro {@include to-rem(margin-top margin-bottom, -$u-spacing-micro);}
+
+%u-s-pe-n-micro,
+.u-s-pe-n-micro {@include to-rem(padding-top padding-bottom, -$u-spacing-micro);}
 
 
 
