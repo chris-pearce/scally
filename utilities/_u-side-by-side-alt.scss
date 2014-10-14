@@ -289,23 +289,3 @@ $u-side-by-side-alt-remove-when:				palm !default;
 			}
 
   }
-
-
-
-
-  /**
-   * Right side.
-   *
-   * 1. Forces the right side to take up all remaining space.
-   */
-
-	.u-side-by-side-alt__right {
-		width: 100%; // [1]
-
-
-		/**
-		 * Modifier: shrink-wrap.
-		 */
-
-		.u-side-by-side-alt--shrink-wrap & {width: auto;}
-	}
