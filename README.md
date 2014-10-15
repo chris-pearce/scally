@@ -122,16 +122,6 @@ Would become:
 This section is where you pull in all of your project-specific styles
 
 
-## Design Principles
-
-Coming soon.
-
-
-## Framework Overview
-
-Coming soon.
-
-
 ## Dependencies
 
 Scally has one dependency which is [**Autoprefixer**](https://github.com/postcss/autoprefixer).
