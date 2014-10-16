@@ -17,8 +17,7 @@
  * Remove all margins, paddings, and borders.
  *
  * N.B. the complete list of HTML5 elements
- * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/
- * HTML5_element_list
+ * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
  */
 
 html,
@@ -102,8 +101,7 @@ main {
  * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
  * @credit
- * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-
- * practice/
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 
 @if $friendly-box-model {
