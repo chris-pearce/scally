@@ -13,6 +13,7 @@
    str-replace("my-long-string", "long", "longer");
  */
 
+
 @function str-replace($string, $substr, $newsubstr, $all: 0) {
   $position-found: str-index($string, $substr);
   $processed: ();

@@ -29,10 +29,6 @@ $l-container-minimum-width:   220 !default;
 $l-container-maximum-width:   1600 !default;
 
 
-/**
- * Base.
- */
-
 .l-container {
   width: $l-container-width;
   @include to-rem(min-width, $l-container-minimum-width);

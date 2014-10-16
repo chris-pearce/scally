@@ -48,10 +48,6 @@ $u-list-inline-divider-colour:       $colour-text-base !default;
 $u-list-inline-divider-thickness:    1 !default;
 
 
-/**
- * Base.
- */
-
 %u-list-inline,
 .u-list-inline {
   > li {display: inline-block;}
@@ -68,6 +64,7 @@ $u-list-inline-divider-thickness:    1 !default;
  * outside of the list items via `margin-left` but there's a version where the
  * spacing can be applied to both sides via `margin-left` and `padding-left`.
  */
+
 
 /**
  * Base.
@@ -96,6 +93,7 @@ $u-list-inline-divider-thickness:    1 !default;
     $u-list-inline-item-spacing-base);
 }
 
+
 /**
  * Tiny.
  */
@@ -122,6 +120,7 @@ $u-list-inline-divider-thickness:    1 !default;
   $u-list-inline-breakpoints) {@include to-rem(margin-left padding-left,
     $u-list-inline-item-spacing-tiny);
 }
+
 
 /**
  * Small.
@@ -150,6 +149,7 @@ $u-list-inline-divider-thickness:    1 !default;
     $u-list-inline-item-spacing-small);
 }
 
+
 /**
  * Large.
  */
@@ -176,6 +176,7 @@ $u-list-inline-divider-thickness:    1 !default;
   $u-list-inline-breakpoints) {@include to-rem(margin-left padding-left,
     $u-list-inline-item-spacing-large);
 }
+
 
 /**
  * Huge.

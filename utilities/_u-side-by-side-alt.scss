@@ -16,8 +16,6 @@
  */
 
 
-
-
 /**
  * Settings.
  */
@@ -42,11 +40,7 @@ $u-side-by-side-alt-remove:							true !default;
 $u-side-by-side-alt-remove-when:				palm !default;
 
 
-
-
 /**
- * Base.
- *
  * 1. Allows us to control vertical alignments.
  * 2. Force the utility to be the full width of its parent. Combined with [1],
  *    this makes the utility behave in a quasi-`display: block;` manner.
@@ -105,8 +99,6 @@ $u-side-by-side-alt-remove-when:				palm !default;
 }
 
 
-
-
 	/**
    * The two sides of the utility. There should only ever be one of each.
    *
@@ -154,8 +146,6 @@ $u-side-by-side-alt-remove-when:				palm !default;
 		}
 
   }
-
-
 
 
 	/**

@@ -35,10 +35,6 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
                               eighth ninth tenth eleventh twelfth) !default;
 
 
-/**
- * The mixin.
- */
-
 @mixin generate-percentage-classes-at-breakpoints($breakpoint-names,
   $scally-type: "u", $class-name: null, $css-property: "width") {
 
