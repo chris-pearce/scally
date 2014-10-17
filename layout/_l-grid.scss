@@ -9,7 +9,7 @@
  * Combine with the viewport specific width classes found in Utilities ->
  * Widths to apply grid widths at specific viewports, for example:
  *
-   <div class="grid__item  lap--one-half  desk--one-third">
+   <div class="l-grid__item  lap--one-half  desk--one-third">
  *
  * This would give you a grid item which is 100% width unless it is on a lap
  * device, at which point it becomes 50% wide, or it is on a desktop device,
@@ -38,6 +38,9 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$l-grid-breakpoints:    $default-breakpoints !default;
+
 // Box sizing.
 // Here we set a variable assuming that `box-sizing: border-box;` is not set
 // globally. If it has been previously been defined, the following variable
@@ -62,7 +65,7 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * 1. So it can work on inline elements e.g. `span`.
  */
 
-.grid {
+.l-grid {
 	// Negative `margin-left` to negate the columns gutters
 	@include to-rem(margin-left, -$l-grid-gutter-base);
   display: block; // [1]
@@ -83,7 +86,7 @@ $l-grid-gutter-huge:    $spacing-double !default;
    * 4. Required to combine fluid widths and fixed gutters.
    */
 
-  .grid__item {
+  .l-grid__item {
     float: left; // [1]
     @include to-rem(padding-left, $l-grid-gutter-base); // [2]
     width: 100%; // [3]
@@ -100,10 +103,10 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * Modifier: gutterless.
  */
 
-.grid--gutterless {
+.l-grid--gutterless {
 	margin-left: 0;
 
-	> .grid__item {padding-left: 0;}
+	> .l-grid__item {padding-left: 0;}
 }
 
 
@@ -111,10 +114,10 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * Modifier: gutter tiny.
  */
 
-.grid--gutter-tiny {
+.l-grid--gutter-tiny {
   @include to-rem(margin-left, -$l-grid-gutter-tiny);
 
-  > .grid__item {@include to-rem(padding-left, $l-grid-gutter-tiny);}
+  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-tiny);}
 }
 
 
@@ -122,10 +125,10 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * Modifier: gutter small.
  */
 
-.grid--gutter-small {
+.l-grid--gutter-small {
 	@include to-rem(margin-left, -$l-grid-gutter-small);
 
-	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
+	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
 }
 
 
@@ -133,10 +136,10 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * Modifier: gutter large.
  */
 
-.grid--gutter-large {
+.l-grid--gutter-large {
 	@include to-rem(margin-left, -$l-grid-gutter-large);
 
-	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
+	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
 }
 
 
@@ -144,10 +147,10 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * Modifier: gutter huge.
  */
 
-.grid--gutter-huge {
+.l-grid--gutter-huge {
 	@include to-rem(margin-left, -$l-grid-gutter-huge);
 
-	> .grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
+	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
 }
 
 
@@ -158,37 +161,39 @@ $l-grid-gutter-huge:    $spacing-double !default;
  * markup will display in order 4, 3, 2, 1 on your page.
  */
 
-.grid--reversed > .grid__item {float: right;}
+.l-grid--reversed > .l-grid__item {float: right;}
 
 
 /**
- * Modifier: table display for all viewports and one for medium to large
- * viewports (non-palm), with options to set different vertical alignments.
+ * Modifier: table display with options to set different vertical alignments.
  */
 
-.grid--table {
+.l-grid--table {
 	display: table;
 
-	> .grid__item {
+	> .l-grid__item {
 		display: table-cell;
 		float: none;
 	}
 }
 
-// Only for lap plus (non-palm)
-@include respond-to(lap) {
- .grid--table-for-lap {
-		display: table;
+@include generate-at-breakpoints('.l-grid--table', $l-grid-breakpoints) {
+  display: table;
 
-		> .grid__item {
-			display: table-cell;
-			float: none;
-		}
-	}
+  > .l-grid__item {
+    display: table-cell;
+    float: none;
+  }
 }
 
 // Middle vertical alignment
-.grid--table--v-align-middle > .grid__item {vertical-align: middle;}
+.l-grid--table--v-align-middle > .l-grid__item {vertical-align: middle;}
+
+@include generate-at-breakpoints('.l-grid--table--v-align-middle{bp} >
+  .l-grid__item', $l-grid-breakpoints) {vertical-align: middle;}
 
 // Bottom vertical alignment
-.grid--table--v-align-bottom > .grid__item {vertical-align: bottom;}
+.l-grid--table--v-align-bottom > .l-grid__item {vertical-align: bottom;}
+
+@include generate-at-breakpoints('.l-grid--table--v-align-bottom{bp} >
+  .l-grid__item', $l-grid-breakpoints) {vertical-align: bottom;}
