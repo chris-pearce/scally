@@ -189,9 +189,11 @@ $l-grid-gutter-huge:    $spacing-double !default;
 // Middle vertical alignment
 .l-grid--table--v-align-middle > .l-grid__item {vertical-align: middle;}
 
-@include generate-at-breakpoints('.l-grid--table--v-align-middle{bp} > .l-grid__item', $l-grid-breakpoints) {vertical-align: middle;}
+@include generate-at-breakpoints('.l-grid--table--v-align-middle{bp} >
+  .l-grid__item', $l-grid-breakpoints) {vertical-align: middle;}
 
 // Bottom vertical alignment
 .l-grid--table--v-align-bottom > .l-grid__item {vertical-align: bottom;}
 
-@include generate-at-breakpoints('.l-grid--table--v-align-bottom{bp} > .l-grid__item', $l-grid-breakpoints) {vertical-align: bottom;}
+@include generate-at-breakpoints('.l-grid--table--v-align-bottom{bp} >
+  .l-grid__item', $l-grid-breakpoints) {vertical-align: bottom;}
