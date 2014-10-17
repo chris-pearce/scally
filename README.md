@@ -39,7 +39,7 @@ So if you have a `css` folder in your project and run the above command in that 
 You can install Scally via the **Download by zip** option however it's advised to use Bower.
 
 
-## Setting up a new Project
+## Setting up a new project
 
 ### Setting up your master stylesheet
 
@@ -73,7 +73,7 @@ This first section consists of one Sass partial:
 
     @import "settings";
 
-Which should live at the same level as your master stylesheet: `style.scss`.
+Which should live at the same level as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/westfieldlabs/scally/master/settings.scss).
 
 In this partial you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
 
@@ -117,7 +117,7 @@ Would become:
 
      @import "vendor/scally/core/settings/colours";
 
-### Your Styles
+### Your styles
 
 This section is where you pull in all of your project-specific styles
 
@@ -131,7 +131,7 @@ Scally has one dependency which is [**Autoprefixer**](https://github.com/postcss
 We advise you to setup **Autoprefixer** as part of your build process e.g. integrate it into [Gulp](https://github.com/nDmitry/grunt-autoprefixer).
 
 
-## Browser Support
+## Browser support
 
 - IE9+.
 - Chrome.
@@ -141,7 +141,7 @@ We advise you to setup **Autoprefixer** as part of your build process e.g. integ
 - Android 3+.
 
 
-## Build Test
+## Build test
 
 `rake test`
 
@@ -155,9 +155,9 @@ Run `scss-lint ./` to lint all `.scss` files according to [these lint rules](.sc
 
 ## Credits
 
-- [Inuit Framework](https://github.com/csswizardry/inuit.css).
-- [SMACCS](http://smacss.com/).
+- [inuit.css](https://github.com/csswizardry/inuit.css).
 - [SUIT CSS](https://github.com/suitcss/suit).
+- [SMACCS](http://smacss.com/).
 
 
 ## Licence
