@@ -38,6 +38,9 @@
  * Settings.
  */
 
+// Apply at these breakpoints
+$l-grid-breakpoints:    $default-breakpoints !default;
+
 // Box sizing.
 // Here we set a variable assuming that `box-sizing: border-box;` is not set
 // globally. If it has been previously been defined, the following variable
@@ -162,8 +165,7 @@ $l-grid-gutter-huge:    $spacing-double !default;
 
 
 /**
- * Modifier: table display for all viewports and one for medium to large
- * viewports (non-palm), with options to set different vertical alignments.
+ * Modifier: table display with options to set different vertical alignments.
  */
 
 .l-grid--table {
@@ -175,20 +177,21 @@ $l-grid-gutter-huge:    $spacing-double !default;
 	}
 }
 
-// Only for lap plus (non-palm)
-@include respond-to(lap) {
- .l-grid--table-for-lap {
-		display: table;
+@include generate-at-breakpoints('.l-grid--table', $l-grid-breakpoints) {
+  display: table;
 
-		> .l-grid__item {
-			display: table-cell;
-			float: none;
-		}
-	}
+  > .l-grid__item {
+    display: table-cell;
+    float: none;
+  }
 }
 
 // Middle vertical alignment
 .l-grid--table--v-align-middle > .l-grid__item {vertical-align: middle;}
 
+@include generate-at-breakpoints('.l-grid--table--v-align-middle{bp} > .l-grid__item', $l-grid-breakpoints) {vertical-align: middle;}
+
 // Bottom vertical alignment
 .l-grid--table--v-align-bottom > .l-grid__item {vertical-align: bottom;}
+
+@include generate-at-breakpoints('.l-grid--table--v-align-bottom{bp} > .l-grid__item', $l-grid-breakpoints) {vertical-align: bottom;}
