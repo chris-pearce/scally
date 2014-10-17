@@ -5,8 +5,8 @@
 
 /**
  * Generate percentage classes with the option to apply at different
- * breakpoints e.g. `.u-one-whole` / `.u-lap-one-whole`. The percentage classes
- * are based off the widths defined here: Core -> Settings -> Widths.
+ * breakpoints e.g. `.u-one-whole` / `.u-one-whole-from-lap`. The percentage
+ * classes are based off the widths defined here: Core -> Settings -> Widths.
  *
  * N.B. the application for this mixin is quite unique so it's only used in a
  * few places in the framework.
@@ -52,11 +52,11 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
     $css-property);
 
   @each $breakpoint in $breakpoint-names {
-
-    @include respond-to($breakpoint, $limit: if($breakpoint ==
-        'palm', 'max', 'min')) {
+    $limit: if($breakpoint == 'palm', 'max', 'min');
+    @include respond-to($breakpoint, $limit) {
       @if $breakpoint {
-        $breakpoint: "#{$breakpoint}-"
+        $suffix: if($limit =='min', '-from', '-up-to');
+        $breakpoint: "#{$suffix}-#{$breakpoint}";
       }
 
       @include generate-percentage-classes($breakpoint, $scally-type,
@@ -70,9 +70,9 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
   @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-      .#{$scally-type}-#{$breakpoint}#{$class-name}#{nth($mixin-numerators,
+      .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
         $numerator)}-#{nth($mixin-denominator-words,
-          $denominator)#{$denominator-suffix}} {#{$css-property}:
+          $denominator)#{$denominator-suffix}#{$breakpoint}} {#{$css-property}:
         percentage($numerator/$denominator);}
     }
   }
