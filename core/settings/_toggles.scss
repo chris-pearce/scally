@@ -13,23 +13,23 @@
  * Debug.
  */
 
-$debug-mode: false !default;
+$debug-mode:                                false !default;
 
 
 /**
  * Reset the `box-sizing` property to the more friendly `border-box` value.
  *
- * N.B. It's our recommendation to keep this turned on:)
+ * N.B. It's our recommendation to keep this turned on :).
  */
 
-$friendly-box-model: true !default;
+$friendly-box-model:                        true !default;
 
 
 /**
  * Heading margins.
  */
 
-$heading-margins: true !default;
+$heading-margins:                           true !default;
 
 
 /**
@@ -56,4 +56,4 @@ $hide-close-button-for-ie10plus-inputs:     false !default;
  * Apply device width viewport.
  */
 
-$viewport-device-width: true !default;
+$viewport-device-width:                     true !default;
