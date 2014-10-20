@@ -7,13 +7,14 @@
     "Alec Raeside <araeside@westfield.com>",
     "Kate Levin <klevin@westfield.com>"
   ],
-  "description": "An unopinionated, responsive friendly, OOCSS, Sass-based, BEM, CSS framework",
+  "description": "Scally is a Sass, BEM, OOCSS, responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly.",
   "keywords": [
     "scally",
     "css",
     "oocss",
     "sass",
-    "bem"
+    "bem",
+    "responsive"
   ],
   "license": "Apache 2.0",
   "ignore": [
