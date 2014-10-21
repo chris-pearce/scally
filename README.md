@@ -3,6 +3,26 @@
 # Scally CSS framework
 
 
+## Contents
+
+- [What is Scally?](#what-is-scally)
+- [Installing Scally](#installing-scally)
+- [Setting up a new project](#setting-up-a-new-project)
+    - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
+    - [Master stylesheet overview](#master-stylesheet-overview)
+        - [Your settings](#your-settings)
+        - [Scally framework](#scally-framework)
+        - [Your styles](#your-styles)
+        - [Example architecture](#example-architecture)
+- [Scally breakdown](#scally-breakdown)
+- [Dependencies](#dependencies)
+- [Browser support](#browser-support)
+- [Build test](#build-test)
+- [Linting](#linting)
+- [Credits](#credits)
+- [Licence](#licence)
+
+
 ## What is Scally?
 
 Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
@@ -28,7 +48,7 @@ So if you have a `css` folder in your project and run the above command in that 
     │
     └───bower_components
         │
-        └───Scally
+        └───scally
 
 **N.B.** Scally should never be edited or added too directly. If you ever make changes directly in `Scally` you will not be able to seamlessly update your version of Scally to the latest version. To update run the following command:
 
@@ -87,13 +107,13 @@ Another example might be adding a new font family e.g.
 
 The reason this section comes first is so that you can refer to them throughout the rest of your styles.
 
-### Scally framework
+#### Scally framework
 
 This section pulls in the entire Scally framework and is where you override Scally's settings.
 
 This is what makes Scally so powerful, as Scally can be completely modified by changing the settings without ever having to alter the framework itself.
 
-So for example if you wanted to change the global font size for your project then you assign a new value to the relevant Scally variable which in this case would be `$font-size` then simply declare it **above** the relevant `@import` partial in `style.scss`, like so:
+So for example if you wanted to change the global font size for your project then you assign a new value to the relevant Scally setting which in this case would be `$font-size` then simply declare it **above** the relevant `@import` partial in `style.scss`, like so:
 
     $font-size: 14;
     @import "bower_components/scally/core/settings/typography";
@@ -103,7 +123,7 @@ You can use your own project-specific settings from your `settings.scss` file to
     $colour-text-base: $colour-hotpink;
     @import "bower_components/scally/core/settings/colours";
 
-By default everything is available in the framework is imported. But if you want to be selective and you definitely should, so your CSS is as lean as possible, then only import what you need.
+By default everything in the framework is imported. But if you want to be selective and you definitely should, so your CSS is as lean as possible, then only import what you need.
 
 So if you decide you only need to use half of Scally's utilities then simply remove the partial `@import`s you don't need from `style.scss`.
 
@@ -117,9 +137,38 @@ Would become:
 
      @import "vendor/scally/core/settings/colours";
 
-### Your styles
+#### Your styles
 
-This section is where you pull in all of your project-specific styles
+This section is where you pull in all of your project-specific styles. We recommend following the same architecture as the Scally framework.
+
+#### Example architecture
+
+Here's an example of the architecture explained above, assuming you contain all of your CSS in a folder called `css` and if Scally is installed via the default Bower install (`bower install westfieldlabs/scally`) in your `css` folder.
+
+    css
+    |   style.scss
+    |   settings.scss
+    │
+    └───bower_components
+    |   │
+    |   └───scally
+    |
+    └───partials
+        │
+        ├───components
+        |
+        ├───core
+        |
+        ├───layout
+        |
+        ├───utilities
+
+
+## Scally breakdown
+
+Scally is a design-free, OOCSS framework that does its best to provide zero cosmetic styling. This means that Scally can be used on any and all types of projects without dictating a look-and-feel.
+
+*More coming soon for this section*.
 
 
 ## Dependencies
