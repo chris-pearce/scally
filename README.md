@@ -81,9 +81,12 @@ This master stylesheet is designed to pull in everything for Scally plus your pr
 
 Your master stylesheet is split into three main sections:
 
-- **Your settings:** all of your project-specific settings in the form of Sass variables.
-- **Scally framework:** the entire Scally framework.
-- **Your styles:** all of the CSS you will write for your project.
+- **Your settings**
+- all of your project-specific settings in the form of Sass variables.
+- **Scally framework**
+- the entire Scally framework.
+- **Your styles**
+- all of the CSS you will write for your project.
 
 *It's imperative this order is maintained otherwise Scally won't work.*
 
