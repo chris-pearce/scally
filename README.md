@@ -56,7 +56,7 @@ So if you have a `css` folder in your project and run the above command in that 
 
 *This is a very simple overview of Bower so if you're new to it then please take the time to [read up on it](http://bower.io/).*
 
-You can install Scally via the **Download by zip** option however it's advised to use Bower.
+You can install Scally via the [**Download by zip**](https://github.com/westfieldlabs/scally/archive/master.zip) option however it's advised to use Bower.
 
 
 ## Setting up a new project
