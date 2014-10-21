@@ -50,7 +50,7 @@ So if you have a `css` folder in your project and run the above command in that 
         │
         └───scally
 
-**N.B.** Scally should never be edited or added too directly. If you ever make changes directly in `Scally` you will not be able to seamlessly update your version of Scally to the latest version. To update run the following command:
+**N.B.** Scally should never be edited or added too directly. If you ever make changes directly in `scally` you will not be able to seamlessly update your version of Scally to the latest version. To update run the following command:
 
     $ bower update
 
