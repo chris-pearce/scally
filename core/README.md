@@ -2,7 +2,7 @@
 
 This is the mandatory part of Scally.
 
-**Core** acts like the foundation of your project providing important things like:
+Core acts like the foundation of your project providing important things like:
 
 - Global settings (variables) to house all common styles to keep your CSS
   nicely organised, maintainable, and DRY. And every setting can easily be overridden allowing you to have absolute control. **[Demo](http://codepen.io/team/westfieldlabs/full/aLDdb)**.

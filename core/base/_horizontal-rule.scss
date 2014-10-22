@@ -21,7 +21,7 @@ $hr-thickness:    1 !default;
 
 
 hr {
-  @extend %core-bottom-spacing;
+  @extend %c-bottom-spacing;
   display: block;
   border: 0;
   @include to-rem(border, $hr-thickness $hr-style $hr-colour);

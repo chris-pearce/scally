@@ -7,7 +7,7 @@
  * Base.
  */
 
-$spacing-base: $line-height !default;
+$spacing-base:                      $line-height !default;
 
 
 /**
@@ -15,32 +15,32 @@ $spacing-base: $line-height !default;
  */
 
 // Half
-$spacing-half:             $spacing-base / 2 !default;
+$spacing-half:                      $spacing-base / 2 !default;
 
 // Thirds
-$spacing-third:            $spacing-base / 3 !default;
+$spacing-third:                     $spacing-base / 3 !default;
 
-$spacing-two-thirds:       $spacing-third * 2 !default;
+$spacing-two-thirds:                $spacing-third * 2 !default;
 
 // Quarters
-$spacing-quarter:          $spacing-base / 4 !default;
+$spacing-quarter:                   $spacing-base / 4 !default;
 
-$spacing-three-quarters:   $spacing-quarter * 3 !default;
+$spacing-three-quarters:            $spacing-quarter * 3 !default;
 
 // Fifths
-$spacing-fifth:            $spacing-base / 5 !default;
+$spacing-fifth:                     $spacing-base / 5 !default;
 
-$spacing-two-fifths:       $spacing-fifth * 2 !default;
+$spacing-two-fifths:                $spacing-fifth * 2 !default;
 
-$spacing-three-fifths:     $spacing-fifth * 3 !default;
+$spacing-three-fifths:              $spacing-fifth * 3 !default;
 
-$spacing-four-fifths:      $spacing-fifth * 4 !default;
+$spacing-four-fifths:               $spacing-fifth * 4 !default;
 
 // Sixth
-$spacing-sixth:            $spacing-base / 6 !default;
+$spacing-sixth:                     $spacing-base / 6 !default;
 
 // Micro
-$spacing-micro:            2 !default;
+$spacing-micro:                     2 !default;
 
 
 /**

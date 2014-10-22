@@ -20,12 +20,12 @@
   // Base
   h1, .h1,
   h2, .h2,
-  h3, .h3 {@extend %core-bottom-spacing;}
+  h3, .h3 {@extend %c-bottom-spacing;}
 
   // Half
   h4, .h4,
   h5, .h5,
-  h6, .h6 {@extend %core-bottom-spacing-half;}
+  h6, .h6 {@extend %c-bottom-spacing-half;}
 
 }// endif
 
