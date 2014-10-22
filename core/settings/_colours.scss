@@ -7,21 +7,21 @@
  * Brand.
  */
 
-$colour-brand: #2aa198 !default;
+$colour-brand:                    #2aa198 !default;
 
 
 /**
  * Black.
  */
 
-$colour-black: #000 !default;
+$colour-black:                    #000 !default;
 
 
 /**
  * White.
  */
 
-$colour-white: #fff !default;
+$colour-white:                    #fff !default;
 
 
 /**
@@ -29,33 +29,33 @@ $colour-white: #fff !default;
  */
 
 // Base
-$colour-text-base: $colour-black !default;
+$colour-text-base:                $colour-black !default;
 
 
 /**
  * `html` element background.
  */
 
-$colour-html-element-background: $colour-white !default;
+$colour-html-element-background:  $colour-white !default;
 
 
 /**
  * Primary / Secondary.
  */
 
-$colour-primary:     $colour-brand !default;
+$colour-primary:                  $colour-brand !default;
 
-$colour-secondary:   lighten($colour-brand, 10%) !default;
+$colour-secondary:                lighten($colour-brand, 10%) !default;
 
 
 /**
  * Links.
  */
 
-$colour-link:         $colour-brand !default;
+$colour-link:                     $colour-brand !default;
 
 // Hover
-$colour-link-hover:   darken($colour-link, 10%) !default;
+$colour-link-hover:               darken($colour-link, 10%) !default;
 
 
 /**
@@ -63,16 +63,16 @@ $colour-link-hover:   darken($colour-link, 10%) !default;
  */
 
 // Error
-$colour-state-error:        #dc322f !default;
+$colour-state-error:              #dc322f !default;
 
 // Success
-$colour-state-success:      #859900 !default;
+$colour-state-success:            #859900 !default;
 
 // Warning
-$colour-state-warning:      #b58900 !default;
+$colour-state-warning:            #b58900 !default;
 
 // Information
-$colour-state-information:  #268bd2 !default;
+$colour-state-information:        #268bd2 !default;
 
 
 /**
@@ -80,10 +80,10 @@ $colour-state-information:  #268bd2 !default;
  */
 
 // Input text
-$colour-form-input-text:        $colour-text-base !default;
+$colour-form-input-text:          $colour-text-base !default;
 
 // Input background
-$colour-form-input-background:  $colour-white !default;
+$colour-form-input-background:    $colour-white !default;
 
 // Input border
-$colour-form-input-border:      lighten($colour-black, 30%) !default;
+$colour-form-input-border:        lighten($colour-black, 30%) !default;

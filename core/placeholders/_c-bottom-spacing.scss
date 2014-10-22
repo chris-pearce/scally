@@ -12,17 +12,17 @@
  * Base.
  */
 
-%core-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+%c-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
 
 
 /**
  * Half.
  */
 
-%core-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
+%c-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
 
 // Remove from the last children
-%core-bottom-spacing,
-%core-bottom-spacing-half {
+%c-bottom-spacing,
+%c-bottom-spacing-half {
   &:last-child {margin-bottom: 0;}
 }
