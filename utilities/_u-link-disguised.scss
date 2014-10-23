@@ -15,8 +15,15 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-link-disguised-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints you want to use?
+$u-link-disguised-breakpoints:        $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-link-disguised-breakpoint-toggle:  true !default;
 
 
 %u-link-disguised,
@@ -32,15 +39,17 @@ $u-link-disguised-breakpoints: $default-breakpoints !default;
   }
 }
 
-@include generate-at-breakpoints('.u-link-disguised',
-  $u-link-disguised-breakpoints) {
-  cursor: text;
+@if $u-link-disguised-breakpoint-toggle {
+  @include generate-at-breakpoints('.u-link-disguised',
+    $u-link-disguised-breakpoints) {
+    cursor: text;
 
-  &,
-  &:visited,
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: inherit;
+    &,
+    &:visited,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+    }
   }
-}
+}// end if

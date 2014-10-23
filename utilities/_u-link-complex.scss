@@ -26,8 +26,17 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-link-complex-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints you want to use?
+$u-link-complex-breakpoints:                $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-link-complex-breakpoint-toggle-base:     false !default;
+
+$u-link-complex-breakpoint-toggle-target:   false !default;
 
 
 %u-link-complex,
@@ -40,14 +49,16 @@ $u-link-complex-breakpoints: $default-breakpoints !default;
 	}
 }
 
-@include generate-at-breakpoints('.u-link-complex', $u-link-complex-breakpoints) {
-  &,
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: inherit;
+@if $u-link-complex-breakpoint-toggle-base {
+  @include generate-at-breakpoints('.u-link-complex', $u-link-complex-breakpoints) {
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+    }
   }
-}
+}// end if
 
 
 	/**
@@ -65,13 +76,15 @@ $u-link-complex-breakpoints: $default-breakpoints !default;
     }
   }
 
-  @include generate-at-breakpoints('.u-link-complex__target',
-    $u-link-complex-breakpoints) {
-		color: $colour-link;
+  @if $u-link-complex-breakpoint-toggle-target {
+    @include generate-at-breakpoints('.u-link-complex__target',
+      $u-link-complex-breakpoints) {
+  		color: $colour-link;
 
-		&:hover,
-		&:focus {
-			text-decoration: underline;
-			color: $colour-link-hover;
-		}
-  }
+  		&:hover,
+  		&:focus {
+  			text-decoration: underline;
+  			color: $colour-link-hover;
+  		}
+    }
+  }// end if

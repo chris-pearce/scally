@@ -15,27 +15,58 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-float-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
 
+// Which breakpoints you want to use?
+$u-float-breakpoints:               $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-float-breakpoint-toggle-left:    false !default;
+
+$u-float-breakpoint-toggle-right:   false !default;
+
+$u-float-breakpoint-toggle-none:    false !default;
+
+
+/**
+ * Left.
+ */
 
 %u-float-left,
 .u-float-left {float: left;}
 
-@include generate-at-breakpoints('.u-float-left', $u-float-breakpoints) {
-  float: left;
-}
+@if $u-float-breakpoint-toggle-left {
+  @include generate-at-breakpoints('.u-float-left', $u-float-breakpoints) {
+    float: left;
+  }
+}// end if
+
+
+/**
+ * Right.
+ */
 
 %u-float-right,
 .u-float-right {float: right;}
 
-@include generate-at-breakpoints('.u-float-right', $u-float-breakpoints) {
-  float: right;
-}
+@if $u-float-breakpoint-toggle-right {
+  @include generate-at-breakpoints('.u-float-right', $u-float-breakpoints) {
+    float: right;
+  }
+}// end if
+
+
+/**
+ * None.
+ */
 
 %u-float-none,
 .u-float-none {float: none;}
 
-@include generate-at-breakpoints('.u-float-none', $u-float-breakpoints) {
-  float: none;
-}
+@if $u-float-breakpoint-toggle-none {
+  @include generate-at-breakpoints('.u-float-none', $u-float-breakpoints) {
+    float: none;
+  }
+}// end if
