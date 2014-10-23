@@ -15,8 +15,15 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-clear-fix-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints you want to use?
+$u-clear-fix-breakpoints:         $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-clear-fix-breakpoint-toggle:   false !default;
 
 
 %u-clear-fix,
@@ -28,11 +35,13 @@ $u-clear-fix-breakpoints: $default-breakpoints !default;
   }
 }
 
-@include generate-at-breakpoints('.u-clear-fix',
-  $u-clear-fix-breakpoints) {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+@if $u-clear-fix-breakpoint-toggle {
+  @include generate-at-breakpoints('.u-clear-fix',
+    $u-clear-fix-breakpoints) {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
   }
-}
+}// end if

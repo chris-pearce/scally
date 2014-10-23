@@ -19,12 +19,10 @@
 
 /**
  * Apply at breakpoints.
- *
- * N.B. see Core -> Settings -> Breakpoints
  */
 
 // Which breakpoints you want to use?
-$u-align-breakpoints:                                    (lap, desk) !default;
+$u-align-breakpoints:                                    $default-breakpoints !default;
 
 // What do you want to apply it too?
 $u-align-breakpoint-toggle-v-inline-top:                 false !default;
