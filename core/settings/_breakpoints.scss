@@ -61,9 +61,10 @@ $breakpoints: (
 
 
 /**
- * Define the breakpoints that we want certain utilities, layout, and
- * components to use, by default we set Lap. This can be overriden at the
- * individual partial level.
+ * Define the breakpoints that we want certain modules e.g. utilities and
+ * layout to use applied via the `generate-at-breakpoints` mixin found in
+ * Core -> Mixins. By default we set it to Lap but this can be overriden at
+ * the individual partial level.
  */
 
 $default-breakpoints: (lap) !default;
