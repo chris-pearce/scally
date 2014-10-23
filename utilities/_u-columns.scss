@@ -23,7 +23,7 @@
 $u-column-breakpoints:                        $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-column-breakpoint-toggle-default:          true !default;
+$u-column-breakpoint-toggle-base:             false !default;
 
 $u-column-breakpoint-toggle-columns-three:    false !default;
 
@@ -68,7 +68,7 @@ $u-column-divider-colour:                     $colour-text-base !default;
   @include to-rem(column-gap, $u-column-gap-base);
 }
 
-@if $u-column-breakpoint-toggle-default {
+@if $u-column-breakpoint-toggle-base {
   @include generate-at-breakpoints('.u-columns', $u-column-breakpoints) {
     column-count: 2;
     @include to-rem(column-gap, $u-column-gap-base);
