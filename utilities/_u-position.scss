@@ -188,6 +188,21 @@ $u-position-breakpoints: $default-breakpoints !default;
   right: 0;
 }
 
+// Pin to the sides and bottom
+%u-position-pin-sides-bottom,
+.u-position-pin-sides-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@include generate-at-breakpoints('.u-position-pin-sides-bottom',
+  $u-position-breakpoints) {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 // Vertically in the middle
 %u-position-v-middle,
 .u-position-v-middle {
