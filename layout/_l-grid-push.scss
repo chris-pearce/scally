@@ -20,10 +20,10 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$l-grid-push: false !default;
+$l-grid-push:               true !default;
 
-// Apply push classes at specific breakpoints
-$l-breakpoints-for-grid-push-classes: (lap) !default;
+// Apply at breakpoints
+$l-grid-push-breakpoints:   (lap) !default;
 
 
 /**
@@ -32,8 +32,7 @@ $l-breakpoints-for-grid-push-classes: (lap) !default;
 
 @if $l-grid-push {
 
-  @include generate-percentage-classes-at-breakpoints(
-    $l-breakpoints-for-grid-push-classes,
+  @include generate-percentage-classes-at-breakpoints($l-grid-push-breakpoints,
     $scally-type: "l",
     $class-name: "push",
     $css-property: "left"

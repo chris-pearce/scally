@@ -16,12 +16,12 @@
  * Settings.
  */
 
-// Apply width classes at specific breakpoints
-$u-breakpoints-for-width-classes: (lap) !default;
+// Apply at breakpoints
+$u-widths-breakpoints: (lap) !default;
 
 
 /**
  * Generate all the width classes.
  */
 
-@include generate-percentage-classes-at-breakpoints($u-breakpoints-for-width-classes);
+@include generate-percentage-classes-at-breakpoints($u-widths-breakpoints);

@@ -38,25 +38,38 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$l-grid-breakpoints:    $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints you want to use?
+$l-grid-breakpoints:                              $default-breakpoints
+!default;
+
+// What do you want to apply it too?
+$l-grid-breakpoint-toggle-table:                  false !default;
+
+$l-grid-breakpoint-toggle-table-v-align-middle:   false !default;
+
+$l-grid-breakpoint-toggle-table-v-align-bottom:   false !default;
 
 // Box sizing.
 // Here we set a variable assuming that `box-sizing: border-box;` is not set
 // globally. If it has been previously been defined, the following variable
 // will be overriden and will be set to `true`.
-$friendly-box-model:    false !default;
+$friendly-box-model:                              false !default;
 
 // Gutter sizes
-$l-grid-gutter-base:    $spacing-base !default;
+$l-grid-gutter-base:                              $spacing-base !default;
 
-$l-grid-gutter-tiny:    $spacing-third !default;
+$l-grid-gutter-tiny:                              $spacing-third !default;
 
-$l-grid-gutter-small:   $spacing-half !default;
+$l-grid-gutter-small:                             $spacing-half !default;
 
-$l-grid-gutter-large:   $spacing-base-plus-half !default;
+$l-grid-gutter-large:                             $spacing-base-plus-half
+!default;
 
-$l-grid-gutter-huge:    $spacing-double !default;
+$l-grid-gutter-huge:                              $spacing-double !default;
 
 
 /**
@@ -177,23 +190,31 @@ $l-grid-gutter-huge:    $spacing-double !default;
 	}
 }
 
-@include generate-at-breakpoints('.l-grid--table', $l-grid-breakpoints) {
-  display: table;
+@if $l-grid-breakpoint-toggle-table {
+  @include generate-at-breakpoints('.l-grid--table', $l-grid-breakpoints) {
+    display: table;
 
-  > .l-grid__item {
-    display: table-cell;
-    float: none;
+    > .l-grid__item {
+      display: table-cell;
+      float: none;
+    }
   }
-}
+}// end if
 
 // Middle vertical alignment
 .l-grid--table--v-align-middle > .l-grid__item {vertical-align: middle;}
 
-@include generate-at-breakpoints('.l-grid--table--v-align-middle{bp} >\a
-  .l-grid__item', $l-grid-breakpoints) {vertical-align: middle;}
+@if $l-grid-breakpoint-toggle-table-v-align-middle {
+  @include generate-at-breakpoints(
+    '.l-grid--table--v-align-middle{bp} > .l-grid__item', $l-grid-breakpoints) {
+    vertical-align: middle;}
+}// end if
 
 // Bottom vertical alignment
 .l-grid--table--v-align-bottom > .l-grid__item {vertical-align: bottom;}
 
-@include generate-at-breakpoints('.l-grid--table--v-align-bottom{bp} >\a
-  .l-grid__item', $l-grid-breakpoints) {vertical-align: bottom;}
+@if $l-grid-breakpoint-toggle-table-v-align-bottom {
+  @include generate-at-breakpoints(
+    '.l-grid--table--v-align-bottom{bp} > .l-grid__item', $l-grid-breakpoints) {
+    vertical-align: bottom;}
+}// end if
