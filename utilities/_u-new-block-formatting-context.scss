@@ -22,8 +22,17 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-nbfc-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints you want to use?
+$u-nbfc-breakpoints:              $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-nbfc-breakpoint-toggle-base:   false !default;
+
+$u-nbfc-breakpoint-toggle-alt:    false !default;
 
 
 /**
@@ -40,10 +49,12 @@ $u-nbfc-breakpoints: $default-breakpoints !default;
   width: 10000px; // [2]
 }
 
-@include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
- display: table-cell;
- width: 10000px;
-}
+@if $u-nbfc-breakpoint-toggle-base {
+  @include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
+   display: table-cell;
+   width: 10000px;
+  }
+}// end if
 
 
 /**
@@ -55,6 +66,8 @@ $u-nbfc-breakpoints: $default-breakpoints !default;
 %u-nbfc-alt,
 .u-nbfc-alt {overflow: hidden;}
 
-@include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-breakpoints) {
-  overflow: hidden;
-}
+@if $u-nbfc-breakpoint-toggle-alt {
+  @include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-breakpoints) {
+    overflow: hidden;
+  }
+}// end if
