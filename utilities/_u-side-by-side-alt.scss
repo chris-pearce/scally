@@ -96,7 +96,7 @@ $u-side-by-side-alt-remove-when:				palm !default;
 		.u-side-by-side-alt--remove {direction: ltr;} // [1]
 	}
 
-}
+}// end if
 
 
 	/**
@@ -143,7 +143,7 @@ $u-side-by-side-alt-remove-when:				palm !default;
 				.u-side-by-side-alt--remove > & {display: block;}
 			}
 
-		}
+		}// end if
 
   }
 
@@ -274,7 +274,7 @@ $u-side-by-side-alt-remove-when:				palm !default;
 						& {max-width: 100%;}
 					}
 
-				}
+				}// end if
 
 			}
 
