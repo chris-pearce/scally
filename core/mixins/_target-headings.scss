@@ -23,27 +23,26 @@
 
 
 @mixin headings($from: 1, $to: 6, $double-stranded: false) {
-
-  %base-heading {
-    @content
-  }
-
+  $selector-list: ();
   @if $from >= 1 and $to <= 6 {
     @for $i from $from through $to {
-
       $selector: "h#{$i}";
 
       @if $double-stranded {
         $selector: "#{$selector},.#{$selector}";
       }
 
-      #{$selector} {
-        @extend %base-heading;
-      }
+      $selector-list: append($selector-list, $selector);
+    }
+
+    // Combine and output all selectors with css content
+    $full-selector: join($selector-list, ", ");
+    #{$full-selector} {
+      @content
     }
   }
 
-  else {
+  @else {
     @warn "You can only target headings 1 to 6";
   }
 }
