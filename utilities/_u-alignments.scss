@@ -39,7 +39,7 @@ $u-align-breakpoint-toggle-v-block-middle-flexbox:       false !default;
 
 $u-align-breakpoint-toggle-v-block-middle-table:         false !default;
 
-$u-align-breakpoint-toggle-v-block-middle-table__inner:  false !default;
+$u-align-breakpoint-toggle-v-block-middle-table-inner:   false !default;
 
 $u-align-breakpoint-toggle-v-block-middle-position:      false !default;
 
@@ -153,7 +153,7 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
     vertical-align: middle;
   }
 
-  @if $u-align-breakpoint-toggle-v-block-middle-table__inner {
+  @if $u-align-breakpoint-toggle-v-block-middle-table-inner {
     @include generate-at-breakpoints('.u-align-v-block-middle-table__inner',
       $u-align-breakpoints) {
       display: table-cell;
