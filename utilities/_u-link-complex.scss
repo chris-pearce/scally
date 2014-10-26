@@ -34,7 +34,7 @@
 $u-link-complex-breakpoints:                $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-link-complex-breakpoint-toggle-base:     false !default;
+$u-link-complex-breakpoint-toggle-default:  false !default;
 
 $u-link-complex-breakpoint-toggle-target:   false !default;
 
@@ -49,7 +49,7 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
 	}
 }
 
-@if $u-link-complex-breakpoint-toggle-base {
+@if $u-link-complex-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-link-complex', $u-link-complex-breakpoints) {
     &,
     &:hover,

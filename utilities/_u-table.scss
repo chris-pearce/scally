@@ -25,7 +25,7 @@
 $u-table-breakpoints:                           $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-table-breakpoint-toggle-base:                false !default;
+$u-table-breakpoint-toggle-default:             false !default;
 
 $u-table-breakpoint-toggle-striped:             false !default;
 
@@ -71,7 +71,7 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   td {@include to-rem(padding, $u-table-cell-padding-base);}
 }
 
-@if $u-table-breakpoint-toggle-base {
+@if $u-table-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-table', $u-table-breakpoints) {
     width: 100%;
 

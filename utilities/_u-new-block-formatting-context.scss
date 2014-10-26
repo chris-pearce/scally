@@ -27,12 +27,12 @@
  */
 
 // Which breakpoints you want to use?
-$u-nbfc-breakpoints:              $default-breakpoints !default;
+$u-nbfc-breakpoints:                  $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-nbfc-breakpoint-toggle-base:   false !default;
+$u-nbfc-breakpoint-toggle-default:    false !default;
 
-$u-nbfc-breakpoint-toggle-alt:    false !default;
+$u-nbfc-breakpoint-toggle-alt:        false !default;
 
 
 /**
@@ -49,7 +49,7 @@ $u-nbfc-breakpoint-toggle-alt:    false !default;
   width: 10000px; // [2]
 }
 
-@if $u-nbfc-breakpoint-toggle-base {
+@if $u-nbfc-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
    display: table-cell;
    width: 10000px;

@@ -22,7 +22,7 @@ $u-toggle-visibility-breakpoints:                     $default-breakpoints
 !default;
 
 // What do you want to apply it too?
-$u-toggle-visibility-breakpoint-toggle-base:          false !default;
+$u-toggle-visibility-breakpoint-toggle-default:       false !default;
 
 $u-toggle-visibility-breakpoint-toggle-inline:        false !default;
 
@@ -42,7 +42,7 @@ $u-toggle-visibility-state-class:                     is-visible !default;
   .no-js & {display: block;}
 }
 
-@if $u-toggle-visibility-breakpoint-toggle-base {
+@if $u-toggle-visibility-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-toggle-visibility',
     $u-toggle-visibility-breakpoints) {
     display: none;

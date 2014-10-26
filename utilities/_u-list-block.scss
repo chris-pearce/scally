@@ -30,7 +30,7 @@
 $u-list-block-breakpoints:                $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-list-block-breakpoint-toggle-base:     false !default;
+$u-list-block-breakpoint-toggle-default:  false !default;
 
 $u-list-block-breakpoint-toggle-tiny:     false !default;
 
@@ -71,7 +71,7 @@ $u-list-block-border-thickness:           1 !default;
   }
 }
 
-@if $u-list-block-breakpoint-toggle-base {
+@if $u-list-block-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-list-block{bp} > li',
     $u-list-block-breakpoints) {
 

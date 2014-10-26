@@ -36,7 +36,7 @@
 $u-list-inline-breakpoints: $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-list-inline-breakpoint-toggle-base:                          false !default;
+$u-list-inline-breakpoint-toggle-default:                       false !default;
 
 $u-list-inline-breakpoint-toggle-spacing-base:                  false !default;
 
@@ -102,7 +102,7 @@ $u-list-inline-divider-thickness:    1 !default;
   > li {display: inline-block;}
 }
 
-@if $u-list-inline-breakpoint-toggle-base {
+@if $u-list-inline-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-list-inline{bp} > li',
   $u-list-inline-breakpoints) {display: inline-block;}
 }// end if

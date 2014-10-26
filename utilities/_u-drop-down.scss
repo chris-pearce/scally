@@ -36,7 +36,7 @@
 $u-drop-down-breakpoints:                 $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-drop-down-breakpoint-toggle-base:      false !default;
+$u-drop-down-breakpoint-toggle-default:   false !default;
 
 $u-drop-down-breakpoint-toggle-target:    false !default;
 
@@ -58,7 +58,7 @@ $u-drop-down-touch-support-class:         is-touch !default;
 %u-drop-down,
 .u-drop-down {position: relative;} // [1]
 
-@if $u-drop-down-breakpoint-toggle-base {
+@if $u-drop-down-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-drop-down', $u-drop-down-breakpoints) {
     position: relative;
   }

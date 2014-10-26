@@ -20,12 +20,12 @@
  */
 
 // Which breakpoints you want to use?
-$u-image-replacement-breakpoints:             $default-breakpoints !default;
+$u-image-replacement-breakpoints:                 $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-image-replacement-breakpoint-toggle-base:  false !default;
+$u-image-replacement-breakpoint-toggle-default:   false !default;
 
-$u-image-replacement-breakpoint-toggle-alt:   false !default;
+$u-image-replacement-breakpoint-toggle-alt:       false !default;
 
 
 %u-image-replacement,
@@ -42,7 +42,7 @@ $u-image-replacement-breakpoint-toggle-alt:   false !default;
 	}
 }
 
-@if $u-image-replacement-breakpoint-toggle-base {
+@if $u-image-replacement-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-image-replacement',
     $u-image-replacement-breakpoints) {
     background-color: transparent;

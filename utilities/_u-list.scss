@@ -28,7 +28,7 @@
 $u-list-breakpoints:                      $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-list-breakpoint-toggle-base:           false !default;
+$u-list-breakpoint-toggle-default:        false !default;
 
 $u-list-breakpoint-toggle-unordered:      false !default;
 
@@ -64,7 +64,7 @@ $u-list-bullet-ordered:                   decimal !default;
   ol {@include to-rem(margin-left, $u-list-indent);}
 }
 
-@if $u-list-breakpoint-toggle-base {
+@if $u-list-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-list', $u-list-breakpoints) {
     @include to-rem(margin-bottom, $u-list-indent);
 

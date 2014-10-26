@@ -28,7 +28,7 @@
 $u-flex-embed-breakpoints:                        $default-breakpoints !default;
 
 // What do you want to apply it too?
-$u-flex-embed-breakpoint-toggle-base:             false !default;
+$u-flex-embed-breakpoint-toggle-default:          false !default;
 
 $u-flex-embed-breakpoint-toggle-ratio:            false !default;
 
@@ -50,7 +50,7 @@ $u-flex-embed-breakpoint-toggle-content:          false !default;
   overflow: hidden;
 }
 
-@if $u-flex-embed-breakpoint-toggle-base {
+@if $u-flex-embed-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-breakpoints) {
     display: block;
     position: relative;

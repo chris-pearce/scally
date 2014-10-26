@@ -26,7 +26,7 @@
 $l-container-breakpoints:                     $default-breakpoints !default;
 
 // What do you want to apply it too?
-$l-container-breakpoint-toggle-base:          false !default;
+$l-container-breakpoint-toggle-default:       false !default;
 
 $l-container-breakpoint-toggle-full-bleed:    false !default;
 
@@ -52,7 +52,7 @@ $l-container-maximum-width:                   1600 !default;
   }
 }
 
-@if $l-container-breakpoint-toggle-base {
+@if $l-container-breakpoint-toggle-default {
   @include generate-at-breakpoints('.l-container', $l-container-breakpoints) {
     width: $l-container-width;
     @include to-rem(min-width, $l-container-minimum-width);
