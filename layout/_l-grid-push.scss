@@ -20,7 +20,7 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$l-grid-push:               true !default;
+$l-grid-push:               false !default;
 
 // Apply at breakpoints
 $l-grid-push-breakpoints:   (lap) !default;

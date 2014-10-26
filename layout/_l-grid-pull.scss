@@ -20,7 +20,7 @@
  */
 
 // Turned off by default as this generates a lot of CSS
-$l-grid-pull:               true !default;
+$l-grid-pull:               false !default;
 
 // Apply at breakpoints
 $l-grid-pull-breakpoints:   (lap) !default;
