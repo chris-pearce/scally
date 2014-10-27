@@ -29,14 +29,14 @@
       $selector: "h#{$i}";
 
       @if $double-stranded {
-        $selector: "#{$selector},.#{$selector}";
+        $selector: "#{$selector}, .#{$selector}";
       }
 
       $selector-list: append($selector-list, $selector);
     }
 
     // Combine and output all selectors with css content
-    $full-selector: join($selector-list, ", ");
+    $full-selector: join($selector-list, (), "comma");
     #{$full-selector} {
       @content
     }
