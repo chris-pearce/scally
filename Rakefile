@@ -6,9 +6,7 @@ namespace :test do
   desc "Compile SASS files"
   task compile: [:cleanup] do
 
-    File.open('test.scss', 'w')
-
-    result = `sass test.scss test.css`
+    result = `sass style-test.scss test.css`
 
     raise result unless $?.to_i == 0
 
@@ -25,8 +23,6 @@ namespace :test do
       `rm #{css}`
       `rm #{css}.map` if File.file?("#{css}.map")
     end
-
-    `rm test.scss` if File.file?('test.scss')
 
     puts "CSS files cleaned up"
   end
