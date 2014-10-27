@@ -1,0 +1,209 @@
+/* ============================================================================
+   @UTILITIES -> OVERFLOW
+   ========================================================================= */
+
+
+/**
+ * Apply different overflow treatment to elements i.e. when to clip content.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#overflow
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-overflow-breakpoints:                    $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-overflow-breakpoint-toggle-visible:      false !default;
+
+$u-overflow-breakpoint-toggle-visible-x:    false !default;
+
+$u-overflow-breakpoint-toggle-visible-y:    false !default;
+
+$u-overflow-breakpoint-toggle-hidden:       false !default;
+
+$u-overflow-breakpoint-toggle-hidden-x:     false !default;
+
+$u-overflow-breakpoint-toggle-hidden-y:     false !default;
+
+$u-overflow-breakpoint-toggle-scroll:       false !default;
+
+$u-overflow-breakpoint-toggle-scroll-x:     false !default;
+
+$u-overflow-breakpoint-toggle-scroll-y:     false !default;
+
+$u-overflow-breakpoint-toggle-auto:         false !default;
+
+$u-overflow-breakpoint-toggle-auto-x:       false !default;
+
+$u-overflow-breakpoint-toggle-auto-y:       false !default;
+
+$u-overflow-breakpoint-toggle-inherit:      false !default;
+
+$u-overflow-breakpoint-toggle-inherit-x:    false !default;
+
+$u-overflow-breakpoint-toggle-inherit-y:    false !default;
+
+
+/**
+ * Visible.
+ */
+
+%u-overflow-visible,
+.u-overflow-visible {overflow: visible;}
+
+@if $u-overflow-breakpoint-toggle-visible {
+  @include generate-at-breakpoints('.u-overflow-visible',
+    $u-overflow-breakpoints) {overflow: visible;}
+}// end if
+
+// At the left and right edges
+%u-overflow-x-visible,
+.u-overflow-x-visible {overflow-x: visible;}
+
+@if $u-overflow-breakpoint-toggle-visible-x {
+  @include generate-at-breakpoints('.u-overflow-x-visible',
+    $u-overflow-breakpoints) {overflow-x: visible;}
+}// end if
+
+// At the bottom and top edges
+%u-overflow-y-visible,
+.u-overflow-y-visible {overflow-y: visible;}
+
+@if $u-overflow-breakpoint-toggle-visible-y {
+  @include generate-at-breakpoints('.u-overflow-y-visible',
+    $u-overflow-breakpoints) {overflow-y: visible;}
+}// end if
+
+
+/**
+ * Hidden.
+ */
+
+%u-overflow-hidden,
+.u-overflow-hidden {overflow: hidden;}
+
+@if $u-overflow-breakpoint-toggle-hidden {
+  @include generate-at-breakpoints('.u-overflow-hidden',
+    $u-overflow-breakpoints) {overflow: hidden;}
+}// end if
+
+// At the left and right edges
+%u-overflow-x-hidden,
+.u-overflow-x-hidden {overflow-x: hidden;}
+
+@if $u-overflow-breakpoint-toggle-hidden-x {
+  @include generate-at-breakpoints('.u-overflow-x-hidden',
+    $u-overflow-breakpoints) {overflow-x: hidden;}
+}// end if
+
+// At the bottom and top edges
+%u-overflow-y-hidden,
+.u-overflow-y-hidden {overflow-y: hidden;}
+
+@if $u-overflow-breakpoint-toggle-hidden-y {
+  @include generate-at-breakpoints('.u-overflow-y-hidden',
+    $u-overflow-breakpoints) {overflow-y: hidden;}
+}// end if
+
+
+/**
+ * Scroll.
+ */
+
+%u-overflow-scroll,
+.u-overflow-scroll {overflow: scroll;}
+
+@if $u-overflow-breakpoint-toggle-scroll {
+  @include generate-at-breakpoints('.u-overflow-scroll',
+    $u-overflow-breakpoints) {overflow: scroll;}
+}// end if
+
+// At the left and right edges
+%u-overflow-x-scroll,
+.u-overflow-x-scroll {overflow-x: scroll;}
+
+@if $u-overflow-breakpoint-toggle-scroll-x {
+  @include generate-at-breakpoints('.u-overflow-x-scroll',
+    $u-overflow-breakpoints) {overflow-x: scroll;}
+}// end if
+
+// At the bottom and top edges
+%u-overflow-y-scroll,
+.u-overflow-y-scroll {overflow-y: scroll;}
+
+@if $u-overflow-breakpoint-toggle-scroll-y {
+  @include generate-at-breakpoints('.u-overflow-y-scroll',
+    $u-overflow-breakpoints) {overflow-y: scroll;}
+}// end if
+
+
+/**
+ * Auto.
+ */
+
+%u-overflow-auto,
+.u-overflow-auto {overflow: auto;}
+
+@if $u-overflow-breakpoint-toggle-auto {
+  @include generate-at-breakpoints('.u-overflow-auto', $u-overflow-breakpoints)
+  {overflow: auto;}
+}// end if
+
+// At the left and right edges
+%u-overflow-x-auto,
+.u-overflow-x-auto {overflow-x: auto;}
+
+@if $u-overflow-breakpoint-toggle-auto-x {
+  @include generate-at-breakpoints('.u-overflow-x-auto',
+    $u-overflow-breakpoints) {overflow-x: auto;}
+}// end if
+
+// At the bottom and top edges
+%u-overflow-y-auto,
+.u-overflow-y-auto {overflow-y: auto;}
+
+@if $u-overflow-breakpoint-toggle-auto-y {
+  @include generate-at-breakpoints('.u-overflow-y-auto',
+    $u-overflow-breakpoints) {overflow-y: auto;}
+}// end if
+
+
+/**
+ * Inherit.
+ */
+
+%u-overflow-inherit,
+.u-overflow-inherit {overflow: inherit;}
+
+@if $u-overflow-breakpoint-toggle-inherit {
+  @include generate-at-breakpoints('.u-overflow-inherit',
+    $u-overflow-breakpoints) {overflow: inherit;}
+}// end if
+
+// At the left and right edges
+%u-overflow-x-inherit,
+.u-overflow-x-inherit {overflow-x: inherit;}
+
+@if $u-overflow-breakpoint-toggle-inherit-x {
+  @include generate-at-breakpoints('.u-overflow-x-inherit',
+    $u-overflow-breakpoints) {overflow-x: inherit;}
+}// end if
+
+// At the bottom and top edges
+%u-overflow-y-inherit,
+.u-overflow-y-inherit {overflow-y: inherit;}
+
+@if $u-overflow-breakpoint-toggle-inherit-y {
+  @include generate-at-breakpoints('.u-overflow-y-inherit',
+    $u-overflow-breakpoints) {overflow-y: inherit;}
+}// end if
