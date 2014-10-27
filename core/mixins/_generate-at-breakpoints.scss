@@ -7,7 +7,7 @@
  * Generate classes which apply styling at different breakpoints which is fed
  * from the breakpoints defined here: Core -> Settings -> Breakpoints or any
  * custom breakpoint. The format of the generated class with a `min-width`
- * media query is:
+ * (default) media query is:
  *
    .[class-selector]-from-[breakpoint]
  *
@@ -15,7 +15,8 @@
  *
    .u-list-inline-from-lap
  *
- * The format of the generated class with a `max-width` media query is:
+ * The format of the generated class with a `max-width` (apply via the `max`
+ * flag) media query is:
  *
    .[class-selector]-up-to-[breakpoint]
  *
@@ -26,10 +27,12 @@
  * Sometimes the selector that is passed into this mixin is more complex than a
  * single class. In these cases the `-from-lap` or `-up-to-` suffix usually
  * should not be appended to the end of the selector. To account for this,
- * put `{bp}` in the selector where `-from-lap` or `-up-to-` should be inserted.
+ * put `{bp}` in the selector where `-from-lap` or `-up-to-` should be
+ * inserted.
  *
- * Passing in `'.u-demo{bp} li'` will produce the selector
- * `.u-demo-from-lap li`.
+ * E.g.
+ *
+ * `.u-demo{bp} li` will produce the selector `.u-demo-from-lap li`.
  *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/Bcfyz

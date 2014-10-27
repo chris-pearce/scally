@@ -22,24 +22,41 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-list-block-breakpoints:          $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-list-block-breakpoints:                $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-list-block-breakpoint-toggle-default:  false !default;
+
+$u-list-block-breakpoint-toggle-tiny:     false !default;
+
+$u-list-block-breakpoint-toggle-small:    false !default;
+
+$u-list-block-breakpoint-toggle-large:    false !default;
+
+$u-list-block-breakpoint-toggle-huge:     false !default;
+
+$u-list-block-breakpoint-toggle-border:   false !default;
 
 // Whitespace
-$u-list-block-item-padding-base:    $spacing-half !default;
+$u-list-block-item-padding-base:          $spacing-half !default;
 
-$u-list-block-item-padding-tiny:    $spacing-quarter !default;
+$u-list-block-item-padding-tiny:          $spacing-quarter !default;
 
-$u-list-block-item-padding-small:   $spacing-third !default;
+$u-list-block-item-padding-small:         $spacing-third !default;
 
-$u-list-block-item-padding-large:   $spacing-base !default;
+$u-list-block-item-padding-large:         $spacing-base !default;
 
-$u-list-block-item-padding-huge:    $spacing-double !default;
+$u-list-block-item-padding-huge:          $spacing-double !default;
 
 // Border
-$u-list-block-border-colour:        darken($colour-white, 10%) !default;
+$u-list-block-border-colour:              darken($colour-white, 10%) !default;
 
-$u-list-block-border-thickness:     1 !default;
+$u-list-block-border-thickness:           1 !default;
 
 
 %u-list-block > li,
@@ -54,17 +71,19 @@ $u-list-block-border-thickness:     1 !default;
   }
 }
 
-@include generate-at-breakpoints('.u-list-block{bp} > li',
-  $u-list-block-breakpoints) {
+@if $u-list-block-breakpoint-toggle-default {
+  @include generate-at-breakpoints('.u-list-block{bp} > li',
+    $u-list-block-breakpoints) {
 
-    &,
-    > a {@include to-rem(padding, $u-list-block-item-padding-base);}
+      &,
+      > a {@include to-rem(padding, $u-list-block-item-padding-base);}
 
-    > a {
-      display: block;
-      @include to-rem(margin, -$u-list-block-item-padding-base);
-    }
-}
+      > a {
+        display: block;
+        @include to-rem(margin, -$u-list-block-item-padding-base);
+      }
+  }
+}// end if
 
 
 /**
@@ -80,14 +99,16 @@ $u-list-block-border-thickness:     1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-tiny);}
 }
 
-@include generate-at-breakpoints('.u-list-block--tiny{bp} > li',
-  $u-list-block-breakpoints) {
+@if $u-list-block-breakpoint-toggle-tiny {
+  @include generate-at-breakpoints('.u-list-block--tiny{bp} > li',
+    $u-list-block-breakpoints) {
 
-    &,
-    > a {@include to-rem(padding, $u-list-block-item-padding-tiny);}
+      &,
+      > a {@include to-rem(padding, $u-list-block-item-padding-tiny);}
 
-    > a {@include to-rem(margin, -$u-list-block-item-padding-tiny);}
-}
+      > a {@include to-rem(margin, -$u-list-block-item-padding-tiny);}
+  }
+}// end if
 
 
 /**
@@ -96,21 +117,22 @@ $u-list-block-border-thickness:     1 !default;
 
 %u-list-block--small > li,
 .u-list-block--small > li {
-
   &,
   > a {@include to-rem(padding, $u-list-block-item-padding-small);}
 
   > a {@include to-rem(margin, -$u-list-block-item-padding-small);}
 }
 
-@include generate-at-breakpoints('.u-list-block--small{bp} > li',
-  $u-list-block-breakpoints) {
+@if $u-list-block-breakpoint-toggle-small {
+  @include generate-at-breakpoints('.u-list-block--small{bp} > li',
+    $u-list-block-breakpoints) {
 
-  &,
-  > a {@include to-rem(padding, $u-list-block-item-padding-small);}
+    &,
+    > a {@include to-rem(padding, $u-list-block-item-padding-small);}
 
-  > a {@include to-rem(margin, -$u-list-block-item-padding-small);}
-}
+    > a {@include to-rem(margin, -$u-list-block-item-padding-small);}
+  }
+}// end if
 
 
 /**
@@ -126,14 +148,16 @@ $u-list-block-border-thickness:     1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-large);}
 }
 
-@include generate-at-breakpoints('.u-list-block--large{bp} > li',
-  $u-list-block-breakpoints) {
+@if $u-list-block-breakpoint-toggle-large {
+  @include generate-at-breakpoints('.u-list-block--large{bp} > li',
+    $u-list-block-breakpoints) {
 
-  &,
-  > a {@include to-rem(padding, $u-list-block-item-padding-large);}
+    &,
+    > a {@include to-rem(padding, $u-list-block-item-padding-large);}
 
-  > a {@include to-rem(margin, -$u-list-block-item-padding-large);}
-}
+    > a {@include to-rem(margin, -$u-list-block-item-padding-large);}
+  }
+}// end if
 
 
 /**
@@ -149,14 +173,16 @@ $u-list-block-border-thickness:     1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-huge);}
 }
 
-@include generate-at-breakpoints('.u-list-block--huge{bp} > li',
-  $u-list-block-breakpoints) {
+@if $u-list-block-breakpoint-toggle-huge {
+  @include generate-at-breakpoints('.u-list-block--huge{bp} > li',
+    $u-list-block-breakpoints) {
 
-  &,
-  > a {@include to-rem(padding, $u-list-block-item-padding-huge);}
+    &,
+    > a {@include to-rem(padding, $u-list-block-item-padding-huge);}
 
-  > a {@include to-rem(margin, -$u-list-block-item-padding-huge);}
-}
+    > a {@include to-rem(margin, -$u-list-block-item-padding-huge);}
+  }
+}// end if
 
 
 /**
@@ -174,11 +200,13 @@ $u-list-block-border-thickness:     1 !default;
     $u-list-block-border-colour);}
 }
 
-@include generate-at-breakpoints('.u-list-block--border',
-  $u-list-block-breakpoints) {
-  @include to-rem(border-top, $u-list-block-border-thickness solid
-    $u-list-block-border-colour);
+@if $u-list-block-breakpoint-toggle-border {
+  @include generate-at-breakpoints('.u-list-block--border',
+    $u-list-block-breakpoints) {
+    @include to-rem(border-top, $u-list-block-border-thickness solid
+      $u-list-block-border-colour);
 
-  > li {@include to-rem(border-bottom, $u-list-block-border-thickness solid
-    $u-list-block-border-colour);}
-}
+    > li {@include to-rem(border-bottom, $u-list-block-border-thickness solid
+      $u-list-block-border-colour);}
+  }
+}// end if

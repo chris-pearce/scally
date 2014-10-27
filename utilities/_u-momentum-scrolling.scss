@@ -15,8 +15,31 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-momentum-scrolling-breakpoints:         $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-momentum-scrolling-breakpoint-toggle:   false !default;
+
+
 %u-momentum-scrolling,
 .u-momentum-scrolling {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+@if $u-momentum-scrolling-breakpoint-toggle {
+  @include generate-at-breakpoints('.u-momentum-scrolling',
+    $u-momentum-scrolling-breakpoints) {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}// end if

@@ -20,8 +20,27 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-flex-embed-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-flex-embed-breakpoints:                        $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-flex-embed-breakpoint-toggle-default:          false !default;
+
+$u-flex-embed-breakpoint-toggle-ratio:            false !default;
+
+$u-flex-embed-breakpoint-toggle-ratio-16-by-9:    false !default;
+
+$u-flex-embed-breakpoint-toggle-ratio-3-by-1:     false !default;
+
+$u-flex-embed-breakpoint-toggle-ratio-2-by-1:     false !default;
+
+$u-flex-embed-breakpoint-toggle-ratio-4-by-3:     false !default;
+
+$u-flex-embed-breakpoint-toggle-content:          false !default;
 
 
 %u-flex-embed,
@@ -31,11 +50,13 @@ $u-flex-embed-breakpoints: $default-breakpoints !default;
   overflow: hidden;
 }
 
-@include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-breakpoints) {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
+@if $u-flex-embed-breakpoint-toggle-default {
+  @include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-breakpoints) {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+}// end if
 
 
   /**
@@ -52,12 +73,14 @@ $u-flex-embed-breakpoints: $default-breakpoints !default;
     width: 100%;
   }
 
-  @include generate-at-breakpoints('.u-flex-embed__ratio',
-    $u-flex-embed-breakpoints) {
-    display: block;
-    padding-bottom: 100%;
-    width: 100%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-ratio {
+    @include generate-at-breakpoints('.u-flex-embed__ratio',
+      $u-flex-embed-breakpoints) {
+      display: block;
+      padding-bottom: 100%;
+      width: 100%;
+    }
+  }// end if
 
 
   /**
@@ -68,37 +91,37 @@ $u-flex-embed-breakpoints: $default-breakpoints !default;
   %u-flex-embed__ratio--16-by-9,
   .u-flex-embed__ratio--16-by-9 {padding-bottom: 56.25%;}
 
-  @include generate-at-breakpoints('.u-flex-embed__ratio--16-by-9',
-    $u-flex-embed-breakpoints) {
-    padding-bottom: 56.25%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-ratio-16-by-9 {
+    @include generate-at-breakpoints('.u-flex-embed__ratio--16-by-9',
+      $u-flex-embed-breakpoints) {padding-bottom: 56.25%;}
+  }// end if
 
   // 3:1 aspect ratio
   %u-flex-embed__ratio--3-by-1,
   .u-flex-embed__ratio--3-by-1 {padding-bottom: (100/3)*1%;}
 
-  @include generate-at-breakpoints('.u-flex-embed__ratio--3-by-1',
-    $u-flex-embed-breakpoints) {
-    padding-bottom: (100/3)*1%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-ratio-3-by-1 {
+    @include generate-at-breakpoints('.u-flex-embed__ratio--3-by-1',
+      $u-flex-embed-breakpoints) {padding-bottom: (100/3)*1%;}
+  }// end if
 
   // 2:1 aspect ratio
   %u-flex-embed__ratio--2-by-1,
   .u-flex-embed__ratio--2-by-1 {padding-bottom: 50%;}
 
-  @include generate-at-breakpoints('.u-flex-embed__ratio--2-by-1',
-    $u-flex-embed-breakpoints) {
-    padding-bottom: 50%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-ratio-2-by-1 {
+    @include generate-at-breakpoints('.u-flex-embed__ratio--2-by-1',
+      $u-flex-embed-breakpoints) {padding-bottom: 50%;}
+  }// end if
 
   // 4:3 aspect ratio
   %u-flex-embed__ratio--4-by-3,
   .u-flex-embed__ratio--4-by-3 {padding-bottom: 75%;}
 
-  @include generate-at-breakpoints('.u-flex-embed__ratio--4-by-3',
-    $u-flex-embed-breakpoints) {
-    padding-bottom: 75%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-ratio-4-by-3 {
+    @include generate-at-breakpoints('.u-flex-embed__ratio--4-by-3',
+      $u-flex-embed-breakpoints) {padding-bottom: 75%;}
+  }// end if
 
 
   /**
@@ -114,11 +137,13 @@ $u-flex-embed-breakpoints: $default-breakpoints !default;
 		height: 100%;
 	}
 
-  @include generate-at-breakpoints('.u-flex-embed__content',
-    $u-flex-embed-breakpoints) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  @if $u-flex-embed-breakpoint-toggle-content {
+    @include generate-at-breakpoints('.u-flex-embed__content',
+      $u-flex-embed-breakpoints) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }// end if

@@ -16,8 +16,15 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-link-no-underline-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-link-no-underline-breakpoints:         $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-link-no-underline-breakpoint-toggle:   false !default;
 
 
 %u-link-no-underline,
@@ -29,11 +36,13 @@ $u-link-no-underline-breakpoints: $default-breakpoints !default;
   &:active {text-decoration: none;}
 }
 
-@include generate-at-breakpoints('.u-link-no-underline',
-  $u-link-no-underline-breakpoints) {
-  &,
-  &:visited,
-  &:hover,
-  &:focus,
-  &:active {text-decoration: none;}
-}
+@if $u-link-no-underline-breakpoint-toggle {
+  @include generate-at-breakpoints('.u-link-no-underline',
+    $u-link-no-underline-breakpoints) {
+    &,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {text-decoration: none;}
+  }
+}// end if

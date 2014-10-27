@@ -28,14 +28,25 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-drop-down-breakpoints:           $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-drop-down-breakpoints:                 $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-drop-down-breakpoint-toggle-default:   false !default;
+
+$u-drop-down-breakpoint-toggle-target:    false !default;
+
+$u-drop-down-breakpoint-toggle-on-hover:  false !default;
 
 // The state class that is powered by JavaScript
-$u-drop-down-state-class:           is-visible !default;
+$u-drop-down-state-class:                 is-visible !default;
 
 // Class that is used to identify touch support
-$u-drop-down-touch-support-class:   is-touch !default;
+$u-drop-down-touch-support-class:         is-touch !default;
 
 
 /**
@@ -47,9 +58,11 @@ $u-drop-down-touch-support-class:   is-touch !default;
 %u-drop-down,
 .u-drop-down {position: relative;} // [1]
 
-@include generate-at-breakpoints('.u-drop-down', $u-drop-down-breakpoints) {
-  position: relative;
-}
+@if $u-drop-down-breakpoint-toggle-default {
+  @include generate-at-breakpoints('.u-drop-down', $u-drop-down-breakpoints) {
+    position: relative;
+  }
+}// end if
 
 
   /**
@@ -69,16 +82,18 @@ $u-drop-down-touch-support-class:   is-touch !default;
     .u-drop-down--on-hover:hover & {display: block;}
   }
 
-  @include generate-at-breakpoints('.u-drop-down__target',
-    $u-drop-down-breakpoints) {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+  @if $u-drop-down-breakpoint-toggle-target {
+    @include generate-at-breakpoints('.u-drop-down__target',
+      $u-drop-down-breakpoints) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
 
-    &.#{$u-drop-down-state-class},
-    .u-drop-down--on-hover:hover & {display: block;}
-  }
+      &.#{$u-drop-down-state-class},
+      .u-drop-down--on-hover:hover & {display: block;}
+    }
+  }// end if
 
 
   /**
@@ -92,6 +107,8 @@ $u-drop-down-touch-support-class:   is-touch !default;
   .#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target
   {display: none;}
 
-  @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target', $u-drop-down-breakpoints) {
-    display: none;
-  }
+  @if $u-drop-down-breakpoint-toggle-on-hover {
+    @include generate-at-breakpoints('.#{$u-drop-down-touch-support-class} .u-drop-down--on-hover .u-drop-down__target', $u-drop-down-breakpoints) {
+      display: none;
+    }
+  }// end if

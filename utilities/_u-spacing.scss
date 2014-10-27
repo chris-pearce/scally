@@ -37,21 +37,28 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-spacing-breakpoints: $default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-spacing-breakpoints:             $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-spacing-classes-for-breakpoints: () !default;
 
 // Spacing sizes
-$u-spacing-base:        $spacing-base !default;
+$u-spacing-base:                    $spacing-base !default;
 
-$u-spacing-micro:       $spacing-micro !default;
+$u-spacing-micro:                   $spacing-micro !default;
 
-$u-spacing-tiny:        $spacing-third !default;
+$u-spacing-tiny:                    $spacing-third !default;
 
-$u-spacing-small:       $spacing-half !default;
+$u-spacing-small:                   $spacing-half !default;
 
-$u-spacing-large:       $spacing-base-plus-half !default;
+$u-spacing-large:                   $spacing-base-plus-half !default;
 
-$u-spacing-huge:        $spacing-double !default;
+$u-spacing-huge:                    $spacing-double !default;
 
 // Maps for the generate at breakpoint mixin
 
@@ -332,7 +339,8 @@ $u-spacing-types: (
 .u-s-ms-n-micro {@include to-rem(margin-left margin-right, -$u-spacing-micro);}
 
 %u-s-ps-n-micro,
-.u-s-ps-n-micro {@include to-rem(padding-left padding-right, -$u-spacing-micro);}
+.u-s-ps-n-micro {@include to-rem(padding-left padding-right,
+  -$u-spacing-micro);}
 
 
 // Ends
@@ -347,7 +355,8 @@ $u-spacing-types: (
 .u-s-me-n-micro {@include to-rem(margin-top margin-bottom, -$u-spacing-micro);}
 
 %u-s-pe-n-micro,
-.u-s-pe-n-micro {@include to-rem(padding-top padding-bottom, -$u-spacing-micro);}
+.u-s-pe-n-micro {@include to-rem(padding-top padding-bottom,
+  -$u-spacing-micro);}
 
 
 
@@ -554,7 +563,8 @@ $u-spacing-types: (
 .u-s-ms-n-small {@include to-rem(margin-left margin-right, -$u-spacing-small);}
 
 %u-s-ps-n-small,
-.u-s-ps-n-small {@include to-rem(padding-left padding-right, -$u-spacing-small);}
+.u-s-ps-n-small {@include to-rem(padding-left padding-right,
+  -$u-spacing-small);}
 
 
 // Ends
@@ -569,7 +579,8 @@ $u-spacing-types: (
 .u-s-me-n-small {@include to-rem(margin-top margin-bottom, -$u-spacing-small);}
 
 %u-s-pe-n-small,
-.u-s-pe-n-small {@include to-rem(padding-top padding-bottom, -$u-spacing-small);}
+.u-s-pe-n-small {@include to-rem(padding-top padding-bottom,
+  -$u-spacing-small);}
 
 
 
@@ -665,7 +676,8 @@ $u-spacing-types: (
 .u-s-ms-n-large {@include to-rem(margin-left margin-right, -$u-spacing-large);}
 
 %u-s-ps-n-large,
-.u-s-ps-n-large {@include to-rem(padding-left padding-right, -$u-spacing-large);}
+.u-s-ps-n-large {@include to-rem(padding-left padding-right,
+  -$u-spacing-large);}
 
 
 // Ends
@@ -680,7 +692,8 @@ $u-spacing-types: (
 .u-s-me-n-large {@include to-rem(margin-top margin-bottom, -$u-spacing-large);}
 
 %u-s-pe-n-large,
-.u-s-pe-n-large {@include to-rem(padding-top padding-bottom, -$u-spacing-large);}
+.u-s-pe-n-large {@include to-rem(padding-top padding-bottom,
+  -$u-spacing-large);}
 
 
 
@@ -879,10 +892,13 @@ $u-spacing-types: (
 
   // No spacing classes
   @if str_index($abbreviation, '-none') != null {
-    @include generate-at-breakpoints(".u-s-#{$abbreviation}",
+    $class-name: ".u-s-#{$abbreviation}";
+    @if index($u-spacing-classes-for-breakpoints, $class-name) {
+      @include generate-at-breakpoints($class-name ,
         $u-spacing-breakpoints) {
         @include to-rem($type, 0);
       }
+    }
   }
 
   // Everything else
@@ -890,19 +906,22 @@ $u-spacing-types: (
 
     // Loop through the sizes
     @each $size in (base tiny small large huge) {
-      @include generate-at-breakpoints(".u-s-#{$abbreviation}-#{$size}",
-        $u-spacing-breakpoints) {
+      $class-name: ".u-s-#{$abbreviation}-#{$size}";
+      @if index($u-spacing-classes-for-breakpoints, $class-name) != null {
+        @include generate-at-breakpoints($class-name,
+          $u-spacing-breakpoints) {
 
-        // Get all the sizes
-        $size-value: map-get($u-spacing-sizes, $size);
+          // Get all the sizes
+          $size-value: map-get($u-spacing-sizes, $size);
 
-        // Negative spacing
-        @if str_index($abbreviation, '-n') != null {
-          $size-value: $size-value * -1;
+          // Negative spacing
+          @if str_index($abbreviation, '-n') != null {
+            $size-value: $size-value * -1;
+          }
+
+          // All other spacing
+          @include to-rem($type, $size-value);
         }
-
-        // All other spacing
-        @include to-rem($type, $size-value);
       }
     }
   }

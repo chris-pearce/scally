@@ -19,68 +19,99 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-display-breakpoints:     	$default-breakpoints !default;
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-display-breakpoints:                         $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-display-breakpoint-toggle-block:             false !default;
+
+$u-display-breakpoint-toggle-inline:            false !default;
+
+$u-display-breakpoint-toggle-inline-block:      false !default;
+
+$u-display-breakpoint-toggle-table:             false !default;
+
+$u-display-breakpoint-toggle-table-row:         false !default;
+
+$u-display-breakpoint-toggle-table-cell:        false !default;
+
+$u-display-breakpoint-toggle-inherit:           false !default;
+
+$u-display-breakpoint-toggle-hide:              false !default;
+
+$u-display-breakpoint-toggle-hide-invisible:    false !default;
+
+$u-display-breakpoint-toggle-hide-visually:     false !default;
 
 // Classes to detect if JavaScript is on or off
-$u-display-js-is-on-class:    js !default;
+$u-display-js-is-on-class:                      js !default;
 
-$u-display-js-is-off-class:		no-js !default;
+$u-display-js-is-off-class:		                  no-js !default;
 
 
 /**
  * Block, inline, and inline-block display.
  */
 
+// Block
 %u-display-block,
 .u-display-block {display: block;}
 
-@include generate-at-breakpoints('.u-display-block', $u-display-breakpoints) {
-  display: block;
-}
+@if $u-display-breakpoint-toggle-block {
+  @include generate-at-breakpoints('.u-display-block', $u-display-breakpoints) {display: block;}
+}// end if
 
+// Inline
 %u-display-inline,
 .u-display-inline {display: inline;}
 
-@include generate-at-breakpoints('.u-display-inline', $u-display-breakpoints) {
-  display: inline;
-}
+@if $u-display-breakpoint-toggle-inline {
+  @include generate-at-breakpoints('.u-display-inline', $u-display-breakpoints) {display: inline;}
+}// end if
 
+// Inline block
 %u-display-inline-block,
 .u-display-inline-block {display: inline-block;}
 
-@include generate-at-breakpoints('.u-display-inline-block', $u-display-breakpoints
-  ) {
-  display: inline-block;
-}
+@if $u-display-breakpoint-toggle-inline-block {
+  @include generate-at-breakpoints('.u-display-inline-block', $u-display-breakpoints
+    ) {display: inline-block;}
+}// end if
 
 
 /**
  * Table display.
  */
 
+// Table
 %u-display-table,
 .u-display-table {display: table;}
 
-@include generate-at-breakpoints('.u-display-table', $u-display-breakpoints) {
-  display: table;
-}
+@if $u-display-breakpoint-toggle-table {
+  @include generate-at-breakpoints('.u-display-table', $u-display-breakpoints) {display: table;}
+}// end if
 
+// Table row
 %u-display-table-row,
 .u-display-table-row {display: table-row;}
 
-@include generate-at-breakpoints('.u-display-table-row', $u-display-breakpoints
-  ) {
-  display: table-row;
-}
+@if $u-display-breakpoint-toggle-table-row {
+  @include generate-at-breakpoints('.u-display-table-row', $u-display-breakpoints
+    ) {display: table-row;}
+}// end if
 
+// Table cell
 %u-display-table-cell,
 .u-display-table-cell {display: table-cell;}
 
-@include generate-at-breakpoints('.u-display-table-cell', $u-display-breakpoints
-  ) {
-  display: table-cell;
-}
+@if $u-display-breakpoint-toggle-table-cell {
+  @include generate-at-breakpoints('.u-display-table-cell', $u-display-breakpoints
+    ) {display: table-cell;}
+}// end if
 
 
 /**
@@ -90,9 +121,9 @@ $u-display-js-is-off-class:		no-js !default;
 %u-display-inherit,
 .u-display-inherit {display: inherit;}
 
-@include generate-at-breakpoints('.u-display-inherit', $u-display-breakpoints) {
-  display: inherit;
-}
+@if $u-display-breakpoint-toggle-inherit {
+  @include generate-at-breakpoints('.u-display-inherit', $u-display-breakpoints) {display: inherit;}
+}// end if
 
 
 /**
@@ -105,10 +136,12 @@ $u-display-js-is-off-class:		no-js !default;
 	visibility: hidden;
 }
 
-@include generate-at-breakpoints('.u-hide', $u-display-breakpoints) {
-  display: none;
-	visibility: hidden;
-}
+@if $u-display-breakpoint-toggle-hide {
+  @include generate-at-breakpoints('.u-hide', $u-display-breakpoints) {
+    display: none;
+  	visibility: hidden;
+  }
+}// end if
 
 
 /**
@@ -118,9 +151,9 @@ $u-display-js-is-off-class:		no-js !default;
 %u-hide-invisible,
 .u-hide-invisible {visibility: hidden;}
 
-@include generate-at-breakpoints('.u-hide-invisible', $u-display-breakpoints) {
-	visibility: hidden;
-}
+@if $u-display-breakpoint-toggle-hide-invisible {
+  @include generate-at-breakpoints('.u-hide-invisible', $u-display-breakpoints) {visibility: hidden;}
+}// end if
 
 
 /**
@@ -146,23 +179,25 @@ $u-display-js-is-off-class:		no-js !default;
 	&.legend {left: $off-screen-distance;}
 }
 
-@include generate-at-breakpoints('.u-hide-visually', $u-display-breakpoints) {
-	position: absolute;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	margin: -1px;
-	padding: 0;
-	border: 0;
+@if $u-display-breakpoint-toggle-hide-visually {
+  @include generate-at-breakpoints('.u-hide-visually', $u-display-breakpoints) {
+  	position: absolute;
+  	height: 1px;
+  	width: 1px;
+  	overflow: hidden;
+  	clip: rect(0 0 0 0);
+  	margin: -1px;
+  	padding: 0;
+  	border: 0;
 
 
-	/**
-	 * Form `legend`s need different treatment.
-	 */
+  	/**
+  	 * Form `legend`s need different treatment.
+  	 */
 
-	&.legend {left: $off-screen-distance;}
-}
+  	&.legend {left: $off-screen-distance;}
+  }
+}// end if
 
 
 /**
