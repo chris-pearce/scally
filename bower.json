@@ -22,6 +22,7 @@
     "Rakefile",
     "TODO.md",
     "settings.scss",
-    "style.scss"
+    "style.scss",
+    "style-test.scss"
   ]
 }
