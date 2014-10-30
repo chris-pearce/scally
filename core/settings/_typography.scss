@@ -63,8 +63,11 @@ $line-height-ratio:       $line-height / $font-size !default;
 // Base
 $font-family-base:        Arial, sans-serif !default;
 
+// Headings
+$font-family-headings:   $font-family-base !default;
+
 // Icons
-$font-family-icons:       "Icons";
+$font-family-icons:       "Icons" !default;
 
 // Serif
 $font-family-serif:       Baskerville, "Hoefler Text", Garamond,
