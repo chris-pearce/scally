@@ -10,6 +10,13 @@
 
 
 /**
+ * Settings.
+ */
+
+$google-map-selector-to-turn-off-responsive-images: ".gm-style" !default;
+
+
+/**
  * Remove the gap between media elements and the bottom of their containers.
  *
  * @credit
@@ -31,17 +38,30 @@ video {vertical-align: middle;}
  */
 
 img {
-	max-width: 100%; // [1]
-	height: auto; // [1]
+
+  @if $responsive-images {
+
+  	max-width: 100%; // [1]
+  	height: auto; // [1]
+
+    /**
+     * Google Maps breaks if `max-width: 100%` acts upon it; use their
+     * selector to remove the effects.
+     */
+
+    #{$google-map-selector-to-turn-off-responsive-images} & {max-width: none;}
+
+  }
+
 	font-style: italic; // [2]
-
-  /**
-   * Google Maps breaks if `max-width: 100%` acts upon it; use their
-   * selector to remove the effects.
-   */
-
-  .gm-style & {max-width: none;}
 }
+
+
+/**
+ * If responsive images are turned on then use this to turn it off.
+ */
+
+.img-not-responsive {max-width: none;}
 
 
 /**
