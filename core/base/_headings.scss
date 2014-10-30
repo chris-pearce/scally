@@ -12,6 +12,15 @@
 
 
 /**
+ * Apply font family.
+ */
+
+@include headings(1, 6, true) {
+  font-family: $font-family-headings;
+}
+
+
+/**
  * Set margins but make optional.
  */
 
