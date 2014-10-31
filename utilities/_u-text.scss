@@ -67,15 +67,15 @@ $u-text-breakpoint-toggle-weight-inherit:         false !default;
 
 $u-text-breakpoint-toggle-weight-normal:          false !default;
 
-$u-text-breakpoint-toggle-capitalise-uppercase:   false !default;
+$u-text-breakpoint-toggle-transform-uppercase:   false !default;
 
-$u-text-breakpoint-toggle-capitalise-lowercase:   false !default;
+$u-text-breakpoint-toggle-transform-lowercase:   false !default;
 
-$u-text-breakpoint-toggle-capitalise-capitalise:  false !default;
+$u-text-breakpoint-toggle-transform-capitalise:  false !default;
 
-$u-text-breakpoint-toggle-capitalise-inherit:     false !default;
+$u-text-breakpoint-toggle-transform-inherit:     false !default;
 
-$u-text-breakpoint-toggle-capitalise-none:        false !default;
+$u-text-breakpoint-toggle-transform-none:        false !default;
 
 $u-text-breakpoint-toggle-colour-white:           false !default;
 
@@ -312,46 +312,46 @@ $u-text-breakpoint-toggle-hyphenate:              false !default;
 
 
 /**
- * Capitalise.
+ * Transform.
  */
 
-%u-text-capitalise-uppercase,
-.u-text-capitalise-uppercase {text-transform: uppercase;}
+%u-text-transform-uppercase,
+.u-text-transform-uppercase {text-transform: uppercase;}
 
-@if $u-text-breakpoint-toggle-capitalise-uppercase {
-  @include generate-at-breakpoints('.u-text-capitalise-uppercase',
+@if $u-text-breakpoint-toggle-transform-uppercase {
+  @include generate-at-breakpoints('.u-text-transform-uppercase',
     $u-text-breakpoints) {text-transform: uppercase;}
 }// end if
 
-%u-text-capitalise-lowercase,
-.u-text-capitalise-lowercase {text-transform: lowercase;}
+%u-text-transform-lowercase,
+.u-text-transform-lowercase {text-transform: lowercase;}
 
-@if $u-text-breakpoint-toggle-capitalise-lowercase {
-  @include generate-at-breakpoints('.u-text-capitalise-lowercase',
+@if $u-text-breakpoint-toggle-transform-lowercase {
+  @include generate-at-breakpoints('.u-text-transform-lowercase',
     $u-text-breakpoints) {text-transform: lowercase;}
 }// end if
 
-%u-text-capitalise-capitalise,
-.u-text-capitalise-capitalise {text-transform: capitalize;}
+%u-text-transform-capitalise,
+.u-text-transform-capitalise {text-transform: capitalize;}
 
-@if $u-text-breakpoint-toggle-capitalise-capitalise {
-  @include generate-at-breakpoints('.u-text-capitalise-capitalise',
+@if $u-text-breakpoint-toggle-transform-capitalise {
+  @include generate-at-breakpoints('.u-text-transform-capitalise',
     $u-text-breakpoints) {text-transform: capitalize;}
 }// end if
 
-%u-text-capitalise-inherit,
-.u-text-capitalise-inherit {text-transform: inherit;}
+%u-text-transform-inherit,
+.u-text-transform-inherit {text-transform: inherit;}
 
-@if $u-text-breakpoint-toggle-capitalise-inherit {
-  @include generate-at-breakpoints('.u-text-capitalise-inherit',
+@if $u-text-breakpoint-toggle-transform-inherit {
+  @include generate-at-breakpoints('.u-text-transform-inherit',
     $u-text-breakpoints) {text-transform: inherit;}
 }// end if
 
-%u-text-capitalise-none,
-.u-text-capitalise-none {text-transform: none;}
+%u-text-transform-none,
+.u-text-transform-none {text-transform: none;}
 
-@if $u-text-breakpoint-toggle-capitalise-none {
-  @include generate-at-breakpoints('.u-text-capitalise-none',
+@if $u-text-breakpoint-toggle-transform-none {
+  @include generate-at-breakpoints('.u-text-transform-none',
     $u-text-breakpoints) {text-transform: none;}
 }// end if
 
