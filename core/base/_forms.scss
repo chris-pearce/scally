@@ -28,13 +28,14 @@ $text-input-and-select-border-style:          solid !default;
 $text-input-and-select-border-colour:         lighten($colour-black, 30%)
 !default;
 
-$text-input-and-select-border-radius-amount:  $border-radius !default;
-
 // Text colour
 $text-input-and-select-text-color:            $colour-text-base !default;
 
 // Background
 $text-input-and-select-background-color:      $colour-white !default;
+
+// Rounded corners
+$text-input-and-select-rounded-corners-size:  $border-radius !default;
 
 
 /**
@@ -181,10 +182,10 @@ legend {
     }
 
     // Apply rounded corners but make it optional
-    @if $text-input-and-select-border-radius {
+    @if $text-input-and-select-rounded-corners {
 
       @include to-rem(border-radius,
-        $text-input-and-select-border-radius-amount);
+        $text-input-and-select-rounded-corners-size);
 
     }
   }
