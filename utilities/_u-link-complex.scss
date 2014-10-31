@@ -67,24 +67,24 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
 
   %u-link-complex__target,
   .u-link-complex__target {
-    color: $colour-link;
+    color: $link-colour;
 
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: $colour-link-hover;
+      color: $link-colour-hover;
     }
   }
 
   @if $u-link-complex-breakpoint-toggle-target {
     @include generate-at-breakpoints('.u-link-complex__target',
       $u-link-complex-breakpoints) {
-  		color: $colour-link;
+  		color: $link-colour;
 
   		&:hover,
   		&:focus {
   			text-decoration: underline;
-  			color: $colour-link-hover;
+  			color: $link-colour-hover;
   		}
     }
   }// end if

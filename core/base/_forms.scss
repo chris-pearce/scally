@@ -10,6 +10,34 @@
 
 
 /**
+ * Settings.
+ */
+
+/**
+ * Text inputs and `select`s
+ */
+
+// Padding
+$text-input-and-select-padding:               $spacing-quarter !default;
+
+// Border
+$text-input-and-select-border-thickness:      1 !default;
+
+$text-input-and-select-border-style:          solid !default;
+
+$text-input-and-select-border-colour:         lighten($colour-black, 30%)
+!default;
+
+$text-input-and-select-border-radius-amount:  $border-radius !default;
+
+// Text colour
+$text-input-and-select-text-color:            $colour-text-base !default;
+
+// Background
+$text-input-and-select-background-color:      $colour-white !default;
+
+
+/**
  * Indicate that `label` will shift focus to the associated `input` element.
  */
 
@@ -127,19 +155,22 @@ legend {
  * Text inputs via the `.text-input` class, `textarea`s, and `select` lists.
  */
 
-@if $form-text-input-and-select-styles {
+@if $text-input-and-select-styles {
 
   .text-input,
   textarea,
   select {
-    @include to-rem(padding, $form-text-input-and-select-padding);
-    color: $colour-form-input-text;
+    @include to-rem(padding, $text-input-and-select-padding);
+    color: $text-input-and-select-text-color;
+    background: $text-input-and-select-background-color;
 
     // Apply a border but make it optional
-    @if $form-text-input-and-select-border {
+    @if $text-input-and-select-border {
 
-      @include to-rem(border-radius, $border-radius);
-      @include to-rem(border, 1 solid $colour-form-input-border);
+      @include to-rem(border, $text-input-and-select-border-thickness
+                              $text-input-and-select-border-style
+                              $text-input-and-select-border-colour
+                      );
 
     }
 
@@ -149,7 +180,13 @@ legend {
 
     }
 
-    background: $colour-form-input-background;
+    // Apply rounded corners but make it optional
+    @if $text-input-and-select-border-radius {
+
+      @include to-rem(border-radius,
+        $text-input-and-select-border-radius-amount);
+
+    }
   }
 
 }// endif
