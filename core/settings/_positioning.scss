@@ -6,18 +6,48 @@
 /**
  * `z-index` values.
  *
- * A nice way to maintain `z-index` order.
+ * A nice way to maintain `z-index` order. Be sure to read this: http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ *
+ * Scally kicks it off by providing a stacking order context at the lowest
+ * level i.e. for the containers that make up the main sections of a web site
+ * which is usually something like this:
+ *
+   <body>
+     <header>
+     <main>
+     <footer>
+   </body>
+ *
+ * So we can set up the above like so:
+ *
+ * $z-index-elements-global:  footer,           // `z-index: 1`
+                              main,             // `z-index: 2`
+                              header !default;  // `z-index: 3`
+ *
+ * Then within each of these main sections e.g. `header` you may end up with
+ * more stacking contexts e.g.
+ *
+   $z-index-elements-header:  navigation, // `z-index: 1`
+                              drop-downs; // `z-index: 2`
+ *
+ * So the stacking order of the above would be:
+ *
+ * header (3)
+ *  navigation (1)
+ *  drop-downs (2)
+ * main (2)
+ * footer (1)
  *
  * @credit
  * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
  */
 
-// N.B. update according to your project elements
-$z-index-elements:      footer, main, header !default;
+// N.B. update according to your project
+$z-index-elements-global:   footer, main, header !default;
 
 
 /**
  * Off-screen distance.
  */
 
-$off-screen-distance:   -9999px !default;
+$off-screen-distance:       -9999px !default;
