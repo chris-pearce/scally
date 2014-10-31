@@ -33,29 +33,12 @@ $colour-text-base:                $colour-black !default;
 
 
 /**
- * `html` element background.
- */
-
-$colour-html-element-background:  $colour-white !default;
-
-
-/**
  * Primary / Secondary.
  */
 
 $colour-primary:                  $colour-brand !default;
 
 $colour-secondary:                lighten($colour-brand, 10%) !default;
-
-
-/**
- * Links.
- */
-
-$colour-link:                     $colour-brand !default;
-
-// Hover
-$colour-link-hover:               darken($colour-link, 10%) !default;
 
 
 /**
@@ -73,17 +56,3 @@ $colour-state-warning:            #b58900 !default;
 
 // Information
 $colour-state-information:        #268bd2 !default;
-
-
-/**
- * Forms.
- */
-
-// Input text
-$colour-form-input-text:          $colour-text-base !default;
-
-// Input background
-$colour-form-input-background:    $colour-white !default;
-
-// Input border
-$colour-form-input-border:        lighten($colour-black, 30%) !default;

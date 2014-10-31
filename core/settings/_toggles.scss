@@ -47,10 +47,13 @@ $responsive-images:                         true !default;
 $disabled-state:                            true !default;
 
 // Text input and select styles
-$form-text-input-and-select-styles:         true !default;
+$text-input-and-select-styles:              true !default;
 
-// Apply border for text input and selects
-$form-text-input-and-select-border:         true !default;
+// Apply a border for text input and selects
+$text-input-and-select-border:              true !default;
+
+// Apply rounded corners for text input and selects
+$text-input-and-select-rounded-corners:     false !default;
 
 // Remove the top inner shadow from iOS inputs
 $remove-top-inner-shadow-from-ios-inputs:   false !default;
