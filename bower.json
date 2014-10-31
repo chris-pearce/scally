@@ -18,11 +18,18 @@
   ],
   "license": "Apache 2.0",
   "ignore": [
-    "**/.*",
+    ".gitignore",
+    ".travis.yml",
+    ".version",
     "Rakefile",
-    "TODO.md",
     "settings.scss",
     "style.scss",
-    "style-test.scss"
+    "style-test.scss",
+    "style.css",
+    "style.css.map",
+    "demo-styles.scss"
+    "demo-styles.css",
+    "demo-styles.css.map",
+    "demo.html"
   ]
 }
