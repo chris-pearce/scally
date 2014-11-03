@@ -155,8 +155,7 @@ $u-overflow-breakpoint-toggle-inherit-y:    false !default;
 .u-overflow-auto {overflow: auto;}
 
 @if $u-overflow-breakpoint-toggle-auto {
-  @include generate-at-breakpoints('.u-overflow-auto', $u-overflow-breakpoints)
-  {overflow: auto;}
+  @include generate-at-breakpoints('.u-overflow-auto', $u-overflow-breakpoints) {overflow: auto;}
 }// end if
 
 // At the left and right edges

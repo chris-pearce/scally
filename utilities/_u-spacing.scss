@@ -891,7 +891,7 @@ $u-spacing-types: (
 @each $abbreviation, $type in $u-spacing-types {
 
   // No spacing classes
-  @if str_index($abbreviation, '-none') != null {
+  @if str_index($abbreviation, "-none") != null {
     $class-name: ".u-s-#{$abbreviation}";
     @if index($u-spacing-classes-for-breakpoints, $class-name) {
       @include generate-at-breakpoints($class-name ,
@@ -915,7 +915,7 @@ $u-spacing-types: (
           $size-value: map-get($u-spacing-sizes, $size);
 
           // Negative spacing
-          @if str_index($abbreviation, '-n') != null {
+          @if str_index($abbreviation, "-n") != null {
             $size-value: $size-value * -1;
           }
 

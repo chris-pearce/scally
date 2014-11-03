@@ -34,12 +34,12 @@ $u-image-replacement-breakpoint-toggle-alt:       false !default;
   border: 0;
   overflow: hidden;
 
-	&:before {
-		content: "";
-		display: block;
-		width: 0;
-		height: 150%;
-	}
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
 }
 
 @if $u-image-replacement-breakpoint-toggle-default {

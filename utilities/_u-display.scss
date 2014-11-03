@@ -50,7 +50,7 @@ $u-display-breakpoint-toggle-hide-visually:     false !default;
 // Classes to detect if JavaScript is on or off
 $u-display-js-is-on-class:                      js !default;
 
-$u-display-js-is-off-class:		                  no-js !default;
+$u-display-js-is-off-class:                     no-js !default;
 
 
 /**
@@ -132,14 +132,14 @@ $u-display-js-is-off-class:		                  no-js !default;
 
 %u-hide,
 .u-hide {
-	display: none;
-	visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
 @if $u-display-breakpoint-toggle-hide {
   @include generate-at-breakpoints('.u-hide', $u-display-breakpoints) {
     display: none;
-  	visibility: hidden;
+    visibility: hidden;
   }
 }// end if
 
@@ -162,40 +162,40 @@ $u-display-js-is-off-class:		                  no-js !default;
 
 %u-hide-visually,
 .u-hide-visually {
-	position: absolute;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	margin: -1px;
-	padding: 0;
-	border: 0;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  border: 0;
 
 
-	/**
-	 * Form `legend`s need different treatment.
-	 */
+  /**
+   * Form `legend`s need different treatment.
+   */
 
-	&.legend {left: $off-screen-distance;}
+  &.legend {left: $off-screen-distance;}
 }
 
 @if $u-display-breakpoint-toggle-hide-visually {
   @include generate-at-breakpoints('.u-hide-visually', $u-display-breakpoints) {
-  	position: absolute;
-  	height: 1px;
-  	width: 1px;
-  	overflow: hidden;
-  	clip: rect(0 0 0 0);
-  	margin: -1px;
-  	padding: 0;
-  	border: 0;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
 
 
-  	/**
-  	 * Form `legend`s need different treatment.
-  	 */
+    /**
+     * Form `legend`s need different treatment.
+     */
 
-  	&.legend {left: $off-screen-distance;}
+    &.legend {left: $off-screen-distance;}
   }
 }// end if
 
@@ -230,14 +230,14 @@ $u-display-js-is-off-class:		                  no-js !default;
 
 @media print {
 
-	// Hide
-	.u-hide-for-print {display: none;}
+  // Hide
+  .u-hide-for-print {display: none;}
 
-	// Show
-	.u-show-for-print {display: block;}
+  // Show
+  .u-show-for-print {display: block;}
 
-	.u-show-for-print-inline {display: inline;}
+  .u-show-for-print-inline {display: inline;}
 
-	.u-show-for-print-inline-block {display: inline-block;}
+  .u-show-for-print-inline-block {display: inline-block;}
 
 }
