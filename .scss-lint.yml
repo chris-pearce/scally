@@ -92,7 +92,6 @@ linters:
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#indentation
   Indentation:
-    severity: error
     enabled: true
     character: space
     width: 2
@@ -111,8 +110,7 @@ linters:
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#nameformat
   NameFormat:
-    enabled: true
-    convention: BEM
+    enabled: false
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#nestingdepth
   NestingDepth:
