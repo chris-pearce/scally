@@ -39,7 +39,7 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
   $scally-type: "u", $class-name: null, $css-property: "width") {
 
   @if $class-name {
-    $class-name: "#{$class-name}-"
+    $class-name: "#{$class-name}-";
   }
 
   $all-breakpoint-names: map-keys($breakpoints);
@@ -52,10 +52,11 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
     $css-property);
 
   @each $breakpoint in $breakpoint-names {
-    $limit: if($breakpoint == 'palm', 'max', 'min');
+    $limit: if($breakpoint == "palm", "max", "min");
+
     @include respond-to($breakpoint, $limit) {
       @if $breakpoint {
-        $suffix: if($limit =='min', '-from', '-up-to');
+        $suffix: if($limit == "min", "-from", "-up-to");
         $breakpoint: "#{$suffix}-#{$breakpoint}";
       }
 
@@ -70,10 +71,10 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
   @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
+
       .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
         $numerator)}-#{nth($mixin-denominator-words,
-          $denominator)#{$denominator-suffix}#{$breakpoint}} {#{$css-property}:
-        percentage($numerator/$denominator);}
+          $denominator)#{$denominator-suffix}#{$breakpoint}} {#{$css-property}: percentage($numerator/$denominator);}
     }
   }
 }

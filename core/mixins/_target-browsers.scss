@@ -34,8 +34,8 @@
 
 @mixin target-webkit {
   @media all and (-webkit-min-device-pixel-ratio: 0) {
-		@content;
-	}
+    @content;
+  }
 }
 
 
@@ -44,9 +44,9 @@
  */
 
 @mixin target-mozilla {
-	@-moz-document url-prefix() {
-		@content;
-	}
+  @-moz-document url-prefix() {
+    @content;
+  }
 }
 
 
@@ -55,7 +55,7 @@
  */
 
 @mixin target-IE10-and-up {
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     @content;
-	}
+  }
 }
