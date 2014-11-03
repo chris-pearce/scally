@@ -1,6 +1,9 @@
 # Defaults: https://github.com/causes/scss-lint/blob/master/config/default.yml
 
-exclude: '*.css'
+exclude: [
+  "*.css",
+  "demo-styles.scss"
+]
 
 linters:
 

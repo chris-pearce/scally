@@ -31,7 +31,7 @@ namespace :test do
   task :lint do
 
     `gem install scss-lint`
-    result = `scss-lint ./ --exclude demo-styles.scss`
+    result = `scss-lint ./`
 
     if result.include? "[E]"
       raise "Linting Sass files failed"
