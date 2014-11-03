@@ -21,23 +21,23 @@
  */
 
 // Gutter sizes
-$u-side-by-side-alt-gutter-base:				$spacing-base !default;
+$u-side-by-side-alt-gutter-base:        $spacing-base !default;
 
-$u-side-by-side-alt-gutter-tiny:    		$spacing-third !default;
+$u-side-by-side-alt-gutter-tiny:        $spacing-third !default;
 
-$u-side-by-side-alt-gutter-small:   		$spacing-half !default;
+$u-side-by-side-alt-gutter-small:       $spacing-half !default;
 
-$u-side-by-side-alt-gutter-large:   		$spacing-base-plus-half !default;
+$u-side-by-side-alt-gutter-large:       $spacing-base-plus-half !default;
 
-$u-side-by-side-alt-gutter-huge:    		$spacing-double !default;
+$u-side-by-side-alt-gutter-huge:        $spacing-double !default;
 
 // Remove i.e. stack them
-$u-side-by-side-alt-remove:							true !default;
+$u-side-by-side-alt-remove:             true !default;
 
 // At what breakpoint to remove, can be one of the main breakpoints or any
 // interger
 // N.B. served via a `max-width` media query
-$u-side-by-side-alt-remove-when:				palm !default;
+$u-side-by-side-alt-remove-when:        palm !default;
 
 
 /**
@@ -47,8 +47,8 @@ $u-side-by-side-alt-remove-when:				palm !default;
  */
 
 .u-side-by-side-alt {
-	 display: table; // [1]
-   width: 100%; // [2]
+  display: table; // [1]
+  width: 100%; // [2]
 }
 
 
@@ -87,19 +87,19 @@ $u-side-by-side-alt-remove-when:				palm !default;
  * than the rule.
  *
  * 1. Disable reversal of content because there is no concept of ‘reversed’ in
- * 		a stacked layout.
+ *    a stacked layout.
  */
 
 @if $u-side-by-side-alt-remove {
 
-	@include respond-to($u-side-by-side-alt-remove-when, max) {
-		.u-side-by-side-alt--remove {direction: ltr;} // [1]
-	}
+  @include respond-to($u-side-by-side-alt-remove-when, max) {
+    .u-side-by-side-alt--remove {direction: ltr;} // [1]
+  }
 
 }// end if
 
 
-	/**
+  /**
    * The two sides of the utility. There should only ever be one of each.
    *
    * 1. Default to aligning content to their middles.
@@ -112,170 +112,170 @@ $u-side-by-side-alt-remove-when:				palm !default;
 
 
     /**
-   	 * Modifier: reversed.
-   	 *
-   	 * Switch the sides i.e. left becomes right and right becomes left.
-   	 *
-   	 * 1. Reset the rendered direction of the utility.
+     * Modifier: reversed.
+     *
+     * Switch the sides i.e. left becomes right and right becomes left.
+     *
+     * 1. Reset the rendered direction of the utility.
      */
 
-		.u-side-by-side-alt--reversed > & {direction: ltr;} // [1]
+    .u-side-by-side-alt--reversed > & {direction: ltr;} // [1]
 
 
-		/**
-   	 * Modifiers: vertical alignments.
+    /**
+     * Modifiers: vertical alignments.
      */
 
-		// Top
-		.u-side-by-side-alt--top > & {vertical-align: top;}
+    // Top
+    .u-side-by-side-alt--top > & {vertical-align: top;}
 
-		// Bottom
-		.u-side-by-side-alt--bottom > & {vertical-align: bottom;}
+    // Bottom
+    .u-side-by-side-alt--bottom > & {vertical-align: bottom;}
 
 
-		/**
-   	 * Modifier: remove.
+    /**
+     * Modifier: remove.
      */
 
     @if $u-side-by-side-alt-remove {
 
-			@include respond-to($u-side-by-side-alt-remove-when, max) {
-				.u-side-by-side-alt--remove > & {display: block;}
-			}
+      @include respond-to($u-side-by-side-alt-remove-when, max) {
+        .u-side-by-side-alt--remove > & {display: block;}
+      }
 
-		}// end if
+    }// end if
 
   }
 
 
-	/**
-	 * Left side.
-	 */
+  /**
+   * Left side.
+   */
 
-	.u-side-by-side-alt__left {
-	  @include to-rem(padding-right, $u-side-by-side-alt-gutter-base);
+  .u-side-by-side-alt__left {
+    @include to-rem(padding-right, $u-side-by-side-alt-gutter-base);
 
 
-	  /**
-   	 * Modifiers: gutter sizing.
+    /**
+     * Modifiers: gutter sizing.
      */
 
     // Tiny
-		.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-tiny);}
+    .u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-tiny);}
 
-		// Small
-		.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-small);}
+    // Small
+    .u-side-by-side-alt--gutter-small > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-small);}
 
-		// Large
-		.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-large);}
+    // Large
+    .u-side-by-side-alt--gutter-large > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-large);}
 
-		// Huge
-		.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-huge);}
+    // Huge
+    .u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right, $u-side-by-side-alt-gutter-huge);}
 
 
-		/**
-   	 * Modifiers: reversed.
-   	 *
+    /**
+     * Modifiers: reversed.
+     *
      * 1. Reassign paddings to the correct sides.
      */
 
-		.u-side-by-side-alt--reversed > & {
-			padding-right: 0; // [1]
-			@include to-rem(padding-left, $u-side-by-side-alt-gutter-base); // [1]
-		}
+    .u-side-by-side-alt--reversed > & {
+      padding-right: 0; // [1]
+      @include to-rem(padding-left, $u-side-by-side-alt-gutter-base); // [1]
+    }
 
-		// Reversed tiny gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-tiny);}
+    // Reversed tiny gutter
+    .u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-tiny);}
 
-		// Reversed small gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-small);}
+    // Reversed small gutter
+    .u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-small > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-small);}
 
-		// Reversed large gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-large);}
+    // Reversed large gutter
+    .u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-large > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-large);}
 
-		// Reversed huge gutter
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-huge);}
+    // Reversed huge gutter
+    .u-side-by-side-alt--reversed.u-side-by-side-alt--gutter-huge > & {@include to-rem(padding-left, $u-side-by-side-alt-gutter-huge);}
 
 
-		/**
-   	 * Modifier: flush.
-   	 *
-   	 * Remove the gutter.
+    /**
+     * Modifier: flush.
+     *
+     * Remove the gutter.
      */
 
-		.u-side-by-side-alt--flush > & {padding-right: 0;}
+    .u-side-by-side-alt--flush > & {padding-right: 0;}
 
-		// Reversed flush
-		.u-side-by-side-alt--reversed.u-side-by-side-alt--flush > & {padding-left: 0;}
+    // Reversed flush
+    .u-side-by-side-alt--reversed.u-side-by-side-alt--flush > & {padding-left: 0;}
 
 
-		/**
-   	 * Modifier: remove.
+    /**
+     * Modifier: remove.
      */
 
     @if $u-side-by-side-alt-remove {
 
-	    @include respond-to($u-side-by-side-alt-remove-when, max) {
+      @include respond-to($u-side-by-side-alt-remove-when, max) {
 
-				.u-side-by-side-alt--remove > & {
-					padding-right: 0;
-					padding-left: 0;
-					@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-base);
-				}
-
-
-					/**
-			   	 * Modifiers: bottom spacing sizing.
-			     */
-
-			    // Tiny
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-tiny > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-tiny);}
-
-					// Small
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-small > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-small);}
-
-					// Large
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-large > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-large);}
-
-					// Huge
-					.u-side-by-side-alt--remove.u-side-by-side-alt--gutter-huge > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-huge);}
+        .u-side-by-side-alt--remove > & {
+          padding-right: 0;
+          padding-left: 0;
+          @include to-rem(margin-bottom, $u-side-by-side-alt-gutter-base);
+        }
 
 
-					/**
-			   	 * Modifier: flush.
-			   	 *
-			   	 * Remove the bottom spacing.
-			     */
+          /**
+           * Modifiers: bottom spacing sizing.
+           */
 
-					.u-side-by-side-alt--remove.u-side-by-side-alt--flush > & {margin-bottom: 0;}
+          // Tiny
+          .u-side-by-side-alt--remove.u-side-by-side-alt--gutter-tiny > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-tiny);}
 
-			}
+          // Small
+          .u-side-by-side-alt--remove.u-side-by-side-alt--gutter-small > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-small);}
 
-		}// endif
+          // Large
+          .u-side-by-side-alt--remove.u-side-by-side-alt--gutter-large > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-large);}
 
-
-			/**
-			 * Need to turn off responsive images otherwise it breaks.
-			 */
-
-			> img {
-				max-width: none;
+          // Huge
+          .u-side-by-side-alt--remove.u-side-by-side-alt--gutter-huge > & {@include to-rem(margin-bottom, $u-side-by-side-alt-gutter-huge);}
 
 
-				/**
-		   	 * Modifier: remove.
-		   	 *
-		   	 * Bring back responsive images for stacked version.
-		     */
+          /**
+           * Modifier: flush.
+           *
+           * Remove the bottom spacing.
+           */
 
-		    @if $u-side-by-side-alt-remove {
+          .u-side-by-side-alt--remove.u-side-by-side-alt--flush > & {margin-bottom: 0;}
 
-					@include respond-to($u-side-by-side-alt-remove-when, max) {
-						& {max-width: 100%;}
-					}
+      }
 
-				}// end if
+    }// endif
 
-			}
+
+      /**
+       * Need to turn off responsive images otherwise it breaks.
+       */
+
+      > img {
+        max-width: none;
+
+
+        /**
+         * Modifier: remove.
+         *
+         * Bring back responsive images for stacked version.
+         */
+
+        @if $u-side-by-side-alt-remove and $responsive-images {
+
+          @include respond-to($u-side-by-side-alt-remove-when, max) {
+            max-width: 100%;
+          }
+
+        }// end if
+
+      }
 
   }

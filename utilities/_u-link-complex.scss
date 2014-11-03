@@ -41,12 +41,12 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
 
 %u-link-complex,
 .u-link-complex {
-	&,
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		color: inherit;
-	}
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 @if $u-link-complex-breakpoint-toggle-default {
@@ -61,9 +61,9 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
 }// end if
 
 
-	/**
-	 * The piece of the link that needs to act like a link.
-	 */
+  /**
+   * The piece of the link that needs to act like a link.
+   */
 
   %u-link-complex__target,
   .u-link-complex__target {
@@ -79,12 +79,12 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
   @if $u-link-complex-breakpoint-toggle-target {
     @include generate-at-breakpoints('.u-link-complex__target',
       $u-link-complex-breakpoints) {
-  		color: $link-colour;
+      color: $colour-link;
 
-  		&:hover,
-  		&:focus {
-  			text-decoration: underline;
-  			color: $link-colour-hover;
-  		}
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: $colour-link-hover;
+      }
     }
   }// end if

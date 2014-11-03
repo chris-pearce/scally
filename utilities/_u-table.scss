@@ -60,7 +60,7 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
 %u-table,
 .u-table {
   // Stretch to full width of it's parent
-	width: 100%;
+  width: 100%;
 
   // Some sensible defaults
   caption,
@@ -92,14 +92,12 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
 
 %u-table--striped,
 .u-table--striped {
-  tbody tr:nth-of-type(odd) td {background-color:
-    $u-table-striped-background-cell-colour;}
+  tr:nth-of-type(odd) td {background-color: $u-table-striped-background-cell-colour;}
 }
 
 @if $u-table-breakpoint-toggle-striped {
   @include generate-at-breakpoints('.u-table--striped', $u-table-breakpoints) {
-    tbody tr:nth-of-type(odd) td {background-color:
-      $u-table-striped-background-cell-colour;}
+    tr:nth-of-type(odd) td {background-color: $u-table-striped-background-cell-colour;}
   }
 }// end if
 

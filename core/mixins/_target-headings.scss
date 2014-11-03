@@ -37,6 +37,7 @@
 
     // Combine and output all selectors with css content
     $full-selector: join($selector-list, (), "comma");
+
     #{$full-selector} {
       @content
     }

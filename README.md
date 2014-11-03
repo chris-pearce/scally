@@ -3,6 +3,8 @@
 # Scally CSS framework
 
 
+
+
 ## Contents
 
 - [What is Scally?](#what-is-scally)
@@ -23,6 +25,8 @@
 - [Licence](#licence)
 
 
+
+
 ## What is Scally?
 
 Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
@@ -30,6 +34,8 @@ Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/20
 Scally is designed to be configurable, only requiring you to bring in the parts you are using, keeping your CSS architecture light weight and scalable. It is unopinionated about design giving you more flexibility than your typical UI toolkit.
 
 You can view Scally [here](http://codepen.io/collection/AxDKv/).
+
+
 
 
 ## Installing Scally
@@ -167,11 +173,15 @@ Here's an example of the architecture explained above, assuming you contain all 
         ├───utilities
 
 
+
+
 ## Scally breakdown
 
 Scally is a design-free, OOCSS framework that does its best to provide zero cosmetic styling. This means that Scally can be used on any and all types of projects without dictating a look-and-feel.
 
 *More coming soon for this section*.
+
+
 
 
 ## Dependencies
@@ -181,6 +191,8 @@ Scally has one dependency which is [**Autoprefixer**](https://github.com/postcss
 >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 
 We advise you to setup **Autoprefixer** as part of your build process e.g. integrate it into [Gulp](https://github.com/nDmitry/grunt-autoprefixer).
+
+
 
 
 ## Browser support
@@ -193,16 +205,38 @@ We advise you to setup **Autoprefixer** as part of your build process e.g. integ
 - Android 3+.
 
 
+
+
 ## Build test
 
 `rake test`
 
 
+
+
 ## Linting
 
-Requires the [scss-lint](https://github.com/causes/scss-lint) gem.
+To ensure a consistent authored code base and to keep things clean and readable Scally uses the [`scss-lint` tool](https://github.com/causes/scss-lint).
 
-Run `scss-lint ./` to lint all `.scss` files according to [these lint rules](.scss-lint.yml).
+### Installation and usage
+
+To install run the following command:
+
+    gem install scss-lint
+
+Which will install the Ruby Gem.
+
+To use `cd` into your project's root and run the command:
+
+    scss-lint ./
+
+Which will lint *everything*, to lint at a more granular level [see](https://github.com/causes/scss-lint#usage).
+
+### Linting rules
+
+Scally's linting rules can be [found here](.scss-lint.yml). And Scally has a Rake test setup that'll run the `scss-lint` tool automatically to ensure no badly formatted CSS goes into the framework.
+
+
 
 
 ## Credits
@@ -210,6 +244,8 @@ Run `scss-lint ./` to lint all `.scss` files according to [these lint rules](.sc
 - [inuit.css](https://github.com/csswizardry/inuit.css).
 - [SUIT CSS](https://github.com/suitcss/suit).
 - [SMACCS](http://smacss.com/).
+
+
 
 
 ## Licence

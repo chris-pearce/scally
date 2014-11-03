@@ -38,5 +38,5 @@
  */
 
 @function to-rem($value) {
-	@return #{$value / $font-size}rem;
+  @return #{$value / $font-size}rem;
 }

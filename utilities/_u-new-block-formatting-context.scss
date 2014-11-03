@@ -51,8 +51,8 @@ $u-nbfc-breakpoint-toggle-alt:        false !default;
 
 @if $u-nbfc-breakpoint-toggle-default {
   @include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
-   display: table-cell;
-   width: 10000px;
+    display: table-cell;
+    width: 10000px;
   }
 }// end if
 

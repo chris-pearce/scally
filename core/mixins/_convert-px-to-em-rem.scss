@@ -35,9 +35,9 @@
 
 @mixin to-em($properties, $sizes, $context: $font-size, $sledgehammer: false) {
 
-	$values: ();
+  $values: ();
   $sublists: false;
-	$important: if($sledgehammer, "!important", "");
+  $important: if($sledgehammer, "!important", "");
 
   @each $s in $sizes {
 
@@ -74,17 +74,17 @@
 
 @mixin to-rem($properties, $sizes, $sledgehammer: "") {
 
-	$values: ();
+  $values: ();
   $sublists: false;
 
   @each $s in $sizes {
 
     @if type-of($s) == list {
-    	$sublists: true;
+      $sublists: true;
       $vv: ();
 
       @each $ss in $s {
-				$vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem,
+        $vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem,
           $ss));
       }
 
@@ -92,7 +92,7 @@
     }
 
     @else {
-		  $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
+      $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
         $s));
     }
 
@@ -102,6 +102,6 @@
 
   @each $prop in $properties {
     #{$prop}: $value#{$sledgehammer};
-	}
+  }
 
 }

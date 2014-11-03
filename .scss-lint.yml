@@ -1,128 +1,241 @@
+# Defaults: https://github.com/causes/scss-lint/blob/master/config/default.yml
+
 exclude: '*.css'
 
 linters:
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#borderzero
   BorderZero:
+    severity: error
     enabled: true
 
-  CapitalizationInSelector:
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#bangformat
+  BangFormat:
+    severity: error
     enabled: true
+    space_before_bang: true
+    space_after_bang: false
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#colorkeyword
   ColorKeyword:
+    severity: error
     enabled: true
+    exclude: "core/_debug.scss"
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#comment
   Comment:
     enabled: false
 
-  DebugStatement:
-    enabled: true
-
-  DeclarationOrder:
-    enabled: true
-
-  DuplicateProperty:
-    enabled: true
-
-  ElsePlacement:
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#compass-linters
+  Compass::*:
     enabled: false
-    style: same_line # or 'new_line'
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#debugstatement
+  DebugStatement:
+    severity: error
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#declarationorder
+  DeclarationOrder:
+    severity: error
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#duplicateproperty
+  DuplicateProperty:
+    severity: error
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#elseplacement
+  ElsePlacement:
+    severity: error
+    enabled: true
+    style: new_line
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#emptylinebetweenblocks
   EmptyLineBetweenBlocks:
+    severity: error
     enabled: true
-    ignore_single_line_blocks: true
+    ignore_single_line_blocks: false
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#emptyrule
   EmptyRule:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#finalnewline
   FinalNewline:
     enabled: false
     present: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#hexlength
   HexLength:
-    enabled: false
-    style: short # or 'long'
+    enabled: true
+    style: short
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#hexnotation
   HexNotation:
+    severity: error
     enabled: true
-    style: lowercase # or 'uppercase'
+    style: lowercase
 
-  HexValidation:
-    enabled: true
-
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#idwithextraneousselector
   IdWithExtraneousSelector:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#importpath
+  ImportPath:
+    severity: error
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#indentation
   Indentation:
-    enabled: false
+    enabled: true
+    character: space
     width: 2
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#leadingzero
   LeadingZero:
-    enabled: false
-    style: exclude_zero # or 'include_zero'
+    severity: error
+    enabled: true
+    style: include_zero
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#mergeableselector
   MergeableSelector:
+    severity: error
     enabled: true
     force_nesting: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#nameformat
   NameFormat:
-    enabled: true
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
+    enabled: false
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#nestingdepth
+  NestingDepth:
+    severity: error
+    enabled: true
+    max_depth: 3
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#placeholderinextend
   PlaceholderInExtend:
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#propertysortorder
   PropertySortOrder:
     enabled: false
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#propertyspelling
   PropertySpelling:
     enabled: true
-    extra_properties: []
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#qualifyingelement
+  QualifyingElement:
+    severity: error
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#selectordepth
   SelectorDepth:
+    severity: error
     enabled: true
-    max_depth: 4
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#selectorformat
+  SelectorFormat:
+    enabled: true
+    convention: BEM
+    # ignored_names: ['*js-', '*is-'] >> Doesn't support file matching (yet) <<
+    ignored_types: element
+    class_convention: BEM
+    attribute_convention: hyphenated_lowercase
+    id_convention: hyphenated_lowercase
+    placeholder_convention: hyphenated_lowercase
+    pseudo_convention: hyphenated_lowercase
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#shorthand
   Shorthand:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#singlelineperproperty
+  SingleLinePerProperty:
+    enabled: false
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#singlelineperselector
   SingleLinePerSelector:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#spaceaftercomma
   SpaceAfterComma:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#spaceafterpropertycolon
   SpaceAfterPropertyColon:
+    severity: error
     enabled: true
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    style: one_space
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#spaceafterpropertyname
   SpaceAfterPropertyName:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#spacebeforebrace
   SpaceBeforeBrace:
+    severity: error
     enabled: true
     allow_single_line_padding: false
+    style: space
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#spacebetweenparens
   SpaceBetweenParens:
+    severity: error
     enabled: true
     spaces: 0
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#stringquotes
   StringQuotes:
-    enabled: false
-    style: double_quotes # or double_quotes
+    severity: error
+    enabled: true
+    style: double_quotes
 
-  TrailingSemicolonAfterPropertyValue:
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#trailingsemicolon
+  TrailingSemicolon:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#trailingzero
+  TrailingZero:
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#unnecessarymantissa
   UnnecessaryMantissa:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#unnecessaryparentreference
+  UnnecessaryParentReference:
+    severity: error
+    enabled: true
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#urlformat
   UrlFormat:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#urlquotes
   UrlQuotes:
+    severity: error
     enabled: true
 
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#vendorprefixes
+  VendorPrefixes:
+    enabled: true
+    identifier_list: base # include everything that Autoprefixer addresses
+
+  # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#zerounit
   ZeroUnit:
+    severity: error
     enabled: true
-
-  Compass::*:
-    enabled: false

@@ -1,5 +1,5 @@
-desc "Test if SASS files are compiling"
-task test: ["test:compile", "test:cleanup"]
+desc "Test if SASS files are compiling and linting"
+task test: ["test:compile", "test:cleanup", "test:lint"]
 
 desc "SASS test tasks"
 namespace :test do
@@ -18,6 +18,7 @@ namespace :test do
 
   desc "Clean up CSS files"
   task :cleanup do
+
     Dir["*.css"].each do |css|
       `rm #{css}`
       `rm #{css}.map` if File.file?("#{css}.map")
@@ -25,4 +26,18 @@ namespace :test do
 
     puts "CSS files cleaned up"
   end
+
+  desc "Lint SASS files"
+  task :lint do
+
+    `gem install scss-lint`
+    result = `scss-lint ./ --exclude demo-styles.scss`
+
+    if result.include? "[E]"
+      raise "Linting Sass files failed"
+    else
+      puts "Sass files linted successfully"
+    end
+  end
+
 end

@@ -33,10 +33,10 @@ $u-arrow-colour:        $colour-text-base !default;
 %u-arrow,
 .u-arrow {
   display: inline-block;
-	width: 0;
-	height: 0;
+  width: 0;
+  height: 0;
   @include to-rem(border, $u-arrow-size-base solid transparent);
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 
