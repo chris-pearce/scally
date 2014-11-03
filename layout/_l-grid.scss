@@ -79,12 +79,12 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid {
-	// Negative `margin-left` to negate the columns gutters
-	@include to-rem(margin-left, -$l-grid-gutter-base);
+  // Negative `margin-left` to negate the columns gutters
+  @include to-rem(margin-left, -$l-grid-gutter-base);
   display: block; // [1]
 
-	// Clear fix
-	&:after {
+  // Clear fix
+  &:after {
     content: "";
     display: table;
     clear: both;
@@ -92,7 +92,7 @@ $l-grid-gutter-huge:                              $spacing-double !default;
 }
 
 
-	/**
+  /**
    * 1. Cause columns to stack side-by-side.
    * 2. Space columns apart.
    * 3. Full-width unless told to behave otherwise.
@@ -106,7 +106,7 @@ $l-grid-gutter-huge:                              $spacing-double !default;
 
     @if $friendly-box-model == false {
 
-    	box-sizing: border-box; // [4]
+      box-sizing: border-box; // [4]
 
     }//endif
   }
@@ -117,9 +117,9 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid--gutterless {
-	margin-left: 0;
+  margin-left: 0;
 
-	> .l-grid__item {padding-left: 0;}
+  > .l-grid__item {padding-left: 0;}
 }
 
 
@@ -139,9 +139,9 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid--gutter-small {
-	@include to-rem(margin-left, -$l-grid-gutter-small);
+  @include to-rem(margin-left, -$l-grid-gutter-small);
 
-	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
+  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
 }
 
 
@@ -150,9 +150,9 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid--gutter-large {
-	@include to-rem(margin-left, -$l-grid-gutter-large);
+  @include to-rem(margin-left, -$l-grid-gutter-large);
 
-	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
+  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
 }
 
 
@@ -161,9 +161,9 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid--gutter-huge {
-	@include to-rem(margin-left, -$l-grid-gutter-huge);
+  @include to-rem(margin-left, -$l-grid-gutter-huge);
 
-	> .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
+  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
 }
 
 
@@ -182,12 +182,12 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  */
 
 .l-grid--table {
-	display: table;
+  display: table;
 
-	> .l-grid__item {
-		display: table-cell;
-		float: none;
-	}
+  > .l-grid__item {
+    display: table-cell;
+    float: none;
+  }
 }
 
 @if $l-grid-breakpoint-toggle-table {
