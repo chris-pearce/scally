@@ -17,83 +17,83 @@
 
 @media print {
 
-	/**
-	 * Apply print friendly styles to ALL elements.
-	 */
+  /**
+   * Apply print friendly styles to ALL elements.
+   */
 
-	* {
-		background: transparent !important;
-		color: $colour-black !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
-
-
-	/**
-	 * Hide elements not really useful on a piece of paper.
-	 */
-
-	nav,
-	video,
-	audio {display: none !important;}
-
-
-	/**
-	 * Ensure ALL images are responsive.
-	 */
-
-	img {max-width: 100% !important;}
-
-
-	/**
-	 * Make links always stand out.
-	 */
-
-	a {
-  	&,
-  	&:visited {text-decoration: underline !important;}
+  * {
+    background: transparent !important;
+    color: $colour-black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
 
-	/**
-	 * Show the `href` and `title` attribute values of links and abbreviations
-	 * in a pseudo element.
-	 */
+  /**
+   * Hide elements not really useful on a piece of paper.
+   */
 
-	a[href]:after {content: " (" attr(href) ")";}
-
-	abbr[title]:after {content: " (" attr(title) ")";}
-
-	// But don't show for the following links
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {content: "";}
+  nav,
+  video,
+  audio {display: none !important;}
 
 
-	/**
-	 * h5bp.com/t
-	 */
-	thead {display: table-header-group;}
+  /**
+   * Ensure ALL images are responsive.
+   */
+
+  img {max-width: 100% !important;}
 
 
-	/**
-	 * Set page breaks, orphans and widows.
-	 */
+  /**
+   * Make links always stand out.
+   */
 
-	// Page breaks
-	h2
-	h3 {page-break-after: avoid;}
+  a {
+    &,
+    &:visited {text-decoration: underline !important;}
+  }
 
-	tr,
-	img,
-	pre,
-	blockquote {page-break-inside: avoid;}
 
-	// Orphans and widows
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+  /**
+   * Show the `href` and `title` attribute values of links and abbreviations
+   * in a pseudo element.
+   */
+
+  a[href]:after {content: " (" attr(href) ")";}
+
+  abbr[title]:after {content: " (" attr(title) ")";}
+
+  // But don't show for the following links
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {content: "";}
+
+
+  /**
+   * h5bp.com/t
+   */
+  thead {display: table-header-group;}
+
+
+  /**
+   * Set page breaks, orphans and widows.
+   */
+
+  // Page breaks
+  h2
+  h3 {page-break-after: avoid;}
+
+  tr,
+  img,
+  pre,
+  blockquote {page-break-inside: avoid;}
+
+  // Orphans and widows
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
 }

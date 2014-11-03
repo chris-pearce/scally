@@ -19,12 +19,12 @@ $link-colour-hover:   darken($link-colour, 10%) !default;
 
 
 a {
-	color: $link-colour;
-	text-decoration: none;
+  color: $colour-link;
+  text-decoration: none;
 
-	&:hover,
+  &:hover,
 	&:focus {
-		color: $link-colour-hover;
-		text-decoration: underline;
+    color: $colour-link-hover;
+    text-decoration: underline;
 	}
 }

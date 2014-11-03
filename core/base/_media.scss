@@ -41,8 +41,8 @@ img {
 
   @if $responsive-images {
 
-  	max-width: 100%; // [1]
-  	height: auto; // [1]
+    max-width: 100%; // [1]
+    height: auto; // [1]
 
     /**
      * Google Maps breaks if `max-width: 100%` acts upon it; use their
@@ -53,7 +53,7 @@ img {
 
   }
 
-	font-style: italic; // [2]
+  font-style: italic; // [2]
 }
 
 
