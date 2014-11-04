@@ -8,6 +8,7 @@
 ## Contents
 
 - [What is Scally?](#what-is-scally)
+- [Dependencies](#dependencies)
 - [Installing Scally](#installing-scally)
 - [Setting up a new project](#setting-up-a-new-project)
     - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
@@ -17,9 +18,8 @@
         - [Your styles](#your-styles)
         - [Example architecture](#example-architecture)
 - [Scally breakdown](#scally-breakdown)
-- [Dependencies](#dependencies)
 - [Browser support](#browser-support)
-- [Build test](#build-test)
+- [Build tests](#build-test)
 - [Linting](#linting)
 - [Credits](#credits)
 - [Licence](#licence)
@@ -38,13 +38,32 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 
 
+## Dependencies
+
+- [Ruby](http://rubyinstaller.org/), if you're using a Mac then Ruby comes pre-installed.
+- [Sass](http://sass-lang.com/install).
+- [**Autoprefixer**](https://github.com/postcss/autoprefixer).
+
+    >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
+
+    We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
+
+
+
+
 ## Installing Scally
 
 Scally can be installed via [Bower](http://bower.io/).
 
-To install Scally `cd` into your project folder or into the folder where you keep your CSS and run the following command:
+Bower needs to be installed with npm:
 
-    $ bower install westfieldlabs/scally
+    npm install -g bower
+
+*Bower requires [Node and npm](http://nodejs.org/) and [Git](http://git-scm.com/).*
+
+Once Bower is installed you can install Scally by `cd`ing into your project folder or into the folder where you keep your CSS and run the following command:
+
+    bower install westfieldlabs/scally
 
 By default Bower will create a `bower_components` folder. You can change this to be any folder you wish via the `.bowerrc` file, [see](http://bower.io/docs/config/#directory).
 
@@ -54,34 +73,38 @@ So if you have a `css` folder in your project and run the above command in that 
     │
     └───bower_components
         │
-        └───scally
+        └───Scally
 
-**N.B.** Scally should never be edited or added too directly. If you ever make changes directly in `scally` you will not be able to seamlessly update your version of Scally to the latest version. To update run the following command:
+**N.B.** Scally should never be edited or added too directly. If you ever make changes directly in Scally you will not be able to seamlessly update your version of Scally to the latest version.
 
-    $ bower update
+Once installed you can always get the latest version of Scally by running the following command:
+
+    bower update
 
 *This is a very simple overview of Bower so if you're new to it then please take the time to [read up on it](http://bower.io/).*
 
-You can install Scally via the [**Download by zip**](https://github.com/westfieldlabs/scally/archive/master.zip) option however it's advised to use Bower.
+You can install Scally via the [**Download by zip**](https://github.com/westfieldlabs/scally/archive/master.zip) option however it's advised to use a package manager like Bower to handle your third-party dependencies.
 
 
 ## Setting up a new project
 
 ### Setting up your master stylesheet
 
-Once you have installed Scally you'll need to create a master sass file called `style.scss` (or whatever you want to name it) that will live in the root of the folder where you keep all of your CSS.
+Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
 
-Once you have created this file grab everything [from here](https://github.com/westfieldlabs/scally/blob/master/style.scss) and paste into your `style.scss`.
+Once you have created this file grab everything [from here](https://github.com/westfieldlabs/scally/blob/master/style.scss) and paste it into your master stylesheet.
 
-`style.scss` is your master stylesheet that you will call from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
+This master stylesheet is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
 
     sass --watch style.scss:style.css
 
-Then add a reference to the compiled css in your HTML head:
+But for most projects your Sass will be compiling as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task to compile Sass using something [like](https://github.com/gruntjs/grunt-contrib-sass).
+
+Then add a reference to the compiled master stylesheet in your HTML head:
 
     <link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
 
-This master stylesheet is designed to pull in everything for Scally plus your project-specific styles and compile down to a single css file.
+This master stylesheet is designed to pull in everything from Scally plus your project-specific styles and compile down to a single css file.
 
 ### Master stylesheet overview
 
@@ -90,7 +113,7 @@ Your master stylesheet is split into three main sections:
 - **Your settings**
   all of your project-specific settings in the form of Sass variables.
 - **Scally framework**
-  the entire Scally framework.
+  the entire Scally framework including your overrides.
 - **Your styles**
   all of the CSS you will write for your project.
 
@@ -127,7 +150,7 @@ So for example if you wanted to change the global font size for your project the
     $font-size: 14;
     @import "bower_components/scally/core/settings/typography";
 
-You can use your own project-specific settings from your `settings.scss` file to override any of the Scally settings e.g.
+You can use your own project-specific settings from your [`settings.scss`](#your-settings) file to override any of the Scally settings e.g.
 
     $colour-text-base: $colour-hotpink;
     @import "bower_components/scally/core/settings/colours";
@@ -136,9 +159,9 @@ By default everything in the framework is imported. But if you want to be select
 
 So if you decide you only need to use half of Scally's utilities then simply remove the partial `@import`s you don't need from `style.scss`.
 
-The **Core** section is required, please do not remove any of the imports from this section.
+However the **Core** section is required, please do not remove any of the imports from this section.
 
-**N.B.** if you customise any of Bower's default settings e.g. change the Bower install folder from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
+**N.B.** if you change the Bower install folder from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
 
      @import "bower_components/scally/core/settings/colours";
 
@@ -152,7 +175,7 @@ This section is where you pull in all of your project-specific styles. We recomm
 
 #### Example architecture
 
-Here's an example of the architecture explained above, assuming you contain all of your CSS in a folder called `css` and if Scally is installed via the default Bower install (`bower install westfieldlabs/scally`) in your `css` folder.
+Here is an example of the architecture mentioned just above, assuming you contain all of your CSS in a folder called `css` and if Scally is installed via the default Bower install in your `css` folder.
 
     css
     |   style.scss
@@ -160,7 +183,7 @@ Here's an example of the architecture explained above, assuming you contain all 
     │
     └───bower_components
     |   │
-    |   └───scally
+    |   └───Scally
     |
     └───partials
         │
@@ -184,47 +207,39 @@ Scally is a design-free, OOCSS framework that does its best to provide zero cosm
 
 
 
-## Dependencies
-
-Scally has one dependency which is [**Autoprefixer**](https://github.com/postcss/autoprefixer).
-
->> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
-
-We advise you to setup **Autoprefixer** as part of your build process e.g. integrate it into [Gulp](https://github.com/nDmitry/grunt-autoprefixer).
-
-
-
-
 ## Browser support
 
+- Chrome (latest two versions).
+- Firefox (latest two versions).
+- Opera (latest two versions).
+- Safari (latest two versions).
 - IE9+.
-- Chrome.
-- Firefox.
-- Opera.
-- Safari (incl. iOS).
-- Android 3+.
+- iOS 6+.
+- Android 4+.
 
 
 
 
-## Build test
+## Build tests
 
-`rake test`
+Scally uses [Rake](http://en.wikipedia.org/wiki/Rake_(software)) to run tasks against it's build server e.g. check all Sass files compile, [lint](#linting) all Sass files, etc.
+
+You can run these tests locally by running this command:
+
+    rake test
 
 
 
 
 ## Linting
 
-To ensure a consistent authored code base and to keep things clean and readable Scally uses the [`scss-lint` tool](https://github.com/causes/scss-lint).
+To ensure a consistently authored code base and to keep things clean and readable Scally uses the [**scss-lint** tool](https://github.com/causes/scss-lint).
 
 ### Installation and usage
 
 To install run the following command:
 
     gem install scss-lint
-
-Which will install the Ruby Gem.
 
 To use `cd` into your project's root and run the command:
 
@@ -234,7 +249,21 @@ Which will lint *everything*, to lint at a more granular level [see](https://git
 
 ### Linting rules
 
-Scally's linting rules can be [found here](.scss-lint.yml). And Scally has a Rake test setup that'll run the `scss-lint` tool automatically to ensure no badly formatted CSS goes into the framework.
+Scally's linting rules can be [found here](.scss-lint.yml) and are based off the [Westfield Labs CSS authoring guidelines](https://github.com/westfield/css_guidelines) (to be made open-source very soon). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
+
+
+
+
+## Contributing
+
+*Coming soon.*
+
+
+
+
+## Changelog
+
+*Coming soon.*
 
 
 
