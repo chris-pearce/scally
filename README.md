@@ -161,7 +161,7 @@ So if you decide you only need to use half of Scally's utilities then simply rem
 
 However the **Core** section is required, please do not remove any of the imports from this section.
 
-**N.B.** if you change the Bower install folder from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
+**N.B.** if you change the Bower install folder e.g. from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
 
      @import "bower_components/scally/core/settings/colours";
 
