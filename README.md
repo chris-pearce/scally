@@ -117,7 +117,7 @@ Your master stylesheet is split into three main sections:
 - **Your styles**
   all of the CSS you will write for your project.
 
-*It's imperative this order is maintained otherwise Scally won't work.*
+**N.B.** it's imperative this order is maintained otherwise Scally won't work.
 
 #### Your settings
 
