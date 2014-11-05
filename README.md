@@ -21,6 +21,8 @@
 - [Browser support](#browser-support)
 - [Build tests](#build-test)
 - [Linting](#linting)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
 - [Credits](#credits)
 - [Licence](#licence)
 
@@ -197,7 +199,14 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 ## Scally breakdown
 
-Scally is a design-free, OOCSS framework that does its best to provide zero cosmetic styling. This means that Scally can be used on any and all types of projects without dictating a look-and-feel.
+Scally is broken down into four main sections with each section getting it's own level of specificity, meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
+
+The breakdown in order of their specificity:
+
+- [Core](core/README.md)
+- [Layout](layout/README.md)
+- [Components](components/README.md)
+- [Utilities](utilities/README.md)
 
 *More coming soon for this section*.
 
@@ -277,6 +286,12 @@ Kinds of code not good for Scally:
 In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR:
 
 - Lint your Sass, [see](#linting). Scally's build tests will catch any linting issues however it's good practice to run linting manually also.
+- Follow these [CSS authoring guidelines](https://github.com/westfield/css_guidelines). Linting will catch a lot of this but not everything.
+- Test in all supported browsers and mobile platforms, [see](#browser-support).
+
+## Scally improvements, issues, questions, etc.
+
+If you have would like to suggest any new components or utilities, any improvements, any issues or bugs, or just questions, for Scally, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
 
 **Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
 
