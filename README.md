@@ -42,7 +42,7 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 - [Ruby](http://rubyinstaller.org/), if you're using a Mac then Ruby comes pre-installed.
 - [Sass](http://sass-lang.com/install).
-- [**Autoprefixer**](https://github.com/postcss/autoprefixer).
+- [Autoprefixer](https://github.com/postcss/autoprefixer).
 
     >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 
