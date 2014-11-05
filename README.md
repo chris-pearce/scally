@@ -110,12 +110,9 @@ This master stylesheet is designed to pull in everything from Scally plus your p
 
 Your master stylesheet is split into three main sections:
 
-- **Your settings**
-  all of your project-specific settings in the form of Sass variables.
-- **Scally framework**
-  the entire Scally framework including your overrides.
-- **Your styles**
-  all of the CSS you will write for your project.
+- **Your settings.** All of your project-specific settings in the form of Sass variables.
+- **Scally framework.** The entire Scally framework including your overrides.
+- **Your styles.** All of the CSS you will write for your project.
 
 **N.B.** it's imperative this order is maintained otherwise Scally won't work.
 
@@ -256,7 +253,32 @@ Scally's linting rules can be [found here](.scss-lint.yml) and are based off the
 
 ## Contributing
 
-*Coming soon.*
+Scally gratefully welcomes contributions from the open-source community but they're a number of requirements and principles that need adhering to before code is eligible for inclusion into the framework.
+
+### Keep it simple
+
+Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass’ capabilities—all code that comes into Scally should be as simple and CSS-like as possible.
+
+Adding this complexity is against a number of Scally's core principles especially in team-based workflows, long-running and larger projects, and its flexibility.
+
+- **It obscures functionality.** This can make things harder to decipher, understand, and debug.
+- **It adds points-of-failure.** More moving parts means more things to go wrong. Always err on the side of simplicity.
+- **It requires an advanced level of understanding.** On large(r) projects, the variance in skill-level can differ greatly. From designers, to front-end developers, to software engineers, everyone will need to author some CSS at some point—make this learning curve as shallow as possible.
+- **It creates a barrier to entry.** Scally hopes to become a widely useful framework: so it is taking active steps to become less opinionated and even more flexible so that it can be implemented by a more varied user base—adding advanced Sass features will close this openness back up.
+- **It adds unnecessary complexity.** Working on large(r) projects commands a greater cognitive overhead as it is; adding more complexity is the wrong direction to go.
+
+Kinds of code not good for Scally:
+
+- **Hundred-line mixins designed to avoid a couple of lines of repetition:** the overhead of typing a few more lines is much less than creating, documenting, learning, and maintaining complex Sass functionality.
+- **Mixins which generate entire blocks of CSS:** creating ‘black boxes’ in code often leads to obscurity, lack of understanding, lack of confidence, and lack of trust in a codebase. Everything should be as transparent and CSS-like as possible.
+
+## Submitting code to Scally (PR's)
+
+In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR:
+
+- Lint your Sass, [see](#linting). Scally's build tests will catch any linting issues however it's good practice to run linting manually also.
+
+**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
 
 
 
