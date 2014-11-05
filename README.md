@@ -125,7 +125,7 @@ This first section consists of one Sass partial:
 
     @import "settings";
 
-Which should live at the same level as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/westfieldlabs/scally/master/settings.scss).
+Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/westfieldlabs/scally/master/settings.scss).
 
 In this partial you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
 
