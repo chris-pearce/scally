@@ -48,7 +48,7 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
     >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 
-    We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
+We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
 
 
 
@@ -199,7 +199,7 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 ## Scally breakdown
 
-Scally is broken down into four main sections with each section getting it's own level of specificity, meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
+Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
 
 The breakdown in order of their specificity:
 
@@ -207,8 +207,6 @@ The breakdown in order of their specificity:
 - [Layout](layout/README.md)
 - [Components](components/README.md)
 - [Utilities](utilities/README.md)
-
-*More coming soon for this section*.
 
 
 
@@ -281,7 +279,7 @@ Kinds of code not good for Scally:
 - **Hundred-line mixins designed to avoid a couple of lines of repetition:** the overhead of typing a few more lines is much less than creating, documenting, learning, and maintaining complex Sass functionality.
 - **Mixins which generate entire blocks of CSS:** creating ‘black boxes’ in code often leads to obscurity, lack of understanding, lack of confidence, and lack of trust in a codebase. Everything should be as transparent and CSS-like as possible.
 
-## Submitting code to Scally (PR's)
+### Submitting code to Scally (PR's)
 
 In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR:
 
@@ -289,9 +287,9 @@ In addition to the principles outlined above here are some things to keep in min
 - Follow these [CSS authoring guidelines](https://github.com/westfield/css_guidelines). Linting will catch a lot of this but not everything.
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
 
-## Scally improvements, issues, questions, etc.
+## Scally improvements, issues, questions
 
-If you have would like to suggest any new components or utilities, any improvements, any issues or bugs, or just questions, for Scally, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
+If you have would like to suggest any new components or utilities, or any improvements, or any issues or bugs, or just ask a question, for Scally, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
 
 **Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
 
