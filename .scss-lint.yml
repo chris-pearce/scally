@@ -40,7 +40,7 @@ linters:
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#declarationorder
   DeclarationOrder:
-    severity: error
+    severity: warning
     enabled: true
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#duplicateproperty
