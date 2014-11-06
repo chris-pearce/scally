@@ -15,7 +15,7 @@ A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`)
         > li {display: inline-block;}
     }
 
-So utilities are extremely powerful and are the real work horses for any sort of UI build but especially large-scale UI builds, here are some reasons why:
+So utilities are extremely powerful and are the real work horses for any sort of UI build but especially in large-scale UI builds, and here are some reasons why:
 
 - Your CSS will be a lot DRYer.
 - You can make far-reaching changes to your designs by simply modifying a base abstraction only once.
