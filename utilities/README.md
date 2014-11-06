@@ -47,14 +47,14 @@ However if the above `div` was part of a [component](components/README.md) e.g. 
 - It’s more robust compared to having to rely on applying classes at the markup level.
 - It’s more readable having all styles capsulated in the Sass component partial.
 
-So the above `div` would be stripped of the classes and instead moved into the **Modal** Sass component partial e.g.
+So the above `div` would be stripped of the classes from the HTML and instead moved into the **Modal** Sass component partial e.g.
 
     .modal div {
         position: absolute;
         @extend %u-position-pin-all;
     }
 
-You can see that `position: absolute;` is not being `@extend`ed as it's only a single-line declaration therefore it feels overkill to `@extend` that i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
+You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
 
 ## Applying at breakpoints
 
@@ -62,7 +62,7 @@ You can see that `position: absolute;` is not being `@extend`ed as it's only a s
 
 ## Namespace
 
-All utility classes and silent placeholder selectors should be prefixed with `u-` so that they're easily identifiable.
+All utility classes and utility silent placeholder selectors should be prefixed with `u-` so that they're easily identifiable.
 
 ## Demo's
 
