@@ -63,27 +63,7 @@ You can see that `position: absolute;` is not being `@extend`ed here as it's onl
 
 Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
 
-+--------+  +--------------------------+
-|        |  |                          |
-|  IMG   |  | TITLE                    |
-|        |  | Habitasse pellentesque   |
-+--------+  | turpis nunc cras, a      |
-            | tincidunt, elementum     |
-            | nunc lectus lacus        |
-            |                          |
-            +--------------------------+
-                                        
-+--------------------------------------+
-                                        
-+--------------------------+  +--------+
-|                          |  |        |
-| TITLE                    |  |  IMG   |
-| Habitasse pellentesque   |  |        |
-| turpis nunc cras, a      |  +--------+
-| tincidunt, elementum     |            
-| nunc lectus lacus        |            
-|                          |            
-+--------------------------+            
+![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
 
 This UI pattern can be entirely constructed using a number of Scally utilities and their modifiers:
 
@@ -105,7 +85,7 @@ The HTML:
     </div>
 </div>
 
-<div class="u-side-by-side u-side-by-side--reversed  u-divider-bottom  u-s-pb-base u-s-mb-base">
+<div class="u-side-by-side u-side-by-side--reversed">
     <div class="u-side-by-side__left">
       <img src"..." alt="...">
     </div>
