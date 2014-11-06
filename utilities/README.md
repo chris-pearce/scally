@@ -8,7 +8,7 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors we don't have to keep writing the same styles over and over again, instead we can abstract those common styles into nice reusable modules.
 
-A classic use case for a utility is when a HTML list's (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
+A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
 
     %u-list-inline,
     .u-list-inline {
