@@ -6,16 +6,21 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 ## Why have them?
 
-Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors we don't have to keep writing the same styles over and over again, instead we can abstract those common styles into nice reusable modules keeping the CSS code base nice and **DRY**.
+Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors we don't have to keep writing the same styles over and over again, instead we can abstract those common styles into nice reusable modules.
 
-A classic example of a utility is having HTML list (`ul` or `ol`) items (`li`) render horizontally rather than it's default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve that simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
+A classic use case for a utility is when a HTML list's (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
 
     %u-list-inline,
     .u-list-inline {
         > li {display: inline-block;}
     }
-    
-Highly recommend having a read [of this](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
+
+So utilities are extremely powerful and are the real work horses for any sort of UI build but especially large-scale UI builds, here are some reasons why:
+
+- Your CSS will be a lot DRYer.
+- You can make far-reaching changes to your designs by simply modifying a base abstraction only once.
+- You can make safer changes because you know that when editing a class you are only ever altering one responsibility.
+- You can combine responsibilities to make a variety of components from a lot of abstracted classes.
 
 ## How to use?
 
@@ -56,9 +61,74 @@ So the above `div` would be stripped of the classes from the HTML and instead mo
 
 You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
 
+Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
+
++--------+  +--------------------------+
+|        |  |                          |
+|  IMG   |  | TITLE                    |
+|        |  | Habitasse pellentesque   |
++--------+  | turpis nunc cras, a      |
+            | tincidunt, elementum     |
+            | nunc lectus lacus        |
+            |                          |
+            +--------------------------+
+                                        
++--------------------------------------+
+                                        
++--------------------------+  +--------+
+|                          |  |        |
+| TITLE                    |  |  IMG   |
+| Habitasse pellentesque   |  |        |
+| turpis nunc cras, a      |  +--------+
+| tincidunt, elementum     |            
+| nunc lectus lacus        |            
+|                          |            
++--------------------------+            
+
+This UI pattern can be entirely constructed using a number of Scally utilities and their modifiers:
+
+- [Side by side](_u-side-by-side.scss)
+- [Divider](_u-divider.scss)
+- [Spacing](_u-spacing.scss)
+- [Text](_text.scss)
+
+The HTML:
+
+```
+<div class="u-side-by-side  u-divider-bottom  u-s-pb-base u-s-mb-base">
+    <div class="u-side-by-side__left">
+      <img src"..." alt="...">
+    </div>
+    <div class="u-side-by-side__right u-s-p-base">
+      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
+      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
+    </div>
+</div>
+
+<div class="u-side-by-side u-side-by-side--reversed  u-divider-bottom  u-s-pb-base u-s-mb-base">
+    <div class="u-side-by-side__left">
+      <img src"..." alt="...">
+    </div>
+    <div class="u-side-by-side__right u-s-p-base">
+      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
+      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
+    </div>
+</div>
+```
+
+## Open/close principle
+
+Utilities follow the open/close principle, which states that software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
+
+So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component. *Or* the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
+
+[This article](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) does a fantastic job of explaining this in terms of CSS.
+
 ## Applying at breakpoints
 
 *Probably be it's own section in the main README.md?*
+
+## Specificity
 
 ## Namespace
 
@@ -67,3 +137,8 @@ All utility classes and utility silent placeholder selectors should be prefixed 
 ## Demo's
 
 <http://codepen.io/team/westfieldlabs/full/xFHfk/>
+
+## Further reading
+
+- [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
