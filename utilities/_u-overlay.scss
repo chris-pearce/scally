@@ -44,14 +44,16 @@ $u-overlay-hover-transition-timing-function:  ease !default;
  * Dark.
  */
 
-.u-overlay-dark {background-color: rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
+.u-overlay-dark {background-color:
+  rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
 
 
 /**
  * Light.
  */
 
-.u-overlay-light {background-color: rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
+.u-overlay-light {background-color:
+  rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
 
 
 /*
@@ -76,7 +78,8 @@ $u-overlay-hover-transition-timing-function:  ease !default;
     // Apply a transition?
     @if $u-overlay-hover-apply-transition {
 
-      transition: background-color $u-overlay-hover-transition-duration $u-overlay-hover-transition-timing-function;
+      transition: background-color $u-overlay-hover-transition-duration
+      $u-overlay-hover-transition-timing-function;
 
     }
 
@@ -89,15 +92,18 @@ $u-overlay-hover-transition-timing-function:  ease !default;
     @extend %u-position-pin-all;
   }
 
+
   /**
    * Apply the overlay on hover and focus if it's a native focusable element.
    */
 
   // Dark
   &.u-overlay-hover--dark:hover:before,
-  &.u-overlay-hover--dark:focus:before {background-color: rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
+  &.u-overlay-hover--dark:focus:before {background-color:
+    rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
 
   // Light
   &.u-overlay-hover--light:hover:before,
-  &.u-overlay-hover--light:focus:before {background-color: rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
+  &.u-overlay-hover--light:focus:before {background-color:
+    rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
 }
