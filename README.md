@@ -253,14 +253,14 @@ Which will lint *everything*, to lint at a more granular level [see](https://git
 
 ### Linting rules
 
-Scally's linting rules can be [found here](.scss-lint.yml) and are based off the [Westfield Labs CSS authoring guidelines](https://github.com/westfield/css_guidelines) (to be made open-source very soon). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
+Scally's linting rules can be [found here](.scss-lint.yml) and are based off the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
 
 
 
 
 ## Contributing
 
-Scally gratefully welcomes contributions from the open-source community but they're a number of requirements and principles that need adhering to before code is eligible for inclusion into the framework.
+Scally gratefully welcomes contributions from the open-source community but there are a number of requirements and principles that need adhering to before code is eligible for inclusion in the framework.
 
 ### Keep it simple
 
