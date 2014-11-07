@@ -260,11 +260,11 @@ Scally's linting rules can be [found here](.scss-lint.yml) and are based off the
 
 ## Contributing
 
-Scally gratefully welcomes contributions from the open-source community but there are a number of requirements and principles that need adhering to before code is eligible for inclusion in the framework.
+Scally gratefully welcomes contributions from the open-source community but there are a number of requirements and principles that need to be adhered for code to eligible for inclusion in the framework.
 
 ### Keep it simple
 
-Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass’ capabilities—all code that comes into Scally should be as simple and CSS-like as possible.
+Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass’ capabilities&mdash;all code that comes into Scally should be as simple and CSS-like as possible.
 
 Adding this complexity is against a number of Scally's core principles especially in team-based workflows, long-running and larger projects, and its flexibility.
 
