@@ -34,7 +34,7 @@ $u-overlay-opacity-strength-light:            0.6 !default;
 $u-overlay-hover-apply-transition:            true !default;
 
 // Hover transition duration
-$u-overlay-hover-transition-duration:         0.20s !default;
+$u-overlay-hover-transition-duration:         0.2s !default;
 
 // Hover transition timing function
 $u-overlay-hover-transition-timing-function:  ease !default;
@@ -44,16 +44,14 @@ $u-overlay-hover-transition-timing-function:  ease !default;
  * Dark.
  */
 
-.u-overlay-dark {background-color:
-  rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
+.u-overlay-dark {background-color: rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
 
 
 /**
  * Light.
  */
 
-.u-overlay-light {background-color:
-  rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
+.u-overlay-light {background-color: rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
 
 
 /*
@@ -99,11 +97,9 @@ $u-overlay-hover-transition-timing-function:  ease !default;
 
   // Dark
   &.u-overlay-hover--dark:hover:before,
-  &.u-overlay-hover--dark:focus:before {background-color:
-    rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
+  &.u-overlay-hover--dark:focus:before {background-color: rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
 
   // Light
   &.u-overlay-hover--light:hover:before,
-  &.u-overlay-hover--light:focus:before {background-color:
-    rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
+  &.u-overlay-hover--light:focus:before {background-color: rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
 }
