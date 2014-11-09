@@ -63,13 +63,13 @@ $u-overlay-hover-transition-timing-function:  ease !default;
 .u-overlay-hover {
   // Give the overlay it's positioning context
   position: relative;
-  // Always ensure to render block-level so it can be applied to inline
+  // Always render as block-level so it can be applied to inline to
   // elements like `a`
   display: block;
 
 
   /**
-   * Pseudo element that is the overlay.
+   * The overlay.
    */
 
   &:before {
