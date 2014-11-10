@@ -1,0 +1,32 @@
+/* ============================================================================
+   @CORE -> BASE -> DETAILS
+   ========================================================================= */
+
+
+/**
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/zIgBs/
+ */
+
+
+/**
+ * Settings.
+ */
+
+$details-marker: false !default;
+
+
+summary {
+  cursor: pointer;
+
+
+  /**
+   * Control the visibility of the `detail`s marker.
+   */
+
+  @if $details-marker {
+
+    &::-webkit-details-marker {display: none;}
+
+  }
+}
