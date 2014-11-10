@@ -44,6 +44,7 @@ $u-overlay-hover-transition-timing-function:  ease !default;
  * Dark.
  */
 
+%u-overlay-dark,
 .u-overlay-dark {background-color: rgba($u-overlay-colour-dark, $u-overlay-opacity-strength-dark);}
 
 
@@ -51,6 +52,7 @@ $u-overlay-hover-transition-timing-function:  ease !default;
  * Light.
  */
 
+%u-overlay-light,
 .u-overlay-light {background-color: rgba($u-overlay-colour-light, $u-overlay-opacity-strength-light);}
 
 
@@ -58,6 +60,7 @@ $u-overlay-hover-transition-timing-function:  ease !default;
  * Hover version.
 */
 
+%u-overlay-hover,
 .u-overlay-hover {
   // Give the overlay it's positioning context
   position: relative;
