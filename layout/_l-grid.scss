@@ -75,13 +75,13 @@ $l-grid-gutter-huge:                              $spacing-double !default;
 /**
  * Grid container.
  *
- * 1. So it can work on inline elements e.g. `span`.
+ * 1. Negative `margin-left` to negate the columns gutters.
+ * 2. So it can work on inline elements e.g. `span`.
  */
 
 .l-grid {
-  // Negative `margin-left` to negate the columns gutters
-  @include to-rem(margin-left, -$l-grid-gutter-base);
-  display: block; // [1]
+  @include to-rem(margin-left, -$l-grid-gutter-base); // [1]
+  display: block; // [2]
 
   // Clear fix
   &:after {
