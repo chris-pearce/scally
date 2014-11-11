@@ -74,7 +74,7 @@ So the above `div` would receive a specific component class which would apply th
         @extend %u-position-pin-all;
     }
 
-You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
+You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
 
 Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
 
