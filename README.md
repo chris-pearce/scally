@@ -22,7 +22,7 @@
 - [Build tests](#build-tests)
 - [Linting](#linting)
 - [Contributing](#contributing)
-- [Scally improvements, issues, questions](#scally-improvements-issues-questions)
+- [Scally improvements, issues, and questions](#scally-improvements-issues-and-questions)
 - [Changelog](#changelog)
 - [Credits](#credits)
 - [Licence](#licence)
@@ -293,9 +293,9 @@ In addition to the principles outlined above here are some things to keep in min
 
 
 
-## Scally improvements, issues, questions
+## Scally improvements, issues, and questions
 
-If you have would like to suggest any new components or utilities, or any improvements, or any issues or bugs, or just ask a question, for Scally, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
+If you have would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
 
 
 
