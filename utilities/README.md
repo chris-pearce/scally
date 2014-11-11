@@ -61,7 +61,7 @@ However if the above `div` was part of a [component](components/README.md) e.g. 
 - It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed. 
 - It’s more readable having all styles capsulated in the Sass component partial.
 
-So the above `div` would receive a specific component class and would be stripped of the utility classes in the HTML and instead moved into the **Modal** Sass component partial e.g.
+So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
 
 **HTML**
 
