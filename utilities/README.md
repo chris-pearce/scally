@@ -1,8 +1,14 @@
 # Scally Utilities
 
+
+
+
 ## What are they?
 
 Utilities are low-level. They have a very narrow scope and may end up being used frequently, due to their separation from the semantics of the document and the theming of what they're being applied too. Think of them as helpers.
+
+
+
 
 ## Why have them?
 
@@ -15,12 +21,15 @@ A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`)
         > li {display: inline-block;}
     }
 
-So utilities are extremely powerful and are the real work horses for any sort of UI build but especially in large-scale UI builds, and here are some reasons why:
+So utilities are extremely powerful and are the real work horses for any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
 - Your CSS will be a lot DRYer.
-- You can make far-reaching changes to your designs by simply modifying a base abstraction only once.
-- You can make safer changes because you know that when editing a class you are only ever altering one responsibility.
-- You can combine responsibilities to make a variety of components from a lot of abstracted classes.
+- You can make far-reaching changes to your UI by simply modifying a utility only once.
+- You can make safer changes because you know that when editing a utility you are only ever altering one responsibility.
+- You can combine utilities to make a variety of UI layouts.
+
+
+
 
 ## How to use?
 
@@ -30,7 +39,7 @@ Each utility class modifies a single trait which might be an individual style e.
     %u-text-align-center,
     .u-text-align-center {text-align: center;}
 
-Or a small collection of similar styles e.g.
+Or a small collection of styles e.g.
 
     // Pin to all corners
     %u-position-pin-all,
@@ -49,17 +58,23 @@ So say you wanted an element to pin it's itself to all corners of it's container
     
 However if the above `div` was part of a [component](components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
 
-- It’s more robust compared to having to rely on applying classes at the markup level.
+- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed. 
 - It’s more readable having all styles capsulated in the Sass component partial.
 
-So the above `div` would be stripped of the classes from the HTML and instead moved into the **Modal** Sass component partial e.g.
+So the above `div` would receive a specific component class and would be stripped of the utility classes in the HTML and instead moved into the **Modal** Sass component partial e.g.
 
-    .modal div {
+**HTML**
+
+    <div class="modal__cover"> ... </div>
+
+**CSS**
+
+    .modal__cover {
         position: absolute;
         @extend %u-position-pin-all;
     }
 
-You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
+You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` i.e. there isn't any value from a readability, performance, or just general maintainability point of view to use `@extend` it.
 
 Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
 
@@ -96,17 +111,26 @@ The HTML:
 </div>
 ```
 
+
+
+
 ## Open/close principle
 
 Utilities follow the open/close principle, which states that software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
 
-So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component. *Or* the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
+So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component, *or* maybe the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
 
 [This article](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) does a fantastic job of explaining the open/close principle in relation to CSS.
+
+
+
 
 ## Applying at breakpoints
 
 *Probably be it's own section in the main README.md?*
+
+
+
 
 ## Specificity
 
@@ -114,21 +138,33 @@ Utilities always need to *win* when it comes to specificity (CSS’ first C; the
 
 That's why utilities are declared last when pulling in the Scally framework via your master stylesheet so they're compiled after everything else.
 
+
+
+
 ## Namespace
 
 All utility classes and utility silent placeholder selectors should be prefixed with `u-` so that they're easily identifiable.
 
+
+
+
 ## New utilities
 
-You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into Scally or even better submit a PR, [see](https://github.com/westfieldlabs/scally#contributing). 
+You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better submit a PR, [see](https://github.com/westfieldlabs/scally#contributing). 
+
+
+
 
 ## Demo's
 
 <http://codepen.io/team/westfieldlabs/full/xFHfk/>
 
+
+
+
 ## Further reading
 
-*Make sure to read the documentation within each utility Sass partial file. It will contain information about the utility and their implementations.*
+*Make sure to read the documentation within each utility Sass partial file as it will contain information about the utility and their implementations.*
 
 - [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
