@@ -85,7 +85,7 @@ This UI pattern can be entirely constructed using a number of Scally utilities a
 - [Side by side](_u-side-by-side.scss)
 - [Divider](_u-divider.scss)
 - [Spacing](_u-spacing.scss)
-- [Text](_text.scss)
+- [Text](_u-text.scss)
 
 The HTML:
 
