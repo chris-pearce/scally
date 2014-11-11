@@ -59,7 +59,7 @@ So say you wanted an element to pin it's itself to all corners of it's container
 However if the above `div` was part of a [component](components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
 
 - It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed. 
-- It’s more readable having all styles capsulated in the Sass component partial.
+- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
 
 So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
 
