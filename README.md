@@ -22,6 +22,7 @@
 - [Build tests](#build-tests)
 - [Linting](#linting)
 - [Contributing](#contributing)
+- [Scally improvements, issues, questions](#scally-improvements-issues-questions)
 - [Changelog](#changelog)
 - [Credits](#credits)
 - [Licence](#licence)
@@ -288,6 +289,9 @@ In addition to the principles outlined above here are some things to keep in min
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
 
 **Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
+
+
+
 
 ## Scally improvements, issues, questions
 
