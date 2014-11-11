@@ -284,14 +284,14 @@ Kinds of code not good for Scally:
 In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR:
 
 - Lint your Sass, [see](#linting). Scally's build tests will catch any linting issues however it's good practice to run linting manually also.
-- Follow these [CSS authoring guidelines](https://github.com/westfield/css_guidelines). Linting will catch a lot of this but not everything.
+- Follow the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). Linting will catch a lot of this but not everything.
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
+
+**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
 
 ## Scally improvements, issues, questions
 
 If you have would like to suggest any new components or utilities, or any improvements, or any issues or bugs, or just ask a question, for Scally, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
-
-**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
 
 
 
