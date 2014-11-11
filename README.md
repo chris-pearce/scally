@@ -19,7 +19,7 @@
         - [Example architecture](#example-architecture)
 - [Scally breakdown](#scally-breakdown)
 - [Browser support](#browser-support)
-- [Build tests](#build-test)
+- [Build tests](#build-tests)
 - [Linting](#linting)
 - [Contributing](#contributing)
 - [Changelog](#changelog)
