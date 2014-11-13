@@ -8,7 +8,7 @@
 - [What are they?](#what-are-they)
 - [Why have them?](#why-have-them)
 - [How to use?](#how-to-use)
-- [Open/close principle](#open/close-principle)
+- [Open/close principle](#openclose-principle)
 - [Applying at breakpoints](#applying-at-breakpoints)
 - [Specificity](#specificity)
 - [Namespace](#namespace)
