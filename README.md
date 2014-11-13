@@ -10,10 +10,6 @@
 - [What is Scally?](#what-is-scally)
 - [Dependencies](#dependencies)
 - [Scally architecture](#scally-architecture)
-    - [Core](#core)
-    - [Layout](#layout)
-    - [Components](#components)
-    - [Utilities](#utilities)
 - [Installing Scally](#installing-scally)
 - [Setting up a new project](#setting-up-a-new-project)
     - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
@@ -304,9 +300,11 @@ If you have would like to suggest any new components or utilities, any improveme
 
 
 
-## Changelog
+## Versioning
 
-[See](CHANGELOG.md)
+Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/) however sometimes we get it wrong, but we will do our best to adhere to those rules as much as possible and strive to maintain backwards compatibility.
+
+[See the Changelog](CHANGELOG.md).
 
 
 
