@@ -143,7 +143,7 @@ So Scally utilities can only ever be used *as is*. If an existing Scally utility
 
 ## Applying at breakpoints
 
-*Probably be it's own section in the main README.md?*
+Each utility comes with the ability to apply at any of the [set breakpoints](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint. This feature comes with Scally as when building responsive UI's it's a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. 
 
 
 
