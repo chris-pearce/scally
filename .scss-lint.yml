@@ -2,7 +2,9 @@
 
 exclude: [
   "*.css",
-  "demo-styles.scss"
+  "demo-styles.scss",
+  "core/_normalize.scss",
+  "core/_debug.scss"
 ]
 
 linters:
@@ -135,7 +137,7 @@ linters:
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#qualifyingelement
   QualifyingElement:
-    severity: error
+    severity: warning
     enabled: true
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#selectordepth
