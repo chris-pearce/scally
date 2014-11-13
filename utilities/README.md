@@ -3,6 +3,22 @@
 
 
 
+## Contents
+
+- [What are they?](#what-are-they)
+- [Why have them?](#why-have-them)
+- [How to use?](#how-to-use)
+- [Open/close principle](#open-close-principle)
+- [Applying at breakpoints](#applying-at-breakpoints)
+- [Specificity](#specificity)
+- [Namespace](#namespace)
+- [New utilities](#new-utilities)
+- [Demo's](#demos)
+- [Further reading](#further-reading)
+
+
+
+
 ## What are they?
 
 Utilities are low-level. They have a very narrow scope and may end up being used frequently, due to their separation from the semantics of the document and the theming of what they're being applied too. Think of them as helpers.
@@ -150,7 +166,7 @@ All utility classes and utility silent placeholder selectors should be prefixed 
 
 ## New utilities
 
-You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better submit a PR, [see](https://github.com/westfieldlabs/scally#contributing). 
+You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing). 
 
 
 
