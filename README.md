@@ -9,6 +9,11 @@
 
 - [What is Scally?](#what-is-scally)
 - [Dependencies](#dependencies)
+- [Scally architecture](#scally-architecture)
+    - [Core](#core)
+    - [Layout](#layout)
+    - [Components](#components)
+    - [Utilities](#utilities)
 - [Installing Scally](#installing-scally)
 - [Setting up a new project](#setting-up-a-new-project)
     - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
@@ -17,7 +22,6 @@
         - [Scally framework](#scally-framework)
         - [Your styles](#your-styles)
         - [Example architecture](#example-architecture)
-- [Scally breakdown](#scally-breakdown)
 - [Browser support](#browser-support)
 - [Build tests](#build-tests)
 - [Linting](#linting)
@@ -50,6 +54,20 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
     >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
     
     We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
+
+
+
+
+## Scally architecture
+
+Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
+
+The breakdown in order of their specificity:
+
+- [Core](core/README.md)
+- [Layout](layout/README.md)
+- [Components](components/README.md)
+- [Utilities](utilities/README.md)
 
 
 
@@ -198,20 +216,6 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 
 
-## Scally breakdown
-
-Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
-
-The breakdown in order of their specificity:
-
-- [Core](core/README.md)
-- [Layout](layout/README.md)
-- [Components](components/README.md)
-- [Utilities](utilities/README.md)
-
-
-
-
 ## Browser support
 
 - Chrome (latest two versions).
@@ -302,7 +306,7 @@ If you have would like to suggest any new components or utilities, any improveme
 
 ## Changelog
 
-*Coming soon.*
+[See](CHANGELOG.md)
 
 
 
