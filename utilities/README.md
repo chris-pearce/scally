@@ -146,6 +146,11 @@ So Scally utilities can only ever be used *as is*. If an existing Scally utility
 Each utility comes with the ability to apply at any of the [set breakpoints](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint. This feature comes with Scally as when building responsive UI's it's a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. 
 
 
+### How to use?
+
+This feature is turned off by default in favour of leaner stylesheets, and not all UI's are responsive. A real common use case for this application is hiding UI at a viewport breakpoint which is usually mobile / non-mobile. So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display utility**](https://github.com/westfieldlabs/scally/blob/master/utilities/_u-display.scss) to achieve this. First we have to turn this feature on by changing the [toggle setting](https://github.com/westfieldlabs/scally/blob/master/utilities/_u-display.scss#L44) to `true` which would output (compile) the utility in a media query [based off this](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L70).
+
+
 
 
 ## Specificity
