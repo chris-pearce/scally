@@ -9,7 +9,7 @@
 - [When to use?](#when-to-use)
 - [How to use?](#how-to-use)
   - [Using utilities](#using-utilities)
-  - [Naming conventions](#naming-conventions)
+  - [Naming convention](#naming-convention)
   - [Nested components](#nested-components)
   - [Portable and robust](#portable-and-robust)
 - [Namespacing](#namespacing)
@@ -234,19 +234,37 @@ So now we've removed the dialog dependency meaning the component can be used any
 
 #### Nested components
 
-#### Free of widths
+Like shown in the example above components can exist within other components i.e. the pagination component can exist in the dialog component. 
 
-Most components should not set their own width, margin, and positioning. By authoring a component to be full-width or inline, it can better adapt to the dimensions of an ancestral context.
+Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust). This means that all components should be completely standalone and only ever exist in isolation.
+
+#### Free of widths, margins, and positioning
+
+Components should not set their own widths, margins, and positioning. This allows components to be extremely portable as they can better adapt to the dimensions of an ancestral context.
+
+Avoiding widths and margins is the most crucial. If we use the **Pagination** component (demo'd above) and add these styles to the base class:
+
+```
+.pagination {
+  [...]
+  @include to-rem(width, 400);
+  @include to-rem(margin-bottom, $spacing-base);
+}
+```
+
+We've now fixed this component to always have a width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces the reuse of this component. When you need to reuse the component in a different part of the UI or if it only exists in one part of the UI and that part changes then the component will most likely break especially when widths are applied.
 
 #### Avoid element selectors
 
-### Encapsulation
+*Coming soon*.
 
-Just like everything else in Scally, Scally isolates the styles of a component. In doing so, it makes styling simpler by reducing the amount of , and prevents styles from leaking outside the component.
+#### Encapsulation
 
-Avoid coupling or entangling components, even if that means the code is not as DRY as you think it should be. Isolation prevents avoidable complexity and is an important part of robust reuse.
+Avoid coupling or entangling components, even if that means the code is not as DRY as you think it should be. Isolation prevents avoidable complexity and is an important part of robust reuse. Prevents styles from leaking outside the component.
 
-### Outer layout
+#### Outer layout
+
+*Coming soon*.
 
 
 
