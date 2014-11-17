@@ -6,6 +6,7 @@
 ## Contents
 
 - [What are they?](#what-are-they)
+- [When to use?](#when-to-use)
 - [How to use?](#how-to-use)
 
 
