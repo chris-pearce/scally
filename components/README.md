@@ -8,15 +8,20 @@
 - [What are they?](#what-are-they)
 - [When to use?](#when-to-use)
 - [How to use?](#how-to-use)
+  - [Naming conventions]
+  - 
+- [Namespacing](#namespacing)
+- [Demo's](#demos)
+- [Further reading](#further-reading)
 
 
 
 
 ## What are they?
 
-Components are the discrete custom elements of a UI that enclose specific semantics and styling and they're make up the bulk of a UI. Two examples of components could be: **pagination** and **breadcrumbs**.
+Components are the discrete custom elements of a UI that enclose specific semantics and styling and they make up the bulk of a UI. Examples of components could be: **pagination**, **breadcrumbs**, **hero**, etc.
 
-Components are extremely focused implementing only a single part of a UI, so they should never try to do too much. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). Each component should be designed to exist as a standalone component, think of them as black boxes.
+Components are extremely focused implementing only a single part of a UI, so they should never try to do too much. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). So each component should be designed to exist as a standalone component, think of them as black boxes.
 
 
 
@@ -166,7 +171,49 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
      }
 ```
 
+### Naming convention
 
-### Styling entanglement between components
+The component's base class name (e.g., `pagination`) reserves a namespace that can only be used by that component. Like the rest of Scally, components use the [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) naming methodology.
+
+### Using utilities 
+
+### Nested components
+
+### Portable and robust
+
+A component should not know about the implementation of its dependencies. The appearance of dependencies must be configured using the interface they provide.
+
+Most components should not set their own width, margin, and positioning. By authoring a component to be full-width or inline, it can better adapt to the dimensions of an ancestral context.
+
+Avoid element selectors
+
+Subclassing Modules
+
+### Encapsulation
 
 Just like everything else in Scally, Scally isolates the styles of a component. In doing so, it makes styling simpler by reducing the amount of , and prevents styles from leaking outside the component.
+
+Avoid coupling or entangling components, even if that means the code is not as DRY as you think it should be. Isolation prevents avoidable complexity and is an important part of robust reuse.
+
+
+
+
+## Namespacing
+
+Unlike [**layout modules**](layout/README.md) and [**utilities**](Utilities/README.md), components aren't namespaced as they make up the bulk of the UI therefore are considered the most important.
+
+
+
+## Demo's
+
+http://codepen.io/team/westfieldlabs/full/Fvxju
+
+
+
+
+## Further reading
+
+Make sure to read the documentation within each component Sass partial file as it will contain information about the component and their implementations.
+
+- [SMACCS - Module Rules](https://smacss.com/book/type-module).
+- [SUIT CSS components](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#namespace).
