@@ -212,17 +212,25 @@ These modifications or custom styles can be applied by relying on the components
 </div>
 ```
     
-However doing this is extremely brittle because now the component has a dependency on the sidebar. The correct way to handle this is to create a different version of the pagination component using the concept of a [BEM modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) like so:
+However doing this is extremely brittle because now the component has a dependency on the dialog. 
 
-    .pagination--compact {
-      [...]
-    }
+The correct way to handle this is to use the concept of a [BEM modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) like so:
 
-and the HTML:
+**CSS**
 
-    <nav class="pagination pagination--compact">
+```
+.pagination--compact {
+  [...]
+}
+```
 
-So now we've removed the sidebar dependency meaning the component can be used anywhere in the UI.
+**HTML**
+
+```
+<nav class="pagination pagination--compact">
+```
+
+So now we've removed the dialog dependency meaning the component can be used anywhere in the UI.
 
 #### Nested components
 
