@@ -38,7 +38,7 @@ Take this common UI component:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/pe5iBm20LpLADVn/Screen%20Shot%202014-11-17%20at%2010.51.26%20am.png "A Scally pagination component")
 
-You can construct a good deal of this component using a number of Scally utilities however they will only get you so far as they're parts of it that require custom style treatments therefore it becomes a **pagination** component.
+You can construct a good deal of this component using a number of Scally utilities however they will only get you so far as they're parts of it that require custom style treatments making it a **pagination** component.
 
 HTML for the pagination component:
 
