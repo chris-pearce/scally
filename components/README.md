@@ -8,8 +8,7 @@
 - [What are they?](#what-are-they)
 - [When to use?](#when-to-use)
 - [How to use?](#how-to-use)
-  - [Naming conventions]
-  - 
+  - [Naming conventions](#naming-conventions)
 - [Namespacing](#namespacing)
 - [Demo's](#demos)
 - [Further reading](#further-reading)
@@ -176,6 +175,8 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
 The component's base class name (e.g., `pagination`) reserves a namespace that can only be used by that component. Like the rest of Scally, components use the [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) naming methodology.
 
 ### Using utilities 
+
+Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above the selector: `.pagination__list` is `@extend`ing the **List Inline** utility. [See](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#how-to-use) to learn more about how utilities and components should work together. 
 
 ### Nested components
 
