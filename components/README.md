@@ -8,7 +8,10 @@
 - [What are they?](#what-are-they)
 - [When to use?](#when-to-use)
 - [How to use?](#how-to-use)
+  - [Using utilities](#using-utilities)
   - [Naming conventions](#naming-conventions)
+  - [Nested components](#nested-components)
+  - [Portable and robust](#portable-and-robust)
 - [Namespacing](#namespacing)
 - [Demo's](#demos)
 - [Further reading](#further-reading)
@@ -185,17 +188,29 @@ Utilities can be used in a component however they're `@extend`ed via a [Sass sil
 
 The components base class name (e.g., `pagination`) reserves a namespace that can only be used by that component. Like the rest of Scally, components use the [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) naming methodology.
 
-### Nested components
-
 ### Portable and robust
 
 Components should never be concerned or have any dependencies on ancestral context i.e. where they live in a UI. What this means is that components—if built well—can be moved to different parts of a UI without breaking, making them extremely portable and robust.
 
-So if we had to apply custom styles to the **Pagination** component (demo'd above) because it needs to be used in another part of a UI which has limited space e.g. a sidebar, then you could apply these custom styles via the components parent element e.g.
+To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog. The dialog has a lot less real estate for the pagination component to exist compared to it's default home in the UI meaning the component has to be modified in someway. 
 
-    .sidebar .pagination {
-      [...]
-    }
+These modifications or custom styles can be applied by relying on the components ancestral context i.e. via the components parent element which in this case is the dialog:
+
+**CSS**
+
+```
+.dialog .pagination {
+  [...]
+}
+```
+
+**HTML**
+
+```
+<div class="dialog">
+  <nav class="pagination"> [...] </nav>
+</div>
+```
     
 However doing this is extremely brittle because now the component has a dependency on the sidebar. The correct way to handle this is to create a different version of the pagination component using the concept of a [BEM modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) like so:
 
@@ -209,9 +224,13 @@ and the HTML:
 
 So now we've removed the sidebar dependency meaning the component can be used anywhere in the UI.
 
+#### Nested components
+
+#### Free of widths
+
 Most components should not set their own width, margin, and positioning. By authoring a component to be full-width or inline, it can better adapt to the dimensions of an ancestral context.
 
-Avoid element selectors
+#### Avoid element selectors
 
 ### Encapsulation
 
