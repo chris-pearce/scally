@@ -7,7 +7,7 @@
 
 - [What are they?](#what-are-they)
 - [When to use?](#when-to-use)
-- [How to use?](#how-to-use)
+- [How to use](#how-to-use)
   - [Using utilities](#using-utilities)
   - [Naming convention](#naming-convention)
   - [Nested components](#nested-components)
@@ -46,7 +46,7 @@ A component typically comes into existence when you find that a certain utilityâ
 
 
 
-## How to use?
+## How to use
 
 Take this common UI component:
 
