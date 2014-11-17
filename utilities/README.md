@@ -7,7 +7,7 @@
 
 - [What are they?](#what-are-they)
 - [Why have them?](#why-have-them)
-- [How to use?](#how-to-use)
+- [How to use](#how-to-use)
 - [Open/close principle](#openclose-principle)
 - [Applying at breakpoints](#applying-at-breakpoints)
 - [Specificity](#specificity)
@@ -47,7 +47,7 @@ So utilities are extremely powerful and are the real work horses for any sort of
 
 
 
-## How to use?
+## How to use
 
 Each utility class modifies a single trait which might be an individual style e.g.
 
