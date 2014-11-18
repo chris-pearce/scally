@@ -192,7 +192,7 @@ The components base class name (e.g., `pagination`) reserves a namespace that ca
 
 Components should never be concerned or have any dependencies on ancestral context i.e. where they live in a UI. What this means is that components—if built well—can be moved to different parts of a UI without breaking, making them extremely portable and robust.
 
-To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog has a lot less real estate for the pagination component to exist in compared to it's default home meaning the component has to be modified in someway to accomodate this. 
+To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog has a lot less real estate for the pagination component to fit into, compared to it's default home that is, meaning the component has to be modified in someway to accomodate this. 
 
 These modifications or custom styles can be applied by relying on the components ancestral context i.e. via the components parent element which in this case is the dialog component:
 
@@ -236,13 +236,13 @@ So now we've removed the dialog dependency meaning the component can be used any
 
 Like shown in the example above components can exist within other components i.e. the pagination component can exist in the dialog component. 
 
-Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust). This means that all components should be completely standalone and only ever exist in isolation.
+Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust). This means that all components should be completely standalone and can only ever exist in isolation.
 
-#### Free of widths, margins, and positioning
+#### Free of constraints
 
-Components should not set their own widths, margins, and positioning. This allows components to be extremely portable as they can better adapt to the dimensions of an ancestral context.
+Components should be free of widths, margins, and in most cases positioning. This allows components to be extremely portable as they can better adapt to the dimensions of an ancestral context.
 
-Avoiding widths and margins is the most crucial. If we use the **Pagination** component (demo'd above) and add these styles to the base class:
+Avoiding widths and margins is the most crucial here. If we use the **Pagination** component (demo'd above) and add these styles to the base class:
 
 ```
 .pagination {
@@ -252,7 +252,27 @@ Avoiding widths and margins is the most crucial. If we use the **Pagination** co
 }
 ```
 
-We've now fixed this component to always have a width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces the reuse of this component. When you need to reuse the component in a different part of the UI or if it only exists in one part of the UI and that part changes then the component will most likely break especially when widths are applied.
+We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI or if the UI it only ever exists in changes then the component will most likely cause breakages especially when widths are applied.
+
+So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport as the `body` will always be 100% of the viewport unless you've defined a width on it. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [**layout**](layout/README.md) modules which in most cases will be the [grid](layout/_l-grid.scss). 
+
+For creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best to not bake this into the default component styles as demonstrated above, instead apply it either via a BEM Modifier or via a utility class e.g.
+
+```
+.pagination--bottom-spacing {
+  @extend %c-bottom-spacing;
+}
+
+<nav class="pagination pagination--bottom-spacing">
+```
+
+or:
+
+```
+<nav class="pagination u-s-mb-base">
+```
+
+They're rare cases where baking in outer spacing to the default component styles is valid but it is rare, but it should be scrutinised over like everything with OOCSS.
 
 #### Avoid element selectors
 
