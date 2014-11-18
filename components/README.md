@@ -238,7 +238,7 @@ So now we've removed the dialog dependency meaning the component can be used any
 
 Like shown in the example above components can exist within other components i.e. the pagination component can exist in the dialog component. 
 
-Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust). This means that all components should be completely standalone and can only ever exist in isolation.
+Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust) and [here](#encapsulation). This means that all components should be completely standalone and can only ever exist in isolation.
 
 #### Free of constraints
 
