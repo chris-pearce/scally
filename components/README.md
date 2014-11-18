@@ -41,7 +41,7 @@ Components are extremely focused implementing only a single part of a UI, so the
 
 ## When to use?
 
-The [**layout**](layout/README.md) and [**utility**](utilities/README.md) parts of Scally should always be your first port of call when constructing a UI as they do one job and they do it very well, which is to construct UI. That's the power of Scally and [why it exists](https://github.com/westfieldlabs/scally#what-is-scally).
+The [**layout**](../layout/README.md) and [**utility**](utilities/README.md) parts of Scally should always be your first port of call when constructing a UI as they do one job and they do it very well, which is to construct UI. That's the power of Scally and [why it exists](https://github.com/westfieldlabs/scally#what-is-scally).
 
 A component typically comes into existence when you find that a certain utility—or a bunch or utilities—can only get you so far, explained more in the [next section](#how-to-use).
 
