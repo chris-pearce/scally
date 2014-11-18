@@ -194,7 +194,7 @@ The components base class name (e.g., `pagination`) reserves a namespace that ca
 
 Components should never be concerned or have any dependencies on ancestral context i.e. where they live in a UI. What this means is that components—if built well—can be moved to different parts of a UI without breaking, making them extremely portable and robust.
 
-To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog has a lot less real estate for the pagination component to fit into, compared to it's default home that is, meaning the component has to be modified in someway to accomodate this. 
+To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog has a lot less real estate for the pagination component to fit into meaning the component has to be modified in someway to accomodate this. 
 
 These modifications or custom styles can be applied by relying on the components ancestral context i.e. via the components parent element which in this case is the dialog component:
 
@@ -254,7 +254,7 @@ Avoiding widths and margins is the most crucial here. If we use the **Pagination
 }
 ```
 
-We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI—or if the UI it only ever exists in changes—then the component will most likely cause breakages.
+We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI—or if the UI it will only ever exist in changes—then the component will most likely cause breakages.
 
 So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [**layout**](layout/README.md) modules which in most cases will be the [grid](layout/_l-grid.scss). 
 
@@ -272,11 +272,11 @@ or:
 <nav class="pagination u-s-mb-base">
 ```
 
-They're rare cases where baking in outer spacing to the default component styles is valid but it is rare, but it should be scrutinised over like everything with OOCSS.
+They're rare cases where baking in outer spacing to the default component styles is valid but it is rare, but like everything with OOCSS it should be scrutinised over.
 
 #### Encapsulation
 
-Components should be encapsulated as much as possible, even if that means your CSS is not as DRY as you think it should be. The main aim is to prevent styles from leaking outside of the component because this isolation prevents avoidable complexity and results in higher code reuse. 
+Components should be encapsulated as much as possible, even if that means your CSS is not as DRY as you think it could be. The main aim is to prevent styles from leaking outside of the component, this isolation prevents avoidable complexity and results in higher code reuse. 
 
 *Most of how to write a component well falls into understanding the principles of OOCSS, [see here](#further-reading) for some good learning on this.*
 
@@ -289,6 +289,7 @@ Unlike [**layout modules**](layout/README.md) and [**utilities**](Utilities/READ
 
 
 
+
 ## Demo's
 
 http://codepen.io/team/westfieldlabs/full/Fvxju
@@ -298,7 +299,16 @@ http://codepen.io/team/westfieldlabs/full/Fvxju
 
 ## Further reading
 
-Make sure to read the documentation within each component Sass partial file as it will contain information about the component and their implementations.
+*Make sure to read the documentation within each component Sass partial file as it will contain information about the component and it's implementation.*
 
-- [SMACCS - Module Rules](https://smacss.com/book/type-module).
-- [SUIT CSS components](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#namespace).
+- [SMACCS](http://smacss.com/)
+  - [SMACCS - Module Rules](https://smacss.com/book/type-module)
+- [SUIT CSS components](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#namespace)
+- [CSS guidelines](http://cssguidelin.es)
+- [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [OOCSS code standards](https://github.com/stubbornella/oocss-code-standards)
+- [SOLID CSS](http://blog.millermedeiros.com/solid-css/)
+- [One Module or Two](http://snook.ca/archives/html_and_css/one-module-or-two)
+- [Our (CSS) Best Practices Are Killing US](http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/)
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/05/keep-your-css-selectors-short/)
+- [Principles for writing good CSS](http://blog.kaelig.fr/post/38377421139/principles-for-writing-good-css)
