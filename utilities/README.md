@@ -185,7 +185,7 @@ You can create new utilities in your [project specific CSS](https://github.com/w
 
 ## Further reading
 
-*Make sure to read the documentation within each utility Sass partial file as it will contain information about the utility and their implementations.*
+*Make sure to read the documentation within each utility Sass partial file as it will contain information about the utility and it's implementations.*
 
 - [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
