@@ -32,7 +32,7 @@ Components are the discrete custom elements of a UI that enclose specific semant
 - [Button](_button.scss)
 - Icon
 
-Components are extremely focused implementing only a single part of a UI, so they should never try to do too much. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). So each component should be designed to exist as a standalone component, think of them as black boxes.
+Components are extremely focused implementing only a single part of a UI, so they should never try to do too much, that's why you won't find may components in Scally. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). So each component should be designed to exist as a standalone component, think of them as black boxes.
 
 
 
