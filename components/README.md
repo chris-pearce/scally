@@ -32,7 +32,7 @@ Components are the discrete custom elements of a UI that enclose specific semant
 - [Button](_button.scss)
 - Icon
 
-Components are extremely focused implementing only a single part of a UI, so they should never try to do too much, that's why you won't find may components in Scally. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). So each component should be designed to exist as a standalone component, think of them as black boxes.
+Components are extremely focused implementing only a single part of a UI, so they should never try to do too much, and is why you won't find may components in Scally. They also shouldn't be concerned or have any dependencies on ancestral context i.e. where they live in a UI, making them extremely [portable and robust](#portable-and-robust). So each component should be designed to exist as a standalone component, think of them as black boxes.
 
 
 
@@ -184,7 +184,7 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
 
 ### Using utilities 
 
-Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](utilities/_list-inline.scss) utility. To learn more about how utilities and components work together [see here](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#how-to-use). 
+Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](utilities/_u-list-inline.scss) utility. To learn more about how utilities and components work together [see here](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#how-to-use). 
 
 ### Naming convention
 
