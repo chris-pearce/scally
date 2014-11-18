@@ -41,7 +41,7 @@ Components are extremely focused implementing only a single part of a UI, so the
 
 ## When to use?
 
-The [**layout**](../layout/README.md) and [**utility**](utilities/README.md) parts of Scally should always be your first port of call when constructing a UI as they do one job and they do it very well, which is to construct UI. That's the power of Scally and [why it exists](https://github.com/westfieldlabs/scally#what-is-scally).
+The [**layout**](../layout/README.md) and [**utility**](../utilities/README.md) parts of Scally should always be your first port of call when constructing a UI as they do one job and they do it very well, which is to construct UI. That's the power of Scally and [why it exists](../README.md#what-is-scally).
 
 A component typically comes into existence when you find that a certain utility—or a bunch or utilities—can only get you so far, explained more in the [next section](#how-to-use).
 
@@ -184,7 +184,7 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
 
 ### Using utilities 
 
-Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](utilities/_u-list-inline.scss) utility. To learn more about how utilities and components work together [see here](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#how-to-use). 
+Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](../utilities/_u-list-inline.scss) utility. To learn more about how utilities and components work together [see here](../README.md#how-to-use). 
 
 ### Naming convention
 
@@ -256,7 +256,7 @@ Avoiding widths and margins is the most crucial here. If we use the **Pagination
 
 We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI—or if the UI it will only ever exist in changes—then the component will most likely cause breakages.
 
-So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [layout modules](layout/) which in most cases will be the [grid](layout/_l-grid.scss). 
+So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [layout modules](../layout/) which in most cases will be the [grid](../layout/_l-grid.scss). 
 
 For creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best to not bake this into the default component styles as demonstrated above, instead apply it either via a BEM Modifier or via a utility class e.g.
 
@@ -285,14 +285,14 @@ Components should be encapsulated as much as possible, even if that means your C
 
 ## Namespacing
 
-Unlike [layout modules](layout/) and [utilities](utilities/), components aren't namespaced as they make up the bulk of the UI therefore are considered the most important.
+Unlike [layout modules](../layout/) and [utilities](../utilities/), components aren't namespaced as they make up the bulk of the UI therefore are considered the most important.
 
 
 
 
 ## Demo's
 
-http://codepen.io/team/westfieldlabs/full/Fvxju
+<http://codepen.io/team/westfieldlabs/full/Fvxju>
 
 
 
