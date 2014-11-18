@@ -254,16 +254,14 @@ Avoiding widths and margins is the most crucial here. If we use the **Pagination
 }
 ```
 
-We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI or if the UI it only ever exists in changes then the component will most likely cause breakages especially when widths are applied.
+We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI—or if the UI it only ever exists in changes—then the component will most likely cause breakages.
 
-So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport as the `body` will always be 100% of the viewport unless you've defined a width on it. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [**layout**](layout/README.md) modules which in most cases will be the [grid](layout/_l-grid.scss). 
+So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport. In fact this is a good test to check you've made your components 100% fluid. The rule is that all components sit inside [**layout**](layout/README.md) modules which in most cases will be the [grid](layout/_l-grid.scss). 
 
 For creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best to not bake this into the default component styles as demonstrated above, instead apply it either via a BEM Modifier or via a utility class e.g.
 
 ```
-.pagination--bottom-spacing {
-  @extend %c-bottom-spacing;
-}
+.pagination--bottom-spacing {@extend %c-bottom-spacing;}
 
 <nav class="pagination pagination--bottom-spacing">
 ```
