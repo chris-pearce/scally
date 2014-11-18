@@ -194,7 +194,7 @@ The components base class name (e.g., `pagination`) reserves a namespace that ca
 
 Components should never be concerned or have any dependencies on ancestral context i.e. where they live in a UI. What this means is that components—if built well—can be moved to different parts of a UI without breaking, making them extremely portable and robust.
 
-To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog has a lot less real estate for the pagination component to fit into meaning the component has to be modified in someway to accomodate this. 
+To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog component has a lot less real estate for the pagination component to fit into meaning the component has to be modified in someway to accomodate this. 
 
 These modifications or custom styles can be applied by relying on the components ancestral context i.e. via the components parent element which in this case is the dialog component:
 
