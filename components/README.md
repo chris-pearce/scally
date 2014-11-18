@@ -10,8 +10,10 @@
 - [How to use](#how-to-use)
   - [Using utilities](#using-utilities)
   - [Naming convention](#naming-convention)
-  - [Nested components](#nested-components)
   - [Portable and robust](#portable-and-robust)
+    - [Nested components](#nested-components)
+    - [Free of constraints](#free-of-constraints)
+    - [Encapsulation](#encapsulation)
 - [Namespacing](#namespacing)
 - [Demo's](#demos)
 - [Further reading](#further-reading)
@@ -274,17 +276,11 @@ or:
 
 They're rare cases where baking in outer spacing to the default component styles is valid but it is rare, but it should be scrutinised over like everything with OOCSS.
 
-#### Avoid element selectors
-
-*Coming soon*.
-
 #### Encapsulation
 
-Avoid coupling or entangling components, even if that means the code is not as DRY as you think it should be. Isolation prevents avoidable complexity and is an important part of robust reuse. Prevents styles from leaking outside the component.
+Components should be encapsulated as much as possible, even if that means your CSS is not as DRY as you think it should be. The main aim is to prevent styles from leaking outside of the component because this isolation prevents avoidable complexity and results in higher code reuse. 
 
-#### Outer layout
-
-*Coming soon*.
+*Most of how to write a component well falls into understanding the principles of OOCSS, [see here](#further-reading) for some good learning on this.*
 
 
 
