@@ -28,7 +28,7 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 ## Why have them?
 
-Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors we don't have to keep writing the same styles over and over again, instead we can abstract those common styles into nice reusable modules.
+Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable modules.
 
 A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
 
@@ -37,7 +37,7 @@ A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`)
         > li {display: inline-block;}
     }
 
-So utilities are extremely powerful and are the real work horses for any sort of UI build especially large-scale UI builds, and here are some reasons why:
+So utilities are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
 - Your CSS will be a lot DRYer.
 - You can make far-reaching changes to your UI by simply modifying a utility only once.
@@ -72,10 +72,10 @@ So say you wanted an element to pin it's itself to all corners of it's container
 
     <div class="u-position-absolute u-position-pin-all"> ... </div>
 
-However if the above `div` was part of a [component](components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
+However if the above `div` was part of a [component](../components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
 
-- It's more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
-- It's more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
+- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
+- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
 
 So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
 
@@ -136,20 +136,43 @@ Utilities follow the open/close principle, which states that software entities (
 
 So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component, *or* maybe the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
 
-[This article](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) does a fantastic job of explaining the open/close principle in relation to CSS.
-
 
 
 
 ## Applying at breakpoints
 
-Each utility comes with the ability to apply at any of the [set breakpoints](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint. This feature comes with Scally as when building responsive UI's it's a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively.
+When building responsive UI's it is a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. So each utility comes with the ability to be applied at any of the [set breakpoints](../core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint.
 
+Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss#L6-L57) and this feature is turned off by default in favour of leaner stylesheets, and not all UI's are responsive.
 
 ### How to use?
 
-This feature is turned off by default in favour of leaner stylesheets, and not all UI's are responsive. A real common use case for this application is hiding UI at a viewport breakpoint which is usually mobile / non-mobile. So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display utility**](https://github.com/westfieldlabs/scally/blob/master/utilities/_u-display.scss) to achieve this. First we have to turn this feature on by changing the [toggle setting](https://github.com/westfieldlabs/scally/blob/master/utilities/_u-display.scss#L44) to `true` which would output (compile) the utility in a media query [based off this](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L70).
+A real common use case for this application is hiding UI at certain viewport sizes, typically at a mobile size viewport or a non-mobile size viewport.
 
+So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display** utility](_u-display.scss) to achieve this, applying these steps:
+
+1. Turn the feature on by changing the [toggle setting](_u-display.scss#L44) to `true` which will output (compile) the utility in a media query like so:
+
+  ```
+  @media (min-width: 40.0625em) {
+    .u-hide-from-lap {display: none;}
+  }
+  ```
+2. By default the feature uses the [`lap`](../core/settings/_breakpoints.scss#L53) breakpoint but you can change this to another breakpoint or add more breakpoints via this [setting](_u-display.scss#L27) which you do in your main stylesheet above the `@import`:
+
+  ```
+  $u-display-breakpoints: (lap, lap-large)
+  @import "bower_components/scally/utilities/u-display";
+  ```
+  This will output (compile):
+  ```
+  @media (min-width: 40.0625em) {
+    .u-hide-from-lap {display: none;}
+  }
+  @media (min-width: 56.3125em) {
+    .u-hide-from-lap-large {display: none;}
+  }
+  ```
 
 
 
@@ -189,3 +212,4 @@ You can create new utilities in your [project specific CSS](https://github.com/w
 
 - [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
+- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).

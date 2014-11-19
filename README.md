@@ -295,7 +295,7 @@ In addition to the principles outlined above here are some things to keep in min
 
 ## Scally improvements, issues, and questions
 
-If you have would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
+If you would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
 
 
 
@@ -304,7 +304,7 @@ If you have would like to suggest any new components or utilities, any improveme
 
 Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/) however sometimes we get it wrong, but we will do our best to adhere to those rules as much as possible and strive to maintain backwards compatibility.
 
-[See the Changelog](CHANGELOG.md).
+[See the CHANGELOG](CHANGELOG.md).
 
 
 
