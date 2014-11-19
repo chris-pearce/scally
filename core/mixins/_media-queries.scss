@@ -65,6 +65,10 @@
 
       $next-breakpoint-index: $breakpoint-index + 1;
 
+      @if $min-value == "lap" {
+        $next-breakpoint-index: $breakpoint-index + 2;
+      }
+
       @if $next-breakpoint-index <= length($breakpoint-values) {
         $max-value: nth($breakpoint-values, $next-breakpoint-index);
       }
