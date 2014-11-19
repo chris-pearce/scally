@@ -1,0 +1,26 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON FAUX LINK
+   ========================================================================= */
+
+
+/**
+ * A button that looks like a link.
+ *
+ * N.B. this component is dependant on the following component:
+ *
+ * - Button.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/Fvxju#button-faux-link
+ */
+
+
+.btn-faux-link {
+  color: $link-colour;
+
+  &:hover,
+  &:focus {
+    color: $link-colour-hover;
+    text-decoration: underline;
+  }
+}
