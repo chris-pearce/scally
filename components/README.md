@@ -38,7 +38,6 @@ Components are extremely focused implementing only a single part of a UI, so the
 
 
 
-
 ## When to use?
 
 The [**layout**](../layout/README.md) and [**utility**](../utilities/README.md) parts of Scally should always be your first port of call when constructing a UI as they do one job and they do it very well, which is to construct UI. That's the power of Scally and [why it exists](../README.md#what-is-scally).
