@@ -11,7 +11,6 @@
   - [Responsive grid](#responsive-grid)
   - [Use in isolation](#use-in-isolation)
 - [Namespace](#namespace)
-- [New layout modules](#new-layout-modules)
 - [Demo's](#demos)
 
 
@@ -181,8 +180,6 @@ at which point it becomes 33.333% width.
 All of the layout modules should exist on their own, they are for layout
 purposes only. You should never mix in other styles with a layout module e.g. a grid cell, this ties in with the [Open/close principle](../utilities#openclose-principle) which is used for utilities.
 
-Layout modules should be thought of as shelves. They contain content but are not content in themselves. You put up your shelves then fill them with your stuff.
-
 So if we look at the HTML for the header demo'd above:
 
 ```
@@ -233,13 +230,6 @@ Read more [here](http://cssguidelin.es/#the-separation-of-concerns) about this s
 ## Namespace
 
 All layout classes should be prefixed with `l-` so that they're easily identifiable.
-
-
-
-
-## New layout modules
-
-[See here](../utilities#new-utilities).
 
 
 
