@@ -226,7 +226,7 @@ $friendly-box-model:                      false !default;
   @if $friendly-box-model == false {
 
     /**
-     * Remove paddings so that widths and paddings don`t conflict.
+     * Remove paddings so that widths and paddings don't conflict.
      *
      * N.B. if you're applying a border then that will conflict with the width
      * however Scally can't turn off your border in this case.
