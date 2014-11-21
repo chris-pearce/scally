@@ -48,7 +48,7 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 - [Autoprefixer](https://github.com/postcss/autoprefixer).
 
     >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
-    
+
     We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
 
 
@@ -56,7 +56,7 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 ## Scally architecture
 
-Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS’ first C; the cascade. Think of them as layers.
+Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS` first C; the cascade. Think of them as layers.
 
 The breakdown in order of their specificity:
 
@@ -265,7 +265,7 @@ Scally gratefully welcomes contributions from the open-source community but ther
 
 ### Keep it simple
 
-Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass’ capabilities&mdash;all code that comes into Scally should be as simple and CSS-like as possible.
+Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass` capabilities&mdash;all code that comes into Scally should be as simple and CSS-like as possible.
 
 Adding this complexity is against a number of Scally's core principles especially in team-based workflows, long-running and larger projects, and its flexibility.
 
@@ -278,7 +278,7 @@ Adding this complexity is against a number of Scally's core principles especiall
 Kinds of code not good for Scally:
 
 - **Hundred-line mixins designed to avoid a couple of lines of repetition:** the overhead of typing a few more lines is much less than creating, documenting, learning, and maintaining complex Sass functionality.
-- **Mixins which generate entire blocks of CSS:** creating ‘black boxes’ in code often leads to obscurity, lack of understanding, lack of confidence, and lack of trust in a codebase. Everything should be as transparent and CSS-like as possible.
+- **Mixins which generate entire blocks of CSS:** creating `black boxes` in code often leads to obscurity, lack of understanding, lack of confidence, and lack of trust in a codebase. Everything should be as transparent and CSS-like as possible.
 
 ### Submitting code to Scally (PR's)
 
@@ -288,7 +288,7 @@ In addition to the principles outlined above here are some things to keep in min
 - Follow the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). Linting will catch a lot of this but not everything.
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
 
-**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css) 
+**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css)
 
 
 

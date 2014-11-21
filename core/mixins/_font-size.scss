@@ -29,8 +29,8 @@
      line-height: 1.5;
    }
  *
- * This parameter can be any integer, ‘inherit’, or ‘normal’. If you don’t
- * want a line-height at all, pass in a second paramater of ‘none’ or ‘false’:
+ * This parameter can be any integer, `inherit`, or `normal`. If you don`t
+ * want a line-height at all, pass in a second paramater of `none` or `false`:
  *
    .foo {@include font-size(12, none);}
  *
@@ -70,7 +70,7 @@
     }
 
     @elseif ($line-height-value != none and $line-height-value != false) {
-      @warn "D’oh! ‘#{$line-height-value}’ is not a valid value for `line-height`."
+      @warn "D`oh! `#{$line-height-value}` is not a valid value for `line-height`."
     }
 
   }

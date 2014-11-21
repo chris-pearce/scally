@@ -71,11 +71,11 @@ To apply a trait, or a combination of traits, add the corresponding class or cla
 So say you wanted an element to pin it's itself to all corners of it's container then you would apply like so:
 
     <div class="u-position-absolute u-position-pin-all"> ... </div>
-    
+
 However if the above `div` was part of a [component](components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
 
-- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed. 
-- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
+- It`s more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
+- It`s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
 
 So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
 
@@ -143,7 +143,7 @@ So Scally utilities can only ever be used *as is*. If an existing Scally utility
 
 ## Applying at breakpoints
 
-Each utility comes with the ability to apply at any of the [set breakpoints](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint. This feature comes with Scally as when building responsive UI's it's a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. 
+Each utility comes with the ability to apply at any of the [set breakpoints](https://github.com/westfieldlabs/scally/blob/master/core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint. This feature comes with Scally as when building responsive UI's it's a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively.
 
 
 ### How to use?
@@ -155,7 +155,7 @@ This feature is turned off by default in favour of leaner stylesheets, and not a
 
 ## Specificity
 
-Utilities always need to *win* when it comes to specificity (CSS’ first C; the cascade) as they should always *just work* otherwise they're not doing their job properly i.e. you should never be needing to override a utility's styles. If you are then you're not using them correctly, [see](#open-close-principle).
+Utilities always need to *win* when it comes to specificity (CSS` first C; the cascade) as they should always *just work* otherwise they're not doing their job properly i.e. you should never be needing to override a utility's styles. If you are then you're not using them correctly, [see](#open-close-principle).
 
 That's why utilities are declared last when pulling in the Scally framework via your master stylesheet so they're compiled after everything else.
 
@@ -171,7 +171,7 @@ All utility classes and utility silent placeholder selectors should be prefixed 
 
 ## New utilities
 
-You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing). 
+You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing).
 
 
 
