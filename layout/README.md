@@ -56,7 +56,7 @@ Again like utilities, layout modules are extremely powerful and are the real wor
 
 When you identify any type of layout in a UI then a layout module is what you need.
 
-If we look at the home page of this website at both mobile and desktop views:
+If we look at the home page of this [website](http://www.manchester.gov.uk/) at both mobile and desktop views:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/Qz4UZwU3EGL0uJk/Manchester%20City%20Council%20Homepage%20mobile.png "Manchester City Council home page at mobile size")
 
@@ -173,7 +173,7 @@ This would give you a grid item which is 100% width unless it is on a [lap](../c
 device, at which point it becomes 50% wide, or it is on a [desktop](../core/settings/_breakpoints.scss#L57) device,
 at which point it becomes 33.333% width.
 
-[See here](../utilities/_u-widths.scss#applying-at-breakpoints) about applying utilities at breakpoints.
+[See here](../utilities/README.md#applying-at-breakpoints) about applying utilities at breakpoints.
 
 ### Use in isolation
 
