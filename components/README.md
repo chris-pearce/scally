@@ -286,7 +286,7 @@ Components should be encapsulated as much as possible, even if that means your C
 
 ## Namespacing
 
-[layout modules](../layout/) and [utilities](../utilities/) are namespaced with `l-` and `u-` respectively so that they're easily identifiable. Components don't need this treatment, so for a **Dialog** component it will simply be: `.dialog`.
+[Layout modules](../layout/) and [utilities](../utilities/) are namespaced with `l-` and `u-` respectively so that they're easily identifiable. Components don't need this treatment, so for a **Dialog** component it will simply be: `.dialog`.
 
 
 

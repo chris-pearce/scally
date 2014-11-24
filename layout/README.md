@@ -12,6 +12,7 @@
   - [Use in isolation](#use-in-isolation)
 - [Namespace](#namespace)
 - [Demo's](#demos)
+- [Further reading](#further-reading)
 
 
 
@@ -28,7 +29,7 @@ Container is designed to wrap all major UI layout pieces and ensure the UI maint
 
 Grid is a powerful, fluid, nestable, mobile first grid system that allows you to set custom column widths at different viewports, making responsive layouts a sinch.
 
-See [demo's](#demos).
+See the [demo's](#demos).
 
 Scally also offers two additional layout utilities located in [utilities](../utilities/). The [**Side by Side** utility](../utilities/_u-side-by-side.scss) utility and [**Side by Side Alternative** utility](../utilities/_u-side-by-side-alt.scss) apply an extremely common UI layout pattern. This will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153).
 
@@ -62,7 +63,7 @@ If we look at the home page of this [website](http://www.manchester.gov.uk/) at 
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/MqznltXDsqcf1Y5/Manchester%20City%20Council%20Homepage.png "Manchester City Council home page at desktop size")
 
-We can identify many instances where layout modules can and should be used.. Let's take the top portion of the home page at its desktop view:
+We can identify many instances where layout modules can and should be used. Let's take the top portion of the home page at its desktop view:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/lei9leil3sLgGVq/Manchester%20City%20Council%20Homepage%20header.png "Manchester City Council home page header at desktop size")
 
@@ -159,7 +160,7 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 
 ### Responsive grid
 
-The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to contruct responsive UI's. This ability isn't tied into the grid itself but uses the [**Widths** utility](../utilities/_u-widths.scss).
+The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to construct responsive UI's. This ability isn't tied into the grid itself but uses the [**Widths** utility](../utilities/_u-widths.scss).
 
 By default grid cells will stack on top of eachother unless told otherwise i.e. they're completely linear. At small viewport widths like at handheld devices typically this is what you want, however as the viewport increases in width you can then apply widths to the grid cells turning them into columns.
 
@@ -169,9 +170,9 @@ So if we had a grid cell like this:
 <div class="l-grid__item u-one-half-from-lap u-one-third-from-desk">
 ```
 
-This would give you a grid item which is 100% width unless it is on a [lap](../core/settings/_breakpoints.scss#L53)
+This would give you a grid item which is 100% wide unless it is on a [lap](../core/settings/_breakpoints.scss#L53)
 device, at which point it becomes 50% wide, or it is on a [desktop](../core/settings/_breakpoints.scss#L57) device,
-at which point it becomes 33.333% width.
+at which point it becomes 33.333% wide.
 
 [See here](../utilities/README.md#applying-at-breakpoints) about applying utilities at breakpoints.
 
@@ -222,8 +223,6 @@ And we need to add padding to all sides of the left grid cell and add the sub na
 <!-- //Header -->
 ```
 
-Read more [here](http://cssguidelin.es/#the-separation-of-concerns) about this separation of concerns.
-
 
 
 
@@ -238,3 +237,14 @@ All layout classes should be prefixed with `l-` so that they're easily identifia
 
 - [Grid](http://codepen.io/team/westfieldlabs/full/cjyHK)
 - [Container](http://codepen.io/team/westfieldlabs/full/GiCzg)
+
+
+
+
+## Further reading
+
+*Make sure to read the documentation within each layout Sass partial file as it will contain information about the layout module and it's implementations.*
+
+- [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
+- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
