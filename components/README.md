@@ -193,7 +193,7 @@ The components base class name (e.g., `pagination`) reserves a namespace that ca
 
 Components should never be concerned or have any dependencies on ancestral context i.e. where they live in a UI. What this means is that components—if built well—can be moved to different parts of a UI without breaking, making them extremely portable and robust.
 
-To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog component has a lot less real estate for the pagination component to fit into meaning the component has to be modified in someway to accomodate this.
+To demonstrate this, let's say there is a requirement to also feature the **Pagination** component (demo'd above) in another part of the UI e.g. a dialog component. The dialog component has a lot less real estate for the pagination component to fit into meaning the component has to be modified in some way to accomodate this.
 
 These modifications or custom styles can be applied by relying on the components ancestral context i.e. via the components parent element which in this case is the dialog component:
 
@@ -213,7 +213,7 @@ These modifications or custom styles can be applied by relying on the components
 </div>
 ```
 
-However doing this is extremely brittle because now the component has a dependency on the dialog component.
+However, doing this is extremely brittle because now the component has a dependency on the dialog component.
 
 The correct way to handle this is to use the concept of a [BEM modifier](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) like so:
 
@@ -237,7 +237,7 @@ So now we've removed the dialog dependency meaning the component can be used any
 
 Like shown in the example above components can exist within other components i.e. the pagination component can exist in the dialog component.
 
-Nested components like this are perfectly fine, what's important is not having components being dependent on other components which is covered in the [previous section](#portable-and-robust) and [here](#encapsulation). This means that all components should be completely standalone and can only ever exist in isolation.
+Nested components like this are perfectly fine. It is important that components are never dependent upon other components. This is covered in more detail in the [previous section](#portable-and-robust) and [here](#encapsulation). This means that all components should be completely standalone and can only ever exist in isolation.
 
 #### Free of constraints
 
@@ -253,13 +253,13 @@ Avoiding widths and margins is the most crucial here. If we use the **Pagination
 }
 ```
 
-We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse. Because when you need to reuse the component in a different part of the UI—or if the UI it will only ever exist in changes—then the component will most likely cause breakages.
+We've now fixed this component to always have a rigid width of `400px` and a bottom margin of `24px`. This may be what you want when you first create the component but adding these default styles is shortsighted and greatly reduces it's reuse because when you need to reuse the component in a different part of the UI—or if the UI it will only ever exist in changes—then the component will most likely cause breakages.
 
 So all components should be 100% fluid i.e. do not define fixed widths. A components width is always determined by the dimensions of an ancestral context, so if you moved a component from where it's intended to live in a UI to another location in the DOM e.g. directly after the opening `body` element, the component should stretch the width of the entire viewport. In fact this is a good test to check you've made your components 100% fluid.
 
-**The rule is that all components layout uses a [layout module](../layout/) which in most cases will be the [grid](../layout/_l-grid.scss).**
+**The rule is that all components should rely on utilising a [layout module](../layout/) to control their layout. In most cases this will be the [grid](../layout/_l-grid.scss).**
 
-For creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best to not bake this into the default component styles as demonstrated above, instead apply it either via a BEM Modifier or via a utility class e.g.
+When creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best not to bake this into the default component styles as demonstrated above, and instead apply it either via a BEM Modifier or via a utility class e.g.
 
 ```
 .pagination--bottom-spacing {@extend %c-bottom-spacing;}
@@ -279,7 +279,7 @@ They're rare cases where baking in outer spacing to the default component styles
 
 Components should be encapsulated as much as possible, even if that means your CSS is not as DRY as you think it could be. The main aim is to prevent styles from leaking outside of the component, this isolation prevents avoidable complexity and results in higher code reuse.
 
-*Most of how to write a component well falls into understanding the principles of OOCSS, [see here](#further-reading) for some good learning on this.*
+*Creating well written and highly reusable components will come more naturally if you have a strong understanding of the principles of OOCSS. I recommend checking out [this section](#further-reading) for some of my favourite resources on the subject.*
 
 
 

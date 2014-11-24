@@ -40,8 +40,8 @@ A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`)
 So utilities are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
 - Your CSS will be a lot DRYer.
-- You can make far-reaching changes to your UI by simply modifying a utility only once.
-- You can make safer changes because you know that when editing a utility you are only ever altering one responsibility.
+- You can make far-reaching changes to your UI with simple modifications to a single utility.
+- You have confidence in your changes because edits to a utility only ever alter one responsibility.
 - You can combine utilities to make a variety of UI layouts.
 
 

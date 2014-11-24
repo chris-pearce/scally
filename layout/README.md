@@ -22,17 +22,17 @@ Scally features two powerful layout modules:
 
 ### [Container](_l-container.scss)
 
-Container wraps all major UI layout pieces ensuring UI is consistent mainly with widths. Container is responsive in that it will be a fluid width using `%` up until it hits it's a maximum width where it's then becomes center aligned.
+Container is designed to wrap all major UI layout pieces and ensure the UI maintains a consistent width. Container is responsive. It is a fluid width controlled by percentages until it reaches it's maximum width, at which point it becomes center aligned.
 
 ### [Grid](_l-grid.scss)
 
-Grid is a powerful fluid and nestable mobile first grid system allowing you to set custom column widths at different viewports, making responsive layouts a sinch.
+Grid is a powerful, fluid, nestable, mobile first grid system that allows you to set custom column widths at different viewports, making responsive layouts a sinch.
 
 See [demo's](#demos).
 
-Also in the [utilities](../utilities/) section of Scally there is the [**Side by Side** utility](../utilities/_u-side-by-side.scss) which applies an extremely common UI layout pattern. *This will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153)*.
+Scally also offers two additional layout utilities located in [utilities](../utilities/). The [**Side by Side** utility](../utilities/_u-side-by-side.scss) utility and [**Side by Side Alternative** utility](../utilities/_u-side-by-side-alt.scss) apply an extremely common UI layout pattern. This will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153).
 
-*From global page template layouts right down to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
+*From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
 
 Think of layout as Lego&reg;.
 
@@ -43,11 +43,11 @@ Think of layout as Lego&reg;.
 
 Just like [utilities](../utilities/), layout can form a wide variety of UI layout patterns meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable layout modules, mentioned above.
 
-Again like utilities, layout modules are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
+Layout modules are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
 - Your CSS will be a lot DRYer.
-- You can make far-reaching changes to your UI by simply modifying a layout module only once.
-- You can make safer changes because you know that when editing a layout module you are only ever altering one responsibility.
+- You can make far-reaching changes to your UI with simple modifications to a single layout module.
+- You have confidence in your changes because edits to a layout module only ever alter one responsibility.
 
 
 
@@ -62,15 +62,15 @@ If we look at the home page of this [website](http://www.manchester.gov.uk/) at 
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/MqznltXDsqcf1Y5/Manchester%20City%20Council%20Homepage.png "Manchester City Council home page at desktop size")
 
-We can identify many instances of where layout modules can be used. Let's take the top portion of the home page at it's desktop view:
+We can identify many instances where layout modules can and should be used.. Let's take the top portion of the home page at its desktop view:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/lei9leil3sLgGVq/Manchester%20City%20Council%20Homepage%20header.png "Manchester City Council home page header at desktop size")
 
-Here is where you would use the container:
+You would use the container here:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/0XqjkbzQbQh5Sg2/Group.png "Manchester City Council home page header container examples")
 
-The black boxes represent the default container. The red boxes represent modifiers of the default container which make the container go full bleed to the edges of it's container, which in this case is the main viewport.
+The black boxes represent the default container. The red boxes represent modifiers of the default container which will allow the container to be full bleed, in this case it means the container will expand to the edges of the main viewport.
 
 **The HTML**
 
@@ -84,11 +84,11 @@ The black boxes represent the default container. The red boxes represent modifie
 
 [**The CSS**](_l-container.scss)
 
-And here is where you would use the grid:
+And here is an example of where you would use the grid:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/kK9jhE0eQIQ0s3C/Group%202.png "Manchester City Council home page header grid examples")
 
-The light and grey boxes represent the grid cells which sit inside the inner black container.
+The light and dark grey boxes represent individual grid cells (`l-grid__item`) which sit inside an inner container (the black box).
 
 **The HTML** *incl. the containers*
 
@@ -97,10 +97,10 @@ The light and grey boxes represent the grid cells which sit inside the inner bla
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         [...]
       </div>
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         [...]
       </div>
     </div>
@@ -112,16 +112,16 @@ The light and grey boxes represent the grid cells which sit inside the inner bla
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid-item u-one-quarter">
+      <div class="l-grid__item u-one-quarter">
         [...]
       </div>
-      <div class="l-grid-item u-one-quarter">
+      <div class="l-grid__item u-one-quarter">
         [...]
       </div>
-      <div class="l-grid-item u-one-quarter">
+      <div class="l-grid__item u-one-quarter">
         [...]
       </div>
-      <div class="l-grid-item u-one-quarter">
+      <div class="l-grid__item u-one-quarter">
         [...]
       </div>
     </div>
@@ -133,19 +133,19 @@ The light and grey boxes represent the grid cells which sit inside the inner bla
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <ul class="l-grid">
-      <li class="l-grid-item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid-item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid-item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid-item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid-item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
         [...]
       </li>
       [...]
@@ -187,10 +187,10 @@ So if we look at the HTML for the header demo'd above:
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         [...]
       </div>
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         [...]
       </div>
     </div>
@@ -206,12 +206,12 @@ And we need to add padding to all sides of the left grid cell and add the sub na
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         <div class="u-s-p-base">
           [...]
         </div>
       </div>
-      <div class="l-grid-item u-one-half-from-lap">
+      <div class="l-grid__item u-one-half-from-lap">
         <ul class="u-list-inline u-list-inline--spacing-base">
           [...]
         </ul>
