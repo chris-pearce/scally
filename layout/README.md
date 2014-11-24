@@ -246,5 +246,5 @@ All layout classes should be prefixed with `l-` so that they're easily identifia
 *Make sure to read the documentation within each layout Sass partial file as it will contain information about the layout module and it's implementations.*
 
 - [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
-- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
-- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
