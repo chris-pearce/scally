@@ -1,4 +1,4 @@
-<img src="https://dl.dropboxusercontent.com/s/t3nzwcg0gwqj6wy/logo-red.png" width="260">
+<img src="https://dl.dropboxusercontent.com/s/4wsd5bf03dkgasm/logo.png" width="308">
 
 # Scally CSS framework
 
@@ -311,9 +311,10 @@ Scally is maintained under the [Semantic Versioning guidelines](http://semver.or
 
 ## Credits
 
-- [inuit.css](https://github.com/csswizardry/inuit.css).
-- [SUIT CSS](https://github.com/suitcss/suit).
-- [SMACCS](http://smacss.com/).
+- [inuit.css](https://github.com/csswizardry/inuit.css)
+- [SUIT CSS](https://github.com/suitcss/suit)
+- [SMACCS](http://smacss.com/)
+- [HTML5 Boilerplate](http://html5boilerplate.com/)
 
 
 

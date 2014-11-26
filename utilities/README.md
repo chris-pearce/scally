@@ -90,7 +90,7 @@ So the above `div` would receive a specific component class which would apply th
         @extend %u-position-pin-all;
     }
 
-You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view.
+You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view. [This article](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) (starting from the text: *Another case of an abused `@extend` looks a little like this*) does a very good job at further explaining why this isn't a good idea.
 
 Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
 
@@ -145,13 +145,17 @@ When building responsive UI's it is a really common requirement to apply a style
 
 Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss#L6-L57) and this feature is turned off by default in favour of leaner stylesheets, and not all UI's are responsive.
 
-### How to use?
-
 A real common use case for this application is hiding UI at certain viewport sizes, typically at a mobile size viewport or a non-mobile size viewport.
 
-So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display** utility](_u-display.scss) to achieve this, applying these steps:
+So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display**](_u-display.scss) utility to achieve this, applying these steps:
 
-1. Turn the feature on by changing the [toggle setting](_u-display.scss#L44) to `true` which will output (compile) the utility in a media query like so:
+1. Turn the feature on by changing the [toggle setting](_u-display.scss#L44) to `true`:
+
+  ```
+  $u-display-breakpoint-toggle-hide: true;
+  ```
+
+ which will output (compile) the utility in a media query like so:
 
   ```
   @media (min-width: 40.0625em) {
@@ -213,3 +217,4 @@ You can create new utilities in your [project specific CSS](https://github.com/w
 - [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
+- [When to use `@⁠extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
