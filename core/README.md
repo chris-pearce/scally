@@ -33,12 +33,12 @@
 
 Scally core is the foundation of a project's UI build providing things like:
 
-- Sensible global styles, [see here](#base).
-- Global settings (Sass variables), [see here](#settings).
-- Handy Sass functions and mixins, [see here](#functions) and [here](#mixins).
-- Global Sass silent placeholder selectors, [see here](#placeholders).
-- A powerful reset, [see here](#_reset.scss), and Normalize.scss, [see here](#_normalize.scss).
-- Debug styles, [see here](#_debug.scss).
+- Sensible global styles.
+- Global settings (Sass variables).
+- Handy Sass functions and mixins.
+- Global Sass silent placeholder selectors.
+- A powerful reset, and Normalize.scss.
+- Debug styles.
 
 Without core Scally won't work. It is the only mandatory part of the framework.
 
@@ -61,7 +61,7 @@ And a few things not sectioned:
 - [_normalize.scss](#_normalize.scss)
 - [_reset.scss](#_reset.scss)
 
-### Base
+### [Base](base/)
 
 The base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors e.g.
 
@@ -100,7 +100,7 @@ Some of the above are actual Normalize.css overrides.
 
 #### Other noteworthy parts of base
 
-##### Responsive images
+##### [Responsive images](base/_media.scss)
 
 Scally—being a responsive ready framework—sets all image elements (`img`) to be responsive by default:
 
@@ -115,17 +115,17 @@ img {
 
 However this is optional, sitting behind the `$responsive-images` toggle.
 
-##### Print
+##### [Print](base/_print.scss)
 
 Scally provides some *sensible* global print styles, with most taken from the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css) print styles.
 
 All print styles that aren't defined at this global base level will live in context with their corresponding rule sets.
 
-##### Root
+##### [Root](base/_root.scss)
 
 Root defines styles for the `html` element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the `html` element itself.
 
-##### Forms
+##### [Forms](base/_forms.scss)
 
 Scally provides quite a few base form styles. Most are concerned with applying [*sensible* styles](#sensible-styles) and [Normalize.css-esque styles](#normalize-css-esque-styles).
 
@@ -134,7 +134,7 @@ The other two main parts of forms are concerned with providing styles for text i
 
 
 
-### Functions
+### [Functions](functions/)
 
 Scally features a bunch of handy Sass functions to keep the framework more readable and DRY, by abstracting any common reusable logic.
 
@@ -161,7 +161,7 @@ padding: halve(3.2px);
 
 
 
-### Mixins
+### [Mixins](mixins/)
 
 Scally features quite a few powerful Sass mixins. These mixins underpin many parts of the Scally framework and are **required** for many parts of the framework to work.
 
@@ -237,7 +237,7 @@ All of Scally's mixins except for the [**Target Browsers**](_target-browsers.scs
 
 
 
-## Placeholders
+### [Placeholders](placeholders/)
 
 The Scally core [Sass silent placeholder selectors](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) contain styles that are extremely global to a UI—and where using a class to apply these styles, like [utilities](../utilities/README.md) do—wouldn't be appropiate.
 
@@ -268,12 +268,12 @@ hr {
 }
 ```
 
-The core placeholders are namespaced with `c-` so they're easily identifiable when used outside of core, as every utility comes with a placeholder version, all of which namespaced with `u-`.
+The core placeholders are namespaced with `c-` so they're easily identifiable when used outside of core, e.g. every utility comes with a placeholder version, all of which are namespaced with `u-`.
 
 
 
 
-## Settings
+### [Settings](settings/)
 
 One of Scally's most powerful features is that it is highly configurable, only requiring you to bring in the parts you are using, keeping your CSS light weight and scalable. Scally ignores its own settings in favour of using your own, so you can completely modify how Scally works without ever having to alter the framework itself.
 
@@ -302,11 +302,55 @@ don't have access to the Scally setting at the point of compilation.
 
 
 
+### [_debug.scss](_debug.scss)
+
+`_debug.scss` is used to visually detect any improperly nested or
+potentially invalid markup, or any potentially inaccessible code.
+
+The legend:
+
+- Red = definite error
+- Yellow = double-check
+- None = should be fine
+
+Scally turns off the debug styles by default, to turn on change the `$debug-mode` [toggle](settings/_toggles.scss) to `true`, like so:
+
+```
+$debug-mode: true;
+```
+
+
+
+
+### [_normalize.scss](_normalize.scss)
+
+`_normalize.scss` is a third party solution: <http://necolas.github.io/normalize.css/>.
+
+
+
+
+### [_reset.scss](_reset.scss)
+
+In addition to `_normalize.css` Scally also applies a reset which mainly removes all `margin`s, `padding`s, and `border`s, from **ALL** elements, and applies the nice `border-box` value for `box-sizing`. And a few other things.
+
+
+
+
+## Specificity
+
+Scally core is the foundation of the framework therefore it sits right at the bottom when it comes to specificity (CSS' first C; the cascade) as any styles defined in core need to be easily overridden.
+
+That's why core is declared first when pulling in the Scally framework via your [master stylesheet](../style.scss) so they're compiled before everything else.
+
+
+
+
 ## Demo's
 
 - [Base](http://codepen.io/team/westfieldlabs/full/zIgBs)
 - [Mixins](http://codepen.io/team/westfieldlabs/full/Bcfyz)
 - [Settings](http://codepen.io/team/westfieldlabs/full/aLDdb)
+- [_debug.scss](http://codepen.io/team/westfieldlabs/full/GHzvE)
 
 
 

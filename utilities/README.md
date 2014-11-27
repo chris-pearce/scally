@@ -184,7 +184,7 @@ So if we wanted to hide a **Call Us** button on larger viewports we would use th
 
 Utilities always need to *win* when it comes to specificity (CSS' first C; the cascade) as they should always *just work* otherwise they're not doing their job properly i.e. you should never be needing to override a utility's styles. If you are then you're not using them correctly, [see](#open-close-principle).
 
-That's why utilities are declared last when pulling in the Scally framework via your master stylesheet so they're compiled after everything else.
+That's why utilities are declared last when pulling in the Scally framework via your [master stylesheet](../style.scss) so they're compiled after everything else.
 
 
 
