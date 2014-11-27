@@ -1,6 +1,4 @@
-<img src="https://dl.dropboxusercontent.com/s/4wsd5bf03dkgasm/logo.png" width="308">
-
-# Scally CSS framework
+<img src="https://dl.dropboxusercontent.com/s/4wsd5bf03dkgasm/logo.png" width="252">
 
 
 

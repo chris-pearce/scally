@@ -138,7 +138,7 @@ The other two main parts of forms are concerned with providing styles for text i
 
 Scally features a bunch of handy Sass functions to keep the framework more readable and DRY, by abstracting any common reusable logic.
 
-The [**Convert `px` to `em-rem`**](core/functions/_convert-px-to-em-rem.scss) function is the most used and powerful and does what it says on the tin: *To convert pixels to either the `em` or `rem` units*. There is also a [**Convert `px` to `em-rem`**](core/mixins/_convert-px-to-em-rem.scss) mixin which is dependant on this function.
+The [**Convert `px` to `em-rem`**](core/functions/_convert-px-to-em-rem.scss) function is the most used and powerful function and does what it says on the tin: *To convert pixels to either the `em` or `rem` units*. There is also a [**Convert `px` to `em-rem`**](core/mixins/_convert-px-to-em-rem.scss) mixin which is dependant on this function.
 
 **Function**
 
@@ -163,7 +163,7 @@ padding: halve(3.2px);
 
 ### Mixins
 
-Scally features quite a few powerful Sass mixins. These mixins underpin and are **required** for many parts of the Scally framework.
+Scally features quite a few powerful Sass mixins. These mixins underpin many parts of the Scally framework and are **required** for many parts of the framework to work.
 
 The most used and powerful Scally mixins are:
 
@@ -232,7 +232,48 @@ The most used and powerful Scally mixins are:
   }
   ```
 
-All of Scally's mixins—bar one—accept arguments which is a good way to use a Sass mixin as argument-less mixins are typically only used as containers for common CSS rules which isn't very optimal e.g. DRY. Scally negates the need for argument-less mixins through it's [utilities](../utilities/) and in certain cases it's [Sass silent placeholder selectors](#placeholders).
+All of Scally's mixins except for the [**Target Browsers**](_target-browsers.scss) mixin use arguments which is a good way to use Sass mixins. Argument-less mixins are typically only used as containers for common CSS rules which isn't very optimal e.g. DRY. Scally negates the need for argument-less mixins through it's [utilities](../utilities/) and in certain cases it's [Sass silent placeholder selectors](#placeholders), and just following OOCSS methodologies.
+
+
+
+
+## Placeholders
+
+The Scally core [Sass silent placeholder selectors](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) contain styles that are extremely global to a UI—and where using a class to apply these styles, like [utilities](../utilities/README.md) do—wouldn't be appropiate.
+
+Right now there is only one core placeholder: [**Bottom spacing**](placeholders/_c-bottom-spacing.scss) which applies the base bottom spacing (and half) in order to try to keep a consistent vertical rhythm.
+
+```
+%c-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+```
+
+The main application for this placeholder is for paragraphs (`p`) and headings (`h1-h6`), applied in [base](#base). This is how it's applied to **ALL** paragraphs:
+
+```
+p {@extend %c-bottom-spacing;}
+```
+
+It wouldn't be practical to apply this bottom spacing with say one of the [**Spacing**](utilities/_u-spacing.scss) utility classes, e.g.
+
+```
+<p class="u-s-mb-base"> [...] </p>
+```
+
+It's safe to assume that all paragraphs will need this bottom spacing, just as Scally defines [*sensible styles*](#sensible-styles) in [base](#base) we're doing the same here but encapsulating it into a placeholder as these styles need to be applied in various places, e.g. for horizontal rules (`hr`):
+
+```
+hr {
+  @extend %c-bottom-spacing;
+  [...]
+}
+```
+
+The core placeholders are namespaced with `c-` so they're easily identifiable when used outside of core, as every utility comes with a placeholder version, all of which namespaced with `u-`.
+
+
+
+
+## Settings
 
 
 
