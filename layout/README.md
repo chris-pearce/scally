@@ -31,7 +31,7 @@ Grid is a powerful, fluid, nestable, mobile first grid system that allows you to
 
 See the [demo's](#demos).
 
-Scally also offers two additional layout utilities located in [utilities](../utilities/). The [**Side by Side** utility](../utilities/_u-side-by-side.scss) utility and [**Side by Side Alternative** utility](../utilities/_u-side-by-side-alt.scss) apply an extremely common UI layout pattern. This will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153).
+Scally also offers two additional layout utilities located in [utilities](../utilities/). The [**Side by Side**](../utilities/_u-side-by-side.scss) utility and the [**Side by Side Alternative**](../utilities/_u-side-by-side-alt.scss) utility apply an extremely common UI layout pattern. These will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153).
 
 *From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
 
@@ -160,9 +160,9 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 
 ### Responsive grid
 
-The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to construct responsive UI's. This ability isn't tied into the grid itself but uses the [**Widths** utility](../utilities/_u-widths.scss).
+The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to construct responsive UI's. This ability isn't tied into the grid itself but uses the [**Widths**](../utilities/_u-widths.scss) utility.
 
-By default grid cells will stack on top of eachother unless told otherwise i.e. they're completely linear. At small viewport widths like at handheld devices typically this is what you want, however as the viewport increases in width you can then apply widths to the grid cells turning them into columns.
+By default grid cells will stack on top of eachother unless told otherwise i.e. they're completely linear. At small viewport widths e.g. handheld devices typically this is what you want, however as the viewport increases in width you can then apply widths to the grid cells turning them into columns.
 
 So if we had a grid cell like this:
 
@@ -246,5 +246,5 @@ All layout classes should be prefixed with `l-` so that they're easily identifia
 *Make sure to read the documentation within each layout Sass partial file as it will contain information about the layout module and it's implementations.*
 
 - [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
-- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
-- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
+- [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+- [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)

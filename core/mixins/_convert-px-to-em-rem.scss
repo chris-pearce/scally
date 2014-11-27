@@ -12,8 +12,8 @@
  * font size rather than the current.
  *
  * @example
-   @include to-em(line-height, 30)
-   @include to-rem(line-height, 30)
+   @include to-em(line-height, 30);
+   @include to-rem(line-height, 30);
    @include to-em(width height, 125);
    @include to-rem(padding, 0 25);
    @include to-em(text-shadow, (#0d6e28 1 1) (#777 0 0 2), 16);
