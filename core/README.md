@@ -275,6 +275,30 @@ The core placeholders are namespaced with `c-` so they're easily identifiable wh
 
 ## Settings
 
+One of Scally's most powerful features is that it is highly configurable, only requiring you to bring in the parts you are using, keeping your CSS light weight and scalable. Scally ignores its own settings in favour of using your own, so you can completely modify how Scally works without ever having to alter the framework itself.
+
+Scally achieves this by using Sass variables and being as unopinionated about design as possible.
+
+The Scally settings section contains the most global settings for the framework, all other settings live in context in their relevant file (Sass partial).
+
+Any settings you find set in Scally that you do not wish to keep, simply
+redefine above or below the relevant `@import` in the [master stylesheet](../style.scss). This means that if Scally, for example, sets your `$font-size` at `16px` and you wish it to be `14px`, simply redeclare it **above** the relevant `@import`, like so:
+
+ ```
+$font-size: 14;
+@import "bower_components/scally/core/settings/typography";
+```
+
+If you want to use a Scally setting to override something then you need to define the override **below** the `@import`, like so:
+
+ ```
+@import "bower_components/scally/core/settings/colours";
+$colour-text-base: $colour-brand;
+```
+
+If you try to redeclare above the `@import` your Sass won't compile as you
+don't have access to the Scally setting at the point of compilation.
+
 
 
 
@@ -282,6 +306,7 @@ The core placeholders are namespaced with `c-` so they're easily identifiable wh
 
 - [Base](http://codepen.io/team/westfieldlabs/full/zIgBs)
 - [Mixins](http://codepen.io/team/westfieldlabs/full/Bcfyz)
+- [Settings](http://codepen.io/team/westfieldlabs/full/aLDdb)
 
 
 
@@ -292,5 +317,5 @@ The core placeholders are namespaced with `c-` so they're easily identifiable wh
 
 - [Using pure Sass functions to make reusable logic more useful](http://thesassway.com/advanced/pure-sass-functions)
 - [Leveraging Sass mixins for cleaner code](http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code)
-- [When to use @⁠extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
+- [When to use `@⁠extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
 - [Normalize.css](http://necolas.github.io/normalize.css/)
