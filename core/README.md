@@ -203,7 +203,7 @@ The most used and powerful Scally mixins are:
      vertical-align: top;
    }
    ```
-- [Media queries](core/mixins/_media-queries.scss)
+- [Media queries](mixins/_media-queries.scss)
 
   *some examples:*
   ```
