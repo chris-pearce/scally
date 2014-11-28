@@ -3,7 +3,7 @@
 
 
 
-## Contents
+# Contents
 
 - [What is Scally?](#what-is-scally)
 - [Dependencies](#dependencies)
@@ -28,7 +28,7 @@
 
 
 
-## What is Scally?
+# What is Scally?
 
 Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
 
@@ -39,20 +39,20 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 
 
-## Dependencies
+# Dependencies
 
-- [Ruby](http://rubyinstaller.org/), if you're using a Mac then Ruby comes pre-installed.
-- [Sass](http://sass-lang.com/install).
-- [Autoprefixer](https://github.com/postcss/autoprefixer).
+- [Ruby](http://rubyinstaller.org/), *if you're using a Mac then Ruby comes pre-installed*
+- [Sass](http://sass-lang.com/install)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
 
-    >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
+ >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 
-    We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
-
-
+ We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
 
 
-## Scally architecture
+
+
+# Scally architecture
 
 Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers.
 
@@ -66,7 +66,7 @@ The breakdown in order of their specificity:
 
 
 
-## Installing Scally
+# Installing Scally
 
 Scally can be installed via [Bower](http://bower.io/).
 
@@ -101,9 +101,9 @@ Once installed you can always get the latest version of Scally by running the fo
 You can install Scally via the [**Download by zip**](https://github.com/westfieldlabs/scally/archive/master.zip) option however it's advised to use a package manager like Bower to handle your third-party dependencies.
 
 
-## Setting up a new project
+# Setting up a new project
 
-### Setting up your master stylesheet
+## Setting up your master stylesheet
 
 Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
 
@@ -111,31 +111,37 @@ Once you have created this file grab everything [from here](https://github.com/w
 
 This master stylesheet is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
 
-    sass --watch style.scss:style.css
+```
+sass --watch style.scss:style.css
+```
 
 But for most projects your Sass will be compiling as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task to compile Sass using something [like](https://github.com/gruntjs/grunt-contrib-sass).
 
 Then add a reference to the compiled master stylesheet in your HTML head:
 
-    <link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
+```
+<link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
+```
 
 This master stylesheet is designed to pull in everything from Scally plus your project-specific styles and compile down to a single css file.
 
-### Master stylesheet overview
+## Master stylesheet overview
 
 Your master stylesheet is split into three main sections:
 
-- **Your settings.** All of your project-specific settings in the form of Sass variables.
-- **Scally framework.** The entire Scally framework including your overrides.
-- **Your styles.** All of the CSS you will write for your project.
+- [**Your settings.**](#your-settings) All of your project-specific settings in the form of Sass variables.
+- [**Scally framework.**](#scally-framework) The entire Scally framework including your overrides.
+- [**Your styles.**](#your-styles) All of the CSS you will write for your project.
 
 **N.B.** it's imperative this order is maintained otherwise Scally won't work.
 
-#### Your settings
+### Your settings
 
 This first section consists of one Sass partial:
 
-    @import "settings";
+```
+@import "settings";
+```
 
 Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/westfieldlabs/scally/master/settings.scss).
 
@@ -143,15 +149,19 @@ In this partial you will store all of your common project-specific settings, bey
 
 Common project-specific settings might be adding more colours, so if you decide you need a new colour then in `settings.scss` you can create one like so:
 
-    $colour-tertiary: #ccc;
+```
+$colour-tertiary: #ccc;
+```
 
 Another example might be adding a new font family e.g.
 
-    $font-family-droid-sans: "Droid Sans", serif;
+```
+$font-family-droid-sans: "Droid Sans", serif;
+```
 
 The reason this section comes first is so that you can refer to them throughout the rest of your styles.
 
-#### Scally framework
+### Scally framework
 
 This section pulls in the entire Scally framework and is where you override Scally's settings.
 
@@ -159,13 +169,17 @@ This is what makes Scally so powerful, as Scally can be completely modified by c
 
 So for example if you wanted to change the global font size for your project then you assign a new value to the relevant Scally setting which in this case would be `$font-size` then simply declare it **above** the relevant `@import` partial in `style.scss`, like so:
 
-    $font-size: 14;
-    @import "bower_components/scally/core/settings/typography";
+```
+$font-size: 14;
+@import "bower_components/scally/core/settings/typography";
+```
 
 You can use your own project-specific settings from your [`settings.scss`](#your-settings) file to override any of the Scally settings e.g.
 
-    $colour-text-base: $colour-hotpink;
-    @import "bower_components/scally/core/settings/colours";
+```
+$colour-text-base: $colour-hotpink;
+@import "bower_components/scally/core/settings/colours";
+```
 
 By default everything in the framework is imported. But if you want to be selective and you definitely should, so your CSS is as lean as possible, then only import what you need.
 
@@ -175,17 +189,21 @@ However the **Core** section is required, please do not remove any of the import
 
 **N.B.** if you change the Bower install folder e.g. from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
 
-     @import "bower_components/scally/core/settings/colours";
+```
+@import "bower_components/scally/core/settings/colours";
+```
 
 Would become:
 
-     @import "vendor/scally/core/settings/colours";
+```
+@import "vendor/scally/core/settings/colours";
+```
 
-#### Your styles
+### Your styles
 
 This section is where you pull in all of your project-specific styles. We recommend following the same architecture as the Scally framework.
 
-#### Example architecture
+### Example architecture
 
 Here is an example of the architecture mentioned just above, assuming you contain all of your CSS in a folder called `css` and if Scally is installed via the default Bower install in your `css` folder.
 
@@ -210,7 +228,7 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 
 
-## Browser support
+# Browser support
 
 - Chrome (latest two versions).
 - Firefox (latest two versions).
@@ -223,45 +241,51 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 
 
-## Build tests
+# Build tests
 
 Scally uses [Rake](http://en.wikipedia.org/wiki/Rake_(software)) to run tasks against it's build server e.g. check all Sass files compile, [lint](#linting) all Sass files, etc.
 
 You can run these tests locally by running this command:
 
-    rake test
+```
+rake test
+```
 
 
 
 
-## Linting
+# Linting
 
 To ensure a consistently authored code base and to keep things clean and readable Scally uses the [**scss-lint** tool](https://github.com/causes/scss-lint).
 
-### Installation and usage
+## Installation and usage
 
 To install run the following command:
 
-    gem install scss-lint
+```
+gem install scss-lint
+```
 
 To use `cd` into your project's root and run the command:
 
-    scss-lint ./
+```
+scss-lint ./
+```
 
 Which will lint *everything*, to lint at a more granular level [see](https://github.com/causes/scss-lint#usage).
 
-### Linting rules
+## Linting rules
 
 Scally's linting rules can be [found here](.scss-lint.yml) and are based off the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
 
 
 
 
-## Contributing
+# Contributing
 
 Scally gratefully welcomes contributions from the open-source community but there are a number of requirements and principles that need to be adhered for code to eligible for inclusion in the framework.
 
-### Keep it simple
+## Keep it simple
 
 Scally is written in Sass, which provides a lot of incredibly powerful features. However, Scally does not want to become a platform for Sass' capabilities&mdash;all code that comes into Scally should be as simple and CSS-like as possible.
 
@@ -278,9 +302,9 @@ Kinds of code not good for Scally:
 - **Hundred-line mixins designed to avoid a couple of lines of repetition:** the overhead of typing a few more lines is much less than creating, documenting, learning, and maintaining complex Sass functionality.
 - **Mixins which generate entire blocks of CSS:** creating 'black boxes' in code often leads to obscurity, lack of understanding, lack of confidence, and lack of trust in a codebase. Everything should be as transparent and CSS-like as possible.
 
-### Submitting code to Scally (PR's)
+## Submitting code to Scally
 
-In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR:
+In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR (Pull Request):
 
 - Lint your Sass, [see](#linting). Scally's build tests will catch any linting issues however it's good practice to run linting manually also.
 - Follow the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). Linting will catch a lot of this but not everything.
@@ -291,23 +315,23 @@ In addition to the principles outlined above here are some things to keep in min
 
 
 
-## Scally improvements, issues, and questions
+# Scally improvements, issues, and questions
 
 If you would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
 
 
 
 
-## Versioning
+# Versioning
 
 Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/) however sometimes we get it wrong, but we will do our best to adhere to those rules as much as possible and strive to maintain backwards compatibility.
 
-[See the CHANGELOG](CHANGELOG.md).
+[See the **CHANGELOG**](CHANGELOG.md).
 
 
 
 
-## Credits
+# Credits
 
 - [inuit.css](https://github.com/csswizardry/inuit.css)
 - [SUIT CSS](https://github.com/suitcss/suit)
@@ -317,8 +341,8 @@ Scally is maintained under the [Semantic Versioning guidelines](http://semver.or
 
 
 
-## Licence
+# Licence
 
-Copyright 2014 Westfield Labs Corporation
+Copyright 2014 Westfield Labs Corporation.
 
 Licensed under the [Apache v2.0](https://raw.githubusercontent.com/westfieldlabs/scally/master/LICENSE) licence.
