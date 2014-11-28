@@ -9,7 +9,7 @@
 - [The breakdown](#the-breakdown)
   - [Base](#base)
     - [Sensible styles](#sensible-styles)
-    - [Normalize.css-esque styles](#normalize-css-esque-styles)
+    - [Normalize-esque styles](#normalize-esque-styles)
     - [Other noteworthy parts of base](#other-noteworthy-parts-of-base)
       - [Responsive images](#responsive-images)
       - [Print](#print)
@@ -19,9 +19,9 @@
   - [Mixins](#mixins)
   - [Placeholders](#placeholders)
   - [Settings](#settings)
-  - [_debug.scss](#_debug.scss)
-  - [_normalize.scss](#_normalize.scss)
-  - [_reset.scss](#_reset.scss)
+  - [Debug](#debug)
+  - [Normalize](#normalize)
+  - [Reset](#reset)
 - [Specificity](#specificity)
 - [Demo's](#demos)
 - [Further reading](#further-reading)
@@ -57,9 +57,9 @@ Core is broken down into the following sections:
 
 And a few things not sectioned:
 
-- [_debug.scss](#_debug.scss)
-- [_normalize.scss](#_normalize.scss)
-- [_reset.scss](#_reset.scss)
+- [Debug](#debug)
+- [Normalize](#normalize)
+- [Reset](#reset)
 
 ### [Base](base/)
 
@@ -86,7 +86,7 @@ Base styles try to be as unopinionated as possibleâ€”like most things in Scallyâ
 
 The more opinionated styles found in base sit behind a [toggle](settings/_toggles.scss) meaning you decide if you want to use them or not.
 
-#### Normalize.css-esque styles
+#### Normalize-esque styles
 
 Base also provides [Normalize.css](http://necolas.github.io/normalize.css/)-esque styles like:
 
@@ -117,7 +117,7 @@ However this is optional, sitting behind the `$responsive-images` toggle.
 
 ##### [Print](base/_print.scss)
 
-Scally provides some *sensible* global print styles, with most taken from the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css) print styles.
+Scally provides some *sensible* global print styles, with most taken from the [HTML5 Boilerplate print styles](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css).
 
 All print styles that aren't defined at this global base level will live in context with their corresponding rule sets.
 
@@ -127,7 +127,7 @@ Root defines styles for the `html` element. It mainly focuses on typography styl
 
 ##### [Forms](base/_forms.scss)
 
-Scally provides quite a few base form styles. Most are concerned with applying [*sensible* styles](#sensible-styles) and [Normalize.css-esque styles](#normalize-css-esque-styles).
+Scally provides quite a few base form styles. Most are concerned with applying [*sensible* styles](#sensible-styles) and [Normalize-esque styles](#normalize-esque-styles).
 
 The other two main parts of forms are concerned with providing styles for text inputs (including `textarea`) and `select` lists, and a disabled state for **ALL** HTML form elements. These styles, being fairly oppinionated, are all optional, sitting behind the `$disabled-state` and `$text-input-and-select-styles` toggles.
 
@@ -138,7 +138,7 @@ The other two main parts of forms are concerned with providing styles for text i
 
 Scally features a bunch of handy Sass functions to keep the framework more readable and DRY, by abstracting any common reusable logic.
 
-The [**Convert `px` to `em-rem`**](core/functions/_convert-px-to-em-rem.scss) function is the most used and powerful function and does what it says on the tin: *To convert pixels to either the `em` or `rem` units*. There is also a [**Convert `px` to `em-rem`**](core/mixins/_convert-px-to-em-rem.scss) mixin which is dependant on this function.
+The [**Convert `px` to `em-rem`**](functions/_convert-px-to-em-rem.scss) function is the most used and powerful function and does what it says on the tin: *To convert pixels to either the `em` or `rem` units*. There is also a [**Convert `px` to `em-rem`**](mixins/_convert-px-to-em-rem.scss) mixin which is dependant on this function.
 
 **Function**
 
@@ -152,7 +152,7 @@ margin-left: to-em(8);
 @include to-em(margin-left, 8);
 ```
 
-The [Math helpers](core/functions/_math-helpers.scss) contain a handful of math helper functions which are used to quickly create size variants of property values, e.g.
+The [Math helpers](functions/_math-helpers.scss) contain a handful of math helper functions which are used to quickly create size variants of property values, e.g.
 
 ```
 padding: halve(3.2px);
@@ -167,7 +167,7 @@ Scally features quite a few powerful Sass mixins. These mixins underpin many par
 
 The most used and powerful Scally mixins are:
 
-- [Convert `px` to `em-rem`](core/mixins/_convert-px-to-em-rem.scss)
+- [Convert `px` to `em-rem`](mixins/_convert-px-to-em-rem.scss)
 
   *some examples:*
   ```
@@ -177,7 +177,7 @@ The most used and powerful Scally mixins are:
 
   @include to-rem(box-shadow, (inset 0 0 0 1 #2a9022) (inset 0 0 3 #459966));
   ```
-- [Font size](core/mixins/_font-size.scss)
+- [Font size](mixins/_font-size.scss)
 
   *some examples:*
   ```
@@ -191,7 +191,7 @@ The most used and powerful Scally mixins are:
 
   @include font-size(24, normal);
   ```
-- [Generate at breakpoints](core/mixins/_generate-at-breakpoints.scss)
+- [Generate at breakpoints](mixins/_generate-at-breakpoints.scss)
 
   *some examples:*
   ```
@@ -232,7 +232,7 @@ The most used and powerful Scally mixins are:
   }
   ```
 
-All of Scally's mixins except for the [**Target Browsers**](_target-browsers.scss) mixin use arguments which is a good way to use Sass mixins. Argument-less mixins are typically only used as containers for common CSS rules which isn't very optimal e.g. DRY. Scally negates the need for argument-less mixins through it's [utilities](../utilities/) and in certain cases it's [Sass silent placeholder selectors](#placeholders), and just following OOCSS methodologies.
+All of Scally's mixins except for the [**Target Browsers**](mixins/_target-browsers.scss) mixin use arguments which is a good way to use Sass mixins. Argument-less mixins are typically only used as containers for common CSS rules which isn't very optimal e.g. DRY. Scally negates the need for argument-less mixins through it's [utilities](../utilities/) and in certain cases it's [Sass silent placeholder selectors](#placeholders), and just following OOCSS methodologies.
 
 
 
@@ -253,7 +253,7 @@ The main application for this placeholder is for paragraphs (`p`) and headings (
 p {@extend %c-bottom-spacing;}
 ```
 
-It wouldn't be practical to apply this bottom spacing with say one of the [**Spacing**](utilities/_u-spacing.scss) utility classes, e.g.
+It wouldn't be practical to apply this bottom spacing with say one of the [**Spacing**](../utilities/_u-spacing.scss) utility classes, e.g.
 
 ```
 <p class="u-s-mb-base"> [...] </p>
@@ -302,7 +302,7 @@ don't have access to the Scally setting at the point of compilation.
 
 
 
-### [_debug.scss](_debug.scss)
+### [Debug](_debug.scss)
 
 `_debug.scss` is used to visually detect any improperly nested or
 potentially invalid markup, or any potentially inaccessible code.
@@ -322,14 +322,14 @@ $debug-mode: true;
 
 
 
-### [_normalize.scss](_normalize.scss)
+### [Normalize](_normalize.scss)
 
-`_normalize.scss` is a third party solution: <http://necolas.github.io/normalize.css/>. Scally always makes sure it's using the latest version.
-
-
+`_normalize.scss` is a [third party solution](http://necolas.github.io/normalize.css/). Scally always makes sure it's using the latest version.
 
 
-### [_reset.scss](_reset.scss)
+
+
+### [Reset](_reset.scss)
 
 In addition to `_normalize.css` Scally also provides a powerful reset, resetting things like:
 
@@ -354,7 +354,7 @@ That's why core is declared first when pulling in the Scally framework via your 
 - [Base](http://codepen.io/team/westfieldlabs/full/zIgBs)
 - [Mixins](http://codepen.io/team/westfieldlabs/full/Bcfyz)
 - [Settings](http://codepen.io/team/westfieldlabs/full/aLDdb)
-- [_debug.scss](http://codepen.io/team/westfieldlabs/full/GHzvE)
+- [Debug](http://codepen.io/team/westfieldlabs/full/GHzvE)
 
 
 
