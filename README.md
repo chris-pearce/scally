@@ -6,8 +6,8 @@
 # Contents
 
 - [What is Scally?](#what-is-scally)
-- [Dependencies](#dependencies)
 - [Scally architecture](#scally-architecture)
+- [Dependencies](#dependencies)
 - [Installing Scally](#installing-scally)
 - [Setting up a new project](#setting-up-a-new-project)
     - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
@@ -39,19 +39,6 @@ You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 
 
-# Dependencies
-
-- [Ruby](http://rubyinstaller.org/), *if you're using a Mac then Ruby comes pre-installed*
-- [Sass](http://sass-lang.com/install)
-- [Autoprefixer](https://github.com/postcss/autoprefixer)
-
- >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
-
- We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
-
-
-
-
 # Scally architecture
 
 Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers.
@@ -62,6 +49,19 @@ The breakdown in order of their specificity:
 - [Layout](layout/README.md)
 - [Components](components/README.md)
 - [Utilities](utilities/README.md)
+
+
+
+
+# Dependencies
+
+- [Ruby](http://rubyinstaller.org/), *if you're using a Mac then Ruby comes pre-installed*
+- [Sass](http://sass-lang.com/install)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
+
+ >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
+
+ We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
 
 
 

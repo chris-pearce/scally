@@ -313,3 +313,4 @@ Components should be encapsulated as much as possible, even if that means your C
 - [Our (CSS) Best Practices Are Killing US](http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/05/keep-your-css-selectors-short/)
 - [Principles for writing good CSS](http://blog.kaelig.fr/post/38377421139/principles-for-writing-good-css)
+- [How We’re Using Modules to Organize Our Front-End Code](http://code.tutsplus.com/articles/how-were-using-modules-to-organize-our-front-end-code--cms-22702)
