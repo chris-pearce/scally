@@ -30,6 +30,7 @@
     "demo-styles.scss",
     "demo-styles.css",
     "demo-styles.css.map",
-    "demo.html"
+    "demo.html",
+    "CHANGELOG.md"
   ]
 }
