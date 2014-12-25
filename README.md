@@ -22,7 +22,7 @@
 - [Scally improvements, issues, and questions](#scally-improvements-issues-and-questions)
 - [Changelog](#changelog)
 - [Credits](#credits)
-- [Licence](#licence)
+- [License](#license)
 
 
 
