@@ -341,4 +341,4 @@ Scally was something I brought to Westfield Labs, and something I worked on full
 - Kate Levin
 - [Dan Sim](http://daniel-sim.com/)
 
-After I finished at Westfield Labs I decided to fork Scally so I could maintain it myself under my own personal GitHub account, as Westfield Labs weren't committed to maintaining Scally.
+After I finished at Westfield Labs I decided to fork Scally so I could maintain it myself under my own personal GitHub account.
