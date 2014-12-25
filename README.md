@@ -17,7 +17,6 @@
         - [Your styles](#your-styles)
         - [Example architecture](#example-architecture)
 - [Browser support](#browser-support)
-- [Build tests](#build-tests)
 - [Linting](#linting)
 - [Contributing](#contributing)
 - [Scally improvements, issues, and questions](#scally-improvements-issues-and-questions)
@@ -30,11 +29,9 @@
 
 # What is Scally?
 
-Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
+Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
 
 Scally is designed to be configurable, only requiring you to bring in the parts you are using, keeping your CSS architecture light weight and scalable. It is unopinionated about design giving you more flexibility than your typical UI toolkit.
-
-You can view Scally [here](http://codepen.io/collection/AxDKv/).
 
 
 
@@ -241,19 +238,6 @@ Here is an example of the architecture mentioned just above, assuming you contai
 
 
 
-# Build tests
-
-Scally uses [Rake](http://en.wikipedia.org/wiki/Rake_(software)) to run tasks against it's build server e.g. check all Sass files compile, [lint](#linting) all Sass files, etc.
-
-You can run these tests locally by running this command:
-
-```
-rake test
-```
-
-
-
-
 # Linting
 
 To ensure a consistently authored code base and to keep things clean and readable Scally uses the [**scss-lint** tool](https://github.com/causes/scss-lint).
@@ -343,6 +327,18 @@ Scally is maintained under the [Semantic Versioning guidelines](http://semver.or
 
 # Licence
 
+**TO BE UPDATED.**
+
 Copyright 2014 Westfield Labs Corporation.
 
 Licensed under the [Apache v2.0](https://raw.githubusercontent.com/westfieldlabs/scally/master/LICENSE) licence.
+
+Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/) whilst I was an employee there. 
+
+Scally was something I brought to Westfield Labs, and something I worked on full-time for a period of time as the main developer. Other Westfield Labs employees who contributed to Scally at that time:
+
+- [Alec Raeside](http://alecraeside.com.au/)
+- Kate Levin
+- [Dan Sim](http://daniel-sim.com/)
+
+After I finished at Westfield Labs I decided to fork Scally so I could maintain it myself under my own personal GitHub account, as Westfield Labs weren't committed to maintaining Scally.
