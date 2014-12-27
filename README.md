@@ -20,7 +20,7 @@
 - [Linting](#linting)
 - [Contributing](#contributing)
 - [Scally improvements, issues, and questions](#scally-improvements-issues-and-questions)
-- [Changelog](#changelog)
+- [Versioning](#versioning)
 - [Credits](#credits)
 - [License](#license)
 
@@ -310,7 +310,7 @@ If you would like to suggest any new components or utilities, any improvements, 
 
 Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/) however sometimes we get it wrong, but we will do our best to adhere to those rules as much as possible and strive to maintain backwards compatibility.
 
-[See the **CHANGELOG**](CHANGELOG.md).
+~~[See the **CHANGELOG**](CHANGELOG.md).~~
 
 
 
