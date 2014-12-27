@@ -1,13 +1,8 @@
 # Specific files #
 ###################
-/.gitignore
 /style.css
 /style.css.map
-/demo-styles.scss
-/demo-style.css
-/demo-style.css.map
-/demo.html
-/TODO.md
+/CHANGELOG.md
 
 
 # Compiled source #
@@ -18,6 +13,7 @@
 *.exe
 *.o
 *.so
+
 
 # Packages #
 ############
@@ -32,11 +28,13 @@
 *.tar
 *.zip
 
+
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
+
 
 # OS generated files #
 ######################
