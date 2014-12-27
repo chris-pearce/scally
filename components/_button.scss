@@ -22,6 +22,12 @@ $c-btn-border:                            false !default;
 
 $c-btn-rounded-corners:                   false !default;
 
+// Box sizing.
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$friendly-box-model:                      false !default;
+
 // Colours
 $c-btn-background-colour:                 $colour-primary !default;
 
@@ -55,22 +61,17 @@ $c-btn-border-colour-secondary:           darken($c-btn-background-colour-second
 $c-btn-rounded-corners-size:              $border-radius !default;
 
 // Hover/focus styles
-// Simple fade out affect via `opacity`
+// Simple fade out effect via `opacity`
 $c-btn-hover-opacity-strength:            0.7 !default;
 
 $c-btn-hover-transition-duration:         0.1 !default;
 
 $c-btn-hover-transition-timing-function:  linear !default;
 
-// Box sizing.
-// Here we set a variable assuming that `box-sizing: border-box;` is not set
-// globally. If it has been previously been defined, the following variable
-// will be overriden and will be set to `true`.
-$friendly-box-model:                      false !default;
-
 
 /**
- * Base styles most buttons will need.
+ * Base styles all buttons need, from here we apply specific button styles via
+ * modifiers.
  *
  * 1. Prevent button text from being selectable.
  * 2. Make sure `input` will wrap text across multiple lines.
@@ -110,15 +111,11 @@ $friendly-box-model:                      false !default;
 /**
  * Main.
  *
- * In addition to the base styles above here we apply the main button styles
- * for your project.
- *
- * N.B. we keep the base and main styles separate so that any button can
- * access the base styles.
+ * The main button styles for your project.
  */
 
-%btn-main,
-.btn-main {
+%btn--main,
+.btn--main {
   text-align: center;
   background-color: $c-btn-background-colour;
   @include to-rem(padding, $c-btn-padding-base / 2 $c-btn-padding-base);
@@ -163,14 +160,14 @@ $friendly-box-model:                      false !default;
  * Modifier: secondary colour.
  */
 
-%btn-main--secondary,
-.btn-main--secondary {
+%btn--main--secondary,
+.btn--main--secondary {
   background-color: $c-btn-background-colour-secondary;
 
   // Apply a border
   @if $c-btn-border {
 
-    @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour-secondary);
+    @include to-rem(border-color, $c-btn-border-colour-secondary);
 
   }// endif
 
@@ -186,40 +183,40 @@ $friendly-box-model:                      false !default;
  * Modifier: tiny padding.
  */
 
-%btn-main--tiny,
-.btn-main--tiny {@include to-rem(padding, $c-btn-padding-tiny / 2 $c-btn-padding-tiny);}
+%btn--main--tiny,
+.btn--main--tiny {@include to-rem(padding, $c-btn-padding-tiny / 2 $c-btn-padding-tiny);}
 
 
 /**
  * Modifier: small padding.
  */
 
-%btn-main--small,
-.btn-main--small {@include to-rem(padding, $c-btn-padding-small / 2 $c-btn-padding-small);}
+%btn--main--small,
+.btn--main--small {@include to-rem(padding, $c-btn-padding-small / 2 $c-btn-padding-small);}
 
 
 /**
  * Modifier: large padding.
  */
 
-%btn-main--large,
-.btn-main--large {@include to-rem(padding, $c-btn-padding-large / 2 $c-btn-padding-large);}
+%btn--main--large,
+.btn--main--large {@include to-rem(padding, $c-btn-padding-large / 2 $c-btn-padding-large);}
 
 
 /**
  * Modifier: huge padding.
  */
 
-%btn-main--huge,
-.btn-main--huge {@include to-rem(padding, $c-btn-padding-huge / 2 $c-btn-padding-huge);}
+%btn--main--huge,
+.btn--main--huge {@include to-rem(padding, $c-btn-padding-huge / 2 $c-btn-padding-huge);}
 
 
 /**
  * Modifier: full bleed.
  */
 
-%btn-main--full-bleed,
-.btn-main--full-bleed {
+%btn--main--full-bleed,
+.btn--main--full-bleed {
   display: block;
   width: 100%;
 
@@ -231,8 +228,24 @@ $friendly-box-model:                      false !default;
      * N.B. if you're applying a border then that will conflict with the width
      * however Scally can't turn off your border in this case.
      */
+
     padding-right: 0;
     padding-left: 0;
 
   }// endif
+}
+
+
+/**
+ * A button that looks like a link.
+ */
+
+.btn--faux-link {
+  color: $link-colour;
+
+  &:hover,
+  &:focus {
+    color: $link-colour-hover;
+    text-decoration: underline;
+  }
 }
