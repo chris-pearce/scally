@@ -20,12 +20,13 @@ $c-btn-hover-styles:                      true !default;
 
 $c-btn-border:                            false !default;
 
-$c-btn-rounded-corners:                   false !default;
+$c-btn-rounded-corners:                   true !default;
 
-// Box sizing.
-// Here we set a variable assuming that `box-sizing: border-box;` is not set
-// globally. If it has been previously been defined, the following variable
-// will be overriden and will be set to `true`.
+$c-btn-group-rounded-corners:             true !default;
+
+// Box sizing, here we set a variable assuming that `box-sizing: border-box;`
+// is not set globally. If it has been previously been defined, the following
+// variable will be overriden and will be set to `true`.
 $friendly-box-model:                      false !default;
 
 // Colours
@@ -49,13 +50,14 @@ $c-btn-padding-large:                     $spacing-base-plus-half !default;
 $c-btn-padding-huge:                      $spacing-double !default;
 
 // Border
+// N.B. also includes the borders used in the 'Button Group' modifier
 $c-btn-border-thickness:                  1 !default;
 
 $c-btn-border-style:                      solid !default;
 
-$c-btn-border-colour:                     darken($c-btn-background-colour, 10%)!default;
+$c-btn-border-colour:                     darken($c-btn-background-colour, 10%) !default;
 
-$c-btn-border-colour-secondary:           darken($c-btn-background-colour-secondary, 10%)!default;
+$c-btn-border-colour-secondary:           darken($c-btn-background-colour-secondary, 10%) !default;
 
 // Rounded corners
 $c-btn-rounded-corners-size:              $border-radius !default;
@@ -248,4 +250,54 @@ $c-btn-hover-transition-timing-function:  linear !default;
     color: $link-colour-hover;
     text-decoration: underline;
   }
+}
+
+
+/**
+ * Button group. When you want to group a bunch of buttons side-by-side flush
+ * to each other i.e. with no gap between the buttons. To differentiate
+ * between the buttons a border is added, if borders haven't already been
+ * applied that is i.e. `$c-btn-border == true`.
+ *
+ * N.B. this modifier requires that you remove the whitespace between the
+ * buttons so they're flush to each other, one way to do this is by inserting
+ * HTML comments between the buttons e.g.
+ *
+   <div class="btn-group">
+     <button class="btn btn--main">Left</button><!--
+      --><button class="btn btn--main">Middle</button><!--
+      --><button class="btn btn--main">Right</button>
+   </div>
+ *
+ * N.B. if your buttons have rounded corners i.e.
+ * `$c-btn-rounded-corners == true` then this modifier is of no use as
+ * the purpose of this modifier is to group a bunch of buttons side-by-side
+ * flush to each other which only works when buttons have square corners.
+ */
+
+@if $c-btn-rounded-corners == false {
+
+  .btn-group .btn--main {
+
+    @if $c-btn-border == false {
+
+      @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+
+    }
+
+    // Turn off right borders so they don't double up, except for the last
+    // one
+    &:not(:last-child) {border-right: 0;}
+
+    // Round off the first and last buttons in the group
+    @if $c-btn-group-rounded-corners {
+
+      &:first-child {@include to-rem(border-top-left-radius border-bottom-left-radius, $c-btn-rounded-corners-size);}
+
+      &:last-child {@include to-rem(border-top-right-radius border-bottom-right-radius, $c-btn-rounded-corners-size);}
+
+    }
+
+  }
+
 }
