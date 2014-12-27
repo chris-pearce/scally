@@ -2,7 +2,6 @@
 
 exclude: [
   "*.css",
-  "demo-styles.scss",
   "core/_normalize.scss",
   "core/_debug.scss"
 ]
