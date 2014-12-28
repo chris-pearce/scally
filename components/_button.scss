@@ -20,7 +20,7 @@ $c-btn-hover-styles:                      true !default;
 
 $c-btn-border:                            false !default;
 
-$c-btn-rounded-corners:                   true !default;
+$c-btn-rounded-corners:                   false !default;
 
 $c-btn-group-rounded-corners:             true !default;
 
@@ -268,16 +268,12 @@ $c-btn-hover-transition-timing-function:  linear !default;
       --><button class="btn btn--main">Middle</button><!--
       --><button class="btn btn--main">Right</button>
    </div>
- *
- * N.B. if your buttons have rounded corners i.e.
- * `$c-btn-rounded-corners == true` then this modifier is of no use as
- * the purpose of this modifier is to group a bunch of buttons side-by-side
- * flush to each other which only works when buttons have square corners.
  */
 
-@if $c-btn-rounded-corners == false {
 
-  .btn-group .btn--main {
+.btn-group {
+
+  .btn--main {
 
     @if $c-btn-border == false {
 
@@ -289,8 +285,16 @@ $c-btn-hover-transition-timing-function:  linear !default;
     // one
     &:not(:last-child) {border-right: 0;}
 
+    // Turn off rounded corners if rounded corners are on by default as only the
+    // first and last buttons in the group need rounded corners
+    @if $c-btn-rounded-corners {
+
+      border-radius: 0;
+
+    }
+
     // Round off the first and last buttons in the group
-    @if $c-btn-group-rounded-corners {
+    @if $c-btn-group-rounded-corners or $c-btn-rounded-corners {
 
       &:first-child {@include to-rem(border-top-left-radius border-bottom-left-radius, $c-btn-rounded-corners-size);}
 
@@ -300,4 +304,40 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
   }
 
+  /**
+   * Modifier: vertically stacked button group.
+   *
+   * N.B. Buttons within the vertically stacked version need to use the
+   * `btn--main--full-bleed` main button modifier.
+   */
+
+  &.btn-group--vertical {
+    // This will shrink wrap the container to be as wide as the widest button
+    display: inline-block;
+
+    .btn--main {
+
+      // Turn back on the right border that gets turned off by default
+      @include to-rem(border-right, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+
+      // Turn off bottom borders so they don't double up, except for the last
+      // one
+      &:not(:last-child) {border-bottom: 0;}
+
+      // Round off the first and last buttons in the group
+      @if $c-btn-group-rounded-corners or $c-btn-rounded-corners {
+
+        &:first-child {
+          border-bottom-left-radius: 0;
+          @include to-rem(border-top-left-radius border-top-right-radius, $c-btn-rounded-corners-size);
+        }
+
+        &:last-child {
+          border-top-right-radius: 0;
+          @include to-rem(border-bottom-left-radius border-bottom-right-radius, $c-btn-rounded-corners-size);
+        }
+
+      }
+    }
+  }
 }
