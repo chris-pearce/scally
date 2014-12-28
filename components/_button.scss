@@ -277,7 +277,8 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
     @if $c-btn-border == false {
 
-      @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+      @include to-rem(border, $c-btn-border-thickness $c-btn-border-style
+        $c-btn-border-colour);
 
     }
 
@@ -296,9 +297,11 @@ $c-btn-hover-transition-timing-function:  linear !default;
     // Round off the first and last buttons in the group
     @if $c-btn-group-rounded-corners or $c-btn-rounded-corners {
 
-      &:first-child {@include to-rem(border-top-left-radius border-bottom-left-radius, $c-btn-rounded-corners-size);}
+      &:first-child {@include to-rem(border-top-left-radius
+        border-bottom-left-radius, $c-btn-rounded-corners-size);}
 
-      &:last-child {@include to-rem(border-top-right-radius border-bottom-right-radius, $c-btn-rounded-corners-size);}
+      &:last-child {@include to-rem(border-top-right-radius
+        border-bottom-right-radius, $c-btn-rounded-corners-size);}
 
     }
 
@@ -318,7 +321,8 @@ $c-btn-hover-transition-timing-function:  linear !default;
     .btn--main {
 
       // Turn back on the right border that gets turned off by default
-      @include to-rem(border-right, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+      @include to-rem(border-right, $c-btn-border-thickness
+        $c-btn-border-style $c-btn-border-colour);
 
       // Turn off bottom borders so they don't double up, except for the last
       // one
@@ -329,12 +333,14 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
         &:first-child {
           border-bottom-left-radius: 0;
-          @include to-rem(border-top-left-radius border-top-right-radius, $c-btn-rounded-corners-size);
+          @include to-rem(border-top-left-radius border-top-right-radius,
+            $c-btn-rounded-corners-size);
         }
 
         &:last-child {
           border-top-right-radius: 0;
-          @include to-rem(border-bottom-left-radius border-bottom-right-radius, $c-btn-rounded-corners-size);
+          @include to-rem(border-bottom-left-radius
+            border-bottom-right-radius, $c-btn-rounded-corners-size);
         }
 
       }
