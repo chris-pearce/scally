@@ -69,29 +69,37 @@ Scally can be installed via [Bower](http://bower.io/).
 
 Bower needs to be installed with npm:
 
-    npm install -g bower
+```
+npm install -g bower
+```
 
 *Bower requires [Node and npm](http://nodejs.org/) and [Git](http://git-scm.com/).*
 
 Once Bower is installed you can install Scally by `cd`ing into your project folder or into the folder where you keep your CSS and run the following command:
 
-    bower install westfieldlabs/scally
+```
+bower install westfieldlabs/scally
+```
 
 By default Bower will create a `bower_components` folder. You can change this to be any folder you wish via the `.bowerrc` file, [see](http://bower.io/docs/config/#directory).
 
 So if you have a `css` folder in your project and run the above command in that folder you'll end up with something like this:
 
-    css
+```
+css
+│
+└───bower_components
     │
-    └───bower_components
-        │
-        └───Scally
+    └───Scally
+```
 
 **N.B.** Scally should never be edited or added too directly. If you ever make changes directly in Scally you will not be able to seamlessly update your version of Scally to the latest version.
 
 Once installed you can always get the latest version of Scally by running the following command:
 
-    bower update
+```
+bower update
+```
 
 *This is a very simple overview of Bower so if you're new to it then please take the time to [read up on it](http://bower.io/).*
 
