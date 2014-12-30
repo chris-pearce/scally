@@ -8,6 +8,14 @@
  * that need to retain a specific aspect ratio but adapt to the width of their
  * containing element.
  *
+ * @markup
+   <div class="u-flex-embed">
+     <!-- The content e.g. a video (`iframe`) -->
+     <div class="u-flex-embed__content"> ... </div>
+     <!-- Empty element to maintain aspect ratio -->
+     <div class="u-flex-embed__ratio u-flex-embed__ratio--16-by-9"></div>
+   </div>
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#flex-embed
  *
