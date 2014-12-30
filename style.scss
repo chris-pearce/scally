@@ -185,6 +185,11 @@
 
 @import "bower_components/scally/layout/l-grid-push";
 
+// Side-by-side
+@import "bower_components/scally/layout/l-side-by-side";
+
+@import "bower_components/scally/layout/l-side-by-side-alt";
+
 
 /**
  * COMPONENTS.
@@ -234,10 +239,6 @@
 @import "bower_components/scally/utilities/u-new-block-formatting-context";
 
 @import "bower_components/scally/utilities/u-flex-embed";
-
-@import "bower_components/scally/utilities/u-side-by-side";
-
-@import "bower_components/scally/utilities/u-side-by-side-alt";
 
 @import "bower_components/scally/utilities/u-gpu-accelerated";
 
