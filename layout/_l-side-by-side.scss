@@ -7,6 +7,12 @@
  * Place any two elements side-by-side, typically for an image- and text-like
  * content.
  *
+ * @markup
+   <div class="l-side-by-side">
+     <div class="l-side-by-side__left"> ... </div>
+     <div class="l-side-by-side__right"> ... </div>
+   </div>
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#side-by-side
  *
