@@ -8,6 +8,12 @@
  * utilises `display: table[-cell];` to give us control over vertical
  * alignment.
  *
+ * @markup
+   <div class="l-side-by-side-alt">
+     <div class="l-side-by-side-alt__left"> ... </div>
+     <div class="l-side-by-side-alt__right"> ... </div>
+   </div>
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/xFHfk#side-by-side-alt
  *

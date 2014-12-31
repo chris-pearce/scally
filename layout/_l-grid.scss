@@ -26,6 +26,18 @@
  * N.B. you should never apply any styles to a grid item, they are for layout
  * purposes only. Apply styling to content inside a grid item.
  *
+ * @markup
+   <div class="l-grid">
+     <div class="l-grid__item u-one-half"> ... </div>
+     <div class="l-grid__item u-one-half"> ... </div>
+   </div>
+
+   <div class="l-grid">
+     <div class="l-grid__item u-one-third"> ... </div>
+     <div class="l-grid__item u-one-third"> ... </div>
+     <div class="l-grid__item u-one-third"> ... </div>
+   </div>
+ *
  * @demo
  * http://codepen.io/team/westfieldlabs/full/cjyHK/
  *

@@ -261,8 +261,9 @@ $c-btn-hover-transition-timing-function:  linear !default;
  *
  * N.B. this modifier requires that you remove the whitespace between the
  * buttons so they're flush to each other, one way to do this is by inserting
- * HTML comments between the buttons e.g.
+ * HTML comments between the buttons.
  *
+ * @markup
    <div class="btn-group">
      <button class="btn btn--main">Left</button><!--
       --><button class="btn btn--main">Middle</button><!--
@@ -286,8 +287,8 @@ $c-btn-hover-transition-timing-function:  linear !default;
     // one
     &:not(:last-child) {border-right: 0;}
 
-    // Turn off rounded corners if rounded corners are on by default as only the
-    // first and last buttons in the group need rounded corners
+    // Turn off rounded corners if rounded corners are on by default as only
+    // the first and last buttons in the group need rounded corners
     @if $c-btn-rounded-corners {
 
       border-radius: 0;
@@ -311,7 +312,7 @@ $c-btn-hover-transition-timing-function:  linear !default;
   /**
    * Modifier: vertically stacked button group.
    *
-   * N.B. Buttons within the vertically stacked version need to use the
+   * N.B. buttons within the vertically stacked version need to use the
    * `btn--main--full-bleed` main button modifier.
    */
 

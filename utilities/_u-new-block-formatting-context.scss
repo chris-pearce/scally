@@ -7,7 +7,7 @@
  * This affords some useful properties to the element. It won't wrap under
  * floats. Will also contain any floated children.
  *
- * N.B. This is one of the rare occasions where the class/placeholder is
+ * N.B. this is one of the rare occasions where the class/placeholder is
  * shortened.
  *
  * @demo
@@ -39,7 +39,7 @@ $u-nbfc-breakpoint-toggle-alt:        false !default;
  * 1. Create a new block formatting context (NBFC).
  * 2. Avoid shrink-wrap behaviour of table-cell.
  *
- * N.B. This breaks down in some browsers when elements within this element
+ * N.B. this breaks down in some browsers when elements within this element
  * exceed its width.
  */
 
@@ -60,7 +60,7 @@ $u-nbfc-breakpoint-toggle-alt:        false !default;
 /**
  * Alternate version.
  *
- * N.B. This will clip overflow. Best to go with the default version above.
+ * N.B. this will clip overflow. Best to go with the default version above.
  */
 
 %u-nbfc-alt,
