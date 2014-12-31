@@ -20,6 +20,14 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+// Only turn on when you need to debug
+$debug-mode: false !default;
+
+
 @if $debug-mode {
 
   /**

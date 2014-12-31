@@ -13,7 +13,10 @@
  * Settings.
  */
 
-$google-map-selector-to-turn-off-responsive-images: ".gm-style" !default;
+// Apply responsive images
+$responsive-images:                                   true !default;
+
+$google-map-selector-to-turn-off-responsive-images:   ".gm-style" !default;
 
 
 /**

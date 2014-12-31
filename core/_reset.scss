@@ -14,6 +14,14 @@
 
 
 /**
+ * Settings.
+ */
+
+// Reset the `box-sizing` property to the more friendly `border-box` value
+$friendly-box-model: true !default;
+
+
+/**
  * Remove all margins, paddings, and borders.
  *
  * N.B. the complete list of HTML5 elements
