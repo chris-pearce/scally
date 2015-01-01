@@ -7,8 +7,8 @@
  * Apply different width treatments to elements. They're two different types of
  * treatments you can apply:
  *
- * - An intrinsic width
- * - A percentage width
+ * - Intrinsic widths
+ * - Percentage widths
  */
 
 
@@ -101,6 +101,7 @@ $friendly-box-model:                                  false !default;
   }
 }// end if
 
+// Alternative method
 %u-width-fill-remaining-space-alt,
 .u-width-fill-remaining-space-alt {
   display: table-cell;
@@ -128,9 +129,7 @@ $friendly-box-model:                                  false !default;
   width: 100%;
 
   @if $friendly-box-model == false {
-
     box-sizing: border-box;
-
   }//endif
 }
 
