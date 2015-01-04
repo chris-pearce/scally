@@ -1,0 +1,128 @@
+/* ============================================================================
+   @UTILITIES -> CURSOR
+   ========================================================================= */
+
+
+/**
+ * Apply different cursors.
+ */
+
+
+/**
+ * General.
+ */
+
+// Auto
+%u-cursor-auto,
+.u-cursor-auto {cursor: auto;}
+
+// Default
+%u-cursor-default,
+.u-cursor-default {cursor: default;}
+
+// None
+%u-cursor-none,
+.u-cursor-none {cursor: none;}
+
+
+/**
+ * Link and status.
+ */
+
+// Help
+%u-cursor-help,
+.u-cursor-help {cursor: help;}
+
+// Pointer
+%u-cursor-pointer,
+.u-cursor-pointer {cursor: pointer;}
+
+
+// Progress
+%u-cursor-progress,
+.u-cursor-progress {cursor: progress;}
+
+// Wait
+%u-cursor-wait,
+.u-cursor-wait {cursor: wait;}
+
+
+/**
+ * Selection.
+ */
+
+// Cell
+%u-cursor-cell,
+.u-cursor-cell {cursor: cell;}
+
+// Crosshair
+%u-cursor-crosshair,
+.u-cursor-crosshair {cursor: crosshair;}
+
+// Text
+%u-cursor-text,
+.u-cursor-text {cursor: text;}
+
+// Vertical text
+%u-cursor-vertical-text,
+.u-cursor-vertical-text {cursor: vertical-text;}
+
+
+/**
+ * Drag and drop.
+ */
+
+// Copy
+%u-cursor-copy,
+.u-cursor-copy {cursor: copy;}
+
+// Move
+%u-cursor-move,
+.u-cursor-move {cursor: move;}
+
+// Not allowed
+%u-cursor-not-allowed,
+.u-cursor-not-allowed {cursor: not-allowed;}
+
+
+/**
+ * Resize and scrolling.
+ */
+
+// Col resize
+%u-cursor-col-resize,
+.u-cursor-col-resize {cursor: col-resize;}
+
+// Row resize
+%u-cursor-row-resize,
+.u-cursor-row-resize {cursor: row-resize;}
+
+// All scroll
+%u-cursor-all-scroll,
+.u-cursor-all-scroll {cursor: all-scroll;}
+
+
+/**
+ * Zoom.
+ */
+
+// Zoom in
+%u-cursor-zoom-in,
+.u-cursor-zoom-in {cursor: zoom-in;}
+
+// Zoom out
+%u-cursor-zoom-out,
+.u-cursor-zoom-out {cursor: zoom-out;}
+
+
+/**
+ * Grab.
+ */
+
+// Grab
+%u-cursor-grab,
+.u-cursor-grab {cursor: grab;}
+
+// Grabbing
+%u-cursor-grabbing,
+.u-cursor-grabbing {cursor: grabbing;}
