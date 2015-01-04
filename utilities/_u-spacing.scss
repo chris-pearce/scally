@@ -37,6 +37,7 @@
  * Settings.
  */
 
+
 /**
  * Apply at breakpoints.
  */
@@ -60,7 +61,10 @@ $u-spacing-large:                   $spacing-base-plus-half !default;
 
 $u-spacing-huge:                    $spacing-double !default;
 
-// Maps for the generate at breakpoint mixin
+
+/**
+ * Maps for the generate at breakpoint mixin.
+ */
 
 // Spacing size map
 $u-spacing-sizes: (
