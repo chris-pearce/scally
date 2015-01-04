@@ -66,14 +66,12 @@ $friendly-box-model:                                  false !default;
 }// end if
 
 // Float it right
-%u-width-shrink-wrap--alt,
-.u-width-shrink-wrap--alt {float: right;}
+%u-width-shrink-wrap--right,
+.u-width-shrink-wrap--right {float: right;}
 
 @if $u-width-breakpoint-toggle-shrink-wrap {
-  @include generate-at-breakpoints('.u-width-shrink-wrap--alt',
-    $u-width-intrinsic-breakpoints) {
-    float: right;
-  }
+  @include generate-at-breakpoints('.u-width-shrink-wrap--right',
+    $u-width-intrinsic-breakpoints) {float: right;}
 }// end if
 
 
