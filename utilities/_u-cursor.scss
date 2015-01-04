@@ -16,30 +16,26 @@
 %u-cursor-auto,
 .u-cursor-auto {cursor: auto;}
 
-
 // Default
 %u-cursor-default,
 .u-cursor-default {cursor: default;}
-
 
 // None
 %u-cursor-none,
 .u-cursor-none {cursor: none;}
 
 
-
 /**
  * Link and status.
  */
 
-// Pointer
-%u-cursor-pointer,
-.u-cursor-pointer {cursor: pointer;}
-
-
 // Help
 %u-cursor-help,
 .u-cursor-help {cursor: help;}
+
+// Pointer
+%u-cursor-pointer,
+.u-cursor-pointer {cursor: pointer;}
 
 
 // Progress
@@ -93,10 +89,6 @@
  * Resize and scrolling.
  */
 
-// All scroll
-%u-cursor-all-scroll,
-.u-cursor-all-scroll {cursor: all-scroll;}
-
 // Col resize
 %u-cursor-col-resize,
 .u-cursor-col-resize {cursor: col-resize;}
@@ -104,6 +96,10 @@
 // Row resize
 %u-cursor-row-resize,
 .u-cursor-row-resize {cursor: row-resize;}
+
+// All scroll
+%u-cursor-all-scroll,
+.u-cursor-all-scroll {cursor: all-scroll;}
 
 
 /**
