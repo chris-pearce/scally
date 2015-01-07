@@ -99,7 +99,8 @@ input[type="search"] {appearance: none;}
 input[type="submit"],
 input[type="button"],
 input[type="image"],
-input[type="reset"] {border-radius: 0;}
+input[type="reset"],
+select {border-radius: 0;}
 
 
 /**
@@ -176,6 +177,7 @@ legend {
 
 @if $text-input-and-select-styles {
 
+  %text-input-select-styles,
   .text-input,
   textarea,
   select {

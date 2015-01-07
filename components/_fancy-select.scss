@@ -1,0 +1,54 @@
+/* ============================================================================
+   @COMPONENTS -> FANCY SELECT
+   ========================================================================= */
+
+
+/**
+ * Style up a form `select` element by removing all native styles via the CSS
+ * property: `appearance`.
+ *
+ * This component uses the following utilities:
+ *
+ * - Position
+ * - Arrow
+ */
+
+
+.fancy-select {
+  background: red;
+}
+
+  /**
+   * The `select` element.
+   *
+   * Need to make this invisible and position an element over the top of it and
+   * style that, add a placeholder selector for `.text-input`. Use an `@if` to
+   * apply the default global form styles, and one for the arrow pointer.
+   */
+
+  .fancy-select__list {
+    // Remove all native styles
+    appearance: none;
+    -webkit-appearance: none;
+    //opacity: 0;
+    // Make room for the pointer arrow
+    @include to-rem(padding-right, $spacing-base);
+  }
+
+
+  .fancy-select__overlay {
+    //background: blue;
+    background: transparent;
+    pointer-events: none;
+    @extend %text-input-select-styles;
+  }
+
+
+  /**
+   * The pointer arrow.
+   */
+
+  .fancy-select__pointer {
+    pointer-events: none;
+    @include to-rem(right, $spacing-fifth);
+  }
