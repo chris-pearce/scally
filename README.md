@@ -78,7 +78,7 @@ npm install -g bower
 Once Bower is installed you can install Scally by `cd`ing into your project folder or into the folder where you keep your CSS and run the following command:
 
 ```
-bower install westfieldlabs/scally
+bower install scally
 ```
 
 By default Bower will create a `bower_components` folder. You can change this to be any folder you wish via the `.bowerrc` file, [see](http://bower.io/docs/config/#directory).
@@ -103,7 +103,7 @@ bower update
 
 *This is a very simple overview of Bower so if you're new to it then please take the time to [read up on it](http://bower.io/).*
 
-You can install Scally via the [**Download by zip**](https://github.com/westfieldlabs/scally/archive/master.zip) option however it's advised to use a package manager like Bower to handle your third-party dependencies.
+You can install Scally via the [**Download by zip**](https://github.com/chris-pearce/scally/archive/master.zip) option however it's advised to use a package manager like Bower to handle your third-party dependencies.
 
 
 # Setting up a new project
@@ -112,7 +112,7 @@ You can install Scally via the [**Download by zip**](https://github.com/westfiel
 
 Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
 
-Once you have created this file grab everything [from here](https://github.com/westfieldlabs/scally/blob/master/style.scss) and paste it into your master stylesheet.
+Once you have created this file grab everything [from here](https://github.com/chris-pearce/scally/blob/master/style.scss) and paste it into your master stylesheet.
 
 This master stylesheet is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
 
@@ -148,7 +148,7 @@ This first section consists of one Sass partial:
 @import "settings";
 ```
 
-Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/westfieldlabs/scally/master/settings.scss).
+Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/chris-pearce/scally/master/settings.scss).
 
 In this partial you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
 
@@ -268,7 +268,7 @@ Which will lint *everything*, to lint at a more granular level [see](https://git
 
 ## Linting rules
 
-Scally's linting rules can be [found here](.scss-lint.yml) and are based off the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
+Scally's linting rules can be [found here](.scss-lint.yml) and are based off [these CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
 
 
 
@@ -299,7 +299,7 @@ Kinds of code not good for Scally:
 In addition to the principles outlined above here are some things to keep in mind when submitting code to Scally via a PR (Pull Request):
 
 - Lint your Sass, [see](#linting). Scally's build tests will catch any linting issues however it's good practice to run linting manually also.
-- Follow the [Westfield Labs CSS authoring guidelines](https://github.com/westfieldlabs/westfield_code_guidelines/tree/master/css). Linting will catch a lot of this but not everything.
+- Follow [these CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/). Linting will catch a lot of this but not everything.
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
 
 **Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css)
@@ -309,7 +309,7 @@ In addition to the principles outlined above here are some things to keep in min
 
 # Scally improvements, issues, and questions
 
-If you would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/westfieldlabs/scally/issues) and label appropriately.
+If you would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/chris-pearce/scally/issues) and label appropriately.
 
 
 
@@ -339,7 +339,7 @@ Copyright 2015 Chris Pearce. [View license](LICENSE).
 
 Licensed under the [The MIT License (MIT)](http://opensource.org/licenses/MIT).
 
-Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/) whilst I was an employee there. 
+Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/) whilst I was an employee there.
 
 Scally was something I brought to Westfield Labs, and something I worked on full-time for a period of time as the main developer. Other Westfield Labs employees who contributed to Scally at that time:
 
