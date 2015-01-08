@@ -105,8 +105,7 @@ Utilities are really powerful when used in conjuction with other utilities as th
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
 
-The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_side-by-side.scss) however they're a number of
-other style treatments going on in this UI pattern that are outside of the
+The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_l-side-by-side.scss) however they're a number of other style treatments going on in this UI pattern that are outside of the
 Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
 
 - [Divider](_u-divider.scss)
