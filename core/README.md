@@ -23,7 +23,6 @@
   - [Normalize](#normalize)
   - [Reset](#reset)
 - [Specificity](#specificity)
-- [Demo's](#demos)
 - [Further reading](#further-reading)
 
 
@@ -40,7 +39,7 @@ Scally core is the foundation of a project's UI build providing things like:
 - A powerful reset, and Normalize.scss.
 - Debug styles.
 
-Without core Scally won't work. It is the only mandatory part of the framework.
+**N.B.** Without core Scally won't work. It is the only mandatory part of the framework.
 
 
 
@@ -345,16 +344,6 @@ In addition to `_normalize.css` Scally also provides a powerful reset, resetting
 Scally core is the foundation of the framework therefore it sits right at the bottom when it comes to specificity (CSS' first C; the cascade) as any styles defined in core need to be easily overridden.
 
 That's why core is declared first when pulling in the Scally framework via your [master stylesheet](../style.scss) so they're compiled before everything else.
-
-
-
-
-## Demo's
-
-- [Base](http://codepen.io/team/westfieldlabs/full/zIgBs)
-- [Mixins](http://codepen.io/team/westfieldlabs/full/Bcfyz)
-- [Settings](http://codepen.io/team/westfieldlabs/full/aLDdb)
-- [Debug](http://codepen.io/team/westfieldlabs/full/GHzvE)
 
 
 

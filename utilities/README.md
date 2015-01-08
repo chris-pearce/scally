@@ -13,7 +13,6 @@
 - [Specificity](#specificity)
 - [Namespace](#namespace)
 - [New utilities](#new-utilities)
-- [Demo's](#demos)
 - [Further reading](#further-reading)
 
 
@@ -32,14 +31,16 @@ Utilities can form a wide variety of UI patterns from simple principles meaning 
 
 A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
 
-    %u-list-inline,
-    .u-list-inline {
-        > li {display: inline-block;}
-    }
+```
+%u-list-inline,
+.u-list-inline {
+    > li {display: inline-block;}
+}
+```
 
 So utilities are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
-- Your CSS will be a lot DRYer.
+- Your CSS will be a lot DRYer and maintainable.
 - You can make far-reaching changes to your UI with simple modifications to a single utility.
 - You have confidence in your changes because edits to a utility only ever alter one responsibility.
 - You can combine utilities to make a variety of UI layouts.
@@ -51,20 +52,24 @@ So utilities are extremely powerful and are the real work horses of any sort of 
 
 Each utility class modifies a single trait which might be an individual style e.g.
 
-    // Center align text
-    %u-text-align-center,
-    .u-text-align-center {text-align: center;}
+```
+// Center align text
+%u-text-align-center,
+.u-text-align-center {text-align: center;}
+```
 
 Or a small collection of styles e.g.
 
-    // Pin to all corners
-    %u-position-pin-all,
-    .u-position-pin-all {
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-    }
+```
+// Pin to all corners
+%u-position-pin-all,
+.u-position-pin-all {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+```
 
 To apply a trait, or a combination of traits, add the corresponding class or classes directly to the HTML element.
 
@@ -81,24 +86,29 @@ So the above `div` would receive a specific component class which would apply th
 
 **HTML**
 
-    <div class="modal__cover"> ... </div>
+```
+<div class="modal__cover"> ... </div>
+```
 
 **CSS**
 
-    .modal__cover {
-        position: absolute;
-        @extend %u-position-pin-all;
-    }
+```
+.modal__cover {
+    position: absolute;
+    @extend %u-position-pin-all;
+}
+```
 
 You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view. [This article](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) (starting from the text: *Another case of an abused `@extend` looks a little like this*) does a very good job at further explaining why this isn't a good idea.
 
-Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern:
+Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern found in many UI's:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
 
-This UI pattern can be entirely constructed using a number of Scally utilities and their modifiers:
+The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_side-by-side.scss) however they're a number of
+other style treatments going on in this UI pattern that are outside of the
+Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
 
-- [Side by side](_u-side-by-side.scss)
 - [Divider](_u-divider.scss)
 - [Spacing](_u-spacing.scss)
 - [Text](_u-text.scss)
@@ -106,21 +116,21 @@ This UI pattern can be entirely constructed using a number of Scally utilities a
 The HTML:
 
 ```
-<div class="u-side-by-side  u-divider-bottom  u-s-pb-base u-s-mb-base">
-    <div class="u-side-by-side__left">
+<div class="l-side-by-side  u-divider-bottom  u-s-pb-base u-s-mb-base">
+    <div class="l-side-by-side__left">
       <img src"{{src}}" alt="...">
     </div>
-    <div class="u-side-by-side__right u-s-p-base">
+    <div class="l-side-by-side__right  u-s-p-base">
       <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
       <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
     </div>
 </div>
 
-<div class="u-side-by-side u-side-by-side--reversed">
-    <div class="u-side-by-side__left">
+<div class="l-side-by-side l-side-by-side--reversed">
+    <div class="l-side-by-side__left">
       <img src"{{src}}" alt="...">
     </div>
-    <div class="u-side-by-side__right u-s-p-base">
+    <div class="l-side-by-side__right  u-s-p-base">
       <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
       <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
     </div>
@@ -199,13 +209,6 @@ All utility classes and utility silent placeholder selectors should be prefixed 
 ## New utilities
 
 You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing).
-
-
-
-
-## Demo's
-
-<http://codepen.io/team/westfieldlabs/full/xFHfk/>
 
 
 

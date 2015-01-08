@@ -15,7 +15,6 @@
     - [Free of constraints](#free-of-constraints)
     - [Encapsulation](#encapsulation)
 - [Namespacing](#namespacing)
-- [Demo's](#demos)
 - [Further reading](#further-reading)
 
 
@@ -287,13 +286,6 @@ Components should be encapsulated as much as possible, even if that means your C
 ## Namespacing
 
 [Layout modules](../layout/) and [utilities](../utilities/) are namespaced with `l-` and `u-` respectively so that they're easily identifiable. Components do not need this treatment, so for a **Dialog** component it will simply be: `.dialog`.
-
-
-
-
-## Demo's
-
-<http://codepen.io/team/westfieldlabs/full/Fvxju>
 
 
 

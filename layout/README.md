@@ -11,7 +11,6 @@
   - [Responsive grid](#responsive-grid)
   - [Use in isolation](#use-in-isolation)
 - [Namespace](#namespace)
-- [Demo's](#demos)
 - [Further reading](#further-reading)
 
 
@@ -19,7 +18,7 @@
 
 ## What is layout?
 
-Scally features two powerful layout modules:
+Scally features three powerful layout modules:
 
 ### [Container](_l-container.scss)
 
@@ -29,13 +28,13 @@ Container is designed to wrap all major UI layout pieces and ensure the UI maint
 
 Grid is a powerful, fluid, nestable, mobile first grid system that allows you to set custom column widths at different viewports, making responsive layouts a sinch.
 
-See the [demo's](#demos).
+### [Side-by-side](_l-side-by-side.scss)
 
-Scally also offers two additional layout utilities located in [utilities](../utilities/). The [**Side by Side**](../utilities/_u-side-by-side.scss) utility and the [**Side by Side Alternative**](../utilities/_u-side-by-side-alt.scss) utility apply an extremely common UI layout pattern. These will be moved to the layout section, [see](https://github.com/westfieldlabs/scally/issues/153).
+Side-by-side is a simple yet very powerful layout module that places any two elements side-by-side, typically for an image- and text-like content.
 
 *From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
 
-Think of layout as Lego&reg;.
+Think of layout as Lego&reg;; the bits and pieces you need to construct a UI.
 
 
 
@@ -46,7 +45,7 @@ Just like [utilities](../utilities/), layout can form a wide variety of UI layou
 
 Layout modules are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
-- Your CSS will be a lot DRYer.
+- Your CSS will be a lot DRYer and maintainable.
 - You can make far-reaching changes to your UI with simple modifications to a single layout module.
 - You have confidence in your changes because edits to a layout module only ever alter one responsibility.
 
@@ -160,7 +159,7 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 
 ### Responsive grid
 
-The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to construct responsive UI's. This ability isn't tied into the grid itself but uses the [**Widths**](../utilities/_u-widths.scss) utility.
+The grid comes with the ability to apply widths to the grid cells at different viewports making it easy to construct responsive UI's. This ability isn't tied into the grid itself but uses the [**Percentage widths**](../utilities/_u-widths.scss) utilities.
 
 By default grid cells will stack on top of eachother unless told otherwise i.e. they're completely linear. At small viewport widths e.g. handheld devices typically this is what you want, however as the viewport increases in width you can then apply widths to the grid cells turning them into columns.
 
@@ -229,14 +228,6 @@ And we need to add padding to all sides of the left grid cell and add the sub na
 ## Namespace
 
 All layout classes should be prefixed with `l-` so that they're easily identifiable.
-
-
-
-
-## Demo's
-
-- [Grid](http://codepen.io/team/westfieldlabs/full/cjyHK)
-- [Container](http://codepen.io/team/westfieldlabs/full/GiCzg)
 
 
 
