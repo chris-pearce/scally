@@ -7,9 +7,6 @@
  * Setup media queries for minimum and maximum widths/heights, with width
  * being the default, also includes the ability to apply ranges.
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz#media-queries
- *
  * @example
    @include respond-to(lap) {
      .foo {background: red;}

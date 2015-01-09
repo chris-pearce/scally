@@ -21,9 +21,6 @@
    @include to-em(padding margin, $spacing-base, $sledgehammer: !important);
    @include to-rem(margin, $spacing-base, !important);
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz/#convert-px-to-rem
- *
  * @credit
  * https://gist.github.com/2237465
  */
