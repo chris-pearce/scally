@@ -13,7 +13,7 @@
         - [Responsive grid](#responsive-grid)
     - [Side-by-side](#side-by-side)
     - [Combined](#combined)
-    - [#do-not-mix-other-styles](#do-not-mix-other-styles)
+    - [Do not mix other styles](#do-not-mix-other-styles)
 - [Namespace](#namespace)
 - [Further reading](#further-reading)
 
