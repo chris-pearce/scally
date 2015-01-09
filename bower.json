@@ -1,7 +1,10 @@
 {
   "name": "scally",
   "homepage": "https://github.com/chris-pearce/scally",
-  "main": "style.css",
+  "main": [
+    "style.css",
+    "style.css.map",
+  ],
   "authors": [
     "Chris Pearce <cpearce@westfield.com>",
     "Kate Levin <klevin@westfield.com>"
@@ -21,7 +24,6 @@
     "settings.scss",
     "style.scss",
     "style-test.scss",
-    "style.css.map",
     "CHANGELOG.md"
   ]
 }

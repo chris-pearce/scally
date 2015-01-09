@@ -1,9 +1,8 @@
 # Specific files #
 ###################
-/style.css
-/style.css.map
-/style-test.scss
-/CHANGELOG.md
+style.css
+style.css.map
+style-test.scss
 
 
 # Compiled source #
