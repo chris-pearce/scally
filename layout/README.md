@@ -234,7 +234,7 @@ We can combine all our three layout modules and their modifiers to achieve this 
 
 [![alt text](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png)
 
-- <span style="display: inline-block; width: 10px; height: 10px; background: #D0021B;"></span> = Container *(modifier: full-bleed)*
+- <span style="display: inline-block; width: 10px; height: 10px; background: #D0021B;">&nbsp;</span> = Container *(modifier: full-bleed)*
 - <span style="display: inline-block; width: 10px; height: 10px; background: #F8E71C;"></span> = Container
 - <span style="display: inline-block; width: 10px; height: 10px; background: #000;"></span> = Grid
 - <span style="display: inline-block; width: 10px; height: 10px; background: #4A90E2;"></span> = Side-by-side
