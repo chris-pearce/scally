@@ -13,7 +13,7 @@
         - [Responsive grid](#responsive-grid)
     - [Side-by-side](#side-by-side)
     - [Combined](#combined)
-    - [Use in isolation](#use-in-isolation)
+    - [#do-not-mix-other-styles](#do-not-mix-other-styles)
 - [Namespace](#namespace)
 - [Further reading](#further-reading)
 
@@ -285,10 +285,9 @@ In order of stacking (bottom to top):
 </div>
 ```
 
-### Use in isolation
+### Do not mix other styles
 
-All of the layout modules should exist on their own, they are for layout
-purposes only. You should never mix in other styles with a layout module e.g. a grid cell, this ties in with the [Open/close principle](../utilities#openclose-principle) which is used for utilities.
+You should never mix in any other styles with any of the layout modules. This ties in with the [Open/close principle](../utilities#openclose-principle) which is used for utilities.
 
 So if we look at the HTML for the header demo'd above:
 
