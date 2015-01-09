@@ -344,7 +344,7 @@ Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/)
 Scally was something I brought to Westfield Labs, and something I worked on full-time for a period of time as the main developer. Other Westfield Labs employees who contributed to Scally at that time:
 
 - [Alec Raeside](http://alecraeside.com.au/)
-- Kate Levin
+- [Kate Levin](http://kllevin.com/)
 - [Dan Sim](http://daniel-sim.com/)
 
 After I finished at Westfield Labs I decided to fork Scally so I could maintain it myself under my own personal GitHub account.
