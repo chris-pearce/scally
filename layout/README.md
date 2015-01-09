@@ -289,7 +289,9 @@ In order of stacking (bottom to top):
 
 You should never mix in any other styles with any of the layout modules. This ties in with the [Open/close principle](../utilities#openclose-principle) which is used for utilities.
 
-So if we look at the HTML for the header demo'd above:
+So if we look at the HTML for the header demo'd above for this piece of UI:
+
+[![alt text](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png "Manchester City Council header")](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png)
 
 ```
 <!-- Header -->
