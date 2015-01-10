@@ -86,14 +86,18 @@ input[type="search"] {appearance: none;}
 
 
 /**
- * Remove rounded corners that iOS applies to all `input` buttons.
- * See: https://github.com/necolas/normalize.css/issues/178
+ * Remove rounded corners that iOS applies to all `input` buttons, see:
+ * https://github.com/necolas/normalize.css/issues/178. And certain browsers
+ * e.g. Chrome, apply rounded corners to `select` lists so if we haven't opted
+ * in for rounded corners via the `$text-input-and-select-styles` and
+ * `$text-input-and-select-rounded-corners` settings then turn them off.
  */
 
 input[type="submit"],
 input[type="button"],
 input[type="image"],
-input[type="reset"] {border-radius: 0;}
+input[type="reset"],
+select {border-radius: 0;}
 
 
 /**
