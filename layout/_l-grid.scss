@@ -52,33 +52,26 @@
  */
 
 // Which breakpoints do you want to use?
-$l-grid-breakpoints:                              $default-breakpoints
+$l-grid-breakpoints:    $default-breakpoints
 !default;
 
-// What do you want to apply it too?
-$l-grid-breakpoint-toggle-table:                  false !default;
+// Gutter sizes
+$l-grid-gutter-base:    $spacing-base !default;
 
-$l-grid-breakpoint-toggle-table-v-align-middle:   false !default;
+$l-grid-gutter-tiny:    $spacing-third !default;
 
-$l-grid-breakpoint-toggle-table-v-align-bottom:   false !default;
+$l-grid-gutter-small:   $spacing-half !default;
+
+$l-grid-gutter-large:   $spacing-base-plus-half
+!default;
+
+$l-grid-gutter-huge:    $spacing-double !default;
 
 // Box sizing.
 // Here we set a variable assuming that `box-sizing: border-box;` is not set
 // globally. If it has been previously been defined, the following variable
 // will be overriden and will be set to `true`.
-$friendly-box-model:                              false !default;
-
-// Gutter sizes
-$l-grid-gutter-base:                              $spacing-base !default;
-
-$l-grid-gutter-tiny:                              $spacing-third !default;
-
-$l-grid-gutter-small:                             $spacing-half !default;
-
-$l-grid-gutter-large:                             $spacing-base-plus-half
-!default;
-
-$l-grid-gutter-huge:                              $spacing-double !default;
+$friendly-box-model:    false !default;
 
 
 /**
@@ -86,18 +79,14 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  *
  * 1. Negative `margin-left` to negate the columns gutters.
  * 2. So it can work on inline elements e.g. `span`.
+ * 3. Dirty hack to remove browser generated whitespace between elements that
+ *    render as `display: inline-block`.
  */
 
 .l-grid {
   @include to-rem(margin-left, -$l-grid-gutter-base); // [1]
   display: block; // [2]
-
-  // Clear fix
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  font-size: 0; // [3]
 }
 
 
@@ -105,17 +94,21 @@ $l-grid-gutter-huge:                              $spacing-double !default;
    * 1. Cause columns to stack side-by-side.
    * 2. Space columns apart.
    * 3. Full-width unless told to behave otherwise.
-   * 4. Required to combine fluid widths and fixed gutters.
+   * 4. Align coloumns to the top of each other.
+   * 5. Reset font size to be the global default.
+   * 6. Required to combine fluid widths and fixed gutters.
    */
 
   .l-grid__item {
-    float: left; // [1]
+    display: inline-block; // [1]
     @include to-rem(padding-left, $l-grid-gutter-base); // [2]
     width: 100%; // [3]
+    vertical-align: top; // [4]
+    @include font-size($font-size); // [5]
 
     @if $friendly-box-model == false {
 
-      box-sizing: border-box; // [4]
+      box-sizing: border-box; // [6]
 
     }//endif
   }
@@ -183,47 +176,57 @@ $l-grid-gutter-huge:                              $spacing-double !default;
  * markup will display in order 4, 3, 2, 1 on your page.
  */
 
-.l-grid--reversed > .l-grid__item {float: right;}
-
-
-/**
- * Modifier: table display with options to set different vertical alignments.
- */
-
-.l-grid--table {
-  display: table;
+.l-grid--reversed {
+  direction: rtl;
+  text-align: left;
 
   > .l-grid__item {
-    display: table-cell;
-    float: none;
+    direction: ltr;
+    text-align: left;
   }
 }
 
-@if $l-grid-breakpoint-toggle-table {
-  @include generate-at-breakpoints('.l-grid--table', $l-grid-breakpoints) {
-    display: table;
 
-    > .l-grid__item {
-      display: table-cell;
-      float: none;
-    }
-  }
-}// end if
+/**
+ * Modifier: vertical align middle.
+ */
 
-// Middle vertical alignment
-.l-grid--table--v-align-middle > .l-grid__item {vertical-align: middle;}
+.l-grid--align-middle > .l-grid__item {vertical-align: middle;}
 
-@if $l-grid-breakpoint-toggle-table-v-align-middle {
-  @include generate-at-breakpoints(
-    '.l-grid--table--v-align-middle{bp} > .l-grid__item', $l-grid-breakpoints) {
-    vertical-align: middle;}
-}// end if
 
-// Bottom vertical alignment
-.l-grid--table--v-align-bottom > .l-grid__item {vertical-align: bottom;}
+/**
+ * Modifier: vertical align bottom.
+ */
 
-@if $l-grid-breakpoint-toggle-table-v-align-bottom {
-  @include generate-at-breakpoints(
-    '.l-grid--table--v-align-bottom{bp} > .l-grid__item', $l-grid-breakpoints) {
-    vertical-align: bottom;}
-}// end if
+.l-grid--align-bottom > .l-grid__item {vertical-align: bottom;}
+
+
+/**
+ * Modifier: align right.
+ */
+
+.l-grid--align-right {
+  text-align: right;
+
+  > .l-grid__item {text-align: left;}
+}
+
+
+/**
+ * Modifier: align center.
+ */
+
+.l-grid--align-center {
+  text-align: center;
+
+  > .l-grid__item {text-align: left;}
+}
+
+
+/**
+ * Modifier: shrink wrap.
+ *
+ * Make it be the width of it's content.
+ */
+
+.l-grid--shrink-wrap > .l-grid__item {width: auto;}
