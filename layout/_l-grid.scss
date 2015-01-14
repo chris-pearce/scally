@@ -52,8 +52,7 @@
  */
 
 // Which breakpoints do you want to use?
-$l-grid-breakpoints:    $default-breakpoints
-!default;
+$l-grid-breakpoints:    $default-breakpoints !default;
 
 // Gutter sizes
 $l-grid-gutter-base:    $spacing-base !default;
@@ -62,8 +61,7 @@ $l-grid-gutter-tiny:    $spacing-third !default;
 
 $l-grid-gutter-small:   $spacing-half !default;
 
-$l-grid-gutter-large:   $spacing-base-plus-half
-!default;
+$l-grid-gutter-large:   $spacing-base-plus-half !default;
 
 $l-grid-gutter-huge:    $spacing-double !default;
 
