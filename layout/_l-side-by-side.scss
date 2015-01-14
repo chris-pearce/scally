@@ -22,6 +22,16 @@
  * Settings.
  */
 
+// Toggle on/off certain styles and treatments
+
+// Make linear i.e. stack them
+$l-side-by-side-apply-linear:       true !default;
+
+// At what breakpoint to make linear? Can be one of the main breakpoints or any
+// interger
+// N.B. served via a `max-width` media query
+$l-side-by-side-apply-linear-when:  palm !default;
+
 // Gutter sizes
 $l-side-by-side-gutter-base:        $spacing-base !default;
 
@@ -32,14 +42,6 @@ $l-side-by-side-gutter-small:       $spacing-half !default;
 $l-side-by-side-gutter-large:       $spacing-base-plus-half !default;
 
 $l-side-by-side-gutter-huge:        $spacing-double !default;
-
-// Remove i.e. stack them
-$l-side-by-side-remove:             true !default;
-
-// At what breakpoint to remove, can be one of the main breakpoints or any
-// interger
-// N.B. served via a `max-width` media query
-$l-side-by-side-remove-when:        palm !default;
 
 
 /**
@@ -153,9 +155,8 @@ $l-side-by-side-remove-when:        palm !default;
      * rather than the rule.
      */
 
-    @if $l-side-by-side-remove {
-
-      @include respond-to($l-side-by-side-remove-when, max) {
+    @if $l-side-by-side-apply-linear {
+      @include respond-to($l-side-by-side-apply-linear-when, max) {
 
         .l-side-by-side--remove > & {
           float: none;
@@ -196,7 +197,6 @@ $l-side-by-side-remove-when:        palm !default;
       }
 
     }// endif
-
   }
 
 

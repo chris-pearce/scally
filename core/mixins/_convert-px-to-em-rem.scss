@@ -53,7 +53,6 @@
       $values: append($values, if(type-of($s) == number, #{$s / $context}em,
         $s));
     }
-
   }
 
   $value: join((), $values, if($sublists, comma, space));
@@ -61,7 +60,6 @@
   @each $prop in $properties {
     #{$prop}: $value#{$important};
   }
-
 }
 
 
@@ -92,7 +90,6 @@
       $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
         $s));
     }
-
   }
 
   $value: join((), $values, if($sublists, comma, space));
@@ -100,5 +97,4 @@
   @each $prop in $properties {
     #{$prop}: $value#{$sledgehammer};
   }
-
 }

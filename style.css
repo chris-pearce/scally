@@ -1152,7 +1152,7 @@ abbr[title] {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Text inputs and `select`s styles.
@@ -1485,7 +1485,7 @@ canvas {
     content: ""; }
 
   /**
-   * h5bp.com/t
+   * h5bp.com/t.
    */
   thead {
     display: table-header-group; }
@@ -1571,7 +1571,10 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Widths.
  */
 .l-container {
   width: 92%;
@@ -1641,32 +1644,46 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Apply at these breakpoints.
+ */
+/**
+ * Gutter sizes.
+ */
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overriden and will be set to `true`.
  */
 /**
  * Grid container.
  *
  * 1. Negative `margin-left` to negate the columns gutters.
  * 2. So it can work on inline elements e.g. `span`.
+ * 3. Dirty hack to remove browser generated whitespace between elements that
+ *    render as `display: inline-block`.
  */
 .l-grid {
   margin-left: -1.5rem;
-  display: block; }
-  .l-grid:after {
-    content: "";
-    display: table;
-    clear: both; }
+  display: block;
+  font-size: 0; }
 
 /**
  * 1. Cause columns to stack side-by-side.
  * 2. Space columns apart.
  * 3. Full-width unless told to behave otherwise.
- * 4. Required to combine fluid widths and fixed gutters.
+ * 4. Align coloumns to the top of each other.
+ * 5. Reset font size to be the global default.
+ * 6. Required to combine fluid widths and fixed gutters.
  */
 .l-grid__item {
-  float: left;
+  display: inline-block;
   padding-left: 1.5rem;
-  width: 100%; }
+  width: 100%;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.5; }
 
 /**
  * Modifier: gutterless.
@@ -1714,23 +1731,48 @@ h6:last-child,
  * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
  * markup will display in order 4, 3, 2, 1 on your page.
  */
-.l-grid--reversed > .l-grid__item {
-  float: right; }
+.l-grid--reversed {
+  direction: rtl;
+  text-align: left; }
+  .l-grid--reversed > .l-grid__item {
+    direction: ltr;
+    text-align: left; }
 
 /**
- * Modifier: table display with options to set different vertical alignments.
+ * Modifier: vertical align middle.
  */
-.l-grid--table {
-  display: table; }
-  .l-grid--table > .l-grid__item {
-    display: table-cell;
-    float: none; }
-
-.l-grid--table--v-align-middle > .l-grid__item {
+.l-grid--align-middle > .l-grid__item {
   vertical-align: middle; }
 
-.l-grid--table--v-align-bottom > .l-grid__item {
+/**
+ * Modifier: vertical align bottom.
+ */
+.l-grid--align-bottom > .l-grid__item {
   vertical-align: bottom; }
+
+/**
+ * Modifier: align right.
+ */
+.l-grid--align-right {
+  text-align: right; }
+  .l-grid--align-right > .l-grid__item {
+    text-align: left; }
+
+/**
+ * Modifier: align center.
+ */
+.l-grid--align-center {
+  text-align: center; }
+  .l-grid--align-center > .l-grid__item {
+    text-align: left; }
+
+/**
+ * Modifier: shrink wrap.
+ *
+ * Make it be the width of it's content.
+ */
+.l-grid--shrink-wrap > .l-grid__item {
+  width: auto; }
 
 /* ============================================================================
    @LAYOUT -> GRID -> PULL
@@ -1933,7 +1975,7 @@ h6:last-child,
   width: auto; }
 
 /**
- * Modifier: remove.
+ * Modifier: make linear.
  *
  * Turn off the side-by-side layout so the two elements stack on top of
  * each other at the palm breakpoint (or whatever you specify) and provide
@@ -1973,7 +2015,7 @@ h6:last-child,
    * Modifiers: vertical alignments.
    */
   /**
-   * Modifier: remove.
+   * Modifier: make linear.
    */ }
   .l-side-by-side-alt--reversed > .l-side-by-side-alt__left, .l-side-by-side-alt--reversed >
   .l-side-by-side-alt__right {
@@ -2008,7 +2050,7 @@ h6:last-child,
    * Remove the gutter.
    */
   /**
-   * Modifier: remove.
+   * Modifier: make linear.
    */
   /**
    * Need to turn off responsive images otherwise it breaks.

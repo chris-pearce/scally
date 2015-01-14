@@ -22,6 +22,7 @@
    @include linear-gradient(blue, red, top, true);
  */
 
+
 @mixin linear-gradient($from, $to, $dir: bottom, $ie-9-fallback: false) {
 
   background-image: linear-gradient(to $dir, $from, $to);

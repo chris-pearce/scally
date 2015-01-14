@@ -23,6 +23,16 @@
  * Settings.
  */
 
+// Toggle on/off certain styles and treatments
+
+// Make linear i.e. stack them
+$l-side-by-side-alt-apply-linear:       true !default;
+
+// At what breakpoint to make linear? Can be one of the main breakpoints or any
+// interger
+// N.B. served via a `max-width` media query
+$l-side-by-side-alt-apply-linear-when:  palm !default;
+
 // Gutter sizes
 $l-side-by-side-alt-gutter-base:        $spacing-base !default;
 
@@ -33,14 +43,6 @@ $l-side-by-side-alt-gutter-small:       $spacing-half !default;
 $l-side-by-side-alt-gutter-large:       $spacing-base-plus-half !default;
 
 $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
-
-// Remove i.e. stack them
-$l-side-by-side-alt-remove:             true !default;
-
-// At what breakpoint to remove, can be one of the main breakpoints or any
-// interger
-// N.B. served via a `max-width` media query
-$l-side-by-side-alt-remove-when:        palm !default;
 
 
 /**
@@ -74,7 +76,7 @@ $l-side-by-side-alt-remove-when:        palm !default;
 
 
 /**
- * Modifier: remove.
+ * Modifier: make linear.
  *
  * Turn off the side-by-side layout so the two elements stack on top of
  * each other at the palm breakpoint (or whatever you specify) and provide
@@ -92,12 +94,10 @@ $l-side-by-side-alt-remove-when:        palm !default;
  *    a stacked layout.
  */
 
-@if $l-side-by-side-alt-remove {
-
-  @include respond-to($l-side-by-side-alt-remove-when, max) {
+@if $l-side-by-side-alt-apply-linear {
+  @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
     .l-side-by-side-alt--remove {direction: ltr;} // [1]
   }
-
 }// end if
 
 
@@ -136,17 +136,14 @@ $l-side-by-side-alt-remove-when:        palm !default;
 
 
     /**
-     * Modifier: remove.
+     * Modifier: make linear.
      */
 
-    @if $l-side-by-side-alt-remove {
-
-      @include respond-to($l-side-by-side-alt-remove-when, max) {
+    @if $l-side-by-side-alt-apply-linear {
+      @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
         .l-side-by-side-alt--remove > & {display: block;}
       }
-
     }// end if
-
   }
 
 
@@ -212,12 +209,11 @@ $l-side-by-side-alt-remove-when:        palm !default;
 
 
     /**
-     * Modifier: remove.
+     * Modifier: make linear.
      */
 
-    @if $l-side-by-side-alt-remove {
-
-      @include respond-to($l-side-by-side-alt-remove-when, max) {
+    @if $l-side-by-side-alt-apply-linear {
+      @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
 
         .l-side-by-side-alt--remove > & {
           padding-right: 0;
@@ -252,7 +248,6 @@ $l-side-by-side-alt-remove-when:        palm !default;
           .l-side-by-side-alt--remove.l-side-by-side-alt--flush > & {margin-bottom: 0;}
 
       }
-
     }// endif
 
 
@@ -270,14 +265,10 @@ $l-side-by-side-alt-remove-when:        palm !default;
          * Bring back responsive images for stacked version.
          */
 
-        @if $l-side-by-side-alt-remove and $apply-responsive-images {
-
-          @include respond-to($l-side-by-side-alt-remove-when, max) {
+        @if $l-side-by-side-alt-apply-linear and $apply-responsive-images {
+          @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
             max-width: 100%;
           }
-
         }// end if
-
       }
-
   }
