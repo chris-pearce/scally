@@ -7,8 +7,7 @@
  * Settings.
  */
 
-// Apply responsive images
-$responsive-images:                                   true !default;
+$apply-responsive-images:                             true !default;
 
 $google-map-selector-to-turn-off-responsive-images:   ".gm-style" !default;
 
@@ -36,8 +35,7 @@ video {vertical-align: middle;}
 
 img {
 
-  @if $responsive-images {
-
+  @if $apply-responsive-images {
     max-width: 100%; // [1]
     height: auto; // [1]
 
@@ -47,7 +45,6 @@ img {
      */
 
     #{$google-map-selector-to-turn-off-responsive-images} & {max-width: none;}
-
   }
 
   font-style: italic; // [2]

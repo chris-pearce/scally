@@ -14,19 +14,19 @@
  * Settings.
  */
 
-// Toggles
-$c-btn-hover-styles:                      true !default;
+// Toggle on/off certain styles and treatments
+$c-btn-apply-hover-styles:                true !default;
 
-$c-btn-border:                            false !default;
+$c-btn-apply-border:                      false !default;
 
-$c-btn-rounded-corners:                   false !default;
+$c-btn-apply-rounded-corners:             false !default;
 
-$c-btn-group-rounded-corners:             true !default;
+$c-btn-apply-group-rounded-corners:       true !default;
 
 // Box sizing, here we set a variable assuming that `box-sizing: border-box;`
 // is not set globally. If it has been previously been defined, the following
 // variable will be overriden and will be set to `true`.
-$friendly-box-model:                      false !default;
+$apply-friendly-box-model:                      false !default;
 
 // Colours
 $c-btn-background-colour:                 $colour-primary !default;
@@ -126,20 +126,16 @@ $c-btn-hover-transition-timing-function:  linear !default;
   @include to-rem(padding, $c-btn-padding-base / 2 $c-btn-padding-base);
 
   // Apply a border
-  @if $c-btn-border {
-
+  @if $c-btn-apply-border {
     @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
-
   }// endif
 
   // Apply rounded corners
-  @if $c-btn-rounded-corners {
-
+  @if $c-btn-apply-rounded-corners {
     // N.B. ugly hack in order to increase the specificty to override the
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
     html & {@include to-rem(border-radius, $c-btn-rounded-corners-size);}
-
   }// endif
 
   // Foreground colour
@@ -149,14 +145,12 @@ $c-btn-hover-transition-timing-function:  linear !default;
   &:active {color: $c-btn-foreground-colour;}
 
   // Apply hover/focus styles
-  @if $c-btn-hover-styles {
-
+  @if $c-btn-apply-hover-styles {
     &:hover,
     &:focus {
       opacity: $c-btn-hover-opacity-strength;
       transition: opacity #{$c-btn-hover-transition-duration}s $c-btn-hover-transition-timing-function;
     }
-
   }// endif
 }
 
@@ -170,10 +164,8 @@ $c-btn-hover-transition-timing-function:  linear !default;
   background-color: $c-btn-background-colour-secondary;
 
   // Apply a border
-  @if $c-btn-border {
-
+  @if $c-btn-apply-border {
     @include to-rem(border-color, $c-btn-border-colour-secondary);
-
   }// endif
 
   // Foreground colour
@@ -225,8 +217,7 @@ $c-btn-hover-transition-timing-function:  linear !default;
   display: block;
   width: 100%;
 
-  @if $friendly-box-model == false {
-
+  @if $apply-friendly-box-model == false {
     /**
      * Remove paddings so that widths and paddings don't conflict.
      *
@@ -236,7 +227,6 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
     padding-right: 0;
     padding-left: 0;
-
   }// endif
 }
 
@@ -283,11 +273,9 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
   .btn--main {
 
-    @if $c-btn-border == false {
-
+    @if $c-btn-apply-border == false {
       @include to-rem(border, $c-btn-border-thickness $c-btn-border-style
         $c-btn-border-colour);
-
     }
 
     // Turn off right borders so they don't double up, except for the last
@@ -296,21 +284,17 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
     // Turn off rounded corners if rounded corners are on by default as only
     // the first and last buttons in the group need rounded corners
-    @if $c-btn-rounded-corners {
-
+    @if $c-btn-apply-rounded-corners {
       border-radius: 0;
-
     }
 
     // Round off the first and last buttons in the group
-    @if $c-btn-group-rounded-corners or $c-btn-rounded-corners {
-
+    @if $c-btn-apply-group-rounded-corners or $c-btn-rounded-corners {
       &:first-child {@include to-rem(border-top-left-radius
         border-bottom-left-radius, $c-btn-rounded-corners-size);}
 
       &:last-child {@include to-rem(border-top-right-radius
         border-bottom-right-radius, $c-btn-rounded-corners-size);}
-
     }
 
   }
@@ -338,8 +322,7 @@ $c-btn-hover-transition-timing-function:  linear !default;
       &:not(:last-child) {border-bottom: 0;}
 
       // Round off the first and last buttons in the group
-      @if $c-btn-group-rounded-corners or $c-btn-rounded-corners {
-
+      @if $c-btn-apply-group-rounded-corners or $c-btn-apply-rounded-corners {
         &:first-child {
           border-bottom-left-radius: 0;
           @include to-rem(border-top-left-radius border-top-right-radius,
@@ -351,7 +334,6 @@ $c-btn-hover-transition-timing-function:  linear !default;
           @include to-rem(border-bottom-left-radius
             border-bottom-right-radius, $c-btn-rounded-corners-size);
         }
-
       }
     }
   }

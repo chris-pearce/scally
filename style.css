@@ -1152,7 +1152,10 @@ abbr[title] {
  * Settings.
  */
 /**
- * Text inputs and `select`s.
+ * Toggle on/off certain styles and treatments
+ */
+/**
+ * Text inputs and `select`s styles.
  */
 /**
  * Indicate that `label` will shift focus to the associated `input` element.
@@ -1185,8 +1188,8 @@ input[type="search"] {
  * Remove rounded corners that iOS applies to all `input` buttons, see:
  * https://github.com/necolas/normalize.css/issues/178. And certain browsers
  * e.g. Chrome, apply rounded corners to `select` lists so if we haven't opted
- * in for rounded corners via the `$text-input-and-select-styles` and
- * `$text-input-and-select-rounded-corners` settings then turn them off.
+ * in for rounded corners via the `$apply-text-input-and-select-styles` and
+ * `$apply-text-input-and-select-rounded-corners` settings then turn them off.
  */
 input[type="submit"],
 input[type="button"],
@@ -1645,29 +1648,25 @@ h6:last-child,
  *
  * 1. Negative `margin-left` to negate the columns gutters.
  * 2. So it can work on inline elements e.g. `span`.
- * 3. Dirty hack to remove browser generated whitespace between elements that
- *    render as `display: inline-block`.
  */
 .l-grid {
   margin-left: -1.5rem;
-  display: block;
-  font-size: 0; }
+  display: block; }
+  .l-grid:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 /**
  * 1. Cause columns to stack side-by-side.
  * 2. Space columns apart.
  * 3. Full-width unless told to behave otherwise.
- * 4. Align coloumns to the top of each other.
- * 5. Reset font size to be the global default.
- * 6. Required to combine fluid widths and fixed gutters.
+ * 4. Required to combine fluid widths and fixed gutters.
  */
 .l-grid__item {
-  display: inline-block;
+  float: left;
   padding-left: 1.5rem;
-  width: 100%;
-  vertical-align: top;
-  font-size: 1rem;
-  line-height: 1.5; }
+  width: 100%; }
 
 /**
  * Modifier: gutterless.
@@ -1715,48 +1714,23 @@ h6:last-child,
  * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
  * markup will display in order 4, 3, 2, 1 on your page.
  */
-.l-grid--reversed {
-  direction: rtl;
-  text-align: left; }
-  .l-grid--reversed > .l-grid__item {
-    direction: ltr;
-    text-align: left; }
+.l-grid--reversed > .l-grid__item {
+  float: right; }
 
 /**
- * Modifier: vertical align middle.
+ * Modifier: table display with options to set different vertical alignments.
  */
-.l-grid--align-middle > .l-grid__item {
+.l-grid--table {
+  display: table; }
+  .l-grid--table > .l-grid__item {
+    display: table-cell;
+    float: none; }
+
+.l-grid--table--v-align-middle > .l-grid__item {
   vertical-align: middle; }
 
-/**
- * Modifier: vertical align bottom.
- */
-.l-grid--align-bottom > .l-grid__item {
+.l-grid--table--v-align-bottom > .l-grid__item {
   vertical-align: bottom; }
-
-/**
- * Modifier: align right.
- */
-.l-grid--align-right {
-  text-align: right; }
-  .l-grid--align-right > .l-grid__item {
-    text-align: left; }
-
-/**
- * Modifier: align center.
- */
-.l-grid--align-center {
-  text-align: center; }
-  .l-grid--align-center > .l-grid__item {
-    text-align: left; }
-
-/**
- * Modifier: shrink wrap.
- *
- * Make it be the width of it's content.
- */
-.l-grid--shrink-wrap > .l-grid__item {
-  width: auto; }
 
 /* ============================================================================
    @LAYOUT -> GRID -> PULL

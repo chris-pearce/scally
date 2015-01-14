@@ -35,7 +35,7 @@ $u-width-breakpoint-toggle-full-bleed:                false !default;
 // Box sizing, here we set a variable assuming that `box-sizing: border-box;`
 // is not set globally. If it has been previously been defined, the following
 // variable will be overriden and will be set to `true`.
-$friendly-box-model:                                  false !default;
+$apply-friendly-box-model:                                  false !default;
 
 
 
@@ -126,7 +126,7 @@ $friendly-box-model:                                  false !default;
   display: block;
   width: 100%;
 
-  @if $friendly-box-model == false {
+  @if $apply-friendly-box-model == false {
     box-sizing: border-box;
   }//endif
 }
@@ -137,7 +137,7 @@ $friendly-box-model:                                  false !default;
     display: block;
     width: 100%;
 
-    @if $friendly-box-model == false {
+    @if $apply-friendly-box-model == false {
       box-sizing: border-box;
     }//endif
   }

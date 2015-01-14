@@ -270,7 +270,7 @@ $l-side-by-side-alt-remove-when:        palm !default;
          * Bring back responsive images for stacked version.
          */
 
-        @if $l-side-by-side-alt-remove and $responsive-images {
+        @if $l-side-by-side-alt-remove and $apply-responsive-images {
 
           @include respond-to($l-side-by-side-alt-remove-when, max) {
             max-width: 100%;

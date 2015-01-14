@@ -15,7 +15,7 @@
  */
 
 // Reset the `box-sizing` property to the more friendly `border-box` value
-$friendly-box-model: true !default;
+$apply-friendly-box-model: true !default;
 
 
 /**
@@ -110,7 +110,7 @@ menu {
  * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 
-@if $friendly-box-model {
+@if $apply-friendly-box-model {
 
   html {box-sizing: border-box;}
 
