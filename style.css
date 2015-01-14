@@ -141,9 +141,6 @@
  * - Desk:         1200px +
  * - Desk large:   1366px +
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/aLDdb
- *
  * @credit
  * - http://www.lukew.com/ff/entry.asp?1679
  * - https://developers.google.com/webmasters/smartphone-sites/details?hl=en
@@ -342,9 +339,6 @@
    @include to-em(padding margin, $spacing-base, $sledgehammer: !important);
    @include to-rem(margin, $spacing-base, !important);
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz/#convert-px-to-rem
- *
  * @credit
  * https://gist.github.com/2237465
  */
@@ -399,9 +393,6 @@
    @include font-size(24, inherit);
    @include font-size(24, normal);
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz#font-size
- *
  * @credit
  * https://github.com/inuitcss/tools.mixins/blob/master/_tools.mixins.scss
  */
@@ -410,9 +401,6 @@
    ========================================================================= */
 /**
  * Some simple gradients.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz#gradients
  */
 /**
  * Linear gradient accepting two colours, directional keywords (default
@@ -439,9 +427,6 @@
 /**
  * Setup media queries for minimum and maximum widths/heights, with width
  * being the default, also includes the ability to apply ranges.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz#media-queries
  *
  * @example
    @include respond-to(lap) {
@@ -508,9 +493,6 @@
  *
  * `.u-demo{bp} li` will produce the selector `.u-demo-from-lap li`.
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz
- *
  * @example
    @include generate-at-breakpoints('.u-text-size-small', all) {
      @include font-size($font-size-small);
@@ -566,9 +548,6 @@
       @include retina-bg-image("logo@2x.png", 100px, 25px);
     }
   *
-  * @demo
-  * http://codepen.io/team/westfieldlabs/full/Bcfyz#retina-bg-image
-  *
   * @credit
   * http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
  */
@@ -594,9 +573,6 @@
    @include target-IE10-and-up {
      .foo {background: orange;}
    }
-  *
-  * @demo
-  * http://codepen.io/team/westfieldlabs/full/Bcfyz#target-browsers
  */
 /**
  * Webkit.
@@ -620,9 +596,6 @@
        color: red;
      }
     }
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Bcfyz#target-headings
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss
@@ -992,9 +965,6 @@ th {
  * In addition to normalize.css we also apply a reset which mainly removes all
  * margins, paddings, and borders, from all elements, and applies the nice
  * `border-box` value for `box-sizing`. And a few other things.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/wGvdp
  */
 /**
  * Settings.
@@ -1142,9 +1112,6 @@ ins {
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/GHzvE
  */
 /**
  * Settings.
@@ -1175,20 +1142,12 @@ html {
 /* ============================================================================
    @CORE -> BASE -> ABBREVIATION
    ========================================================================= */
-/**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs/
- */
 abbr[title] {
   cursor: help; }
 
 /* ============================================================================
    @CORE -> BASE -> FORMS
    ========================================================================= */
-/**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs/#forms
- */
 /**
  * Settings.
  */
@@ -1223,13 +1182,17 @@ input[type="search"] {
   appearance: none; }
 
 /**
- * Remove rounded corners that iOS applies to all `input` buttons.
- * See: https://github.com/necolas/normalize.css/issues/178
+ * Remove rounded corners that iOS applies to all `input` buttons, see:
+ * https://github.com/necolas/normalize.css/issues/178. And certain browsers
+ * e.g. Chrome, apply rounded corners to `select` lists so if we haven't opted
+ * in for rounded corners via the `$text-input-and-select-styles` and
+ * `$text-input-and-select-rounded-corners` settings then turn them off.
  */
 input[type="submit"],
 input[type="button"],
 input[type="image"],
-input[type="reset"] {
+input[type="reset"],
+select {
   border-radius: 0; }
 
 /**
@@ -1309,10 +1272,6 @@ select {
    @CORE -> BASE -> DETAILS
    ========================================================================= */
 /**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs/
- */
-/**
  * Settings.
  */
 summary {
@@ -1326,9 +1285,6 @@ summary {
    ========================================================================= */
 /**
  * Double stranded for greater reuse.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs#headings
  */
 /**
  * Settings.
@@ -1395,10 +1351,6 @@ h6,
    @CORE -> BASE -> HORIZONTAL RULE
    ========================================================================= */
 /**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs/
- */
-/**
  * Settings.
  */
 hr {
@@ -1410,10 +1362,6 @@ hr {
 /* ============================================================================
    @CORE -> BASE -> LINKS
    ========================================================================= */
-/**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs/
- */
 /**
  * Settings.
  */
@@ -1427,10 +1375,6 @@ a {
 /* ============================================================================
    @CORE -> BASE -> MEDIA
    ========================================================================= */
-/**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs#images
- */
 /**
  * Settings.
  */
@@ -1480,10 +1424,6 @@ canvas {
 /* ============================================================================
    @CORE -> BASE -> PARAGRAPHS
    ========================================================================= */
-/**
- * @demo
- * http://codepen.io/team/westfieldlabs/full/zIgBs#paragraphs
- */
 /* ============================================================================
    @CORE -> BASE -> PRINT
    ========================================================================= */
@@ -1623,9 +1563,6 @@ h6:last-child,
  * layout consistent. The container is responsive in that it will be a fluid
  * width using '%' up until it hits it's maximum width. And it's center
  * aligned by default.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/GiCzg/
  */
 /**
  * Settings.
@@ -1694,9 +1631,6 @@ h6:last-child,
      <div class="l-grid__item u-one-third"> ... </div>
    </div>
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/cjyHK/
- *
  * @credit
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
  */
@@ -1711,25 +1645,29 @@ h6:last-child,
  *
  * 1. Negative `margin-left` to negate the columns gutters.
  * 2. So it can work on inline elements e.g. `span`.
+ * 3. Dirty hack to remove browser generated whitespace between elements that
+ *    render as `display: inline-block`.
  */
 .l-grid {
   margin-left: -1.5rem;
-  display: block; }
-  .l-grid:after {
-    content: "";
-    display: table;
-    clear: both; }
+  display: block;
+  font-size: 0; }
 
 /**
  * 1. Cause columns to stack side-by-side.
  * 2. Space columns apart.
  * 3. Full-width unless told to behave otherwise.
- * 4. Required to combine fluid widths and fixed gutters.
+ * 4. Align coloumns to the top of each other.
+ * 5. Reset font size to be the global default.
+ * 6. Required to combine fluid widths and fixed gutters.
  */
 .l-grid__item {
-  float: left;
+  display: inline-block;
   padding-left: 1.5rem;
-  width: 100%; }
+  width: 100%;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.5; }
 
 /**
  * Modifier: gutterless.
@@ -1777,23 +1715,48 @@ h6:last-child,
  * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
  * markup will display in order 4, 3, 2, 1 on your page.
  */
-.l-grid--reversed > .l-grid__item {
-  float: right; }
+.l-grid--reversed {
+  direction: rtl;
+  text-align: left; }
+  .l-grid--reversed > .l-grid__item {
+    direction: ltr;
+    text-align: left; }
 
 /**
- * Modifier: table display with options to set different vertical alignments.
+ * Modifier: vertical align middle.
  */
-.l-grid--table {
-  display: table; }
-  .l-grid--table > .l-grid__item {
-    display: table-cell;
-    float: none; }
-
-.l-grid--table--v-align-middle > .l-grid__item {
+.l-grid--align-middle > .l-grid__item {
   vertical-align: middle; }
 
-.l-grid--table--v-align-bottom > .l-grid__item {
+/**
+ * Modifier: vertical align bottom.
+ */
+.l-grid--align-bottom > .l-grid__item {
   vertical-align: bottom; }
+
+/**
+ * Modifier: align right.
+ */
+.l-grid--align-right {
+  text-align: right; }
+  .l-grid--align-right > .l-grid__item {
+    text-align: left; }
+
+/**
+ * Modifier: align center.
+ */
+.l-grid--align-center {
+  text-align: center; }
+  .l-grid--align-center > .l-grid__item {
+    text-align: left; }
+
+/**
+ * Modifier: shrink wrap.
+ *
+ * Make it be the width of it's content.
+ */
+.l-grid--shrink-wrap > .l-grid__item {
+  width: auto; }
 
 /* ============================================================================
    @LAYOUT -> GRID -> PULL
@@ -1801,9 +1764,6 @@ h6:last-child,
 /**
  * Pull grid items over to the right by certain amounts with the option to
  * apply at all the main breakpoints.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/cjyHK/
  *
  * @credit
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
@@ -1820,9 +1780,6 @@ h6:last-child,
 /**
  * Push grid items over to the left by certain amounts with the option to
  * apply at all the main breakpoints.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/cjyHK/
  *
  * @credit
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
@@ -1845,9 +1802,6 @@ h6:last-child,
      <div class="l-side-by-side__left"> ... </div>
      <div class="l-side-by-side__right"> ... </div>
    </div>
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#side-by-side
  *
  * @credit
  * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
@@ -1972,9 +1926,6 @@ h6:last-child,
      <div class="l-side-by-side-alt__left"> ... </div>
      <div class="l-side-by-side-alt__right"> ... </div>
    </div>
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#side-by-side-alt
  *
  * @credit
  * https://github.com/inuitcss/objects.flag/blob/master/_objects.flag.scss
@@ -2154,9 +2105,6 @@ h6:last-child,
    ========================================================================= */
 /**
  * Button component with a bunch of modifiers.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/Fvxju#button
  */
 /**
  * Settings.
@@ -2323,9 +2271,6 @@ h6:last-child,
    ========================================================================= */
 /**
  * Make an element expand to contain floated children.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#clear-fix
  */
 /**
  * Settings.
@@ -2343,9 +2288,6 @@ h6:last-child,
    ========================================================================= */
 /**
  * Creates arrow shapes using only CSS.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#arrow
  */
 /**
  * Settings.
@@ -2406,9 +2348,6 @@ h6:last-child,
  * N.B. this utility is dependant on the following utility:
  *
  * - Spacing.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#list
  */
 /**
  * Settings.
@@ -2457,9 +2396,6 @@ ol.u-list ol {
  *
  * @consideration
  * The spacer utilities could replace this?
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#list-block
  *
  * @credit
  * https://github.com/inuitcss/objects.list-block/blob/master/_objects.list-block.scss
@@ -2541,9 +2477,6 @@ ol.u-list ol {
    </ul>
  *
  * Or you can omit the closing `li` which we don't recommend :)
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#list-inline
  */
 /**
  * Settings.
@@ -2693,9 +2626,6 @@ li:before {
    ========================================================================= */
 /**
  * Various handy utilities for text.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#text
  */
 /**
  * Settings.
@@ -3287,9 +3217,6 @@ li:before {
  * A table utility that provides very common table styles which can be
  * extended with a number of modifiers e.g. `.u-table--striped` which applies
  * a background colour to every odd row.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#table
  */
 /**
  * Settings.
@@ -3371,9 +3298,6 @@ li:before {
      <!-- The target -->
      <div class="u-drop-down__target"> ... </div>
    </div>
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#drop-down
  */
 /**
  * Settings.
@@ -3417,9 +3341,6 @@ li:before {
  * Apply different alignments to elements.
  *
  * N.B. text alignments can be found in the Text -> Alignment utility.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#alignments
  */
 /**
  * Settings.
@@ -3517,9 +3438,6 @@ li:before {
    ========================================================================= */
 /**
  * Replacing some text with an image.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#image-replacement
  */
 /**
  * Settings.
@@ -3557,9 +3475,6 @@ li:before {
      <span class="u-link-complex__target">target</span>
    </a>
  *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#link-complex
- *
  * @credit
  * https://github.com/suitcss/utils-link/blob/master/lib/link.css
  */
@@ -3590,9 +3505,6 @@ li:before {
    ========================================================================= */
 /**
  * Make a link not look like a link.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#link-disguised
  */
 /**
  * Settings.
@@ -3621,9 +3533,6 @@ li:before {
 /**
  * An underlined link set via `text-decoration: underline;` is a very common
  * style however they're times when the underline isn't required.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#link-no-underline
  */
 /**
  * Settings.
@@ -3647,9 +3556,6 @@ li:before {
  * eventually slowing down and stopping as if friction is slowing it down. You
  * might think that any element with scrolling would have this behavior as
  * well, but it doesn't. You can add it back by applying this utility.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#momentum-scrolling
  */
 /**
  * Settings.
@@ -3666,9 +3572,6 @@ li:before {
    ========================================================================= */
 /**
  * Simply make an element floated or remove it.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#float
  */
 /**
  * Settings.
@@ -3703,9 +3606,6 @@ li:before {
  *
  * N.B. this is one of the rare occasions where the class/placeholder is
  * shortened.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#nfbc
  *
  * @credit
  * https://github.com/suitcss/utils-layout/blob/master/lib/layout.css
@@ -3750,9 +3650,6 @@ li:before {
      <!-- Empty element to maintain aspect ratio -->
      <div class="u-flex-embed__ratio u-flex-embed__ratio--16-by-9"></div>
    </div>
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#flex-embed
  *
  * @credit
  * https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css
@@ -3812,9 +3709,6 @@ li:before {
  * rendering performance, but it's not wise to use on everything just for the
  * sake of hardware acceleration. So make sure to understand when and when
  * not to use this.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#gpu-accelerated
  */
 .u-gpu-accelerated {
   backface-visibility: hidden;
@@ -3826,9 +3720,6 @@ li:before {
    ========================================================================= */
 /**
  * Various utilities for positioning elements.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#position
  */
 /**
  * Settings.
@@ -3929,9 +3820,6 @@ li:before {
  *
  * @todo
  * Look at adding 'Flexbox'.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#display
  */
 /**
  * Settings.
@@ -4059,9 +3947,6 @@ li:before {
  * 5. Spacing negative:         negative [n]
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#spacing
  *
  * @credit
  * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/whitespace/_whitespace.scss
@@ -4703,9 +4588,6 @@ li:before {
    ========================================================================= */
 /**
  * Create a divider between elements.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#divider
  */
 /**
  * Settings.
@@ -4742,9 +4624,6 @@ li:before {
    ========================================================================= */
 /**
  * Easily create columns out of one element.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#columns
  */
 /**
  * Settings.
@@ -4797,9 +4676,6 @@ li:before {
    ========================================================================= */
 /**
  * Apply different overflow treatment to elements i.e. when to clip content.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#overflow
  */
 /**
  * Settings.
@@ -4877,9 +4753,6 @@ li:before {
  * N.B. this utility is dependant on the following utility:
  *
  * - Positioning.
- *
- * @demo
- * http://codepen.io/team/westfieldlabs/full/xFHfk#overlay
  */
 /**
  * Settings.
