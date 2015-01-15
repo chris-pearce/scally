@@ -13,53 +13,53 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-position-breakpoints:                          $default-breakpoints
+// Apply at these breakpoints
+$u-position-apply-at-breakpoints:                        $default-breakpoints
 !default;
 
-// What do you want to apply it too?
-$u-position-breakpoint-toggle-relative:           false !default;
+// From the above choose what you want to apply it too
+$u-position-apply-at-breakpoints-for-relative:           false !default;
 
-$u-position-breakpoint-toggle-absolute:           false !default;
+$u-position-apply-at-breakpoints-for-absolute:           false !default;
 
-$u-position-breakpoint-toggle-fixed:              false !default;
+$u-position-apply-at-breakpoints-for-fixed:              false !default;
 
-$u-position-breakpoint-toggle-static:             false !default;
+$u-position-apply-at-breakpoints-for-static:             false !default;
 
-$u-position-breakpoint-toggle-left:               false !default;
+$u-position-apply-at-breakpoints-for-left:               false !default;
 
-$u-position-breakpoint-toggle-right:              false !default;
+$u-position-apply-at-breakpoints-for-right:              false !default;
 
-$u-position-breakpoint-toggle-top:                false !default;
+$u-position-apply-at-breakpoints-for-top:                false !default;
 
-$u-position-breakpoint-toggle-bottom:             false !default;
+$u-position-apply-at-breakpoints-for-bottom:             false !default;
 
-$u-position-breakpoint-toggle-top-left:           false !default;
+$u-position-apply-at-breakpoints-for-top-left:           false !default;
 
-$u-position-breakpoint-toggle-top-right:          false !default;
+$u-position-apply-at-breakpoints-for-top-right:          false !default;
 
-$u-position-breakpoint-toggle-bottom-left:        false !default;
+$u-position-apply-at-breakpoints-for-bottom-left:        false !default;
 
-$u-position-breakpoint-toggle-bottom-right:       false !default;
+$u-position-apply-at-breakpoints-for-bottom-right:       false !default;
 
-$u-position-breakpoint-toggle-pin-all:            false !default;
+$u-position-apply-at-breakpoints-for-pin-all:            false !default;
 
-$u-position-breakpoint-toggle-pin-ends:           false !default;
+$u-position-apply-at-breakpoints-for-pin-ends:           false !default;
 
-$u-position-breakpoint-toggle-pin-sides:          false !default;
+$u-position-apply-at-breakpoints-for-pin-sides:          false !default;
 
-$u-position-breakpoint-toggle-pin-sides-top:      false !default;
+$u-position-apply-at-breakpoints-for-pin-sides-top:      false !default;
 
-$u-position-breakpoint-toggle-pin-sides-bottom:   false !default;
+$u-position-apply-at-breakpoints-for-pin-sides-bottom:   false !default;
 
-$u-position-breakpoint-toggle-v-middle:           false !default;
+$u-position-apply-at-breakpoints-for-v-middle:           false !default;
 
-$u-position-breakpoint-toggle-h-middle:           false !default;
+$u-position-apply-at-breakpoints-for-h-middle:           false !default;
 
-$u-position-breakpoint-toggle-middle:             false !default;
+$u-position-apply-at-breakpoints-for-middle:             false !default;
 
 
 /**
@@ -70,36 +70,36 @@ $u-position-breakpoint-toggle-middle:             false !default;
 %u-position-relative,
 .u-position-relative {position: relative;}
 
-@if $u-position-breakpoint-toggle-relative {
+@if $u-position-apply-at-breakpoints-for-relative {
   @include generate-at-breakpoints('.u-position-relative',
-    $u-position-breakpoints) {position: relative;}
+    $u-position-apply-at-breakpoints) {position: relative;}
 }// end if
 
 // Absolute
 %u-position-absolute,
 .u-position-absolute {position: absolute;}
 
-@if $u-position-breakpoint-toggle-absolute {
+@if $u-position-apply-at-breakpoints-for-absolute {
   @include generate-at-breakpoints('.u-position-absolute',
-    $u-position-breakpoints) {position: absolute;}
+    $u-position-apply-at-breakpoints) {position: absolute;}
 }// end if
 
 // Fixed
 %u-position-fixed,
 .u-position-fixed {position: fixed;}
 
-@if $u-position-breakpoint-toggle-fixed {
+@if $u-position-apply-at-breakpoints-for-fixed {
   @include generate-at-breakpoints('.u-position-fixed',
-    $u-position-breakpoints) {position: fixed;}
+    $u-position-apply-at-breakpoints) {position: fixed;}
 }// end if
 
 // Static
 %u-position-static,
 .u-position-static {position: static;}
 
-@if $u-position-breakpoint-toggle-static {
+@if $u-position-apply-at-breakpoints-for-static {
   @include generate-at-breakpoints('.u-position-static',
-    $u-position-breakpoints) {position: static;}
+    $u-position-apply-at-breakpoints) {position: static;}
 }// end if
 
 
@@ -111,36 +111,36 @@ $u-position-breakpoint-toggle-middle:             false !default;
 %u-position-left,
 .u-position-left {left: 0;}
 
-@if $u-position-breakpoint-toggle-left {
+@if $u-position-apply-at-breakpoints-for-left {
   @include generate-at-breakpoints('.u-position-left',
-    $u-position-breakpoints) {left: 0;}
+    $u-position-apply-at-breakpoints) {left: 0;}
 }// end if
 
 // Right
 %u-position-right,
 .u-position-right {right: 0;}
 
-@if $u-position-breakpoint-toggle-right {
+@if $u-position-apply-at-breakpoints-for-right {
   @include generate-at-breakpoints('.u-position-right',
-    $u-position-breakpoints) {right: 0;}
+    $u-position-apply-at-breakpoints) {right: 0;}
 }// end if
 
 // Top
 %u-position-top,
 .u-position-top {top: 0;}
 
-@if $u-position-breakpoint-toggle-top {
+@if $u-position-apply-at-breakpoints-for-top {
   @include generate-at-breakpoints('.u-position-top',
-    $u-position-breakpoints) {top: 0;}
+    $u-position-apply-at-breakpoints) {top: 0;}
 }// end if
 
 // Bottom
 %u-position-bottom,
 .u-position-bottom {bottom: 0;}
 
-@if $u-position-breakpoint-toggle-bottom {
+@if $u-position-apply-at-breakpoints-for-bottom {
   @include generate-at-breakpoints('.u-position-bottom',
-    $u-position-breakpoints) {bottom: 0;}
+    $u-position-apply-at-breakpoints) {bottom: 0;}
 }// end if
 
 // Top left corner
@@ -150,9 +150,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   left: 0;
 }
 
-@if $u-position-breakpoint-toggle-top-left {
+@if $u-position-apply-at-breakpoints-for-top-left {
   @include generate-at-breakpoints('.u-position-top-left',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     top: 0;
     left: 0;
   }
@@ -165,9 +165,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   right: 0;
 }
 
-@if $u-position-breakpoint-toggle-top-right {
+@if $u-position-apply-at-breakpoints-for-top-right {
   @include generate-at-breakpoints('.u-position-top-right',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     top: 0;
     right: 0;
   }
@@ -180,9 +180,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   left: 0;
 }
 
-@if $u-position-breakpoint-toggle-bottom-left {
+@if $u-position-apply-at-breakpoints-for-bottom-left {
   @include generate-at-breakpoints('.u-position-bottom-left',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     bottom: 0;
     left: 0;
   }
@@ -195,9 +195,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   right: 0;
 }
 
-@if $u-position-breakpoint-toggle-bottom-right {
+@if $u-position-apply-at-breakpoints-for-bottom-right {
   @include generate-at-breakpoints('.u-position-bottom-right',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     bottom: 0;
     right: 0;
   }
@@ -212,9 +212,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   bottom: 0;
 }
 
-@if $u-position-breakpoint-toggle-pin-all {
+@if $u-position-apply-at-breakpoints-for-pin-all {
   @include generate-at-breakpoints('.u-position-pin-all',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     left: 0;
     right: 0;
     top: 0;
@@ -229,9 +229,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   bottom: 0;
 }
 
-@if $u-position-breakpoint-toggle-pin-ends {
+@if $u-position-apply-at-breakpoints-for-pin-ends {
   @include generate-at-breakpoints('.u-position-pin-ends',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     top: 0;
     bottom: 0;
   }
@@ -244,9 +244,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   right: 0;
 }
 
-@if $u-position-breakpoint-toggle-pin-sides {
+@if $u-position-apply-at-breakpoints-for-pin-sides {
   @include generate-at-breakpoints('.u-position-pin-sides',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     left: 0;
     right: 0;
   }
@@ -260,9 +260,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   top: 0;
 }
 
-@if $u-position-breakpoint-toggle-pin-sides-top {
+@if $u-position-apply-at-breakpoints-for-pin-sides-top {
   @include generate-at-breakpoints('.u-position-pin-sides-top',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     left: 0;
     right: 0;
     top: 0;
@@ -277,9 +277,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   bottom: 0;
 }
 
-@if $u-position-breakpoint-toggle-pin-sides-bottom {
+@if $u-position-apply-at-breakpoints-for-pin-sides-bottom {
   @include generate-at-breakpoints('.u-position-pin-sides-bottom',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     left: 0;
     right: 0;
     bottom: 0;
@@ -293,9 +293,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   transform: translateY(-50%);
 }
 
-@if $u-position-breakpoint-toggle-v-middle {
+@if $u-position-apply-at-breakpoints-for-v-middle {
   @include generate-at-breakpoints('.u-position-v-middle',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     top: 50%;
     transform: translateY(-50%);
   }
@@ -308,9 +308,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   transform: translateX(-50%);
 }
 
-@if $u-position-breakpoint-toggle-h-middle {
+@if $u-position-apply-at-breakpoints-for-h-middle {
   @include generate-at-breakpoints('.u-position-h-middle',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -324,9 +324,9 @@ $u-position-breakpoint-toggle-middle:             false !default;
   transform: translate(-50%, -50%);
 }
 
-@if $u-position-breakpoint-toggle-middle {
+@if $u-position-apply-at-breakpoints-for-middle {
   @include generate-at-breakpoints('.u-position-middle',
-    $u-position-breakpoints) {
+    $u-position-apply-at-breakpoints) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

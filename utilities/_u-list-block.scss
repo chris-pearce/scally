@@ -20,26 +20,29 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-list-block-breakpoints:                $default-breakpoints !default;
+// Apply at these breakpoints
+$u-list-block-apply-at-breakpoints:              $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-list-block-breakpoint-toggle-default:  false !default;
+// From the above choose what you want to apply it too
+$u-list-block-apply-at-breakpoints-for-default:  false !default;
 
-$u-list-block-breakpoint-toggle-tiny:     false !default;
+$u-list-block-apply-at-breakpoints-for-tiny:     false !default;
 
-$u-list-block-breakpoint-toggle-small:    false !default;
+$u-list-block-apply-at-breakpoints-for-small:    false !default;
 
-$u-list-block-breakpoint-toggle-large:    false !default;
+$u-list-block-apply-at-breakpoints-for-large:    false !default;
 
-$u-list-block-breakpoint-toggle-huge:     false !default;
+$u-list-block-apply-at-breakpoints-for-huge:     false !default;
 
-$u-list-block-breakpoint-toggle-border:   false !default;
+$u-list-block-apply-at-breakpoints-for-border:   false !default;
 
-// Whitespace
+/**
+ * Whitespace.
+ */
+
 $u-list-block-item-padding-base:          $spacing-half !default;
 
 $u-list-block-item-padding-tiny:          $spacing-quarter !default;
@@ -50,7 +53,10 @@ $u-list-block-item-padding-large:         $spacing-base !default;
 
 $u-list-block-item-padding-huge:          $spacing-double !default;
 
-// Border
+/**
+ * Border.
+ */
+
 $u-list-block-border-colour:              darken($colour-white, 10%) !default;
 
 $u-list-block-border-thickness:           1 !default;
@@ -68,9 +74,9 @@ $u-list-block-border-thickness:           1 !default;
   }
 }
 
-@if $u-list-block-breakpoint-toggle-default {
+@if $u-list-block-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.u-list-block{bp} > li',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
 
       &,
       > a {@include to-rem(padding, $u-list-block-item-padding-base);}
@@ -96,9 +102,9 @@ $u-list-block-border-thickness:           1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-tiny);}
 }
 
-@if $u-list-block-breakpoint-toggle-tiny {
+@if $u-list-block-apply-at-breakpoints-for-tiny {
   @include generate-at-breakpoints('.u-list-block--tiny{bp} > li',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
 
       &,
       > a {@include to-rem(padding, $u-list-block-item-padding-tiny);}
@@ -120,9 +126,9 @@ $u-list-block-border-thickness:           1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-small);}
 }
 
-@if $u-list-block-breakpoint-toggle-small {
+@if $u-list-block-apply-at-breakpoints-for-small {
   @include generate-at-breakpoints('.u-list-block--small{bp} > li',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
 
     &,
     > a {@include to-rem(padding, $u-list-block-item-padding-small);}
@@ -145,9 +151,9 @@ $u-list-block-border-thickness:           1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-large);}
 }
 
-@if $u-list-block-breakpoint-toggle-large {
+@if $u-list-block-apply-at-breakpoints-for-large {
   @include generate-at-breakpoints('.u-list-block--large{bp} > li',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
 
     &,
     > a {@include to-rem(padding, $u-list-block-item-padding-large);}
@@ -170,9 +176,9 @@ $u-list-block-border-thickness:           1 !default;
   > a {@include to-rem(margin, -$u-list-block-item-padding-huge);}
 }
 
-@if $u-list-block-breakpoint-toggle-huge {
+@if $u-list-block-apply-at-breakpoints-for-huge {
   @include generate-at-breakpoints('.u-list-block--huge{bp} > li',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
 
     &,
     > a {@include to-rem(padding, $u-list-block-item-padding-huge);}
@@ -197,9 +203,9 @@ $u-list-block-border-thickness:           1 !default;
     $u-list-block-border-colour);}
 }
 
-@if $u-list-block-breakpoint-toggle-border {
+@if $u-list-block-apply-at-breakpoints-for-border {
   @include generate-at-breakpoints('.u-list-block--border',
-    $u-list-block-breakpoints) {
+    $u-list-block-apply-at-breakpoints) {
     @include to-rem(border-top, $u-list-block-border-thickness solid
       $u-list-block-border-colour);
 

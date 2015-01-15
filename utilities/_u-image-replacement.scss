@@ -13,16 +13,16 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-image-replacement-breakpoints:                 $default-breakpoints !default;
+// Apply at these breakpoints
+$u-image-replacement-apply-at-breakpoints:               $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-image-replacement-breakpoint-toggle-default:   false !default;
+// From the above choose what you want to apply it too
+$u-image-replacement-apply-at-breakpoints-for-default:   false !default;
 
-$u-image-replacement-breakpoint-toggle-alt:       false !default;
+$u-image-replacement-apply-at-breakpoints-for-alt:       false !default;
 
 
 %u-image-replacement,
@@ -39,9 +39,9 @@ $u-image-replacement-breakpoint-toggle-alt:       false !default;
   }
 }
 
-@if $u-image-replacement-breakpoint-toggle-default {
+@if $u-image-replacement-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.u-image-replacement',
-    $u-image-replacement-breakpoints) {
+    $u-image-replacement-apply-at-breakpoints) {
     background-color: transparent;
     border: 0;
     overflow: hidden;
@@ -63,9 +63,9 @@ $u-image-replacement-breakpoint-toggle-alt:       false !default;
 %u-image-replacement-alt,
 .u-image-replacement-alt {text-indent: $off-screen-distance;}
 
-@if $u-image-replacement-breakpoint-toggle-alt {
+@if $u-image-replacement-apply-at-breakpoints-for-alt {
   @include generate-at-breakpoints('.u-image-replacement-alt',
-    $u-image-replacement-breakpoints) {
+    $u-image-replacement-apply-at-breakpoints) {
     text-indent: $off-screen-distance;
   }
 }// end if

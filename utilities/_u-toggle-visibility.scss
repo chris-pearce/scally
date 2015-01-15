@@ -14,14 +14,14 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
+// Apply at these breakpoints
 $u-toggle-visibility-breakpoints:                     $default-breakpoints
 !default;
 
-// What do you want to apply it too?
+// From the above choose what you want to apply it too
 $u-toggle-visibility-breakpoint-toggle-default:       false !default;
 
 $u-toggle-visibility-breakpoint-toggle-inline:        false !default;

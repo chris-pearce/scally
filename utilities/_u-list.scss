@@ -18,32 +18,38 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-list-breakpoints:                      $default-breakpoints !default;
+// Apply at these breakpoints
+$u-list-apply-at-breakpoints:                 $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-list-breakpoint-toggle-default:        false !default;
+// From the above choose what you want to apply it too
+$u-list-apply-at-breakpoints-for-default:     false !default;
 
-$u-list-breakpoint-toggle-unordered:      false !default;
+$u-list-apply-at-breakpoints-for-unordered:   false !default;
 
-$u-list-breakpoint-toggle-ordered:        false !default;
+$u-list-apply-at-breakpoints-for-ordered:     false !default;
 
-$u-list-breakpoint-toggle-nested:         false !default;
+$u-list-apply-at-breakpoints-for-nested:      false !default;
 
-// Indent
-$u-list-indent:                           $spacing-base !default;
+/**
+ * Indent.
+ */
 
-// Bullets
-$u-list-bullet-unordered-base:            disc !default;
+$u-list-indent:                               $spacing-base !default;
 
-$u-list-bullet-unordered-nested-once:     circle !default;
+/**
+ * Bullets.
+ */
 
-$u-list-bullet-unordered-nested-twice:    square !default;
+$u-list-bullet-unordered-base:                disc !default;
 
-$u-list-bullet-ordered:                   decimal !default;
+$u-list-bullet-unordered-nested-once:         circle !default;
+
+$u-list-bullet-unordered-nested-twice:        square !default;
+
+$u-list-bullet-ordered:                       decimal !default;
 
 
 /**
@@ -61,8 +67,8 @@ $u-list-bullet-ordered:                   decimal !default;
   ol {@include to-rem(margin-left, $u-list-indent);}
 }
 
-@if $u-list-breakpoint-toggle-default {
-  @include generate-at-breakpoints('.u-list', $u-list-breakpoints) {
+@if $u-list-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-list', $u-list-apply-at-breakpoints) {
     @include to-rem(margin-bottom, $u-list-indent);
 
     &,
@@ -85,8 +91,8 @@ $u-list-bullet-ordered:                   decimal !default;
 %ul.u-list,
 ul.u-list {list-style-type: $u-list-bullet-unordered-base;}
 
-@if $u-list-breakpoint-toggle-unordered {
-  @include generate-at-breakpoints('ul.u-list', $u-list-breakpoints) {
+@if $u-list-apply-at-breakpoints-for-unordered {
+  @include generate-at-breakpoints('ul.u-list', $u-list-apply-at-breakpoints) {
     list-style-type: $u-list-bullet-unordered-base;
   }
 }// end if
@@ -95,8 +101,8 @@ ul.u-list {list-style-type: $u-list-bullet-unordered-base;}
 %ol.u-list,
 ol.u-list {list-style-type: $u-list-bullet-ordered;}
 
-@if $u-list-breakpoint-toggle-ordered {
-  @include generate-at-breakpoints('ol.u-list', $u-list-breakpoints) {
+@if $u-list-apply-at-breakpoints-for-ordered {
+  @include generate-at-breakpoints('ol.u-list', $u-list-apply-at-breakpoints) {
     list-style-type: $u-list-bullet-ordered;
   }
 }// end if
@@ -120,9 +126,9 @@ ol.u-list {list-style-type: $u-list-bullet-ordered;}
 
   // Nested lists
   @each $u-list-type in (ul ol) {
-    @if $u-list-breakpoint-toggle-nested {
+    @if $u-list-apply-at-breakpoints-for-nested {
       @include generate-at-breakpoints("#{$u-list-type}.u-list{bp}",
-        $u-list-breakpoints) {
+        $u-list-apply-at-breakpoints) {
 
         // Unordered lists
         ul {

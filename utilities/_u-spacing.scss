@@ -36,27 +36,27 @@
 
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-spacing-breakpoints:             $default-breakpoints !default;
+// Apply at these breakpoints
+$u-spacing-apply-at-breakpoints:            $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-spacing-classes-for-breakpoints: () !default;
+// From the above choose what you want to apply it too
+$u-spacing-apply-classes-for-breakpoints:   () !default;
 
 // Spacing sizes
-$u-spacing-base:                    $spacing-base !default;
+$u-spacing-base:                            $spacing-base !default;
 
-$u-spacing-micro:                   $spacing-micro !default;
+$u-spacing-micro:                           $spacing-micro !default;
 
-$u-spacing-tiny:                    $spacing-third !default;
+$u-spacing-tiny:                            $spacing-third !default;
 
-$u-spacing-small:                   $spacing-half !default;
+$u-spacing-small:                           $spacing-half !default;
 
-$u-spacing-large:                   $spacing-base-plus-half !default;
+$u-spacing-large:                           $spacing-base-plus-half !default;
 
-$u-spacing-huge:                    $spacing-double !default;
+$u-spacing-huge:                            $spacing-double !default;
 
 
 /**
@@ -894,9 +894,9 @@ $u-spacing-types: (
   // No spacing classes
   @if str_index($abbreviation, "-none") != null {
     $class-name: ".u-s-#{$abbreviation}";
-    @if index($u-spacing-classes-for-breakpoints, $class-name) {
+    @if index($u-spacing-apply-classes-for-breakpoints, $class-name) {
       @include generate-at-breakpoints($class-name ,
-        $u-spacing-breakpoints) {
+        $u-spacing-apply-at-breakpoints) {
         @include to-rem($type, 0);
       }
     }
@@ -908,9 +908,9 @@ $u-spacing-types: (
     // Loop through the sizes
     @each $size in (base tiny small large huge) {
       $class-name: ".u-s-#{$abbreviation}-#{$size}";
-      @if index($u-spacing-classes-for-breakpoints, $class-name) != null {
+      @if index($u-spacing-apply-classes-for-breakpoints, $class-name) != null {
         @include generate-at-breakpoints($class-name,
-          $u-spacing-breakpoints) {
+          $u-spacing-apply-at-breakpoints) {
 
           // Get all the sizes
           $size-value: map-get($u-spacing-sizes, $size);

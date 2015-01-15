@@ -15,13 +15,13 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
+// Apply at these breakpoints
 $u-table-breakpoints:                           $default-breakpoints !default;
 
-// What do you want to apply it too?
+// From the above choose what you want to apply it too
 $u-table-breakpoint-toggle-default:             false !default;
 
 $u-table-breakpoint-toggle-striped:             false !default;
