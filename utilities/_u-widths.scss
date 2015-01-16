@@ -18,24 +18,28 @@
  * Settings.
  */
 
-// Apply at these breakpoints
-$u-width-intrinsic-breakpoints:                       (lap) !default;
+/**
+ * Toggle on/off certain styles and treatments.
+ */
 
-$u-width-percentage-breakpoints:                      (lap) !default;
+// Apply at these breakpoints
+$u-width-intrinsic-apply-at-breakpoints:                     (lap) !default;
+
+$u-width-percentage-apply-at-breakpoints:                    (lap) !default;
 
 // What intrinsic widths do you want to apply it too?
-$u-width-breakpoint-toggle-shrink-wrap:               false !default;
+$u-width-apply-at-breakpoints-for-shrink-wrap:               false !default;
 
-$u-width-breakpoint-toggle-fill-remaining-space:      false !default;
+$u-width-apply-at-breakpoints-for-fill-remaining-space:      false !default;
 
-$u-width-breakpoint-toggle-fill-remaining-space-alt:  false !default;
+$u-width-apply-at-breakpoints-for-fill-remaining-space-alt:  false !default;
 
-$u-width-breakpoint-toggle-full-bleed:                false !default;
+$u-width-apply-at-breakpoints-for-full-bleed:                false !default;
 
 // Box sizing, here we set a variable assuming that `box-sizing: border-box;`
 // is not set globally. If it has been previously been defined, the following
 // variable will be overriden and will be set to `true`.
-$apply-friendly-box-model:                                  false !default;
+$apply-friendly-box-model:                                   false !default;
 
 
 
@@ -56,9 +60,9 @@ $apply-friendly-box-model:                                  false !default;
   width: auto;
 }
 
-@if $u-width-breakpoint-toggle-shrink-wrap {
+@if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap',
-    $u-width-intrinsic-breakpoints) {
+    $u-width-intrinsic-apply-at-breakpoints) {
     display: block;
     float: left;
     width: auto;
@@ -69,9 +73,9 @@ $apply-friendly-box-model:                                  false !default;
 %u-width-shrink-wrap--right,
 .u-width-shrink-wrap--right {float: right;}
 
-@if $u-width-breakpoint-toggle-shrink-wrap {
+@if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap--right',
-    $u-width-intrinsic-breakpoints) {float: right;}
+    $u-width-intrinsic-apply-at-breakpoints) {float: right;}
 }// end if
 
 
@@ -90,9 +94,9 @@ $apply-friendly-box-model:                                  false !default;
   width: auto;
 }
 
-@if $u-width-breakpoint-toggle-fill-remaining-space {
+@if $u-width-apply-at-breakpoints-for-fill-remaining-space {
   @include generate-at-breakpoints('.u-width-fill-remaining-space',
-    $u-width-intrinsic-breakpoints) {
+    $u-width-intrinsic-apply-at-breakpoints) {
     display: block;
     overflow: hidden;
     width: auto;
@@ -107,9 +111,9 @@ $apply-friendly-box-model:                                  false !default;
   width: 10000px;
 }
 
-@if $u-width-breakpoint-toggle-fill-remaining-space-alt {
+@if $u-width-apply-at-breakpoints-for-fill-remaining-space-alt {
   @include generate-at-breakpoints('.u-width-fill-remaining-space-alt',
-    $u-width-intrinsic-breakpoints) {
+    $u-width-intrinsic-apply-at-breakpoints) {
     display: table-cell;
     max-width: 100%;
     width: 10000px;
@@ -131,9 +135,9 @@ $apply-friendly-box-model:                                  false !default;
   }//endif
 }
 
-@if $u-width-breakpoint-toggle-full-bleed {
+@if $u-width-apply-at-breakpoints-for-full-bleed {
   @include generate-at-breakpoints('.u-width-full-bleed',
-    $u-width-intrinsic-breakpoints) {
+    $u-width-intrinsic-apply-at-breakpoints) {
     display: block;
     width: 100%;
 
@@ -174,4 +178,4 @@ $apply-friendly-box-model:                                  false !default;
  */
 
 @include generate-percentage-classes-at-breakpoints(
-  $u-width-percentage-breakpoints);
+  $u-width-percentage-apply-at-breakpoints);

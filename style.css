@@ -2923,6 +2923,9 @@ li:before {
  * Settings.
  */
 /**
+ * Toggle on/off certain styles and treatments.
+ */
+/**
  * Intrinsic widths.
  */
 /**
@@ -3257,6 +3260,12 @@ li:before {
  */
 /**
  * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Cell padding.
+ */
+/**
+ * Cosmetics.
  */
 .u-table {
   width: 100%; }

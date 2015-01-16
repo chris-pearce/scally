@@ -158,11 +158,7 @@ A real common use case for this application is hiding UI at certain viewport siz
 
 So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display**](_u-display.scss) utility to achieve this, applying these steps:
 
-1. Turn the feature on by changing the [toggle setting](_u-display.scss#L44) to `true`:
-
-  ```
-  $u-display-breakpoint-toggle-hide: true;
-  ```
+1. Turn the feature on by changing the toggle setting to `true`:
 
  which will output (compile) the utility in a media query like so:
 

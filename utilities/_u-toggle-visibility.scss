@@ -18,15 +18,15 @@
  */
 
 // Apply at these breakpoints
-$u-toggle-visibility-breakpoints:                     $default-breakpoints
+$u-toggle-visibility-apply-at-breakpoints:                     $default-breakpoints
 !default;
 
 // From the above choose what you want to apply it too
-$u-toggle-visibility-breakpoint-toggle-default:       false !default;
+$u-toggle-visibility-apply-at-breakpoints-for-default:       false !default;
 
-$u-toggle-visibility-breakpoint-toggle-inline:        false !default;
+$u-toggle-visibility-apply-at-breakpoints-for-inline:        false !default;
 
-$u-toggle-visibility-breakpoint-toggle-inline-block:  false !default;
+$u-toggle-visibility-apply-at-breakpoints-for-inline-block:  false !default;
 
 // The state class that is powered by JavaScript
 $u-toggle-visibility-state-class:                     is-visible !default;
@@ -42,9 +42,9 @@ $u-toggle-visibility-state-class:                     is-visible !default;
   .no-js & {display: block;}
 }
 
-@if $u-toggle-visibility-breakpoint-toggle-default {
+@if $u-toggle-visibility-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.u-toggle-visibility',
-    $u-toggle-visibility-breakpoints) {
+    $u-toggle-visibility-apply-at-breakpoints) {
     display: none;
 
     &.#{$u-toggle-visibility-state-class},
@@ -64,9 +64,9 @@ $u-toggle-visibility-state-class:                     is-visible !default;
   .no-js & {display: inline;}
 }
 
-@if $u-toggle-visibility-breakpoint-toggle-inline {
+@if $u-toggle-visibility-apply-at-breakpoints-for-inline {
   @include generate-at-breakpoints('.u-toggle-visibility--inline',
-    $u-toggle-visibility-breakpoints) {
+    $u-toggle-visibility-apply-at-breakpoints) {
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline;}
   }
@@ -84,9 +84,9 @@ $u-toggle-visibility-state-class:                     is-visible !default;
   .no-js & {display: inline-block;}
 }
 
-@if $u-toggle-visibility-breakpoint-toggle-inline-block {
+@if $u-toggle-visibility-apply-at-breakpoints-for-inline-block {
   @include generate-at-breakpoints('.u-toggle-visibility--inline-block',
-    $u-toggle-visibility-breakpoints) {
+    $u-toggle-visibility-apply-at-breakpoints) {
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline-block;}
   }
