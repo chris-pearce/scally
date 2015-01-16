@@ -26,26 +26,26 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-flex-embed-breakpoints:                        $default-breakpoints !default;
+// Apply at these breakpoints
+$u-flex-embed-apply-at-breakpoints:                      $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-flex-embed-breakpoint-toggle-default:          false !default;
+// From the above choose what you want to apply it too
+$u-flex-embed-apply-at-breakpoints-for-default:          false !default;
 
-$u-flex-embed-breakpoint-toggle-ratio:            false !default;
+$u-flex-embed-apply-at-breakpoints-for-ratio:            false !default;
 
-$u-flex-embed-breakpoint-toggle-ratio-16-by-9:    false !default;
+$u-flex-embed-apply-at-breakpoints-for-ratio-16-by-9:    false !default;
 
-$u-flex-embed-breakpoint-toggle-ratio-3-by-1:     false !default;
+$u-flex-embed-apply-at-breakpoints-for-ratio-3-by-1:     false !default;
 
-$u-flex-embed-breakpoint-toggle-ratio-2-by-1:     false !default;
+$u-flex-embed-apply-at-breakpoints-for-ratio-2-by-1:     false !default;
 
-$u-flex-embed-breakpoint-toggle-ratio-4-by-3:     false !default;
+$u-flex-embed-apply-at-breakpoints-for-ratio-4-by-3:     false !default;
 
-$u-flex-embed-breakpoint-toggle-content:          false !default;
+$u-flex-embed-apply-at-breakpoints-for-content:          false !default;
 
 
 %u-flex-embed,
@@ -55,8 +55,8 @@ $u-flex-embed-breakpoint-toggle-content:          false !default;
   overflow: hidden;
 }
 
-@if $u-flex-embed-breakpoint-toggle-default {
-  @include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-breakpoints) {
+@if $u-flex-embed-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-flex-embed', $u-flex-embed-apply-at-breakpoints) {
     display: block;
     position: relative;
     overflow: hidden;
@@ -78,9 +78,9 @@ $u-flex-embed-breakpoint-toggle-content:          false !default;
     width: 100%;
   }
 
-  @if $u-flex-embed-breakpoint-toggle-ratio {
+  @if $u-flex-embed-apply-at-breakpoints-for-ratio {
     @include generate-at-breakpoints('.u-flex-embed__ratio',
-      $u-flex-embed-breakpoints) {
+      $u-flex-embed-apply-at-breakpoints) {
       display: block;
       padding-bottom: 100%;
       width: 100%;
@@ -96,36 +96,36 @@ $u-flex-embed-breakpoint-toggle-content:          false !default;
   %u-flex-embed__ratio--16-by-9,
   .u-flex-embed__ratio--16-by-9 {padding-bottom: 56.25%;}
 
-  @if $u-flex-embed-breakpoint-toggle-ratio-16-by-9 {
+  @if $u-flex-embed-apply-at-breakpoints-for-ratio-16-by-9 {
     @include generate-at-breakpoints('.u-flex-embed__ratio--16-by-9',
-      $u-flex-embed-breakpoints) {padding-bottom: 56.25%;}
+      $u-flex-embed-apply-at-breakpoints) {padding-bottom: 56.25%;}
   }// end if
 
   // 3:1 aspect ratio
   %u-flex-embed__ratio--3-by-1,
   .u-flex-embed__ratio--3-by-1 {padding-bottom: (100/3)*1%;}
 
-  @if $u-flex-embed-breakpoint-toggle-ratio-3-by-1 {
+  @if $u-flex-embed-apply-at-breakpoints-for-ratio-3-by-1 {
     @include generate-at-breakpoints('.u-flex-embed__ratio--3-by-1',
-      $u-flex-embed-breakpoints) {padding-bottom: (100/3)*1%;}
+      $u-flex-embed-apply-at-breakpoints) {padding-bottom: (100/3)*1%;}
   }// end if
 
   // 2:1 aspect ratio
   %u-flex-embed__ratio--2-by-1,
   .u-flex-embed__ratio--2-by-1 {padding-bottom: 50%;}
 
-  @if $u-flex-embed-breakpoint-toggle-ratio-2-by-1 {
+  @if $u-flex-embed-apply-at-breakpoints-for-ratio-2-by-1 {
     @include generate-at-breakpoints('.u-flex-embed__ratio--2-by-1',
-      $u-flex-embed-breakpoints) {padding-bottom: 50%;}
+      $u-flex-embed-apply-at-breakpoints) {padding-bottom: 50%;}
   }// end if
 
   // 4:3 aspect ratio
   %u-flex-embed__ratio--4-by-3,
   .u-flex-embed__ratio--4-by-3 {padding-bottom: 75%;}
 
-  @if $u-flex-embed-breakpoint-toggle-ratio-4-by-3 {
+  @if $u-flex-embed-apply-at-breakpoints-for-ratio-4-by-3 {
     @include generate-at-breakpoints('.u-flex-embed__ratio--4-by-3',
-      $u-flex-embed-breakpoints) {padding-bottom: 75%;}
+      $u-flex-embed-apply-at-breakpoints) {padding-bottom: 75%;}
   }// end if
 
 
@@ -142,9 +142,9 @@ $u-flex-embed-breakpoint-toggle-content:          false !default;
 		height: 100%;
 	}
 
-  @if $u-flex-embed-breakpoint-toggle-content {
+  @if $u-flex-embed-apply-at-breakpoints-for-content {
     @include generate-at-breakpoints('.u-flex-embed__content',
-      $u-flex-embed-breakpoints) {
+      $u-flex-embed-apply-at-breakpoints) {
       position: absolute;
       top: 0;
       left: 0;

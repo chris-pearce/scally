@@ -13,20 +13,24 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-divider-breakpoints:               $default-breakpoints !default;
+// Apply at these breakpoints
+$u-divider-apply-at-breakpoints:               $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-divider-breakpoint-toggle-top:     false !default;
+// From the above choose what you want to apply it too
+$u-divider-apply-at-breakpoints-for-top:     false !default;
 
-$u-divider-breakpoint-toggle-right:   false !default;
+$u-divider-apply-at-breakpoints-for-right:   false !default;
 
-$u-divider-breakpoint-toggle-bottom:  false !default;
+$u-divider-apply-at-breakpoints-for-bottom:  false !default;
 
-$u-divider-breakpoint-toggle-left:    false !default;
+$u-divider-apply-at-breakpoints-for-left:    false !default;
+
+/**
+ * Cosmetics.
+ */
 
 // Colour
 $u-divider-colour:                    $colour-text-base !default;
@@ -47,8 +51,8 @@ $u-divider-style:                     solid !default;
   @include to-rem(border-top, $u-divider-thickness $u-divider-style $u-divider-colour);
 }
 
-@if $u-divider-breakpoint-toggle-top {
-  @include generate-at-breakpoints('.u-divider-top', $u-divider-breakpoints) {
+@if $u-divider-apply-at-breakpoints-for-top {
+  @include generate-at-breakpoints('.u-divider-top', $u-divider-apply-at-breakpoints) {
     @include to-rem(border-top, $u-divider-thickness $u-divider-style $u-divider-colour);
   }
 }// end if
@@ -64,8 +68,8 @@ $u-divider-style:                     solid !default;
     $u-divider-colour);
 }
 
-@if $u-divider-breakpoint-toggle-right {
-  @include generate-at-breakpoints('.u-divider-right', $u-divider-breakpoints) {
+@if $u-divider-apply-at-breakpoints-for-right {
+  @include generate-at-breakpoints('.u-divider-right', $u-divider-apply-at-breakpoints) {
     @include to-rem(border-right, $u-divider-thickness $u-divider-style
       $u-divider-colour);}
 }// end if
@@ -81,8 +85,8 @@ $u-divider-style:                     solid !default;
     $u-divider-colour);
 }
 
-@if $u-divider-breakpoint-toggle-bottom {
-  @include generate-at-breakpoints('.u-divider-bottom', $u-divider-breakpoints) {
+@if $u-divider-apply-at-breakpoints-for-bottom {
+  @include generate-at-breakpoints('.u-divider-bottom', $u-divider-apply-at-breakpoints) {
     @include to-rem(border-bottom, $u-divider-thickness $u-divider-style
       $u-divider-colour);}
 }// end if
@@ -98,8 +102,8 @@ $u-divider-style:                     solid !default;
     $u-divider-colour);
 }
 
-@if $u-divider-breakpoint-toggle-left {
-  @include generate-at-breakpoints('.u-divider-left', $u-divider-breakpoints) {
+@if $u-divider-apply-at-breakpoints-for-left {
+  @include generate-at-breakpoints('.u-divider-left', $u-divider-apply-at-breakpoints) {
     @include to-rem(border-left, $u-divider-thickness $u-divider-style
       $u-divider-colour);
   }

@@ -15,18 +15,12 @@
  * Settings.
  */
 
-// Apply `@viewport` rule
-$viewport-device-width: true !default;
+$apply-viewport-device-width: true !default;
 
 
-@if $viewport-device-width {
-
+@if $apply-viewport-device-width {
   @-webkit-viewport {width: device-width;}
-
   @-moz-viewport {width: device-width;}
-
   @-o-viewport {width: device-width;}
-
   @viewport {width: device-width;}
-
 }

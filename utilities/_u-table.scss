@@ -15,35 +15,41 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-table-breakpoints:                           $default-breakpoints !default;
+// Apply at these breakpoints
+$u-table-apply-at-breakpoints:                           $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-table-breakpoint-toggle-default:             false !default;
+// From the above choose what you want to apply it too
+$u-table-apply-at-breakpoints-for-default:             false !default;
 
-$u-table-breakpoint-toggle-striped:             false !default;
+$u-table-apply-at-breakpoints-for-striped:             false !default;
 
-$u-table-breakpoint-toggle-border:              false !default;
+$u-table-apply-at-breakpoints-for-border:              false !default;
 
-$u-table-breakpoint-toggle-fixed:               false !default;
+$u-table-apply-at-breakpoints-for-fixed:               false !default;
 
-$u-table-breakpoint-toggle-cell-padding-small:  false !default;
+$u-table-apply-at-breakpoints-for-cell-padding-small:  false !default;
 
-$u-table-breakpoint-toggle-cell-padding-large:  false !default;
+$u-table-apply-at-breakpoints-for-cell-padding-large:  false !default;
 
-$u-table-breakpoint-toggle-cell-padding-none:   false !default;
+$u-table-apply-at-breakpoints-for-cell-padding-none:   false !default;
 
-// Cell padding
+/**
+ * Cell padding.
+ */
+
 $u-table-cell-padding-base:                     $spacing-half !default;
 
 $u-table-cell-padding-small:                    $spacing-quarter !default;
 
 $u-table-cell-padding-large:                    $spacing-base !default;
 
-// Cosmetics
+/**
+ * Cosmetics.
+ */
+
 $u-table-border-colour:                         darken($colour-white, 10%)
 !default;
 
@@ -68,8 +74,8 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   td {@include to-rem(padding, $u-table-cell-padding-base);}
 }
 
-@if $u-table-breakpoint-toggle-default {
-  @include generate-at-breakpoints('.u-table', $u-table-breakpoints) {
+@if $u-table-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-table', $u-table-apply-at-breakpoints) {
     width: 100%;
 
     caption,
@@ -92,8 +98,8 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   tr:nth-of-type(odd) td {background-color: $u-table-striped-background-cell-colour;}
 }
 
-@if $u-table-breakpoint-toggle-striped {
-  @include generate-at-breakpoints('.u-table--striped', $u-table-breakpoints) {
+@if $u-table-apply-at-breakpoints-for-striped {
+  @include generate-at-breakpoints('.u-table--striped', $u-table-apply-at-breakpoints) {
     tr:nth-of-type(odd) td {background-color: $u-table-striped-background-cell-colour;}
   }
 }// end if
@@ -115,8 +121,8 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   }
 }
 
-@if $u-table-breakpoint-toggle-border {
-  @include generate-at-breakpoints('.u-table--border', $u-table-breakpoints) {
+@if $u-table-apply-at-breakpoints-for-border {
+  @include generate-at-breakpoints('.u-table--border', $u-table-apply-at-breakpoints) {
     th,
     td {
       @include to-rem(border, $u-table-border-thickness $u-table-border-style
@@ -137,8 +143,8 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
 %u-table--fixed,
 .u-table--fixed {table-layout: fixed;}
 
-@if $u-table-breakpoint-toggle-fixed {
-  @include generate-at-breakpoints('.u-table--fixed', $u-table-breakpoints) {
+@if $u-table-apply-at-breakpoints-for-fixed {
+  @include generate-at-breakpoints('.u-table--fixed', $u-table-apply-at-breakpoints) {
     table-layout: fixed;}
 }// end if
 
@@ -153,9 +159,9 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   td {@include to-rem(padding, $u-table-cell-padding-small);}
 }
 
-@if $u-table-breakpoint-toggle-cell-padding-small {
+@if $u-table-apply-at-breakpoints-for-cell-padding-small {
   @include generate-at-breakpoints('.u-table--cell-padding-small',
-    $u-table-breakpoints) {
+    $u-table-apply-at-breakpoints) {
     th,
     td {@include to-rem(padding, $u-table-cell-padding-small);}
   }
@@ -172,9 +178,9 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   td {@include to-rem(padding, $u-table-cell-padding-large);}
 }
 
-@if $u-table-breakpoint-toggle-cell-padding-large {
+@if $u-table-apply-at-breakpoints-for-cell-padding-large {
   @include generate-at-breakpoints('.u-table--cell-padding-large',
-    $u-table-breakpoints) {
+    $u-table-apply-at-breakpoints) {
     th,
     td {@include to-rem(padding, $u-table-cell-padding-large);}
   }
@@ -191,9 +197,9 @@ $u-table-striped-background-cell-colour:        $u-table-border-colour !default;
   td {padding: 0;}
 }
 
-@if $u-table-breakpoint-toggle-cell-padding-none {
+@if $u-table-apply-at-breakpoints-for-cell-padding-none {
   @include generate-at-breakpoints('.u-table--no-cell-padding',
-    $u-table-breakpoints) {
+    $u-table-apply-at-breakpoints) {
     th,
     td {padding: 0;}
   }

@@ -13,14 +13,14 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-link-disguised-breakpoints:        $default-breakpoints !default;
+// Apply at these breakpoints
+$u-link-disguised-apply-at-breakpoints:         $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-link-disguised-breakpoint-toggle:  true !default;
+// From above choose to turn this on or off
+$u-link-disguised-apply-at-breakpoints-toggle:  true !default;
 
 
 %u-link-disguised,
@@ -36,9 +36,9 @@ $u-link-disguised-breakpoint-toggle:  true !default;
   }
 }
 
-@if $u-link-disguised-breakpoint-toggle {
+@if $u-link-disguised-apply-at-breakpoints-toggle {
   @include generate-at-breakpoints('.u-link-disguised',
-    $u-link-disguised-breakpoints) {
+    $u-link-disguised-apply-at-breakpoints) {
     cursor: text;
 
     &,

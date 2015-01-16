@@ -14,14 +14,14 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-link-no-underline-breakpoints:         $default-breakpoints !default;
+// Apply at these breakpoints
+$u-link-no-underline-apply-at-breakpoints:          $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-link-no-underline-breakpoint-toggle:   false !default;
+// From above choose to turn this on or off
+$u-link-no-underline-apply-at-breakpoints-toggle:   false !default;
 
 
 %u-link-no-underline,
@@ -33,9 +33,9 @@ $u-link-no-underline-breakpoint-toggle:   false !default;
   &:active {text-decoration: none;}
 }
 
-@if $u-link-no-underline-breakpoint-toggle {
+@if $u-link-no-underline-apply-at-breakpoints-toggle {
   @include generate-at-breakpoints('.u-link-no-underline',
-    $u-link-no-underline-breakpoints) {
+    $u-link-no-underline-apply-at-breakpoints) {
     &,
     &:visited,
     &:hover,

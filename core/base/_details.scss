@@ -7,7 +7,7 @@
  * Settings.
  */
 
-$details-marker: false !default;
+$apply-details-marker: false !default;
 
 
 summary {
@@ -18,9 +18,7 @@ summary {
    * Control the visibility of the `detail`s marker.
    */
 
-  @if $details-marker {
-
+  @if $apply-details-marker {
     &::-webkit-details-marker {display: none;}
-
   }
 }

@@ -1152,7 +1152,10 @@ abbr[title] {
  * Settings.
  */
 /**
- * Text inputs and `select`s.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Text inputs and `select`s styles.
  */
 /**
  * Indicate that `label` will shift focus to the associated `input` element.
@@ -1185,8 +1188,8 @@ input[type="search"] {
  * Remove rounded corners that iOS applies to all `input` buttons, see:
  * https://github.com/necolas/normalize.css/issues/178. And certain browsers
  * e.g. Chrome, apply rounded corners to `select` lists so if we haven't opted
- * in for rounded corners via the `$text-input-and-select-styles` and
- * `$text-input-and-select-rounded-corners` settings then turn them off.
+ * in for rounded corners via the `$apply-text-input-and-select-styles` and
+ * `$apply-text-input-and-select-rounded-corners` settings then turn them off.
  */
 input[type="submit"],
 input[type="button"],
@@ -1482,7 +1485,7 @@ canvas {
     content: ""; }
 
   /**
-   * h5bp.com/t
+   * h5bp.com/t.
    */
   thead {
     display: table-header-group; }
@@ -1568,7 +1571,10 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Widths.
  */
 .l-container {
   width: 92%;
@@ -1638,7 +1644,17 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Gutter sizes.
+ */
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overriden and will be set to `true`.
  */
 /**
  * Grid container.
@@ -1959,7 +1975,7 @@ h6:last-child,
   width: auto; }
 
 /**
- * Modifier: remove.
+ * Modifier: make linear.
  *
  * Turn off the side-by-side layout so the two elements stack on top of
  * each other at the palm breakpoint (or whatever you specify) and provide
@@ -1999,7 +2015,7 @@ h6:last-child,
    * Modifiers: vertical alignments.
    */
   /**
-   * Modifier: remove.
+   * Modifier: make linear.
    */ }
   .l-side-by-side-alt--reversed > .l-side-by-side-alt__left, .l-side-by-side-alt--reversed >
   .l-side-by-side-alt__right {
@@ -2034,7 +2050,7 @@ h6:last-child,
    * Remove the gutter.
    */
   /**
-   * Modifier: remove.
+   * Modifier: make linear.
    */
   /**
    * Need to turn off responsive images otherwise it breaks.
@@ -2276,7 +2292,7 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-clear-fix:after {
   content: "";
@@ -2353,7 +2369,13 @@ h6:last-child,
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Indent.
+ */
+/**
+ * Bullets.
  */
 /**
  * Whitespace.
@@ -2404,7 +2426,13 @@ ol.u-list ol {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Whitespace.
+ */
+/**
+ * Border.
  */
 .u-list-block > li,
 .u-list-block > li > a {
@@ -2482,7 +2510,13 @@ ol.u-list ol {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Spacing between list items.
+ */
+/**
+ * Dividers.
  */
 .u-list-inline > li {
   display: inline-block; }
@@ -2631,7 +2665,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Size.
@@ -2887,6 +2921,9 @@ li:before {
  */
 /**
  * Settings.
+ */
+/**
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Intrinsic widths.
@@ -3222,7 +3259,13 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Cell padding.
+ */
+/**
+ * Cosmetics.
  */
 .u-table {
   width: 100%; }
@@ -3303,7 +3346,10 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * State classes.
  */
 /**
  * Drop down container for the trigger and target.
@@ -3346,7 +3392,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Inline vertical alignments.
@@ -3411,7 +3457,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-toggle-visibility {
   display: none; }
@@ -3443,7 +3489,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-image-replacement {
   background-color: transparent;
@@ -3482,7 +3528,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-link-complex,
 .u-link-complex:hover,
@@ -3510,7 +3556,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-link-disguised {
   cursor: text; }
@@ -3538,7 +3584,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-link-no-underline,
 .u-link-no-underline:visited,
@@ -3561,7 +3607,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-momentum-scrolling {
   overflow: auto;
@@ -3577,7 +3623,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Left.
@@ -3614,7 +3660,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * 1. Create a new block formatting context (NBFC).
@@ -3658,7 +3704,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 .u-flex-embed {
   display: block;
@@ -3725,7 +3771,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Set positioning contexts.
@@ -3825,7 +3871,10 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Classes to detect if JavaScript is on or off.
  */
 /**
  * Block, inline, and inline-block display.
@@ -3955,7 +4004,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Maps for the generate at breakpoint mixin.
@@ -4593,7 +4642,10 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Cosmetics.
  */
 /**
  * Top.
@@ -4629,7 +4681,13 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Gutter sizes.
+ */
+/**
+ * Divider.
  */
 .u-columns {
   column-count: 2;
@@ -4681,7 +4739,7 @@ li:before {
  * Settings.
  */
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 /**
  * Visible.

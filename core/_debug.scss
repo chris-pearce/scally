@@ -22,10 +22,10 @@
  */
 
 // Only turn on when you need to debug
-$debug-mode: false !default;
+$apply-debug-mode: false !default;
 
 
-@if $debug-mode {
+@if $apply-debug-mode {
 
   /**
    * Images require `alt` attributes, empty `alt`s are fine but should be

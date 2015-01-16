@@ -15,32 +15,32 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-align-breakpoints:                                    $default-breakpoints !default;
+// Apply at these breakpoints
+$u-align-apply-at-breakpoints:                               $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-align-breakpoint-toggle-v-inline-top:                 false !default;
+// From the above choose what you want to apply it too
+$u-align-apply-breakpoints-for-v-inline-top:                 false !default;
 
-$u-align-breakpoint-toggle-v-inline-middle:              false !default;
+$u-align-apply-breakpoints-for-v-inline-middle:              false !default;
 
-$u-align-breakpoint-toggle-v-inline-baseline:            false !default;
+$u-align-apply-breakpoints-for-v-inline-baseline:            false !default;
 
-$u-align-breakpoint-toggle-v-inline-bottom:              false !default;
+$u-align-apply-breakpoints-for-v-inline-bottom:              false !default;
 
-$u-align-breakpoint-toggle-v-inline-inherit:             false !default;
+$u-align-apply-breakpoints-for-v-inline-inherit:             false !default;
 
-$u-align-breakpoint-toggle-v-block-middle-flexbox:       false !default;
+$u-align-apply-breakpoints-for-v-block-middle-flexbox:       false !default;
 
-$u-align-breakpoint-toggle-v-block-middle-table:         false !default;
+$u-align-apply-breakpoints-for-v-block-middle-table:         false !default;
 
-$u-align-breakpoint-toggle-v-block-middle-table-inner:   false !default;
+$u-align-apply-breakpoints-for-v-block-middle-table-inner:   false !default;
 
-$u-align-breakpoint-toggle-v-block-middle-position:      false !default;
+$u-align-apply-breakpoints-for-v-block-middle-position:      false !default;
 
-$u-align-breakpoint-toggle-center-block:                 false !default;
+$u-align-apply-breakpoints-for-center-block:                 false !default;
 
 
 /**
@@ -53,9 +53,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
 %u-align-v-inline-top,
 .u-align-v-inline-top {vertical-align: top;}
 
-@if $u-align-breakpoint-toggle-v-inline-top {
+@if $u-align-apply-breakpoints-for-v-inline-top {
   @include generate-at-breakpoints('.u-align-v-inline-top',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     vertical-align: top;
   }
 }// end if
@@ -64,9 +64,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
 %u-align-v-inline-middle,
 .u-align-v-inline-middle {vertical-align: middle;}
 
-@if $u-align-breakpoint-toggle-v-inline-middle {
+@if $u-align-apply-breakpoints-for-v-inline-middle {
   @include generate-at-breakpoints('.u-align-v-inline-middle',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     vertical-align: middle;
   }
 }// end if
@@ -75,9 +75,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
 %u-align-v-inline-baseline,
 .u-align-v-inline-baseline {vertical-align: baseline;}
 
-@if $u-align-breakpoint-toggle-v-inline-baseline {
+@if $u-align-apply-breakpoints-for-v-inline-baseline {
   @include generate-at-breakpoints('.u-align-v-inline-baseline',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     vertical-align: baseline;
   }
 }// end if
@@ -86,9 +86,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
 %u-align-v-inline-bottom,
 .u-align-v-inline-bottom {vertical-align: bottom;}
 
-@if $u-align-breakpoint-toggle-v-inline-bottom {
+@if $u-align-apply-breakpoints-for-v-inline-bottom {
   @include generate-at-breakpoints('.u-align-v-inline-bottom',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     vertical-align: bottom;
   }
 }// end if
@@ -97,9 +97,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
 %u-align-v-inline-inherit,
 .u-align-v-inline-inherit {vertical-align: inherit;}
 
-@if $u-align-breakpoint-toggle-v-inline-inherit {
+@if $u-align-apply-breakpoints-for-v-inline-inherit {
   @include generate-at-breakpoints('.u-align-v-inline-inherit',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     vertical-align: inherit;
   }
 }// end if
@@ -118,9 +118,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
   justify-content: center;
 }
 
-@if $u-align-breakpoint-toggle-v-block-middle-flexbox {
+@if $u-align-apply-breakpoints-for-v-block-middle-flexbox {
   @include generate-at-breakpoints('.u-align-v-block-middle-flexbox',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,9 +135,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
   width: 100%;
 }
 
-@if $u-align-breakpoint-toggle-v-block-middle-table {
+@if $u-align-apply-breakpoints-for-v-block-middle-table {
   @include generate-at-breakpoints('.u-align-v-block-middle-table',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     display: table;
     height: 100%;
     width: 100%;
@@ -150,9 +150,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
     vertical-align: middle;
   }
 
-  @if $u-align-breakpoint-toggle-v-block-middle-table-inner {
+  @if $u-align-apply-breakpoints-for-v-block-middle-table-inner {
     @include generate-at-breakpoints('.u-align-v-block-middle-table__inner',
-      $u-align-breakpoints) {
+      $u-align-apply-at-breakpoints) {
       display: table-cell;
       vertical-align: middle;
     }
@@ -166,9 +166,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
   transform: translateY(-50%);
 }
 
-@if $u-align-breakpoint-toggle-v-block-middle-position {
+@if $u-align-apply-breakpoints-for-v-block-middle-position {
   @include generate-at-breakpoints('.u-align-v-block-middle-position',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -189,9 +189,9 @@ $u-align-breakpoint-toggle-center-block:                 false !default;
   margin-right: auto;
 }
 
-@if $u-align-breakpoint-toggle-center-block {
+@if $u-align-apply-breakpoints-for-center-block {
   @include generate-at-breakpoints('.u-align-center-block',
-    $u-align-breakpoints) {
+    $u-align-apply-at-breakpoints) {
     display: block; // [1]
     margin-left: auto;
     margin-right: auto;

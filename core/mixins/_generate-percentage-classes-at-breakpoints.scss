@@ -66,6 +66,7 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
   }
 }
 
+
 @mixin generate-percentage-classes($breakpoint: "", $scally-type: "u",
   $class-name: null, $css-property: "width") {
   @each $denominator in $mixin-denominator-numbers {

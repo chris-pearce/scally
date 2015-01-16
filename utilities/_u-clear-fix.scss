@@ -13,14 +13,14 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-clear-fix-breakpoints:         $default-breakpoints !default;
+// Apply at these breakpoints
+$u-clear-fix-apply-at-breakpoints:          $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-clear-fix-breakpoint-toggle:   false !default;
+// From above choose to turn this on or off
+$u-clear-fix-apply-at-breakpoints-toggle:   false !default;
 
 
 %u-clear-fix,
@@ -32,9 +32,9 @@ $u-clear-fix-breakpoint-toggle:   false !default;
   }
 }
 
-@if $u-clear-fix-breakpoint-toggle {
+@if $u-clear-fix-apply-at-breakpoints-toggle {
   @include generate-at-breakpoints('.u-clear-fix',
-    $u-clear-fix-breakpoints) {
+    $u-clear-fix-apply-at-breakpoints) {
     &:after {
       content: "";
       display: table;

@@ -83,7 +83,7 @@ Base styles try to be as unopinionated as possibleâ€”like most things in Scallyâ
 - Removing the gap between media elements (`img`, `video`, `audio`, etc) and the bottom of their containers.
 - Applying a bottom margin to all paragraphs (`p`) of text.
 
-The more opinionated styles found in base sit behind a [toggle](settings/_toggles.scss) meaning you decide if you want to use them or not.
+The more opinionated styles found in base sit behind a toggle setting meaning you decide if you want to use them or not.
 
 #### Normalize-esque styles
 
@@ -112,7 +112,7 @@ img {
 }
 ```
 
-However this is optional, sitting behind the `$responsive-images` toggle.
+However this is optional, sitting a toggle setting.
 
 ##### [Print](base/_print.scss)
 
@@ -128,7 +128,7 @@ Root defines styles for the `html` element. It mainly focuses on typography styl
 
 Scally provides quite a few base form styles. Most are concerned with applying [*sensible* styles](#sensible-styles) and [Normalize-esque styles](#normalize-esque-styles).
 
-The other two main parts of forms are concerned with providing styles for text inputs (including `textarea`) and `select` lists, and a disabled state for **ALL** HTML form elements. These styles, being fairly oppinionated, are all optional, sitting behind the `$disabled-state` and `$text-input-and-select-styles` toggles.
+The other two main parts of forms are concerned with providing styles for text inputs (including `textarea`) and `select` lists, and a disabled state for **ALL** HTML form elements. These styles, being fairly oppinionated, are all optional, sitting behind toggle settings.
 
 
 
@@ -312,11 +312,7 @@ The legend:
 - Yellow = double-check
 - None = should be fine
 
-Scally turns off the debug styles by default, to turn on change the `$debug-mode` [toggle](settings/_toggles.scss) to `true`, like so:
-
-```
-$debug-mode: true;
-```
+Scally turns off the debug styles by default, to turn on change the toggle setting.
 
 
 

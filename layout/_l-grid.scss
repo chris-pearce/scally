@@ -48,28 +48,34 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$l-grid-breakpoints:    $default-breakpoints !default;
+$l-grid-apply-at-breakpoints:   $default-breakpoints !default;
 
-// Gutter sizes
-$l-grid-gutter-base:    $spacing-base !default;
+/**
+ * Gutter sizes.
+ */
 
-$l-grid-gutter-tiny:    $spacing-third !default;
+$l-grid-gutter-base:            $spacing-base !default;
 
-$l-grid-gutter-small:   $spacing-half !default;
+$l-grid-gutter-tiny:            $spacing-third !default;
 
-$l-grid-gutter-large:   $spacing-base-plus-half !default;
+$l-grid-gutter-small:           $spacing-half !default;
 
-$l-grid-gutter-huge:    $spacing-double !default;
+$l-grid-gutter-large:           $spacing-base-plus-half !default;
 
-// Box sizing.
-// Here we set a variable assuming that `box-sizing: border-box;` is not set
-// globally. If it has been previously been defined, the following variable
-// will be overriden and will be set to `true`.
-$friendly-box-model:    false !default;
+$l-grid-gutter-huge:            $spacing-double !default;
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overriden and will be set to `true`.
+ */
+
+$apply-friendly-box-model:      false !default;
 
 
 /**
@@ -104,10 +110,8 @@ $friendly-box-model:    false !default;
     vertical-align: top; // [4]
     @include font-size($font-size); // [5]
 
-    @if $friendly-box-model == false {
-
+    @if $apply-friendly-box-model == false {
       box-sizing: border-box; // [6]
-
     }//endif
   }
 

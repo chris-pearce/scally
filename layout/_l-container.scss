@@ -16,25 +16,28 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
 // Apply at these breakpoints
-$l-container-breakpoints:                     $default-breakpoints !default;
+$l-container-apply-at-breakpoints:                $default-breakpoints !default;
 
-// What do you want to apply it too?
-$l-container-breakpoint-toggle-default:       false !default;
+// From the above choose what you want to apply it too
+$l-container-apply-breakpoints-for-default:       false !default;
 
-$l-container-breakpoint-toggle-full-bleed:    false !default;
+$l-container-apply-breakpoints-for-full-bleed:    false !default;
 
-$l-container-breakpoint-toggle-not-centered:  false !default;
+$l-container-apply-breakpoints-for-not-centered:  false !default;
 
-// Widths
-$l-container-width:                           92% !default;
+/**
+ * Widths.
+ */
 
-$l-container-minimum-width:                   220 !default;
+$l-container-width:                               92% !default;
 
-$l-container-maximum-width:                   1600 !default;
+$l-container-minimum-width:                       220 !default;
+
+$l-container-maximum-width:                       1600 !default;
 
 
 .l-container {
@@ -49,7 +52,7 @@ $l-container-maximum-width:                   1600 !default;
   }
 }
 
-@if $l-container-breakpoint-toggle-default {
+@if $l-container-apply-breakpoints-for-default {
   @include generate-at-breakpoints('.l-container', $l-container-breakpoints) {
     width: $l-container-width;
     @include to-rem(min-width, $l-container-minimum-width);
@@ -73,7 +76,7 @@ $l-container-maximum-width:                   1600 !default;
   max-width: none;
 }
 
-@if $l-container-breakpoint-toggle-full-bleed {
+@if $l-container-apply-breakpoints-for-full-bleed {
   @include generate-at-breakpoints('.l-container--full-bleed',
     $l-container-breakpoints) {
     width: auto;
@@ -91,7 +94,7 @@ $l-container-maximum-width:                   1600 !default;
   margin-right: 0;
 }
 
-@if $l-container-breakpoint-toggle-not-centered {
+@if $l-container-apply-breakpoints-for-not-centered {
   @include generate-at-breakpoints('.l-container--not-centered',
     $l-container-breakpoints) {
     margin-left: 0;

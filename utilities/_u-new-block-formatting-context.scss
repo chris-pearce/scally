@@ -20,16 +20,16 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-nbfc-breakpoints:                  $default-breakpoints !default;
+// Apply at these breakpoints
+$u-nbfc-apply-at-breakpoints:               $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-nbfc-breakpoint-toggle-default:    false !default;
+// From the above choose what you want to apply it too
+$u-nbfc-apply-at-breakpoints-for-default:   false !default;
 
-$u-nbfc-breakpoint-toggle-alt:        false !default;
+$u-nbfc-apply-at-breakpoints-for-alt:       false !default;
 
 
 /**
@@ -46,8 +46,8 @@ $u-nbfc-breakpoint-toggle-alt:        false !default;
   width: 10000px; // [2]
 }
 
-@if $u-nbfc-breakpoint-toggle-default {
-  @include generate-at-breakpoints('.u-nbfc', $u-nbfc-breakpoints) {
+@if $u-nbfc-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-nbfc', $u-nbfc-apply-at-breakpoints) {
     display: table-cell;
     width: 10000px;
   }
@@ -63,8 +63,8 @@ $u-nbfc-breakpoint-toggle-alt:        false !default;
 %u-nbfc-alt,
 .u-nbfc-alt {overflow: hidden;}
 
-@if $u-nbfc-breakpoint-toggle-alt {
-  @include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-breakpoints) {
+@if $u-nbfc-apply-at-breakpoints-for-alt {
+  @include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-apply-at-breakpoints) {
     overflow: hidden;
   }
 }// end if

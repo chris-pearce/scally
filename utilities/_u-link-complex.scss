@@ -24,16 +24,16 @@
  */
 
 /**
- * Apply at breakpoints.
+ * Toggle on/off certain styles and treatments.
  */
 
-// Which breakpoints do you want to use?
-$u-link-complex-breakpoints:                $default-breakpoints !default;
+// Apply at these breakpoints
+$u-link-complex-apply-at-breakpoints:              $default-breakpoints !default;
 
-// What do you want to apply it too?
-$u-link-complex-breakpoint-toggle-default:  false !default;
+// From the above choose what you want to apply it too
+$u-link-complex-apply-at-breakpoints-for-default:  false !default;
 
-$u-link-complex-breakpoint-toggle-target:   false !default;
+$u-link-complex-apply-at-breakpoints-for-target:   false !default;
 
 
 %u-link-complex,
@@ -46,8 +46,8 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
   }
 }
 
-@if $u-link-complex-breakpoint-toggle-default {
-  @include generate-at-breakpoints('.u-link-complex', $u-link-complex-breakpoints) {
+@if $u-link-complex-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-link-complex', $u-link-complex-apply-at-breakpoints) {
     &,
     &:hover,
     &:focus {
@@ -73,9 +73,9 @@ $u-link-complex-breakpoint-toggle-target:   false !default;
     }
   }
 
-  @if $u-link-complex-breakpoint-toggle-target {
+  @if $u-link-complex-apply-at-breakpoints-for-target {
     @include generate-at-breakpoints('.u-link-complex__target',
-      $u-link-complex-breakpoints) {
+      $u-link-complex-apply-at-breakpoints) {
       color: $colour-link;
 
       &:hover,
