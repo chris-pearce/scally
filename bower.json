@@ -2,8 +2,7 @@
   "name": "scally",
   "homepage": "https://github.com/chris-pearce/scally",
   "main": [
-    "style.css",
-    "style.css.map"
+    "style.css"
   ],
   "authors": [
     "Chris Pearce <cpearce@westfield.com>",
