@@ -90,7 +90,7 @@ css
 │
 └───bower_components
     │
-    └───Scally
+    └───scally
 ```
 
 **N.B.** Scally should never be edited or added too directly. If you ever make changes directly in Scally you will not be able to seamlessly update your version of Scally to the latest version.
