@@ -218,7 +218,7 @@ Here is an example of the architecture mentioned just above, assuming you contai
     │
     └───bower_components
     |   │
-    |   └───Scally
+    |   └───scally
     |
     └───partials
         │
@@ -318,7 +318,7 @@ If you would like to suggest any new components or utilities, any improvements, 
 
 Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/) however sometimes we get it wrong, but we will do our best to adhere to those rules as much as possible and strive to maintain backwards compatibility.
 
-~~[See the **CHANGELOG**](CHANGELOG.md).~~
+[See the **CHANGELOG**](CHANGELOG.md).
 
 
 
