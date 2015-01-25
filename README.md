@@ -38,9 +38,11 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 # Scally architecture
 
-Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers.
+Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers building on top of each other:
 
-The breakdown in order of their specificity:
+<img src="http://scally.chris-pearce.me/presentation/lib/img/the-structure.svg">
+
+The breakdown of these layers from bottom to top (order of their specificity):
 
 - [Core](core/README.md)
 - [Layout](layout/README.md)
