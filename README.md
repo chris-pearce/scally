@@ -35,7 +35,7 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 [A presentation](http://scally.chris-pearce.me/presentation/).
 
-*Website featuring demos of everything in Scally coming soon*.
+*A website—featuring demos of everything in Scally—is coming soon.*
 
 
 
