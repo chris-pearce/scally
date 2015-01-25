@@ -182,7 +182,7 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
 
 ### Using utilities
 
-Utilities can be used in a component however they're `@extend`ed via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](../utilities/_u-list-inline.scss) utility. To learn more about how utilities and components work together [see here](../utilities/README.md#how-to-use).
+Utilities can be used in a component either by using the utility classes in the HTML or by `@extend`ing them using a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_). As you can see from the CSS code above, the selector: `.pagination__list` is `@extend`ing the [**List Inline**](../utilities/_u-list-inline.scss) utility. To learn more about how utilities and components work together [see here](../utilities/README.md#how-to-use).
 
 ### Naming convention
 
