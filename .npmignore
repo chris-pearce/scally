@@ -1,4 +1,5 @@
 .gitignore
+.npmignore
 settings.scss
 style.scss
 style-test.scss
