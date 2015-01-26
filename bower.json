@@ -1,12 +1,11 @@
 {
   "name": "scally",
+  "version": "1.1.0",
   "homepage": "https://github.com/chris-pearce/scally",
-  "main": [
-    "style.css"
-  ],
+  "main": "style.css",
   "authors": [
-    "Chris Pearce <cpearce@westfield.com>",
-    "Kate Levin <klevin@westfield.com>"
+    "Chris Pearce <hi@chris-pearce.me>",
+    "Kate Levin <kllevin@gmail.com>"
   ],
   "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
   "keywords": [
@@ -23,6 +22,8 @@
     "settings.scss",
     "style.scss",
     "style-test.scss",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "package.json",
+    "test.html"
   ]
 }

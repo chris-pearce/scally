@@ -1,0 +1,38 @@
+{
+  "name": "scally",
+  "version": "1.1.0",
+  "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
+  "main": "style.css",
+  "homepage": "https://github.com/chris-pearce/scally",
+  "keywords": [
+    "scally",
+    "css",
+    "oocss",
+    "sass",
+    "bem",
+    "responsive"
+  ],
+  "author": [
+    {
+      "name":   "Chris Pearce",
+      "email":  "hi@chris-pearce.me",
+      "url":    "http://chris-pearce.me"
+    },
+    {
+      "name":   "Kate Levin",
+      "email":  "kllevin@gmail.com",
+      "url":    "http://kllevin.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chris-pearce/scally.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chris-pearce/scally/issues"
+  },
+  "license": {
+    "type": "The MIT License (MIT)",
+    "url": "https://github.com/chris-pearce/scally/blob/master/LICENSE"
+  }
+}
