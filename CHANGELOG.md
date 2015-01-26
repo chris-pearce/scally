@@ -2,8 +2,10 @@
 
 === 1.1.0 (January 26, 2015)
 
-- Made Scally available as an npm package.
+- Setup an [NPM package](https://www.npmjs.com/package/scally) for Scally.
 - Adding a `.version` file.
-- Adding version number and updating authors email addresses in the `bower.json` file.
+- `bower.json` updates:
+  - Adding version number.
+  - Updating authors email addresses.
 
 === 1.0.0 (January 18, 2015)
