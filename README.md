@@ -1,4 +1,4 @@
-<img src="https://dl.dropboxusercontent.com/s/anlzedtpekcnla7/logo.png" width="252">
+<img src="https://dl.dropboxusercontent.com/s/anlzedtpekcnla7/logo.png" width="211">
 
 
 
