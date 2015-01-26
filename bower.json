@@ -1,6 +1,6 @@
 {
   "name": "scally",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://github.com/chris-pearce/scally",
   "main": "style.css",
   "authors": [
@@ -24,6 +24,8 @@
     "style-test.scss",
     "CHANGELOG.md",
     "package.json",
-    "test.html"
+    "test.html",
+    ".version",
+    ".npmignore"
   ]
 }
