@@ -1,0 +1,6 @@
+.gitignore
+settings.scss
+style.scss
+style-test.scss
+CHANGELOG.md
+bower.json
