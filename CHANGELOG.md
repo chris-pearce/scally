@@ -1,5 +1,9 @@
 === HEAD
 
+=== 1.2.0 (January 27, 2015)
+
+- Updated the package JSON files to exclude certain files.
+
 === 1.1.0 (January 26, 2015)
 
 - Setup an [NPM package](https://www.npmjs.com/package/scally) for Scally.
