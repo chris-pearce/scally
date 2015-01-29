@@ -9,6 +9,9 @@
 - [Scally architecture](#scally-architecture)
 - [Dependencies](#dependencies)
 - [Installing Scally](#installing-scally)
+    - [Packages](#packages)
+        - [Getting the latest version](#getting-the-latest-version)
+    - [Download by zip](#download-by-zip)
 - [Setting up a new project](#setting-up-a-new-project)
     - [Setting up your master stylesheet](#setting-up-your-master-stylesheet)
     - [Master stylesheet overview](#master-stylesheet-overview)
@@ -69,50 +72,69 @@ The breakdown of these layers from bottom to top (order of their specificity):
 
 # Installing Scally
 
-Scally can be installed as a package with:
+## Packages
+
+Scally can be installed as a package with either:
 
 - [npm](https://www.npmjs.org/)
 - [Bower](http://bower.io/)
-- ~~Ruby Gem~~
 
-You'll need [Node.js](http://nodejs.org/) installed to use the npm package, and Bower needs to be installed with npm:
+*Ruby Gem coming soon*
+
+You'll need [Node.js](http://nodejs.org/) installed to use the npm and Bower packages, more information on installing npm [here](http://blog.npmjs.org/post/85484771375/how-to-install-npm). Once npm is installed you're good to install the Scally npm package by `cd`ing into your project folder (the root is recommended) and running this command:
+
+```
+npm install scally
+```
+
+For the Scally Bower package you first need to install Bower via npm like so:
 
 ```
 npm install -g bower
 ```
 
-As we like Bower around here we'll focus on that :).
-
-Once Bower is installed you can install Scally by `cd`ing into your project folder or into the folder where you keep your CSS and run the following command:
+Then, just like the npm package, you `cd` into your project folder (the root is recommended) and run this command:
 
 ```
 bower install scally
 ```
 
-By default Bower will create a `bower_components` folder. You can change this to be any folder you wish via the `.bowerrc` file, [see](http://bower.io/docs/config/#directory).
+Once the package is installed your project will look like this:
 
-So if you have a `css` folder in your project and run the above command in that folder you'll end up with something like this:
+**npm**
 
 ```
-css
+project root
+│
+└───node_modules
+    │
+    └───scally
+```
+
+**Bower**
+
+```
+project root
 │
 └───bower_components
     │
     └───scally
 ```
 
+### Getting the latest version
+
+Once installed you can always get the latest version of Scally by running the following commands:
+
+- **npm:** `npm update scally`
+- **Bower:** `bower update scally`
+
 **N.B.** Scally should never be edited or added too directly. If you ever make changes directly in Scally you will not be able to seamlessly update your version of Scally to the latest version.
 
-Once installed you can always get the latest version of Scally by running the following command:
+*This is a very simple overview of npm and Bower so if you're new to them then please take the time to read up on them.*
 
-```
-bower update
-```
+## Download by zip
 
-*This is a very simple overview of Bower so if you're new to it then please take the time to [read up on it](http://bower.io/).*
-
-You can install Scally via the [**Download by zip**](https://github.com/chris-pearce/scally/archive/master.zip) option however it's advised to use a package manager like Bower to handle your third-party dependencies.
-
+You can install Scally via the [**Download by zip**](https://github.com/chris-pearce/scally/archive/master.zip) option however it's advised to use a package manager like npm or Bower to handle your third-party dependencies.
 
 # Setting up a new project
 
