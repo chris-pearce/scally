@@ -69,15 +69,19 @@ The breakdown of these layers from bottom to top (order of their specificity):
 
 # Installing Scally
 
-Scally can be installed via [Bower](http://bower.io/).
+Scally can be installed as a package with:
 
-Bower needs to be installed with npm:
+- [npm](https://www.npmjs.org/)
+- [Bower](http://bower.io/)
+- ~~Ruby Gem~~
+
+You'll need [Node.js](http://nodejs.org/) installed to use the npm package, and Bower needs to be installed with npm:
 
 ```
 npm install -g bower
 ```
 
-*Bower requires [Node and npm](http://nodejs.org/) and [Git](http://git-scm.com/).*
+As we like Bower around here we'll focus on that :).
 
 Once Bower is installed you can install Scally by `cd`ing into your project folder or into the folder where you keep your CSS and run the following command:
 
