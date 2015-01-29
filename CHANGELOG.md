@@ -1,5 +1,10 @@
 === HEAD
 
+=== 1.2.1 (January 29, 2015)
+
+- Issue #24 fixed: the *apply at breakpoints* feature was turned on by default for the **Link disguised** utility when it should have been off.
+- Fixed whitespace issues.
+
 === 1.2.0 (January 27, 2015)
 
 - Updated the package JSON files to exclude certain files.
