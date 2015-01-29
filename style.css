@@ -3567,12 +3567,6 @@ li:before {
     text-decoration: none;
     color: inherit; }
 
-@media (min-width: 40.0625em) {
-  .u-link-disguised-from-lap {
-    cursor: text; }
-    .u-link-disguised-from-lap, .u-link-disguised-from-lap:visited, .u-link-disguised-from-lap:hover, .u-link-disguised-from-lap:focus {
-      text-decoration: none;
-      color: inherit; } }
 /* ============================================================================
    @UTILITIES -> LINK NO UNDERLINE
    ========================================================================= */
