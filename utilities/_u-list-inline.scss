@@ -30,7 +30,7 @@
  */
 
 // Apply at these breakpoints
-$u-list-inline-apply-at-breakpoints: $default-breakpoints !default;
+$u-list-inline-apply-at-breakpoints:                                  $default-breakpoints !default;
 
 // From the above choose what you want to apply it too
 $u-list-inline-apply-at-breakpoints-for-default:                       false !default;

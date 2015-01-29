@@ -18,7 +18,7 @@
  */
 
 // Apply at these breakpoints
-$u-toggle-visibility-apply-at-breakpoints:                     $default-breakpoints
+$u-toggle-visibility-apply-at-breakpoints:                   $default-breakpoints
 !default;
 
 // From the above choose what you want to apply it too
@@ -29,7 +29,7 @@ $u-toggle-visibility-apply-at-breakpoints-for-inline:        false !default;
 $u-toggle-visibility-apply-at-breakpoints-for-inline-block:  false !default;
 
 // The state class that is powered by JavaScript
-$u-toggle-visibility-state-class:                     is-visible !default;
+$u-toggle-visibility-state-class:                            is-visible !default;
 
 
 %u-toggle-visibility,
