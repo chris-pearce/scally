@@ -1,8 +1,14 @@
 === HEAD
 
+=== 1.2.2 (January 31, 2015)
+
+- Fixed a bug where the **Text** utility was using an incorrect *apply at
+  breakpoints* setting.
+
 === 1.2.1 (January 29, 2015)
 
-- Issue #24 fixed: the *apply at breakpoints* feature was turned on by default for the **Link disguised** utility when it should have been off.
+- Issue #24 fixed: the *apply at breakpoints* feature was turned on by default
+  for the **Link disguised** utility when it should have been off.
 - Fixed whitespace issues.
 
 === 1.2.0 (January 27, 2015)
