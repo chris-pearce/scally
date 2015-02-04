@@ -77,12 +77,32 @@ So say you wanted an element to pin it's itself to all corners of it's container
 
     <div class="u-position-absolute u-position-pin-all"> ... </div>
 
+However if the above `div` was part of a [component](../components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
+
+- It's more maintainable when changes need to be made as you don't have to touch the HTML so much, however this can be resolved by having your Views only contain data with the UI coming from an API.
+- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
+- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
+
+So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
+
+**HTML**
+
+    <div class="modal__cover"> ... </div>
+
+**CSS**
+
+    .modal__cover {
+        position: absolute;
+        @extend %u-position-pin-all;
+    }
+
+You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view. [This article](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) (starting from the text: *Another case of an abused `@extend` looks a little like this*) does a very good job at further explaining why this isn't a good idea.
+
 Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern found in many UI's:
 
 ![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
 
-The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_l-side-by-side.scss) however they're a number of other style treatments going on in this UI pattern that are outside of the
-Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
+The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_l-side-by-side.scss) however they're a number of other style treatments going on in this UI pattern that are outside of the Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
 
 - [Divider](_u-divider.scss)
 - [Spacing](_u-spacing.scss)
