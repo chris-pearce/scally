@@ -365,7 +365,7 @@ Scally is maintained under the [Semantic Versioning guidelines](http://semver.or
 
 # License
 
-Copyright 2015 Westfield Labs Corporation.
+Copyright 2014 Westfield Labs Corporation.
 
 Copyright 2015 Chris Pearce.
 
