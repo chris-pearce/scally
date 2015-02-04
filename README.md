@@ -365,9 +365,12 @@ Scally is maintained under the [Semantic Versioning guidelines](http://semver.or
 
 # License
 
-Copyright 2015 Chris Pearce. [View license](LICENSE).
+Copyright 2015 Westfield Labs Corporation.
+Copyright 2015 Chris Pearce.
 
-Licensed under the [The MIT License (MIT)](http://opensource.org/licenses/MIT).
+[View license](LICENSE).
+
+Licensed under the [Apache v2.0](http://www.apache.org/licenses/LICENSE-2.0) license.
 
 Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/) whilst I was an employee there.
 
