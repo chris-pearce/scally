@@ -6,6 +6,7 @@
 ## Contents
 
 - [What are they?](#what-are-they)
+- [Demo's](#demos)
 - [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
 - [Open/close principle](#openclose-principle)
@@ -27,7 +28,7 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 ## Demo's
 
-http://s.codepen.io/crite/debug/WbMgMp?
+http://s.codepen.io/crite/debug/WbMgMp? (work in progress)
 
 
 
