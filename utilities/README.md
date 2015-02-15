@@ -25,6 +25,13 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 
 
+## Demo's
+
+http://s.codepen.io/crite/debug/WbMgMp?
+
+
+
+
 ## Why have them?
 
 Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable modules.
