@@ -28,7 +28,7 @@ Utilities are low-level. They have a very narrow scope and may end up being used
 
 ## Demo's
 
-http://s.codepen.io/crite/debug/WbMgMp? (work in progress)
+<http://s.codepen.io/chris-pearce/live/WbMgMp> (work in progress)
 
 
 
