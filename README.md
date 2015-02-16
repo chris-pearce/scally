@@ -36,7 +36,9 @@ Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/20
 
 Scally is designed to be configurable, only requiring you to bring in the parts you are using, keeping your CSS architecture light weight and scalable. It is unopinionated about design giving you more flexibility than your typical UI toolkit.
 
-*A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at.*
+*A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
+
+- [Utilities](http://s.codepen.io/chris-pearce/live/WbMgMp)
 
 
 
