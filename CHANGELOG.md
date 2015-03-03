@@ -1,5 +1,12 @@
 === HEAD
 
+=== 1.3.0 (March 2, 2015)
+
+- Issue #37 fixed: Link complex utility shouldn't have `cursor: pointer` on the
+  part that's not meant to behave like a link.
+- Issue #33 fixed: Add a new modifier to the Side-by-side Alternate layout
+  module.
+
 === 1.2.2 (January 31, 2015)
 
 - Fixed a bug where the **Text** utility was using an incorrect *apply at
