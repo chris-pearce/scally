@@ -43,6 +43,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
   &:focus {
     text-decoration: none;
     color: inherit;
+    cursor: default;
   }
 }
 
@@ -53,6 +54,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
     &:focus {
       text-decoration: none;
       color: inherit;
+      cursor: default;
     }
   }
 }// end if
@@ -65,6 +67,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
   %u-link-complex__target,
   .u-link-complex__target {
     color: $link-colour;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -77,6 +80,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
     @include generate-at-breakpoints('.u-link-complex__target',
       $u-link-complex-apply-at-breakpoints) {
       color: $colour-link;
+      cursor: pointer;
 
       &:hover,
       &:focus {
