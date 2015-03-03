@@ -3534,13 +3534,15 @@ li:before {
 .u-link-complex:hover,
 .u-link-complex:focus {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  cursor: default; }
 
 /**
  * The piece of the link that needs to act like a link.
  */
 .u-link-complex__target {
-  color: #2aa198; }
+  color: #2aa198;
+  cursor: pointer; }
   .u-link-complex__target:hover,
   .u-link-complex__target:focus {
     text-decoration: underline;
