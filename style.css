@@ -1975,6 +1975,16 @@ h6:last-child,
   width: auto; }
 
 /**
+ * Modifier: layout-fixed.
+ *
+ * This makes table and column widths set by the widths of `table` and `col`
+ * elements or by the width of the first row of cells. Cells in subsequent rows
+ * do not affect column widths.
+ */
+.l-side-by-side-alt--layout-fixed {
+  table-layout: fixed; }
+
+/**
  * Modifier: make linear.
  *
  * Turn off the side-by-side layout so the two elements stack on top of
