@@ -76,6 +76,17 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
 
 
 /**
+ * Modifier: layout-fixed.
+ *
+ * This makes table and column widths set by the widths of `table` and `col`
+ * elements or by the width of the first row of cells. Cells in subsequent rows
+ * do not affect column widths.
+ */
+
+.l-side-by-side-alt--layout-fixed {table-layout: fixed;}
+
+
+/**
  * Modifier: make linear.
  *
  * Turn off the side-by-side layout so the two elements stack on top of
@@ -184,16 +195,20 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
     }
 
     // Reversed tiny gutter
-    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-left, $l-side-by-side-alt-gutter-tiny);}
+    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-tiny > & {
+      @include to-rem(padding-left, $l-side-by-side-alt-gutter-tiny);}
 
     // Reversed small gutter
-    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-small > & {@include to-rem(padding-left, $l-side-by-side-alt-gutter-small);}
+    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-small > & {
+      @include to-rem(padding-left, $l-side-by-side-alt-gutter-small);}
 
     // Reversed large gutter
-    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-large > & {@include to-rem(padding-left, $l-side-by-side-alt-gutter-large);}
+    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-large > & {
+      @include to-rem(padding-left, $l-side-by-side-alt-gutter-large);}
 
     // Reversed huge gutter
-    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-huge > & {@include to-rem(padding-left, $l-side-by-side-alt-gutter-huge);}
+    .l-side-by-side-alt--reversed.l-side-by-side-alt--gutter-huge > & {
+      @include to-rem(padding-left, $l-side-by-side-alt-gutter-huge);}
 
 
     /**
@@ -205,7 +220,8 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
     .l-side-by-side-alt--flush > & {padding-right: 0;}
 
     // Reversed flush
-    .l-side-by-side-alt--reversed.l-side-by-side-alt--flush > & {padding-left: 0;}
+    .l-side-by-side-alt--reversed.l-side-by-side-alt--flush > & {
+      padding-left: 0;}
 
 
     /**
@@ -227,16 +243,20 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
            */
 
           // Tiny
-          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-tiny > & {@include to-rem(margin-bottom, $l-side-by-side-alt-gutter-tiny);}
+          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-tiny > & {
+            @include to-rem(margin-bottom, $l-side-by-side-alt-gutter-tiny);}
 
           // Small
-          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-small > & {@include to-rem(margin-bottom, $l-side-by-side-alt-gutter-small);}
+          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-small > & {
+            @include to-rem(margin-bottom, $l-side-by-side-alt-gutter-small);}
 
           // Large
-          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-large > & {@include to-rem(margin-bottom, $l-side-by-side-alt-gutter-large);}
+          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-large > & {
+            @include to-rem(margin-bottom, $l-side-by-side-alt-gutter-large);}
 
           // Huge
-          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-huge > & {@include to-rem(margin-bottom, $l-side-by-side-alt-gutter-huge);}
+          .l-side-by-side-alt--remove.l-side-by-side-alt--gutter-huge > & {
+            @include to-rem(margin-bottom, $l-side-by-side-alt-gutter-huge);}
 
 
           /**
@@ -245,7 +265,8 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
            * Remove the bottom spacing.
            */
 
-          .l-side-by-side-alt--remove.l-side-by-side-alt--flush > & {margin-bottom: 0;}
+          .l-side-by-side-alt--remove.l-side-by-side-alt--flush > & {
+            margin-bottom: 0;}
 
       }
     }// endif
