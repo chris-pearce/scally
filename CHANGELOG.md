@@ -2,10 +2,8 @@
 
 === 1.3.0 (March 2, 2015)
 
-- Issue #37 fixed: Link complex utility shouldn't have `cursor: pointer` on the
-  part that's not meant to behave like a link.
-- Issue #33 fixed: Add a new modifier to the Side-by-side Alternate layout
-  module.
+- [Issue #37](https://github.com/chris-pearce/scally/issues/37) fixed.
+- [Issue #33](https://github.com/chris-pearce/scally/issues/33) fixed.
 
 === 1.2.2 (January 31, 2015)
 
@@ -14,8 +12,7 @@
 
 === 1.2.1 (January 29, 2015)
 
-- Issue #24 fixed: the *apply at breakpoints* feature was turned on by default
-  for the **Link disguised** utility when it should have been off.
+- [Issue #24](https://github.com/chris-pearce/scally/issues/24) fixed.
 - Fixed whitespace issues.
 
 === 1.2.0 (January 27, 2015)
