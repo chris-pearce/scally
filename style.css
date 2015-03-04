@@ -3545,7 +3545,7 @@ li:before {
 .u-link-complex:focus {
   text-decoration: none;
   color: inherit;
-  cursor: default; }
+  cursor: text; }
 
 /**
  * The piece of the link that needs to act like a link.

@@ -43,7 +43,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
   &:focus {
     text-decoration: none;
     color: inherit;
-    cursor: default;
+    cursor: text;
   }
 }
 
@@ -54,7 +54,7 @@ $u-link-complex-apply-at-breakpoints-for-target:   false !default;
     &:focus {
       text-decoration: none;
       color: inherit;
-      cursor: default;
+      cursor: text;
     }
   }
 }// end if
