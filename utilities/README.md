@@ -154,15 +154,17 @@ So Scally utilities can only ever be used *as is*. If an existing Scally utility
 
 ## Applying at breakpoints
 
-When building responsive UI's it is a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. So each utility comes with the ability to be applied at any of the [set breakpoints](../core/settings/_breakpoints.scss#L6-L44) or any custom breakpoint.
+When building responsive UI's it is a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. So each utility comes with the ability to be applied at any of the [set breakpoints](../core/settings/_breakpoints.scss) or any custom breakpoint.
 
-Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss#L6-L57) and this feature is turned off by default in favour of leaner stylesheets, and not all UI's are responsive.
+Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss) and this feature is turned off by default in favour of leaner stylesheets, **and not all UI's are responsive**.
 
 A real common use case for this application is hiding UI at certain viewport sizes, typically at a mobile size viewport or a non-mobile size viewport.
 
 So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display**](_u-display.scss) utility to achieve this, applying these steps:
 
-1. Turn the feature on by changing the toggle setting to `true`:
+1. Turn the feature on by changing the relevant setting to `true` e.g.
+ 
+ `$u-display-apply-at-breakpoints-for-hide: true;`
 
  which will output (compile) the utility in a media query like so:
 
@@ -171,10 +173,10 @@ So if we wanted to hide a **Call Us** button on larger viewports we would use th
     .u-hide-from-lap {display: none;}
   }
   ```
-2. By default the feature uses the [`lap`](../core/settings/_breakpoints.scss#L53) breakpoint but you can change this to another breakpoint or add more breakpoints via this [setting](_u-display.scss#L27) which you do in your main stylesheet above the `@import`:
+2. By default the feature uses the `lap` breakpoint but you can change this to another breakpoint or add more breakpoints via the `$u-display-apply-at-breakpoints` setting which you do in your main stylesheet above the relevant `@import`:
 
   ```
-  $u-display-breakpoints: (lap, lap-large)
+  $u-display-apply-at-breakpoints: (lap, lap-large)
   @import "bower_components/scally/utilities/u-display";
   ```
   This will output (compile):
