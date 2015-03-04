@@ -173,7 +173,7 @@ So if we wanted to hide a **Call Us** button on larger viewports we would use th
     .u-hide-from-lap {display: none;}
   }
   ```
-2. By default the feature uses the `lap` breakpoint but you can change this to another breakpoint or add more breakpoints via the `$u-display-apply-at-breakpoints` setting which you do in your main stylesheet above the relevant `@import`:
+2. By default the feature uses the `lap` breakpoint but you can change this to another breakpoint or add more breakpoints via the `$u-display-apply-at-breakpoints` setting which you do in your [master stylesheet](https://github.com/chris-pearce/scally#master-stylesheet-overview) above the relevant `@import`:
 
   ```
   $u-display-apply-at-breakpoints: (lap, lap-large)
