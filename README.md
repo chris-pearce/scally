@@ -38,7 +38,7 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 *A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
 
-- [Utilities](http://s.codepen.io/chris-pearce/live/WbMgMp)
+- [Utilities](http://s.codepen.io/chris-pearce/debug/WbMgMp)
 
 
 
