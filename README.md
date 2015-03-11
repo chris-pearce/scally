@@ -6,6 +6,7 @@
 # Contents
 
 - [What is Scally?](#what-is-scally)
+- [Demo's](#demos)
 - [Scally architecture](#scally-architecture)
 - [Dependencies](#dependencies)
 - [Installing Scally](#installing-scally)
@@ -26,6 +27,7 @@
 - [Versioning](#versioning)
 - [Credits](#credits)
 - [License](#license)
+- [Presentations](#presentations)
 
 
 
@@ -35,6 +37,11 @@
 Scally is a [Sass](http://sass-lang.com/)-based, [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/), responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly. It is a framework focused on scalability and reuse, there when you need it and getting out of your way when you don't.
 
 Scally is designed to be configurable, only requiring you to bring in the parts you are using, keeping your CSS architecture light weight and scalable. It is unopinionated about design giving you more flexibility than your typical UI toolkit.
+
+
+
+
+# Demo's 
 
 *A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
 
@@ -384,3 +391,10 @@ Scally was something I brought to Westfield Labs, and something I worked on full
 - [Dan Sim](http://daniel-sim.com/)
 
 After I finished at Westfield Labs I decided to fork Scally so I could maintain it myself under my own personal GitHub account.
+
+
+
+
+# Presentations
+
+- <http://scally.chris-pearce.me/presentation> (for my current employer [Campaign Monitor](https://www.campaignmonitor.com/))
