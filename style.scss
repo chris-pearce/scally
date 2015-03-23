@@ -188,6 +188,9 @@
 
 @import "bower_components/scally/layout/l-side-by-side-alt";
 
+// CSS3 columns
+@import "bower_components/scally/layout/l-columns";
+
 
 /**
  * COMPONENTS.
@@ -247,8 +250,6 @@
 @import "bower_components/scally/utilities/u-spacing";
 
 @import "bower_components/scally/utilities/u-divider";
-
-@import "bower_components/scally/utilities/u-columns";
 
 @import "bower_components/scally/utilities/u-overflow";
 

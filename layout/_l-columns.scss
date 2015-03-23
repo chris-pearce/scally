@@ -1,0 +1,199 @@
+/* ============================================================================
+   @LAYOUT -> COLUMNS
+   ========================================================================= */
+
+
+/**
+ * Easily create columns out of one element using CSS3 Columns.
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+// Apply at these breakpoints
+$l-column-apply-at-breakpoints:                     $default-breakpoints
+!default;
+
+// From the above choose what you want to apply it too
+$l-column-apply-breakpoints-for-default:            false !default;
+
+$l-column-apply-breakpoints-for-columns-three:      false !default;
+
+$l-column-apply-breakpoints-for-columns-four:       false !default;
+
+$l-column-apply-breakpoints-for-columns-five:       false !default;
+
+$l-column-apply-breakpoints-for-columns-six:        false !default;
+
+$l-column-apply-breakpoints-for-gutter-tiny:        false !default;
+
+$l-column-apply-breakpoints-for-gutter-small:       false !default;
+
+$l-column-apply-breakpoints-for-gutter-large:       false !default;
+
+$l-column-apply-breakpoints-for-gutter-huge:        false !default;
+
+$l-column-apply-breakpoints-for-columns-divider:    false !default;
+
+/**
+ * Gutter sizes.
+ */
+
+$l-column-gap-base:                                 $spacing-base !default;
+
+$l-column-gap-tiny:                                 $spacing-third !default;
+
+$l-column-gap-small:                                $spacing-half !default;
+
+$l-column-gap-large:                                $spacing-base-plus-half
+!default;
+
+$l-column-gap-huge:                                 $spacing-double !default;
+
+/**
+ * Divider.
+ */
+
+$l-column-divider-thickness:                        1 !default;
+
+$l-column-divider-style:                            solid !default;
+
+$l-column-divider-colour:                           $colour-text-base !default;
+
+
+%l-columns,
+.l-columns {
+  column-count: 2;
+  @include to-rem(column-gap, $l-column-gap-base);
+}
+
+@if $l-column-apply-breakpoints-for-default {
+  @include generate-at-breakpoints('.l-columns',
+    $l-column-apply-at-breakpoints) {
+    column-count: 2;
+    @include to-rem(column-gap, $l-column-gap-base);
+  }
+}// end if
+
+
+/**
+ * Modifiers: number of columns.
+ */
+
+// Three
+%l-columns--three,
+.l-columns--three {column-count: 3;}
+
+@if $l-column-apply-breakpoints-for-columns-three {
+  @include generate-at-breakpoints('.l-columns--three',
+    $l-column-apply-at-breakpoints) {
+    column-count: 3;
+  }
+}// end if
+
+// Four
+%l-columns--four,
+.l-columns--four {column-count: 4;}
+
+@if $l-column-apply-breakpoints-for-columns-four {
+  @include generate-at-breakpoints('.l-columns--four',
+    $l-column-apply-at-breakpoints) {
+    column-count: 4;
+  }
+}// end if
+
+// Five
+%l-columns--five,
+.l-columns--five {column-count: 5;}
+
+@if $l-column-apply-breakpoints-for-columns-five {
+  @include generate-at-breakpoints('.l-columns--five',
+    $l-column-apply-at-breakpoints) {
+    column-count: 5;
+  }
+}// end if
+
+// Six
+%l-columns--six,
+.l-columns--six {column-count: 6;}
+
+@if $l-column-apply-breakpoints-for-columns-six {
+  @include generate-at-breakpoints('.l-columns--six',
+    $l-column-apply-at-breakpoints) {
+    column-count: 6;
+  }
+}// end if
+
+
+/**
+ * Modifiers: gutter sizes.
+ */
+
+// Tiny
+%l-columns--gutter-tiny,
+.l-columns--gutter-tiny {@include to-rem(column-gap, $l-column-gap-tiny);}
+
+@if $l-column-apply-breakpoints-for-gutter-tiny {
+  @include generate-at-breakpoints('.l-columns--gutter-tiny',
+    $l-column-apply-at-breakpoints
+    ) {
+    @include to-rem(column-gap, $l-column-gap-tiny);
+  }
+}// end if
+
+// Small
+%l-columns--gutter-small,
+.l-columns--gutter-small {@include to-rem(column-gap, $l-column-gap-small);}
+
+@if $l-column-apply-breakpoints-for-gutter-small {
+  @include generate-at-breakpoints('.l-columns--gutter-small',
+    $l-column-apply-at-breakpoints
+    ) {
+    @include to-rem(column-gap, $l-column-gap-small);
+  }
+}// end if
+
+// Large
+%l-columns--gutter-large,
+.l-columns--gutter-large {@include to-rem(column-gap, $l-column-gap-large);}
+
+@if $l-column-apply-breakpoints-for-gutter-large {
+  @include generate-at-breakpoints('.l-columns--gutter-large',
+    $l-column-apply-at-breakpoints) {
+    @include to-rem(column-gap, $l-column-gap-large);
+  }
+}// end if
+
+// Huge
+%l-columns--gutter-huge,
+.l-columns--gutter-huge {@include to-rem(column-gap, $l-column-gap-huge);}
+
+@if $l-column-apply-breakpoints-for-gutter-huge {
+  @include generate-at-breakpoints('.l-columns--gutter-huge',
+    $l-column-apply-at-breakpoints) {
+    @include to-rem(column-gap, $l-column-gap-huge);
+  }
+}// end if
+
+
+/**
+ * Modifier: column divider.
+ */
+
+%l-columns--divider,
+.l-columns--divider {@include to-rem(column-rule, $l-column-divider-thickness
+  $l-column-divider-style $l-column-divider-colour);}
+
+@if $l-column-apply-breakpoints-for-columns-divider {
+  @include generate-at-breakpoints('.l-columns--divider',
+    $l-column-apply-at-breakpoints) {@include to-rem(column-rule,
+      $l-column-divider-thickness $l-column-divider-style
+      $l-column-divider-colour);
+  }
+}// end if
