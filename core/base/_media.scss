@@ -52,6 +52,17 @@ img {
 
 
 /**
+ * If responsive images are turned off but you still need to apply it in certain
+ * cases.
+ */
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/**
  * If responsive images are turned on then use this to turn it off.
  */
 
