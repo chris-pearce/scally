@@ -3047,6 +3047,24 @@ li:before {
 .u-five-sixths {
   width: 83.33333%; }
 
+.u-one-seventh {
+  width: 14.28571%; }
+
+.u-two-sevenths {
+  width: 28.57143%; }
+
+.u-three-sevenths {
+  width: 42.85714%; }
+
+.u-four-sevenths {
+  width: 57.14286%; }
+
+.u-five-sevenths {
+  width: 71.42857%; }
+
+.u-six-sevenths {
+  width: 85.71429%; }
+
 .u-one-eighth {
   width: 12.5%; }
 
@@ -3176,6 +3194,24 @@ li:before {
 
   .u-five-sixths-from-lap {
     width: 83.33333%; }
+
+  .u-one-seventh-from-lap {
+    width: 14.28571%; }
+
+  .u-two-sevenths-from-lap {
+    width: 28.57143%; }
+
+  .u-three-sevenths-from-lap {
+    width: 42.85714%; }
+
+  .u-four-sevenths-from-lap {
+    width: 57.14286%; }
+
+  .u-five-sevenths-from-lap {
+    width: 71.42857%; }
+
+  .u-six-sevenths-from-lap {
+    width: 85.71429%; }
 
   .u-one-eighth-from-lap {
     width: 12.5%; }
