@@ -1,5 +1,11 @@
 === HEAD
 
+=== 1.4.0 (March 23, 2015)
+
+- [Issue #44](https://github.com/chris-pearce/scally/issues/44) fixed.
+- [Issue #45](https://github.com/chris-pearce/scally/issues/45) fixed.
+- [Issue #48](https://github.com/chris-pearce/scally/issues/48) fixed.
+
 === 1.3.0 (March 2, 2015)
 
 - [Issue #37](https://github.com/chris-pearce/scally/issues/37) fixed.
