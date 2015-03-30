@@ -28,7 +28,8 @@ $l-grid-pull-apply-at-breakpoints:  (lap) !default;
  */
 
 @if $l-grid-pull-apply {
-  @include generate-percentage-classes-at-breakpoints($l-grid-pull-apply-at-breakpointss,
+  @include generate-percentage-classes-at-breakpoints(
+    $l-grid-pull-apply-at-breakpoints,
     $scally-type: "l",
     $class-name: "pull",
     $css-property: "right"

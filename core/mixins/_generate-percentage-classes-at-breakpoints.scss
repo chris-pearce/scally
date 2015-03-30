@@ -4,16 +4,41 @@
 
 
 /**
- * Generate percentage classes with the option to apply at different
- * breakpoints e.g. `.u-one-whole` / `.u-one-whole-from-lap`. The percentage
- * classes are based off the widths defined here: Core -> Settings -> Widths.
+ * Generate percentage classes defined by the settings here:
+ * Core -> Settings -> Widths.
  *
- * N.B. the application for this mixin is quite unique so it's only used in a
- * few places in the framework.
+ * The default format for these classes is:
+ *
+    .u-one-whole
+    .u-one-half
+    .u-one-third
+    .u-one-quarter
+ *
+ * ... and so on.
+ *
+ * Or in the more terse format:
+ *
+    .u-100pc
+    .u-50pc
+    .u-33pc
+    .u-25pc
+ *
+ * ... and so on.
+ *
+ * The more terse format is turned off by default, to turn it on change this
+ * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
+ * `@import` for this mixin in your master stylesheet.
+ *
+ * The percentage classes can be applied at any breakpoint or any of the set
+ * breakpoints defined here: Core -> Settings -> Breakpoints. If the breakpoint
+ * is set via a min-width media query (the default)—say the 'desk'
+ * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
+ * breakpoint is set via a max-width media query then the format will be:
+ * `.u-one-half-up-to-desk`.
  *
  * @example
    @include generate-percentage-classes-at-breakpoints(
-     $breakpoints-for-grid-push-classes,
+     $l-grid-push-apply-at-breakpoints,
      $scally-type: "l",
      $class-name: "push",
      $css-property: "left"
@@ -26,15 +51,19 @@
  */
 
 // The fractions to be used for the classes
-$mixin-denominator-numbers:   (1 2 3 4 5 6 7 8 10 12) !default;
+$mixin-denominator-numbers:               (1 2 3 4 5 6 7 8 9 10 11 12) !default;
 
-$mixin-numerators:            (one two three four five six seven eight nine
-                              ten eleven twelve) !default;
+$mixin-numerators:                        (one two three four five six seven
+                                          eight nine ten eleven twelve)
+                                          !default;
 
-$mixin-denominator-words:     (whole half third quarter fifth sixth seventh
-                              eighth ninth tenth eleventh twelfth) !default;
+$mixin-denominator-words:                 (whole half third quarter fifth sixth
+                                          seventh eighth ninth tenth eleventh
+                                          twelfth) !default;
 
-$mixin-percentage-classnames: false !default;
+// Apply the more terse format e.g. `.u-50pc`
+$mixin-apply-terse-percentage-class-names: false !default;
+
 
 @mixin generate-percentage-classes-at-breakpoints($breakpoint-names,
   $scally-type: "u", $class-name: null, $css-property: "width") {
@@ -73,8 +102,8 @@ $mixin-percentage-classnames: false !default;
   @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-      
-      @if $mixin-percentage-classnames {
+
+      @if $mixin-apply-terse-percentage-class-names {
         $percent-width-class: ($numerator/$denominator) * 100;
         @if round($percent-width-class) == ceil($percent-width-class) {
           $percent-width-class: ceil($percent-width-class);
@@ -82,7 +111,7 @@ $mixin-percentage-classnames: false !default;
         @else {
           $percent-width-class: floor($percent-width-class);
         }
-        
+
         .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
           $numerator)}-#{nth($mixin-denominator-words,
             $denominator)#{$denominator-suffix}#{$breakpoint}},
@@ -99,4 +128,4 @@ $mixin-percentage-classnames: false !default;
       }
     }
   }
-}  
+}

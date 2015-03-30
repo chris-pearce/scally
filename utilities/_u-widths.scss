@@ -23,9 +23,9 @@
  */
 
 // Apply at these breakpoints
-$u-width-intrinsic-apply-at-breakpoints:                     (lap) !default;
+$u-width-intrinsic-apply-at-breakpoints:                     $default-breakpoints !default;
 
-$u-width-percentage-apply-at-breakpoints:                    (lap) !default;
+$u-width-percentage-apply-at-breakpoints:                    $default-breakpoints !default;
 
 // What intrinsic widths do you want to apply it too?
 $u-width-apply-at-breakpoints-for-shrink-wrap:               false !default;
