@@ -73,8 +73,8 @@ $mixin-breakpoint-name-placeholder: "{bp}";
   // When specifying one breakpoint with an explicit limit, it needs to be
   // casted into a list of lists, otherwise the mixin assumes there is a
   // breakpoint called 'max'
-  @if length($breakpoint-names) == 2 and
-      index((min max), nth($breakpoint-names, 2)) {
+  @if length($breakpoint-names) == 2 and index((min max),
+    nth($breakpoint-names, 2)) {
     $breakpoint-names-copy: $breakpoint-names;
     $breakpoint-names: ();
     $breakpoint-names: append($breakpoint-names, (nth($breakpoint-names-copy, 1)
