@@ -5,7 +5,9 @@
   "main": "style.css",
   "authors": [
     "Chris Pearce <hi@chris-pearce.me>",
-    "Kate Levin <kllevin@gmail.com>"
+    "Kate Levin <kllevin@gmail.com>",
+    "Matt Stow <matt@mattstow.com>",
+    "Chris Wright <hello@chriswrightdesign.com>"
   ],
   "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
   "keywords": [

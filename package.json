@@ -21,7 +21,17 @@
     {
       "name":   "Kate Levin",
       "email":  "kllevin@gmail.com",
-      "url":    "http://kllevin.com/"
+      "url":    "http://kllevin.com"
+    },
+    {
+      "name":   "Matt Stow",
+      "email":  "matt@mattstow.com",
+      "url":    "http://mattstow.com"
+    },
+    {
+      "name":   "Chris Wright",
+      "email":  "hello@chriswrightdesign.com",
+      "url":    "http://chriswrightdesign.com"
     }
   ],
   "repository": {
