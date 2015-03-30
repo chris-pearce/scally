@@ -34,6 +34,7 @@ $mixin-numerators:            (one two three four five six seven eight nine
 $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
                               eighth ninth tenth eleventh twelfth) !default;
 
+$mixin-percentage-classnames: false !default;
 
 @mixin generate-percentage-classes-at-breakpoints($breakpoint-names,
   $scally-type: "u", $class-name: null, $css-property: "width") {
@@ -72,10 +73,30 @@ $mixin-denominator-words:     (whole half third quarter fifth sixth seventh
   @each $denominator in $mixin-denominator-numbers {
     @for $numerator from 1 through max($denominator - 1, 1) {
       $denominator-suffix: if($numerator == 1, "", "s");
-
-      .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
-        $numerator)}-#{nth($mixin-denominator-words,
-          $denominator)#{$denominator-suffix}#{$breakpoint}} {#{$css-property}: percentage($numerator/$denominator);}
+      
+      @if $mixin-percentage-classnames {
+        $percent-width-class: ($numerator/$denominator) * 100;
+        @if round($percent-width-class) == ceil($percent-width-class) {
+          $percent-width-class: ceil($percent-width-class);
+        }
+        @else {
+          $percent-width-class: floor($percent-width-class);
+        }
+        
+        .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
+          $numerator)}-#{nth($mixin-denominator-words,
+            $denominator)#{$denominator-suffix}#{$breakpoint}},
+        .#{$scally-type}-#{$class-name}#{$percent-width-class}pc#{$breakpoint} {
+          #{$css-property}: percentage($numerator/$denominator);
+        }
+      }
+      @else {
+        .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
+          $numerator)}-#{nth($mixin-denominator-words,
+            $denominator)#{$denominator-suffix}#{$breakpoint}} {
+              #{$css-property}: percentage($numerator/$denominator);
+        }
+      }
     }
   }
-}
+}  
