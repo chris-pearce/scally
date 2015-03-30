@@ -1,15 +1,24 @@
 === HEAD
 
+=== 1.6.1 (March 30, 2015)
+
+- Adding the ability to apply a more terse format to the percentage width
+  classes e.g. instead of: `.u-one-half` it can be: `.u-50pc`.
+- [Issue #57](https://github.com/chris-pearce/scally/issues/57) applied.
+- Another update to
+  [Issue #45](https://github.com/chris-pearce/scally/issues/45): adding 9th and
+  11ths.
+
 === 1.4.0 (March 23, 2015)
 
-- [Issue #44](https://github.com/chris-pearce/scally/issues/44) fixed.
+- [Issue #44](https://github.com/chris-pearce/scally/issues/44) applied.
 - [Issue #45](https://github.com/chris-pearce/scally/issues/45) fixed.
-- [Issue #48](https://github.com/chris-pearce/scally/issues/48) fixed.
+- [Issue #48](https://github.com/chris-pearce/scally/issues/48) applied.
 
 === 1.3.0 (March 2, 2015)
 
 - [Issue #37](https://github.com/chris-pearce/scally/issues/37) fixed.
-- [Issue #33](https://github.com/chris-pearce/scally/issues/33) fixed.
+- [Issue #33](https://github.com/chris-pearce/scally/issues/33) applied.
 
 === 1.2.2 (January 31, 2015)
 
