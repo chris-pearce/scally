@@ -48,9 +48,7 @@ $u-align-apply-breakpoints-for-center-block:              false !default;
 
 @if $u-align-apply-breakpoints-for-v-inline-top {
   @include generate-at-breakpoints('.u-align-v-inline-top',
-    $u-align-apply-at-breakpoints) {
-    vertical-align: top;
-  }
+    $u-align-apply-at-breakpoints) {vertical-align: top;}
 }// end if
 
 // Middle
@@ -59,9 +57,7 @@ $u-align-apply-breakpoints-for-center-block:              false !default;
 
 @if $u-align-apply-breakpoints-for-v-inline-middle {
   @include generate-at-breakpoints('.u-align-v-inline-middle',
-    $u-align-apply-at-breakpoints) {
-    vertical-align: middle;
-  }
+    $u-align-apply-at-breakpoints) {vertical-align: middle;}
 }// end if
 
 // Baseline
@@ -70,9 +66,7 @@ $u-align-apply-breakpoints-for-center-block:              false !default;
 
 @if $u-align-apply-breakpoints-for-v-inline-baseline {
   @include generate-at-breakpoints('.u-align-v-inline-baseline',
-    $u-align-apply-at-breakpoints) {
-    vertical-align: baseline;
-  }
+    $u-align-apply-at-breakpoints) {vertical-align: baseline;}
 }// end if
 
 // Bottom
@@ -81,9 +75,7 @@ $u-align-apply-breakpoints-for-center-block:              false !default;
 
 @if $u-align-apply-breakpoints-for-v-inline-bottom {
   @include generate-at-breakpoints('.u-align-v-inline-bottom',
-    $u-align-apply-at-breakpoints) {
-    vertical-align: bottom;
-  }
+    $u-align-apply-at-breakpoints) {vertical-align: bottom;}
 }// end if
 
 // Inherit
@@ -92,9 +84,7 @@ $u-align-apply-breakpoints-for-center-block:              false !default;
 
 @if $u-align-apply-breakpoints-for-v-inline-inherit {
   @include generate-at-breakpoints('.u-align-v-inline-inherit',
-    $u-align-apply-at-breakpoints) {
-    vertical-align: inherit;
-  }
+    $u-align-apply-at-breakpoints) {vertical-align: inherit;}
 }// end if
 
 
