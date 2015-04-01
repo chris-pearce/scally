@@ -13,13 +13,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-float-apply-at-breakpoints:             $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-float-apply-at-breakpoints-for-left:    false !default;
 
 $u-float-apply-at-breakpoints-for-right:   false !default;
@@ -35,9 +34,8 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
 .u-float-left {float: left;}
 
 @if $u-float-apply-at-breakpoints-for-left {
-  @include generate-at-breakpoints('.u-float-left', $u-float-apply-at-breakpoints) {
-    float: left;
-  }
+  @include generate-at-breakpoints('.u-float-left',
+    $u-float-apply-at-breakpoints) {float: left;}
 }// end if
 
 
@@ -49,9 +47,8 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
 .u-float-right {float: right;}
 
 @if $u-float-apply-at-breakpoints-for-right {
-  @include generate-at-breakpoints('.u-float-right', $u-float-apply-at-breakpoints) {
-    float: right;
-  }
+  @include generate-at-breakpoints('.u-float-right',
+    $u-float-apply-at-breakpoints) {float: right;}
 }// end if
 
 
@@ -63,7 +60,6 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
 .u-float-none {float: none;}
 
 @if $u-float-apply-at-breakpoints-for-none {
-  @include generate-at-breakpoints('.u-float-none', $u-float-apply-at-breakpoints) {
-    float: none;
-  }
+  @include generate-at-breakpoints('.u-float-none',
+    $u-float-apply-at-breakpoints) {float: none;}
 }// end if

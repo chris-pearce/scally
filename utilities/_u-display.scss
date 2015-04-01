@@ -13,44 +13,39 @@
 
 
 /**
- * Settings.
+ * Apply at these breakpoints (turned off by default).
  */
 
-/**
- * Toggle on/off certain styles and treatments.
- */
+$u-display-apply-at-breakpoints:                      $default-breakpoints !default;
 
-// Apply at these breakpoints
-$u-display-apply-at-breakpoints:                       $default-breakpoints !default;
+// From the above breakpoints choose which utilities you wish to apply it too
+$u-display-apply-at-breakpoints-for-block:            false !default;
 
-// From the above choose what you want to apply it too
-$u-display-apply-at-breakpoints-for-block:             false !default;
+$u-display-apply-at-breakpoints-for-inline:           false !default;
 
-$u-display-apply-at-breakpoints-for-inline:            false !default;
+$u-display-apply-at-breakpoints-for-inline-block:     false !default;
 
-$u-display-apply-at-breakpoints-for-inline-block:      false !default;
+$u-display-apply-at-breakpoints-for-table:            false !default;
 
-$u-display-apply-at-breakpoints-for-table:             false !default;
+$u-display-apply-at-breakpoints-for-table-row:        false !default;
 
-$u-display-apply-at-breakpoints-for-table-row:         false !default;
+$u-display-apply-at-breakpoints-for-table-cell:       false !default;
 
-$u-display-apply-at-breakpoints-for-table-cell:        false !default;
+$u-display-apply-at-breakpoints-for-inherit:          false !default;
 
-$u-display-apply-at-breakpoints-for-inherit:           false !default;
+$u-display-apply-at-breakpoints-for-hide:             false !default;
 
-$u-display-apply-at-breakpoints-for-hide:              false !default;
+$u-display-apply-at-breakpoints-for-hide-invisible:   false !default;
 
-$u-display-apply-at-breakpoints-for-hide-invisible:    false !default;
-
-$u-display-apply-at-breakpoints-for-hide-visually:     false !default;
+$u-display-apply-at-breakpoints-for-hide-visually:    false !default;
 
 /**
  * Classes to detect if JavaScript is on or off.
  */
 
-$u-display-js-is-on-class:                              js !default;
+$u-display-js-is-on-class:                            js !default;
 
-$u-display-js-is-off-class:                             no-js !default;
+$u-display-js-is-off-class:                           no-js !default;
 
 
 /**
@@ -62,7 +57,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-block {display: block;}
 
 @if $u-display-apply-at-breakpoints-for-block {
-  @include generate-at-breakpoints('.u-display-block', $u-display-apply-at-breakpoints) {display: block;}
+  @include generate-at-breakpoints('.u-display-block',
+    $u-display-apply-at-breakpoints) {display: block;}
 }// end if
 
 // Inline
@@ -70,7 +66,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-inline {display: inline;}
 
 @if $u-display-apply-at-breakpoints-for-inline {
-  @include generate-at-breakpoints('.u-display-inline', $u-display-apply-at-breakpoints) {display: inline;}
+  @include generate-at-breakpoints('.u-display-inline',
+    $u-display-apply-at-breakpoints) {display: inline;}
 }// end if
 
 // Inline block
@@ -78,8 +75,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-inline-block {display: inline-block;}
 
 @if $u-display-apply-at-breakpoints-for-inline-block {
-  @include generate-at-breakpoints('.u-display-inline-block', $u-display-apply-at-breakpoints
-    ) {display: inline-block;}
+  @include generate-at-breakpoints('.u-display-inline-block',
+    $u-display-apply-at-breakpoints) {display: inline-block;}
 }// end if
 
 
@@ -92,7 +89,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-table {display: table;}
 
 @if $u-display-apply-at-breakpoints-for-table {
-  @include generate-at-breakpoints('.u-display-table', $u-display-apply-at-breakpoints) {display: table;}
+  @include generate-at-breakpoints('.u-display-table',
+    $u-display-apply-at-breakpoints) {display: table;}
 }// end if
 
 // Table row
@@ -100,8 +98,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-table-row {display: table-row;}
 
 @if $u-display-apply-at-breakpoints-for-table-row {
-  @include generate-at-breakpoints('.u-display-table-row', $u-display-apply-at-breakpoints
-    ) {display: table-row;}
+  @include generate-at-breakpoints('.u-display-table-row',
+    $u-display-apply-at-breakpoints) {display: table-row;}
 }// end if
 
 // Table cell
@@ -109,8 +107,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-table-cell {display: table-cell;}
 
 @if $u-display-apply-at-breakpoints-for-table-cell {
-  @include generate-at-breakpoints('.u-display-table-cell', $u-display-apply-at-breakpoints
-    ) {display: table-cell;}
+  @include generate-at-breakpoints('.u-display-table-cell',
+    $u-display-apply-at-breakpoints) {display: table-cell;}
 }// end if
 
 
@@ -122,7 +120,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-display-inherit {display: inherit;}
 
 @if $u-display-apply-at-breakpoints-for-inherit {
-  @include generate-at-breakpoints('.u-display-inherit', $u-display-apply-at-breakpoints) {display: inherit;}
+  @include generate-at-breakpoints('.u-display-inherit',
+    $u-display-apply-at-breakpoints) {display: inherit;}
 }// end if
 
 
@@ -152,7 +151,8 @@ $u-display-js-is-off-class:                             no-js !default;
 .u-hide-invisible {visibility: hidden;}
 
 @if $u-display-apply-at-breakpoints-for-hide-invisible {
-  @include generate-at-breakpoints('.u-hide-invisible', $u-display-apply-at-breakpoints) {visibility: hidden;}
+  @include generate-at-breakpoints('.u-hide-invisible',
+    $u-display-apply-at-breakpoints) {visibility: hidden;}
 }// end if
 
 
@@ -180,7 +180,8 @@ $u-display-js-is-off-class:                             no-js !default;
 }
 
 @if $u-display-apply-at-breakpoints-for-hide-visually {
-  @include generate-at-breakpoints('.u-hide-visually', $u-display-apply-at-breakpoints) {
+  @include generate-at-breakpoints('.u-hide-visually',
+    $u-display-apply-at-breakpoints) {
     position: absolute;
     height: 1px;
     width: 1px;
@@ -239,5 +240,4 @@ $u-display-js-is-off-class:                             no-js !default;
   .u-show-for-print-inline {display: inline;}
 
   .u-show-for-print-inline-block {display: inline-block;}
-
 }
