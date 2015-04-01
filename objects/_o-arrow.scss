@@ -1,0 +1,90 @@
+/* ============================================================================
+   @OBJECTS -> ARROW
+   ========================================================================= */
+
+
+/**
+ * Creates arrow shapes using only CSS.
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Sizes
+$o-arrow-size-base:     8 !default;
+
+$o-arrow-size-tiny:     $o-arrow-size-base - 4 !default;
+
+$o-arrow-size-small:    $o-arrow-size-base - 2 !default;
+
+$o-arrow-size-large:    $o-arrow-size-base + 2 !default;
+
+$o-arrow-size-huge:     $o-arrow-size-base + 4 !default;
+
+// Colour
+$o-arrow-colour:        $colour-text-base !default;
+
+
+%o-arrow,
+.o-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  @include to-rem(border, $o-arrow-size-base solid transparent);
+  vertical-align: middle;
+}
+
+
+/**
+ * Modifier: sizes.
+ */
+
+// Tiny
+%o-arrow--tiny,
+.o-arrow--tiny {@include to-rem(border-width, $o-arrow-size-tiny);}
+
+// Small
+%o-arrow--small,
+.o-arrow--small {@include to-rem(border-width, $o-arrow-size-small);}
+
+// Large
+%o-arrow--large,
+.o-arrow--large {@include to-rem(border-width, $o-arrow-size-large);}
+
+// Huge
+%o-arrow--huge,
+.o-arrow--huge {@include to-rem(border-width, $o-arrow-size-huge);}
+
+
+/**
+ * Modifier: down arrow.
+ */
+
+%o-arrow--down,
+.o-arrow--down {border-top-color: $o-arrow-colour;}
+
+
+/**
+ * Modifier: up arrow.
+ */
+
+%o-arrow--up,
+.o-arrow--up {border-bottom-color: $o-arrow-colour;}
+
+
+/**
+ * Modifier: left arrow.
+ */
+
+%o-arrow--left,
+.o-arrow--left {border-right-color: $o-arrow-colour;}
+
+
+/**
+ * Modifier: right arrow.
+ */
+
+%o-arrow--right,
+.o-arrow--right {border-left-color: $o-arrow-colour;}
