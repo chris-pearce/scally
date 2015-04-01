@@ -13,13 +13,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints.
  */
 
-// Apply at these breakpoints
 $u-clear-fix-apply-at-breakpoints:          $default-breakpoints !default;
 
-// From above choose to turn this on or off
+// From the above choose to turn this on or off
 $u-clear-fix-apply-at-breakpoints-toggle:   false !default;
 
 

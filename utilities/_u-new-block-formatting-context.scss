@@ -20,13 +20,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-nbfc-apply-at-breakpoints:               $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-nbfc-apply-at-breakpoints-for-default:   false !default;
 
 $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
@@ -64,7 +63,6 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
 .u-nbfc-alt {overflow: hidden;}
 
 @if $u-nbfc-apply-at-breakpoints-for-alt {
-  @include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-apply-at-breakpoints) {
-    overflow: hidden;
-  }
+  @include generate-at-breakpoints('.u-nbfc-alt',
+    $u-nbfc-apply-at-breakpoints) {overflow: hidden;}
 }// end if

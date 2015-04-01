@@ -17,13 +17,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-momentum-scrolling-apply-at-breakpoints:         $default-breakpoints !default;
 
-// From above choose to turn this on or off
+// From the above choose to turn this on or off
 $u-momentum-scrolling-apply-at-breakpoints-toggle:  false !default;
 
 
