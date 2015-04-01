@@ -42,12 +42,12 @@
  * simply redeclare it above the relevant `@import`, like so:
  *
    $font-size: 14;
-   @import "bower_components/scally/core/settings/typography";
+   @import "core/settings/typography";
  *
  * If you want to use a Scally setting to override something then you need to
  * define the override below the `@import`, like so:
  *
-   @import "bower_components/scally/core/settings/colours";
+   @import "core/settings/colours";
    $colour-text-base: $colour-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
@@ -57,7 +57,7 @@
  *
    $u-arrow-size-base: 14;
    $u-arrow-colour: orange;
-   @import "bower_components/scally/utilities/u-arrow";
+   @import "utilities/u-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
  * completely modify how Scally works without ever having to alter the
@@ -2381,6 +2381,245 @@ h6:last-child,
         border-bottom-right-radius: 0.25rem; }
 
 /**
+ * OBJECTS.
+ */
+/* ============================================================================
+   @OBJECTS -> DROP DOWN
+   ========================================================================= */
+/**
+ * A generic drop down object powered by some JavaScript which toggles a
+ * class e.g. `is-visible` on the drop down trigger (the button that makes the
+ * drop down visible and invisible) and the target (the actual drop down).
+ * This class will be used to make the drop down target visible when the
+ * trigger is selected. There is also a version for showing the drop down via
+ * the `:hover` pseudo class which is turned off for touch devices.
+ *
+ * @markup
+   <div class="o-drop-down">
+     <!-- The trigger -->
+     <button class="o-drop-down__trigger"> ... </button>
+     <!-- The target -->
+     <div class="o-drop-down__target"> ... </div>
+   </div>
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * State classes.
+ */
+/**
+ * Drop down container for the trigger and target.
+ *
+ * 1. Sets the positioning context for the target.
+ */
+.o-drop-down {
+  position: relative; }
+
+/**
+ * The target, the actual drop down.
+ */
+.o-drop-down__target {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0; }
+  .o-drop-down__target.is-visible, .o-drop-down--on-hover:hover
+  .o-drop-down__target {
+    display: block; }
+
+/**
+ * Disable for touch devices as they don't have `:hover` support.
+ *
+ * N.B. this will require functionality that can append a hook to an element
+ * (typically the `html` element) if touch is supported.
+ */
+.is-touch .o-drop-down--on-hover .o-drop-down__target {
+  display: none; }
+
+/* ============================================================================
+   @OBJECTS -> FLEXIBLE EMBED
+   ========================================================================= */
+/**
+ * For use with embeds like videos, iframes, or even images that need to retain
+ * a specific aspect ratio but adapt to the width of their containing element.
+ *
+ * @markup
+   <div class="o-flexible-embed">
+     <!-- The content e.g. a video (`iframe`) -->
+     <div class="o-flexible-embed__content"> ... </div>
+     <!-- Empty element to maintain aspect ratio -->
+     <div class="o-flexible-embed__ratio o-flexible-embed__ratio--16-by-9"></div>
+   </div>
+ *
+ * @credit
+ * https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+.o-flexible-embed {
+  display: block;
+  position: relative;
+  overflow: hidden; }
+
+/**
+ * The aspect-ratio hack is applied to an empty element because it allows
+ * the component to respect `max-height`.
+ *
+ * N.B. default aspect ratio is 1:1.
+ */
+.o-flexible-embed__ratio {
+  display: block;
+  padding-bottom: 100%;
+  width: 100%; }
+
+/**
+ * Modifiers: common aspect ratios.
+ */
+.o-flexible-embed__ratio--16-by-9 {
+  padding-bottom: 56.25%; }
+
+.o-flexible-embed__ratio--3-by-1 {
+  padding-bottom: 33.33333%; }
+
+.o-flexible-embed__ratio--2-by-1 {
+  padding-bottom: 50%; }
+
+.o-flexible-embed__ratio--4-by-3 {
+  padding-bottom: 75%; }
+
+/**
+ * The content e.g. a video (`iframe`).
+ */
+.o-flexible-embed__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* ============================================================================
+   @OBJECTS -> LINK COMPLEX
+   ========================================================================= */
+/**
+ * A common pattern is to have a link with several pieces of text and/or an
+ * icon, where only one piece of text should act like a link when the link is
+ * the subject of user interaction.
+ *
+ * @markup
+   <a class="o-link-complex" href="#">
+     Link complex
+     <span class="o-link-complex__target">target</span>
+   </a>
+ *
+ * @credit
+ * https://github.com/suitcss/utils-link/blob/master/lib/link.css
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+.o-link-complex,
+.o-link-complex:hover,
+.o-link-complex:focus {
+  text-decoration: none;
+  color: inherit;
+  cursor: text; }
+
+/**
+ * The piece of the link that needs to act like a link.
+ */
+.o-link-complex__target {
+  color: #2aa198;
+  cursor: pointer; }
+  .o-link-complex__target:hover,
+  .o-link-complex__target:focus {
+    text-decoration: underline;
+    color: #1f7972; }
+
+/* ============================================================================
+   @OBJECTS -> LINK DISGUISED
+   ========================================================================= */
+/**
+ * Make a link not look like a link.
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+.o-link-disguised {
+  cursor: text; }
+  .o-link-disguised,
+  .o-link-disguised:visited,
+  .o-link-disguised:hover,
+  .o-link-disguised:focus {
+    text-decoration: none;
+    color: inherit; }
+
+/* ============================================================================
+   @OBJECTS -> LIST
+   ========================================================================= */
+/**
+ * Standard list styles for unordered and ordered lists as they're removed in
+ * Core -> Reset.
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Indent.
+ */
+/**
+ * Bullets.
+ */
+.o-list {
+  margin-bottom: 1.5rem; }
+  .o-list:last-child {
+    margin-bottom: 0; }
+  .o-list,
+  .o-list ul,
+  .o-list ol {
+    margin-left: 1.5rem; }
+
+/**
+ * Bullets.
+ *
+ * For unordered lists we're replicating the native browser bullets:
+ * - disc
+ *  -- circle
+ *    --- square
+ */
+ul.o-list {
+  list-style-type: disc; }
+
+ol.o-list {
+  list-style-type: decimal; }
+
+ul.o-list ul,
+ol.o-list ul {
+  list-style-type: circle; }
+  ul.o-list ul ul,
+  ol.o-list ul ul {
+    list-style-type: square; }
+ul.o-list ol,
+ol.o-list ol {
+  list-style-type: decimal; }
+
+/**
  * UTILITIES.
  */
 /* ============================================================================
@@ -2393,7 +2632,7 @@ h6:last-child,
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints.
  */
 .u-clear-fix:after {
   content: "";
@@ -2454,139 +2693,6 @@ h6:last-child,
  */
 .u-arrow--right {
   border-left-color: #000; }
-
-/* ============================================================================
-   @UTILITIES -> LIST
-   ========================================================================= */
-/**
- * Standard list styles for unordered and ordered lists as they're removed in
- * Core -> Reset.
- *
- * N.B. this utility is dependant on the following utility:
- *
- * - Spacing.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-/**
- * Indent.
- */
-/**
- * Bullets.
- */
-/**
- * Whitespace.
- */
-.u-list,
-.u-list ul,
-.u-list ol {
-  margin-left: 1.5rem; }
-
-/**
- * Bullets.
- *
- * For unordered lists we're replicating the native browser bullets:
- * - disc
- *  -- circle
- *    --- square
- */
-ul.u-list {
-  list-style-type: disc; }
-
-ol.u-list {
-  list-style-type: decimal; }
-
-ul.u-list ul,
-ol.u-list ul {
-  list-style-type: circle; }
-  ul.u-list ul ul,
-  ol.u-list ul ul {
-    list-style-type: square; }
-ul.u-list ol,
-ol.u-list ol {
-  list-style-type: decimal; }
-
-/* ============================================================================
-   @UTILITIES -> LIST BLOCK
-   ========================================================================= */
-/**
- * Creates blocky list items out of a `ul` or `ol` with the option to add a
- * keyline separator between the list items.
- *
- * @consideration
- * The spacer utilities could replace this?
- *
- * @credit
- * https://github.com/inuitcss/objects.list-block/blob/master/_objects.list-block.scss
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-/**
- * Whitespace.
- */
-/**
- * Border.
- */
-.u-list-block > li,
-.u-list-block > li > a {
-  padding: 0.75rem; }
-.u-list-block > li > a {
-  display: block;
-  margin: -0.75rem; }
-
-/**
- * Modifier: tiny padding.
- */
-.u-list-block--tiny > li,
-.u-list-block--tiny > li > a {
-  padding: 0.375rem; }
-.u-list-block--tiny > li > a {
-  margin: -0.375rem; }
-
-/**
- * Modifier: small padding.
- */
-.u-list-block--small > li,
-.u-list-block--small > li > a {
-  padding: 0.5rem; }
-.u-list-block--small > li > a {
-  margin: -0.5rem; }
-
-/**
- * Modifier: large padding.
- */
-.u-list-block--large > li,
-.u-list-block--large > li > a {
-  padding: 1.5rem; }
-.u-list-block--large > li > a {
-  margin: -1.5rem; }
-
-/**
- * Modifier: huge padding.
- */
-.u-list-block--huge > li,
-.u-list-block--huge > li > a {
-  padding: 3rem; }
-.u-list-block--huge > li > a {
-  margin: -3rem; }
-
-/**
- * Modifier: border.
- *
- * Add a keyline separator between the list items.
- */
-.u-list-block--border {
-  border-top: 0.0625rem solid #e6e6e6; }
-  .u-list-block--border > li {
-    border-bottom: 0.0625rem solid #e6e6e6; }
 
 /* ============================================================================
    @UTILITIES -> LIST INLINE
@@ -3569,63 +3675,6 @@ li:before {
   padding: 0; }
 
 /* ============================================================================
-   @UTILITIES -> DROP DOWN
-   ========================================================================= */
-/**
- * A generic drop down utility powered by some JavaScript which toggles a
- * class e.g. `is-visible` on the drop down trigger (the button that makes the
- * drop down visible and invisible) and the target (the actual drop down).
- * This class will be used to make the drop down target visible when the
- * trigger is selected. There is also a version for showing the drop down via
- * the `:hover` pseudo class which is turned off for touch devices.
- *
- * @markup
-   <div class="u-drop-down">
-     <!-- The trigger -->
-     <button class="u-drop-down__trigger"> ... </button>
-     <!-- The target -->
-     <div class="u-drop-down__target"> ... </div>
-   </div>
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-/**
- * State classes.
- */
-/**
- * Drop down container for the trigger and target.
- *
- * 1. Sets the positioning context for the target.
- */
-.u-drop-down {
-  position: relative; }
-
-/**
- * The target, the actual drop down.
- */
-.u-drop-down__target {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0; }
-  .u-drop-down__target.is-visible, .u-drop-down--on-hover:hover
-  .u-drop-down__target {
-    display: block; }
-
-/**
- * Disable for touch devices as they don't have `:hover` support.
- *
- * N.B. this will require functionality that can append a hook to an element
- * (typically the `html` element) if touch is supported.
- */
-.is-touch .u-drop-down--on-hover .u-drop-down__target {
-  display: none; }
-
-/* ============================================================================
    @UTILITIES -> ALIGNMENTS
    ========================================================================= */
 /**
@@ -3637,12 +3686,10 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Inline vertical alignments.
- *
- * N.B. these won't work on block level elements (see next section for that).
  */
 .u-align-v-inline-top {
   vertical-align: top; }
@@ -3666,15 +3713,6 @@ li:before {
   display: flex;
   align-items: center;
   justify-content: center; }
-
-.u-align-v-block-middle-table {
-  display: table;
-  height: 100%;
-  width: 100%; }
-
-.u-align-v-block-middle-table__inner {
-  display: table-cell;
-  vertical-align: middle; }
 
 .u-align-v-block-middle-position {
   position: relative;
@@ -3725,116 +3763,6 @@ li:before {
   display: inline-block; }
 
 /* ============================================================================
-   @UTILITIES -> IMAGE REPLACEMENT
-   ========================================================================= */
-/**
- * Replacing some text with an image.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-.u-image-replacement {
-  background-color: transparent;
-  border: 0;
-  overflow: hidden; }
-  .u-image-replacement:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%; }
-
-/**
- * Alternate version.
- */
-.u-image-replacement-alt {
-  text-indent: -9999px; }
-
-/* ============================================================================
-   @UTILITIES -> LINK COMPLEX
-   ========================================================================= */
-/**
- * A common pattern is to have a link with several pieces of text and/or an
- * icon, where only one piece of text should act like a link when the link is
- * the subject of user interaction.
- *
- * @markup
-   <a class="u-link-complex" href="#">
-     Link complex
-     <span class="u-link-complex__target">target</span>
-   </a>
- *
- * @credit
- * https://github.com/suitcss/utils-link/blob/master/lib/link.css
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-.u-link-complex,
-.u-link-complex:hover,
-.u-link-complex:focus {
-  text-decoration: none;
-  color: inherit;
-  cursor: text; }
-
-/**
- * The piece of the link that needs to act like a link.
- */
-.u-link-complex__target {
-  color: #2aa198;
-  cursor: pointer; }
-  .u-link-complex__target:hover,
-  .u-link-complex__target:focus {
-    text-decoration: underline;
-    color: #1f7972; }
-
-/* ============================================================================
-   @UTILITIES -> LINK DISGUISED
-   ========================================================================= */
-/**
- * Make a link not look like a link.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-.u-link-disguised {
-  cursor: text; }
-  .u-link-disguised,
-  .u-link-disguised:visited,
-  .u-link-disguised:hover,
-  .u-link-disguised:focus {
-    text-decoration: none;
-    color: inherit; }
-
-/* ============================================================================
-   @UTILITIES -> LINK NO UNDERLINE
-   ========================================================================= */
-/**
- * An underlined link set via `text-decoration: underline;` is a very common
- * style however they're times when the underline isn't required.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-.u-link-no-underline,
-.u-link-no-underline:visited,
-.u-link-no-underline:hover,
-.u-link-no-underline:focus,
-.u-link-no-underline:active {
-  text-decoration: none; }
-
-/* ============================================================================
    @UTILITIES -> MOMENTUM SCROLLING
    ========================================================================= */
 /**
@@ -3848,7 +3776,7 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 .u-momentum-scrolling {
   overflow: auto;
@@ -3864,7 +3792,7 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Left.
@@ -3901,7 +3829,7 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * 1. Create a new block formatting context (NBFC).
@@ -3923,72 +3851,6 @@ li:before {
   overflow: hidden; }
 
 /* ============================================================================
-   @UTILITIES -> FLEX EMBED
-   ========================================================================= */
-/**
- * For use with media embeds – such as videos, slideshows, or even images –
- * that need to retain a specific aspect ratio but adapt to the width of their
- * containing element.
- *
- * @markup
-   <div class="u-flex-embed">
-     <!-- The content e.g. a video (`iframe`) -->
-     <div class="u-flex-embed__content"> ... </div>
-     <!-- Empty element to maintain aspect ratio -->
-     <div class="u-flex-embed__ratio u-flex-embed__ratio--16-by-9"></div>
-   </div>
- *
- * @credit
- * https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-.u-flex-embed {
-  display: block;
-  position: relative;
-  overflow: hidden; }
-
-/**
- * The aspect-ratio hack is applied to an empty element because it allows
- * the component to respect `max-height`.
- *
- * N.B. default aspect ratio is 1:1.
- */
-.u-flex-embed__ratio {
-  display: block;
-  padding-bottom: 100%;
-  width: 100%; }
-
-/**
- * Modifiers: common aspect ratios.
- */
-.u-flex-embed__ratio--16-by-9 {
-  padding-bottom: 56.25%; }
-
-.u-flex-embed__ratio--3-by-1 {
-  padding-bottom: 33.33333%; }
-
-.u-flex-embed__ratio--2-by-1 {
-  padding-bottom: 50%; }
-
-.u-flex-embed__ratio--4-by-3 {
-  padding-bottom: 75%; }
-
-/**
- * The content e.g. a video (`iframe`).
- */
-.u-flex-embed__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
-/* ============================================================================
    @UTILITIES -> GPU ACCELERATED
    ========================================================================= */
 /**
@@ -3996,11 +3858,12 @@ li:before {
  * rendering performance, but it's not wise to use on everything just for the
  * sake of hardware acceleration. So make sure to understand when and when
  * not to use this.
+ *
+ * N.B. the new `will-change` property will eventually make this hack redundant,
+ * see: http://www.sitepoint.com/introduction-css-will-change-property/.
  */
 .u-gpu-accelerated {
-  backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  perspective: 1000; }
+  transform: translate3d(0, 0, 0); }
 
 /* ============================================================================
    @UTILITIES -> POSITION
@@ -4109,10 +3972,7 @@ li:before {
  * Look at adding 'Flexbox'.
  */
 /**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Classes to detect if JavaScript is on or off.
@@ -4289,7 +4149,6 @@ li:before {
 .u-s-pr-n-base {
   padding-right: -1.5rem; }
 
-.u-list,
 .u-s-mb-base {
   margin-bottom: 1.5rem; }
 
@@ -4874,45 +4733,6 @@ li:before {
  * Generates all breakpoint classes.
  */
 /* ============================================================================
-   @UTILITIES -> DIVIDER
-   ========================================================================= */
-/**
- * Create a divider between elements.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-/**
- * Cosmetics.
- */
-/**
- * Top.
- */
-.u-divider-top {
-  border-top: 0.0625rem solid #000; }
-
-/**
- * Right.
- */
-.u-divider-right {
-  border-right: 0.0625rem solid #000; }
-
-/**
- * Bottom.
- */
-.u-divider-bottom {
-  border-bottom: 0.0625rem solid #000; }
-
-/**
- * Left.
- */
-.u-divider-left {
-  border-left: 0.0625rem solid #000; }
-
-/* ============================================================================
    @UTILITIES -> OVERFLOW
    ========================================================================= */
 /**
@@ -4922,7 +4742,7 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Visible.
@@ -5034,96 +4854,6 @@ li:before {
   .u-overlay-hover.u-overlay-hover--light:hover:before,
   .u-overlay-hover.u-overlay-hover--light:focus:before {
     background-color: rgba(255, 255, 255, 0.6); }
-
-/* ============================================================================
-   @UTILITIES -> CURSOR
-   ========================================================================= */
-/**
- * Apply different cursors.
- */
-/**
- * General.
- */
-.u-cursor-auto {
-  cursor: auto; }
-
-.u-cursor-default {
-  cursor: default; }
-
-.u-cursor-none {
-  cursor: none; }
-
-/**
- * Link and status.
- */
-.u-cursor-help {
-  cursor: help; }
-
-.u-cursor-pointer {
-  cursor: pointer; }
-
-.u-cursor-progress {
-  cursor: progress; }
-
-.u-cursor-wait {
-  cursor: wait; }
-
-/**
- * Selection.
- */
-.u-cursor-cell {
-  cursor: cell; }
-
-.u-cursor-crosshair {
-  cursor: crosshair; }
-
-.u-cursor-text {
-  cursor: text; }
-
-.u-cursor-vertical-text {
-  cursor: vertical-text; }
-
-/**
- * Drag and drop.
- */
-.u-cursor-copy {
-  cursor: copy; }
-
-.u-cursor-move {
-  cursor: move; }
-
-.u-cursor-not-allowed {
-  cursor: not-allowed; }
-
-/**
- * Resize and scrolling.
- */
-.u-cursor-col-resize {
-  cursor: col-resize; }
-
-.u-cursor-row-resize {
-  cursor: row-resize; }
-
-.u-cursor-all-scroll {
-  cursor: all-scroll; }
-
-/**
- * Zoom.
- */
-.u-cursor-zoom-in {
-  cursor: zoom-in; }
-
-.u-cursor-zoom-out {
-  cursor: zoom-out; }
-
-/**
- * Grab.
- */
-.u-cursor-grab {
-  cursor: grab; }
-
-.u-cursor-grabbing {
-  cursor: grabbing; }
 
 /* Your styles
    ========================================================================= */
