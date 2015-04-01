@@ -1,0 +1,153 @@
+/* ============================================================================
+   @OBJECTS -> FLEXIBLE EMBED
+   ========================================================================= */
+
+
+/**
+ * For use with embeds like videos, iframes, or even images that need to retain
+ * a specific aspect ratio but adapt to the width of their containing element.
+ *
+ * @markup
+   <div class="o-flexible-embed">
+     <!-- The content e.g. a video (`iframe`) -->
+     <div class="o-flexible-embed__content"> ... </div>
+     <!-- Empty element to maintain aspect ratio -->
+     <div class="o-flexible-embed__ratio o-flexible-embed__ratio--16-by-9"></div>
+   </div>
+ *
+ * @credit
+ * https://github.com/suitcss/components-flex-embed/blob/master/lib/flex-embed.css
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-flexible-embed-apply-at-breakpoints:                     $default-breakpoints !default;
+
+// From the above breakpoints choose what you wish to apply it too
+$o-flexible-embed-apply-at-breakpoints-for-default:         false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-ratio:           false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-ratio-16-by-9:   false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-ratio-3-by-1:    false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-ratio-2-by-1:    false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-ratio-4-by-3:    false !default;
+
+$o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
+
+
+%o-flexible-embed,
+.o-flexible-embed {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+@if $o-flexible-embed-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.o-flexible-embed',
+    $o-flexible-embed-apply-at-breakpoints) {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+}// end if
+
+
+  /**
+   * The aspect-ratio hack is applied to an empty element because it allows
+   * the component to respect `max-height`.
+   *
+   * N.B. default aspect ratio is 1:1.
+   */
+
+  %o-flexible-embed__ratio,
+  .o-flexible-embed__ratio {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+  }
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-ratio {
+    @include generate-at-breakpoints('.o-flexible-embed__ratio',
+      $o-flexible-embed-apply-at-breakpoints) {
+      display: block;
+      padding-bottom: 100%;
+      width: 100%;
+    }
+  }// end if
+
+
+  /**
+   * Modifiers: common aspect ratios.
+   */
+
+  // 16:9 aspect ratio
+  %o-flexible-embed__ratio--16-by-9,
+  .o-flexible-embed__ratio--16-by-9 {padding-bottom: 56.25%;}
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-ratio-16-by-9 {
+    @include generate-at-breakpoints('.o-flexible-embed__ratio--16-by-9',
+      $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 56.25%;}
+  }// end if
+
+  // 3:1 aspect ratio
+  %o-flexible-embed__ratio--3-by-1,
+  .o-flexible-embed__ratio--3-by-1 {padding-bottom: (100/3)*1%;}
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-ratio-3-by-1 {
+    @include generate-at-breakpoints('.o-flexible-embed__ratio--3-by-1',
+      $o-flexible-embed-apply-at-breakpoints) {padding-bottom: (100/3)*1%;}
+  }// end if
+
+  // 2:1 aspect ratio
+  %o-flexible-embed__ratio--2-by-1,
+  .o-flexible-embed__ratio--2-by-1 {padding-bottom: 50%;}
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-ratio-2-by-1 {
+    @include generate-at-breakpoints('.o-flexible-embed__ratio--2-by-1',
+      $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 50%;}
+  }// end if
+
+  // 4:3 aspect ratio
+  %o-flexible-embed__ratio--4-by-3,
+  .o-flexible-embed__ratio--4-by-3 {padding-bottom: 75%;}
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-ratio-4-by-3 {
+    @include generate-at-breakpoints('.o-flexible-embed__ratio--4-by-3',
+      $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 75%;}
+  }// end if
+
+
+  /**
+   * The content e.g. a video (`iframe`).
+   */
+
+  %o-flexible-embed__content,
+	.o-flexible-embed__content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+  @if $o-flexible-embed-apply-at-breakpoints-for-content {
+    @include generate-at-breakpoints('.o-flexible-embed__content',
+      $o-flexible-embed-apply-at-breakpoints) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }// end if

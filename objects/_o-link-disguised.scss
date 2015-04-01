@@ -1,0 +1,51 @@
+/* ============================================================================
+   @OBJECTS -> LINK DISGUISED
+   ========================================================================= */
+
+
+/**
+ * Make a link not look like a link.
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-link-disguised-apply-at-breakpoints:         $default-breakpoints !default;
+
+// From the above choose to turn this on or off
+$o-link-disguised-apply-at-breakpoints-toggle:  false !default;
+
+
+%o-link-disguised,
+.o-link-disguised {
+  cursor: text;
+
+  &,
+  &:visited,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@if $o-link-disguised-apply-at-breakpoints-toggle {
+  @include generate-at-breakpoints('.o-link-disguised',
+    $o-link-disguised-apply-at-breakpoints) {
+    cursor: text;
+
+    &,
+    &:visited,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}// end if

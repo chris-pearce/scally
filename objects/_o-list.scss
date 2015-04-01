@@ -1,0 +1,140 @@
+/* ============================================================================
+   @OBJECTS -> LIST
+   ========================================================================= */
+
+
+/**
+ * Standard list styles for unordered and ordered lists as they're removed in
+ * Core -> Reset.
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-list-apply-at-breakpoints:                 $default-breakpoints !default;
+
+// From the above breakpoints choose what you wish to apply it too
+$o-list-apply-at-breakpoints-for-default:     false !default;
+
+$o-list-apply-at-breakpoints-for-unordered:   false !default;
+
+$o-list-apply-at-breakpoints-for-ordered:     false !default;
+
+$o-list-apply-at-breakpoints-for-nested:      false !default;
+
+/**
+ * Indent.
+ */
+
+$o-list-indent:                               $spacing-base !default;
+
+/**
+ * Bullets.
+ */
+
+$o-list-bullet-unordered-base:                disc !default;
+
+$o-list-bullet-unordered-nested-once:         circle !default;
+
+$o-list-bullet-unordered-nested-twice:        square !default;
+
+$o-list-bullet-ordered:                       decimal !default;
+
+
+%o-list,
+.o-list {
+  // Default bottom spacing
+  @include to-rem(margin-bottom, $spacing-base);
+
+  // Remove from the last child
+  &:last-child {margin-bottom: 0;}
+
+  // Left indent including nested lists
+  &,
+  ul,
+  ol {@include to-rem(margin-left, $o-list-indent);}
+}
+
+@if $o-list-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.o-list', $o-list-apply-at-breakpoints) {
+    @include to-rem(margin-bottom, $spacing-base);
+
+    &:last-child {margin-bottom: 0;}
+
+    &,
+    ul,
+    ol {@include to-rem(margin-left, $o-list-indent);}
+  }
+}// end if
+
+
+/**
+ * Bullets.
+ *
+ * For unordered lists we're replicating the native browser bullets:
+ * - disc
+ *  -- circle
+ *    --- square
+ */
+
+// Unordered lists
+%ul.o-list,
+ul.o-list {list-style-type: $o-list-bullet-unordered-base;}
+
+@if $o-list-apply-at-breakpoints-for-unordered {
+  @include generate-at-breakpoints('ul.o-list', $o-list-apply-at-breakpoints) {
+    list-style-type: $o-list-bullet-unordered-base;
+  }
+}// end if
+
+// Ordered lists
+%ol.o-list,
+ol.o-list {list-style-type: $o-list-bullet-ordered;}
+
+@if $o-list-apply-at-breakpoints-for-ordered {
+  @include generate-at-breakpoints('ol.o-list', $o-list-apply-at-breakpoints) {
+    list-style-type: $o-list-bullet-ordered;
+  }
+}// end if
+
+  // Nested lists
+  %ul.o-list,
+  ul.o-list,
+  %ol.o-list,
+  ol.o-list {
+
+    // Unordered lists
+    ul {
+      list-style-type: $o-list-bullet-unordered-nested-once;
+
+      ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+    }
+
+    // Ordered lists
+    ol {list-style-type: $o-list-bullet-ordered;}
+  }
+
+  // Nested lists
+  @each $o-list-type in (ul ol) {
+    @if $o-list-apply-at-breakpoints-for-nested {
+      @include generate-at-breakpoints("#{$o-list-type}.o-list{bp}",
+        $o-list-apply-at-breakpoints) {
+
+        // Unordered lists
+        ul {
+          list-style-type: $o-list-bullet-unordered-nested-once;
+
+          ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+        }
+
+        // Ordered lists
+        ol {list-style-type: $o-list-bullet-ordered;}
+      }
+    }// end if
+  }

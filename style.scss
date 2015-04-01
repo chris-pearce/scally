@@ -200,16 +200,29 @@
 
 
 /**
+ * OBJECTS.
+ */
+
+@import "bower_components/scally/objects/o-drop-down";
+
+@import "bower_components/scally/objects/o-flexible-embed";
+
+@import "bower_components/scally/objects/o-link-complex";
+
+@import "bower_components/scally/objects/o-link-disguised";
+
+@import "bower_components/scally/objects/o-list-block";
+
+@import "bower_components/scally/objects/o-list";
+
+
+/**
  * UTILITIES.
  */
 
 @import "bower_components/scally/utilities/u-clear-fix";
 
 @import "bower_components/scally/utilities/u-arrow";
-
-@import "bower_components/scally/utilities/u-list";
-
-@import "bower_components/scally/utilities/u-list-block";
 
 @import "bower_components/scally/utilities/u-list-inline";
 
@@ -219,27 +232,15 @@
 
 @import "bower_components/scally/utilities/u-table";
 
-@import "bower_components/scally/utilities/u-drop-down";
-
 @import "bower_components/scally/utilities/u-alignments";
 
 @import "bower_components/scally/utilities/u-toggle-visibility";
-
-@import "bower_components/scally/utilities/u-image-replacement";
-
-@import "bower_components/scally/utilities/u-link-complex";
-
-@import "bower_components/scally/utilities/u-link-disguised";
-
-@import "bower_components/scally/utilities/u-link-no-underline";
 
 @import "bower_components/scally/utilities/u-momentum-scrolling";
 
 @import "bower_components/scally/utilities/u-float";
 
 @import "bower_components/scally/utilities/u-new-block-formatting-context";
-
-@import "bower_components/scally/utilities/u-flex-embed";
 
 @import "bower_components/scally/utilities/u-gpu-accelerated";
 
@@ -249,13 +250,9 @@
 
 @import "bower_components/scally/utilities/u-spacing";
 
-@import "bower_components/scally/utilities/u-divider";
-
 @import "bower_components/scally/utilities/u-overflow";
 
 @import "bower_components/scally/utilities/u-overlay";
-
-@import "bower_components/scally/utilities/u-cursor";
 
 
 
