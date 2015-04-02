@@ -107,7 +107,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
     }
     
     @include respond-to($breakpoint-name, $limit) {
-      $breakpoint: '';
+      $breakpoint: "";
       
       @if $breakpoint-name {
         $suffix: if($limit == "min", "-from", "-up-to");
