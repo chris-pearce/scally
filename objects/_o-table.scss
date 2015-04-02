@@ -1,0 +1,205 @@
+/* ============================================================================
+   @OBJECTS -> TABLE
+   ========================================================================= */
+
+
+/**
+ * A table object that provides very common table styles which can be
+ * extended with a number of modifiers e.g. `.o-table--striped` which applies
+ * a background colour to every odd row.
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-table-apply-at-breakpoints:                         $default-breakpoints !default;
+
+// From the above breakpoints choose what you wish to apply it too
+$o-table-apply-at-breakpoints-for-default:             false !default;
+
+$o-table-apply-at-breakpoints-for-striped:             false !default;
+
+$o-table-apply-at-breakpoints-for-border:              false !default;
+
+$o-table-apply-at-breakpoints-for-fixed:               false !default;
+
+$o-table-apply-at-breakpoints-for-cell-padding-small:  false !default;
+
+$o-table-apply-at-breakpoints-for-cell-padding-large:  false !default;
+
+$o-table-apply-at-breakpoints-for-cell-padding-none:   false !default;
+
+/**
+ * Cell padding.
+ */
+
+$o-table-cell-padding-base:                            $spacing-half !default;
+
+$o-table-cell-padding-small:                           $spacing-quarter !default;
+
+$o-table-cell-padding-large:                           $spacing-base !default;
+
+/**
+ * Cosmetics.
+ */
+
+$o-table-border-colour:                                darken($colour-white, 10%) !default;
+
+$o-table-border-thickness:                             1 !default;
+
+$o-table-border-style:                                 solid !default;
+
+$o-table-striped-background-cell-colour:               $o-table-border-colour !default;
+
+
+%u-table,
+.u-table {
+  // Stretch to full width of it's parent
+  width: 100%;
+
+  // Some sensible defaults
+  caption,
+  th {text-align: left;}
+
+  // Cell padding
+  th,
+  td {@include to-rem(padding, $o-table-cell-padding-base);}
+}
+
+@if $o-table-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.u-table', $o-table-apply-at-breakpoints) {
+    width: 100%;
+
+    caption,
+    th {text-align: left;}
+
+    th,
+    td {@include to-rem(padding, $o-table-cell-padding-base);}
+  }
+}// end if
+
+
+/**
+ * Modifier: striped.
+ *
+ * Applies a background colour to every odd row.
+ */
+
+%o-table--striped,
+.o-table--striped {
+  tr:nth-of-type(odd) td {background-color:
+    $o-table-striped-background-cell-colour;}
+}
+
+@if $o-table-apply-at-breakpoints-for-striped {
+  @include generate-at-breakpoints('.o-table--striped',
+    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color:
+    $o-table-striped-background-cell-colour;}
+  }
+}// end if
+
+
+/**
+ * Modifier: border.
+ */
+
+%o-table--border,
+.o-table--border {
+  th,
+  td {
+    @include to-rem(border, $o-table-border-thickness $o-table-border-style
+      $o-table-border-colour);
+
+    // No borders for empty cells
+    &:empty {border: 0;}
+  }
+}
+
+@if $o-table-apply-at-breakpoints-for-border {
+  @include generate-at-breakpoints('.o-table--border',
+    $o-table-apply-at-breakpoints) {
+    th,
+    td {
+      @include to-rem(border, $o-table-border-thickness $o-table-border-style
+        $o-table-border-colour);
+
+      &:empty {border: 0;}
+    }
+  }
+}// end if
+
+
+/**
+ * Modifier: layout fixed, force tables into having equal-width column.
+ */
+
+%o-table--fixed,
+.o-table--fixed {table-layout: fixed;}
+
+@if $o-table-apply-at-breakpoints-for-fixed {
+  @include generate-at-breakpoints('.o-table--fixed',
+    $o-table-apply-at-breakpoints) {table-layout: fixed;}
+}// end if
+
+
+/**
+ * Modifier: small cell padding.
+ */
+
+%o-table--cell-padding-small,
+.o-table--cell-padding-small {
+  th,
+  td {@include to-rem(padding, $o-table-cell-padding-small);}
+}
+
+@if $o-table-apply-at-breakpoints-for-cell-padding-small {
+  @include generate-at-breakpoints('.o-table--cell-padding-small',
+    $o-table-apply-at-breakpoints) {
+    th,
+    td {@include to-rem(padding, $o-table-cell-padding-small);}
+  }
+}// end if
+
+
+/**
+ * Modifier: large cell padding.
+ */
+
+%o-table--cell-padding-large,
+.o-table--cell-padding-large {
+  th,
+  td {@include to-rem(padding, $o-table-cell-padding-large);}
+}
+
+@if $o-table-apply-at-breakpoints-for-cell-padding-large {
+  @include generate-at-breakpoints('.o-table--cell-padding-large',
+    $o-table-apply-at-breakpoints) {
+    th,
+    td {@include to-rem(padding, $o-table-cell-padding-large);}
+  }
+}// end if
+
+
+/**
+ * Modifier: no cell padding.
+ */
+
+%o-table--no-cell-padding,
+.o-table--no-cell-padding {
+  th,
+  td {padding: 0;}
+}
+
+@if $o-table-apply-at-breakpoints-for-cell-padding-none {
+  @include generate-at-breakpoints('.o-table--no-cell-padding',
+    $o-table-apply-at-breakpoints) {
+    th,
+    td {padding: 0;}
+  }
+}// end if
