@@ -1,0 +1,142 @@
+/* ============================================================================
+   @UTILITIES -> HIDE
+   ========================================================================= */
+
+
+/**
+ * A utility for hiding (and showing) elements.
+ */
+
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$u-hide-apply-at-breakpoints:                      $default-breakpoints !default;
+
+// From the above breakpoints choose which utilities you wish to apply it too
+$u-hide-apply-at-breakpoints-for-hide:             false !default;
+
+$u-hide-apply-at-breakpoints-for-hide-invisible:   false !default;
+
+$u-hide-apply-at-breakpoints-for-hide-visually:    false !default;
+
+/**
+ * Classes to detect if JavaScript is on or off.
+ */
+
+$u-hide-js-is-on-class:                            js !default;
+
+$u-hide-js-is-off-class:                           no-js !default;
+
+
+/**
+ * Hide elements from both screen readers and the document flow.
+ */
+
+%u-hide,
+.u-hide {
+  display: none;
+  visibility: hidden;
+}
+
+@if $u-hide-apply-at-breakpoints-for-hide {
+  @include generate-at-breakpoints('.u-hide', $u-hide-apply-at-breakpoints) {
+    display: none;
+    visibility: hidden;
+  }
+}// end if
+
+
+/**
+ * Hide elements without affecting the document flow.
+ */
+
+%u-hide-invisible,
+.u-hide-invisible {visibility: hidden;}
+
+@if $u-hide-apply-at-breakpoints-for-hide-invisible {
+  @include generate-at-breakpoints('.u-hide-invisible',
+    $u-hide-apply-at-breakpoints) {visibility: hidden;}
+}// end if
+
+
+/**
+ * Hide elements only visually but have it available for screen readers.
+ */
+
+%u-hide-visually,
+.u-hide-visually {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+
+  /**
+   * Form `legend`s need different treatment.
+   */
+
+  &.legend {left: $off-screen-distance;}
+}
+
+@if $u-hide-apply-at-breakpoints-for-hide-visually {
+  @include generate-at-breakpoints('.u-hide-visually',
+    $u-hide-apply-at-breakpoints) {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
+
+    &.legend {left: $off-screen-distance;}
+  }
+}// end if
+
+
+/**
+ * Hide elements for JavaScript users and non-JavaScript users, this is
+ * necessary when building accessibile and progressively enhanced UI's. This
+ * will require functionality that can append a hook to an element
+ * (typically the `html` element) if JavaScript is on.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it pre-emptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ */
+
+// Hide/show elements if JavaScript is on
+.#{$u-hide-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
+
+// Hide/show elements if JavaScript is off
+.#{$u-hide-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
+
+
+/**
+ * Hide/show elements for print media.
+ */
+
+// Show
+.u-show-for-print,
+.u-show-for-print-inline,
+.u-show-for-print-inline-block {display: none;}
+
+@media print {
+
+  // Hide
+  .u-hide-for-print {display: none;}
+
+  // Show
+  .u-show-for-print {display: block;}
+
+  .u-show-for-print-inline {display: inline;}
+
+  .u-show-for-print-inline-block {display: inline-block;}
+}
