@@ -5,7 +5,8 @@
 
 /**
  * Simply toggling the visibility of an element via a state class:
- * `is-visible` (or whatever you choose) which is powered by JavaScript.
+ * `is-visible` (or whatever you choose) which is powered by JavaScript. For
+ * non-JavaScript users the element will always show.
  */
 
 
@@ -14,14 +15,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
-$u-toggle-visibility-apply-at-breakpoints:                   $default-breakpoints
-!default;
+$u-toggle-visibility-apply-at-breakpoints:                   $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-toggle-visibility-apply-at-breakpoints-for-default:       false !default;
 
 $u-toggle-visibility-apply-at-breakpoints-for-inline:        false !default;
@@ -34,10 +33,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
 %u-toggle-visibility,
 .u-toggle-visibility {
-  // Hide by default
   display: none;
 
-  // Show via state class and for non-JavaScript
+  // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
   .no-js & {display: block;}
 }
@@ -59,7 +57,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
 %u-toggle-visibility--inline,
 .u-toggle-visibility--inline {
-  // Show via state class and for non-JavaScript
+  // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
   .no-js & {display: inline;}
 }
@@ -79,7 +77,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
 %u-toggle-visibility--inline-block,
 .u-toggle-visibility--inline-block {
-  // Show via state class and for non-JavaScript
+  // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
   .no-js & {display: inline-block;}
 }
