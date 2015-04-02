@@ -36,16 +36,18 @@
 
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-spacing-apply-at-breakpoints:            $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-spacing-apply-classes-for-breakpoints:   () !default;
 
-// Spacing sizes
+/**
+ * Spacing sizes.
+ */
+
 $u-spacing-base:                            $spacing-base !default;
 
 $u-spacing-micro:                           $spacing-micro !default;
