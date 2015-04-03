@@ -80,14 +80,38 @@ $mixin-apply-terse-percentage-class-names: false !default;
 
   @include generate-percentage-classes("", $scally-type, $class-name,
     $css-property);
+  
+  @if length($breakpoint-names) == 2 and index((min max),
+    nth($breakpoint-names, 2)) {
+    $breakpoint-names-copy: $breakpoint-names;
+    $breakpoint-names: ();
+    $breakpoint-names: append($breakpoint-names, (nth($breakpoint-names-copy, 1)
+     nth($breakpoint-names-copy, 2)));
+  }
+    
+  @each $breakpoint-name in $breakpoint-names {
+    $limit: "min";
+    $joiner: "from";
 
-  @each $breakpoint in $breakpoint-names {
-    $limit: if($breakpoint == "palm", "max", "min");
+    @if type-of($breakpoint-name) == list {
+      $limit: nth($breakpoint-name, 2);
+      $breakpoint-name: nth($breakpoint-name, 1);
+    }
+    @else {
+      // Palm is a special case where it uses a `max-width` media query
+      $limit: if($breakpoint-name == "palm", "max", "min");
+    }
 
-    @include respond-to($breakpoint, $limit) {
-      @if $breakpoint {
+    @if $limit == max {
+      $joiner: "up-to";
+    }
+    
+    @include respond-to($breakpoint-name, $limit) {
+      $breakpoint: "";
+      
+      @if $breakpoint-name {
         $suffix: if($limit == "min", "-from", "-up-to");
-        $breakpoint: "#{$suffix}-#{$breakpoint}";
+        $breakpoint: "#{$suffix}-#{$breakpoint-name}";
       }
 
       @include generate-percentage-classes($breakpoint, $scally-type,
