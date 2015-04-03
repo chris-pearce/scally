@@ -4,7 +4,18 @@
 
 
 /**
- * Creates blocky list items out of a `ul` or `ol`.
+ * Creates blocky list items out of a `ul` or `ol` which is usually for a
+ * vertical list of links.
+ *
+ * @markup
+   <ul class="o-arrow [modifier]">
+     <li>
+       <a href="#">Some link text</a>
+     </li>
+     <li>
+       <a href="#">Some link text</a>
+     </li>
+   </ul>
  *
  * @credit
  * https://github.com/inuitcss/objects.list-block/blob/master/_objects.list-block.scss
