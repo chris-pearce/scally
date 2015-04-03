@@ -273,7 +273,7 @@ $c-btn-hover-transition-timing-function:  linear !default;
  * HTML comments between the buttons.
  *
  * @markup
-   <div class="btn-group">
+   <div class="btn-group [modifier]">
      <button class="btn btn--main">Left</button><!--
       --><button class="btn btn--main">Middle</button><!--
       --><button class="btn btn--main">Right</button>

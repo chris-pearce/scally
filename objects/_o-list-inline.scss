@@ -9,15 +9,15 @@
  *
  * N.B. this utility requires that you remove the whitespace between `li`s
  * especially with the Spacing modifiers. One way to remove whitespace is by
- * inserting HTML comments between the opening and closing `li`s e.g.
+ * inserting HTML comments between the opening and closing `li`s (see @markup
+ * section below). Or you can omit the closing `li` which isn't recommended :)
  *
+ * @markup
    <ul class="o-list-inline [modifiers(s)]">
      <li>Lorem</li><!--
      --><li>Aliquam</li><!--
      --><li>Vestibulum</li>
    </ul>
- *
- * Or you can omit the closing `li` which isn't recommended :)
  */
 
 

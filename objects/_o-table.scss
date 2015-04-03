@@ -5,8 +5,16 @@
 
 /**
  * A table object that provides very common table styles which can be
- * extended with a number of modifiers e.g. `.o-table--striped` which applies
- * a background colour to every odd row.
+ * extended with a number of modifiers.
+ *
+ * @markup
+   <table class="o-table [modifier(s)]" cellspacing="0">
+     <tr>
+       <td>Lorem</td>
+       <td>Aliquam</td>
+       <td>Vestibulum</td>
+     </tr>
+   </table>
  */
 
 

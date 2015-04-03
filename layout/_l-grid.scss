@@ -28,12 +28,12 @@
  * purposes only. Apply styling to content inside a grid item.
  *
  * @markup
-   <div class="l-grid">
+   <div class="l-grid [modifier(s)]">
      <div class="l-grid__item  u-one-half"> ... </div>
      <div class="l-grid__item  u-one-half"> ... </div>
    </div>
 
-   <div class="l-grid">
+   <div class="l-grid [modifier(s)]">
      <div class="l-grid__item  u-one-third"> ... </div>
      <div class="l-grid__item  u-one-third"> ... </div>
      <div class="l-grid__item  u-one-third"> ... </div>
