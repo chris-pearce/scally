@@ -8,13 +8,14 @@
  */
 
 
-
-
 /**
  * Settings.
  */
 
-// Toggle on/off certain styles and treatments
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
 $c-btn-apply-hover-styles:                true !default;
 
 $c-btn-apply-border:                      false !default;
@@ -23,12 +24,18 @@ $c-btn-apply-rounded-corners:             false !default;
 
 $c-btn-apply-group-rounded-corners:       true !default;
 
-// Box sizing, here we set a variable assuming that `box-sizing: border-box;`
-// is not set globally. If it has been previously been defined, the following
-// variable will be overriden and will be set to `true`.
+/**
+ * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
+ * is not set globally. If it has been previously been defined, the following
+ * variable will be overriden and will be set to `true`.
+ */
+
 $apply-friendly-box-model:                      false !default;
 
-// Colours
+/**
+ * Colours.
+ */
+
 $c-btn-background-colour:                 $colour-primary !default;
 
 $c-btn-background-colour-secondary:       $colour-secondary !default;
@@ -37,7 +44,10 @@ $c-btn-foreground-colour:                 $colour-white !default;
 
 $c-btn-foreground-colour-secondary:       $c-btn-foreground-colour !default;
 
-// Padding
+/**
+ * Padding.
+ */
+
 $c-btn-padding-base:                      $spacing-base !default;
 
 $c-btn-padding-tiny:                      $spacing-third !default;
@@ -48,8 +58,12 @@ $c-btn-padding-large:                     $spacing-base-plus-half !default;
 
 $c-btn-padding-huge:                      $spacing-double !default;
 
-// Border
-// N.B. also includes the borders used in the 'Button Group' modifier
+/**
+ * Border.
+ *
+ * N.B. also includes the borders used in the 'Button Group' modifier
+ */
+
 $c-btn-border-thickness:                  1 !default;
 
 $c-btn-border-style:                      solid !default;
@@ -58,18 +72,22 @@ $c-btn-border-colour:                     darken($c-btn-background-colour, 10%) 
 
 $c-btn-border-colour-secondary:           darken($c-btn-background-colour-secondary, 10%) !default;
 
-// Rounded corners
+
+/**
+ * Rounded corners.
+ */
+
 $c-btn-rounded-corners-size:              $border-radius !default;
 
-// Hover/focus styles
-// Simple fade out effect via `opacity`
+/**
+ * Hover/focus styles, simple fade out effect via `opacity`
+ */
+
 $c-btn-hover-opacity-strength:            0.7 !default;
 
 $c-btn-hover-transition-duration:         0.1 !default;
 
 $c-btn-hover-transition-timing-function:  linear !default;
-
-
 
 
 /**
@@ -109,8 +127,6 @@ $c-btn-hover-transition-timing-function:  linear !default;
   &:focus,
   &:active {text-decoration: none;}
 }
-
-
 
 
 /**
@@ -231,8 +247,6 @@ $c-btn-hover-transition-timing-function:  linear !default;
 }
 
 
-
-
 /**
  * A button that looks like a link.
  */
@@ -246,8 +260,6 @@ $c-btn-hover-transition-timing-function:  linear !default;
     text-decoration: underline;
   }
 }
-
-
 
 
 /**
