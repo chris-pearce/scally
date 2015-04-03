@@ -1,5 +1,10 @@
 === HEAD
 
+=== 1.6.2 (April 3, 2015)
+
+- [Issue #62](https://github.com/chris-pearce/scally/issues/62) fixed. Big
+  thanks to @stowball.
+
 === 1.6.1 (March 30, 2015)
 
 - Adding the ability to apply a more terse format to the percentage width
