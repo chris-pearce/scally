@@ -45,7 +45,7 @@ $u-hide-js-is-off-class:                           no-js !default;
     display: none;
     visibility: hidden;
   }
-}// end if
+}// endif
 
 
 /**
@@ -58,7 +58,7 @@ $u-hide-js-is-off-class:                           no-js !default;
 @if $u-hide-apply-at-breakpoints-for-hide-invisible {
   @include generate-at-breakpoints('.u-hide-invisible',
     $u-hide-apply-at-breakpoints) {visibility: hidden;}
-}// end if
+}// endif
 
 
 /**
@@ -98,7 +98,7 @@ $u-hide-js-is-off-class:                           no-js !default;
 
     &.legend {left: $off-screen-distance;}
   }
-}// end if
+}// endif
 
 
 /**

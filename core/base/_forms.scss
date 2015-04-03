@@ -42,8 +42,7 @@ $text-input-and-select-border-thickness:                1 !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
-$text-input-and-select-border-colour:                   lighten($colour-black, 30%)
-!default;
+$text-input-and-select-border-colour:                   lighten($colour-black, 30%) !default;
 
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
 
@@ -69,7 +68,7 @@ textarea {resize: vertical;}
 
 @if $apply-friendly-box-model {
   input[type="search"] {box-sizing: border-box;}
-}
+}// endif
 
 
 /**
@@ -104,8 +103,7 @@ select {border-radius: 0;}
  * 2. Enable line-wrapping in old versions of some other browsers.
  *
  * @credit
- * http://www.456bereastreet.com/archive/201210/
- * how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ * http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 
 legend {
@@ -149,7 +147,7 @@ legend {
     background: inherit !important;
     text-decoration: none !important;
   }
-}
+}// endif
 
 
 /**
@@ -180,17 +178,16 @@ legend {
                               $text-input-and-select-border-style
                               $text-input-and-select-border-colour
                       );
-
     }
     @else {
       border: 0;
-    }
+    }// endif
 
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
       @include to-rem(border-radius,
         $text-input-and-select-rounded-corners-size);
-    }
+    }// endif
   }
 }// endif
 

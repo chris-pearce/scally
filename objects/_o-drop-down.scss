@@ -61,7 +61,7 @@ $o-drop-down-touch-support-class:                is-touch !default;
 @if $o-drop-down-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.o-drop-down',
     $o-drop-down-apply-at-breakpoints) {position: relative;}
-}// end if
+}// endif
 
 
   /**
@@ -92,7 +92,7 @@ $o-drop-down-touch-support-class:                is-touch !default;
       &.#{$o-drop-down-state-class},
       .o-drop-down--on-hover:hover & {display: block;}
     }
-  }// end if
+  }// endif
 
 
   /**
@@ -109,4 +109,4 @@ $o-drop-down-touch-support-class:                is-touch !default;
     @include generate-at-breakpoints('.#{$o-drop-down-touch-support-class}
       .o-drop-down--on-hover .o-drop-down__target',
       $o-drop-down-apply-at-breakpoints) {display: none;}
-  }// end if
+  }// endif

@@ -109,7 +109,7 @@ $apply-friendly-box-model:                                   false !default;
     float: left;
     width: auto;
   }
-}// end if
+}// endif
 
 // Float it right
 %u-width-shrink-wrap--right,
@@ -118,7 +118,7 @@ $apply-friendly-box-model:                                   false !default;
 @if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap--right',
     $u-width-intrinsic-apply-at-breakpoints) {float: right;}
-}// end if
+}// endif
 
 
 /**
@@ -143,7 +143,7 @@ $apply-friendly-box-model:                                   false !default;
     overflow: hidden;
     width: auto;
   }
-}// end if
+}// endif
 
 // Alternative method
 %u-width-fill-remaining-space-alt,
@@ -160,7 +160,7 @@ $apply-friendly-box-model:                                   false !default;
     max-width: 100%;
     width: 10000px;
   }
-}// end if
+}// endif
 
 
 /**
@@ -187,7 +187,7 @@ $apply-friendly-box-model:                                   false !default;
       box-sizing: border-box;
     }//endif
   }
-}// end if
+}// endif
 
 
 /**

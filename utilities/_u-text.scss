@@ -95,7 +95,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-small {
   @include generate-at-breakpoints('.u-text-size-small',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-small);}
-}// end if
+}// endif
 
 %u-text-size-x-small,
 .u-text-size-x-small {@include font-size($font-size-x-small);}
@@ -103,7 +103,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-x-small {
   @include generate-at-breakpoints('.u-text-size-x-small',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-x-small);}
-}// end if
+}// endif
 
 %u-text-size-xx-small,
 .u-text-size-xx-small {@include font-size($font-size-xx-small);}
@@ -111,7 +111,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-xx-small {
   @include generate-at-breakpoints('.u-text-size-xx-small',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-small);}
-}// end if
+}// endif
 
 %u-text-size-xxx-small,
 .u-text-size-xxx-small {@include font-size($font-size-xxx-small);}
@@ -119,7 +119,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-xxx-small {
   @include generate-at-breakpoints('.u-text-size-xxx-small',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-small);}
-}// end if
+}// endif
 
 // Larger
 %u-text-size-large,
@@ -128,7 +128,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-large {
   @include generate-at-breakpoints('.u-text-size-large',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-large);}
-}// end if
+}// endif
 
 %u-text-size-x-large,
 .u-text-size-x-large {@include font-size($font-size-x-large);}
@@ -136,7 +136,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-x-large {
   @include generate-at-breakpoints('.u-text-size-x-large',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-x-large);}
-}// end if
+}// endif
 
 %u-text-size-xx-large,
 .u-text-size-xx-large {@include font-size($font-size-xx-large);}
@@ -144,7 +144,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-xx-large {
   @include generate-at-breakpoints('.u-text-size-xx-large',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-large);}
-}// end if
+}// endif
 
 %u-text-size-xxx-large,
 .u-text-size-xxx-large {@include font-size($font-size-xxx-large);}
@@ -152,7 +152,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-xxx-large {
   @include generate-at-breakpoints('.u-text-size-xxx-large',
     $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-large);}
-}// end if
+}// endif
 
 // Base
 %u-text-size-base,
@@ -161,7 +161,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-base {
   @include generate-at-breakpoints('.u-text-size-base',
     $u-text-apply-at-breakpoints) {@include font-size($font-size);}
-}// end if
+}// endif
 
 // Inherit
 %u-text-size-inherit,
@@ -170,7 +170,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-size-inherit {
   @include generate-at-breakpoints('.u-text-size-inherit',
     $u-text-apply-at-breakpoints) {font-size: inherit;}
-}// end if
+}// endif
 
 
 /**
@@ -183,7 +183,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-align-center {
   @include generate-at-breakpoints('.u-text-align-center',
     $u-text-apply-at-breakpoints) {text-align: center;}
-}// end if
+}// endif
 
 %u-text-align-left,
 .u-text-align-left {text-align: left;}
@@ -191,7 +191,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-align-left {
   @include generate-at-breakpoints('.u-text-align-left',
     $u-text-apply-at-breakpoints) {text-align: left;}
-}// end if
+}// endif
 
 %u-text-align-right,
 .u-text-align-right {text-align: right;}
@@ -199,7 +199,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-align-right {
   @include generate-at-breakpoints('.u-text-align-right',
     $u-text-apply-at-breakpoints) {text-align: right;}
-}// end if
+}// endif
 
 %u-text-align-inherit,
 .u-text-align-inherit {text-align: inherit;}
@@ -207,7 +207,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-align-inherit {
   @include generate-at-breakpoints('.u-text-align-inherit',
     $u-text-apply-at-breakpoints) {text-align: inherit;}
-}// end if
+}// endif
 
 
 /**
@@ -220,7 +220,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-style-italic {
   @include generate-at-breakpoints('.u-text-style-italic',
     $u-text-apply-at-breakpoints) {font-style: italic;}
-}// end if
+}// endif
 
 %u-text-style-normal,
 .u-text-style-normal {font-style: normal;}
@@ -228,7 +228,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-style-normal {
   @include generate-at-breakpoints('.u-text-style-normal',
     $u-text-apply-at-breakpoints) {font-style: normal;}
-}// end if
+}// endif
 
 %u-text-style-inherit,
 .u-text-style-inherit {font-style: inherit;}
@@ -236,7 +236,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-style-inherit {
   @include generate-at-breakpoints('.u-text-style-inherit',
     $u-text-apply-at-breakpoints) {font-style: inherit;}
-}// end if
+}// endif
 
 
 /**
@@ -250,7 +250,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-weight-lighter {
   @include generate-at-breakpoints('.u-text-weight-lighter',
     $u-text-apply-at-breakpoints) {font-weight: lighter;}
-}// end if
+}// endif
 
 // Bolder
 %u-text-weight-bold,
@@ -259,7 +259,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-weight-bold {
   @include generate-at-breakpoints('.u-text-weight-bold',
     $u-text-apply-at-breakpoints) {font-weight: bold;}
-}// end if
+}// endif
 
 // Inherit
 %u-text-weight-inherit,
@@ -268,7 +268,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-weight-inherit {
   @include generate-at-breakpoints('.u-text-weight-inherit',
     $u-text-apply-at-breakpoints) {font-weight: inherit;}
-}// end if
+}// endif
 
 // Normal
 %u-text-weight-normal,
@@ -277,7 +277,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-weight-normal {
   @include generate-at-breakpoints('.u-text-weight-normal',
     $u-text-apply-at-breakpoints) {font-weight: normal;}
-}// end if
+}// endif
 
 
 /**
@@ -290,7 +290,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-transform-uppercase {
   @include generate-at-breakpoints('.u-text-transform-uppercase',
     $u-text-apply-at-breakpoints) {text-transform: uppercase;}
-}// end if
+}// endif
 
 %u-text-transform-lowercase,
 .u-text-transform-lowercase {text-transform: lowercase;}
@@ -298,7 +298,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-transform-lowercase {
   @include generate-at-breakpoints('.u-text-transform-lowercase',
     $u-text-apply-at-breakpoints) {text-transform: lowercase;}
-}// end if
+}// endif
 
 %u-text-transform-capitalise,
 .u-text-transform-capitalise {text-transform: capitalize;}
@@ -306,7 +306,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-transform-capitalise {
   @include generate-at-breakpoints('.u-text-transform-capitalise',
     $u-text-apply-at-breakpoints) {text-transform: capitalize;}
-}// end if
+}// endif
 
 %u-text-transform-inherit,
 .u-text-transform-inherit {text-transform: inherit;}
@@ -314,7 +314,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-transform-inherit {
   @include generate-at-breakpoints('.u-text-transform-inherit',
     $u-text-apply-at-breakpoints) {text-transform: inherit;}
-}// end if
+}// endif
 
 %u-text-transform-none,
 .u-text-transform-none {text-transform: none;}
@@ -322,7 +322,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-transform-none {
   @include generate-at-breakpoints('.u-text-transform-none',
     $u-text-apply-at-breakpoints) {text-transform: none;}
-}// end if
+}// endif
 
 
 /**
@@ -335,7 +335,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-whitespace-normal {
   @include generate-at-breakpoints('.u-text-whitespace-normal',
     $u-text-apply-at-breakpoints) {white-space: normal;}
-}// end if
+}// endif
 
 %u-text-whitespace-pre,
 .u-text-whitespace-pre {white-space: pre;}
@@ -343,7 +343,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-whitespace-pre {
   @include generate-at-breakpoints('.u-text-whitespace-pre',
     $u-text-apply-at-breakpoints) {white-space: pre;}
-}// end if
+}// endif
 
 %u-text-whitespace-nowrap,
 .u-text-whitespace-nowrap {white-space: nowrap;}
@@ -351,7 +351,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-whitespace-nowrap {
   @include generate-at-breakpoints('.u-text-whitespace-nowrap',
     $u-text-apply-at-breakpoints) {white-space: nowrap;}
-}// end if
+}// endif
 
 
 /**
@@ -386,7 +386,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
     white-space: nowrap;
     word-wrap: normal;
   }
-}// end if
+}// endif
 
 
 /**
@@ -420,7 +420,7 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-break-word {
   @include generate-at-breakpoints('.u-text-break-word',
     $u-text-apply-at-breakpoints) {word-wrap: break-word;}
-}// end if
+}// endif
 
 
 /**
@@ -433,4 +433,4 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 @if $u-text-apply-at-breakpoints-for-hyphenate {
   @include generate-at-breakpoints('.u-text-hyphenate',
     $u-text-apply-at-breakpoints) {hyphens: auto;}
-}// end if
+}// endif

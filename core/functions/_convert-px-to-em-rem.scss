@@ -28,7 +28,7 @@
     } @else {
       @warn "Breakpoint name '#{$value}' not recognised.";
     }
-  }
+  }// endif
   @return #{$value / $context}em;
 }
 

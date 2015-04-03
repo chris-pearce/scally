@@ -12,7 +12,7 @@
      @include headings(1, 3) {
        color: red;
      }
-    }
+   }
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss
@@ -27,7 +27,7 @@
 
       @if $double-stranded {
         $selector: "#{$selector}, .#{$selector}";
-      }
+      }// endif
 
       $selector-list: append($selector-list, $selector);
     }
@@ -39,8 +39,7 @@
       @content
     }
   }
-
   @else {
     @warn "You can only target headings 1 to 6";
-  }
+  }// endif
 }
