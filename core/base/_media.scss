@@ -45,7 +45,7 @@ img {
      */
 
     #{$google-map-selector-to-turn-off-responsive-images} & {max-width: none;}
-  }
+  }// endif
 
   font-style: italic; // [2]
 }
@@ -63,7 +63,8 @@ img {
 
 
 /**
- * If responsive images are turned on then use this to turn it off.
+ * If responsive images are turned on but you need to turn it off in certain
+ * cases.
  */
 
 .img-not-responsive {max-width: none;}

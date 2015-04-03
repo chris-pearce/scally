@@ -13,14 +13,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
-$l-column-apply-at-breakpoints:                     $default-breakpoints
-!default;
+$l-column-apply-at-breakpoints:                     $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose what you wish to apply it too
 $l-column-apply-breakpoints-for-default:            false !default;
 
 $l-column-apply-breakpoints-for-columns-three:      false !default;
@@ -51,8 +49,7 @@ $l-column-gap-tiny:                                 $spacing-third !default;
 
 $l-column-gap-small:                                $spacing-half !default;
 
-$l-column-gap-large:                                $spacing-base-plus-half
-!default;
+$l-column-gap-large:                                $spacing-base-plus-half !default;
 
 $l-column-gap-huge:                                 $spacing-double !default;
 
@@ -79,7 +76,7 @@ $l-column-divider-colour:                           $colour-text-base !default;
     column-count: 2;
     @include to-rem(column-gap, $l-column-gap-base);
   }
-}// end if
+}// endif
 
 
 /**
@@ -92,10 +89,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-columns-three {
   @include generate-at-breakpoints('.l-columns--three',
-    $l-column-apply-at-breakpoints) {
-    column-count: 3;
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {column-count: 3;}
+}// endif
 
 // Four
 %l-columns--four,
@@ -103,10 +98,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-columns-four {
   @include generate-at-breakpoints('.l-columns--four',
-    $l-column-apply-at-breakpoints) {
-    column-count: 4;
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {column-count: 4;}
+}// endif
 
 // Five
 %l-columns--five,
@@ -114,10 +107,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-columns-five {
   @include generate-at-breakpoints('.l-columns--five',
-    $l-column-apply-at-breakpoints) {
-    column-count: 5;
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {column-count: 5;}
+}// endif
 
 // Six
 %l-columns--six,
@@ -125,10 +116,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-columns-six {
   @include generate-at-breakpoints('.l-columns--six',
-    $l-column-apply-at-breakpoints) {
-    column-count: 6;
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {column-count: 6;}
+}// endif
 
 
 /**
@@ -141,11 +130,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-gutter-tiny {
   @include generate-at-breakpoints('.l-columns--gutter-tiny',
-    $l-column-apply-at-breakpoints
-    ) {
-    @include to-rem(column-gap, $l-column-gap-tiny);
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {@include to-rem(column-gap, $l-column-gap-tiny);}
+}// endif
 
 // Small
 %l-columns--gutter-small,
@@ -153,11 +139,9 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-gutter-small {
   @include generate-at-breakpoints('.l-columns--gutter-small',
-    $l-column-apply-at-breakpoints
-    ) {
-    @include to-rem(column-gap, $l-column-gap-small);
+    $l-column-apply-at-breakpoints) {@include to-rem(column-gap, $l-column-gap-small);
   }
-}// end if
+}// endif
 
 // Large
 %l-columns--gutter-large,
@@ -165,10 +149,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-gutter-large {
   @include generate-at-breakpoints('.l-columns--gutter-large',
-    $l-column-apply-at-breakpoints) {
-    @include to-rem(column-gap, $l-column-gap-large);
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {@include to-rem(column-gap, $l-column-gap-large);}
+}// endif
 
 // Huge
 %l-columns--gutter-huge,
@@ -176,10 +158,8 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-gutter-huge {
   @include generate-at-breakpoints('.l-columns--gutter-huge',
-    $l-column-apply-at-breakpoints) {
-    @include to-rem(column-gap, $l-column-gap-huge);
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {@include to-rem(column-gap, $l-column-gap-huge);}
+}// endif
 
 
 /**
@@ -192,8 +172,5 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 @if $l-column-apply-breakpoints-for-columns-divider {
   @include generate-at-breakpoints('.l-columns--divider',
-    $l-column-apply-at-breakpoints) {@include to-rem(column-rule,
-      $l-column-divider-thickness $l-column-divider-style
-      $l-column-divider-colour);
-  }
-}// end if
+    $l-column-apply-at-breakpoints) {@include to-rem(column-rule, $l-column-divider-thickness $l-column-divider-style $l-column-divider-colour);}
+}// endif

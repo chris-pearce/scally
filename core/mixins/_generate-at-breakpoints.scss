@@ -68,7 +68,7 @@ $mixin-breakpoint-name-placeholder: "{bp}";
 
   @if $breakpoint-names == all {
     $breakpoint-names: $all-breakpoint-names;
-  }
+  }// endif
 
   // When specifying one breakpoint with an explicit limit, it needs to be
   // casted into a list of lists, otherwise the mixin assumes there is a
@@ -79,7 +79,7 @@ $mixin-breakpoint-name-placeholder: "{bp}";
     $breakpoint-names: ();
     $breakpoint-names: append($breakpoint-names, (nth($breakpoint-names-copy, 1)
      nth($breakpoint-names-copy, 2)));
-  }
+  }// endif
 
   @each $breakpoint-name in $breakpoint-names {
 
@@ -93,11 +93,11 @@ $mixin-breakpoint-name-placeholder: "{bp}";
     @else {
       // Palm is a special case where it uses a `max-width` media query
       $limit: if($breakpoint-name == "palm", "max", "min");
-    }
+    }// endif
 
     @if $limit == max {
       $joiner: "up-to";
-    }
+    }// endif
 
     @include respond-to($breakpoint-name, $limit) {
       $final-selector: "#{$class}-#{$joiner}-#{$breakpoint-name}";
@@ -107,7 +107,7 @@ $mixin-breakpoint-name-placeholder: "{bp}";
       @if str_index($class, $mixin-breakpoint-name-placeholder) != null {
         $final-selector: str-replace($class, $mixin-breakpoint-name-placeholder,
          "-#{$joiner}-#{$breakpoint-name}");
-      }
+      }// endif
 
       // Output a class which applies the style at a given breakpoint
       #{$final-selector} {

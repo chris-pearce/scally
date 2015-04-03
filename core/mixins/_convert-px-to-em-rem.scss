@@ -48,11 +48,10 @@
 
       $values: append($values, join((), $vv));
     }
-
     @else {
       $values: append($values, if(type-of($s) == number, #{$s / $context}em,
         $s));
-    }
+    }// endif
   }
 
   $value: join((), $values, if($sublists, comma, space));
@@ -85,11 +84,10 @@
 
       $values: append($values, join((), $vv));
     }
-
     @else {
       $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
         $s));
-    }
+    }// endif
   }
 
   $value: join((), $values, if($sublists, comma, space));

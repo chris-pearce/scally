@@ -71,7 +71,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
         @include to-rem(margin, -$o-list-block-item-padding-base);
       }
   }
-}// end if
+}// endif
 
 
 /**
@@ -96,7 +96,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 
       > a {@include to-rem(margin, -$o-list-block-item-padding-tiny);}
   }
-}// end if
+}// endif
 
 
 /**
@@ -120,7 +120,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 
     > a {@include to-rem(margin, -$o-list-block-item-padding-small);}
   }
-}// end if
+}// endif
 
 
 /**
@@ -145,7 +145,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 
     > a {@include to-rem(margin, -$o-list-block-item-padding-large);}
   }
-}// end if
+}// endif
 
 
 /**
@@ -170,4 +170,4 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 
     > a {@include to-rem(margin, -$o-list-block-item-padding-huge);}
   }
-}// end if
+}// endif

@@ -71,7 +71,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
 @if $u-position-apply-at-breakpoints-for-relative {
   @include generate-at-breakpoints('.u-position-relative',
     $u-position-apply-at-breakpoints) {position: relative;}
-}// end if
+}// endif
 
 // Absolute
 %u-position-absolute,
@@ -80,7 +80,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
 @if $u-position-apply-at-breakpoints-for-absolute {
   @include generate-at-breakpoints('.u-position-absolute',
     $u-position-apply-at-breakpoints) {position: absolute;}
-}// end if
+}// endif
 
 // Fixed
 %u-position-fixed,
@@ -89,7 +89,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
 @if $u-position-apply-at-breakpoints-for-fixed {
   @include generate-at-breakpoints('.u-position-fixed',
     $u-position-apply-at-breakpoints) {position: fixed;}
-}// end if
+}// endif
 
 // Static
 %u-position-static,
@@ -98,7 +98,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
 @if $u-position-apply-at-breakpoints-for-static {
   @include generate-at-breakpoints('.u-position-static',
     $u-position-apply-at-breakpoints) {position: static;}
-}// end if
+}// endif
 
 
 /**
@@ -118,7 +118,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     position: absolute;
     left: 0;
   }
-}// end if
+}// endif
 
 // Right
 %u-position-right,
@@ -133,7 +133,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     position: absolute;
     right: 0;
   }
-}// end if
+}// endif
 
 // Top
 %u-position-top,
@@ -148,7 +148,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     position: absolute;
     top: 0;
   }
-}// end if
+}// endif
 
 // Bottom
 %u-position-bottom,
@@ -163,7 +163,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     position: absolute;
     bottom: 0;
   }
-}// end if
+}// endif
 
 // Top left corner
 %u-position-top-left,
@@ -180,7 +180,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     top: 0;
     left: 0;
   }
-}// end if
+}// endif
 
 // Top right corner
 %u-position-top-right,
@@ -197,7 +197,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     top: 0;
     right: 0;
   }
-}// end if
+}// endif
 
 // Bottom left corner
 %u-position-bottom-left,
@@ -214,7 +214,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     bottom: 0;
     left: 0;
   }
-}// end if
+}// endif
 
 // Bottom right corner
 %u-position-bottom-right,
@@ -231,7 +231,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     bottom: 0;
     right: 0;
   }
-}// end if
+}// endif
 
 // Pin to all corners
 %u-position-pin-all,
@@ -252,7 +252,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     top: 0;
     bottom: 0;
   }
-}// end if
+}// endif
 
 // Pin to top and bottom
 %u-position-pin-ends,
@@ -269,7 +269,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     top: 0;
     bottom: 0;
   }
-}// end if
+}// endif
 
 // Pin to the sides
 %u-position-pin-sides,
@@ -286,7 +286,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     left: 0;
     right: 0;
   }
-}// end if
+}// endif
 
 // Pin to the sides and top
 %u-position-pin-sides-top,
@@ -305,7 +305,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     right: 0;
     top: 0;
   }
-}// end if
+}// endif
 
 // Pin to the sides and bottom
 %u-position-pin-sides-bottom,
@@ -324,7 +324,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     right: 0;
     bottom: 0;
   }
-}// end if
+}// endif
 
 // Vertically in the middle
 %u-position-v-middle,
@@ -341,7 +341,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     top: 50%;
     transform: translateY(-50%);
   }
-}// end if
+}// endif
 
 // Horizontally in the middle
 %u-position-h-middle,
@@ -358,7 +358,7 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     left: 50%;
     transform: translateX(-50%);
   }
-}// end if
+}// endif
 
 // Vertically and horizontally in the middle
 %u-position-middle,
@@ -377,4 +377,4 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-}// end if
+}// endif

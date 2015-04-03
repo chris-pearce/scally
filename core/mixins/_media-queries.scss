@@ -64,21 +64,20 @@
 
       @if $min-value == "lap" {
         $next-breakpoint-index: $breakpoint-index + 2;
-      }
+      }// endif
 
       @if $next-breakpoint-index <= length($breakpoint-values) {
         $max-value: nth($breakpoint-values, $next-breakpoint-index);
       }
-
       @else {
-        @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
-      }
+        @warn "No max-#{$axis} value specified and no available breakpoints
+        to use as a substitute";
+      }// endif
     }
-
     @else {
       @warn "Breakpoint name '#{$min-value}' not recognised.";
     }
-  }
+  }// endif
 
   @media (min-#{$axis}: to-em($min-value, 16)) and (max-#{$axis}: to-em($max-value, 16))
   {

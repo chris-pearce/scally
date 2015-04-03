@@ -71,7 +71,7 @@ $o-list-bullet-ordered:                       decimal !default;
     ul,
     ol {@include to-rem(margin-left, $o-list-indent);}
   }
-}// end if
+}// endif
 
 
 /**
@@ -91,7 +91,7 @@ ul.o-list {list-style-type: $o-list-bullet-unordered-base;}
   @include generate-at-breakpoints('ul.o-list', $o-list-apply-at-breakpoints) {
     list-style-type: $o-list-bullet-unordered-base;
   }
-}// end if
+}// endif
 
 // Ordered lists
 %ol.o-list,
@@ -101,7 +101,7 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
   @include generate-at-breakpoints('ol.o-list', $o-list-apply-at-breakpoints) {
     list-style-type: $o-list-bullet-ordered;
   }
-}// end if
+}// endif
 
   // Nested lists
   %ul.o-list,
@@ -136,5 +136,5 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
         // Ordered lists
         ol {list-style-type: $o-list-bullet-ordered;}
       }
-    }// end if
+    }// endif
   }

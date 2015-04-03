@@ -16,13 +16,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $l-container-apply-at-breakpoints:                $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose what you wish to apply it too
 $l-container-apply-breakpoints-for-default:       false !default;
 
 $l-container-apply-breakpoints-for-full-bleed:    false !default;
@@ -64,7 +63,7 @@ $l-container-maximum-width:                       1600 !default;
       width: auto;
     }
   }
-}// end if
+}// endif
 
 
 /**
@@ -82,7 +81,7 @@ $l-container-maximum-width:                       1600 !default;
     width: auto;
     max-width: none;
   }
-}// end if
+}// endif
 
 
 /**
@@ -100,4 +99,4 @@ $l-container-maximum-width:                       1600 !default;
     margin-left: 0;
     margin-right: 0;
   }
-}// end if
+}// endif

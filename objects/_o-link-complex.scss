@@ -57,7 +57,7 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
       cursor: text;
     }
   }
-}// end if
+}// endif
 
 
   /**
@@ -88,4 +88,4 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
         color: $link-colour-hover;
       }
     }
-  }// end if
+  }// endif

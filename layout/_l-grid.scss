@@ -7,9 +7,10 @@
  * A powerful fluid and nestable mobile first grid system.
  *
  * Combine with the viewport specific width classes found in Utilities ->
+ * Widths which all feed from the width settings set here: Core -> Settings ->
  * Widths to apply grid widths at specific viewports, for example:
  *
-   <div class="l-grid__item u-one-half-from-lap u-one-third-from-desk">
+   <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
  *
  * This would give you a grid item which is 100% width unless it is on a lap
  * device, at which point it becomes 50% wide, or it is on a desktop device,
@@ -28,14 +29,14 @@
  *
  * @markup
    <div class="l-grid">
-     <div class="l-grid__item u-one-half"> ... </div>
-     <div class="l-grid__item u-one-half"> ... </div>
+     <div class="l-grid__item  u-one-half"> ... </div>
+     <div class="l-grid__item  u-one-half"> ... </div>
    </div>
 
    <div class="l-grid">
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
+     <div class="l-grid__item  u-one-third"> ... </div>
+     <div class="l-grid__item  u-one-third"> ... </div>
+     <div class="l-grid__item  u-one-third"> ... </div>
    </div>
  *
  * @credit
@@ -48,7 +49,7 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
 $l-grid-apply-at-breakpoints:   $default-breakpoints !default;

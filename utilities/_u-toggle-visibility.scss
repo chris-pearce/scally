@@ -48,7 +48,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: block;}
   }
-}// end if
+}// endif
 
 
 /**
@@ -68,7 +68,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline;}
   }
-}// end if
+}// endif
 
 
 /**
@@ -88,4 +88,4 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline-block;}
   }
-}// end if
+}// endif

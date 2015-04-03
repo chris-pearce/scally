@@ -58,16 +58,14 @@
     line-height: ceil($font-size-value / $line-height) * ($line-height /
       $font-size-value);
   }
-
   @else {
 
     @if (type-of($line-height-value) == number or $line-height-value == inherit
       or $line-height-value == normal) {
       line-height: $line-height-value;
     }
-
     @elseif ($line-height-value != none and $line-height-value != false) {
       @warn "D'oh! `#{$line-height-value}` is not a valid value for `line-height`."
-    }
-  }
+    }// endif
+  }// endif
 }

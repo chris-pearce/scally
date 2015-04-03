@@ -109,7 +109,7 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
   @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
     .l-side-by-side-alt--remove {direction: ltr;} // [1]
   }
-}// end if
+}// endif
 
 
   /**
@@ -154,7 +154,7 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
       @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
         .l-side-by-side-alt--remove > & {display: block;}
       }
-    }// end if
+    }// endif
   }
 
 
@@ -171,16 +171,20 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
      */
 
     // Tiny
-    .l-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right, $l-side-by-side-alt-gutter-tiny);}
+    .l-side-by-side-alt--gutter-tiny > & {@include to-rem(padding-right,
+      $l-side-by-side-alt-gutter-tiny);}
 
     // Small
-    .l-side-by-side-alt--gutter-small > & {@include to-rem(padding-right, $l-side-by-side-alt-gutter-small);}
+    .l-side-by-side-alt--gutter-small > & {@include to-rem(padding-right,
+      $l-side-by-side-alt-gutter-small);}
 
     // Large
-    .l-side-by-side-alt--gutter-large > & {@include to-rem(padding-right, $l-side-by-side-alt-gutter-large);}
+    .l-side-by-side-alt--gutter-large > & {@include to-rem(padding-right,
+      $l-side-by-side-alt-gutter-large);}
 
     // Huge
-    .l-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right, $l-side-by-side-alt-gutter-huge);}
+    .l-side-by-side-alt--gutter-huge > & {@include to-rem(padding-right,
+      $l-side-by-side-alt-gutter-huge);}
 
 
     /**
@@ -290,6 +294,6 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
           @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
             max-width: 100%;
           }
-        }// end if
+        }// endif
       }
   }
