@@ -106,7 +106,6 @@ $o-drop-down-touch-support-class:                is-touch !default;
   .#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target {display: none;}
 
   @if $o-drop-down-apply-at-breakpoints-for-on-hover {
-    @include generate-at-breakpoints('.#{$o-drop-down-touch-support-class}
-      .o-drop-down--on-hover .o-drop-down__target',
+    @include generate-at-breakpoints('.#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target',
       $o-drop-down-apply-at-breakpoints) {display: none;}
   }// endif
