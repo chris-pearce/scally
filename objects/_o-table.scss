@@ -101,14 +101,12 @@ $o-table-striped-background-cell-colour:               $o-table-border-colour !d
 
 %o-table--striped,
 .o-table--striped {
-  tr:nth-of-type(odd) td {background-color:
-    $o-table-striped-background-cell-colour;}
+  tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-colour;}
 }
 
 @if $o-table-apply-at-breakpoints-for-striped {
   @include generate-at-breakpoints('.o-table--striped',
-    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color:
-    $o-table-striped-background-cell-colour;}
+    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-colour;}
   }
 }// endif
 

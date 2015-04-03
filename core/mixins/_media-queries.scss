@@ -70,8 +70,7 @@
         $max-value: nth($breakpoint-values, $next-breakpoint-index);
       }
       @else {
-        @warn "No max-#{$axis} value specified and no available breakpoints
-        to use as a substitute";
+        @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
       }// endif
     }
     @else {

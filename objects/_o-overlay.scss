@@ -137,12 +137,10 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 %o-overlay--hover.o-overlay--dark:hover:before,
 %o-overlay--hover.o-overlay--dark:focus:before,
 .o-overlay--hover.o-overlay--dark:hover:before,
-.o-overlay--hover.o-overlay--dark:focus:before {background-color:
-  rgba($o-overlay-colour-dark, $o-overlay-opacity-strength-dark);}
+.o-overlay--hover.o-overlay--dark:focus:before {background-color: rgba($o-overlay-colour-dark, $o-overlay-opacity-strength-dark);}
 
 // Light
 %o-overlay--hover.o-overlay--light:hover:before,
 %o-overlay--hover.o-overlay--light:focus:before,
 .o-overlay--hover.o-overlay--light:hover:before,
-.o-overlay--hover.o-overlay--light:focus:before {background-color:
-  rgba($o-overlay-colour-light, $o-overlay-opacity-strength-light);}
+.o-overlay--hover.o-overlay--light:focus:before {background-color: rgba($o-overlay-colour-light, $o-overlay-opacity-strength-light);}
