@@ -53,6 +53,21 @@
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
  *
+ * As they're so many spacing utilities the format for applying them at different
+ * breakpoints in your master stylesheet is a little different to the
+ * standard format. In addition to listing your breakpoints we have to list out
+ * the exact spacing utility classes we want those breakpoints applied to. So
+ * say we wanted to apply 3 `margin-bottom` spacing utilities at the 'Small',
+ * 'Base', and 'Large' sizing categories which are applied to the 'Palm' and 'Lap'
+ * breakpoints plus at a breakpoint of '886', we would do it like this:
+ *
+   $u-spacing-apply-at-breakpoints: (palm, lap, 886);
+   $u-spacing-apply-classes-for-breakpoints: (
+    ".u-s-mb-small",
+    ".u-s-mb-base",
+    ".u-s-mb-large"
+   );
+ *
  * All the utilities (available as silent placeholder selectors also):
  *
    // Base
@@ -250,18 +265,6 @@
    .u-s-ps-none
    .u-s-me-none
    .u-s-pe-none
- *
- * As they're so many spacing utilities the format for applying them at different
- * breakpoints in your master stylesheet is a little different to the
- * standard format. In addition to listing your breakpoints we have to list out
- * the exact spacing utilities we want those breakpoints applied to e.g.
- *
-   $u-spacing-apply-at-breakpoints: (palm, lap, 886);
-   $u-spacing-apply-classes-for-breakpoints: (
-    ".u-s-mb-small",
-    ".u-s-mb-base",
-    ".u-s-mt-base"
-   );
  *
  * @credit
  * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/whitespace/_whitespace.scss
