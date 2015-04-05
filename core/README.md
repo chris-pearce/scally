@@ -122,7 +122,7 @@ All print styles that aren't defined at this global base level will live in cont
 
 ##### [Root](base/_root.scss)
 
-Root defines styles for the `html` element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the `html` element itself.
+Root defines styles for the `html` element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background color of the `html` element itself.
 
 ##### [Forms](base/_forms.scss)
 
@@ -292,7 +292,7 @@ If you want to use a Scally setting to override something then you need to defin
 
  ```
 @import "bower_components/scally/core/settings/colours";
-$colour-text-base: $colour-brand;
+$color-text-base: $color-brand;
 ```
 
 If you try to redeclare above the `@import` your Sass won't compile as you

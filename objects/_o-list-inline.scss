@@ -29,7 +29,7 @@
  * Apply at these breakpoints (turned off by default).
  */
 
-$o-list-inline-apply-at-breakpoints:                                  $default-breakpoints !default;
+$o-list-inline-apply-at-breakpoints:                                   $default-breakpoints !default;
 
 // From the above breakpoints choose what you wish to apply it too
 $o-list-inline-apply-at-breakpoints-for-default:                       false !default;
@@ -94,7 +94,7 @@ $o-list-inline-item-spacing-huge:                                      $spacing-
  * Dividers.
  */
 
-$o-list-inline-divider-colour:                                         $colour-text-base !default;
+$o-list-inline-divider-color:                                          $color-text-base !default;
 
 $o-list-inline-divider-thickness:                                      1 !default;
 
@@ -357,13 +357,13 @@ $o-list-inline-divider-thickness:                                      1 !defaul
 %o-list-inline--divider,
 .o-list-inline--divider {
   > li + li {@include to-rem(border-left, $o-list-inline-divider-thickness
-      solid $o-list-inline-divider-colour);}
+      solid $o-list-inline-divider-color);}
 }
 
 @if $o-list-inline-apply-at-breakpoints-for-divider {
   @include generate-at-breakpoints('.o-list-inline--divider{bp} > li + li',
     $o-list-inline-apply-at-breakpoints) {@include to-rem(border-left,
-      $o-list-inline-divider-thickness solid $o-list-inline-divider-colour);
+      $o-list-inline-divider-thickness solid $o-list-inline-divider-color);
   }
 }// endif
 

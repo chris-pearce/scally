@@ -41,7 +41,7 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 
 
-# Demo's 
+# Demo's
 
 *A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
 
@@ -194,7 +194,7 @@ In this partial you will store all of your common project-specific settings, bey
 Common project-specific settings might be adding more colours, so if you decide you need a new colour then in `settings.scss` you can create one like so:
 
 ```
-$colour-tertiary: #ccc;
+$color-tertiary: #ccc;
 ```
 
 Another example might be adding a new font family e.g.
@@ -221,7 +221,7 @@ $font-size: 14;
 You can use your own project-specific settings from your [`settings.scss`](#your-settings) file to override any of the Scally settings e.g.
 
 ```
-$colour-text-base: $colour-hotpink;
+$color-text-base: $color-hotpink;
 @import "bower_components/scally/core/settings/colours";
 ```
 

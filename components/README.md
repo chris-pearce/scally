@@ -106,15 +106,15 @@ CSS for the pagination component:
  */
 
 // Colours
-$c-pagination-background-colour:          #eee;
+$c-pagination-background-color:          #eee;
 
-$c-pagination-background-hover-colour:    lighten($colour-black, 4%);
+$c-pagination-background-hover-color:    lighten($color-black, 4%);
 
-$c-pagination-border-colour:              darken($c-pagination-background-colour, 4%);
+$c-pagination-border-color:              darken($c-pagination-background-color, 4%);
 
 
 .pagination {
-  @include to-rem(border, 1 solid $c-pagination-border-colour);
+  @include to-rem(border, 1 solid $c-pagination-border-color);
   @include to-rem(border-radius, $border-radius);
   @include to-rem(padding, $spacing-quarter);
   font-family: $font-family-serif;
@@ -150,7 +150,7 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
       @include to-rem(margin-right, $spacing-third);
       vertical-align: bottom;
       speak: none;
-      color: $colour-text-base;
+      color: $color-text-base;
     }
 
 
@@ -160,10 +160,10 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
 
      .pagination__link {
         display: inline-block;
-        @include to-rem(border, 1 solid $c-pagination-border-colour);
+        @include to-rem(border, 1 solid $c-pagination-border-color);
         @include to-rem(border-radius, $border-radius);
         @include to-rem(padding, $spacing-micro $spacing-third);
-        background-color: $c-pagination-background-colour;
+        background-color: $c-pagination-background-color;
 
 
         /**
@@ -173,8 +173,8 @@ $c-pagination-border-colour:              darken($c-pagination-background-colour
         &:hover,
         &:focus,
         &.is-active {
-          background-color: $c-pagination-background-hover-colour;
-          color: $colour-white;
+          background-color: $c-pagination-background-hover-color;
+          color: $color-white;
           text-decoration: none;
         }
      }

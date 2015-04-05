@@ -18,11 +18,11 @@
 .c-button-faux-link {
   // `@extend`ing the Button object
   @extend %o-button;
-  color: $link-colour;
+  color: $link-color;
 
   &:hover,
   &:focus {
-    color: $link-colour-hover;
+    color: $link-color-hover;
     text-decoration: underline;
   }
 }

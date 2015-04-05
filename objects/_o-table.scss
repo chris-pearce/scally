@@ -57,13 +57,13 @@ $o-table-cell-padding-large:                           $spacing-base !default;
  * Cosmetics.
  */
 
-$o-table-border-colour:                                darken($colour-white, 10%) !default;
+$o-table-border-color:                                 darken($color-white, 10%) !default;
 
 $o-table-border-thickness:                             1 !default;
 
 $o-table-border-style:                                 solid !default;
 
-$o-table-striped-background-cell-colour:               $o-table-border-colour !default;
+$o-table-striped-background-cell-color:                $o-table-border-color !default;
 
 
 %u-table,
@@ -96,17 +96,18 @@ $o-table-striped-background-cell-colour:               $o-table-border-colour !d
 /**
  * Modifier: striped.
  *
- * Applies a background colour to every odd row.
+ * Applies a background color to every odd row.
  */
 
 %o-table--striped,
 .o-table--striped {
-  tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-colour;}
+  tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-color;}
 }
 
 @if $o-table-apply-at-breakpoints-for-striped {
   @include generate-at-breakpoints('.o-table--striped',
-    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-colour;}
+    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color:
+    $o-table-striped-background-cell-color;}
   }
 }// endif
 
@@ -120,7 +121,7 @@ $o-table-striped-background-cell-colour:               $o-table-border-colour !d
   th,
   td {
     @include to-rem(border, $o-table-border-thickness $o-table-border-style
-      $o-table-border-colour);
+      $o-table-border-color);
 
     // No borders for empty cells
     &:empty {border: 0;}
@@ -133,7 +134,7 @@ $o-table-striped-background-cell-colour:               $o-table-border-colour !d
     th,
     td {
       @include to-rem(border, $o-table-border-thickness $o-table-border-style
-        $o-table-border-colour);
+        $o-table-border-color);
 
       &:empty {border: 0;}
     }
