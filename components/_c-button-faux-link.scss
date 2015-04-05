@@ -7,7 +7,7 @@
  * A button that looks like a link.
  *
  * @markup
-   <button class="button-faux-link">Button text</button>
+   <button class="c-button-faux-link">Button text</button>
  *
  * @dependency
  * This component is dependent on the Button object therefore it is
@@ -15,7 +15,7 @@
  */
 
 
-.button-faux-link {
+.c-button-faux-link {
   // `@extend`ing the Button object
   @extend %o-button;
   color: $link-colour;
