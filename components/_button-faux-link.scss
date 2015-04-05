@@ -1,0 +1,28 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON FAUX LINK
+   ========================================================================= */
+
+
+/**
+ * A button that looks like a link.
+ *
+ * @markup
+   <button class="button-faux-link">Button text</button>
+ *
+ * @dependency
+ * This component is dependent on the Button object therefore it is
+ * `@extend`ed from this component.
+ */
+
+
+.button-faux-link {
+  // `@extend`ing the Button object
+  @extend %o-button;
+  color: $link-colour;
+
+  &:hover,
+  &:focus {
+    color: $link-colour-hover;
+    text-decoration: underline;
+  }
+}
