@@ -66,26 +66,26 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
 
   %o-link-complex__target,
   .o-link-complex__target {
-    color: $link-colour;
+    color: $link-color;
     cursor: pointer;
 
     &:hover,
     &:focus {
       text-decoration: underline;
-      color: $link-colour-hover;
+      color: $link-color-hover;
     }
   }
 
   @if $o-link-complex-apply-at-breakpoints-for-target {
     @include generate-at-breakpoints('.o-link-complex__target',
       $o-link-complex-apply-at-breakpoints) {
-      color: $link-colour;
+      color: $link-color;
       cursor: pointer;
 
       &:hover,
       &:focus {
         text-decoration: underline;
-        color: $link-colour-hover;
+        color: $link-color-hover;
       }
     }
   }// endif

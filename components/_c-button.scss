@@ -76,13 +76,13 @@ $apply-friendly-box-model:                  false !default;
  * Colours.
  */
 
-$c-button-background-colour:                $colour-primary !default;
+$c-button-background-color:                 $color-primary !default;
 
-$c-button-background-colour-secondary:      $colour-secondary !default;
+$c-button-background-color-secondary:       $color-secondary !default;
 
-$c-button-foreground-colour:                $colour-white !default;
+$c-button-foreground-color:                 $color-white !default;
 
-$c-button-foreground-colour-secondary:      $c-button-foreground-colour !default;
+$c-button-foreground-color-secondary:       $c-button-foreground-color !default;
 
 /**
  * Padding.
@@ -108,9 +108,9 @@ $c-button-border-thickness:                 1 !default;
 
 $c-button-border-style:                     solid !default;
 
-$c-button-border-colour:                    darken($c-button-background-colour, 10%) !default;
+$c-button-border-color:                     darken($c-button-background-color, 10%) !default;
 
-$c-button-border-colour-secondary:          darken($c-button-background-colour-secondary, 10%) !default;
+$c-button-border-color-secondary:           darken($c-button-background-color-secondary, 10%) !default;
 
 /**
  * Rounded corners.
@@ -133,13 +133,13 @@ $c-button-hover-transition-timing-function: linear !default;
   // `@extend`ing the Button object
   @extend %o-button;
   text-align: center;
-  background-color: $c-button-background-colour;
+  background-color: $c-button-background-color;
   @include to-rem(padding, $c-button-padding-base / 2 $c-button-padding-base);
 
   // Apply a border
   @if $c-button-apply-border {
     @include to-rem(border, $c-button-border-thickness $c-button-border-style
-      $c-button-border-colour);
+      $c-button-border-color);
   }// endif
 
   // Apply rounded corners
@@ -150,11 +150,11 @@ $c-button-hover-transition-timing-function: linear !default;
     html & {@include to-rem(border-radius, $c-button-rounded-corners-size);}
   }// endif
 
-  // Foreground colour
+  // Foreground color
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-button-foreground-colour;}
+  &:active {color: $c-button-foreground-color;}
 
   // Apply hover/focus styles
   @if $c-button-apply-hover-styles {
@@ -169,22 +169,22 @@ $c-button-hover-transition-timing-function: linear !default;
 
 
 /**
- * Modifier: secondary colour.
+ * Modifier: secondary color.
  */
 
 .c-button--secondary {
-  background-color: $c-button-background-colour-secondary;
+  background-color: $c-button-background-color-secondary;
 
   // Apply a border
   @if $c-button-apply-border {
-    @include to-rem(border-color, $c-button-border-colour-secondary);
+    @include to-rem(border-color, $c-button-border-color-secondary);
   }// endif
 
-  // Foreground colour
+  // Foreground color
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-button-foreground-colour-secondary;}
+  &:active {color: $c-button-foreground-color-secondary;}
 }
 
 
@@ -253,7 +253,7 @@ $c-button-hover-transition-timing-function: linear !default;
 
     @if $c-button-apply-border == false {
       @include to-rem(border, $c-button-border-thickness $c-button-border-style
-        $c-button-border-colour);
+        $c-button-border-color);
     }
 
     // Turn off right borders so they don't double up, except for the last
@@ -293,7 +293,7 @@ $c-button-hover-transition-timing-function: linear !default;
 
       // Turn back on the right border that gets turned off by default
       @include to-rem(border-right, $c-button-border-thickness
-        $c-button-border-style $c-button-border-colour);
+        $c-button-border-style $c-button-border-color);
 
       // Turn off bottom borders so they don't double up, except for the last
       // one

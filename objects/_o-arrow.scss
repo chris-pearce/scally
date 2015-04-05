@@ -27,7 +27,7 @@ $o-arrow-size-large:    $o-arrow-size-base + 2 !default;
 $o-arrow-size-huge:     $o-arrow-size-base + 4 !default;
 
 // Colour
-$o-arrow-colour:        $colour-text-base !default;
+$o-arrow-color:         $color-text-base !default;
 
 
 %o-arrow,
@@ -66,7 +66,7 @@ $o-arrow-colour:        $colour-text-base !default;
  */
 
 %o-arrow--down,
-.o-arrow--down {border-top-color: $o-arrow-colour;}
+.o-arrow--down {border-top-color: $o-arrow-color;}
 
 
 /**
@@ -74,7 +74,7 @@ $o-arrow-colour:        $colour-text-base !default;
  */
 
 %o-arrow--up,
-.o-arrow--up {border-bottom-color: $o-arrow-colour;}
+.o-arrow--up {border-bottom-color: $o-arrow-color;}
 
 
 /**
@@ -82,7 +82,7 @@ $o-arrow-colour:        $colour-text-base !default;
  */
 
 %o-arrow--left,
-.o-arrow--left {border-right-color: $o-arrow-colour;}
+.o-arrow--left {border-right-color: $o-arrow-color;}
 
 
 /**
@@ -90,4 +90,4 @@ $o-arrow-colour:        $colour-text-base !default;
  */
 
 %o-arrow--right,
-.o-arrow--right {border-left-color: $o-arrow-colour;}
+.o-arrow--right {border-left-color: $o-arrow-color;}

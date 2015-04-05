@@ -12,10 +12,9 @@
  * Settings.
  */
 
-$html-element-background-colour:      $colour-white !default;
+$html-element-background-color:       $color-white !default;
 
 $apply-none-sub-pixel-anti-aliasing:  true !default;
-
 
 /**
  * 1. Set the default `font-size`, `line-height` and `font-family` for the
@@ -28,10 +27,10 @@ $apply-none-sub-pixel-anti-aliasing:  true !default;
 
 html {
   font: ($font-size/16)+em/$line-height-ratio $font-family-base; // [1]
-  color: $colour-text-base;
-  background: $html-element-background-colour;
+  color: $color-text-base;
+  background: $html-element-background-color;
   @if $apply-none-sub-pixel-anti-aliasing {
     -moz-osx-font-smoothing: grayscale; // [2]
     -webkit-font-smoothing: antialiased; // [2]
-  }
+  }// endif
 }

@@ -30,9 +30,9 @@ $apply-close-button-for-ie10plus-inputs:                false !default;
  * Text inputs and `select`s styles.
  */
 
-$text-input-and-select-text-color:                      $colour-text-base !default;
+$text-input-and-select-text-color:                      $color-text-base !default;
 
-$text-input-and-select-background-color:                $colour-white !default;
+$text-input-and-select-background-color:                $color-white !default;
 
 $text-input-and-select-rounded-corners-size:            $border-radius !default;
 
@@ -42,7 +42,7 @@ $text-input-and-select-border-thickness:                1 !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
-$text-input-and-select-border-colour:                   lighten($colour-black, 30%) !default;
+$text-input-and-select-border-color:                    lighten($color-black, 30%) !default;
 
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
 
@@ -155,7 +155,7 @@ legend {
  */
 
 .required-field {
-  color: $colour-state-error;
+  color: $color-state-error;
   cursor: help;
 }
 
@@ -176,7 +176,7 @@ legend {
     @if $apply-text-input-and-select-border {
       @include to-rem(border, $text-input-and-select-border-thickness
                               $text-input-and-select-border-style
-                              $text-input-and-select-border-colour
+                              $text-input-and-select-border-color
                       );
     }
     @else {

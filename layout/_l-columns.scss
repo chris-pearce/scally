@@ -64,7 +64,7 @@ $l-column-divider-thickness:                        1 !default;
 
 $l-column-divider-style:                            solid !default;
 
-$l-column-divider-colour:                           $colour-text-base !default;
+$l-column-divider-color:                            $color-text-base !default;
 
 
 %l-columns,
@@ -171,9 +171,9 @@ $l-column-divider-colour:                           $colour-text-base !default;
 
 %l-columns--divider,
 .l-columns--divider {@include to-rem(column-rule, $l-column-divider-thickness
-  $l-column-divider-style $l-column-divider-colour);}
+  $l-column-divider-style $l-column-divider-color);}
 
 @if $l-column-apply-breakpoints-for-columns-divider {
   @include generate-at-breakpoints('.l-columns--divider',
-    $l-column-apply-at-breakpoints) {@include to-rem(column-rule, $l-column-divider-thickness $l-column-divider-style $l-column-divider-colour);}
+    $l-column-apply-at-breakpoints) {@include to-rem(column-rule, $l-column-divider-thickness $l-column-divider-style $l-column-divider-color);}
 }// endif
