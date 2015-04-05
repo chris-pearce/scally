@@ -5,11 +5,41 @@
 
 /**
  * A powerful utility to apply and remove spacing (whitespace) via `margin`
- * and `padding`. All spacing uses the spacing settings from Core -> Settings
- * -> Spacing.
+ * and `padding`. All the spacing utilities map their spacing values from
+ * Core -> Settings -> Spacing and come in 6 sizing categories:
  *
- * N.B. this is one of the rare occasions where the class/placeholder is
- * shortened.
+ * - Base
+ * - Micro
+ * - Tiny
+ * - Small
+ * - Large
+ * - Huge
+ *
+ * Each of the above sizing categories can be applied to the following
+ * direction categories:
+ *
+ * - All (`margin` / `padding`)
+ * - Top (`margin-top` / `padding-top`)
+ * - Right (`margin-right` / `padding-right`)
+ * - Bottom (`margin-bottom` / `padding-bottom`)
+ * - Left (`margin-left` / `padding-left`)
+ * - Sides (`margin-right, margin-left` / `padding-right, padding-left`)
+ * - End (`margin-top, margin-bottom` / `padding-top, padding-bottom`)
+ *
+ * All of the above sizing/direction categories can be applied to negative
+ * spacing and zero spacing (none). So if we take 'Base -> Top' we have the
+ * following spacing utilities available to us:
+ *
+   .u-s-mt-base {@include to-rem(margin-top, $u-spacing-base);}
+   .u-s-pt-base {@include to-rem(padding-top, $u-spacing-base);}
+
+   // Negative
+   .u-s-mt-n-base {@include to-rem(margin-top, -$u-spacing-base);}
+   .u-s-pt-n-base {@include to-rem(padding-top, -$u-spacing-base);}
+
+   // None
+  .u-s-mt-none {margin-top: 0;}
+  .u-s-pt-none {padding-top: 0;}
  *
  * Naming convention:
  *
@@ -22,6 +52,216 @@
  * 5. Spacing negative:         negative [n]
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   // Base
+   .u-s-m-base
+   .u-s-p-base
+   .u-s-m-n-base
+   .u-s-p-n-base
+   .u-s-mt-base
+   .u-s-pt-base
+   .u-s-mt-n-base
+   .u-s-pt-n-base
+   .u-s-mr-base
+   .u-s-pr-base
+   .u-s-mr-n-base
+   .u-s-pr-n-base
+   .u-s-mb-base
+   .u-s-pb-base
+   .u-s-mb-n-base
+   .u-s-pb-n-base
+   .u-s-ml-base
+   .u-s-pl-base
+   .u-s-ml-n-base
+   .u-s-pl-n-base
+   .u-s-ms-base
+   .u-s-ps-base
+   .u-s-ms-n-base
+   .u-s-ps-n-base
+   .u-s-me-base
+   .u-s-pe-base
+   .u-s-me-n-base
+   .u-s-pe-n-base
+
+   // Micro
+   .u-s-m-micro
+   .u-s-p-micro
+   .u-s-m-n-micro
+   .u-s-p-n-micro
+   .u-s-mt-micro
+   .u-s-pt-micro
+   .u-s-mt-n-micro
+   .u-s-pt-n-micro
+   .u-s-mr-micro
+   .u-s-pr-micro
+   .u-s-mr-n-micro
+   .u-s-pr-n-micro
+   .u-s-mb-micro
+   .u-s-pb-micro
+   .u-s-mb-n-micro
+   .u-s-pb-n-micro
+   .u-s-ml-micro
+   .u-s-pl-micro
+   .u-s-ml-n-micro
+   .u-s-pl-n-micro
+   .u-s-ms-micro
+   .u-s-ps-micro
+   .u-s-ms-n-micro
+   .u-s-ps-n-micro
+   .u-s-me-micro
+   .u-s-pe-micro
+   .u-s-me-n-micro
+   .u-s-pe-n-micro
+
+   // Tiny
+   .u-s-m-tiny
+   .u-s-p-tiny
+   .u-s-m-n-tiny
+   .u-s-p-n-tiny
+   .u-s-mt-tiny
+   .u-s-pt-tiny
+   .u-s-mt-n-tiny
+   .u-s-pt-n-tiny
+   .u-s-mr-tiny
+   .u-s-pr-tiny
+   .u-s-mr-n-tiny
+   .u-s-pr-n-tiny
+   .u-s-mb-tiny
+   .u-s-pb-tiny
+   .u-s-mb-n-tiny
+   .u-s-pb-n-tiny
+   .u-s-ml-tiny
+   .u-s-pl-tiny
+   .u-s-ml-n-tiny
+   .u-s-pl-n-tiny
+   .u-s-ms-tiny
+   .u-s-ps-tiny
+   .u-s-ms-n-tiny
+   .u-s-ps-n-tiny
+   .u-s-me-tiny
+   .u-s-pe-tiny
+   .u-s-me-n-tiny
+   .u-s-pe-n-tiny
+
+   // Small
+   .u-s-m-small
+   .u-s-p-small
+   .u-s-m-n-small
+   .u-s-p-n-small
+   .u-s-mt-small
+   .u-s-pt-small
+   .u-s-mt-n-small
+   .u-s-pt-n-small
+   .u-s-mr-small
+   .u-s-pr-small
+   .u-s-mr-n-small
+   .u-s-pr-n-small
+   .u-s-mb-small
+   .u-s-pb-small
+   .u-s-mb-n-small
+   .u-s-pb-n-small
+   .u-s-ml-small
+   .u-s-pl-small
+   .u-s-ml-n-small
+   .u-s-pl-n-small
+   .u-s-ms-small
+   .u-s-ps-small
+   .u-s-ms-n-small
+   .u-s-ps-n-small
+   .u-s-me-small
+   .u-s-pe-small
+   .u-s-me-n-small
+   .u-s-pe-n-small
+
+   // Large
+   .u-s-m-large
+   .u-s-p-large
+   .u-s-m-n-large
+   .u-s-p-n-large
+   .u-s-mt-large
+   .u-s-pt-large
+   .u-s-mt-n-large
+   .u-s-pt-n-large
+   .u-s-mr-large
+   .u-s-pr-large
+   .u-s-mr-n-large
+   .u-s-pr-n-large
+   .u-s-mb-large
+   .u-s-pb-large
+   .u-s-mb-n-large
+   .u-s-pb-n-large
+   .u-s-ml-large
+   .u-s-pl-large
+   .u-s-ml-n-large
+   .u-s-pl-n-large
+   .u-s-ms-large
+   .u-s-ps-large
+   .u-s-ms-n-large
+   .u-s-ps-n-large
+   .u-s-me-large
+   .u-s-pe-large
+   .u-s-me-n-large
+   .u-s-pe-n-large
+
+   // Huge
+   .u-s-m-huge
+   .u-s-p-huge
+   .u-s-m-n-huge
+   .u-s-p-n-huge
+   .u-s-mt-huge
+   .u-s-pt-huge
+   .u-s-mt-n-huge
+   .u-s-pt-n-huge
+   .u-s-mr-huge
+   .u-s-pr-huge
+   .u-s-mr-n-huge
+   .u-s-pr-n-huge
+   .u-s-mb-huge
+   .u-s-pb-huge
+   .u-s-mb-n-huge
+   .u-s-pb-n-huge
+   .u-s-ml-huge
+   .u-s-pl-huge
+   .u-s-ml-n-huge
+   .u-s-pl-n-huge
+   .u-s-ms-huge
+   .u-s-ps-huge
+   .u-s-ms-n-huge
+   .u-s-ps-n-huge
+   .u-s-me-huge
+   .u-s-pe-huge
+   .u-s-me-n-huge
+   .u-s-pe-n-huge
+
+   // None
+   .u-s-m-none
+   .u-s-p-none
+   .u-s-mt-none
+   .u-s-pt-none
+   .u-s-mr-none
+   .u-s-pr-none
+   .u-s-mb-none
+   .u-s-pb-none
+   .u-s-ml-none
+   .u-s-pl-none
+   .u-s-ms-none
+   .u-s-ps-none
+   .u-s-me-none
+   .u-s-pe-none
+ *
+ * As they're so many spacing utilities the format for applying them at different
+ * breakpoints in your master stylesheet is a little different to the
+ * standard format. In addition to listing your breakpoints we have to list out
+ * the exact spacing utilities we want those breakpoints applied to e.g.
+ *
+   $u-spacing-apply-at-breakpoints: (palm, lap, 886);
+   $u-spacing-apply-classes-for-breakpoints: (
+    ".u-s-mb-small",
+    ".u-s-mb-base",
+    ".u-s-mt-base"
+   );
  *
  * @credit
  * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/whitespace/_whitespace.scss
