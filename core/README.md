@@ -122,7 +122,7 @@ All print styles that aren't defined at this global base level will live in cont
 
 ##### [Root](base/_root.scss)
 
-Root defines styles for the `html` element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background color of the `html` element itself.
+Root defines styles for the `html` element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the `html` element itself.
 
 ##### [Forms](base/_forms.scss)
 
