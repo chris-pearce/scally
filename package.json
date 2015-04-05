@@ -1,6 +1,6 @@
 {
   "name": "scally",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
   "main": "style.css",
   "homepage": "https://github.com/chris-pearce/scally",
