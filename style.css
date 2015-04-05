@@ -2954,6 +2954,50 @@ li:before {
 .o-table--no-cell-padding td {
   padding: 0; }
 
+/* ============================================================================
+   @OBJECTS -> BUTTON
+   ========================================================================= */
+/**
+ * Assign sensible defaults to buttons (`input` and `button`) and
+ * reset/normalize styles from the UA stylesheet. This object will be the
+ * starting point for any button components.
+ */
+/**
+ * 1.  Prevent button text from being selectable.
+ * 2.  Make sure `input` will wrap text across multiple lines.
+ * 3.  Allow us to style box model properties.
+ * 4.  Line different sized buttons up a little nicer.
+ * 5.  Correct font family not being inherited in all browsers.
+ * 6.  Correct font size not being inherited in all browsers.
+ * 7.  Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ *     the UA stylesheet.
+ * 8.  Improve usability and consistency of cursor style between image-type
+ *     `input` and others.
+ * 9.  Reset/normalize styles from the UA stylesheet.
+ * 10. Because this object can be applied to links we want to remove any
+ *     `text-decoration: underline` styling.
+ */
+.c-button, .c-button-faux-link,
+.o-button {
+  user-select: none;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent; }
+  .c-button, .c-button-faux-link, .c-button:hover, .c-button-faux-link:hover, .c-button:focus, .c-button-faux-link:focus, .c-button:active, .c-button-faux-link:active,
+  .o-button,
+  .o-button:hover,
+  .o-button:focus,
+  .o-button:active {
+    text-decoration: none; }
+
 /**
  * COMPONENTS.
  */
@@ -2961,7 +3005,47 @@ li:before {
    @COMPONENTS -> BUTTON
    ========================================================================= */
 /**
- * Button component with a bunch of modifiers.
+ * Main button component with a bunch of modifiers plus a 'Grouping' option.
+ *
+ * The base component class and all of its modifiers:
+ *
+   .c-button
+     .c-button--secondary
+     .c-button--tiny
+     .c-button--small
+     .c-button--large
+     .c-button--huge
+     .c-button--full-bleed
+ *
+ * The 'Grouping' option base class and all of its modifiers:
+ *
+   .c-button-group
+     .c-button-group--vertical
+ *
+ * @markup
+   <button class="c-button [modifier(s)]">Button text</button>
+ *
+ * 'Grouping' option:
+ *
+ * N.B. grouping buttons requires that you remove the whitespace between the
+ * buttons so they're flush to each other, one way to do this is by inserting
+ * HTML comments between the buttons.
+ *
+   <div class="c-button-group">
+     <button class="c-button [modifier(s)]">Button text</button><!--
+     --><button class="c-button [modifier(s)]">Button text</button><!--
+     --><button class="c-button [modifier(s)]">Button text</button>
+   </div>
+
+   <div class="c-button-group c-button-group--vertical">
+     <button class="c-button c-button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="c-button c-button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="c-button c-button--full-bleed [modifier(s)]">Button text</button>
+   </div>
+ *
+ * @dependency
+ * This component is dependent on the Button object therefore it is
+ * `@extend`ed from this component.
  */
 /**
  * Settings.
@@ -2983,7 +3067,7 @@ li:before {
 /**
  * Border.
  *
- * N.B. also includes the borders used in the 'Button Group' modifier
+ * N.B. also includes the borders used in the 'Grouping' option.
  */
 /**
  * Rounded corners.
@@ -2991,159 +3075,115 @@ li:before {
 /**
  * Hover/focus styles, simple fade out effect via `opacity`
  */
-/**
- * Base styles all buttons need, from here we apply specific button styles via
- * modifiers.
- *
- * 1. Prevent button text from being selectable.
- * 2. Make sure `input` will wrap text across multiple lines.
- * 3. Allow us to style box model properties.
- * 4. Line different sized buttons up a little nicer.
- * 5. Correct font family not being inherited in all browsers.
- * 6. Correct font size not being inherited in all browsers.
- * 7. Address Firefox 4+ setting `line-height` on `input` using `!important` in
- *    the UA stylesheet.
- * 8. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 9. Reset/normalize styles from the UA stylesheet.
- */
-.btn {
-  user-select: none;
-  white-space: normal;
-  display: inline-block;
-  vertical-align: middle;
-  font-family: inherit;
-  font-size: 100%;
-  line-height: normal;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent; }
-  .btn,
-  .btn:hover,
-  .btn:focus,
-  .btn:active {
-    text-decoration: none; }
-
-/**
- * Main.
- *
- * The main button styles for your project.
- */
-.btn--main {
+.c-button {
   text-align: center;
   background-color: #2aa198;
   padding: 0.75rem 1.5rem; }
-  .btn--main,
-  .btn--main:hover,
-  .btn--main:focus,
-  .btn--main:active {
+  html .c-button {
+    border-radius: 0.25rem; }
+  .c-button, .c-button:hover, .c-button:focus, .c-button:active {
     color: #fff; }
-  .btn--main:hover,
-  .btn--main:focus {
+  .c-button:hover, .c-button:focus {
     opacity: 0.7;
     transition: opacity 0.1s linear; }
 
 /**
  * Modifier: secondary colour.
  */
-.btn--main--secondary {
+.c-button--secondary {
   background-color: #35c9be; }
-  .btn--main--secondary,
-  .btn--main--secondary:hover,
-  .btn--main--secondary:focus,
-  .btn--main--secondary:active {
+  .c-button--secondary, .c-button--secondary:hover, .c-button--secondary:focus, .c-button--secondary:active {
     color: #fff; }
 
 /**
  * Modifier: tiny padding.
  */
-.btn--main--tiny {
+.c-button--tiny {
   padding: 0.25rem 0.5rem; }
 
 /**
  * Modifier: small padding.
  */
-.btn--main--small {
+.c-button--small {
   padding: 0.375rem 0.75rem; }
 
 /**
  * Modifier: large padding.
  */
-.btn--main--large {
+.c-button--large {
   padding: 1.125rem 2.25rem; }
 
 /**
  * Modifier: huge padding.
  */
-.btn--main--huge {
+.c-button--huge {
   padding: 1.5rem 3rem; }
 
 /**
  * Modifier: full bleed.
  */
-.btn--main--full-bleed {
+.c-button--full-bleed {
   display: block;
   width: 100%; }
 
 /**
- * A button that looks like a link.
- */
-.btn--faux-link {
-  color: #2aa198; }
-  .btn--faux-link:hover, .btn--faux-link:focus {
-    color: #1f7972;
-    text-decoration: underline; }
-
-/**
- * Button group. When you want to group a bunch of buttons side-by-side flush
+ * Button group.
+ *
+ * When you want to group a bunch of buttons side-by-side flush
  * to each other i.e. with no gap between the buttons. To differentiate
- * between the buttons a border is added, if borders haven't already been
- * applied that is i.e. `$c-btn-border == true`.
- *
- * N.B. this modifier requires that you remove the whitespace between the
- * buttons so they're flush to each other, one way to do this is by inserting
- * HTML comments between the buttons.
- *
- * @markup
-   <div class="btn-group [modifier]">
-     <button class="btn btn--main">Left</button><!--
-      --><button class="btn btn--main">Middle</button><!--
-      --><button class="btn btn--main">Right</button>
-   </div>
+ * between the buttons a border is added.
  */
-.btn-group {
+.c-button-group {
   /**
    * Modifier: vertically stacked button group.
    *
    * N.B. buttons within the vertically stacked version need to use the
-   * `btn--main--full-bleed` main button modifier.
+   * `button--full-bleed` modifier.
    */ }
-  .btn-group .btn--main {
-    border: 0.0625rem solid #1f7972; }
-    .btn-group .btn--main:not(:last-child) {
+  .c-button-group .c-button {
+    border: 0.0625rem solid #1f7972;
+    border-radius: 0; }
+    .c-button-group .c-button:not(:last-child) {
       border-right: 0; }
-    .btn-group .btn--main:first-child {
+    .c-button-group .c-button:first-child {
       border-top-left-radius: 0.25rem;
       border-bottom-left-radius: 0.25rem; }
-    .btn-group .btn--main:last-child {
+    .c-button-group .c-button:last-child {
       border-top-right-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem; }
-  .btn-group.btn-group--vertical {
+  .c-button-group.c-button-group--vertical {
     display: inline-block; }
-    .btn-group.btn-group--vertical .btn--main {
+    .c-button-group.c-button-group--vertical .c-button {
       border-right: 0.0625rem solid #1f7972; }
-      .btn-group.btn-group--vertical .btn--main:not(:last-child) {
+      .c-button-group.c-button-group--vertical .c-button:not(:last-child) {
         border-bottom: 0; }
-      .btn-group.btn-group--vertical .btn--main:first-child {
+      .c-button-group.c-button-group--vertical .c-button:first-child {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0.25rem;
         border-top-right-radius: 0.25rem; }
-      .btn-group.btn-group--vertical .btn--main:last-child {
+      .c-button-group.c-button-group--vertical .c-button:last-child {
         border-top-right-radius: 0;
         border-bottom-left-radius: 0.25rem;
         border-bottom-right-radius: 0.25rem; }
+
+/* ============================================================================
+   @COMPONENTS -> BUTTON FAUX LINK
+   ========================================================================= */
+/**
+ * A button that looks like a link.
+ *
+ * @markup
+   <button class="c-button-faux-link">Button text</button>
+ *
+ * @dependency
+ * This component is dependent on the Button object therefore it is
+ * `@extend`ed from this component.
+ */
+.c-button-faux-link {
+  color: #2aa198; }
+  .c-button-faux-link:hover, .c-button-faux-link:focus {
+    color: #1f7972;
+    text-decoration: underline; }
 
 /**
  * UTILITIES.
