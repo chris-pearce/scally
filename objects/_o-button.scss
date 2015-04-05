@@ -1,0 +1,48 @@
+/* ============================================================================
+   @OBJECTS -> BUTTON
+   ========================================================================= */
+
+
+/**
+ * Assign sensible defaults to buttons (`input` and `button`) and
+ * reset/normalize styles from the UA stylesheet. This object will be the
+ * starting point for any button components.
+ */
+
+
+/**
+ * 1.  Prevent button text from being selectable.
+ * 2.  Make sure `input` will wrap text across multiple lines.
+ * 3.  Allow us to style box model properties.
+ * 4.  Line different sized buttons up a little nicer.
+ * 5.  Correct font family not being inherited in all browsers.
+ * 6.  Correct font size not being inherited in all browsers.
+ * 7.  Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ *     the UA stylesheet.
+ * 8.  Improve usability and consistency of cursor style between image-type
+ *     `input` and others.
+ * 9.  Reset/normalize styles from the UA stylesheet.
+ * 10. Because this object can be applied to links we want to remove any
+ *     `text-decoration: underline` styling.
+ */
+
+%o-button,
+.o-button {
+  user-select: none; // [1]
+  white-space: normal; // [2]
+  display: inline-block; // [3]
+  vertical-align: middle; // [4]
+  font-family: inherit; // [5]
+  font-size: 100%; // [6]
+  line-height: normal; // [7]
+  cursor: pointer; // [8]
+  border: 0; // [9]
+  padding: 0; // [9]
+  margin: 0; // [9]
+  background: transparent; // [9]
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {text-decoration: none;} // [10]
+}

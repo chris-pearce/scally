@@ -4,7 +4,43 @@
 
 
 /**
- * Button component with a bunch of modifiers.
+ * Main button component with a bunch of modifiers plus a 'Grouping' option.
+ *
+ * The base component class and all of its modifiers:
+ *
+   .button
+     .button--secondary
+     .button--tiny
+     .button--small
+     .button--large
+     .button--huge
+     .button--full-bleed
+ *
+ * The 'Grouping' option base class and all of its modifiers:
+ *
+   .button-group
+     .button-group--vertical
+ *
+ * @markup
+   <button class="button [modifier(s)]">Button text</button>
+ *
+ * 'Grouping' option:
+ *
+   <div class="button-group">
+     <button class="button [modifier(s)]">Button text</button><!--
+     --><button class="button [modifier(s)]">Button text</button><!--
+     --><button class="button [modifier(s)]">Button text</button>
+   </div>
+
+   <div class="button-group button-group--vertical">
+     <button class="button button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="button button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="button button--full-bleed [modifier(s)]">Button text</button>
+   </div>
+ *
+ * @dependency
+ * This component is dependent on the Button object therefore it is
+ * `@extend`ed from this component.
  */
 
 
@@ -16,13 +52,13 @@
  * Toggle on/off certain styles and treatments.
  */
 
-$c-btn-apply-hover-styles:                true !default;
+$c-button-apply-hover-styles:               true !default;
 
-$c-btn-apply-border:                      false !default;
+$c-button-apply-border:                     false !default;
 
-$c-btn-apply-rounded-corners:             false !default;
+$c-button-apply-rounded-corners:            true !default;
 
-$c-btn-apply-group-rounded-corners:       true !default;
+$c-button-apply-group-rounded-corners:      true !default;
 
 /**
  * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
@@ -30,33 +66,33 @@ $c-btn-apply-group-rounded-corners:       true !default;
  * variable will be overriden and will be set to `true`.
  */
 
-$apply-friendly-box-model:                      false !default;
+$apply-friendly-box-model:                  false !default;
 
 /**
  * Colours.
  */
 
-$c-btn-background-colour:                 $colour-primary !default;
+$c-button-background-colour:                $colour-primary !default;
 
-$c-btn-background-colour-secondary:       $colour-secondary !default;
+$c-button-background-colour-secondary:      $colour-secondary !default;
 
-$c-btn-foreground-colour:                 $colour-white !default;
+$c-button-foreground-colour:                $colour-white !default;
 
-$c-btn-foreground-colour-secondary:       $c-btn-foreground-colour !default;
+$c-button-foreground-colour-secondary:      $c-button-foreground-colour !default;
 
 /**
  * Padding.
  */
 
-$c-btn-padding-base:                      $spacing-base !default;
+$c-button-padding-base:                     $spacing-base !default;
 
-$c-btn-padding-tiny:                      $spacing-third !default;
+$c-button-padding-tiny:                     $spacing-third !default;
 
-$c-btn-padding-small:                     $spacing-half !default;
+$c-button-padding-small:                    $spacing-half !default;
 
-$c-btn-padding-large:                     $spacing-base-plus-half !default;
+$c-button-padding-large:                    $spacing-base-plus-half !default;
 
-$c-btn-padding-huge:                      $spacing-double !default;
+$c-button-padding-huge:                     $spacing-double !default;
 
 /**
  * Border.
@@ -64,108 +100,65 @@ $c-btn-padding-huge:                      $spacing-double !default;
  * N.B. also includes the borders used in the 'Button Group' modifier
  */
 
-$c-btn-border-thickness:                  1 !default;
+$c-button-border-thickness:                 1 !default;
 
-$c-btn-border-style:                      solid !default;
+$c-button-border-style:                     solid !default;
 
-$c-btn-border-colour:                     darken($c-btn-background-colour, 10%) !default;
+$c-button-border-colour:                    darken($c-button-background-colour, 10%) !default;
 
-$c-btn-border-colour-secondary:           darken($c-btn-background-colour-secondary, 10%) !default;
-
+$c-button-border-colour-secondary:          darken($c-button-background-colour-secondary, 10%) !default;
 
 /**
  * Rounded corners.
  */
 
-$c-btn-rounded-corners-size:              $border-radius !default;
+$c-button-rounded-corners-size:             $border-radius !default;
 
 /**
  * Hover/focus styles, simple fade out effect via `opacity`
  */
 
-$c-btn-hover-opacity-strength:            0.7 !default;
+$c-button-hover-opacity-strength:           0.7 !default;
 
-$c-btn-hover-transition-duration:         0.1 !default;
+$c-button-hover-transition-duration:        0.1 !default;
 
-$c-btn-hover-transition-timing-function:  linear !default;
-
-
-/**
- * Base styles all buttons need, from here we apply specific button styles via
- * modifiers.
- *
- * 1. Prevent button text from being selectable.
- * 2. Make sure `input` will wrap text across multiple lines.
- * 3. Allow us to style box model properties.
- * 4. Line different sized buttons up a little nicer.
- * 5. Correct font family not being inherited in all browsers.
- * 6. Correct font size not being inherited in all browsers.
- * 7. Address Firefox 4+ setting `line-height` on `input` using `!important` in
- *    the UA stylesheet.
- * 8. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 9. Reset/normalize styles from the UA stylesheet.
- */
-
-%btn,
-.btn {
-  user-select: none; // [1]
-  white-space: normal; // [2]
-  display: inline-block; // [3]
-  vertical-align: middle; // [4]
-  font-family: inherit; // [5]
-  font-size: 100%; // [6]
-  line-height: normal; // [7]
-  cursor: pointer; // [8]
-  border: 0; // [9]
-  padding: 0; // [9]
-  margin: 0; // [9]
-  background: transparent; // [9]
-
-  &,
-  &:hover,
-  &:focus,
-  &:active {text-decoration: none;}
-}
+$c-button-hover-transition-timing-function: linear !default;
 
 
-/**
- * Main.
- *
- * The main button styles for your project.
- */
-
-%btn--main,
-.btn--main {
+.button {
+  // `@extend`ing the Button object
+  @extend %o-button;
   text-align: center;
-  background-color: $c-btn-background-colour;
-  @include to-rem(padding, $c-btn-padding-base / 2 $c-btn-padding-base);
+  background-color: $c-button-background-colour;
+  @include to-rem(padding, $c-button-padding-base / 2 $c-button-padding-base);
 
   // Apply a border
-  @if $c-btn-apply-border {
-    @include to-rem(border, $c-btn-border-thickness $c-btn-border-style $c-btn-border-colour);
+  @if $c-button-apply-border {
+    @include to-rem(border, $c-button-border-thickness $c-button-border-style
+      $c-button-border-colour);
   }// endif
 
   // Apply rounded corners
-  @if $c-btn-apply-rounded-corners {
+  @if $c-button-apply-rounded-corners {
     // N.B. ugly hack in order to increase the specificty to override the
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
-    html & {@include to-rem(border-radius, $c-btn-rounded-corners-size);}
+    html & {@include to-rem(border-radius, $c-button-rounded-corners-size);}
   }// endif
 
   // Foreground colour
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-btn-foreground-colour;}
+  &:active {color: $c-button-foreground-colour;}
 
   // Apply hover/focus styles
-  @if $c-btn-apply-hover-styles {
+  @if $c-button-apply-hover-styles {
     &:hover,
     &:focus {
-      opacity: $c-btn-hover-opacity-strength;
-      transition: opacity #{$c-btn-hover-transition-duration}s $c-btn-hover-transition-timing-function;
+      opacity: $c-button-hover-opacity-strength;
+      transition: opacity #{$c-button-hover-transition-duration}s
+      $c-button-hover-transition-timing-function;
     }
   }// endif
 }
@@ -175,20 +168,19 @@ $c-btn-hover-transition-timing-function:  linear !default;
  * Modifier: secondary colour.
  */
 
-%btn--main--secondary,
-.btn--main--secondary {
-  background-color: $c-btn-background-colour-secondary;
+.button--secondary {
+  background-color: $c-button-background-colour-secondary;
 
   // Apply a border
-  @if $c-btn-apply-border {
-    @include to-rem(border-color, $c-btn-border-colour-secondary);
+  @if $c-button-apply-border {
+    @include to-rem(border-color, $c-button-border-colour-secondary);
   }// endif
 
   // Foreground colour
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-btn-foreground-colour-secondary;}
+  &:active {color: $c-button-foreground-colour-secondary;}
 }
 
 
@@ -196,40 +188,39 @@ $c-btn-hover-transition-timing-function:  linear !default;
  * Modifier: tiny padding.
  */
 
-%btn--main--tiny,
-.btn--main--tiny {@include to-rem(padding, $c-btn-padding-tiny / 2 $c-btn-padding-tiny);}
+.button--tiny {@include to-rem(padding, $c-button-padding-tiny
+ / 2 $c-button-padding-tiny);}
 
 
 /**
  * Modifier: small padding.
  */
 
-%btn--main--small,
-.btn--main--small {@include to-rem(padding, $c-btn-padding-small / 2 $c-btn-padding-small);}
+.button--small {@include to-rem(padding, $c-button-padding-small
+ / 2 $c-button-padding-small);}
 
 
 /**
  * Modifier: large padding.
  */
 
-%btn--main--large,
-.btn--main--large {@include to-rem(padding, $c-btn-padding-large / 2 $c-btn-padding-large);}
+.button--large {@include to-rem(padding, $c-button-padding-large
+ / 2 $c-button-padding-large);}
 
 
 /**
  * Modifier: huge padding.
  */
 
-%btn--main--huge,
-.btn--main--huge {@include to-rem(padding, $c-btn-padding-huge / 2 $c-btn-padding-huge);}
+.button--huge {@include to-rem(padding, $c-button-padding-huge
+ / 2 $c-button-padding-huge);}
 
 
 /**
  * Modifier: full bleed.
  */
 
-%btn--main--full-bleed,
-.btn--main--full-bleed {
+.button--full-bleed {
   display: block;
   width: 100%;
 
@@ -248,46 +239,33 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
 
 /**
- * A button that looks like a link.
- */
-
-.btn--faux-link {
-  color: $link-colour;
-
-  &:hover,
-  &:focus {
-    color: $link-colour-hover;
-    text-decoration: underline;
-  }
-}
-
-
-/**
- * Button group. When you want to group a bunch of buttons side-by-side flush
+ * Button group.
+ *
+ * When you want to group a bunch of buttons side-by-side flush
  * to each other i.e. with no gap between the buttons. To differentiate
  * between the buttons a border is added, if borders haven't already been
- * applied that is i.e. `$c-btn-border == true`.
+ * applied that is i.e. `$c-button-border == true`.
  *
- * N.B. this modifier requires that you remove the whitespace between the
+ * N.B. grouping buttons requires that you remove the whitespace between the
  * buttons so they're flush to each other, one way to do this is by inserting
  * HTML comments between the buttons.
  *
  * @markup
-   <div class="btn-group [modifier]">
-     <button class="btn btn--main">Left</button><!--
-      --><button class="btn btn--main">Middle</button><!--
-      --><button class="btn btn--main">Right</button>
+   <div class="button-group [modifier]">
+     <button class="button">Left</button><!--
+      --><button class="button">Middle</button><!--
+      --><button class="button">Right</button>
    </div>
  */
 
 
-.btn-group {
+.button-group {
 
-  .btn--main {
+  .button {
 
-    @if $c-btn-apply-border == false {
-      @include to-rem(border, $c-btn-border-thickness $c-btn-border-style
-        $c-btn-border-colour);
+    @if $c-button-apply-border == false {
+      @include to-rem(border, $c-button-border-thickness $c-button-border-style
+        $c-button-border-colour);
     }
 
     // Turn off right borders so they don't double up, except for the last
@@ -296,17 +274,17 @@ $c-btn-hover-transition-timing-function:  linear !default;
 
     // Turn off rounded corners if rounded corners are on by default as only
     // the first and last buttons in the group need rounded corners
-    @if $c-btn-apply-rounded-corners {
+    @if $c-button-apply-rounded-corners {
       border-radius: 0;
     }
 
     // Round off the first and last buttons in the group
-    @if $c-btn-apply-group-rounded-corners or $c-btn-rounded-corners {
+    @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
       &:first-child {@include to-rem(border-top-left-radius
-        border-bottom-left-radius, $c-btn-rounded-corners-size);}
+        border-bottom-left-radius, $c-button-rounded-corners-size);}
 
       &:last-child {@include to-rem(border-top-right-radius
-        border-bottom-right-radius, $c-btn-rounded-corners-size);}
+        border-bottom-right-radius, $c-button-rounded-corners-size);}
     }
 
   }
@@ -316,35 +294,35 @@ $c-btn-hover-transition-timing-function:  linear !default;
    * Modifier: vertically stacked button group.
    *
    * N.B. buttons within the vertically stacked version need to use the
-   * `btn--main--full-bleed` main button modifier.
+   * `button--full-bleed` modifier.
    */
 
-  &.btn-group--vertical {
+  &.button-group--vertical {
     // This will shrink wrap the container to be as wide as the widest button
     display: inline-block;
 
-    .btn--main {
+    .button {
 
       // Turn back on the right border that gets turned off by default
-      @include to-rem(border-right, $c-btn-border-thickness
-        $c-btn-border-style $c-btn-border-colour);
+      @include to-rem(border-right, $c-button-border-thickness
+        $c-button-border-style $c-button-border-colour);
 
       // Turn off bottom borders so they don't double up, except for the last
       // one
       &:not(:last-child) {border-bottom: 0;}
 
       // Round off the first and last buttons in the group
-      @if $c-btn-apply-group-rounded-corners or $c-btn-apply-rounded-corners {
+      @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
         &:first-child {
           border-bottom-left-radius: 0;
           @include to-rem(border-top-left-radius border-top-right-radius,
-            $c-btn-rounded-corners-size);
+            $c-button-rounded-corners-size);
         }
 
         &:last-child {
           border-top-right-radius: 0;
           @include to-rem(border-bottom-left-radius
-            border-bottom-right-radius, $c-btn-rounded-corners-size);
+            border-bottom-right-radius, $c-button-rounded-corners-size);
         }
       }
     }
