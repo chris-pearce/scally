@@ -42,12 +42,12 @@
  * simply redeclare it above the relevant `@import`, like so:
  *
    $font-size: 14;
-   @import "core/settings/typography";
+   @import "bower_components/scally/core/settings/typography";
  *
  * If you want to use a Scally setting to override something then you need to
  * define the override below the `@import`, like so:
  *
-   @import "core/settings/colours";
+   @import "bower_components/scally/core/settings/colours";
    $colour-text-base: $colour-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
@@ -57,7 +57,7 @@
  *
    $u-arrow-size-base: 14;
    $u-arrow-colour: orange;
-   @import "utilities/u-arrow";
+   @import "bower_components/scally/utilities/u-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
  * completely modify how Scally works without ever having to alter the
@@ -146,10 +146,10 @@
  * - https://developers.google.com/webmasters/smartphone-sites/details?hl=en
  */
 /**
- * Define the breakpoints that we want certain modules e.g. utilities and
- * layout to use applied via the `generate-at-breakpoints` mixin found in
- * Core -> Mixins. By default we set it to Lap but this can be overriden at
- * the individual partial level.
+ * Define the breakpoints that we want certain modules e.g. utilities to use
+ * applied via the `generate-at-breakpoints` mixin found in Core -> Mixins.
+ * By default we set it to Lap but this can be overriden at the individual
+ * partial level.
  */
 /* ============================================================================
    @CORE -> SETTINGS -> WIDTHS
@@ -214,7 +214,8 @@
 /**
  * `z-index` values.
  *
- * A nice way to maintain `z-index` order. Be sure to read this: http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ * A nice way to maintain `z-index` order. Be sure to read this:
+ * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
  *
  * Scally kicks it off by providing a stacking order context at the lowest
  * level i.e. for the containers that make up the main sections of a web site
@@ -620,7 +621,7 @@
      @include headings(1, 3) {
        color: red;
      }
-    }
+   }
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/generic/_mixins.scss
@@ -1121,7 +1122,7 @@ ins {
  * Apply faux underlines to inserted text via `border-bottom`.
  */
 ins {
-  border-bottom: 0.0625rem solid; }
+  border-bottom: 1px solid; }
 
 /* ============================================================================
    @CORE -> @DEBUG
@@ -1130,10 +1131,10 @@ ins {
  * Enable this stylesheet to visually detect any improperly nested or
  * potentially invalid markup, or any potentially inaccessible code.
  *
- * N.B.
- * - red    = definite error.
- * - yellow = double-check.
- * - none   = should be fine.
+ * Legend:
+ * - Red    = definite error.
+ * - Yellow = double-check.
+ * - None   = should be fine.
  *
  * @credit
  * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
@@ -1231,8 +1232,7 @@ select {
  * 2. Enable line-wrapping in old versions of some other browsers.
  *
  * @credit
- * http://www.456bereastreet.com/archive/201210/
- * how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ * http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 legend {
   display: table;
@@ -1445,7 +1445,8 @@ img {
   height: auto; }
 
 /**
- * If responsive images are turned on then use this to turn it off.
+ * If responsive images are turned on but you need to turn it off in certain
+ * cases.
  */
 .img-not-responsive {
   max-width: none; }
@@ -1599,12 +1600,15 @@ h6:last-child,
  * layout consistent. The container is responsive in that it will be a fluid
  * width using '%' up until it hits it's maximum width. And it's center
  * aligned by default.
+ *
+ * @markup
+   <div class="l-container [modifier(s)]"> ... </div>
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Widths.
@@ -1639,9 +1643,10 @@ h6:last-child,
  * A powerful fluid and nestable mobile first grid system.
  *
  * Combine with the viewport specific width classes found in Utilities ->
+ * Widths which all feed from the width settings set here: Core -> Settings ->
  * Widths to apply grid widths at specific viewports, for example:
  *
-   <div class="l-grid__item u-one-half-from-lap u-one-third-from-desk">
+   <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
  *
  * This would give you a grid item which is 100% width unless it is on a lap
  * device, at which point it becomes 50% wide, or it is on a desktop device,
@@ -1659,16 +1664,19 @@ h6:last-child,
  * purposes only. Apply styling to content inside a grid item.
  *
  * @markup
-   <div class="l-grid">
-     <div class="l-grid__item u-one-half"> ... </div>
-     <div class="l-grid__item u-one-half"> ... </div>
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-half"> ... </div>
+     <div class="l-grid__item  u-one-half"> ... </div>
    </div>
 
-   <div class="l-grid">
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-third"> ... </div>
+     <div class="l-grid__item  u-one-third"> ... </div>
+     <div class="l-grid__item  u-one-third"> ... </div>
    </div>
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/emQqxo
  *
  * @credit
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
@@ -1677,7 +1685,7 @@ h6:last-child,
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Gutter sizes.
@@ -1847,7 +1855,7 @@ h6:last-child,
  * content.
  *
  * @markup
-   <div class="l-side-by-side">
+   <div class="l-side-by-side [modifier(s)]">
      <div class="l-side-by-side__left"> ... </div>
      <div class="l-side-by-side__right"> ... </div>
    </div>
@@ -1971,7 +1979,7 @@ h6:last-child,
  * alignment.
  *
  * @markup
-   <div class="l-side-by-side-alt">
+   <div class="l-side-by-side-alt [modifier(s)]">
      <div class="l-side-by-side-alt__left"> ... </div>
      <div class="l-side-by-side-alt__right"> ... </div>
    </div>
@@ -2161,12 +2169,15 @@ h6:last-child,
    ========================================================================= */
 /**
  * Easily create columns out of one element using CSS3 Columns.
+ *
+ * @markup
+   <div class="l-columns [modifier(s)]"> ... </div>
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Gutter sizes.
@@ -2213,172 +2224,6 @@ h6:last-child,
  */
 .l-columns--divider {
   column-rule: 0.0625rem solid #000; }
-
-/**
- * COMPONENTS.
- */
-/* ============================================================================
-   @COMPONENTS -> BUTTON
-   ========================================================================= */
-/**
- * Button component with a bunch of modifiers.
- */
-/**
- * Settings.
- */
-/**
- * Base styles all buttons need, from here we apply specific button styles via
- * modifiers.
- *
- * 1. Prevent button text from being selectable.
- * 2. Make sure `input` will wrap text across multiple lines.
- * 3. Allow us to style box model properties.
- * 4. Line different sized buttons up a little nicer.
- * 5. Correct font family not being inherited in all browsers.
- * 6. Correct font size not being inherited in all browsers.
- * 7. Address Firefox 4+ setting `line-height` on `input` using `!important` in
- *    the UA stylesheet.
- * 8. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 9. Reset/normalize styles from the UA stylesheet.
- */
-.btn {
-  user-select: none;
-  white-space: normal;
-  display: inline-block;
-  vertical-align: middle;
-  font-family: inherit;
-  font-size: 100%;
-  line-height: normal;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent; }
-  .btn,
-  .btn:hover,
-  .btn:focus,
-  .btn:active {
-    text-decoration: none; }
-
-/**
- * Main.
- *
- * The main button styles for your project.
- */
-.btn--main {
-  text-align: center;
-  background-color: #2aa198;
-  padding: 0.75rem 1.5rem; }
-  .btn--main,
-  .btn--main:hover,
-  .btn--main:focus,
-  .btn--main:active {
-    color: #fff; }
-  .btn--main:hover,
-  .btn--main:focus {
-    opacity: 0.7;
-    transition: opacity 0.1s linear; }
-
-/**
- * Modifier: secondary colour.
- */
-.btn--main--secondary {
-  background-color: #35c9be; }
-  .btn--main--secondary,
-  .btn--main--secondary:hover,
-  .btn--main--secondary:focus,
-  .btn--main--secondary:active {
-    color: #fff; }
-
-/**
- * Modifier: tiny padding.
- */
-.btn--main--tiny {
-  padding: 0.25rem 0.5rem; }
-
-/**
- * Modifier: small padding.
- */
-.btn--main--small {
-  padding: 0.375rem 0.75rem; }
-
-/**
- * Modifier: large padding.
- */
-.btn--main--large {
-  padding: 1.125rem 2.25rem; }
-
-/**
- * Modifier: huge padding.
- */
-.btn--main--huge {
-  padding: 1.5rem 3rem; }
-
-/**
- * Modifier: full bleed.
- */
-.btn--main--full-bleed {
-  display: block;
-  width: 100%; }
-
-/**
- * A button that looks like a link.
- */
-.btn--faux-link {
-  color: #2aa198; }
-  .btn--faux-link:hover, .btn--faux-link:focus {
-    color: #1f7972;
-    text-decoration: underline; }
-
-/**
- * Button group. When you want to group a bunch of buttons side-by-side flush
- * to each other i.e. with no gap between the buttons. To differentiate
- * between the buttons a border is added, if borders haven't already been
- * applied that is i.e. `$c-btn-border == true`.
- *
- * N.B. this modifier requires that you remove the whitespace between the
- * buttons so they're flush to each other, one way to do this is by inserting
- * HTML comments between the buttons.
- *
- * @markup
-   <div class="btn-group">
-     <button class="btn btn--main">Left</button><!--
-      --><button class="btn btn--main">Middle</button><!--
-      --><button class="btn btn--main">Right</button>
-   </div>
- */
-.btn-group {
-  /**
-   * Modifier: vertically stacked button group.
-   *
-   * N.B. buttons within the vertically stacked version need to use the
-   * `btn--main--full-bleed` main button modifier.
-   */ }
-  .btn-group .btn--main {
-    border: 0.0625rem solid #1f7972; }
-    .btn-group .btn--main:not(:last-child) {
-      border-right: 0; }
-    .btn-group .btn--main:first-child {
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem; }
-    .btn-group .btn--main:last-child {
-      border-top-right-radius: 0.25rem;
-      border-bottom-right-radius: 0.25rem; }
-  .btn-group.btn-group--vertical {
-    display: inline-block; }
-    .btn-group.btn-group--vertical .btn--main {
-      border-right: 0.0625rem solid #1f7972; }
-      .btn-group.btn-group--vertical .btn--main:not(:last-child) {
-        border-bottom: 0; }
-      .btn-group.btn-group--vertical .btn--main:first-child {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0.25rem;
-        border-top-right-radius: 0.25rem; }
-      .btn-group.btn-group--vertical .btn--main:last-child {
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 0.25rem;
-        border-bottom-right-radius: 0.25rem; }
 
 /**
  * OBJECTS.
@@ -2551,6 +2396,9 @@ h6:last-child,
    ========================================================================= */
 /**
  * Make a link not look like a link.
+ *
+ * @markup
+   <a href="#" class="o-link-disguised">Some link text</a>
  */
 /**
  * Settings.
@@ -2573,6 +2421,19 @@ h6:last-child,
 /**
  * Standard list styles for unordered and ordered lists as they're removed in
  * Core -> Reset.
+ *
+ * @markup
+   <ul class="o-list">
+     <li>Lorem</li>
+     <li>Aliquam</li>
+     <li>Vestibulum</li>
+   </ul>
+
+   <ol class="o-list">
+     <li>Lorem</li>
+     <li>Aliquam</li>
+     <li>Vestibulum</li>
+   </ol>
  */
 /**
  * Settings.
@@ -2619,83 +2480,80 @@ ul.o-list ol,
 ol.o-list ol {
   list-style-type: decimal; }
 
-/**
- * UTILITIES.
- */
 /* ============================================================================
-   @UTILITIES -> CLEAR FIX
+   @OBJECTS -> LIST BLOCK
    ========================================================================= */
 /**
- * Make an element expand to contain floated children.
+ * Creates blocky list items out of a `ul` or `ol` which is usually for a
+ * vertical list of links.
+ *
+ * @markup
+   <ul class="o-list-block [modifier]">
+     <li>
+       <a href="#">Some link text</a>
+     </li>
+     <li>
+       <a href="#">Some link text</a>
+     </li>
+   </ul>
+ *
+ * @credit
+ * https://github.com/inuitcss/objects.list-block/blob/master/_objects.list-block.scss
  */
 /**
  * Settings.
  */
 /**
- * Apply at these breakpoints.
+ * Apply at these breakpoints (turned off by default).
  */
-.u-clear-fix:after {
-  content: "";
-  display: table;
-  clear: both; }
+/**
+ * Whitespace.
+ */
+.o-list-block > li,
+.o-list-block > li > a {
+  padding: 0.75rem; }
+.o-list-block > li > a {
+  display: block;
+  margin: -0.75rem; }
+
+/**
+ * Modifier: tiny padding.
+ */
+.o-list-block--tiny > li,
+.o-list-block--tiny > li > a {
+  padding: 0.375rem; }
+.o-list-block--tiny > li > a {
+  margin: -0.375rem; }
+
+/**
+ * Modifier: small padding.
+ */
+.o-list-block--small > li,
+.o-list-block--small > li > a {
+  padding: 0.5rem; }
+.o-list-block--small > li > a {
+  margin: -0.5rem; }
+
+/**
+ * Modifier: large padding.
+ */
+.o-list-block--large > li,
+.o-list-block--large > li > a {
+  padding: 1.5rem; }
+.o-list-block--large > li > a {
+  margin: -1.5rem; }
+
+/**
+ * Modifier: huge padding.
+ */
+.o-list-block--huge > li,
+.o-list-block--huge > li > a {
+  padding: 3rem; }
+.o-list-block--huge > li > a {
+  margin: -3rem; }
 
 /* ============================================================================
-   @UTILITIES -> ARROW
-   ========================================================================= */
-/**
- * Creates arrow shapes using only CSS.
- */
-/**
- * Settings.
- */
-.u-arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border: 0.5rem solid transparent;
-  vertical-align: middle; }
-
-/**
- * Modifier: sizes.
- */
-.u-arrow--tiny {
-  border-width: 0.25rem; }
-
-.u-arrow--small {
-  border-width: 0.375rem; }
-
-.u-arrow--large {
-  border-width: 0.625rem; }
-
-.u-arrow--huge {
-  border-width: 0.75rem; }
-
-/**
- * Modifier: down arrow.
- */
-.u-arrow--down {
-  border-top-color: #000; }
-
-/**
- * Modifier: up arrow.
- */
-.u-arrow--up {
-  border-bottom-color: #000; }
-
-/**
- * Modifier: left arrow.
- */
-.u-arrow--left {
-  border-right-color: #000; }
-
-/**
- * Modifier: right arrow.
- */
-.u-arrow--right {
-  border-left-color: #000; }
-
-/* ============================================================================
-   @UTILITIES -> LIST INLINE
+   @OBJECTS -> LIST INLINE
    ========================================================================= */
 /**
  * Make list items for `ul` and `ol` elements render in one line which can be
@@ -2703,21 +2561,21 @@ ol.o-list ol {
  *
  * N.B. this utility requires that you remove the whitespace between `li`s
  * especially with the Spacing modifiers. One way to remove whitespace is by
- * inserting HTML comments between the opening and closing `li`s e.g.
+ * inserting HTML comments between the opening and closing `li`s (see @markup
+ * section below). Or you can omit the closing `li` which isn't recommended :)
  *
-   <ul class="u-list-inline">
+ * @markup
+   <ul class="o-list-inline [modifiers(s)]">
      <li>Lorem</li><!--
      --><li>Aliquam</li><!--
      --><li>Vestibulum</li>
    </ul>
- *
- * Or you can omit the closing `li` which we don't recommend :)
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Spacing between list items.
@@ -2725,7 +2583,7 @@ ol.o-list ol {
 /**
  * Dividers.
  */
-.u-list-inline > li {
+.o-list-inline > li {
   display: inline-block; }
 
 /**
@@ -2741,70 +2599,70 @@ ol.o-list ol {
 /**
  * Base.
  */
-.u-list-inline--spacing-base {
+.o-list-inline--spacing-base {
   margin-left: -1.5rem; }
-  .u-list-inline--spacing-base > li {
+  .o-list-inline--spacing-base > li {
     margin-left: 1.5rem; }
 
-.u-list-inline--spacing-base-both {
+.o-list-inline--spacing-base-both {
   margin-left: -3rem; }
-  .u-list-inline--spacing-base-both > li {
+  .o-list-inline--spacing-base-both > li {
     margin-left: 1.5rem;
     padding-left: 1.5rem; }
 
 /**
  * Tiny.
  */
-.u-list-inline--spacing-tiny {
+.o-list-inline--spacing-tiny {
   margin-left: -0.5rem; }
-  .u-list-inline--spacing-tiny > li {
+  .o-list-inline--spacing-tiny > li {
     margin-left: 0.5rem; }
 
-.u-list-inline--spacing-tiny-both {
+.o-list-inline--spacing-tiny-both {
   margin-left: -1rem; }
-  .u-list-inline--spacing-tiny-both > li {
+  .o-list-inline--spacing-tiny-both > li {
     margin-left: 0.5rem;
     padding-left: 0.5rem; }
 
 /**
  * Small.
  */
-.u-list-inline--spacing-small {
+.o-list-inline--spacing-small {
   margin-left: -0.75rem; }
-  .u-list-inline--spacing-small > li {
+  .o-list-inline--spacing-small > li {
     margin-left: 0.75rem; }
 
-.u-list-inline--spacing-small-both {
+.o-list-inline--spacing-small-both {
   margin-left: -1.5rem; }
-  .u-list-inline--spacing-small-both > li {
+  .o-list-inline--spacing-small-both > li {
     margin-left: 0.75rem;
     padding-left: 0.75rem; }
 
 /**
  * Large.
  */
-.u-list-inline--spacing-large {
+.o-list-inline--spacing-large {
   margin-left: -2.25rem; }
-  .u-list-inline--spacing-large > li {
+  .o-list-inline--spacing-large > li {
     margin-left: 2.25rem; }
 
-.u-list-inline--spacing-large-both {
+.o-list-inline--spacing-large-both {
   margin-left: -4.5rem; }
-  .u-list-inline--spacing-large-both > li {
+  .o-list-inline--spacing-large-both > li {
     margin-left: 2.25rem;
     padding-left: 2.25rem; }
 
 /**
  * Huge.
  */
-.u-list-inline--spacing-huge {
+.o-list-inline--spacing-huge {
   margin-left: -3rem; }
-  .u-list-inline--spacing-huge > li {
+  .o-list-inline--spacing-huge > li {
     margin-left: 3rem; }
 
-.u-list-inline--spacing-huge-both {
+.o-list-inline--spacing-huge-both {
   margin-left: -6rem; }
-  .u-list-inline--spacing-huge-both > li {
+  .o-list-inline--spacing-huge-both > li {
     margin-left: 3rem;
     padding-left: 3rem; }
 
@@ -2813,7 +2671,7 @@ ol.o-list ol {
  *
  * Add a keyline separator between the list items.
  */
-.u-list-inline--divider > li + li {
+.o-list-inline--divider > li + li {
   border-left: 0.0625rem solid #000; }
 
 /**
@@ -2821,15 +2679,15 @@ ol.o-list ol {
  *
  * Force the list items to occupy 100% of the available width of its parent.
  */
-.u-list-inline--fit-flexbox {
+.o-list-inline--fit-flexbox {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around; }
 
-.u-list-inline--fit-table {
+.o-list-inline--fit-table {
   display: table;
   width: 100%; }
-  .u-list-inline--fit-table > li {
+  .o-list-inline--fit-table > li {
     display: table-cell; }
 
 /**
@@ -2837,42 +2695,530 @@ ol.o-list ol {
  *
  * List items separated by a few different separators.
  */
-.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--delimited-slash > li + li:before {
   content: "/"; }
 
-.u-list-inline--delimited-slash[class*="u-list-inline--spacing"] > li +
+.o-list-inline--delimited-slash[class*="o-list-inline--spacing"] > li +
 li:before {
   display: inline-block; }
 
-.u-list-inline--spacing-base.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--spacing-base.o-list-inline--delimited-slash > li + li:before {
   margin-right: 1.5rem; }
 
-.u-list-inline--spacing-tiny.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--spacing-tiny.o-list-inline--delimited-slash > li + li:before {
   margin-right: 0.5rem; }
 
-.u-list-inline--spacing-small.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--spacing-small.o-list-inline--delimited-slash > li + li:before {
   margin-right: 0.75rem; }
 
-.u-list-inline--spacing-large.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--spacing-large.o-list-inline--delimited-slash > li + li:before {
   margin-right: 2.25rem; }
 
-.u-list-inline--spacing-huge.u-list-inline--delimited-slash > li + li:before {
+.o-list-inline--spacing-huge.o-list-inline--delimited-slash > li + li:before {
   margin-right: 3rem; }
 
-.u-list-inline--delimited-comma > li + li:before {
+.o-list-inline--delimited-comma > li + li:before {
   content: ","; }
 
 /* ============================================================================
-   @UTILITIES -> TEXT
+   @OBJECTS -> ARROW
    ========================================================================= */
 /**
- * Various handy utilities for text.
+ * Creates arrow shapes using only CSS.
+ *
+ * @markup
+   <span class="o-arrow [modifier(s)]"></span>
+ */
+/**
+ * Settings.
+ */
+.o-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 0.5rem solid transparent;
+  vertical-align: middle; }
+
+/**
+ * Modifier: sizes.
+ */
+.o-arrow--tiny {
+  border-width: 0.25rem; }
+
+.o-arrow--small {
+  border-width: 0.375rem; }
+
+.o-arrow--large {
+  border-width: 0.625rem; }
+
+.o-arrow--huge {
+  border-width: 0.75rem; }
+
+/**
+ * Modifier: down arrow.
+ */
+.o-arrow--down {
+  border-top-color: #000; }
+
+/**
+ * Modifier: up arrow.
+ */
+.o-arrow--up {
+  border-bottom-color: #000; }
+
+/**
+ * Modifier: left arrow.
+ */
+.o-arrow--left {
+  border-right-color: #000; }
+
+/**
+ * Modifier: right arrow.
+ */
+.o-arrow--right {
+  border-left-color: #000; }
+
+/* ============================================================================
+   @OBJECTS -> OVERLAY
+   ========================================================================= */
+/**
+ * A simple semi-transparent overlay in a dark and light version and a version
+ * that can be applied only on hover (and `:focus` if the element is a natively
+ * focusable element). The overlay will pin itself to all the corners of it's
+ * parent element.
+ *
+ * They're 2 type of applications for the overlay:
+ *
+ * 1. Full viewport (the default): the overlay covers the entire viewport. This
+ *    is the most common application. The markup will live either after the
+ *    opening `body` element or before the closing `body` element.
+ * 2. Inline (a modifier): the overlay covers a certain part of the UI e.g. the
+ *    main content area. The markup will live in the part of the UI it's
+ *    covering.
+ *
+ * N.B. The `z-index` should be managed by: Core -> Settings -> Postioning. And
+ * this may end up not being used instead being sucked into a component e.g. a
+ * Modal component.
+ *
+ * @markup
+   <div class="o-overlay [modifier(s)]">
+     <div class="o-overlay__inner"></div>
+   </div>
+ *
+ * If the Hover modifier version:
+ *
+   <div class="o-overlay o-overlay--hover [modifier]"></div>
+ */
+/**
+ * Settings.
+ */
+/**
+ * Container.
+ *
+ * 1. So it can work on inline elements e.g. `a`.
+ */
+.o-overlay {
+  display: block; }
+
+/**
+ * Modifier: inline, if inline version the container needs to apply the
+ * positioning context for the inner element.
+ */
+.o-overlay--inline {
+  position: relative; }
+
+/**
+ * The inner element that pins itself to it's parent including the `:before`
+ * psuedo element for the Hover modifier version.
+ */
+.o-overlay__inner,
+.o-overlay--hover:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/**
+ * Modifier: dark overlay.
+ */
+.o-overlay--dark .o-overlay__inner {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+/**
+ * Modifier: light overlay.
+ */
+.o-overlay--light .o-overlay__inner {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+/*
+ * Modifier: hover version.
+ *
+ * 1. Apply a transition?
+ * 2. Make transparent by default.
+ * 3. Turn off pointer events for safe measure.
+ */
+.o-overlay--hover:before {
+  content: "";
+  transition: background-color 0.2s ease;
+  background-color: transparent;
+  pointer-events: none; }
+
+.o-overlay--hover.o-overlay--dark:hover:before,
+.o-overlay--hover.o-overlay--dark:focus:before {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.o-overlay--hover.o-overlay--light:hover:before,
+.o-overlay--hover.o-overlay--light:focus:before {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+/* ============================================================================
+   @OBJECTS -> TABLE
+   ========================================================================= */
+/**
+ * A table object that provides very common table styles which can be
+ * extended with a number of modifiers.
+ *
+ * @markup
+   <table class="o-table [modifier(s)]" cellspacing="0">
+     <tr>
+       <td>Lorem</td>
+       <td>Aliquam</td>
+       <td>Vestibulum</td>
+     </tr>
+   </table>
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Cell padding.
+ */
+/**
+ * Cosmetics.
+ */
+.u-table {
+  width: 100%; }
+  .u-table caption,
+  .u-table th {
+    text-align: left; }
+  .u-table th,
+  .u-table td {
+    padding: 0.75rem; }
+
+/**
+ * Modifier: striped.
+ *
+ * Applies a background colour to every odd row.
+ */
+.o-table--striped tr:nth-of-type(odd) td {
+  background-color: #e6e6e6; }
+
+/**
+ * Modifier: border.
+ */
+.o-table--border th,
+.o-table--border td {
+  border: 0.0625rem solid #e6e6e6; }
+  .o-table--border th:empty,
+  .o-table--border td:empty {
+    border: 0; }
+
+/**
+ * Modifier: layout fixed, force tables into having equal-width columns.
+ */
+.o-table--fixed {
+  table-layout: fixed; }
+
+/**
+ * Modifier: small cell padding.
+ */
+.o-table--cell-padding-small th,
+.o-table--cell-padding-small td {
+  padding: 0.375rem; }
+
+/**
+ * Modifier: large cell padding.
+ */
+.o-table--cell-padding-large th,
+.o-table--cell-padding-large td {
+  padding: 1.5rem; }
+
+/**
+ * Modifier: no cell padding.
+ */
+.o-table--no-cell-padding th,
+.o-table--no-cell-padding td {
+  padding: 0; }
+
+/**
+ * COMPONENTS.
+ */
+/* ============================================================================
+   @COMPONENTS -> BUTTON
+   ========================================================================= */
+/**
+ * Button component with a bunch of modifiers.
  */
 /**
  * Settings.
  */
 /**
  * Toggle on/off certain styles and treatments.
+ */
+/**
+ * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
+ * is not set globally. If it has been previously been defined, the following
+ * variable will be overriden and will be set to `true`.
+ */
+/**
+ * Colours.
+ */
+/**
+ * Padding.
+ */
+/**
+ * Border.
+ *
+ * N.B. also includes the borders used in the 'Button Group' modifier
+ */
+/**
+ * Rounded corners.
+ */
+/**
+ * Hover/focus styles, simple fade out effect via `opacity`
+ */
+/**
+ * Base styles all buttons need, from here we apply specific button styles via
+ * modifiers.
+ *
+ * 1. Prevent button text from being selectable.
+ * 2. Make sure `input` will wrap text across multiple lines.
+ * 3. Allow us to style box model properties.
+ * 4. Line different sized buttons up a little nicer.
+ * 5. Correct font family not being inherited in all browsers.
+ * 6. Correct font size not being inherited in all browsers.
+ * 7. Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ *    the UA stylesheet.
+ * 8. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 9. Reset/normalize styles from the UA stylesheet.
+ */
+.btn {
+  user-select: none;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent; }
+  .btn,
+  .btn:hover,
+  .btn:focus,
+  .btn:active {
+    text-decoration: none; }
+
+/**
+ * Main.
+ *
+ * The main button styles for your project.
+ */
+.btn--main {
+  text-align: center;
+  background-color: #2aa198;
+  padding: 0.75rem 1.5rem; }
+  .btn--main,
+  .btn--main:hover,
+  .btn--main:focus,
+  .btn--main:active {
+    color: #fff; }
+  .btn--main:hover,
+  .btn--main:focus {
+    opacity: 0.7;
+    transition: opacity 0.1s linear; }
+
+/**
+ * Modifier: secondary colour.
+ */
+.btn--main--secondary {
+  background-color: #35c9be; }
+  .btn--main--secondary,
+  .btn--main--secondary:hover,
+  .btn--main--secondary:focus,
+  .btn--main--secondary:active {
+    color: #fff; }
+
+/**
+ * Modifier: tiny padding.
+ */
+.btn--main--tiny {
+  padding: 0.25rem 0.5rem; }
+
+/**
+ * Modifier: small padding.
+ */
+.btn--main--small {
+  padding: 0.375rem 0.75rem; }
+
+/**
+ * Modifier: large padding.
+ */
+.btn--main--large {
+  padding: 1.125rem 2.25rem; }
+
+/**
+ * Modifier: huge padding.
+ */
+.btn--main--huge {
+  padding: 1.5rem 3rem; }
+
+/**
+ * Modifier: full bleed.
+ */
+.btn--main--full-bleed {
+  display: block;
+  width: 100%; }
+
+/**
+ * A button that looks like a link.
+ */
+.btn--faux-link {
+  color: #2aa198; }
+  .btn--faux-link:hover, .btn--faux-link:focus {
+    color: #1f7972;
+    text-decoration: underline; }
+
+/**
+ * Button group. When you want to group a bunch of buttons side-by-side flush
+ * to each other i.e. with no gap between the buttons. To differentiate
+ * between the buttons a border is added, if borders haven't already been
+ * applied that is i.e. `$c-btn-border == true`.
+ *
+ * N.B. this modifier requires that you remove the whitespace between the
+ * buttons so they're flush to each other, one way to do this is by inserting
+ * HTML comments between the buttons.
+ *
+ * @markup
+   <div class="btn-group [modifier]">
+     <button class="btn btn--main">Left</button><!--
+      --><button class="btn btn--main">Middle</button><!--
+      --><button class="btn btn--main">Right</button>
+   </div>
+ */
+.btn-group {
+  /**
+   * Modifier: vertically stacked button group.
+   *
+   * N.B. buttons within the vertically stacked version need to use the
+   * `btn--main--full-bleed` main button modifier.
+   */ }
+  .btn-group .btn--main {
+    border: 0.0625rem solid #1f7972; }
+    .btn-group .btn--main:not(:last-child) {
+      border-right: 0; }
+    .btn-group .btn--main:first-child {
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem; }
+    .btn-group .btn--main:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem; }
+  .btn-group.btn-group--vertical {
+    display: inline-block; }
+    .btn-group.btn-group--vertical .btn--main {
+      border-right: 0.0625rem solid #1f7972; }
+      .btn-group.btn-group--vertical .btn--main:not(:last-child) {
+        border-bottom: 0; }
+      .btn-group.btn-group--vertical .btn--main:first-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem; }
+      .btn-group.btn-group--vertical .btn--main:last-child {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem; }
+
+/**
+ * UTILITIES.
+ */
+/* ============================================================================
+   @UTILITIES -> CLEAR FIX
+   ========================================================================= */
+/**
+ * Make an element expand to contain floated children.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-clear-fix
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/LEQrbV
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints.
+ */
+.u-clear-fix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* ============================================================================
+   @UTILITIES -> TEXT
+   ========================================================================= */
+/**
+ * Various handy utilities for text.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-text-size-small
+   .u-text-size-x-small
+   .u-text-size-xx-small
+   .u-text-size-xxx-small
+   .u-text-size-large
+   .u-text-size-x-large
+   .u-text-size-xx-large
+   .u-text-size-xxx-large
+   .u-text-size-base
+   .u-text-size-inherit
+   .u-text-align-center
+   .u-text-align-left
+   .u-text-align-right
+   .u-text-align-inherit
+   .u-text-style-italic
+   .u-text-style-normal
+   .u-text-style-inherit
+   .u-text-weight-lighter
+   .u-text-weight-bold
+   .u-text-weight-inherit
+   .u-text-weight-normal
+   .u-text-transform-uppercase
+   .u-text-transform-lowercase
+   .u-text-transform-capitalise
+   .u-text-transform-inherit
+   .u-text-transform-none
+   .u-text-whitespace-normal
+   .u-text-whitespace-pre
+   .u-text-whitespace-nowrap
+   .u-text-truncate
+   .u-text-kern
+   .u-text-break-word
+   .u-text-hyphenate
+ */
+/**
+ * Settings.
+ */
+/**
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Size.
@@ -2952,9 +3298,6 @@ li:before {
 .u-text-weight-bold {
   font-weight: bold; }
 
-.u-text-weight-bolder {
-  font-weight: bolder; }
-
 .u-text-weight-inherit {
   font-weight: inherit; }
 
@@ -2978,82 +3321,6 @@ li:before {
 
 .u-text-transform-none {
   text-transform: none; }
-
-/**
- * Line height.
- *
- * N.B. setting custom line heights should be avoided in favour of trying to
- * keep a consistent vertical rhythm. The `@font-size` mixin takes care of this
- * by applying appropiate line heights based on the size of the font.
- */
-.u-text-line-height-0-5 {
-  line-height: 0.5; }
-
-.u-text-line-height-1 {
-  line-height: 1; }
-
-.u-text-line-height-1-1 {
-  line-height: 1.1; }
-
-.u-text-line-height-1-2 {
-  line-height: 1.2; }
-
-.u-text-line-height-1-3 {
-  line-height: 1.3; }
-
-.u-text-line-height-1-4 {
-  line-height: 1.4; }
-
-.u-text-line-height-1-5 {
-  line-height: 1.5; }
-
-.u-text-line-height-1-6 {
-  line-height: 1.6; }
-
-.u-text-line-height-1-7 {
-  line-height: 1.7; }
-
-.u-text-line-height-1-8 {
-  line-height: 1.8; }
-
-.u-text-line-height-1-9 {
-  line-height: 1.9; }
-
-.u-text-line-height-2 {
-  line-height: 2; }
-
-.u-text-line-height-2-5 {
-  line-height: 2.5; }
-
-.u-text-line-height-normal {
-  line-height: normal; }
-
-.u-text-line-height-inherit {
-  line-height: inherit; }
-
-/**
- * Colour.
- */
-.u-text-colour-white {
-  color: #fff; }
-
-.u-text-colour-black {
-  color: #000; }
-
-.u-text-colour-brand {
-  color: #2aa198; }
-
-.u-text-colour-text-base {
-  color: #000; }
-
-.u-text-colour-text-primary {
-  color: #2aa198; }
-
-.u-text-colour-text-secondary {
-  color: #35c9be; }
-
-.u-text-colour-inherit {
-  color: inherit; }
 
 /**
  * Whitespace.
@@ -3125,12 +3392,134 @@ li:before {
  *
  * - Intrinsic widths
  * - Percentage widths
+ *
+ * Percentage based width classes are generated by the
+ * `generate-percentage-classes-at-breakpoints` mixin found here:
+ * Core -> Settings -> Mixins. Each class get's its value and is named after the
+ * Sass settings defined here: Core -> Settings -> Widths with the addition of
+ * the utility namespace: `u-`, e.g. `$one-half` = `.u-one-half`.
+ *
+ * The default format for these classes is:
+ *
+    .u-one-whole
+    .u-one-half
+    .u-one-third
+    .u-one-quarter
+ *
+ * ... and so on.
+ *
+ * Or in the more terse format:
+ *
+    .u-100pc
+    .u-50pc
+    .u-33pc
+    .u-25pc
+ *
+ * ... and so on.
+ *
+ * The more terse format is turned off by default, to turn it on change this
+ * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
+ * `@import` for this mixin in your master stylesheet.
+ *
+ * All the width classes can be applied at different breakpoints with the
+ * format being:
+ *
+ * Using a `min-width` media query (default):
+ *
+   .u-[setting-name]-from-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-one-half-from-lap
+ *
+ * Using a `max-width` media query:
+ *
+   .u-[setting-name]-up-to-[breakpoint]
+ *
+ * E.g.
+ *
+   .u-one-third-up-to-desk
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-width-shrink-wrap
+   .u-width-shrink-wrap--right
+   .u-width-fill-remaining-space
+   .u-width-fill-remaining-space-alt
+   .u-width-full-bleed
+   .u-one-whole
+   .u-one-half
+   .u-one-third
+   .u-two-thirds
+   .u-one-quarter
+   .u-two-quarters
+   .u-three-quarters
+   .u-one-fifth
+   .u-two-fifths
+   .u-three-fifths
+   .u-four-fifths
+   .u-one-sixth
+   .u-two-sixths
+   .u-three-sixths
+   .u-four-sixths
+   .u-five-sixths
+   .u-one-seventh
+   .u-two-sevenths
+   .u-three-sevenths
+   .u-four-sevenths
+   .u-five-sevenths
+   .u-six-sevenths
+   .u-one-eighth
+   .u-two-eighths
+   .u-three-eighths
+   .u-four-eighths
+   .u-five-eighths
+   .u-six-eighths
+   .u-seven-eighths
+   .u-one-ninth
+   .u-two-ninths
+   .u-three-ninths
+   .u-four-ninths
+   .u-five-ninths
+   .u-six-ninths
+   .u-seven-ninths
+   .u-eight-ninths
+   .u-one-tenth
+   .u-two-tenths
+   .u-three-tenths
+   .u-four-tenths
+   .u-five-tenths
+   .u-six-tenths
+   .u-seven-tenths
+   .u-eight-tenths
+   .u-nine-tenths
+   .u-one-eleventh
+   .u-two-elevenths
+   .u-three-elevenths
+   .u-four-elevenths
+   .u-five-elevenths
+   .u-six-elevenths
+   .u-seven-elevenths
+   .u-eight-elevenths
+   .u-nine-elevenths
+   .u-ten-elevenths
+   .u-one-twelfth
+   .u-two-twelfths
+   .u-three-twelfths
+   .u-four-twelfths
+   .u-five-twelfths
+   .u-six-twelfths
+   .u-seven-twelfths
+   .u-eight-twelfths
+   .u-nine-twelfths
+   .u-ten-twelfths
+   .u-eleven-twelfths
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
  * Intrinsic widths.
@@ -3171,30 +3560,7 @@ li:before {
   width: 100%; }
 
 /**
- * Percentage based width classes generated by the `generate-percentage-classes
- * -at-breakpoints` mixin found here: Core -> Settings -> Mixins. Each class
- * get's its value and is named after the Sass settings defined here: Core ->
- * Settings -> Widths with the addition of the utility namespace: `u-`, e.g.
- * `$one-half` = `.u-one-half`.
- *
- * All the width classes can be applied at different breakpoints with the
- * format being:
- *
- * Using a `min-width` media query (default):
- *
-   .u-[setting-name]-from-[breakpoint]
- *
- * E.g.
- *
-   .u-one-half-from-lap
- *
- * Using a `max-width` media query:
- *
-   .u-[setting-name]-up-to-[breakpoint]
- *
- * E.g.
- *
-   .u-one-third-up-to-desk
+ * Percentage widths.
  */
 .u-one-whole {
   width: 100%; }
@@ -3599,88 +3965,26 @@ li:before {
   .u-eleven-twelfths-from-lap {
     width: 91.66667%; } }
 /* ============================================================================
-   @UTILITIES -> TABLE
-   ========================================================================= */
-/**
- * A table utility that provides very common table styles which can be
- * extended with a number of modifiers e.g. `.u-table--striped` which applies
- * a background colour to every odd row.
- */
-/**
- * Settings.
- */
-/**
- * Toggle on/off certain styles and treatments.
- */
-/**
- * Cell padding.
- */
-/**
- * Cosmetics.
- */
-.u-table {
-  width: 100%; }
-  .u-table caption,
-  .u-table th {
-    text-align: left; }
-  .u-table th,
-  .u-table td {
-    padding: 0.75rem; }
-
-/**
- * Modifier: striped.
- *
- * Applies a background colour to every odd row.
- */
-.u-table--striped tr:nth-of-type(odd) td {
-  background-color: #e6e6e6; }
-
-/**
- * Modifier: border.
- */
-.u-table--border th,
-.u-table--border td {
-  border: 0.0625rem solid #e6e6e6; }
-  .u-table--border th:empty,
-  .u-table--border td:empty {
-    border: 0; }
-
-/**
- * Modifier: layout fixed.
- *
- * Force tables into having equal-width column.
- */
-.u-table--fixed {
-  table-layout: fixed; }
-
-/**
- * Modifier: small cell padding.
- */
-.u-table--cell-padding-small th,
-.u-table--cell-padding-small td {
-  padding: 0.375rem; }
-
-/**
- * Modifier: large cell padding.
- */
-.u-table--cell-padding-large th,
-.u-table--cell-padding-large td {
-  padding: 1.5rem; }
-
-/**
- * Modifier: no cell padding.
- */
-.u-table--no-cell-padding th,
-.u-table--no-cell-padding td {
-  padding: 0; }
-
-/* ============================================================================
    @UTILITIES -> ALIGNMENTS
    ========================================================================= */
 /**
  * Apply different alignments to elements.
  *
  * N.B. text alignments can be found in the Text -> Alignment utility.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-align-v-inline-top
+   .u-align-v-inline-middle
+   .u-align-v-inline-baseline
+   .u-align-v-inline-bottom
+   .u-align-v-inline-inherit
+   .u-align-v-block-middle-flexbox
+   .u-align-v-block-middle-position
+   .u-align-center-block
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/YPejod/
  */
 /**
  * Settings.
@@ -3734,13 +4038,20 @@ li:before {
    ========================================================================= */
 /**
  * Simply toggling the visibility of an element via a state class:
- * `is-visible` (or whatever you choose) which is powered by JavaScript.
+ * `is-visible` (or whatever you choose) which is powered by JavaScript. For
+ * non-JavaScript users the element will always show.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-toggle-visibility
+   .u-toggle-visibility-inline
+   .u-toggle-visibility-inline-block
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 .u-toggle-visibility {
   display: none; }
@@ -3749,18 +4060,22 @@ li:before {
     display: block; }
 
 /**
- * Modifier: for `inline` elements.
+ * For `inline` elements.
  */
-.u-toggle-visibility--inline.is-visible, .no-js
-.u-toggle-visibility--inline {
-  display: inline; }
+.u-toggle-visibility-inline {
+  display: none; }
+  .u-toggle-visibility-inline.is-visible, .no-js
+  .u-toggle-visibility-inline {
+    display: inline; }
 
 /**
- * Modifier: for `inline-block` elements.
+ * For `inline-block` elements.
  */
-.u-toggle-visibility--inline-block.is-visible, .no-js
-.u-toggle-visibility--inline-block {
-  display: inline-block; }
+.u-toggle-visibility-inline-block {
+  display: none; }
+  .u-toggle-visibility-inline-block.is-visible, .no-js
+  .u-toggle-visibility-inline-block {
+    display: inline-block; }
 
 /* ============================================================================
    @UTILITIES -> MOMENTUM SCROLLING
@@ -3771,6 +4086,10 @@ li:before {
  * eventually slowing down and stopping as if friction is slowing it down. You
  * might think that any element with scrolling would have this behavior as
  * well, but it doesn't. You can add it back by applying this utility.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-momentum-scrolling
  */
 /**
  * Settings.
@@ -3787,6 +4106,15 @@ li:before {
    ========================================================================= */
 /**
  * Simply make an element floated or remove it.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-float-left
+   .u-float-right
+   .u-float-none
+ *
+ * @demo
+ * http://s.codepen.io/chris-pearce/full/ByYeQd
  */
 /**
  * Settings.
@@ -3821,6 +4149,14 @@ li:before {
  *
  * N.B. this is one of the rare occasions where the class/placeholder is
  * shortened.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-nbfc
+   .u-nbfc-alt
+ *
+ * @demo
+ * http://s.codepen.io/chris-pearce/full/zxRQwV
  *
  * @credit
  * https://github.com/suitcss/utils-layout/blob/master/lib/layout.css
@@ -3861,6 +4197,10 @@ li:before {
  *
  * N.B. the new `will-change` property will eventually make this hack redundant,
  * see: http://www.sitepoint.com/introduction-css-will-change-property/.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-gpu-accelerated
  */
 .u-gpu-accelerated {
   transform: translate3d(0, 0, 0); }
@@ -3870,15 +4210,38 @@ li:before {
    ========================================================================= */
 /**
  * Various utilities for positioning elements.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-position-relative
+   .u-position-absolute
+   .u-position-fixed
+   .u-position-static
+   .u-position-left
+   .u-position-right
+   .u-position-top
+   .u-position-bottom
+   .u-position-top-left
+   .u-position-top-right
+   .u-position-bottom-left
+   .u-position-bottom-right
+   .u-position-pin-all
+   .u-position-pin-ends
+   .u-position-pin-sides
+   .u-position-pin-sides-top
+   .u-position-pin-sides-bottom
+   .u-position-v-middle
+   .u-position-h-middle
+   .u-position-middle
  */
 /**
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
- * Set positioning contexts.
+ * Standard positioning properties.
  */
 .u-position-relative {
   position: relative; }
@@ -3896,67 +4259,82 @@ li:before {
  * Different ways to position an element.
  */
 .u-position-left {
+  position: absolute;
   left: 0; }
 
 .u-position-right {
+  position: absolute;
   right: 0; }
 
 .u-position-top {
+  position: absolute;
   top: 0; }
 
 .u-position-bottom {
+  position: absolute;
   bottom: 0; }
 
 .u-position-top-left {
+  position: absolute;
   top: 0;
   left: 0; }
 
 .u-position-top-right {
+  position: absolute;
   top: 0;
   right: 0; }
 
 .u-position-bottom-left {
+  position: absolute;
   bottom: 0;
   left: 0; }
 
 .u-position-bottom-right {
+  position: absolute;
   bottom: 0;
   right: 0; }
 
-.u-overlay-hover:before,
 .u-position-pin-all {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0; }
 
 .u-position-pin-ends {
+  position: absolute;
   top: 0;
   bottom: 0; }
 
 .u-position-pin-sides {
+  position: absolute;
   left: 0;
   right: 0; }
 
 .u-position-pin-sides-top {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0; }
 
 .u-position-pin-sides-bottom {
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0; }
 
 .u-position-v-middle {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%); }
 
 .u-position-h-middle {
+  position: absolute;
   left: 50%;
   transform: translateX(-50%); }
 
 .u-position-middle {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
@@ -3965,126 +4343,78 @@ li:before {
    @UTILITIES -> DISPLAY
    ========================================================================= */
 /**
- * A utility for applying the most common types of box renderings and for
- * hiding / showing elements.
+ * A utility for applying the most common types of box renderings.
  *
- * @todo
- * Look at adding 'Flexbox'.
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-display-block
+   .u-display-inline
+   .u-display-inline-block
+ */
+/**
+ * Settings.
  */
 /**
  * Apply at these breakpoints (turned off by default).
  */
 /**
- * Classes to detect if JavaScript is on or off.
- */
-/**
- * Block, inline, and inline-block display.
+ * Block.
  */
 .u-display-block {
   display: block; }
 
+/**
+ * Inline.
+ */
 .u-display-inline {
   display: inline; }
 
+/**
+ * Inline-block.
+ */
 .u-display-inline-block {
   display: inline-block; }
 
-/**
- * Table display.
- */
-.u-display-table {
-  display: table; }
-
-.u-display-table-row {
-  display: table-row; }
-
-.u-display-table-cell {
-  display: table-cell; }
-
-/**
- * Inherit.
- */
-.u-display-inherit {
-  display: inherit; }
-
-/**
- * Hide elements from both screen readers and the document flow.
- */
-.u-hide {
-  display: none;
-  visibility: hidden; }
-
-/**
- * Hide elements without affecting the document flow.
- */
-.u-hide-invisible {
-  visibility: hidden; }
-
-/**
- * Hide elements only visually but have it available for screen readers.
- */
-.u-hide-visually {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  /**
-   * Form `legend`s need different treatment.
-   */ }
-  .u-hide-visually.legend {
-    left: -9999px; }
-
-/**
- * Hide elements for JavaScript users and non-JavaScript users, this is
- * necessary when building accessibile and progressively enhanced UI's.
- *
- * N.B. this will require functionality that can append a hook to an element
- * (typically the `html` element) if JavaScript is on.
- *
- * N.B. it is okay to use `!important` here as we're doing it pre-emptively
- * i.e. you know you will always want the rule it's applied too to take
- * precedence.
- */
-.js .u-hide-if-js-is-on {
-  display: none !important; }
-
-.no-js .u-hide-if-js-is-off {
-  display: none !important; }
-
-/**
- * Hide / show elements for print media.
- */
-.u-show-for-print,
-.u-show-for-print-inline,
-.u-show-for-print-inline-block {
-  display: none; }
-
-@media print {
-  .u-hide-for-print {
-    display: none; }
-
-  .u-show-for-print {
-    display: block; }
-
-  .u-show-for-print-inline {
-    display: inline; }
-
-  .u-show-for-print-inline-block {
-    display: inline-block; } }
 /* ============================================================================
    @UTILITIES -> SPACING
    ========================================================================= */
 /**
  * A powerful utility to apply and remove spacing (whitespace) via `margin`
- * and `padding`. All spacing uses the spacing settings from Core -> Settings
- * -> Spacing.
+ * and `padding`. All the spacing utilities map their spacing values from
+ * Core -> Settings -> Spacing and come in 6 sizing categories:
  *
- * N.B. this is one of the rare occasions where the class/placeholder is
- * shortened.
+ * - Base
+ * - Micro
+ * - Tiny
+ * - Small
+ * - Large
+ * - Huge
+ *
+ * Each of the above sizing categories can be applied to the following
+ * direction categories:
+ *
+ * - All (`margin` / `padding`)
+ * - Top (`margin-top` / `padding-top`)
+ * - Right (`margin-right` / `padding-right`)
+ * - Bottom (`margin-bottom` / `padding-bottom`)
+ * - Left (`margin-left` / `padding-left`)
+ * - Sides (`margin-right, margin-left` / `padding-right, padding-left`)
+ * - End (`margin-top, margin-bottom` / `padding-top, padding-bottom`)
+ *
+ * All of the above sizing/direction categories can be applied to negative
+ * spacing and zero spacing (none). So if we take 'Base -> Top' we have the
+ * following spacing utilities available to us:
+ *
+   .u-s-mt-base {@include to-rem(margin-top, $u-spacing-base);}
+   .u-s-pt-base {@include to-rem(padding-top, $u-spacing-base);}
+
+   // Negative
+   .u-s-mt-n-base {@include to-rem(margin-top, -$u-spacing-base);}
+   .u-s-pt-n-base {@include to-rem(padding-top, -$u-spacing-base);}
+
+   // None
+  .u-s-mt-none {margin-top: 0;}
+  .u-s-pt-none {padding-top: 0;}
  *
  * Naming convention:
  *
@@ -4098,6 +4428,219 @@ li:before {
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
  *
+ * As they're so many spacing utilities the format for applying them at different
+ * breakpoints in your master stylesheet is a little different to the
+ * standard format. In addition to listing your breakpoints we have to list out
+ * the exact spacing utility classes we want those breakpoints applied to. So
+ * say we wanted to apply 3 `margin-bottom` spacing utilities at the 'Small',
+ * 'Base', and 'Large' sizing categories which are applied to the 'Palm' and 'Lap'
+ * breakpoints plus at a breakpoint of '886', we would do it like this:
+ *
+   $u-spacing-apply-at-breakpoints: (palm, lap, 886);
+   $u-spacing-apply-classes-for-breakpoints: (
+    ".u-s-mb-small",
+    ".u-s-mb-base",
+    ".u-s-mb-large"
+   );
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   // Base
+   .u-s-m-base
+   .u-s-p-base
+   .u-s-m-n-base
+   .u-s-p-n-base
+   .u-s-mt-base
+   .u-s-pt-base
+   .u-s-mt-n-base
+   .u-s-pt-n-base
+   .u-s-mr-base
+   .u-s-pr-base
+   .u-s-mr-n-base
+   .u-s-pr-n-base
+   .u-s-mb-base
+   .u-s-pb-base
+   .u-s-mb-n-base
+   .u-s-pb-n-base
+   .u-s-ml-base
+   .u-s-pl-base
+   .u-s-ml-n-base
+   .u-s-pl-n-base
+   .u-s-ms-base
+   .u-s-ps-base
+   .u-s-ms-n-base
+   .u-s-ps-n-base
+   .u-s-me-base
+   .u-s-pe-base
+   .u-s-me-n-base
+   .u-s-pe-n-base
+
+   // Micro
+   .u-s-m-micro
+   .u-s-p-micro
+   .u-s-m-n-micro
+   .u-s-p-n-micro
+   .u-s-mt-micro
+   .u-s-pt-micro
+   .u-s-mt-n-micro
+   .u-s-pt-n-micro
+   .u-s-mr-micro
+   .u-s-pr-micro
+   .u-s-mr-n-micro
+   .u-s-pr-n-micro
+   .u-s-mb-micro
+   .u-s-pb-micro
+   .u-s-mb-n-micro
+   .u-s-pb-n-micro
+   .u-s-ml-micro
+   .u-s-pl-micro
+   .u-s-ml-n-micro
+   .u-s-pl-n-micro
+   .u-s-ms-micro
+   .u-s-ps-micro
+   .u-s-ms-n-micro
+   .u-s-ps-n-micro
+   .u-s-me-micro
+   .u-s-pe-micro
+   .u-s-me-n-micro
+   .u-s-pe-n-micro
+
+   // Tiny
+   .u-s-m-tiny
+   .u-s-p-tiny
+   .u-s-m-n-tiny
+   .u-s-p-n-tiny
+   .u-s-mt-tiny
+   .u-s-pt-tiny
+   .u-s-mt-n-tiny
+   .u-s-pt-n-tiny
+   .u-s-mr-tiny
+   .u-s-pr-tiny
+   .u-s-mr-n-tiny
+   .u-s-pr-n-tiny
+   .u-s-mb-tiny
+   .u-s-pb-tiny
+   .u-s-mb-n-tiny
+   .u-s-pb-n-tiny
+   .u-s-ml-tiny
+   .u-s-pl-tiny
+   .u-s-ml-n-tiny
+   .u-s-pl-n-tiny
+   .u-s-ms-tiny
+   .u-s-ps-tiny
+   .u-s-ms-n-tiny
+   .u-s-ps-n-tiny
+   .u-s-me-tiny
+   .u-s-pe-tiny
+   .u-s-me-n-tiny
+   .u-s-pe-n-tiny
+
+   // Small
+   .u-s-m-small
+   .u-s-p-small
+   .u-s-m-n-small
+   .u-s-p-n-small
+   .u-s-mt-small
+   .u-s-pt-small
+   .u-s-mt-n-small
+   .u-s-pt-n-small
+   .u-s-mr-small
+   .u-s-pr-small
+   .u-s-mr-n-small
+   .u-s-pr-n-small
+   .u-s-mb-small
+   .u-s-pb-small
+   .u-s-mb-n-small
+   .u-s-pb-n-small
+   .u-s-ml-small
+   .u-s-pl-small
+   .u-s-ml-n-small
+   .u-s-pl-n-small
+   .u-s-ms-small
+   .u-s-ps-small
+   .u-s-ms-n-small
+   .u-s-ps-n-small
+   .u-s-me-small
+   .u-s-pe-small
+   .u-s-me-n-small
+   .u-s-pe-n-small
+
+   // Large
+   .u-s-m-large
+   .u-s-p-large
+   .u-s-m-n-large
+   .u-s-p-n-large
+   .u-s-mt-large
+   .u-s-pt-large
+   .u-s-mt-n-large
+   .u-s-pt-n-large
+   .u-s-mr-large
+   .u-s-pr-large
+   .u-s-mr-n-large
+   .u-s-pr-n-large
+   .u-s-mb-large
+   .u-s-pb-large
+   .u-s-mb-n-large
+   .u-s-pb-n-large
+   .u-s-ml-large
+   .u-s-pl-large
+   .u-s-ml-n-large
+   .u-s-pl-n-large
+   .u-s-ms-large
+   .u-s-ps-large
+   .u-s-ms-n-large
+   .u-s-ps-n-large
+   .u-s-me-large
+   .u-s-pe-large
+   .u-s-me-n-large
+   .u-s-pe-n-large
+
+   // Huge
+   .u-s-m-huge
+   .u-s-p-huge
+   .u-s-m-n-huge
+   .u-s-p-n-huge
+   .u-s-mt-huge
+   .u-s-pt-huge
+   .u-s-mt-n-huge
+   .u-s-pt-n-huge
+   .u-s-mr-huge
+   .u-s-pr-huge
+   .u-s-mr-n-huge
+   .u-s-pr-n-huge
+   .u-s-mb-huge
+   .u-s-pb-huge
+   .u-s-mb-n-huge
+   .u-s-pb-n-huge
+   .u-s-ml-huge
+   .u-s-pl-huge
+   .u-s-ml-n-huge
+   .u-s-pl-n-huge
+   .u-s-ms-huge
+   .u-s-ps-huge
+   .u-s-ms-n-huge
+   .u-s-ps-n-huge
+   .u-s-me-huge
+   .u-s-pe-huge
+   .u-s-me-n-huge
+   .u-s-pe-n-huge
+
+   // None
+   .u-s-m-none
+   .u-s-p-none
+   .u-s-mt-none
+   .u-s-pt-none
+   .u-s-mr-none
+   .u-s-pr-none
+   .u-s-mb-none
+   .u-s-pb-none
+   .u-s-ml-none
+   .u-s-pl-none
+   .u-s-ms-none
+   .u-s-ps-none
+   .u-s-me-none
+   .u-s-pe-none
+ *
  * @credit
  * https://github.com/stubbornella/oocss/blob/master/oocss/src/components/whitespace/_whitespace.scss
  */
@@ -4105,7 +4648,10 @@ li:before {
  * Settings.
  */
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
+ */
+/**
+ * Spacing sizes.
  */
 /**
  * Maps for the generate at breakpoint mixin.
@@ -4737,6 +5283,24 @@ li:before {
    ========================================================================= */
 /**
  * Apply different overflow treatment to elements i.e. when to clip content.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-overflow-visible
+   .u-overflow-x-visible
+   .u-overflow-y-visible
+   .u-overflow-hidden
+   .u-overflow-x-hidden
+   .u-overflow-y-hidden
+   .u-overflow-scroll
+   .u-overflow-x-scroll
+   .u-overflow-y-scroll
+   .u-overflow-auto
+   .u-overflow-x-auto
+   .u-overflow-y-auto
+   .u-overflow-inherit
+   .u-overflow-x-inherit
+   .u-overflow-y-inherit
  */
 /**
  * Settings.
@@ -4805,56 +5369,96 @@ li:before {
   overflow-y: inherit; }
 
 /* ============================================================================
-   @UTILITIES -> OVERLAY
+   @UTILITIES -> HIDE
    ========================================================================= */
 /**
- * A simple semi-transparent overlay in a dark and light version and a version
- * that can be applied only on hover.
+ * A utility for hiding (and showing) elements.
  *
- * N.B. this utility is dependant on the following utility:
+ * All the utilities (available as silent placeholder selectors also):
  *
- * - Positioning.
+   .u-hide
+   .u-hide-invisible
+   .u-hide-visually
+   .u-hide-if-js-is-on
+   .u-hide-if-js-is-off
+   .u-show-for-print
+   .u-show-for-print-inline
+   .u-show-for-print-inline-block
+   .u-hide-for-print
  */
 /**
- * Settings.
+ * Apply at these breakpoints (turned off by default).
  */
 /**
- * Dark.
+ * Classes to detect if JavaScript is on or off.
  */
-.u-overlay-dark {
-  background-color: rgba(0, 0, 0, 0.6); }
+/**
+ * Hide elements from both screen readers and the document flow.
+ */
+.u-hide {
+  display: none;
+  visibility: hidden; }
 
 /**
- * Light.
+ * Hide elements without affecting the document flow.
  */
-.u-overlay-light {
-  background-color: rgba(255, 255, 255, 0.6); }
+.u-hide-invisible {
+  visibility: hidden; }
 
-/*
- * Hover version.
-*/
-.u-overlay-hover {
-  position: relative;
-  display: block;
+/**
+ * Hide elements only visually but have it available for screen readers.
+ */
+.u-hide-visually {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  border: 0;
   /**
-   * The overlay.
-   */
-  /**
-   * Apply the overlay on hover and focus if it's a native focusable element.
+   * Form `legend`s need different treatment.
    */ }
-  .u-overlay-hover:before {
-    content: "";
-    transition: background-color 0.2s ease;
-    background-color: transparent;
-    pointer-events: none;
-    position: absolute; }
-  .u-overlay-hover.u-overlay-hover--dark:hover:before,
-  .u-overlay-hover.u-overlay-hover--dark:focus:before {
-    background-color: rgba(0, 0, 0, 0.6); }
-  .u-overlay-hover.u-overlay-hover--light:hover:before,
-  .u-overlay-hover.u-overlay-hover--light:focus:before {
-    background-color: rgba(255, 255, 255, 0.6); }
+  .u-hide-visually.legend {
+    left: -9999px; }
 
+/**
+ * Hide elements for JavaScript users and non-JavaScript users, this is
+ * necessary when building accessibile and progressively enhanced UI's. This
+ * will require functionality that can append a hook to an element
+ * (typically the `html` element) if JavaScript is on.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it pre-emptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ */
+.js .u-hide-if-js-is-on {
+  display: none !important; }
+
+.no-js .u-hide-if-js-is-off {
+  display: none !important; }
+
+/**
+ * Hide/show elements for print media.
+ */
+.u-show-for-print,
+.u-show-for-print-inline,
+.u-show-for-print-inline-block {
+  display: none; }
+
+@media print {
+  .u-hide-for-print {
+    display: none; }
+
+  .u-show-for-print {
+    display: block; }
+
+  .u-show-for-print-inline {
+    display: inline; }
+
+  .u-show-for-print-inline-block {
+    display: inline-block; } }
 /* Your styles
    ========================================================================= */
 
