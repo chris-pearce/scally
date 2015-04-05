@@ -7,6 +7,12 @@
  * Simply toggling the visibility of an element via a state class:
  * `is-visible` (or whatever you choose) which is powered by JavaScript. For
  * non-JavaScript users the element will always show.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-toggle-visibility
+   .u-toggle-visibility-inline
+   .u-toggle-visibility-inline-block
  */
 
 
@@ -52,19 +58,23 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
 
 /**
- * Modifier: for `inline` elements.
+ * For `inline` elements.
  */
 
-%u-toggle-visibility--inline,
-.u-toggle-visibility--inline {
+%u-toggle-visibility-inline,
+.u-toggle-visibility-inline {
+  display: none;
+
   // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
   .no-js & {display: inline;}
 }
 
 @if $u-toggle-visibility-apply-at-breakpoints-for-inline {
-  @include generate-at-breakpoints('.u-toggle-visibility--inline',
+  @include generate-at-breakpoints('.u-toggle-visibility-inline',
     $u-toggle-visibility-apply-at-breakpoints) {
+    display: none;
+
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline;}
   }
@@ -72,19 +82,23 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
 
 /**
- * Modifier: for `inline-block` elements.
+ * For `inline-block` elements.
  */
 
-%u-toggle-visibility--inline-block,
-.u-toggle-visibility--inline-block {
+%u-toggle-visibility-inline-block,
+.u-toggle-visibility-inline-block {
+  display: none;
+
   // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
   .no-js & {display: inline-block;}
 }
 
 @if $u-toggle-visibility-apply-at-breakpoints-for-inline-block {
-  @include generate-at-breakpoints('.u-toggle-visibility--inline-block',
+  @include generate-at-breakpoints('.u-toggle-visibility-inline-block',
     $u-toggle-visibility-apply-at-breakpoints) {
+    display: none;
+
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline-block;}
   }
