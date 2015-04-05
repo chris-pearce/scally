@@ -150,7 +150,7 @@ $c-button-hover-transition-timing-function: linear !default;
     html & {@include to-rem(border-radius, $c-button-rounded-corners-size);}
   }// endif
 
-  // Foreground color
+  // Foreground colour
   &,
   &:hover,
   &:focus,
@@ -169,7 +169,7 @@ $c-button-hover-transition-timing-function: linear !default;
 
 
 /**
- * Modifier: secondary color.
+ * Modifier: secondary colour.
  */
 
 .c-button--secondary {
@@ -180,7 +180,7 @@ $c-button-hover-transition-timing-function: linear !default;
     @include to-rem(border-color, $c-button-border-color-secondary);
   }// endif
 
-  // Foreground color
+  // Foreground colour
   &,
   &:hover,
   &:focus,

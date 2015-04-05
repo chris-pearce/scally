@@ -48,7 +48,7 @@
  * define the override below the `@import`, like so:
  *
    @import "bower_components/scally/core/settings/colours";
-   $colour-text-base: $colour-brand;
+   $color-text-base: $color-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
  * don't have access to the Scally setting at the point of compilation.
@@ -56,7 +56,7 @@
  * All non-Core settings need to be overridden above the `@import`, like so:
  *
    $u-arrow-size-base: 14;
-   $u-arrow-colour: orange;
+   $u-arrow-color: orange;
    @import "bower_components/scally/utilities/u-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
