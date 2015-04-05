@@ -8,34 +8,38 @@
  *
  * The base component class and all of its modifiers:
  *
-   .button
-     .button--secondary
-     .button--tiny
-     .button--small
-     .button--large
-     .button--huge
-     .button--full-bleed
+   .c-button
+     .c-button--secondary
+     .c-button--tiny
+     .c-button--small
+     .c-button--large
+     .c-button--huge
+     .c-button--full-bleed
  *
  * The 'Grouping' option base class and all of its modifiers:
  *
-   .button-group
-     .button-group--vertical
+   .c-button-group
+     .c-button-group--vertical
  *
  * @markup
-   <button class="button [modifier(s)]">Button text</button>
+   <button class="c-button [modifier(s)]">Button text</button>
  *
  * 'Grouping' option:
  *
-   <div class="button-group">
-     <button class="button [modifier(s)]">Button text</button><!--
-     --><button class="button [modifier(s)]">Button text</button><!--
-     --><button class="button [modifier(s)]">Button text</button>
+ * N.B. grouping buttons requires that you remove the whitespace between the
+ * buttons so they're flush to each other, one way to do this is by inserting
+ * HTML comments between the buttons.
+ *
+   <div class="c-button-group">
+     <button class="c-button [modifier(s)]">Button text</button><!--
+     --><button class="c-button [modifier(s)]">Button text</button><!--
+     --><button class="c-button [modifier(s)]">Button text</button>
    </div>
 
-   <div class="button-group button-group--vertical">
-     <button class="button button--full-bleed [modifier(s)]">Button text</button><!--
-     --><button class="button button--full-bleed [modifier(s)]">Button text</button><!--
-     --><button class="button button--full-bleed [modifier(s)]">Button text</button>
+   <div class="c-button-group c-button-group--vertical">
+     <button class="c-button c-button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="c-button c-button--full-bleed [modifier(s)]">Button text</button><!--
+     --><button class="c-button c-button--full-bleed [modifier(s)]">Button text</button>
    </div>
  *
  * @dependency
@@ -97,7 +101,7 @@ $c-button-padding-huge:                     $spacing-double !default;
 /**
  * Border.
  *
- * N.B. also includes the borders used in the 'Button Group' modifier
+ * N.B. also includes the borders used in the 'Grouping' option.
  */
 
 $c-button-border-thickness:                 1 !default;
@@ -125,7 +129,7 @@ $c-button-hover-transition-duration:        0.1 !default;
 $c-button-hover-transition-timing-function: linear !default;
 
 
-.button {
+.c-button {
   // `@extend`ing the Button object
   @extend %o-button;
   text-align: center;
@@ -168,7 +172,7 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: secondary colour.
  */
 
-.button--secondary {
+.c-button--secondary {
   background-color: $c-button-background-colour-secondary;
 
   // Apply a border
@@ -188,7 +192,7 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: tiny padding.
  */
 
-.button--tiny {@include to-rem(padding, $c-button-padding-tiny
+.c-button--tiny {@include to-rem(padding, $c-button-padding-tiny
  / 2 $c-button-padding-tiny);}
 
 
@@ -196,7 +200,7 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: small padding.
  */
 
-.button--small {@include to-rem(padding, $c-button-padding-small
+.c-button--small {@include to-rem(padding, $c-button-padding-small
  / 2 $c-button-padding-small);}
 
 
@@ -204,7 +208,7 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: large padding.
  */
 
-.button--large {@include to-rem(padding, $c-button-padding-large
+.c-button--large {@include to-rem(padding, $c-button-padding-large
  / 2 $c-button-padding-large);}
 
 
@@ -212,7 +216,7 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: huge padding.
  */
 
-.button--huge {@include to-rem(padding, $c-button-padding-huge
+.c-button--huge {@include to-rem(padding, $c-button-padding-huge
  / 2 $c-button-padding-huge);}
 
 
@@ -220,18 +224,14 @@ $c-button-hover-transition-timing-function: linear !default;
  * Modifier: full bleed.
  */
 
-.button--full-bleed {
+.c-button--full-bleed {
   display: block;
   width: 100%;
 
   @if $apply-friendly-box-model == false {
-    /**
-     * Remove paddings so that widths and paddings don't conflict.
-     *
-     * N.B. if you're applying a border then that will conflict with the width
-     * however Scally can't turn off your border in this case.
-     */
-
+    // Remove paddings so that widths and paddings don't conflict however if
+    // you're applying a border then that *will* conflict with the width but
+    // Scally cannot help you in this case
     padding-right: 0;
     padding-left: 0;
   }// endif
@@ -243,25 +243,13 @@ $c-button-hover-transition-timing-function: linear !default;
  *
  * When you want to group a bunch of buttons side-by-side flush
  * to each other i.e. with no gap between the buttons. To differentiate
- * between the buttons a border is added, if borders haven't already been
- * applied that is i.e. `$c-button-border == true`.
- *
- * N.B. grouping buttons requires that you remove the whitespace between the
- * buttons so they're flush to each other, one way to do this is by inserting
- * HTML comments between the buttons.
- *
- * @markup
-   <div class="button-group [modifier]">
-     <button class="button">Left</button><!--
-      --><button class="button">Middle</button><!--
-      --><button class="button">Right</button>
-   </div>
+ * between the buttons a border is added.
  */
 
 
-.button-group {
+.c-button-group {
 
-  .button {
+  .c-button {
 
     @if $c-button-apply-border == false {
       @include to-rem(border, $c-button-border-thickness $c-button-border-style
@@ -297,11 +285,11 @@ $c-button-hover-transition-timing-function: linear !default;
    * `button--full-bleed` modifier.
    */
 
-  &.button-group--vertical {
+  &.c-button-group--vertical {
     // This will shrink wrap the container to be as wide as the widest button
     display: inline-block;
 
-    .button {
+    .c-button {
 
       // Turn back on the right border that gets turned off by default
       @include to-rem(border-right, $c-button-border-thickness
