@@ -74,9 +74,9 @@ The breakdown of these layers from bottom to top (order of their specificity):
 - [Sass](http://sass-lang.com/install)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 
- >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
-
-We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
+    >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
+   
+    *We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then       you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer)*
 
 
 
@@ -149,7 +149,7 @@ You can install Scally via the [**Download by zip**](https://github.com/chris-pe
 
 ## Setting up your master stylesheet
 
-Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
+Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, that will live in the root of the folder where you keep all of your CSS.
 
 Once you have created this file grab everything [from here](style.scss) and paste it into your master stylesheet then read the next section: [Master stylesheet overview](#master-stylesheet-overview).
 
@@ -237,30 +237,23 @@ This section is where you pull in all of your project-specific styles. We recomm
 
 ### Example architecture
 
-So you may end up with your project setup like this, assuming the following:
+So you may end up with your project setup like this, assuming that you contain all of your CSS in a folder called `css` and you use Bower as your package manager.
 
-- you contain all of your CSS in a folder called `css`, 
-- you chose to use Bower as your package manager,
-- Bower installed Scally in your `css` folder.
-
-    css
+```
+project root
+│
+└───bower_components
+|   |
+|   └───scally
+|   
+└───css
     |   style.scss
     |   settings.scss
-    │
-    └───bower_components
-    |   │
-    |   └───scally
     |
     └───partials
-        │
+        |
         ├───components
-        |
-        ├───core
-        |
-        ├───layout
-        |
-        ├───utilities
-
+```
 
 
 
