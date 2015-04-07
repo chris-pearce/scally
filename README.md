@@ -43,23 +43,25 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 # Demo's
 
-*A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
+*A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at but are a work in progress:*
 
-- [Utilities](http://s.codepen.io/chris-pearce/debug/WbMgMp)
+- [Layout](http://codepen.io/chris-pearce/full/jEXNWX/)
+- [Utilities](http://s.codepen.io/chris-pearce/full/WbMgMp)
 
 
 
 
 # Scally architecture
 
-Scally is broken down into four main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers:
+Scally is broken down into five main sections with each section getting it's own level of specificity meaning each one builds on top of the other in terms of inheritance and CSS' first C; the cascade. Think of them as layers:
 
-<img src="http://scally.chris-pearce.me/presentation/lib/img/the-structure.svg">
+<img src="https://dl.dropboxusercontent.com/s/d5dkntp1kckkvkm/layers.svg">
 
 The breakdown of these layers from bottom to top (order of their specificity):
 
 - [Core](core/README.md)
 - [Layout](layout/README.md)
+- [Objects](objects/README.md)
 - [Components](components/README.md)
 - [Utilities](utilities/README.md)
 
@@ -74,7 +76,7 @@ The breakdown of these layers from bottom to top (order of their specificity):
 
  >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 
- We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
+We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then  you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer).
 
 
 
@@ -87,8 +89,6 @@ Scally can be installed as a package with either:
 
 - [npm](https://www.npmjs.org/)
 - [Bower](http://bower.io/)
-
-*Ruby Gem coming soon*
 
 You'll need [Node.js](http://nodejs.org/) installed to use the npm and Bower packages, more information on installing npm [here](http://blog.npmjs.org/post/85484771375/how-to-install-npm). Once npm is installed you're good to install the Scally npm package by `cd`ing into your project folder (the root is recommended) and running this command:
 
@@ -151,7 +151,7 @@ You can install Scally via the [**Download by zip**](https://github.com/chris-pe
 
 Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
 
-Once you have created this file grab everything [from here](https://github.com/chris-pearce/scally/blob/master/style.scss) and paste it into your master stylesheet.
+Once you have created this file grab everything [from here](style.scss) and paste it into your master stylesheet then read the next section: [Master stylesheet overview](#master-stylesheet-overview).
 
 This master stylesheet is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
 
@@ -167,7 +167,7 @@ Then add a reference to the compiled master stylesheet in your HTML head:
 <link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
 ```
 
-This master stylesheet is designed to pull in everything from Scally plus your project-specific styles and compile down to a single css file.
+This master stylesheet is designed to pull in everything from Scally–however only the **Core** section is mandatory–plus your project-specific styles and compile down to a single css file.
 
 ## Master stylesheet overview
 
@@ -187,7 +187,7 @@ This first section consists of one Sass partial:
 @import "settings";
 ```
 
-Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/chris-pearce/scally/master/settings.scss).
+Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](settings.scss).
 
 In this partial you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
 
@@ -227,21 +227,9 @@ $color-text-base: $color-hotpink;
 
 By default everything in the framework is imported. But if you want to be selective and you definitely should, so your CSS is as lean as possible, then only import what you need.
 
-So if you decide you only need to use half of Scally's utilities then simply remove the partial `@import`s you don't need from `style.scss`.
+So if you decide you only need to use half of Scally's utilities then simply remove the relevant utility partial `@import`s you don't need from `style.scss`.
 
 However the **Core** section is required, please do not remove any of the imports from this section.
-
-**N.B.** if you change the Bower install folder e.g. from `bower_components` to `vendor`, via the `.bowerrc` file, then make sure to update the paths in all of Scally's `@import` partials. So this:
-
-```
-@import "bower_components/scally/core/settings/colours";
-```
-
-Would become:
-
-```
-@import "vendor/scally/core/settings/colours";
-```
 
 ### Your styles
 
@@ -249,7 +237,11 @@ This section is where you pull in all of your project-specific styles. We recomm
 
 ### Example architecture
 
-Here is an example of the architecture mentioned just above, assuming you contain all of your CSS in a folder called `css` and if Scally is installed via the default Bower install in your `css` folder.
+So you may end up with your project setup like this, assuming the following:
+
+- you contain all of your CSS in a folder called `css`, 
+- you chose to use Bower as your package manager,
+- Bower installed Scally in your `css` folder.
 
     css
     |   style.scss
@@ -307,7 +299,7 @@ Which will lint *everything*, to lint at a more granular level [see](https://git
 
 ## Linting rules
 
-Scally's linting rules can be [found here](.scss-lint.yml) and are based off [these CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/). If you wish you can override these rules or remove them completely via your own `.scss-lint.yml` file in the root of your project, refer to the [scss-lint documentation](https://github.com/causes/scss-lint) on how to set that up.
+Scally's linting rules can be [found here](.scss-lint.yml) and are based off [these CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/).
 
 
 
@@ -322,12 +314,6 @@ Scally is written in Sass, which provides a lot of incredibly powerful features.
 
 Adding this complexity is against a number of Scally's core principles especially in team-based workflows, long-running and larger projects, and its flexibility.
 
-- **It obscures functionality.** This can make things harder to decipher, understand, and debug.
-- **It adds points-of-failure.** More moving parts means more things to go wrong. Always err on the side of simplicity.
-- **It requires an advanced level of understanding.** On large(r) projects, the variance in skill-level can differ greatly. From designers, to front-end developers, to software engineers, everyone will need to author some CSS at some point—make this learning curve as shallow as possible.
-- **It creates a barrier to entry.** Scally hopes to become a widely useful framework: so it is taking active steps to become less opinionated and even more flexible so that it can be implemented by a more varied user base—adding advanced Sass features will close this openness back up.
-- **It adds unnecessary complexity.** Working on large(r) projects commands a greater cognitive overhead as it is; adding more complexity is the wrong direction to go.
-
 Kinds of code not good for Scally:
 
 - **Hundred-line mixins designed to avoid a couple of lines of repetition:** the overhead of typing a few more lines is much less than creating, documenting, learning, and maintaining complex Sass functionality.
@@ -341,14 +327,14 @@ In addition to the principles outlined above here are some things to keep in min
 - Follow [these CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/). Linting will catch a lot of this but not everything.
 - Test in all supported browsers and mobile platforms, [see](#browser-support).
 
-**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css)
+**Credit:** alot of this section was taken from and inspired by the [Contributing section](https://github.com/inuitcss/CONTRIBUTING/blob/master/README.md) of [inuit.css](https://github.com/csswizardry/inuit.css).
 
 
 
 
 # Scally improvements, issues, and questions
 
-If you would like to suggest any new components or utilities, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/chris-pearce/scally/issues) and label appropriately.
+If you would like to suggest any new additions to Scally, any improvements, log any issues or bugs, or just ask a question, please [open a new issue](https://github.com/chris-pearce/scally/issues) and label appropriately.
 
 
 
@@ -397,4 +383,4 @@ After I finished at Westfield Labs I decided to fork Scally so I could maintain 
 
 # Presentations
 
-- <http://scally.chris-pearce.me/presentation> (for my current employer [Campaign Monitor](https://www.campaignmonitor.com/))
+- <http://scally.chris-pearce.me/presentation> (done for my current employer [Campaign Monitor](https://www.campaignmonitor.com/) in Jan 2015)
