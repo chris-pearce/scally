@@ -1,5 +1,9 @@
 === HEAD
 
+=== 1.7.2 (April 9, 2015)
+
+- [Issue #75](https://github.com/chris-pearce/scally/issues/75) applied.
+
 === 1.6.2 (April 3, 2015)
 
 - [Issue #62](https://github.com/chris-pearce/scally/issues/62) fixed. Big
