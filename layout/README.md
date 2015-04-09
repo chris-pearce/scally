@@ -24,11 +24,12 @@
 
 Think of layout as Lego&reg;; the bits and pieces you need to construct a UI.
 
-Scally features three powerful layout modules:
+Scally features four powerful layout modules:
 
 1. [**Container**](_l-container.scss): is designed to wrap all major UI layout pieces and ensure the UI maintains a consistent width. Container is responsive. It is a fluid width controlled by percentages until it reaches it's maximum width, at which point it becomes center aligned.
 2. [**Grid**](_l-grid.scss): is a powerful, fluid, nestable, mobile first grid system that allows you to set custom column widths at different viewports, making responsive layouts a sinch.
 3. [**Side-by-side**](_l-side-by-side.scss): is a simple yet very powerful layout module that places any two elements side-by-side, typically for an image- and text-like content. There is also an alternative version that allows control over vertical alignment.
+4. [**Columns**](_l-columns.scss): lets you create columns out of one element using CSS3 Columns.
 
 *From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
 
@@ -37,7 +38,7 @@ Scally features three powerful layout modules:
 
 ## Why have layout?
 
-Just like [utilities](../utilities/), layout can form a wide variety of UI layout patterns meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable layout modules, mentioned above.
+Layout modules can form a wide variety of UI layout patterns meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable layout modules, mentioned above.
 
 Layout modules are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
 
@@ -97,10 +98,10 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid__item u-one-half-from-lap">
+      <div class="l-grid__item  u-one-half-from-lap">
         [...]
       </div>
-      <div class="l-grid__item u-one-half-from-lap">
+      <div class="l-grid__item  u-one-half-from-lap">
         [...]
       </div>
     </div>
@@ -112,16 +113,16 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid__item u-one-quarter">
+      <div class="l-grid__item  u-one-quarter">
         [...]
       </div>
-      <div class="l-grid__item u-one-quarter">
+      <div class="l-grid__item  u-one-quarter">
         [...]
       </div>
-      <div class="l-grid__item u-one-quarter">
+      <div class="l-grid__item  u-one-quarter">
         [...]
       </div>
-      <div class="l-grid__item u-one-quarter">
+      <div class="l-grid__item  u-one-quarter">
         [...]
       </div>
     </div>
@@ -133,19 +134,19 @@ The light and dark grey boxes represent individual grid cells (`l-grid__item`) w
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <ul class="l-grid">
-      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item  u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item  u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item  u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item  u-one-third u-one-fifth-from-lap">
         [...]
       </li>
-      <li class="l-grid__item u-one-third u-one-fifth-from-lap">
+      <li class="l-grid__item  u-one-third u-one-fifth-from-lap">
         [...]
       </li>
       [...]
@@ -166,7 +167,7 @@ By default grid cells will stack on top of eachother unless told otherwise i.e. 
 So if we had a grid cell like this:
 
 ```
-<div class="l-grid__item u-one-half-from-lap u-one-third-from-desk">
+<div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
 ```
 
 This would give you a grid item which is 100% wide unless it is on a [lap](../core/settings/_breakpoints.scss#L53) device, at which point it becomes 50% wide, or it is on a [desktop](../core/settings/_breakpoints.scss#L57) device,
@@ -187,29 +188,29 @@ The grey boxes represent each side-by-side layout module.
 **The HTML**
 
 ```
-<div class="u-side-by-side">
-  <div class="u-side-by-side__left">
+<div class="l-side-by-side">
+  <div class="l-side-by-side__left">
     [...]
   </div>
-  <div class="u-side-by-side__right">
-    [...]
-  </div>
-</div>
-
-<div class="u-side-by-side">
-  <div class="u-side-by-side__left">
-    [...]
-  </div>
-  <div class="u-side-by-side__right">
+  <div class="l-side-by-side__right">
     [...]
   </div>
 </div>
 
-<div class="u-side-by-side">
-  <div class="u-side-by-side__left">
+<div class="l-side-by-side">
+  <div class="l-side-by-side__left">
     [...]
   </div>
-  <div class="u-side-by-side__right">
+  <div class="l-side-by-side__right">
+    [...]
+  </div>
+</div>
+
+<div class="l-side-by-side">
+  <div class="l-side-by-side__left">
+    [...]
+  </div>
+  <div class="l-side-by-side__right">
     [...]
   </div>
 </div>
@@ -220,7 +221,21 @@ The grey boxes represent each side-by-side layout module.
 - [Default](_l-side-by-side.scss)
 - [Alternative](_l-side-by-side-alt.scss)
 
-You might be wondering why don't we just use the grid for this? You certainly can use the grid however you will need to specify widths for each grid cell and those widths might need changing based on the viewport size, [see here](#responsive-grid). The side-by-side layout module cells do not require widths instead the left and right cells will shrink wrap it's content making it much more easier to implement this type of layout than the grid.
+You might be wondering why don't we just use the grid for this? You certainly can use the grid however you will need to specify widths for each grid cell and those widths might need changing based on the viewport size, [see here](#responsive-grid). The side-by-side layout module cells do not require widths instead the left and right cells will shrink wrap it's content making it much more easier to implement this type of layout than the grid. 
+
+The side-by-side layout module is responsive friendly just like the grid. The left and right parts will stack on top of eachother up until a certain breakpoint where they'll then become–well side-by-side. This behaviour is configurable by these two settings:
+
+```
+$l-side-by-side-apply-linear: [true/false];
+$l-side-by-side-apply-linear-when: [a breakpoint];
+```
+
+The default values for these settings are:
+
+```
+$l-side-by-side-apply-linear: true !default;
+$l-side-by-side-apply-linear-when: palm !default;
+```
 
 ### Combined
 
@@ -230,7 +245,7 @@ So if we take this piece of UI again:
 
 [![alt text](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png)
 
-We can combine all our three layout modules and their modifiers to achieve this layout:
+We can combine three of our layout modules and their modifiers to achieve this layout:
 
 [![alt text](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png)
 
@@ -247,35 +262,35 @@ In order of stacking (bottom to top):
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid__item u-one-quarter">
+      <div class="l-grid__item  u-one-quarter">
         [...]
       </div>
-      <div class="l-grid__item u-one-quarter">
-        <div class="u-side-by-side l-side-by-side--flush">
-          <div class="u-side-by-side__left">
+      <div class="l-grid__item  u-one-quarter">
+        <div class="l-side-by-side l-side-by-side--flush">
+          <div class="l-side-by-side__left">
             [...]
           </div>
-          <div class="u-side-by-side__right">
-            [...]
-          </div>
-        </div>
-      </div>
-      <div class="l-grid__item u-one-quarter">
-        <div class="u-side-by-side l-side-by-side--flush">
-          <div class="u-side-by-side__left">
-            [...]
-          </div>
-          <div class="u-side-by-side__right">
+          <div class="l-side-by-side__right">
             [...]
           </div>
         </div>
       </div>
-      <div class="l-grid__item u-one-quarter">
-        <div class="u-side-by-side l-side-by-side--flush">
-          <div class="u-side-by-side__left">
+      <div class="l-grid__item  u-one-quarter">
+        <div class="l-side-by-side l-side-by-side--flush">
+          <div class="l-side-by-side__left">
             [...]
           </div>
-          <div class="u-side-by-side__right">
+          <div class="l-side-by-side__right">
+            [...]
+          </div>
+        </div>
+      </div>
+      <div class="l-grid__item  u-one-quarter">
+        <div class="l-side-by-side l-side-by-side--flush">
+          <div class="l-side-by-side__left">
+            [...]
+          </div>
+          <div class="l-side-by-side__right">
             [...]
           </div>
         </div>
@@ -287,7 +302,7 @@ In order of stacking (bottom to top):
 
 ### Do not mix other styles
 
-You should never mix in any other styles with any of the layout modules. This ties in with the [Open/close principle](../utilities#openclose-principle) which is used for utilities.
+You should never mix in any other styles with any of the layout modules. This ties in with the [Open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) which is used for utilities and objects.
 
 So if we look at the HTML for the header demo'd above for this piece of UI:
 
@@ -298,10 +313,10 @@ So if we look at the HTML for the header demo'd above for this piece of UI:
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid__item u-one-half-from-lap">
+      <div class="l-grid__item  u-one-half-from-lap">
         [...]
       </div>
-      <div class="l-grid__item u-one-half-from-lap">
+      <div class="l-grid__item  u-one-half-from-lap">
         [...]
       </div>
     </div>
@@ -317,13 +332,13 @@ And we need to add padding to all sides of the left grid cell and add the sub na
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
-      <div class="l-grid__item u-one-half-from-lap">
+      <div class="l-grid__item  u-one-half-from-lap">
         <div class="u-s-p-base">
           [...]
         </div>
       </div>
-      <div class="l-grid__item u-one-half-from-lap">
-        <ul class="u-list-inline u-list-inline--spacing-base">
+      <div class="l-grid__item  u-one-half-from-lap">
+        <ul class="o-list-inline o-list-inline--spacing-base">
           [...]
         </ul>
       </div>
@@ -338,7 +353,7 @@ And we need to add padding to all sides of the left grid cell and add the sub na
 
 ## Namespace
 
-All layout classes should be prefixed with `l-` so that they're easily identifiable.
+All layout classes are prefixed with `l-` so they're easily identifiable.
 
 
 

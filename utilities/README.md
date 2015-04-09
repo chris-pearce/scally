@@ -9,8 +9,6 @@
 - [Demo's](#demos)
 - [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
-- [Open/close principle](#openclose-principle)
-- [Applying at breakpoints](#applying-at-breakpoints)
 - [Specificity](#specificity)
 - [Namespace](#namespace)
 - [New utilities](#new-utilities)
@@ -21,44 +19,38 @@
 
 ## What are they?
 
-Utilities are low-level. They have a very narrow scope and may end up being used frequently, due to their separation from the semantics of the document and the theming of what they're being applied too. Think of them as helpers.
+Utilities are your helper classes and typically your last resort. 
+
+They apply a single rule e.g. float an element to the right: `.u-float-right`, or a very simple, universal pattern e.g. hide an element but only visually: `.u-hide-visually`. They never have any styles that are concerned with cosmetics and they must always follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/).
 
 
 
 
 ## Demo's
 
-<http://s.codepen.io/chris-pearce/debug/WbMgMp> (work in progress)
+<http://s.codepen.io/chris-pearce/full/WbMgMp> (work in progress)
 
 
 
 
 ## Why have them?
 
-Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable modules.
+Utilities exist because in every UI build they'll always be the need to apply simple low-level common styles to parts of a UI that don't belong to any sort of a [component](../components/README.md). In these scenerios, if utilities didn't exist, we would have issues like:
 
-A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
+- Where do those types of styles live in our CSS architecture? 
+- Lots of super *micro* components that aren't true components that only exist to avoid having to use utility classes in your markup.
+- CSS not being DRY as we would have to keep writing those styles over and over.
 
-```
-%u-list-inline,
-.u-list-inline {
-    > li {display: inline-block;}
-}
-```
+Some utilities don't just apply single rules but apply simple, universal patterns e.g. Clear an element to contain its floated children: `.u-clear-fix`, pin an element to all corners of it's parent: `.u-position-pin-all`, hide an element but only visually: `.u-hide-visually`, etc.
 
-So utilities are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
-
-- Your CSS will be a lot DRYer and maintainable.
-- You can make far-reaching changes to your UI with simple modifications to a single utility.
-- You have confidence in your changes because edits to a utility only ever alter one responsibility.
-- You can combine utilities to make a variety of UI layouts.
+So utilities help keep our CSS a lot DRYer and maintainable. And enable us to make far-reaching changes to our UI with simple modifications to a single utility because we have the confidence that edits to a utility will only ever alter one responsibility.
 
 
 
 
 ## How to use
 
-Each utility class modifies a single trait which might be an individual style e.g.
+Each utility applies a single rule e.g.
 
 ```
 // Center align text
@@ -66,12 +58,13 @@ Each utility class modifies a single trait which might be an individual style e.
 .u-text-align-center {text-align: center;}
 ```
 
-Or a small collection of styles e.g.
+Or a very simple, universal pattern e.g.
 
 ```
-// Pin to all corners
+// Pin an element to all corners of its parent
 %u-position-pin-all,
 .u-position-pin-all {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -79,115 +72,25 @@ Or a small collection of styles e.g.
 }
 ```
 
-To apply a trait, or a combination of traits, add the corresponding class or classes directly to the HTML element.
+To apply utilities apply the utility class or classes directly to the HTML element but only if the element you're applying it to doesn't already have an existing style hook (class) which in most cases it will as it'll be a component. This comes back to the last resort approach mentioned in the [What are they?](#what-are-they) section above.
 
-So say you wanted an element to pin it's itself to all corners of it's container then you would apply like so:
+It's quite rare to apply utilities in the context of components, when it is needed it's mostly the utilities that apply universal patterns e.g. hide an element but only visually: `.u-hide-visually`. When this is needed you would typically apply the utility via its [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) using the `@extend` directive.
 
-    <div class="u-position-absolute u-position-pin-all"> ... </div>
-
-However if the above `div` was part of a [component](../components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
-
-- It's more maintainable when changes need to be made as you don't have to touch the HTML so much, however this can be resolved by having your Views only contain data with the UI coming from an API.
-- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
-- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
-
-So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
+So if we had a **Modal** component and part of that component was the overlay that sits behind the modal covering the entire viewport we could make use of the the above `u-position-pin-all` utility which will pin the overlay to all corners of the main viewport e.g.
 
 **HTML**
 
-    <div class="modal__cover"> ... </div>
+    <div class="modal__cover"> [...] </div>
 
 **CSS**
 
     .modal__cover {
-        position: absolute;
         @extend %u-position-pin-all;
+        [...]
     }
 
-You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view. [This article](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) (starting from the text: *Another case of an abused `@extend` looks a little like this*) does a very good job at further explaining why this isn't a good idea.
+We want to keep as little utilities in the markup as possible.
 
-Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern found in many UI's:
-
-![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
-
-The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_l-side-by-side.scss) however they're a number of other style treatments going on in this UI pattern that are outside of the Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
-
-- [Divider](_u-divider.scss)
-- [Spacing](_u-spacing.scss)
-- [Text](_u-text.scss)
-
-The HTML:
-
-```
-<div class="l-side-by-side  u-divider-bottom  u-s-pb-base u-s-mb-base">
-    <div class="l-side-by-side__left">
-      <img src"{{src}}" alt="...">
-    </div>
-    <div class="l-side-by-side__right  u-s-p-base">
-      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
-      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
-    </div>
-</div>
-
-<div class="l-side-by-side l-side-by-side--reversed">
-    <div class="l-side-by-side__left">
-      <img src"{{src}}" alt="...">
-    </div>
-    <div class="l-side-by-side__right  u-s-p-base">
-      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
-      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
-    </div>
-</div>
-```
-
-
-
-
-## Open/close principle
-
-Utilities follow the open/close principle, which states that software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
-
-So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component, *or* maybe the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
-
-
-
-
-## Applying at breakpoints
-
-When building responsive UI's it is a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. So each utility comes with the ability to be applied at any of the [set breakpoints](../core/settings/_breakpoints.scss) or any custom breakpoint.
-
-Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss) and this feature is turned off by default in favour of leaner stylesheets, **and not all UI's are responsive**.
-
-A real common use case for this application is hiding UI at certain viewport sizes, typically at a mobile size viewport or a non-mobile size viewport.
-
-So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display**](_u-display.scss) utility to achieve this, applying these steps:
-
-1. Turn the feature on by changing the relevant setting to `true` e.g.
- 
- `$u-display-apply-at-breakpoints-for-hide: true;`
-
- which will output (compile) the utility in a media query like so:
-
-  ```
-  @media (min-width: 40.0625em) {
-    .u-hide-from-lap {display: none;}
-  }
-  ```
-2. By default the feature uses the `lap` breakpoint but you can change this to another breakpoint or add more breakpoints via the `$u-display-apply-at-breakpoints` setting which you do in your [master stylesheet](https://github.com/chris-pearce/scally#master-stylesheet-overview) above the relevant `@import`:
-
-  ```
-  $u-display-apply-at-breakpoints: (lap, lap-large)
-  @import "bower_components/scally/utilities/u-display";
-  ```
-  This will output (compile):
-  ```
-  @media (min-width: 40.0625em) {
-    .u-hide-from-lap {display: none;}
-  }
-  @media (min-width: 56.3125em) {
-    .u-hide-from-lap-large {display: none;}
-  }
-  ```
 
 
 
@@ -202,14 +105,14 @@ That's why utilities are declared last when pulling in the Scally framework via 
 
 ## Namespace
 
-All utility classes and utility silent placeholder selectors should be prefixed with `u-` so that they're easily identifiable.
+All utility classes/silent placeholder selectors are prefixed with `u-` so that they're easily identifiable.
 
 
 
 
 ## New utilities
 
-You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing).
+You can create new utilities in your [project specific CSS](../README.md#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing).
 
 
 
@@ -218,7 +121,6 @@ You can create new utilities in your [project specific CSS](https://github.com/w
 
 *Make sure to read the documentation within each utility Sass partial file as it will contain information about the utility and it's implementations.*
 
-- [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
 - [When to use `@extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
