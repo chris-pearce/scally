@@ -47,7 +47,7 @@ $o-overlay-color-light:                       $color-white !default;
 
 $o-overlay-opacity-strength-light:            0.6 !default;
 
-// Apply a transition?
+// Apply a transition for hover?
 $o-overlay-hover-apply-transition:            true !default;
 
 // Hover transition duration
@@ -114,23 +114,28 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 /*
  * Modifier: hover version.
  *
- * 1. Apply a transition?
- * 2. Make transparent by default.
- * 3. Turn off pointer events for safe measure.
+ * 1. Apply positioning context for the pseudo element.
+ * 2. Apply a transition?
+ * 3. Make transparent by default.
+ * 4. Turn off pointer events for safe measure.
  */
 
-%o-overlay--hover:before,
-.o-overlay--hover:before {
+%o-overlay--hover,
+.o-overlay--hover {
+  position: relative; // [1]
+
+  &:before {
     content: "";
 
-    // [1]
+    // [2]
     @if $o-overlay-hover-apply-transition {
       transition: background-color $o-overlay-hover-transition-duration
       $o-overlay-hover-transition-timing-function;
     }// endif
 
-    background-color: transparent; // [2]
-    pointer-events: none; // [3]
+    background-color: transparent; // [3]
+    pointer-events: none; // [4]
+  }
 }
 
 // Dark
