@@ -9,10 +9,6 @@
  * eventually slowing down and stopping as if friction is slowing it down. You
  * might think that any element with scrolling would have this behavior as
  * well, but it doesn't. You can add it back by applying this utility.
- *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-momentum-scrolling
  */
 
 
@@ -32,14 +28,14 @@ $u-momentum-scrolling-apply-at-breakpoints-toggle:  false !default;
 
 %u-momentum-scrolling,
 .u-momentum-scrolling {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 @if $u-momentum-scrolling-apply-at-breakpoints-toggle {
   @include generate-at-breakpoints('.u-momentum-scrolling',
     $u-momentum-scrolling-apply-at-breakpoints) {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 }// endif

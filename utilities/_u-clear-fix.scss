@@ -6,10 +6,6 @@
 /**
  * Make an element expand to contain floated children.
  *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-clear-fix
- *
  * @demo
  * http://codepen.io/chris-pearce/full/LEQrbV
  */
@@ -32,9 +28,9 @@ $u-clear-fix-apply-at-breakpoints-toggle:   false !default;
 %u-clear-fix,
 .u-clear-fix {
   &:after {
-    content: "";
-    display: table;
-    clear: both;
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
   }
 }
 
@@ -42,9 +38,9 @@ $u-clear-fix-apply-at-breakpoints-toggle:   false !default;
   @include generate-at-breakpoints('.u-clear-fix',
     $u-clear-fix-apply-at-breakpoints) {
     &:after {
-      content: "";
-      display: table;
-      clear: both;
+      content: "" !important;
+      display: table !important;
+      clear: both !important;
     }
   }
 }// endif

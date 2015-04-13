@@ -9,14 +9,11 @@
  * sake of hardware acceleration. So make sure to understand when and when
  * not to use this.
  *
- * N.B. the new `will-change` property will eventually make this hack redundant,
- * see: http://www.sitepoint.com/introduction-css-will-change-property/.
- *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-gpu-accelerated
+ * N.B. the new `will-change` property will eventually make this hack
+ * redundant, see:
+ * http://www.sitepoint.com/introduction-css-will-change-property/.
  */
 
 
 %u-gpu-accelerated,
-.u-gpu-accelerated {transform: translate3d(0, 0, 0);}
+.u-gpu-accelerated {transform: translate3d(0, 0, 0)  !important;}

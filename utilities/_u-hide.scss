@@ -48,14 +48,14 @@ $u-hide-js-is-off-class:                           no-js !default;
 
 %u-hide,
 .u-hide {
-  display: none;
-  visibility: hidden;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 @if $u-hide-apply-at-breakpoints-for-hide {
   @include generate-at-breakpoints('.u-hide', $u-hide-apply-at-breakpoints) {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
   }
 }// endif
 
@@ -65,11 +65,11 @@ $u-hide-js-is-off-class:                           no-js !default;
  */
 
 %u-hide-invisible,
-.u-hide-invisible {visibility: hidden;}
+.u-hide-invisible {visibility: hidden !important;}
 
 @if $u-hide-apply-at-breakpoints-for-hide-invisible {
   @include generate-at-breakpoints('.u-hide-invisible',
-    $u-hide-apply-at-breakpoints) {visibility: hidden;}
+    $u-hide-apply-at-breakpoints) {visibility: hidden !important;}
 }// endif
 
 
@@ -79,36 +79,36 @@ $u-hide-js-is-off-class:                           no-js !default;
 
 %u-hide-visually,
 .u-hide-visually {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  border: 0;
+  position: absolute !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
 
 
   /**
    * Form `legend`s need different treatment.
    */
 
-  &.legend {left: $off-screen-distance;}
+  &.legend {left: $off-screen-distance !important;}
 }
 
 @if $u-hide-apply-at-breakpoints-for-hide-visually {
   @include generate-at-breakpoints('.u-hide-visually',
     $u-hide-apply-at-breakpoints) {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    padding: 0;
-    border: 0;
+    position: absolute !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
 
-    &.legend {left: $off-screen-distance;}
+    &.legend {left: $off-screen-distance !important;}
   }
 }// endif
 
@@ -138,17 +138,17 @@ $u-hide-js-is-off-class:                           no-js !default;
 // Show
 .u-show-for-print,
 .u-show-for-print-inline,
-.u-show-for-print-inline-block {display: none;}
+.u-show-for-print-inline-block {display: none !important;}
 
 @media print {
 
   // Hide
-  .u-hide-for-print {display: none;}
+  .u-hide-for-print {display: none !important;}
 
   // Show
-  .u-show-for-print {display: block;}
+  .u-show-for-print {display: block !important;}
 
-  .u-show-for-print-inline {display: inline;}
+  .u-show-for-print-inline {display: inline !important;}
 
-  .u-show-for-print-inline-block {display: inline-block;}
+  .u-show-for-print-inline-block {display: inline-block !important;}
 }

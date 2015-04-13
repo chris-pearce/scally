@@ -172,27 +172,27 @@ $apply-friendly-box-model:                                   false !default;
 
 %u-width-shrink-wrap,
 .u-width-shrink-wrap {
-  display: block;
-  float: left;
-  width: auto;
+  display: block !important;
+  float: left !important;
+  width: auto !important;
 }
 
 @if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap',
     $u-width-intrinsic-apply-at-breakpoints) {
-    display: block;
-    float: left;
-    width: auto;
+    display: block !important;
+    float: left !important;
+    width: auto !important;
   }
 }// endif
 
 // Float it right
 %u-width-shrink-wrap--right,
-.u-width-shrink-wrap--right {float: right;}
+.u-width-shrink-wrap--right {float: right !important;}
 
 @if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap--right',
-    $u-width-intrinsic-apply-at-breakpoints) {float: right;}
+    $u-width-intrinsic-apply-at-breakpoints) {float: right !important;}
 }// endif
 
 
@@ -206,34 +206,34 @@ $apply-friendly-box-model:                                   false !default;
 
 %u-width-fill-remaining-space,
 .u-width-fill-remaining-space {
-  display: block;
-  overflow: hidden;
-  width: auto;
+  display: block !important;
+  overflow: hidden !important;
+  width: auto !important;
 }
 
 @if $u-width-apply-at-breakpoints-for-fill-remaining-space {
   @include generate-at-breakpoints('.u-width-fill-remaining-space',
     $u-width-intrinsic-apply-at-breakpoints) {
-    display: block;
-    overflow: hidden;
-    width: auto;
+    display: block !important;
+    overflow: hidden !important;
+    width: auto !important;
   }
 }// endif
 
 // Alternative method
 %u-width-fill-remaining-space-alt,
 .u-width-fill-remaining-space-alt {
-  display: table-cell;
-  max-width: 100%;
-  width: 10000px;
+  display: table-cell !important;
+  max-width: 100% !important;
+  width: 10000px !important;
 }
 
 @if $u-width-apply-at-breakpoints-for-fill-remaining-space-alt {
   @include generate-at-breakpoints('.u-width-fill-remaining-space-alt',
     $u-width-intrinsic-apply-at-breakpoints) {
-    display: table-cell;
-    max-width: 100%;
-    width: 10000px;
+    display: table-cell !important;
+    max-width: 100% !important;
+    width: 10000px !important;
   }
 }// endif
 
@@ -244,22 +244,22 @@ $apply-friendly-box-model:                                   false !default;
 
 %u-width-full-bleed,
 .u-width-full-bleed {
-  display: block;
-  width: 100%;
+  display: block !important;
+  width: 100% !important;
 
   @if $apply-friendly-box-model == false {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }//endif
 }
 
 @if $u-width-apply-at-breakpoints-for-full-bleed {
   @include generate-at-breakpoints('.u-width-full-bleed',
     $u-width-intrinsic-apply-at-breakpoints) {
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
 
     @if $apply-friendly-box-model == false {
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }//endif
   }
 }// endif
