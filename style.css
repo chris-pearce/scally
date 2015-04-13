@@ -42,12 +42,12 @@
  * simply redeclare it above the relevant `@import`, like so:
  *
    $font-size: 14;
-   @import "bower_components/scally/core/settings/typography";
+   @import "[path-to-where-package-mgr-lives]/scally/core/settings/typography";
  *
  * If you want to use a Scally setting to override something then you need to
  * define the override below the `@import`, like so:
  *
-   @import "bower_components/scally/core/settings/colours";
+   @import "[path-to-where-package-mgr-lives]/scally/core/settings/colours";
    $color-text-base: $color-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
@@ -55,22 +55,22 @@
  *
  * All non-Core settings need to be overridden above the `@import`, like so:
  *
-   $u-arrow-size-base: 14;
-   $u-arrow-color: orange;
-   @import "bower_components/scally/utilities/u-arrow";
+   $o-arrow-size-base: 14;
+   $o-arrow-color: orange;
+   @import "[path-to-where-package-mgr-lives]/scally/objects/o-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
  * completely modify how Scally works without ever having to alter the
  * framework itself.
  *
  * N.B. the order specified below must always be followed or Scally will
- * break and if you're not using Bower or you customise where Bower installs
- * then you'll need to update the `@import` paths accordingly.
+ * break.
  *
  * Contents:
  *
  * CORE
  * LAYOUT
+ * OBJECTS
  * COMPONENTS
  * UTILITIES
  */
@@ -1125,38 +1125,21 @@ ins {
   border-bottom: 1px solid; }
 
 /* ============================================================================
-   @CORE -> @DEBUG
-   ========================================================================= */
-/**
- * Enable this stylesheet to visually detect any improperly nested or
- * potentially invalid markup, or any potentially inaccessible code.
- *
- * Legend:
- * - Red    = definite error.
- * - Yellow = double-check.
- * - None   = should be fine.
- *
- * @credit
- * https://github.com/csswizardry/inuit.css/blob/master/inuit.css/generic/_debug.scss
- */
-/**
- * Settings.
- */
-/* ============================================================================
    @CORE -> BASE -> ROOT
    ========================================================================= */
 /**
  * The root element: `html`.
- *
+ */
+/**
+ * Settings.
+ */
+/**
  * 1. Set the default `font-size`, `line-height` and `font-family` for the
  *    entire project, sourced from the Scally settings. The `font-size` is
  *    calculated to exist in `em`s, the `line-height` is calculated to exist
  *    unitlessly.
  * 2. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
- */
-/**
- * Settings.
  */
 html {
   font: 1em/1.5 Arial, sans-serif;
@@ -1580,6 +1563,9 @@ h1, .h1, h2, .h2, h3, .h3, hr, p {
 h4, .h4, h5, .h5, h6, .h6 {
   margin-bottom: 0.75rem; }
 
+/**
+ * Remove from the last children.
+ */
 h1:last-child, .h1:last-child, h2:last-child, .h2:last-child, h3:last-child, .h3:last-child, hr:last-child, p:last-child,
 h4:last-child,
 .h4:last-child,
@@ -2854,15 +2840,18 @@ li:before {
 /*
  * Modifier: hover version.
  *
- * 1. Apply a transition?
- * 2. Make transparent by default.
- * 3. Turn off pointer events for safe measure.
+ * 1. Apply positioning context for the pseudo element.
+ * 2. Apply a transition?
+ * 3. Make transparent by default.
+ * 4. Turn off pointer events for safe measure.
  */
-.o-overlay--hover:before {
-  content: "";
-  transition: background-color 0.2s ease;
-  background-color: transparent;
-  pointer-events: none; }
+.o-overlay--hover {
+  position: relative; }
+  .o-overlay--hover:before {
+    content: "";
+    transition: background-color 0.2s ease;
+    background-color: transparent;
+    pointer-events: none; }
 
 .o-overlay--hover.o-overlay--dark:hover:before,
 .o-overlay--hover.o-overlay--dark:focus:before {
@@ -3194,10 +3183,6 @@ li:before {
 /**
  * Make an element expand to contain floated children.
  *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-clear-fix
- *
  * @demo
  * http://codepen.io/chris-pearce/full/LEQrbV
  */
@@ -3208,9 +3193,9 @@ li:before {
  * Apply at these breakpoints.
  */
 .u-clear-fix:after {
-  content: "";
-  display: table;
-  clear: both; }
+  content: "" !important;
+  display: table !important;
+  clear: both !important; }
 
 /* ============================================================================
    @UTILITIES -> TEXT
@@ -3264,115 +3249,115 @@ li:before {
  * Size.
  */
 .u-text-size-small {
-  font-size: 0.9375rem;
-  line-height: 1.6; }
+  font-size: 0.9375rem!important;
+  line-height: 1.6!important; }
 
 .u-text-size-x-small {
-  font-size: 0.875rem;
-  line-height: 1.71429; }
+  font-size: 0.875rem!important;
+  line-height: 1.71429!important; }
 
 .u-text-size-xx-small {
-  font-size: 0.8125rem;
-  line-height: 1.84615; }
+  font-size: 0.8125rem!important;
+  line-height: 1.84615!important; }
 
 .u-text-size-xxx-small {
-  font-size: 0.75rem;
-  line-height: 2; }
+  font-size: 0.75rem!important;
+  line-height: 2!important; }
 
 .u-text-size-large {
-  font-size: 1.0625rem;
-  line-height: 1.41176; }
+  font-size: 1.0625rem!important;
+  line-height: 1.41176!important; }
 
 .u-text-size-x-large {
-  font-size: 1.125rem;
-  line-height: 1.33333; }
+  font-size: 1.125rem!important;
+  line-height: 1.33333!important; }
 
 .u-text-size-xx-large {
-  font-size: 1.1875rem;
-  line-height: 1.26316; }
+  font-size: 1.1875rem!important;
+  line-height: 1.26316!important; }
 
 .u-text-size-xxx-large {
-  font-size: 1.25rem;
-  line-height: 1.2; }
+  font-size: 1.25rem!important;
+  line-height: 1.2!important; }
 
 .u-text-size-base {
-  font-size: 1rem;
-  line-height: 1.5; }
+  font-size: 1rem!important;
+  line-height: 1.5!important; }
 
 .u-text-size-inherit {
-  font-size: inherit; }
+  font-size: inherit !important; }
 
 /**
  * Alignment.
  */
 .u-text-align-center {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-text-align-left {
-  text-align: left; }
+  text-align: left !important; }
 
 .u-text-align-right {
-  text-align: right; }
+  text-align: right !important; }
 
 .u-text-align-inherit {
-  text-align: inherit; }
+  text-align: inherit !important; }
 
 /**
  * Style.
  */
 .u-text-style-italic {
-  font-style: italic; }
+  font-style: italic !important; }
 
 .u-text-style-normal {
-  font-style: normal; }
+  font-style: normal !important; }
 
 .u-text-style-inherit {
-  font-style: inherit; }
+  font-style: inherit !important; }
 
 /**
  * Weight.
  */
 .u-text-weight-lighter {
-  font-weight: lighter; }
+  font-weight: lighter !important; }
 
 .u-text-weight-bold {
-  font-weight: bold; }
+  font-weight: bold !important; }
 
 .u-text-weight-inherit {
-  font-weight: inherit; }
+  font-weight: inherit !important; }
 
 .u-text-weight-normal {
-  font-weight: normal; }
+  font-weight: normal !important; }
 
 /**
  * Transform.
  */
 .u-text-transform-uppercase {
-  text-transform: uppercase; }
+  text-transform: uppercase !important; }
 
 .u-text-transform-lowercase {
-  text-transform: lowercase; }
+  text-transform: lowercase !important; }
 
 .u-text-transform-capitalise {
-  text-transform: capitalize; }
+  text-transform: capitalize !important; }
 
 .u-text-transform-inherit {
-  text-transform: inherit; }
+  text-transform: inherit !important; }
 
 .u-text-transform-none {
-  text-transform: none; }
+  text-transform: none !important; }
 
 /**
  * Whitespace.
  */
 .u-text-whitespace-normal {
-  white-space: normal; }
+  white-space: normal !important; }
 
 .u-text-whitespace-pre {
-  white-space: pre; }
+  white-space: pre !important; }
 
 .u-text-whitespace-nowrap {
-  white-space: nowrap; }
+  white-space: nowrap !important; }
 
 /**
  * Truncation.
@@ -3388,11 +3373,11 @@ li:before {
  * https://github.com/suitcss/utils-text/blob/master/lib/text.css
  */
 .u-text-truncate {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal; }
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important; }
 
 /**
  * Enables font kerning in all browsers.
@@ -3405,9 +3390,9 @@ li:before {
  * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
  */
 .u-text-kern {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  text-rendering: optimizeLegibility !important;
+  font-feature-settings: "kern" 1 !important;
+  font-kerning: normal !important; }
 
 /**
  * Word breaking.
@@ -3415,13 +3400,13 @@ li:before {
  * Break strings when their length exceeds the width of their container.
  */
 .u-text-break-word {
-  word-wrap: break-word; }
+  word-wrap: break-word !important; }
 
 /**
  * Hyphenation.
  */
 .u-text-hyphenate {
-  hyphens: auto; }
+  hyphens: auto !important; }
 
 /* ============================================================================
    @UTILITIES -> WIDTHS
@@ -3568,12 +3553,12 @@ li:before {
  * Make an element shrink wrap its content.
  */
 .u-width-shrink-wrap {
-  display: block;
-  float: left;
-  width: auto; }
+  display: block !important;
+  float: left !important;
+  width: auto !important; }
 
 .u-width-shrink-wrap--right {
-  float: right; }
+  float: right !important; }
 
 /**
  * Make an element fill the remaining space.
@@ -3583,21 +3568,21 @@ li:before {
  * in undesired layout.
  */
 .u-width-fill-remaining-space {
-  display: block;
-  overflow: hidden;
-  width: auto; }
+  display: block !important;
+  overflow: hidden !important;
+  width: auto !important; }
 
 .u-width-fill-remaining-space-alt {
-  display: table-cell;
-  max-width: 100%;
-  width: 10000px; }
+  display: table-cell !important;
+  max-width: 100% !important;
+  width: 10000px !important; }
 
 /**
  * Make an element the width of its parent.
  */
 .u-width-full-bleed {
-  display: block;
-  width: 100%; }
+  display: block !important;
+  width: 100% !important; }
 
 /**
  * Percentage widths.
@@ -4036,32 +4021,32 @@ li:before {
  * Inline vertical alignments.
  */
 .u-align-v-inline-top {
-  vertical-align: top; }
+  vertical-align: top !important; }
 
 .u-align-v-inline-middle {
-  vertical-align: middle; }
+  vertical-align: middle !important; }
 
 .u-align-v-inline-baseline {
-  vertical-align: baseline; }
+  vertical-align: baseline !important; }
 
 .u-align-v-inline-bottom {
-  vertical-align: bottom; }
+  vertical-align: bottom !important; }
 
 .u-align-v-inline-inherit {
-  vertical-align: inherit; }
+  vertical-align: inherit !important; }
 
 /**
  * Block level vertical alignments.
  */
 .u-align-v-block-middle-flexbox {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; }
 
 .u-align-v-block-middle-position {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%); }
+  position: relative !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important; }
 
 /**
  * Center align a block level element.
@@ -4069,9 +4054,9 @@ li:before {
  * 1. Make it work on inline elements e.g. `img`.
  */
 .u-align-center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 /* ============================================================================
    @UTILITIES -> TOGGLE VISIBILITY
@@ -4094,28 +4079,28 @@ li:before {
  * Apply at these breakpoints (turned off by default).
  */
 .u-toggle-visibility {
-  display: none; }
+  display: none !important; }
   .u-toggle-visibility.is-visible, .no-js
   .u-toggle-visibility {
-    display: block; }
+    display: block !important; }
 
 /**
  * For `inline` elements.
  */
 .u-toggle-visibility-inline {
-  display: none; }
+  display: none !important; }
   .u-toggle-visibility-inline.is-visible, .no-js
   .u-toggle-visibility-inline {
-    display: inline; }
+    display: inline !important; }
 
 /**
  * For `inline-block` elements.
  */
 .u-toggle-visibility-inline-block {
-  display: none; }
+  display: none !important; }
   .u-toggle-visibility-inline-block.is-visible, .no-js
   .u-toggle-visibility-inline-block {
-    display: inline-block; }
+    display: inline-block !important; }
 
 /* ============================================================================
    @UTILITIES -> MOMENTUM SCROLLING
@@ -4126,10 +4111,6 @@ li:before {
  * eventually slowing down and stopping as if friction is slowing it down. You
  * might think that any element with scrolling would have this behavior as
  * well, but it doesn't. You can add it back by applying this utility.
- *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-momentum-scrolling
  */
 /**
  * Settings.
@@ -4138,8 +4119,8 @@ li:before {
  * Apply at these breakpoints (turned off by default).
  */
 .u-momentum-scrolling {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; }
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important; }
 
 /* ============================================================================
    @UTILITIES -> FLOAT
@@ -4166,19 +4147,19 @@ li:before {
  * Left.
  */
 .u-float-left {
-  float: left; }
+  float: left !important; }
 
 /**
  * Right.
  */
 .u-float-right {
-  float: right; }
+  float: right !important; }
 
 /**
  * None.
  */
 .u-float-none {
-  float: none; }
+  float: none !important; }
 
 /* ============================================================================
    @UTILITIES -> NEW BLOCK FORMATTING CONTEXT (NBFC)
@@ -4215,8 +4196,8 @@ li:before {
  * exceed its width.
  */
 .u-nbfc {
-  display: table-cell;
-  width: 10000px; }
+  display: table-cell !important;
+  width: 10000px !important; }
 
 /**
  * Alternate version.
@@ -4224,7 +4205,7 @@ li:before {
  * N.B. this will clip overflow. Best to go with the default version above.
  */
 .u-nbfc-alt {
-  overflow: hidden; }
+  overflow: hidden !important; }
 
 /* ============================================================================
    @UTILITIES -> GPU ACCELERATED
@@ -4235,15 +4216,12 @@ li:before {
  * sake of hardware acceleration. So make sure to understand when and when
  * not to use this.
  *
- * N.B. the new `will-change` property will eventually make this hack redundant,
- * see: http://www.sitepoint.com/introduction-css-will-change-property/.
- *
- * All the utilities (available as silent placeholder selectors also):
- *
-   .u-gpu-accelerated
+ * N.B. the new `will-change` property will eventually make this hack
+ * redundant, see:
+ * http://www.sitepoint.com/introduction-css-will-change-property/.
  */
 .u-gpu-accelerated {
-  transform: translate3d(0, 0, 0); }
+  transform: translate3d(0, 0, 0) !important; }
 
 /* ============================================================================
    @UTILITIES -> POSITION
@@ -4284,100 +4262,100 @@ li:before {
  * Standard positioning properties.
  */
 .u-position-relative {
-  position: relative; }
+  position: relative !important; }
 
 .u-position-absolute {
-  position: absolute; }
+  position: absolute !important; }
 
 .u-position-fixed {
-  position: fixed; }
+  position: fixed !important; }
 
 .u-position-static {
-  position: static; }
+  position: static !important; }
 
 /**
  * Different ways to position an element.
  */
 .u-position-left {
-  position: absolute;
-  left: 0; }
+  position: absolute !important;
+  left: 0 !important; }
 
 .u-position-right {
-  position: absolute;
-  right: 0; }
+  position: absolute !important;
+  right: 0 !important; }
 
 .u-position-top {
-  position: absolute;
-  top: 0; }
+  position: absolute !important;
+  top: 0 !important; }
 
 .u-position-bottom {
-  position: absolute;
-  bottom: 0; }
+  position: absolute !important;
+  bottom: 0 !important; }
 
 .u-position-top-left {
-  position: absolute;
-  top: 0;
-  left: 0; }
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important; }
 
 .u-position-top-right {
-  position: absolute;
-  top: 0;
-  right: 0; }
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important; }
 
 .u-position-bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0; }
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important; }
 
 .u-position-bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0; }
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important; }
 
 .u-position-pin-all {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; }
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important; }
 
 .u-position-pin-ends {
-  position: absolute;
-  top: 0;
-  bottom: 0; }
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important; }
 
 .u-position-pin-sides {
-  position: absolute;
-  left: 0;
-  right: 0; }
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important; }
 
 .u-position-pin-sides-top {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0; }
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important; }
 
 .u-position-pin-sides-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0; }
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important; }
 
 .u-position-v-middle {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); }
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important; }
 
 .u-position-h-middle {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); }
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important; }
 
 .u-position-middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important; }
 
 /* ============================================================================
    @UTILITIES -> DISPLAY
@@ -4401,19 +4379,19 @@ li:before {
  * Block.
  */
 .u-display-block {
-  display: block; }
+  display: block !important; }
 
 /**
  * Inline.
  */
 .u-display-inline {
-  display: inline; }
+  display: inline !important; }
 
 /**
  * Inline-block.
  */
 .u-display-inline-block {
-  display: inline-block; }
+  display: inline-block !important; }
 
 /* ============================================================================
    @UTILITIES -> SPACING
@@ -4468,13 +4446,13 @@ li:before {
  * 6. Spacing remove:           this is explicit
  * 7. Spacing amount:           this is explicit
  *
- * As they're so many spacing utilities the format for applying them at different
- * breakpoints in your master stylesheet is a little different to the
+ * As they're so many spacing utilities the format for applying them at
+ * different breakpoints in your master stylesheet is a little different to the
  * standard format. In addition to listing your breakpoints we have to list out
  * the exact spacing utility classes we want those breakpoints applied to. So
  * say we wanted to apply 3 `margin-bottom` spacing utilities at the 'Small',
- * 'Base', and 'Large' sizing categories which are applied to the 'Palm' and 'Lap'
- * breakpoints plus at a breakpoint of '886', we would do it like this:
+ * 'Base', and 'Large' sizing categories which are applied to the 'Palm' and
+ * 'Lap' breakpoints plus at a breakpoint of '886', we would do it like this:
  *
    $u-spacing-apply-at-breakpoints: (palm, lap, 886);
    $u-spacing-apply-classes-for-breakpoints: (
@@ -4700,620 +4678,620 @@ li:before {
  * Base.
  */
 .u-s-m-base {
-  margin: 1.5rem; }
+  margin: 1.5rem!important; }
 
 .u-s-p-base {
-  padding: 1.5rem; }
+  padding: 1.5rem!important; }
 
 .u-s-m-n-base {
-  margin: -1.5rem; }
+  margin: -1.5rem!important; }
 
 .u-s-p-n-base {
-  padding: -1.5rem; }
+  padding: -1.5rem!important; }
 
 .u-s-mt-base {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem!important; }
 
 .u-s-pt-base {
-  padding-top: 1.5rem; }
+  padding-top: 1.5rem!important; }
 
 .u-s-mt-n-base {
-  margin-top: -1.5rem; }
+  margin-top: -1.5rem!important; }
 
 .u-s-pt-n-base {
-  padding-top: -1.5rem; }
+  padding-top: -1.5rem!important; }
 
 .u-s-mr-base {
-  margin-right: 1.5rem; }
+  margin-right: 1.5rem!important; }
 
 .u-s-pr-base {
-  padding-right: 1.5rem; }
+  padding-right: 1.5rem!important; }
 
 .u-s-mr-n-base {
-  margin-right: -1.5rem; }
+  margin-right: -1.5rem!important; }
 
 .u-s-pr-n-base {
-  padding-right: -1.5rem; }
+  padding-right: -1.5rem!important; }
 
 .u-s-mb-base {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem!important; }
 
 .u-s-pb-base {
-  padding-bottom: 1.5rem; }
+  padding-bottom: 1.5rem!important; }
 
 .u-s-mb-n-base {
-  margin-bottom: -1.5rem; }
+  margin-bottom: -1.5rem!important; }
 
 .u-s-pb-n-base {
-  padding-bottom: -1.5rem; }
+  padding-bottom: -1.5rem!important; }
 
 .u-s-ml-base {
-  margin-left: 1.5rem; }
+  margin-left: 1.5rem!important; }
 
 .u-s-pl-base {
-  padding-left: 1.5rem; }
+  padding-left: 1.5rem!important; }
 
 .u-s-ml-n-base {
-  margin-left: -1.5rem; }
+  margin-left: -1.5rem!important; }
 
 .u-s-pl-n-base {
-  padding-left: -1.5rem; }
+  padding-left: -1.5rem!important; }
 
 .u-s-ms-base {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem; }
+  margin-left: 1.5rem!important;
+  margin-right: 1.5rem!important; }
 
 .u-s-ps-base {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem; }
+  padding-left: 1.5rem!important;
+  padding-right: 1.5rem!important; }
 
 .u-s-ms-n-base {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem; }
+  margin-left: -1.5rem!important;
+  margin-right: -1.5rem!important; }
 
 .u-s-ps-n-base {
-  padding-left: -1.5rem;
-  padding-right: -1.5rem; }
+  padding-left: -1.5rem!important;
+  padding-right: -1.5rem!important; }
 
 .u-s-me-base {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem; }
+  margin-top: 1.5rem!important;
+  margin-bottom: 1.5rem!important; }
 
 .u-s-pe-base {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem; }
+  padding-top: 1.5rem!important;
+  padding-bottom: 1.5rem!important; }
 
 .u-s-me-n-base {
-  margin-top: -1.5rem;
-  margin-bottom: -1.5rem; }
+  margin-top: -1.5rem!important;
+  margin-bottom: -1.5rem!important; }
 
 .u-s-pe-n-base {
-  padding-top: -1.5rem;
-  padding-bottom: -1.5rem; }
+  padding-top: -1.5rem!important;
+  padding-bottom: -1.5rem!important; }
 
 /**
  * Micro.
  */
 .u-s-m-micro {
-  margin: 0.125rem; }
+  margin: 0.125rem!important; }
 
 .u-s-p-micro {
-  padding: 0.125rem; }
+  padding: 0.125rem!important; }
 
 .u-s-m-n-micro {
-  margin: -0.125rem; }
+  margin: -0.125rem!important; }
 
 .u-s-p-n-micro {
-  padding: -0.125rem; }
+  padding: -0.125rem!important; }
 
 .u-s-mt-micro {
-  margin-top: 0.125rem; }
+  margin-top: 0.125rem!important; }
 
 .u-s-pt-micro {
-  padding-top: 0.125rem; }
+  padding-top: 0.125rem!important; }
 
 .u-s-mt-n-micro {
-  margin-top: -0.125rem; }
+  margin-top: -0.125rem!important; }
 
 .u-s-pt-n-micro {
-  padding-top: -0.125rem; }
+  padding-top: -0.125rem!important; }
 
 .u-s-mr-micro {
-  margin-right: 0.125rem; }
+  margin-right: 0.125rem!important; }
 
 .u-s-pr-micro {
-  padding-right: 0.125rem; }
+  padding-right: 0.125rem!important; }
 
 .u-s-mr-n-micro {
-  margin-right: -0.125rem; }
+  margin-right: -0.125rem!important; }
 
 .u-s-pr-n-micro {
-  padding-right: -0.125rem; }
+  padding-right: -0.125rem!important; }
 
 .u-s-mb-micro {
-  margin-bottom: 0.125rem; }
+  margin-bottom: 0.125rem!important; }
 
 .u-s-pb-micro {
-  padding-bottom: 0.125rem; }
+  padding-bottom: 0.125rem!important; }
 
 .u-s-mb-n-micro {
-  margin-bottom: -0.125rem; }
+  margin-bottom: -0.125rem!important; }
 
 .u-s-pb-n-micro {
-  padding-bottom: -0.125rem; }
+  padding-bottom: -0.125rem!important; }
 
 .u-s-ml-micro {
-  margin-left: 0.125rem; }
+  margin-left: 0.125rem!important; }
 
 .u-s-pl-micro {
-  padding-left: 0.125rem; }
+  padding-left: 0.125rem!important; }
 
 .u-s-ml-n-micro {
-  margin-left: -0.125rem; }
+  margin-left: -0.125rem!important; }
 
 .u-s-pl-n-micro {
-  padding-left: -0.125rem; }
+  padding-left: -0.125rem!important; }
 
 .u-s-ms-micro {
-  margin-left: 0.125rem;
-  margin-right: 0.125rem; }
+  margin-left: 0.125rem!important;
+  margin-right: 0.125rem!important; }
 
 .u-s-ps-micro {
-  padding-left: 0.125rem;
-  padding-right: 0.125rem; }
+  padding-left: 0.125rem!important;
+  padding-right: 0.125rem!important; }
 
 .u-s-ms-n-micro {
-  margin-left: -0.125rem;
-  margin-right: -0.125rem; }
+  margin-left: -0.125rem!important;
+  margin-right: -0.125rem!important; }
 
 .u-s-ps-n-micro {
-  padding-left: -0.125rem;
-  padding-right: -0.125rem; }
+  padding-left: -0.125rem!important;
+  padding-right: -0.125rem!important; }
 
 .u-s-me-micro {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem; }
+  margin-top: 0.125rem!important;
+  margin-bottom: 0.125rem!important; }
 
 .u-s-pe-micro {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem; }
+  padding-top: 0.125rem!important;
+  padding-bottom: 0.125rem!important; }
 
 .u-s-me-n-micro {
-  margin-top: -0.125rem;
-  margin-bottom: -0.125rem; }
+  margin-top: -0.125rem!important;
+  margin-bottom: -0.125rem!important; }
 
 .u-s-pe-n-micro {
-  padding-top: -0.125rem;
-  padding-bottom: -0.125rem; }
+  padding-top: -0.125rem!important;
+  padding-bottom: -0.125rem!important; }
 
 /**
  * Tiny.
  */
 .u-s-m-tiny {
-  margin: 0.5rem; }
+  margin: 0.5rem!important; }
 
 .u-s-p-tiny {
-  padding: 0.5rem; }
+  padding: 0.5rem!important; }
 
 .u-s-m-n-tiny {
-  margin: -0.5rem; }
+  margin: -0.5rem!important; }
 
 .u-s-p-n-tiny {
-  padding: -0.5rem; }
+  padding: -0.5rem!important; }
 
 .u-s-mt-tiny {
-  margin-top: 0.5rem; }
+  margin-top: 0.5rem!important; }
 
 .u-s-pt-tiny {
-  padding-top: 0.5rem; }
+  padding-top: 0.5rem!important; }
 
 .u-s-mt-n-tiny {
-  margin-top: -0.5rem; }
+  margin-top: -0.5rem!important; }
 
 .u-s-pt-n-tiny {
-  padding-top: -0.5rem; }
+  padding-top: -0.5rem!important; }
 
 .u-s-mr-tiny {
-  margin-right: 0.5rem; }
+  margin-right: 0.5rem!important; }
 
 .u-s-pr-tiny {
-  padding-right: 0.5rem; }
+  padding-right: 0.5rem!important; }
 
 .u-s-mr-n-tiny {
-  margin-right: -0.5rem; }
+  margin-right: -0.5rem!important; }
 
 .u-s-pr-n-tiny {
-  padding-right: -0.5rem; }
+  padding-right: -0.5rem!important; }
 
 .u-s-mb-tiny {
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem!important; }
 
 .u-s-pb-tiny {
-  padding-bottom: 0.5rem; }
+  padding-bottom: 0.5rem!important; }
 
 .u-s-mb-n-tiny {
-  margin-bottom: -0.5rem; }
+  margin-bottom: -0.5rem!important; }
 
 .u-s-pb-n-tiny {
-  padding-bottom: -0.5rem; }
+  padding-bottom: -0.5rem!important; }
 
 .u-s-ml-tiny {
-  margin-left: 0.5rem; }
+  margin-left: 0.5rem!important; }
 
 .u-s-pl-tiny {
-  padding-left: 0.5rem; }
+  padding-left: 0.5rem!important; }
 
 .u-s-ml-n-tiny {
-  margin-left: -0.5rem; }
+  margin-left: -0.5rem!important; }
 
 .u-s-pl-n-tiny {
-  padding-left: -0.5rem; }
+  padding-left: -0.5rem!important; }
 
 .u-s-ms-tiny {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem; }
+  margin-left: 0.5rem!important;
+  margin-right: 0.5rem!important; }
 
 .u-s-ps-tiny {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem; }
+  padding-left: 0.5rem!important;
+  padding-right: 0.5rem!important; }
 
 .u-s-ms-n-tiny {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem; }
+  margin-left: -0.5rem!important;
+  margin-right: -0.5rem!important; }
 
 .u-s-ps-n-tiny {
-  padding-left: -0.5rem;
-  padding-right: -0.5rem; }
+  padding-left: -0.5rem!important;
+  padding-right: -0.5rem!important; }
 
 .u-s-me-tiny {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem; }
+  margin-top: 0.5rem!important;
+  margin-bottom: 0.5rem!important; }
 
 .u-s-pe-tiny {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
+  padding-top: 0.5rem!important;
+  padding-bottom: 0.5rem!important; }
 
 .u-s-me-n-tiny {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem; }
+  margin-top: -0.5rem!important;
+  margin-bottom: -0.5rem!important; }
 
 .u-s-pe-n-tiny {
-  padding-top: -0.5rem;
-  padding-bottom: -0.5rem; }
+  padding-top: -0.5rem!important;
+  padding-bottom: -0.5rem!important; }
 
 /**
  * Small.
  */
 .u-s-m-small {
-  margin: 0.75rem; }
+  margin: 0.75rem!important; }
 
 .u-s-p-small {
-  padding: 0.75rem; }
+  padding: 0.75rem!important; }
 
 .u-s-m-n-small {
-  margin: -0.75rem; }
+  margin: -0.75rem!important; }
 
 .u-s-p-n-small {
-  padding: -0.75rem; }
+  padding: -0.75rem!important; }
 
 .u-s-mt-small {
-  margin-top: 0.75rem; }
+  margin-top: 0.75rem!important; }
 
 .u-s-pt-small {
-  padding-top: 0.75rem; }
+  padding-top: 0.75rem!important; }
 
 .u-s-mt-n-small {
-  margin-top: -0.75rem; }
+  margin-top: -0.75rem!important; }
 
 .u-s-pt-n-small {
-  padding-top: -0.75rem; }
+  padding-top: -0.75rem!important; }
 
 .u-s-mr-small {
-  margin-right: 0.75rem; }
+  margin-right: 0.75rem!important; }
 
 .u-s-pr-small {
-  padding-right: 0.75rem; }
+  padding-right: 0.75rem!important; }
 
 .u-s-mr-n-small {
-  margin-right: -0.75rem; }
+  margin-right: -0.75rem!important; }
 
 .u-s-pr-n-small {
-  padding-right: -0.75rem; }
+  padding-right: -0.75rem!important; }
 
 .u-s-mb-small {
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.75rem!important; }
 
 .u-s-pb-small {
-  padding-bottom: 0.75rem; }
+  padding-bottom: 0.75rem!important; }
 
 .u-s-mb-n-small {
-  margin-bottom: -0.75rem; }
+  margin-bottom: -0.75rem!important; }
 
 .u-s-pb-n-small {
-  padding-bottom: -0.75rem; }
+  padding-bottom: -0.75rem!important; }
 
 .u-s-ml-small {
-  margin-left: 0.75rem; }
+  margin-left: 0.75rem!important; }
 
 .u-s-pl-small {
-  padding-left: 0.75rem; }
+  padding-left: 0.75rem!important; }
 
 .u-s-ml-n-small {
-  margin-left: -0.75rem; }
+  margin-left: -0.75rem!important; }
 
 .u-s-pl-n-small {
-  padding-left: -0.75rem; }
+  padding-left: -0.75rem!important; }
 
 .u-s-ms-small {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem; }
+  margin-left: 0.75rem!important;
+  margin-right: 0.75rem!important; }
 
 .u-s-ps-small {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem; }
+  padding-left: 0.75rem!important;
+  padding-right: 0.75rem!important; }
 
 .u-s-ms-n-small {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem; }
+  margin-left: -0.75rem!important;
+  margin-right: -0.75rem!important; }
 
 .u-s-ps-n-small {
-  padding-left: -0.75rem;
-  padding-right: -0.75rem; }
+  padding-left: -0.75rem!important;
+  padding-right: -0.75rem!important; }
 
 .u-s-me-small {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem; }
+  margin-top: 0.75rem!important;
+  margin-bottom: 0.75rem!important; }
 
 .u-s-pe-small {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem; }
+  padding-top: 0.75rem!important;
+  padding-bottom: 0.75rem!important; }
 
 .u-s-me-n-small {
-  margin-top: -0.75rem;
-  margin-bottom: -0.75rem; }
+  margin-top: -0.75rem!important;
+  margin-bottom: -0.75rem!important; }
 
 .u-s-pe-n-small {
-  padding-top: -0.75rem;
-  padding-bottom: -0.75rem; }
+  padding-top: -0.75rem!important;
+  padding-bottom: -0.75rem!important; }
 
 /**
  * Large.
  */
 .u-s-m-large {
-  margin: 2.25rem; }
+  margin: 2.25rem!important; }
 
 .u-s-p-large {
-  padding: 2.25rem; }
+  padding: 2.25rem!important; }
 
 .u-s-m-n-large {
-  margin: -2.25rem; }
+  margin: -2.25rem!important; }
 
 .u-s-p-n-large {
-  padding: -2.25rem; }
+  padding: -2.25rem!important; }
 
 .u-s-mt-large {
-  margin-top: 2.25rem; }
+  margin-top: 2.25rem!important; }
 
 .u-s-pt-large {
-  padding-top: 2.25rem; }
+  padding-top: 2.25rem!important; }
 
 .u-s-mt-n-large {
-  margin-top: -2.25rem; }
+  margin-top: -2.25rem!important; }
 
 .u-s-pt-n-large {
-  padding-top: -2.25rem; }
+  padding-top: -2.25rem!important; }
 
 .u-s-mr-large {
-  margin-right: 2.25rem; }
+  margin-right: 2.25rem!important; }
 
 .u-s-pr-large {
-  padding-right: 2.25rem; }
+  padding-right: 2.25rem!important; }
 
 .u-s-mr-n-large {
-  margin-right: -2.25rem; }
+  margin-right: -2.25rem!important; }
 
 .u-s-pr-n-large {
-  padding-right: -2.25rem; }
+  padding-right: -2.25rem!important; }
 
 .u-s-mb-large {
-  margin-bottom: 2.25rem; }
+  margin-bottom: 2.25rem!important; }
 
 .u-s-pb-large {
-  padding-bottom: 2.25rem; }
+  padding-bottom: 2.25rem!important; }
 
 .u-s-mb-n-large {
-  margin-bottom: -2.25rem; }
+  margin-bottom: -2.25rem!important; }
 
 .u-s-pb-n-large {
-  padding-bottom: -2.25rem; }
+  padding-bottom: -2.25rem!important; }
 
 .u-s-ml-large {
-  margin-left: 2.25rem; }
+  margin-left: 2.25rem!important; }
 
 .u-s-pl-large {
-  padding-left: 2.25rem; }
+  padding-left: 2.25rem!important; }
 
 .u-s-ml-n-large {
-  margin-left: -2.25rem; }
+  margin-left: -2.25rem!important; }
 
 .u-s-pl-n-large {
-  padding-left: -2.25rem; }
+  padding-left: -2.25rem!important; }
 
 .u-s-ms-large {
-  margin-left: 2.25rem;
-  margin-right: 2.25rem; }
+  margin-left: 2.25rem!important;
+  margin-right: 2.25rem!important; }
 
 .u-s-ps-large {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem; }
+  padding-left: 2.25rem!important;
+  padding-right: 2.25rem!important; }
 
 .u-s-ms-n-large {
-  margin-left: -2.25rem;
-  margin-right: -2.25rem; }
+  margin-left: -2.25rem!important;
+  margin-right: -2.25rem!important; }
 
 .u-s-ps-n-large {
-  padding-left: -2.25rem;
-  padding-right: -2.25rem; }
+  padding-left: -2.25rem!important;
+  padding-right: -2.25rem!important; }
 
 .u-s-me-large {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem; }
+  margin-top: 2.25rem!important;
+  margin-bottom: 2.25rem!important; }
 
 .u-s-pe-large {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem; }
+  padding-top: 2.25rem!important;
+  padding-bottom: 2.25rem!important; }
 
 .u-s-me-n-large {
-  margin-top: -2.25rem;
-  margin-bottom: -2.25rem; }
+  margin-top: -2.25rem!important;
+  margin-bottom: -2.25rem!important; }
 
 .u-s-pe-n-large {
-  padding-top: -2.25rem;
-  padding-bottom: -2.25rem; }
+  padding-top: -2.25rem!important;
+  padding-bottom: -2.25rem!important; }
 
 /**
  * Huge.
  */
 .u-s-m-huge {
-  margin: 3rem; }
+  margin: 3rem!important; }
 
 .u-s-p-huge {
-  padding: 3rem; }
+  padding: 3rem!important; }
 
 .u-s-m-n-huge {
-  margin: -3rem; }
+  margin: -3rem!important; }
 
 .u-s-p-n-huge {
-  padding: -3rem; }
+  padding: -3rem!important; }
 
 .u-s-mt-huge {
-  margin-top: 3rem; }
+  margin-top: 3rem!important; }
 
 .u-s-pt-huge {
-  padding-top: 3rem; }
+  padding-top: 3rem!important; }
 
 .u-s-mt-n-huge {
-  margin-top: -3rem; }
+  margin-top: -3rem!important; }
 
 .u-s-pt-n-huge {
-  padding-top: -3rem; }
+  padding-top: -3rem!important; }
 
 .u-s-mr-huge {
-  margin-right: 3rem; }
+  margin-right: 3rem!important; }
 
 .u-s-pr-huge {
-  padding-right: 3rem; }
+  padding-right: 3rem!important; }
 
 .u-s-mr-n-huge {
-  margin-right: -3rem; }
+  margin-right: -3rem!important; }
 
 .u-s-pr-n-huge {
-  padding-right: -3rem; }
+  padding-right: -3rem!important; }
 
 .u-s-mb-huge {
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem!important; }
 
 .u-s-pb-huge {
-  padding-bottom: 3rem; }
+  padding-bottom: 3rem!important; }
 
 .u-s-mb-n-huge {
-  margin-bottom: -3rem; }
+  margin-bottom: -3rem!important; }
 
 .u-s-pb-n-huge {
-  padding-bottom: -3rem; }
+  padding-bottom: -3rem!important; }
 
 .u-s-ml-huge {
-  margin-left: 3rem; }
+  margin-left: 3rem!important; }
 
 .u-s-pl-huge {
-  padding-left: 3rem; }
+  padding-left: 3rem!important; }
 
 .u-s-ml-n-huge {
-  margin-left: -3rem; }
+  margin-left: -3rem!important; }
 
 .u-s-pl-n-huge {
-  padding-left: -3rem; }
+  padding-left: -3rem!important; }
 
 .u-s-ms-huge {
-  margin-left: 3rem;
-  margin-right: 3rem; }
+  margin-left: 3rem!important;
+  margin-right: 3rem!important; }
 
 .u-s-ps-huge {
-  padding-left: 3rem;
-  padding-right: 3rem; }
+  padding-left: 3rem!important;
+  padding-right: 3rem!important; }
 
 .u-s-ms-n-huge {
-  margin-left: -3rem;
-  margin-right: -3rem; }
+  margin-left: -3rem!important;
+  margin-right: -3rem!important; }
 
 .u-s-ps-n-huge {
-  padding-left: -3rem;
-  padding-right: -3rem; }
+  padding-left: -3rem!important;
+  padding-right: -3rem!important; }
 
 .u-s-me-huge {
-  margin-top: 3rem;
-  margin-bottom: 3rem; }
+  margin-top: 3rem!important;
+  margin-bottom: 3rem!important; }
 
 .u-s-pe-huge {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-top: 3rem!important;
+  padding-bottom: 3rem!important; }
 
 .u-s-me-n-huge {
-  margin-top: -3rem;
-  margin-bottom: -3rem; }
+  margin-top: -3rem!important;
+  margin-bottom: -3rem!important; }
 
 .u-s-pe-n-huge {
-  padding-top: -3rem;
-  padding-bottom: -3rem; }
+  padding-top: -3rem!important;
+  padding-bottom: -3rem!important; }
 
 /**
  * None.
  */
 .u-s-m-none {
-  margin: 0; }
+  margin: 0 !important; }
 
 .u-s-p-none {
-  padding: 0; }
+  padding: 0 !important; }
 
 .u-s-mt-none {
-  margin-top: 0; }
+  margin-top: 0 !important; }
 
 .u-s-pt-none {
-  padding-top: 0; }
+  padding-top: 0 !important; }
 
 .u-s-mr-none {
-  margin-right: 0; }
+  margin-right: 0 !important; }
 
 .u-s-pr-none {
-  padding-right: 0; }
+  padding-right: 0 !important; }
 
 .u-s-mb-none {
-  margin-bottom: 0; }
+  margin-bottom: 0 !important; }
 
 .u-s-pb-none {
-  padding-bottom: 0; }
+  padding-bottom: 0 !important; }
 
 .u-s-ml-none {
-  margin-left: 0; }
+  margin-left: 0 !important; }
 
 .u-s-pl-none {
-  padding-left: 0; }
+  padding-left: 0 !important; }
 
 .u-s-ms-none {
-  margin-left: 0;
-  margin-right: 0; }
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 .u-s-ps-none {
-  padding-left: 0;
-  padding-right: 0; }
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
 
 .u-s-me-none {
-  margin-top: 0;
-  margin-bottom: 0; }
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
 
 .u-s-pe-none {
-  padding-top: 0;
-  padding-bottom: 0; }
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
 
 /**
  * Generates all breakpoint classes.
@@ -5352,61 +5330,61 @@ li:before {
  * Visible.
  */
 .u-overflow-visible {
-  overflow: visible; }
+  overflow: visible !important; }
 
 .u-overflow-x-visible {
-  overflow-x: visible; }
+  overflow-x: visible !important; }
 
 .u-overflow-y-visible {
-  overflow-y: visible; }
+  overflow-y: visible !important; }
 
 /**
  * Hidden.
  */
 .u-overflow-hidden {
-  overflow: hidden; }
+  overflow: hidden !important; }
 
 .u-overflow-x-hidden {
-  overflow-x: hidden; }
+  overflow-x: hidden !important; }
 
 .u-overflow-y-hidden {
-  overflow-y: hidden; }
+  overflow-y: hidden !important; }
 
 /**
  * Scroll.
  */
 .u-overflow-scroll {
-  overflow: scroll; }
+  overflow: scroll !important; }
 
 .u-overflow-x-scroll {
-  overflow-x: scroll; }
+  overflow-x: scroll !important; }
 
 .u-overflow-y-scroll {
-  overflow-y: scroll; }
+  overflow-y: scroll !important; }
 
 /**
  * Auto.
  */
 .u-overflow-auto {
-  overflow: auto; }
+  overflow: auto !important; }
 
 .u-overflow-x-auto {
-  overflow-x: auto; }
+  overflow-x: auto !important; }
 
 .u-overflow-y-auto {
-  overflow-y: auto; }
+  overflow-y: auto !important; }
 
 /**
  * Inherit.
  */
 .u-overflow-inherit {
-  overflow: inherit; }
+  overflow: inherit !important; }
 
 .u-overflow-x-inherit {
-  overflow-x: inherit; }
+  overflow-x: inherit !important; }
 
 .u-overflow-y-inherit {
-  overflow-y: inherit; }
+  overflow-y: inherit !important; }
 
 /* ============================================================================
    @UTILITIES -> HIDE
@@ -5436,32 +5414,32 @@ li:before {
  * Hide elements from both screen readers and the document flow.
  */
 .u-hide {
-  display: none;
-  visibility: hidden; }
+  display: none !important;
+  visibility: hidden !important; }
 
 /**
  * Hide elements without affecting the document flow.
  */
 .u-hide-invisible {
-  visibility: hidden; }
+  visibility: hidden !important; }
 
 /**
  * Hide elements only visually but have it available for screen readers.
  */
 .u-hide-visually {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  border: 0;
+  position: absolute !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
   /**
    * Form `legend`s need different treatment.
    */ }
   .u-hide-visually.legend {
-    left: -9999px; }
+    left: -9999px !important; }
 
 /**
  * Hide elements for JavaScript users and non-JavaScript users, this is
@@ -5485,20 +5463,20 @@ li:before {
 .u-show-for-print,
 .u-show-for-print-inline,
 .u-show-for-print-inline-block {
-  display: none; }
+  display: none !important; }
 
 @media print {
   .u-hide-for-print {
-    display: none; }
+    display: none !important; }
 
   .u-show-for-print {
-    display: block; }
+    display: block !important; }
 
   .u-show-for-print-inline {
-    display: inline; }
+    display: inline !important; }
 
   .u-show-for-print-inline-block {
-    display: inline-block; } }
+    display: inline-block !important; } }
 /* Your styles
    ========================================================================= */
 
