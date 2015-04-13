@@ -240,16 +240,16 @@ All of Scally's mixins except for the [**Target Browsers**](mixins/_target-brows
 
 The Scally core [Sass silent placeholder selectors](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) contain styles that are extremely global to a UI—and where using a class to apply these styles, like [utilities](../utilities/README.md) do—wouldn't be appropiate.
 
-Right now there is only one core placeholder: [**Bottom spacing**](placeholders/_c-bottom-spacing.scss) which applies the base bottom spacing (and half) in order to try to keep a consistent vertical rhythm.
+Right now there is only one core placeholder: [**Bottom spacing**](placeholders/_bottom-spacing.scss) which applies the base bottom spacing (and half) in order to try to keep a consistent vertical rhythm.
 
 ```
-%c-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+%bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
 ```
 
 The main application for this placeholder is for paragraphs (`p`) and headings (`h1-h6`), applied in [base](#base). This is how it's applied to **ALL** paragraphs:
 
 ```
-p {@extend %c-bottom-spacing;}
+p {@extend %bottom-spacing;}
 ```
 
 It wouldn't be practical to apply this bottom spacing with say one of the [**Spacing**](../utilities/_u-spacing.scss) utility classes, e.g.
@@ -262,12 +262,10 @@ It's safe to assume that all paragraphs will need this bottom spacing, just as S
 
 ```
 hr {
-  @extend %c-bottom-spacing;
+  @extend %bottom-spacing;
   [...]
 }
 ```
-
-The core placeholders are namespaced with `c-` so they're easily identifiable when used outside of core, e.g. every utility comes with a placeholder version, all of which are namespaced with `u-`.
 
 
 

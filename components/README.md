@@ -261,7 +261,7 @@ So all components should be 100% fluid i.e. do not define fixed widths. A compon
 When creating whitespace (`margin`) outside of a component e.g. a bottom margin of `24px`, it's best not to bake this into the default component styles as demonstrated above, and instead apply it either via a BEM Modifier or via a utility class e.g.
 
 ```
-.pagination--bottom-spacing {@extend %c-bottom-spacing;}
+.pagination--bottom-spacing {@extend %bottom-spacing;}
 
 <nav class="pagination pagination--bottom-spacing">
 ```
