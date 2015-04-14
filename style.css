@@ -1267,7 +1267,7 @@ select {
   padding: 0.375rem;
   color: #000;
   background: #fff;
-  border: 0.0625rem solid #4d4d4d; }
+  border: 1px solid #4d4d4d; }
 
 /**
  * Remove the top inner shadow from iOS inputs.
@@ -1367,7 +1367,7 @@ h6,
 hr {
   display: block;
   border: 0;
-  border: 0.0625rem solid #000;
+  border: 1px solid #000;
   padding: 0; }
 
 /* ============================================================================
@@ -2209,7 +2209,7 @@ h6:last-child,
  * Modifier: column divider.
  */
 .l-columns--divider {
-  column-rule: 0.0625rem solid #000; }
+  column-rule: 1px solid #000; }
 
 /**
  * OBJECTS.
@@ -2658,7 +2658,7 @@ ol.o-list ol {
  * Add a keyline separator between the list items.
  */
 .o-list-inline--divider > li + li {
-  border-left: 0.0625rem solid #000; }
+  border-left: 1px solid #000; }
 
 /**
  * Modifier: fit.
@@ -2722,23 +2722,23 @@ li:before {
   display: inline-block;
   width: 0;
   height: 0;
-  border: 0.5rem solid transparent;
+  border: 8px solid transparent;
   vertical-align: middle; }
 
 /**
  * Modifier: sizes.
  */
 .o-arrow--tiny {
-  border-width: 0.25rem; }
+  border-width: 4px; }
 
 .o-arrow--small {
-  border-width: 0.375rem; }
+  border-width: 6px; }
 
 .o-arrow--large {
-  border-width: 0.625rem; }
+  border-width: 10px; }
 
 .o-arrow--huge {
-  border-width: 0.75rem; }
+  border-width: 12px; }
 
 /**
  * Modifier: down arrow.
@@ -2889,13 +2889,13 @@ li:before {
 /**
  * Cosmetics.
  */
-.u-table {
+.o-table {
   width: 100%; }
-  .u-table caption,
-  .u-table th {
+  .o-table caption,
+  .o-table th {
     text-align: left; }
-  .u-table th,
-  .u-table td {
+  .o-table th,
+  .o-table td {
     padding: 0.75rem; }
 
 /**
@@ -2911,7 +2911,7 @@ li:before {
  */
 .o-table--border th,
 .o-table--border td {
-  border: 0.0625rem solid #e6e6e6; }
+  border: 1px solid #e6e6e6; }
   .o-table--border th:empty,
   .o-table--border td:empty {
     border: 0; }
@@ -3069,7 +3069,7 @@ li:before {
   background-color: #2aa198;
   padding: 0.75rem 1.5rem; }
   html .c-button {
-    border-radius: 0.25rem; }
+    border-radius: 4px; }
   .c-button, .c-button:hover, .c-button:focus, .c-button:active {
     color: #fff; }
   .c-button:hover, .c-button:focus {
@@ -3130,30 +3130,30 @@ li:before {
    * `button--full-bleed` modifier.
    */ }
   .c-button-group .c-button {
-    border: 0.0625rem solid #1f7972;
+    border: 1px solid #1f7972;
     border-radius: 0; }
     .c-button-group .c-button:not(:last-child) {
       border-right: 0; }
     .c-button-group .c-button:first-child {
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem; }
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
     .c-button-group .c-button:last-child {
-      border-top-right-radius: 0.25rem;
-      border-bottom-right-radius: 0.25rem; }
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
   .c-button-group.c-button-group--vertical {
     display: inline-block; }
     .c-button-group.c-button-group--vertical .c-button {
-      border-right: 0.0625rem solid #1f7972; }
+      border-right: 1px solid #1f7972; }
       .c-button-group.c-button-group--vertical .c-button:not(:last-child) {
         border-bottom: 0; }
       .c-button-group.c-button-group--vertical .c-button:first-child {
         border-bottom-left-radius: 0;
-        border-top-left-radius: 0.25rem;
-        border-top-right-radius: 0.25rem; }
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px; }
       .c-button-group.c-button-group--vertical .c-button:last-child {
         border-top-right-radius: 0;
-        border-bottom-left-radius: 0.25rem;
-        border-bottom-right-radius: 0.25rem; }
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px; }
 
 /* ============================================================================
    @COMPONENTS -> BUTTON FAUX LINK

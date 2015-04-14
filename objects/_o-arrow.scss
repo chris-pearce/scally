@@ -16,7 +16,7 @@
  */
 
 // Sizes
-$o-arrow-size-base:     8 !default;
+$o-arrow-size-base:     8px !default;
 
 $o-arrow-size-tiny:     $o-arrow-size-base - 4 !default;
 
@@ -35,7 +35,7 @@ $o-arrow-color:         $color-text-base !default;
   display: inline-block;
   width: 0;
   height: 0;
-  @include to-rem(border, $o-arrow-size-base solid transparent);
+  border: $o-arrow-size-base solid transparent;
   vertical-align: middle;
 }
 
@@ -46,19 +46,19 @@ $o-arrow-color:         $color-text-base !default;
 
 // Tiny
 %o-arrow--tiny,
-.o-arrow--tiny {@include to-rem(border-width, $o-arrow-size-tiny);}
+.o-arrow--tiny {border-width: $o-arrow-size-tiny;}
 
 // Small
 %o-arrow--small,
-.o-arrow--small {@include to-rem(border-width, $o-arrow-size-small);}
+.o-arrow--small {border-width: $o-arrow-size-small;}
 
 // Large
 %o-arrow--large,
-.o-arrow--large {@include to-rem(border-width, $o-arrow-size-large);}
+.o-arrow--large {border-width: $o-arrow-size-large;}
 
 // Huge
 %o-arrow--huge,
-.o-arrow--huge {@include to-rem(border-width, $o-arrow-size-huge);}
+.o-arrow--huge {border-width: $o-arrow-size-huge;}
 
 
 /**

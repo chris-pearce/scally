@@ -104,7 +104,7 @@ $c-button-padding-huge:                     $spacing-double !default;
  * N.B. also includes the borders used in the 'Grouping' option.
  */
 
-$c-button-border-thickness:                 1 !default;
+$c-button-border-thickness:                 1px !default;
 
 $c-button-border-style:                     solid !default;
 
@@ -138,8 +138,8 @@ $c-button-hover-transition-timing-function: linear !default;
 
   // Apply a border
   @if $c-button-apply-border {
-    @include to-rem(border, $c-button-border-thickness $c-button-border-style
-      $c-button-border-color);
+    border: $c-button-border-thickness $c-button-border-style
+      $c-button-border-color;
   }// endif
 
   // Apply rounded corners
@@ -147,7 +147,7 @@ $c-button-hover-transition-timing-function: linear !default;
     // N.B. ugly hack in order to increase the specificty to override the
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
-    html & {@include to-rem(border-radius, $c-button-rounded-corners-size);}
+    html & {border-radius: $c-button-rounded-corners-size;}
   }// endif
 
   // Foreground colour
@@ -177,7 +177,7 @@ $c-button-hover-transition-timing-function: linear !default;
 
   // Apply a border
   @if $c-button-apply-border {
-    @include to-rem(border-color, $c-button-border-color-secondary);
+    border-color: $c-button-border-color-secondary;
   }// endif
 
   // Foreground colour
@@ -252,8 +252,8 @@ $c-button-hover-transition-timing-function: linear !default;
   .c-button {
 
     @if $c-button-apply-border == false {
-      @include to-rem(border, $c-button-border-thickness $c-button-border-style
-        $c-button-border-color);
+      border: $c-button-border-thickness $c-button-border-style
+        $c-button-border-color;
     }
 
     // Turn off right borders so they don't double up, except for the last
@@ -268,11 +268,15 @@ $c-button-hover-transition-timing-function: linear !default;
 
     // Round off the first and last buttons in the group
     @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
-      &:first-child {@include to-rem(border-top-left-radius
-        border-bottom-left-radius, $c-button-rounded-corners-size);}
+      &:first-child {
+        border-top-left-radius: $c-button-rounded-corners-size;
+        border-bottom-left-radius: $c-button-rounded-corners-size;
+      }
 
-      &:last-child {@include to-rem(border-top-right-radius
-        border-bottom-right-radius, $c-button-rounded-corners-size);}
+      &:last-child {
+        border-top-right-radius: $c-button-rounded-corners-size;
+        border-bottom-right-radius: $c-button-rounded-corners-size;
+      }
     }
 
   }
@@ -292,8 +296,8 @@ $c-button-hover-transition-timing-function: linear !default;
     .c-button {
 
       // Turn back on the right border that gets turned off by default
-      @include to-rem(border-right, $c-button-border-thickness
-        $c-button-border-style $c-button-border-color);
+      border-right: $c-button-border-thickness $c-button-border-style
+      $c-button-border-color;
 
       // Turn off bottom borders so they don't double up, except for the last
       // one
@@ -303,14 +307,14 @@ $c-button-hover-transition-timing-function: linear !default;
       @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
         &:first-child {
           border-bottom-left-radius: 0;
-          @include to-rem(border-top-left-radius border-top-right-radius,
-            $c-button-rounded-corners-size);
+          border-top-left-radius: $c-button-rounded-corners-size;
+          border-top-right-radius: $c-button-rounded-corners-size;
         }
 
         &:last-child {
           border-top-right-radius: 0;
-          @include to-rem(border-bottom-left-radius
-            border-bottom-right-radius, $c-button-rounded-corners-size);
+          border-bottom-left-radius: $c-button-rounded-corners-size;
+          border-bottom-right-radius: $c-button-rounded-corners-size;
         }
       }
     }

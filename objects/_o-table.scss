@@ -59,15 +59,15 @@ $o-table-cell-padding-large:                           $spacing-base !default;
 
 $o-table-border-color:                                 darken($color-white, 10%) !default;
 
-$o-table-border-thickness:                             1 !default;
+$o-table-border-thickness:                             1px !default;
 
 $o-table-border-style:                                 solid !default;
 
 $o-table-striped-background-cell-color:                $o-table-border-color !default;
 
 
-%u-table,
-.u-table {
+%o-table,
+.o-table {
   // Stretch to full width of it's parent
   width: 100%;
 
@@ -81,7 +81,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 }
 
 @if $o-table-apply-at-breakpoints-for-default {
-  @include generate-at-breakpoints('.u-table', $o-table-apply-at-breakpoints) {
+  @include generate-at-breakpoints('.o-table', $o-table-apply-at-breakpoints) {
     width: 100%;
 
     caption,
@@ -120,8 +120,8 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 .o-table--border {
   th,
   td {
-    @include to-rem(border, $o-table-border-thickness $o-table-border-style
-      $o-table-border-color);
+    border: $o-table-border-thickness $o-table-border-style
+      $o-table-border-color;
 
     // No borders for empty cells
     &:empty {border: 0;}
@@ -133,8 +133,8 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     $o-table-apply-at-breakpoints) {
     th,
     td {
-      @include to-rem(border, $o-table-border-thickness $o-table-border-style
-        $o-table-border-color);
+      border: $o-table-border-thickness $o-table-border-style
+        $o-table-border-color;
 
       &:empty {border: 0;}
     }
