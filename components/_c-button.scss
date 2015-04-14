@@ -4,7 +4,8 @@
 
 
 /**
- * Main button component with a bunch of modifiers plus a 'Grouping' option.
+ * Main button component with a bunch of modifiers plus an optional 'Grouping'
+ * option.
  *
  * The base component class and all of its modifiers:
  *
@@ -56,13 +57,15 @@
  * Toggle on/off certain styles and treatments.
  */
 
-$c-button-apply-hover-styles:               true !default;
+$c-button-apply-hover-styles:                 true !default;
 
-$c-button-apply-border:                     false !default;
+$c-button-apply-border:                       false !default;
 
-$c-button-apply-rounded-corners:            true !default;
+$c-button-apply-rounded-corners:              true !default;
 
-$c-button-apply-group-rounded-corners:      true !default;
+$c-button-apply-group-option:                 false !default;
+
+$c-button-apply-group-option-rounded-corners: true !default;
 
 /**
  * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
@@ -239,84 +242,85 @@ $c-button-hover-transition-timing-function: linear !default;
 
 
 /**
- * Button group.
+ * Button group (optional).
  *
  * When you want to group a bunch of buttons side-by-side flush
  * to each other i.e. with no gap between the buttons. To differentiate
  * between the buttons a border is added.
  */
 
-
-.c-button-group {
-
-  .c-button {
-
-    @if $c-button-apply-border == false {
-      border: $c-button-border-thickness $c-button-border-style
-        $c-button-border-color;
-    }
-
-    // Turn off right borders so they don't double up, except for the last
-    // one
-    &:not(:last-child) {border-right: 0;}
-
-    // Turn off rounded corners if rounded corners are on by default as only
-    // the first and last buttons in the group need rounded corners
-    @if $c-button-apply-rounded-corners {
-      border-radius: 0;
-    }
-
-    // Round off the first and last buttons in the group
-    @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
-      &:first-child {
-        border-top-left-radius: $c-button-rounded-corners-size;
-        border-bottom-left-radius: $c-button-rounded-corners-size;
-      }
-
-      &:last-child {
-        border-top-right-radius: $c-button-rounded-corners-size;
-        border-bottom-right-radius: $c-button-rounded-corners-size;
-      }
-    }
-
-  }
-
-
-  /**
-   * Modifier: vertically stacked button group.
-   *
-   * N.B. buttons within the vertically stacked version need to use the
-   * `button--full-bleed` modifier.
-   */
-
-  &.c-button-group--vertical {
-    // This will shrink wrap the container to be as wide as the widest button
-    display: inline-block;
+@if $c-button-apply-group-option {
+  .c-button-group {
 
     .c-button {
 
-      // Turn back on the right border that gets turned off by default
-      border-right: $c-button-border-thickness $c-button-border-style
-      $c-button-border-color;
+      @if $c-button-apply-border == false {
+        border: $c-button-border-thickness $c-button-border-style
+          $c-button-border-color;
+      }
 
-      // Turn off bottom borders so they don't double up, except for the last
+      // Turn off right borders so they don't double up, except for the last
       // one
-      &:not(:last-child) {border-bottom: 0;}
+      &:not(:last-child) {border-right: 0;}
+
+      // Turn off rounded corners if rounded corners are on by default as only
+      // the first and last buttons in the group need rounded corners
+      @if $c-button-apply-rounded-corners {
+        border-radius: 0;
+      }
 
       // Round off the first and last buttons in the group
       @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
         &:first-child {
-          border-bottom-left-radius: 0;
           border-top-left-radius: $c-button-rounded-corners-size;
-          border-top-right-radius: $c-button-rounded-corners-size;
+          border-bottom-left-radius: $c-button-rounded-corners-size;
         }
 
         &:last-child {
-          border-top-right-radius: 0;
-          border-bottom-left-radius: $c-button-rounded-corners-size;
+          border-top-right-radius: $c-button-rounded-corners-size;
           border-bottom-right-radius: $c-button-rounded-corners-size;
+        }
+      }
+
+    }
+
+
+    /**
+     * Modifier: vertically stacked button group.
+     *
+     * N.B. buttons within the vertically stacked version need to use the
+     * `button--full-bleed` modifier.
+     */
+
+    &.c-button-group--vertical {
+      // This will shrink wrap the container to be as wide as the widest button
+      display: inline-block;
+
+      .c-button {
+
+        // Turn back on the right border that gets turned off by default
+        border-right: $c-button-border-thickness $c-button-border-style
+        $c-button-border-color;
+
+        // Turn off bottom borders so they don't double up, except for the last
+        // one
+        &:not(:last-child) {border-bottom: 0;}
+
+        // Round off the first and last buttons in the group
+        @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
+          &:first-child {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: $c-button-rounded-corners-size;
+            border-top-right-radius: $c-button-rounded-corners-size;
+          }
+
+          &:last-child {
+            border-top-right-radius: 0;
+            border-bottom-left-radius: $c-button-rounded-corners-size;
+            border-bottom-right-radius: $c-button-rounded-corners-size;
+          }
         }
       }
     }
   }
-}
+}// endif
