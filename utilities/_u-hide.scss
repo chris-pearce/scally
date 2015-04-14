@@ -47,15 +47,11 @@ $u-hide-js-is-off-class:                           no-js !default;
  */
 
 %u-hide,
-.u-hide {
-  display: none !important;
-  visibility: hidden !important;
-}
+.u-hide {display: none !important;}
 
 @if $u-hide-apply-at-breakpoints-for-hide {
   @include generate-at-breakpoints('.u-hide', $u-hide-apply-at-breakpoints) {
     display: none !important;
-    visibility: hidden !important;
   }
 }// endif
 
