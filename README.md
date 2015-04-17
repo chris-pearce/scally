@@ -6,7 +6,7 @@
 # Contents
 
 - [What is Scally?](#what-is-scally)
-- [Demo's](#demos)
+- [Demos](#demos)
 - [Scally architecture](#scally-architecture)
 - [Dependencies](#dependencies)
 - [Installing Scally](#installing-scally)
@@ -41,7 +41,7 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 
 
-# Demo's
+# Demos
 
 *A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at but are a work in progress:*
 
@@ -75,7 +75,7 @@ The breakdown of these layers from bottom to top (order of their specificity):
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
 
     >> Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
-   
+
     *We advise you to setup Autoprefixer as part of your build process e.g. if you're using [Grunt](http://gruntjs.com/) then       you can create a Grunt task for Autoprefixer using something [like](https://github.com/nDmitry/grunt-autoprefixer)*
 
 
@@ -245,7 +245,7 @@ project root
 └───bower_components
 |   |
 |   └───scally
-|   
+|
 └───css
     |   style.scss
     |   settings.scss

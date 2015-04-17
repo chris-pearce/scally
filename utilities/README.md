@@ -6,9 +6,11 @@
 ## Contents
 
 - [What are they?](#what-are-they)
-- [Demo's](#demos)
+- [Demos](#demos)
 - [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
+  - [An example](#an-example)
+  - [Applying to components](#applying-to-components)
 - [Specificity](#specificity)
 - [Namespace](#namespace)
 - [Further reading](#further-reading)
@@ -18,11 +20,11 @@
 
 ## What are they?
 
-Utilities are your helper classes and typically your last resort when needing to
-apply styles to an element.
+Utilities are your helper classes and typically your last resort when needing
+to apply styles to an element.
 
-They apply really common CSS styles either as a single declaration e.g. float an
-element to the right: `.u-float-right`, or a very simple, universal pattern
+They apply really common CSS styles either as a single declaration e.g. float
+an element to the right: `.u-float-right`, or a very simple, universal pattern
 (multiline declaration) e.g. hide an element but only visually:
 `.u-hide-visually`.
 
@@ -33,7 +35,7 @@ and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-p
 
 
 
-## Demo's
+## Demos
 
 <http://s.codepen.io/chris-pearce/full/WbMgMp> (work in progress)
 
@@ -42,28 +44,30 @@ and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-p
 
 ## Why have them?
 
-Utilities exist because every UI consists of really common styles that will need
-to be applied many times, therefore it makes sense to abstract these styles into
-nice reusable CSS snippets i.e. utilities. It's the same reason why [objects](../objects/README.md)
-and [layout modules](../layout/README.md) exist. The difference though with
-utilities is that they sit right at the bottom of the food chain—so to speak—in
-comparison to the other Scally sections, because they're so simple and low-level,
-and aren't too far away from inline styles.
+Utilities exist because every UI consists of really common styles that will
+need to be applied many times, therefore it makes sense to abstract these
+styles into nice reusable CSS snippets i.e. utilities. It's the same reason why
+[objects](../objects/README.md) and [layout modules](../layout/README.md)
+exist. The difference though with utilities is that they sit right at the
+bottom of the food chain—so to speak—in comparison to the other Scally
+sections, because they're so simple and low-level, and aren't too far away from
+inline styles.
 
-With that said they'll always be the need to apply utilities to a UI as not
-everything can be a [component](../components/README.md) or taken care of by
+With that said and even though it's rare they'll always be the need to apply
+utilities to a UI as not everything can be a
+[component](../components/README.md) or taken care of by
 [objects](../objects/README.md) and [layout modules](../layout/README.md). In
 these scenerios—if utilities didn't exist—we would have issues like:
 
 - Where do these types of styles live in our CSS architecture?
 - Lots of *micro* components that aren't *true* components.
 - CSS not being as DRY and maintainable as it could be because we would have to
-keep writing the same styles over and over again.
+  keep writing the same styles over and over again.
 
-So utilities help keep our CSS a lot DRYer and maintainable. And enable us to
-make far-reaching changes to our UI with simple modifications to a single utility
-because we have the confidence that edits to a utility will only ever alter one
-responsibility.
+So utilities help keep our CSS a lot DRYer and maintainable and enable us to
+make far-reaching changes to our UI with simple modifications to a single
+utility because we have the confidence that edits to a utility will only ever
+alter one responsibility.
 
 
 
@@ -92,30 +96,48 @@ Or a very simple, universal pattern (multiline declaration) e.g.
 }
 ```
 
-To apply utilities apply the utility class directly to the HTML element but only
-if the element you're applying it to doesn't already have an existing style hook
-(class) which in most cases it will as it'll be a component. This comes back to
-the last resort approach mentioned in the [What are they?](#what-are-they)
-section above.
+To apply utilities you apply the utility class directly to the HTML element. If
+the element already has a component class e.g. `.c-box` then you cannot add the
+utility class to the element as the styling needs to be taken care of by the
+component. This comes back to the last resort approach mentioned in the
+[What are they?](#what-are-they) section above.
 
-If we look at a snippet of the UI from this [home page](http://www.manchester.gov.uk/):
+It should be acknowledged—like with most things CSS related—that the above is
+not completely black and white, what matters is that you know when you're
+overusing utilities. Also they're two exceptions to utilities being your last
+resort: the [**Spacing**](_u-spacing.scss) utility and the
+[**Percentage widths**](_u-widths.scss) utility. **Percentage widths** is a
+fundamental part of the Grid layout module giving the grid items their
+percentage based widths e.g. `.u-one-half`. **Spacing** takes care of all the
+common whitespace in the UI especially because components can't handle any
+whitespace that exists on the *outside* of a component.
+
+### An example
+
+If we look at a snippet of the UI from this
+[home page](http://www.manchester.gov.uk/):
 
 [![alt text](https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/Rzy0WiEjhhp25k5/Screen%20Shot%202015-04-15%20at%208.12.45%20pm.png "Some UI from the Manchester City Council home page")](https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/Rzy0WiEjhhp25k5/Screen%20Shot%202015-04-15%20at%208.12.45%20pm.png)
 
 We can construct almost all of it using a mixture of:
 
-- [Base styles](../core/base/) for things like the headings, links, paragraphs, etc.
-- [Grid layout module](../layout/_l-grid.scss) to layout the sets of 2 and 4 columns.
-- [Container layout module](../layout/_l-container.scss) to group this set of content, center align it and apply the global width.
-- [Button component](../components/_c-button.scss) for the *More ...* CTA buttons.
+- [Base styles](../core/base/) for things like the headings, links, paragraphs,
+  etc.
+- [Grid layout module](../layout/_l-grid.scss) to layout the sets of 2 and 4
+  columns.
+- [Container layout module](../layout/_l-container.scss) to group this set of
+  content, center align it and apply the global width.
+- [Button component](../components/_c-button.scss) for the *More ...* CTA
+  buttons.
 - Theme styles to apply the dark background and white text/yellow links.
 
 The missing treatment is the center alignment of all the text and this is where
 using a utility—one of the **Text** alignment utilities:
 [`.u-text-align-center`](../utilities/_u-text.scss)—would make sense otherwise
 we'd have to **a)** create a *micro* component/object that just applies
-`text-align: center` however that doesn't fit the criteria for a component or an
-object *OR* **b)** just hack that style into our CSS architecture somewhere.
+`text-align: center` which is overkill and doesn't fit the criteria of a
+component/object *OR* **b)** just hack that style into our CSS architecture
+somewhere which can get real messy quick.
 
 So we could just apply the utility to the main container element which would be
 the [Container layout module](../layout/_l-container.scss), like so:
@@ -135,41 +157,47 @@ Note how the utility class comes last in the class attribute? The order is:
 3. Objects
 4. Utilities
 
-Preferbly separated by 2 empty spaces to improve readability.
+Preferably separated by 2 empty spaces to improve readability.
+
+### Applying to components
 
 It's quite rare to apply utilities in the context of components as components
-are discrete custom elements of a UI that enclose specific semantics and styling
-therefore applying lots of uilities to them doesn't make them as self-contained,
-portable, and maintainable as they need to be. The exception to this is the
-utilities that apply universal patterns (multiline declaration blocks) e.g.
-hide an element but only visually: `.u-hide-visually`. When these types of
-utilities are needed you would apply the utility via its
-[Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
+are discrete custom elements of a UI that enclose specific semantics and
+styling therefore applying lots of uilities to them doesn't make them as
+self-contained, portable, and maintainable as they need to be. The exception to
+this is when we need to apply really common universal patterns which are
+multiline declaration blocks e.g. hide an element but only visually:
+`.u-hide-visually`. When these types of utilities are needed you would apply
+the utility via its [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
 using the `@extend` directive, rather than applying the utility class to the
-HTML of the component.
+component HTML.
 
 So if we had a **Modal dialog** component and part of that component was the
 overlay that sits behind the dialog—covering the entire viewport—we could make
-use of the **Position** utility: `.u-position-pin-all` which will pin an element—in
-this case the overlay—to all corners of it's parent—in this case the main
-viewport.
+use of the **Position** utility: `.u-position-pin-all` which will pin an
+element—in this case the overlay—to all corners of it's parent—in this case the
+main viewport.
 
 A code example:
 
 **HTML**
 
-    <div class="modal__overlay"></div>
+```
+<div class="modal__overlay"></div>
+```
 
 **CSS**
 
-    .modal__overlay {
-        @extend %u-position-pin-all;
-        [ ... ]
-    }
+```
+.modal__overlay {
+    @extend %u-position-pin-all;
+    [ ... ]
+}
+```
 
 The rule is: **do not `@extend` single line declarations** as there is no
 benefit in doing this, components only need to make use of utilities when
-they're applying universal patterns (multiline declarations).
+they're applying universal patterns which are multiline declarations.
 
 
 
@@ -178,30 +206,34 @@ they're applying universal patterns (multiline declarations).
 
 Utilities always need to *win* when it comes to specificity (CSS' first C; the
 cascade) as they should always *just work* otherwise they're not doing their
-job properly i.e. you should never be needing to override a utility's styles. If
-you are then you're not using them correctly, [see](#open-close-principle).
+job properly i.e. you should never be needing to override a utility's styles.
+If you are then you're not using them correctly.
 
 To ensure this Scally does the following:
 
 - Applies the `!important` keyword to all utilities to boost their specificity.
-- Declares all utilities last in the Scally framework section of the
-[master stylesheet](../style.scss) so they're compiled after everything else.
+- Declares all utilities last in the Scally framework so they're compiled after
+  everything else.
 
 
 
 
 ## Namespace
 
-All utility classes/silent placeholder selectors are prefixed with `u-` so that
-they're easily identifiable.
+All utility classes, silent placeholder selectors, and settings are prefixed
+with `u-` so that they're easily identifiable e.g.
+
+- `.u-text-align-center`
+- `%u-text-align-center`
+- `$u-text-apply-at-breakpoints`
 
 
 
 
 ## Further reading
 
-*Make sure to read the documentation within each utility Sass partial file as it
-will contain information about the utility and it's implementations.*
+*Make sure to read the documentation within each utility Sass partial file as
+it will contain information about the utility and it's implementation.*
 
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
