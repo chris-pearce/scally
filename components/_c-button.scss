@@ -63,9 +63,9 @@ $c-button-apply-border:                       false !default;
 
 $c-button-apply-rounded-corners:              true !default;
 
-$c-button-apply-group-option:                 false !default;
+$c-button-apply-group:                        false !default;
 
-$c-button-apply-group-option-rounded-corners: true !default;
+$c-button-apply-group-rounded-corners:        true !default;
 
 /**
  * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
@@ -244,12 +244,12 @@ $c-button-hover-transition-timing-function: linear !default;
 /**
  * Button group (optional).
  *
- * When you want to group a bunch of buttons side-by-side flush
- * to each other i.e. with no gap between the buttons. To differentiate
- * between the buttons a border is added.
+ * When you want to group a bunch of buttons side-by-side flush to each other
+ * i.e. with no gap between the buttons. To differentiate between the buttons
+ * a border is added.
  */
 
-@if $c-button-apply-group-option {
+@if $c-button-apply-group {
   .c-button-group {
 
     .c-button {
