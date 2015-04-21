@@ -44,6 +44,8 @@
    @include font-size(12, none);
    @include font-size(24, inherit);
    @include font-size(24, normal);
+   @include font-size(24, normal, true); or
+   @include font-size(24, normal, !important);
  *
  * @credit
  * https://github.com/inuitcss/tools.mixins/blob/master/_tools.mixins.scss
