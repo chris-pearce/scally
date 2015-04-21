@@ -3249,40 +3249,40 @@ li:before {
  * Size.
  */
 .u-text-size-small {
-  font-size: 0.9375rem!important;
-  line-height: 1.6!important; }
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important; }
 
 .u-text-size-x-small {
-  font-size: 0.875rem!important;
-  line-height: 1.71429!important; }
+  font-size: 0.875rem !important;
+  line-height: 1.71429 !important; }
 
 .u-text-size-xx-small {
-  font-size: 0.8125rem!important;
-  line-height: 1.84615!important; }
+  font-size: 0.8125rem !important;
+  line-height: 1.84615 !important; }
 
 .u-text-size-xxx-small {
-  font-size: 0.75rem!important;
-  line-height: 2!important; }
+  font-size: 0.75rem !important;
+  line-height: 2 !important; }
 
 .u-text-size-large {
-  font-size: 1.0625rem!important;
-  line-height: 1.41176!important; }
+  font-size: 1.0625rem !important;
+  line-height: 1.41176 !important; }
 
 .u-text-size-x-large {
-  font-size: 1.125rem!important;
-  line-height: 1.33333!important; }
+  font-size: 1.125rem !important;
+  line-height: 1.33333 !important; }
 
 .u-text-size-xx-large {
-  font-size: 1.1875rem!important;
-  line-height: 1.26316!important; }
+  font-size: 1.1875rem !important;
+  line-height: 1.26316 !important; }
 
 .u-text-size-xxx-large {
-  font-size: 1.25rem!important;
-  line-height: 1.2!important; }
+  font-size: 1.25rem !important;
+  line-height: 1.2 !important; }
 
 .u-text-size-base {
-  font-size: 1rem!important;
-  line-height: 1.5!important; }
+  font-size: 1rem !important;
+  line-height: 1.5 !important; }
 
 .u-text-size-inherit {
   font-size: inherit !important; }
