@@ -27,14 +27,17 @@
 
 
 /**
- * `em`.
+ * `em-or-rem`.
+ *
+ * Generic mixin which is used by the `to-em` and `to-rem` mixins below
  */
 
-@mixin to-em($properties, $sizes, $context: $font-size, $sledgehammer: false) {
+@mixin to-em-or-rem($unit, $properties, $sizes, $context, $sledgehammer) {
 
   $values: ();
   $sublists: false;
-  $important: if($sledgehammer, "!important", "");
+  $unit: if($unit == "em", unquote("em"), unquote("rem"));
+  $important: if($sledgehammer, " !important", "");
 
   @each $s in $sizes {
 
@@ -43,14 +46,14 @@
       $vv: ();
 
       @each $ss in $s {
-        $vv: append($vv, if(type-of($ss) == number, #{$ss / $context}em, $ss));
+        $vv: append($vv, if(type-of($ss) == number and $ss != 0, #{$ss / $context}#{$unit}, $ss));
       }
 
       $values: append($values, join((), $vv));
     }
 
     @else {
-      $values: append($values, if(type-of($s) == number, #{$s / $context}em,
+      $values: append($values, if(type-of($s) == number and $s != 0, #{$s / $context}#{$unit},
         $s));
     }
   }
@@ -64,37 +67,19 @@
 
 
 /**
+ * `em`.
+ */
+
+@mixin to-em($properties, $sizes, $context: false, $sledgehammer: false) {
+  $context: if($context == false or $context == "", $font-size, $context);
+  @include to-em-or-rem("em", $properties, $sizes, $context, $sledgehammer);
+}
+
+
+/**
  * `rem`.
  */
 
-@mixin to-rem($properties, $sizes, $sledgehammer: "") {
-
-  $values: ();
-  $sublists: false;
-
-  @each $s in $sizes {
-
-    @if type-of($s) == list {
-      $sublists: true;
-      $vv: ();
-
-      @each $ss in $s {
-        $vv: append($vv, if(type-of($ss) == number, #{$ss / $font-size}rem,
-          $ss));
-      }
-
-      $values: append($values, join((), $vv));
-    }
-
-    @else {
-      $values: append($values, if(type-of($s) == number, #{$s / $font-size}rem,
-        $s));
-    }
-  }
-
-  $value: join((), $values, if($sublists, comma, space));
-
-  @each $prop in $properties {
-    #{$prop}: $value#{$sledgehammer};
-  }
+@mixin to-rem($properties, $sizes, $sledgehammer: false) {
+  @include to-em-or-rem("rem", $properties, $sizes, $font-size, $sledgehammer);
 }
