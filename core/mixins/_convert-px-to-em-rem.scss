@@ -71,7 +71,7 @@
  */
 
 @mixin to-em($properties, $sizes, $context: false, $sledgehammer: false) {
-  $context: if($context, $context, $font-size);
+  $context: if($context == false or $context == "", $font-size, $context);
   @include to-em-or-rem("em", $properties, $sizes, $context, $sledgehammer);
 }
 
