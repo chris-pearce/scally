@@ -52,12 +52,12 @@
  * simply redeclare it above the relevant `@import`, like so:
  *
    $font-size: 14;
-   @import "bower_components/scally/core/settings/typography";
+   @import "core/settings/typography";
  *
  * If you want to use a Scally setting to override something then you need to
  * define the override below the `@import`, like so:
  *
-   @import "bower_components/scally/core/settings/colours";
+   @import "core/settings/colours";
    $colour-text-base: $colour-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
@@ -67,7 +67,7 @@
  *
    $u-arrow-size-base: 14;
    $u-arrow-colour: orange;
-   @import "bower_components/scally/utilities/u-arrow";
+   @import "utilities/u-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
  * completely modify how Scally works without ever having to alter the
@@ -93,80 +93,80 @@
  */
 
 // Settings
-@import "bower_components/scally/core/settings/typography";
+@import "core/settings/typography";
 
-@import "bower_components/scally/core/settings/spacing";
+@import "core/settings/spacing";
 
-@import "bower_components/scally/core/settings/breakpoints";
+@import "core/settings/breakpoints";
 
-@import "bower_components/scally/core/settings/widths";
+@import "core/settings/widths";
 
-@import "bower_components/scally/core/settings/colours";
+@import "core/settings/colours";
 
-@import "bower_components/scally/core/settings/positioning";
+@import "core/settings/positioning";
 
-@import "bower_components/scally/core/settings/cosmetics";
+@import "core/settings/cosmetics";
 
 // Functions
-@import "bower_components/scally/core/functions/convert-px-to-em-rem";
+@import "core/functions/convert-px-to-em-rem";
 
-@import "bower_components/scally/core/functions/math-helpers";
+@import "core/functions/math-helpers";
 
-@import "bower_components/scally/core/functions/string-replace";
+@import "core/functions/string-replace";
 
 // Mixins
-@import "bower_components/scally/core/mixins/convert-px-to-em-rem";
+@import "core/mixins/convert-px-to-em-rem";
 
-@import "bower_components/scally/core/mixins/font-size";
+@import "core/mixins/font-size";
 
-@import "bower_components/scally/core/mixins/gradients";
+@import "core/mixins/gradients";
 
-@import "bower_components/scally/core/mixins/media-queries";
+@import "core/mixins/media-queries";
 
-@import "bower_components/scally/core/mixins/generate-at-breakpoints";
+@import "core/mixins/generate-at-breakpoints";
 
-@import "bower_components/scally/core/mixins/generate-percentage-classes-at-breakpoints";
+@import "core/mixins/generate-percentage-classes-at-breakpoints";
 
-@import "bower_components/scally/core/mixins/retina-bg-image";
+@import "core/mixins/retina-bg-image";
 
-@import "bower_components/scally/core/mixins/target-browsers";
+@import "core/mixins/target-browsers";
 
-@import "bower_components/scally/core/mixins/target-headings";
+@import "core/mixins/target-headings";
 
 // Normalize
-@import "bower_components/scally/core/normalize";
+@import "core/normalize";
 
 // Reset
-@import "bower_components/scally/core/reset";
+@import "core/reset";
 
 // Debug
-@import "bower_components/scally/core/debug";
+@import "core/debug";
 
 // Base
-@import "bower_components/scally/core/base/root";
+@import "core/base/root";
 
-@import "bower_components/scally/core/base/abbreviation";
+@import "core/base/abbreviation";
 
-@import "bower_components/scally/core/base/forms";
+@import "core/base/forms";
 
-@import "bower_components/scally/core/base/details";
+@import "core/base/details";
 
-@import "bower_components/scally/core/base/headings";
+@import "core/base/headings";
 
-@import "bower_components/scally/core/base/horizontal-rule";
+@import "core/base/horizontal-rule";
 
-@import "bower_components/scally/core/base/links";
+@import "core/base/links";
 
-@import "bower_components/scally/core/base/media";
+@import "core/base/media";
 
-@import "bower_components/scally/core/base/paragraphs";
+@import "core/base/paragraphs";
 
-@import "bower_components/scally/core/base/print";
+@import "core/base/print";
 
-@import "bower_components/scally/core/base/viewport";
+@import "core/base/viewport";
 
 // Placeholders
-@import "bower_components/scally/core/placeholders/c-bottom-spacing";
+@import "core/placeholders/c-bottom-spacing";
 
 
 /**
@@ -174,88 +174,88 @@
  */
 
 // Main container
-@import "bower_components/scally/layout/l-container";
+@import "layout/l-container";
 
 // Grid
-@import "bower_components/scally/layout/l-grid";
+@import "layout/l-grid";
 
-@import "bower_components/scally/layout/l-grid-pull";
+@import "layout/l-grid-pull";
 
-@import "bower_components/scally/layout/l-grid-push";
+@import "layout/l-grid-push";
 
 // Side-by-side
-@import "bower_components/scally/layout/l-side-by-side";
+@import "layout/l-side-by-side";
 
-@import "bower_components/scally/layout/l-side-by-side-alt";
+@import "layout/l-side-by-side-alt";
 
 // CSS3 columns
-@import "bower_components/scally/layout/l-columns";
+@import "layout/l-columns";
 
 
 /**
  * COMPONENTS.
  */
 
-@import "bower_components/scally/components/button";
+@import "components/button";
 
 
 /**
  * UTILITIES.
  */
 
-@import "bower_components/scally/utilities/u-clear-fix";
+@import "utilities/u-clear-fix";
 
-@import "bower_components/scally/utilities/u-arrow";
+@import "utilities/u-arrow";
 
-@import "bower_components/scally/utilities/u-list";
+@import "utilities/u-list";
 
-@import "bower_components/scally/utilities/u-list-block";
+@import "utilities/u-list-block";
 
-@import "bower_components/scally/utilities/u-list-inline";
+@import "utilities/u-list-inline";
 
-@import "bower_components/scally/utilities/u-text";
+@import "utilities/u-text";
 
-@import "bower_components/scally/utilities/u-widths";
+@import "utilities/u-widths";
 
-@import "bower_components/scally/utilities/u-table";
+@import "utilities/u-table";
 
-@import "bower_components/scally/utilities/u-drop-down";
+@import "utilities/u-drop-down";
 
-@import "bower_components/scally/utilities/u-alignments";
+@import "utilities/u-alignments";
 
-@import "bower_components/scally/utilities/u-toggle-visibility";
+@import "utilities/u-toggle-visibility";
 
-@import "bower_components/scally/utilities/u-image-replacement";
+@import "utilities/u-image-replacement";
 
-@import "bower_components/scally/utilities/u-link-complex";
+@import "utilities/u-link-complex";
 
-@import "bower_components/scally/utilities/u-link-disguised";
+@import "utilities/u-link-disguised";
 
-@import "bower_components/scally/utilities/u-link-no-underline";
+@import "utilities/u-link-no-underline";
 
-@import "bower_components/scally/utilities/u-momentum-scrolling";
+@import "utilities/u-momentum-scrolling";
 
-@import "bower_components/scally/utilities/u-float";
+@import "utilities/u-float";
 
-@import "bower_components/scally/utilities/u-new-block-formatting-context";
+@import "utilities/u-new-block-formatting-context";
 
-@import "bower_components/scally/utilities/u-flex-embed";
+@import "utilities/u-flex-embed";
 
-@import "bower_components/scally/utilities/u-gpu-accelerated";
+@import "utilities/u-gpu-accelerated";
 
-@import "bower_components/scally/utilities/u-position";
+@import "utilities/u-position";
 
-@import "bower_components/scally/utilities/u-display";
+@import "utilities/u-display";
 
-@import "bower_components/scally/utilities/u-spacing";
+@import "utilities/u-spacing";
 
-@import "bower_components/scally/utilities/u-divider";
+@import "utilities/u-divider";
 
-@import "bower_components/scally/utilities/u-overflow";
+@import "utilities/u-overflow";
 
-@import "bower_components/scally/utilities/u-overlay";
+@import "utilities/u-overlay";
 
-@import "bower_components/scally/utilities/u-cursor";
+@import "utilities/u-cursor";
 
 
 

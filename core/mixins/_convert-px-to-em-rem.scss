@@ -53,7 +53,7 @@
     }
 
     @else {
-      $values: append($values, if(type-of($s) == number, #{$s / $context}#{$unit},
+      $values: append($values, if(type-of($s) == number and $s != 0, #{$s / $context}#{$unit},
         $s));
     }
   }
