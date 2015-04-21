@@ -3,9 +3,9 @@
 === 1.8.0 (April 21, 2015)
 
 - Made Scally compatible with [LibSass](http://libsass.org/) by fixing 2 of
-  Scally's mixins: "Target headings" and "Generate percentage classes at breakpoints", thanks to @stowball (#81).
+  Scally's mixins: "Target headings" and "Generate percentage classes at breakpoints", thanks to @stowball. [PR: #81](https://github.com/chris-pearce/scally/pull/81).
 - Converted the `to-em` and `to-rem` mixins into one generic mixin and made
-  some improvements, thanks to @stowball (#85).
+  some improvements, thanks to @stowball. [PR: #85](https://github.com/chris-pearce/scally/pull/85).
 
 === 1.7.2 (April 9, 2015)
 
