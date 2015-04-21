@@ -28,7 +28,7 @@ $apply-heading-margins: true !default;
  * Set margins but make optional.
  */
 
-@if $apply-heading-margins {
+/*@if $apply-heading-margins {
   // Base
   @include headings(1, 3, true) {
     @extend %c-bottom-spacing;
@@ -38,7 +38,7 @@ $apply-heading-margins: true !default;
   @include headings(4, 6, true) {
     @extend %c-bottom-spacing-half;
   }
-}// endif
+}// endif*/
 
 
 /**
