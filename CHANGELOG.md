@@ -1,5 +1,12 @@
 === HEAD
 
+=== 1.8.0 (April 21, 2015)
+
+- Made Scally compatible with [LibSass](http://libsass.org/) by fixing 2 of
+  Scally's mixins: "Target headings" and "Generate percentage classes at breakpoints", thanks to @stowball (#81).
+- Converted the `to-em` and `to-rem` mixins into one generic mixin and made
+  some improvements, thanks to @stowball (#85).
+
 === 1.7.2 (April 9, 2015)
 
 - [Issue #75](https://github.com/chris-pearce/scally/issues/75) applied.
