@@ -6,9 +6,6 @@
 /**
  * To convert `px` to `em`s or `rem`s.
  *
- * @credit
- * https://gist.github.com/2237465
- *
  * @example
    .foo {margin-left: to-em(8, 20);}
    .foo {padding: to-rem(8) 0;}
