@@ -17,8 +17,8 @@ a {
   text-decoration: none;
 
   &:hover,
-	&:focus {
+  &:focus {
     color: $link-color-hover;
     text-decoration: underline;
-	}
+  }
 }
