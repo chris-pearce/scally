@@ -36,7 +36,7 @@
 
   $values: ();
   $sublists: false;
-  $unit: if($unit == "em", unquote("em"), unquote("rem"));
+  $unit: if($unit == "em", 1em, 1rem);
   $important: if($sledgehammer, " !important", "");
 
   @each $s in $sizes {
@@ -46,14 +46,14 @@
       $vv: ();
 
       @each $ss in $s {
-        $vv: append($vv, if(type-of($ss) == number and $ss != 0, #{$ss / $context}#{$unit}, $ss));
+        $vv: append($vv, if(type-of($ss) == number and $ss != 0, $ss / $context * $unit, $ss));
       }
 
       $values: append($values, join((), $vv));
     }
 
     @else {
-      $values: append($values, if(type-of($s) == number and $s != 0, #{$s / $context}#{$unit},
+      $values: append($values, if(type-of($s) == number and $s != 0, $s / $context * $unit,
         $s));
     }
   }
