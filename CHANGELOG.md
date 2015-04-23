@@ -1,7 +1,9 @@
 === HEAD
 
-=== 1.9.0 (April 23, 2015)
+=== 1.8.1 (April 22, 2015)
 
+- Correctly handle Sass units for the `html` element, thanks to
+  @HugoGiraudel. [PR: #95](https://github.com/chris-pearce/scally/pull/95).
 - Correctly handle Sass units for the `to-em-or-rem` mixin, thanks to
   @HugoGiraudel. [PR: #91](https://github.com/chris-pearce/scally/pull/91).
 - Correctly handle Sass units for the `to-em` and  `to-rem` functions, thanks
