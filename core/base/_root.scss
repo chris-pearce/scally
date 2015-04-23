@@ -27,7 +27,7 @@ $apply-none-sub-pixel-anti-aliasing:  true !default;
  */
 
 html {
-  font: ($font-size/16)+em/$line-height-ratio $font-family-base; // [1]
+  font: ($font-size / 16 * 1em)/$line-height-ratio $font-family-base; // [1]
   color: $colour-text-base;
   background: $html-element-background-colour;
   @if $apply-none-sub-pixel-anti-aliasing {
