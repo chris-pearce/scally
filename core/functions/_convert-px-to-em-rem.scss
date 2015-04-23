@@ -6,9 +6,6 @@
 /**
  * To convert `px` to `em`s or `rem`s.
  *
- * @credit
- * https://gist.github.com/2237465
- *
  * @example
    .foo {margin-left: to-em(8, 20);}
    .foo {padding: to-rem(8) 0;}
@@ -27,9 +24,9 @@
       $value: map-get($breakpoints, $value);
     } @else {
       @warn "Breakpoint name '#{$value}' not recognised.";
-    }
+    }// endif
   }// endif
-  @return #{$value / $context}em;
+  @return $value / $context * 1em;
 }
 
 
@@ -38,5 +35,5 @@
  */
 
 @function to-rem($value) {
-  @return #{$value / $font-size}rem;
+  @return $value / $font-size * 1rem;
 }

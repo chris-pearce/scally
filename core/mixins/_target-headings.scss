@@ -29,13 +29,10 @@
         $selector: "#{$selector}, .#{$selector}";
       }// endif
 
-      $selector-list: append($selector-list, $selector);
+      $selector-list: append($selector-list, unquote($selector), comma);
     }
 
-    // Combine and output all selectors with css content
-    $full-selector: join($selector-list, (), "comma");
-
-    #{$full-selector} {
+    #{$selector-list} {
       @content
     }
   }
