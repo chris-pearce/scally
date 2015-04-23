@@ -44,30 +44,31 @@
    @include font-size(12, none);
    @include font-size(24, inherit);
    @include font-size(24, normal);
+   @include font-size(24, normal, true); or
+   @include font-size(24, normal, !important);
  *
  * @credit
  * https://github.com/inuitcss/tools.mixins/blob/master/_tools.mixins.scss
  */
 
 
-@mixin font-size($font-size-value, $line-height-value: auto) {
+@mixin font-size($font-size-value, $line-height-value: auto, $sledgehammer: false) {
 
-  font-size: ($font-size-value / $font-size) * 1rem;
+  $important: if($sledgehammer, " !important", "");
+  font-size: ($font-size-value / $font-size) * 1rem#{$important};
 
   @if $line-height-value == auto {
     line-height: ceil($font-size-value / $line-height) * ($line-height /
-      $font-size-value);
+      $font-size-value)#{$important};
   }
-
   @else {
 
     @if (type-of($line-height-value) == number or $line-height-value == inherit
       or $line-height-value == normal) {
-      line-height: $line-height-value;
+      line-height: $line-height-value#{$important};
     }
-
     @elseif ($line-height-value != none and $line-height-value != false) {
       @warn "D'oh! `#{$line-height-value}` is not a valid value for `line-height`."
-    }
-  }
+    }// endif
+  }// endif
 }

@@ -6,14 +6,13 @@
 ## Contents
 
 - [What are they?](#what-are-they)
-- [Demo's](#demos)
+- [Demos](#demos)
 - [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
-- [Open/close principle](#openclose-principle)
-- [Applying at breakpoints](#applying-at-breakpoints)
+  - [An example](#an-example)
+  - [Applying to components](#applying-to-components)
 - [Specificity](#specificity)
 - [Namespace](#namespace)
-- [New utilities](#new-utilities)
 - [Further reading](#further-reading)
 
 
@@ -21,44 +20,61 @@
 
 ## What are they?
 
-Utilities are low-level. They have a very narrow scope and may end up being used frequently, due to their separation from the semantics of the document and the theming of what they're being applied too. Think of them as helpers.
+Utilities are your helper classes and typically your last resort when needing
+to apply styles to an element.
+
+They apply really common CSS styles either as a single declaration e.g. float
+an element to the right: `.u-float-right`, or a very simple, universal pattern
+(multiline declaration) e.g. hide an element but only visually:
+`.u-hide-visually`.
+
+They never have any styles that are concerned with cosmetics and they must
+always follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
 
 
 
 
-## Demo's
+## Demos
 
-<http://s.codepen.io/chris-pearce/debug/WbMgMp> (work in progress)
+<http://s.codepen.io/chris-pearce/full/WbMgMp> (work in progress)
 
 
 
 
 ## Why have them?
 
-Utilities can form a wide variety of UI patterns from simple principles meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable modules.
+Utilities exist because every UI consists of really common styles that will
+need to be applied many times, therefore it makes sense to abstract these
+styles into nice reusable CSS snippets i.e. utilities. It's the same reason why
+[objects](../objects/README.md) and [layout modules](../layout/README.md)
+exist. The difference though with utilities is that they sit right at the
+bottom of the food chain—so to speak—in comparison to the other Scally
+sections, because they're so simple and low-level, and aren't too far away from
+inline styles.
 
-A classic use case for a utility is when a HTML list (`ul` or `ol`) items (`li`) need to render horizontally rather than their default vertically stacked rendering. If we were to write our CSS in a non-OOCSS way then we would have to repeat the CSS over and over again to achieve this simple UI pattern, but using OOCSS techniques and the concept of a Scally utility we just declare it once like so:
+With that said and even though it's rare they'll always be the need to apply
+utilities to a UI as not everything can be a
+[component](../components/README.md) or taken care of by
+[objects](../objects/README.md) and [layout modules](../layout/README.md). In
+these scenerios—if utilities didn't exist—we would have issues like:
 
-```
-%u-list-inline,
-.u-list-inline {
-    > li {display: inline-block;}
-}
-```
+- Where do these types of styles live in our CSS architecture?
+- Lots of *micro* components that aren't *true* components.
+- CSS not being as DRY and maintainable as it could be because we would have to
+  keep writing the same styles over and over again.
 
-So utilities are extremely powerful and are the real work horses of any sort of UI build especially large-scale UI builds, and here are some reasons why:
-
-- Your CSS will be a lot DRYer and maintainable.
-- You can make far-reaching changes to your UI with simple modifications to a single utility.
-- You have confidence in your changes because edits to a utility only ever alter one responsibility.
-- You can combine utilities to make a variety of UI layouts.
+So utilities help keep our CSS a lot DRYer and maintainable and enable us to
+make far-reaching changes to our UI with simple modifications to a single
+utility because we have the confidence that edits to a utility will only ever
+alter one responsibility.
 
 
 
 
 ## How to use
 
-Each utility class modifies a single trait which might be an individual style e.g.
+Each utility applies a single style e.g.
 
 ```
 // Center align text
@@ -66,12 +82,13 @@ Each utility class modifies a single trait which might be an individual style e.
 .u-text-align-center {text-align: center;}
 ```
 
-Or a small collection of styles e.g.
+Or a very simple, universal pattern (multiline declaration) e.g.
 
 ```
-// Pin to all corners
+// Pin an element to all corners of its parent
 %u-position-pin-all,
 .u-position-pin-all {
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -79,146 +96,145 @@ Or a small collection of styles e.g.
 }
 ```
 
-To apply a trait, or a combination of traits, add the corresponding class or classes directly to the HTML element.
+To apply utilities you apply the utility class directly to the HTML element. If
+the element already has a component class e.g. `.c-box` then you cannot add the
+utility class to the element as the styling needs to be taken care of by the
+component. This comes back to the last resort approach mentioned in the
+[What are they?](#what-are-they) section above.
 
-So say you wanted an element to pin it's itself to all corners of it's container then you would apply like so:
+It should be acknowledged—like with most things CSS related—that the above is
+not completely black and white, what matters is that you know when you're
+overusing utilities. Also they're two exceptions to utilities being your last
+resort: the [**Spacing**](_u-spacing.scss) utility and the
+[**Percentage widths**](_u-widths.scss) utility. **Percentage widths** is a
+fundamental part of the Grid layout module giving the grid items their
+percentage based widths e.g. `.u-one-half`. **Spacing** takes care of all the
+common whitespace in the UI especially because components can't handle any
+whitespace that exists on the *outside* of a component.
 
-    <div class="u-position-absolute u-position-pin-all"> ... </div>
+### An example
 
-However if the above `div` was part of a [component](../components/README.md) e.g. **Modal** then we apply the traits via a [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_) applied with the `@extend` directive. This is done for the following reasons:
+If we look at a snippet of the UI from this
+[home page](http://www.manchester.gov.uk/):
 
-- It's more maintainable when changes need to be made as you don't have to touch the HTML so much, however this can be resolved by having your Views only contain data with the UI coming from an API.
-- It’s more robust compared to having to rely on applying classes at the HTML level as classes can be missed.
-- It’s more readable and maintainable to have all of the styles enclosed in one place: the Sass component partial.
+[![alt text](https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/Rzy0WiEjhhp25k5/Screen%20Shot%202015-04-15%20at%208.12.45%20pm.png "Some UI from the Manchester City Council home page")](https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/Rzy0WiEjhhp25k5/Screen%20Shot%202015-04-15%20at%208.12.45%20pm.png)
 
-So the above `div` would receive a specific component class which would apply the styles via the `@extend` directive meaning we can remove all of the utility classes from the HTML e.g.
+We can construct almost all of it using a mixture of:
+
+- [Base styles](../core/base/) for things like the headings, links, paragraphs,
+  etc.
+- [Grid layout module](../layout/_l-grid.scss) to layout the sets of 2 and 4
+  columns.
+- [Container layout module](../layout/_l-container.scss) to group this set of
+  content, center align it and apply the global width.
+- [Button component](../components/_c-button.scss) for the *More ...* CTA
+  buttons.
+- Theme styles to apply the dark background and white text/yellow links.
+
+The missing treatment is the center alignment of all the text and this is where
+using a utility—one of the **Text** alignment utilities:
+[`.u-text-align-center`](../utilities/_u-text.scss)—would make sense otherwise
+we'd have to **a)** create a *micro* component/object that just applies
+`text-align: center` which is overkill and doesn't fit the criteria of a
+component/object *OR* **b)** just hack that style into our CSS architecture
+somewhere which can get real messy quick.
+
+So we could just apply the utility to the main container element which would be
+the [Container layout module](../layout/_l-container.scss), like so:
+
+```
+<div class="l-container l-container--full-bleed  u-text-align-center">
+  <div class="l-container">
+    [ ... ]
+  </div>
+</div>
+```
+
+Note how the utility class comes last in the class attribute? The order is:
+
+1. Components
+2. Layout modules
+3. Objects
+4. Utilities
+
+Preferably separated by 2 empty spaces to improve readability.
+
+### Applying to components
+
+It's quite rare to apply utilities in the context of components as components
+are discrete custom elements of a UI that enclose specific semantics and
+styling therefore applying lots of uilities to them doesn't make them as
+self-contained, portable, and maintainable as they need to be. The exception to
+this is when we need to apply really common universal patterns which are
+multiline declaration blocks e.g. hide an element but only visually:
+`.u-hide-visually`. When these types of utilities are needed you would apply
+the utility via its [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
+using the `@extend` directive, rather than applying the utility class to the
+component HTML.
+
+So if we had a **Modal dialog** component and part of that component was the
+overlay that sits behind the dialog—covering the entire viewport—we could make
+use of the **Position** utility: `.u-position-pin-all` which will pin an
+element—in this case the overlay—to all corners of it's parent—in this case the
+main viewport.
+
+A code example:
 
 **HTML**
 
-    <div class="modal__cover"> ... </div>
+```
+<div class="modal__overlay"></div>
+```
 
 **CSS**
 
-    .modal__cover {
-        position: absolute;
-        @extend %u-position-pin-all;
-    }
-
-You can see that `position: absolute;` is not being `@extend`ed here as it's only a single-line declaration therefore it's overkill to `@extend` it i.e. there isn't any value from a readability, performance, or just general maintainability point of view. [This article](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) (starting from the text: *Another case of an abused `@extend` looks a little like this*) does a very good job at further explaining why this isn't a good idea.
-
-Utilities are really powerful when used in conjuction with other utilities as they can construct entire UI patterns by themselves i.e. without the need to create specific components. Take this classic UI pattern found in many UI's:
-
-![alt text](https://s3.amazonaws.com/uploads.hipchat.com/33649/339750/S2tV2jw6G5RxxZa/side%20by%20side.png "Example of what can be achieved with a bunch of Scally utilities")
-
-The general layout of this UI pattern: *place any two elements side-by-side, typically for an image- and text-like content* is taken care of by the [Side-by-side layout module](../layout/_l-side-by-side.scss) however they're a number of other style treatments going on in this UI pattern that are outside of the Side-by-side layout module's scope. And this is where Scally utilities and their modifiers come into play, in this case:
-
-- [Divider](_u-divider.scss)
-- [Spacing](_u-spacing.scss)
-- [Text](_u-text.scss)
-
-The HTML:
-
 ```
-<div class="l-side-by-side  u-divider-bottom  u-s-pb-base u-s-mb-base">
-    <div class="l-side-by-side__left">
-      <img src"{{src}}" alt="...">
-    </div>
-    <div class="l-side-by-side__right  u-s-p-base">
-      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
-      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
-    </div>
-</div>
-
-<div class="l-side-by-side l-side-by-side--reversed">
-    <div class="l-side-by-side__left">
-      <img src"{{src}}" alt="...">
-    </div>
-    <div class="l-side-by-side__right  u-s-p-base">
-      <h2 class="u-text-transform-uppercase  u-s-mb-none">Title</h2>
-      <p>Habitasse pellentesque turpis nunc cras, a tincidunt, elementum nunc lectus lacus</p>
-    </div>
-</div>
+.modal__overlay {
+    @extend %u-position-pin-all;
+    [ ... ]
+}
 ```
 
+The rule is: **do not `@extend` single line declarations** as there is no
+benefit in doing this, components only need to make use of utilities when
+they're applying universal patterns which are multiline declarations.
 
-
-
-## Open/close principle
-
-Utilities follow the open/close principle, which states that software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
-
-So Scally utilities can only ever be used *as is*. If an existing Scally utility needs to do more than what it offers then typically you'll be wanting to create a new component, *or* maybe the need for a new utility? Either way it should be scrutinised over like everything with OOCSS.
-
-
-
-
-## Applying at breakpoints
-
-When building responsive UI's it is a really common requirement to apply a style or a set of styles at a specific viewport, and utilities are the prime suspects for this treatment as they're used so extensively. So each utility comes with the ability to be applied at any of the [set breakpoints](../core/settings/_breakpoints.scss) or any custom breakpoint.
-
-Scally makes this easy by the [`Generate at breakpoints mixin`](../core/mixins/_generate-at-breakpoints.scss) and this feature is turned off by default in favour of leaner stylesheets, **and not all UI's are responsive**.
-
-A real common use case for this application is hiding UI at certain viewport sizes, typically at a mobile size viewport or a non-mobile size viewport.
-
-So if we wanted to hide a **Call Us** button on larger viewports we would use the [**Display**](_u-display.scss) utility to achieve this, applying these steps:
-
-1. Turn the feature on by changing the relevant setting to `true` e.g.
- 
- `$u-display-apply-at-breakpoints-for-hide: true;`
-
- which will output (compile) the utility in a media query like so:
-
-  ```
-  @media (min-width: 40.0625em) {
-    .u-hide-from-lap {display: none;}
-  }
-  ```
-2. By default the feature uses the `lap` breakpoint but you can change this to another breakpoint or add more breakpoints via the `$u-display-apply-at-breakpoints` setting which you do in your [master stylesheet](https://github.com/chris-pearce/scally#master-stylesheet-overview) above the relevant `@import`:
-
-  ```
-  $u-display-apply-at-breakpoints: (lap, lap-large)
-  @import "bower_components/scally/utilities/u-display";
-  ```
-  This will output (compile):
-  ```
-  @media (min-width: 40.0625em) {
-    .u-hide-from-lap {display: none;}
-  }
-  @media (min-width: 56.3125em) {
-    .u-hide-from-lap-large {display: none;}
-  }
-  ```
 
 
 
 ## Specificity
 
-Utilities always need to *win* when it comes to specificity (CSS' first C; the cascade) as they should always *just work* otherwise they're not doing their job properly i.e. you should never be needing to override a utility's styles. If you are then you're not using them correctly, [see](#open-close-principle).
+Utilities always need to *win* when it comes to specificity (CSS' first C; the
+cascade) as they should always *just work* otherwise they're not doing their
+job properly i.e. you should never be needing to override a utility's styles.
+If you are then you're not using them correctly.
 
-That's why utilities are declared last when pulling in the Scally framework via your [master stylesheet](../style.scss) so they're compiled after everything else.
+To ensure this Scally does the following:
+
+- Applies the `!important` keyword to all utilities to boost their specificity.
+- Declares all utilities last in the Scally framework so they're compiled after
+  everything else.
 
 
 
 
 ## Namespace
 
-All utility classes and utility silent placeholder selectors should be prefixed with `u-` so that they're easily identifiable.
+All utility classes, silent placeholder selectors, and settings are prefixed
+with `u-` so that they're easily identifiable e.g.
 
-
-
-
-## New utilities
-
-You can create new utilities in your [project specific CSS](https://github.com/westfieldlabs/scally#your-styles) however because utilities are so focused it's probably better off in the Scally framework. So create a [Scally GitHub issue](https://github.com/westfieldlabs/scally/issues) to have it considered for inclusion into the framework or even better [submit a PR](https://github.com/westfieldlabs/scally#contributing).
+- `.u-text-align-center`
+- `%u-text-align-center`
+- `$u-text-apply-at-breakpoints`
 
 
 
 
 ## Further reading
 
-*Make sure to read the documentation within each utility Sass partial file as it will contain information about the utility and it's implementations.*
+*Make sure to read the documentation within each utility Sass partial file as
+it will contain information about the utility and it's implementation.*
 
-- [THE MEDIA OBJECT SAVES HUNDREDS OF LINES OF CODE](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
 - [When to use `@extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)

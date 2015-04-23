@@ -30,20 +30,19 @@ $apply-close-button-for-ie10plus-inputs:                false !default;
  * Text inputs and `select`s styles.
  */
 
-$text-input-and-select-text-color:                      $colour-text-base !default;
+$text-input-and-select-text-color:                      $color-text-base !default;
 
-$text-input-and-select-background-color:                $colour-white !default;
+$text-input-and-select-background-color:                $color-white !default;
 
 $text-input-and-select-rounded-corners-size:            $border-radius !default;
 
 $text-input-and-select-padding:                         $spacing-quarter !default;
 
-$text-input-and-select-border-thickness:                1 !default;
+$text-input-and-select-border-thickness:                1px !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
-$text-input-and-select-border-colour:                   lighten($colour-black, 30%)
-!default;
+$text-input-and-select-border-color:                    lighten($color-black, 30%) !default;
 
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
 
@@ -69,7 +68,7 @@ textarea {resize: vertical;}
 
 @if $apply-friendly-box-model {
   input[type="search"] {box-sizing: border-box;}
-}
+}// endif
 
 
 /**
@@ -104,8 +103,7 @@ select {border-radius: 0;}
  * 2. Enable line-wrapping in old versions of some other browsers.
  *
  * @credit
- * http://www.456bereastreet.com/archive/201210/
- * how_to_line_wrap_text_in_legend_elements_even_in_ie/
+ * http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
  */
 
 legend {
@@ -149,7 +147,7 @@ legend {
     background: inherit !important;
     text-decoration: none !important;
   }
-}
+}// endif
 
 
 /**
@@ -157,7 +155,7 @@ legend {
  */
 
 .required-field {
-  color: $colour-state-error;
+  color: $color-state-error;
   cursor: help;
 }
 
@@ -176,21 +174,18 @@ legend {
 
     // Apply a border but make it optional
     @if $apply-text-input-and-select-border {
-      @include to-rem(border, $text-input-and-select-border-thickness
-                              $text-input-and-select-border-style
-                              $text-input-and-select-border-colour
-                      );
-
+      border: $text-input-and-select-border-thickness
+              $text-input-and-select-border-style
+              $text-input-and-select-border-color;
     }
     @else {
       border: 0;
-    }
+    }// endif
 
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
-      @include to-rem(border-radius,
-        $text-input-and-select-rounded-corners-size);
-    }
+      border-radius: $text-input-and-select-rounded-corners-size;
+    }// endif
   }
 }// endif
 

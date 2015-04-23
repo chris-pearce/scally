@@ -21,9 +21,11 @@
    * Apply print friendly styles to ALL elements.
    */
 
-  * {
+  *,
+  *:before,
+  *:after {
     background: transparent !important;
-    color: $colour-black !important;
+    color: $color-black !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }

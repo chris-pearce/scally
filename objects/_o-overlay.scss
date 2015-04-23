@@ -1,0 +1,151 @@
+/* ============================================================================
+   @OBJECTS -> OVERLAY
+   ========================================================================= */
+
+
+/**
+ * A simple semi-transparent overlay in a dark and light version and a version
+ * that can be applied only on hover (and `:focus` if the element is a natively
+ * focusable element). The overlay will pin itself to all the corners of it's
+ * parent element.
+ *
+ * They're 2 type of applications for the overlay:
+ *
+ * 1. Full viewport (the default): the overlay covers the entire viewport. This
+ *    is the most common application. The markup will live either after the
+ *    opening `body` element or before the closing `body` element.
+ * 2. Inline (a modifier): the overlay covers a certain part of the UI e.g. the
+ *    main content area. The markup will live in the part of the UI it's
+ *    covering.
+ *
+ * N.B. The `z-index` should be managed by: Core -> Settings -> Postioning. And
+ * this may end up not being used instead being sucked into a component e.g. a
+ * Modal component.
+ *
+ * @markup
+   <div class="o-overlay [modifier(s)]">
+     <div class="o-overlay__inner"></div>
+   </div>
+ *
+ * If the Hover modifier version:
+ *
+   <div class="o-overlay o-overlay--hover [modifier]"></div>
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Dark
+$o-overlay-color-dark:                        $color-black !default;
+
+$o-overlay-opacity-strength-dark:             0.6 !default;
+
+// Light
+$o-overlay-color-light:                       $color-white !default;
+
+$o-overlay-opacity-strength-light:            0.6 !default;
+
+// Apply a transition for hover?
+$o-overlay-hover-apply-transition:            true !default;
+
+// Hover transition duration
+$o-overlay-hover-transition-duration:         0.2s !default;
+
+// Hover transition timing function
+$o-overlay-hover-transition-timing-function:  ease !default;
+
+
+/**
+ * Container.
+ *
+ * 1. So it can work on inline elements e.g. `a`.
+ */
+
+%o-overlay,
+.o-overlay {display: block;} // [1]
+
+
+/**
+ * Modifier: inline, if inline version the container needs to apply the
+ * positioning context for the inner element.
+ */
+
+%o-overlay--inline,
+.o-overlay--inline {position: relative;}
+
+
+  /**
+   * The inner element that pins itself to it's parent including the `:before`
+   * psuedo element for the Hover modifier version.
+   */
+
+  %o-overlay__inner,
+  .o-overlay__inner,
+  %o-overlay--hover:before,
+  .o-overlay--hover:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  /**
+   * Modifier: dark overlay.
+   */
+
+  %o-overlay--dark .o-overlay__inner,
+  .o-overlay--dark .o-overlay__inner {background-color: rgba($o-overlay-color-dark,
+    $o-overlay-opacity-strength-dark);}
+
+
+  /**
+   * Modifier: light overlay.
+   */
+
+  %o-overlay--light .o-overlay__inner,
+  .o-overlay--light .o-overlay__inner {background-color: rgba($o-overlay-color-light,
+    $o-overlay-opacity-strength-light);}
+
+
+/*
+ * Modifier: hover version.
+ *
+ * 1. Apply positioning context for the pseudo element.
+ * 2. Apply a transition?
+ * 3. Make transparent by default.
+ * 4. Turn off pointer events for safe measure.
+ */
+
+%o-overlay--hover,
+.o-overlay--hover {
+  position: relative; // [1]
+
+  &:before {
+    content: "";
+
+    // [2]
+    @if $o-overlay-hover-apply-transition {
+      transition: background-color $o-overlay-hover-transition-duration
+      $o-overlay-hover-transition-timing-function;
+    }// endif
+
+    background-color: transparent; // [3]
+    pointer-events: none; // [4]
+  }
+}
+
+// Dark
+%o-overlay--hover.o-overlay--dark:hover:before,
+%o-overlay--hover.o-overlay--dark:focus:before,
+.o-overlay--hover.o-overlay--dark:hover:before,
+.o-overlay--hover.o-overlay--dark:focus:before {background-color: rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
+
+// Light
+%o-overlay--hover.o-overlay--light:hover:before,
+%o-overlay--hover.o-overlay--light:focus:before,
+.o-overlay--hover.o-overlay--light:hover:before,
+.o-overlay--hover.o-overlay--light:focus:before {background-color: rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}

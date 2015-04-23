@@ -35,7 +35,7 @@
       startColorstr='#{ie-hex-str($from)}',
       endColorstr='#{ie-hex-str($to)}')
     );
-  }
+  }// endif
 }
 
 
@@ -46,7 +46,7 @@
    @include radial-gradient(blue, red);
  */
 
-@mixin radial-gradient($inner-colour, $outer-colour) {
-  background-image: radial-gradient(circle, $inner-colour, $outer-colour);
+@mixin radial-gradient($inner-color, $outer-color) {
+  background-image: radial-gradient(circle, $inner-color, $outer-color);
   background-repeat: no-repeat;
 }

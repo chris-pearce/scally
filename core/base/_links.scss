@@ -7,18 +7,18 @@
  * Settings.
  */
 
-$link-colour:         $colour-brand !default;
+$link-color:         $color-brand !default;
 
-$link-colour-hover:   darken($link-colour, 10%) !default;
+$link-color-hover:   darken($link-color, 10%) !default;
 
 
 a {
-  color: $link-colour;
+  color: $link-color;
   text-decoration: none;
 
   &:hover,
-	&:focus {
-    color: $link-colour-hover;
+  &:focus {
+    color: $link-color-hover;
     text-decoration: underline;
-	}
+  }
 }

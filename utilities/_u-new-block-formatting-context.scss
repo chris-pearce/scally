@@ -10,6 +10,14 @@
  * N.B. this is one of the rare occasions where the class/placeholder is
  * shortened.
  *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-nbfc
+   .u-nbfc-alt
+ *
+ * @demo
+ * http://s.codepen.io/chris-pearce/full/zxRQwV
+ *
  * @credit
  * https://github.com/suitcss/utils-layout/blob/master/lib/layout.css
  */
@@ -20,13 +28,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-nbfc-apply-at-breakpoints:               $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-nbfc-apply-at-breakpoints-for-default:   false !default;
 
 $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
@@ -42,16 +49,16 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
 
 %u-nfbc,
 .u-nbfc {
-  display: table-cell; // [1]
-  width: 10000px; // [2]
+  display: table-cell !important; // [1]
+  width: 10000px !important; // [2]
 }
 
 @if $u-nbfc-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.u-nbfc', $u-nbfc-apply-at-breakpoints) {
-    display: table-cell;
-    width: 10000px;
+    display: table-cell !important;
+    width: 10000px !important;
   }
-}// end if
+}// endif
 
 
 /**
@@ -61,10 +68,9 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
  */
 
 %u-nbfc-alt,
-.u-nbfc-alt {overflow: hidden;}
+.u-nbfc-alt {overflow: hidden !important;}
 
 @if $u-nbfc-apply-at-breakpoints-for-alt {
-  @include generate-at-breakpoints('.u-nbfc-alt', $u-nbfc-apply-at-breakpoints) {
-    overflow: hidden;
-  }
-}// end if
+  @include generate-at-breakpoints('.u-nbfc-alt',
+    $u-nbfc-apply-at-breakpoints) {overflow: hidden !important;}
+}// endif

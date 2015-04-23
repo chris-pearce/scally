@@ -1,0 +1,96 @@
+/* ============================================================================
+   @OBJECTS -> ARROW
+   ========================================================================= */
+
+
+/**
+ * Creates arrow shapes using only CSS.
+ *
+ * @markup
+   <span class="o-arrow [modifier(s)]"></span>
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/gbVLwy/
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Sizes
+$o-arrow-size-base:     8px !default;
+
+$o-arrow-size-tiny:     $o-arrow-size-base - 4 !default;
+
+$o-arrow-size-small:    $o-arrow-size-base - 2 !default;
+
+$o-arrow-size-large:    $o-arrow-size-base + 2 !default;
+
+$o-arrow-size-huge:     $o-arrow-size-base + 4 !default;
+
+// Colour
+$o-arrow-color:         $color-text-base !default;
+
+
+%o-arrow,
+.o-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: $o-arrow-size-base solid transparent;
+  vertical-align: middle;
+}
+
+
+/**
+ * Modifier: sizes.
+ */
+
+// Tiny
+%o-arrow--tiny,
+.o-arrow--tiny {border-width: $o-arrow-size-tiny;}
+
+// Small
+%o-arrow--small,
+.o-arrow--small {border-width: $o-arrow-size-small;}
+
+// Large
+%o-arrow--large,
+.o-arrow--large {border-width: $o-arrow-size-large;}
+
+// Huge
+%o-arrow--huge,
+.o-arrow--huge {border-width: $o-arrow-size-huge;}
+
+
+/**
+ * Modifier: down arrow.
+ */
+
+%o-arrow--down,
+.o-arrow--down {border-top-color: $o-arrow-color;}
+
+
+/**
+ * Modifier: up arrow.
+ */
+
+%o-arrow--up,
+.o-arrow--up {border-bottom-color: $o-arrow-color;}
+
+
+/**
+ * Modifier: left arrow.
+ */
+
+%o-arrow--left,
+.o-arrow--left {border-right-color: $o-arrow-color;}
+
+
+/**
+ * Modifier: right arrow.
+ */
+
+%o-arrow--right,
+.o-arrow--right {border-left-color: $o-arrow-color;}

@@ -5,6 +5,15 @@
 
 /**
  * Simply make an element floated or remove it.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-float-left
+   .u-float-right
+   .u-float-none
+ *
+ * @demo
+ * http://s.codepen.io/chris-pearce/full/ByYeQd
  */
 
 
@@ -13,13 +22,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-float-apply-at-breakpoints:             $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-float-apply-at-breakpoints-for-left:    false !default;
 
 $u-float-apply-at-breakpoints-for-right:   false !default;
@@ -32,13 +40,12 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
  */
 
 %u-float-left,
-.u-float-left {float: left;}
+.u-float-left {float: left !important;}
 
 @if $u-float-apply-at-breakpoints-for-left {
-  @include generate-at-breakpoints('.u-float-left', $u-float-apply-at-breakpoints) {
-    float: left;
-  }
-}// end if
+  @include generate-at-breakpoints('.u-float-left',
+    $u-float-apply-at-breakpoints) {float: left !important;}
+}// endif
 
 
 /**
@@ -46,13 +53,12 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
  */
 
 %u-float-right,
-.u-float-right {float: right;}
+.u-float-right {float: right !important;}
 
 @if $u-float-apply-at-breakpoints-for-right {
-  @include generate-at-breakpoints('.u-float-right', $u-float-apply-at-breakpoints) {
-    float: right;
-  }
-}// end if
+  @include generate-at-breakpoints('.u-float-right',
+    $u-float-apply-at-breakpoints) {float: right !important;}
+}// endif
 
 
 /**
@@ -60,10 +66,9 @@ $u-float-apply-at-breakpoints-for-none:    false !default;
  */
 
 %u-float-none,
-.u-float-none {float: none;}
+.u-float-none {float: none !important;}
 
 @if $u-float-apply-at-breakpoints-for-none {
-  @include generate-at-breakpoints('.u-float-none', $u-float-apply-at-breakpoints) {
-    float: none;
-  }
-}// end if
+  @include generate-at-breakpoints('.u-float-none',
+    $u-float-apply-at-breakpoints) {float: none !important;}
+}// endif

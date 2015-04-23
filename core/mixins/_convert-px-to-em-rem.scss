@@ -47,11 +47,10 @@
 
       $values: append($values, join((), $vv));
     }
-
     @else {
       $values: append($values, if(type-of($s) == number and $s != 0, $s / $context * $unit,
         $s));
-    }
+    }// endif
   }
 
   $value: join((), $values, if($sublists, comma, space));

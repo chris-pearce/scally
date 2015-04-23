@@ -24,8 +24,8 @@
       $value: map-get($breakpoints, $value);
     } @else {
       @warn "Breakpoint name '#{$value}' not recognised.";
-    }
-  }
+    }// endif
+  }// endif
   @return $value / $context * 1em;
 }
 

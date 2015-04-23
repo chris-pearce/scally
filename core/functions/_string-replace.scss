@@ -28,7 +28,7 @@
 
     @if ($all > 0) {
       $position-found: str-index($string, $substr);
-    }
+    }// endif
   }
 
   $processed: append($processed, $string);

@@ -111,7 +111,6 @@ menu {
  */
 
 @if $apply-friendly-box-model {
-
   html {box-sizing: border-box;}
 
   * {
@@ -119,7 +118,6 @@ menu {
     &:before,
     &:after {box-sizing: inherit;}
   }
-
 }// endif
 
 
@@ -159,4 +157,4 @@ ins {text-decoration: none;}
  * Apply faux underlines to inserted text via `border-bottom`.
  */
 
-ins {@include to-rem(border-bottom, 1 solid);}
+ins {border-bottom: 1px solid;}
