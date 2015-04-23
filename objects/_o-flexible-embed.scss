@@ -136,13 +136,13 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
    */
 
   %o-flexible-embed__content,
-	.o-flexible-embed__content {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+  .o-flexible-embed__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   @if $o-flexible-embed-apply-at-breakpoints-for-content {
     @include generate-at-breakpoints('.o-flexible-embed__content',
