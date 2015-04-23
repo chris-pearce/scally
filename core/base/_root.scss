@@ -26,7 +26,7 @@ $apply-osx-font-smoothing:            true !default;
  */
 
 html {
-  font: ($font-size/16)+em/$line-height-ratio $font-family-base; // [1]
+  font: ($font-size / 16 * 1em)/$line-height-ratio $font-family-base; // [1]
   color: $color-text-base;
   background: $html-element-background-color;
   @if $apply-osx-font-smoothing {

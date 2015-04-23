@@ -1,6 +1,6 @@
 === HEAD
 
-=== 2.0.0 (April 14, 2015)
+=== 2.0.0 (April 23, 2015)
 
 - Create a new section called: Objects and convert some utilities to objects (#47).
 - Updates to the Button component (#70).
@@ -20,6 +20,28 @@
 - Remove `rem` units for `border`, `border-radius`, `box-shadow`, and `text-shadow` and replace with `px` units (#79).
 - Make Button Group component optional (#77).
 - Apply [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) CSS updates where applicable (#43).
+
+=== 1.8.2 (April 23, 2015)
+
+- Correctly handle Sass units for the `html` element, thanks to
+  @HugoGiraudel. [PR: #95](https://github.com/chris-pearce/scally/pull/95).
+
+=== 1.8.1 (April 22, 2015)
+
+- Correctly handle Sass units for the `to-em-or-rem` mixin, thanks to
+  @HugoGiraudel. [PR: #91](https://github.com/chris-pearce/scally/pull/91).
+- Correctly handle Sass units for the `to-em` and  `to-rem` functions, thanks
+  to @HugoGiraudel. [PR: #90](https://github.com/chris-pearce/scally/pull/90).
+
+=== 1.8.0 (April 21, 2015)
+
+- Made Scally compatible with [LibSass](http://libsass.org/) by fixing 2 of
+  Scally's mixins: "Target headings" and "Generate percentage classes at
+  breakpoints", thanks to @stowball.
+  [PR: #81](https://github.com/chris-pearce/scally/pull/81).
+- Converted the `to-em` and `to-rem` mixins into one generic mixin and made
+  some improvements, thanks to @stowball.
+  [PR: #85](https://github.com/chris-pearce/scally/pull/85).
 
 === 1.7.2 (April 9, 2015)
 
