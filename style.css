@@ -264,9 +264,6 @@
 /**
  * To convert `px` to `em`s or `rem`s.
  *
- * @credit
- * https://gist.github.com/2237465
- *
  * @example
    .foo {margin-left: to-em(8, 20);}
    .foo {padding: to-rem(8) 0;}
@@ -330,17 +327,18 @@
  * font size rather than the current.
  *
  * @example
-   @include to-em(line-height, 30);
-   @include to-rem(line-height, 30);
+   @include to-em(line-height, 30, 12);
    @include to-em(width height, 125);
    @include to-rem(padding, 0 25);
    @include to-em(text-shadow, (#0d6e28 1 1) (#777 0 0 2), 16);
    @include to-rem(box-shadow, (inset 0 0 0 1 #2a9022) (inset 0 0 3 #459966));
-   @include to-em(padding margin, $spacing-base, $sledgehammer: !important);
-   @include to-rem(margin, $spacing-base, !important);
+   @include to-em(padding margin, $spacing-base, true);
+   @include to-rem(margin, true);
+ */
+/**
+ * `em-or-rem`.
  *
- * @credit
- * https://gist.github.com/2237465
+ * Generic mixin which is used by the `to-em` and `to-rem` mixins below
  */
 /**
  * `em`.
@@ -545,8 +543,8 @@
  *
  * The percentage classes can be applied at any breakpoint or any of the set
  * breakpoints defined here: Core -> Settings -> Breakpoints. If the breakpoint
- * is set via a min-width media query (the default)—say the 'desk'
- * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
+ * is set via a min-width media query (the default)ÔÇösay the 'desk'
+ * breakpointÔÇöthen the format will be: `.u-one-half-from-desk`, but if the
  * breakpoint is set via a max-width media query then the format will be:
  * `.u-one-half-up-to-desk`.
  *
@@ -1146,7 +1144,11 @@ ins {
    ========================================================================= */
 /**
  * The root element: `html`.
- *
+ */
+/**
+ * Settings.
+ */
+/**
  * 1. Set the default `font-size`, `line-height` and `font-family` for the
  *    entire project, sourced from the Scally settings. The `font-size` is
  *    calculated to exist in `em`s, the `line-height` is calculated to exist
@@ -1154,11 +1156,10 @@ ins {
  * 2. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
  */
-/**
- * Settings.
- */
 html {
-  font: 1em/1.5 Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
   color: #000;
   background: #fff;
   -moz-osx-font-smoothing: grayscale;
@@ -3926,7 +3927,7 @@ li:before {
    @UTILITIES -> FLEX EMBED
    ========================================================================= */
 /**
- * For use with media embeds – such as videos, slideshows, or even images –
+ * For use with media embeds ÔÇô such as videos, slideshows, or even images ÔÇô
  * that need to retain a specific aspect ratio but adapt to the width of their
  * containing element.
  *
