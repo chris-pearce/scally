@@ -36,6 +36,7 @@ $o-link-disguised-apply-at-breakpoints-toggle:  false !default;
   &:visited,
   &:hover,
   &:focus {
+    border-bottom: 0;
     text-decoration: none;
     color: inherit;
   }
@@ -50,6 +51,7 @@ $o-link-disguised-apply-at-breakpoints-toggle:  false !default;
     &:visited,
     &:hover,
     &:focus {
+      border-bottom: 0;
       text-decoration: none;
       color: inherit;
     }
