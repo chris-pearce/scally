@@ -127,13 +127,12 @@ $c-button-rounded-corners-size:             $border-radius !default;
 
 $c-button-hover-opacity-strength:           0.7 !default;
 
-$c-button-hover-transition-duration:        0.1 !default;
+$c-button-hover-transition-duration:        0.15s !default;
 
 $c-button-hover-transition-timing-function: linear !default;
 
 
 .c-button {
-  // `@extend`ing the Button object
   @extend %o-button;
   text-align: center;
   background-color: $c-button-background-color;
@@ -147,7 +146,7 @@ $c-button-hover-transition-timing-function: linear !default;
 
   // Apply rounded corners
   @if $c-button-apply-rounded-corners {
-    // N.B. ugly hack in order to increase the specificty to override the
+    // N.B. ugly hack in order to increase the specificity to override the
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
     html & {border-radius: $c-button-rounded-corners-size;}
@@ -161,12 +160,11 @@ $c-button-hover-transition-timing-function: linear !default;
 
   // Apply hover/focus styles
   @if $c-button-apply-hover-styles {
-    &:hover,
-    &:focus {
-      opacity: $c-button-hover-opacity-strength;
-      transition: opacity #{$c-button-hover-transition-duration}s
+    transition: opacity $c-button-hover-transition-duration
       $c-button-hover-transition-timing-function;
-    }
+
+    &:hover,
+    &:focus {opacity: $c-button-hover-opacity-strength;}
   }// endif
 }
 
