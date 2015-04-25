@@ -63,7 +63,7 @@ $remove-top-inner-shadow-from-ios-inputs-class:         ios !default;
  * will be overridden and will be set to `true`.
  */
 
-$apply-friendly-box-model:                              false !default;
+$apply-friendly-box-model:                             false !default;
 
 
 /**
@@ -207,8 +207,13 @@ legend {
     }// endif
 
     // Make 100% wide
-    @if $apply-text-input-full-bleed && $apply-friendly-box-model == false {
+    @if $apply-text-input-full-bleed {
       width: 100%;
+
+      // Need to apply `box-sizing: border-box` if it hasn't been set globally
+      @if $apply-friendly-box-model == false {
+        box-sizing: border-box;
+      }// endif
     }// endif
   }
 }// endif
