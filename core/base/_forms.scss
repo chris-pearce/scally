@@ -30,24 +30,27 @@ $apply-close-button-for-ie10plus-inputs:                false !default;
  * Text inputs and `select`s styles.
  */
 
-$text-input-and-select-text-color:
-$color-text-base !default;
+$text-input-and-select-text-color:                      $color-text-base !default;
 
 $text-input-and-select-background-color:                $color-white !default;
 
 $text-input-and-select-rounded-corners-size:            $border-radius !default;
 
-$text-input-and-select-padding:
-$spacing-quarter !default;
+$text-input-and-select-padding:                         $spacing-quarter !default;
 
 $text-input-and-select-border-thickness:                1px !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
-$text-input-and-select-border-color:
-lighten($color-black, 30%) !default;
+$text-input-and-select-border-color:                    lighten($color-black, 30%) !default;
 
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
+
+/**
+ * The class to use to remove the top inner shadow from iOS inputs.
+ */
+
+$remove-top-inner-shadow-from-ios-inputs-class:         ios;
 
 
 /**
@@ -202,7 +205,7 @@ legend {
  */
 
 @if $apply-top-inner-shadow-for-ios-inputs {
-  .ios {
+  .#{$remove-top-inner-shadow-from-ios-inputs-class} {
     .remove-top-inner-shadow-from-ios-inputs,
     .text-input,
     textarea {-webkit-appearance: caret;}
