@@ -14,16 +14,16 @@
  * 1. Full viewport (the default): the overlay covers the entire viewport. This
  *    is the most common application. The markup will live either after the
  *    opening `body` element or before the closing `body` element.
- * 2. Inline (a modifier): the overlay covers a certain part of the UI e.g. the
- *    main content area. The markup will live in the part of the UI it's
- *    covering.
+ * 2. In context (a modifier): the overlay covers a certain part of the UI
+ *    e.g. the main content area. The markup will live in the part of the UI
+ *    it's covering.
  *
  * N.B. The `z-index` should be managed by: Core -> Settings -> Positioning.
  * And this may end up not being used instead being sucked into a component
  * e.g. a Modal component.
  *
  * @markup
-   <div class="o-overlay [modifier(s)]">
+   <div class="o-overlay [modifier]">
      <div class="o-overlay__inner"></div>
    </div>
  *
@@ -68,12 +68,12 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 
 
 /**
- * Modifier: inline, if inline version the container needs to apply the
+ * Modifier: in context, for this version the container needs to apply the
  * positioning context for the inner element.
  */
 
-%o-overlay--inline,
-.o-overlay--inline {position: relative;}
+%o-overlay--in-context,
+.o-overlay--in-context {position: relative;}
 
 
   /**
@@ -97,7 +97,7 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    * Modifier: dark overlay.
    */
 
-  %o-overlay--dark .o-overlay__inner,
+  %o-overlay--dark %o-overlay__inner,
   .o-overlay--dark .o-overlay__inner {background-color:
     rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
 
@@ -106,7 +106,7 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    * Modifier: light overlay.
    */
 
-  %o-overlay--light .o-overlay__inner,
+  %o-overlay--light %o-overlay__inner,
   .o-overlay--light .o-overlay__inner {background-color:
     rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
 
@@ -139,15 +139,15 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 }
 
 // Dark
-%o-overlay--hover.o-overlay--dark:hover:before,
-%o-overlay--hover.o-overlay--dark:focus:before,
+%o-overlay--hover%o-overlay--dark:hover:before,
+%o-overlay--hover%o-overlay--dark:focus:before,
 .o-overlay--hover.o-overlay--dark:hover:before,
 .o-overlay--hover.o-overlay--dark:focus:before {background-color:
   rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
 
 // Light
-%o-overlay--hover.o-overlay--light:hover:before,
-%o-overlay--hover.o-overlay--light:focus:before,
+%o-overlay--hover%o-overlay--light:hover:before,
+%o-overlay--hover%o-overlay--light:focus:before,
 .o-overlay--hover.o-overlay--light:hover:before,
 .o-overlay--hover.o-overlay--light:focus:before {background-color:
   rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
