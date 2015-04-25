@@ -15,11 +15,18 @@
 - Removing colour and line-height utilities from the Text utility ([more](https://github.com/chris-pearce/scally/commit/b807ba55189391d9522cc712b63d0993875c4cd1)).
 - Listing all the utility selectors in the intro comment blocks ([more](https://github.com/chris-pearce/scally/commit/06cdda525958fa5d4c296f8f6655e5aae6526596)).
 - Removing CSS Table vertical alignment method from the Alignments utility ([more](https://github.com/chris-pearce/scally/commit/cfb41db0cf982b28fad568e0f84eae79a4da1d15)).
-- Add `!important` to ALL utilites (#66).
+- Add `!important` to ALL utilities (#66).
 - Removing Debug from Core ([more](https://github.com/chris-pearce/scally/commit/058713cd9fa5e7909ce62e9db06059a47731335e)).
 - Remove `rem` units for `border`, `border-radius`, `box-shadow`, and `text-shadow` and replace with `px` units (#79).
 - Make Button Group component optional (#77).
 - Apply [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) CSS updates where applicable (#43).
+
+=== 1.9.1 (April 25, 2015)
+
+- [Issue #96](https://github.com/chris-pearce/scally/issues/96) applied, thanks
+  to @stowball.
+- [Issue #103](https://github.com/chris-pearce/scally/issues/103) fixed, thanks
+  to @stowball.
 
 === 1.8.2 (April 23, 2015)
 

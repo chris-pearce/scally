@@ -30,6 +30,7 @@
 - [Presentations](#presentations)
 
 
+**Version 2 is coming in the next few days, in the meantime take a look at the [v2](https://github.com/chris-pearce/scally/tree/v2) branch and it's [CHANGELOG.md](https://github.com/chris-pearce/scally/blob/v2/CHANGELOG.md).**
 
 
 # What is Scally?
