@@ -12,9 +12,10 @@
  * Settings.
  */
 
-$html-element-background-color:       $color-white !default;
+$html-element-background-color:   $color-white !default;
 
-$apply-osx-font-smoothing:            true !default;
+$apply-osx-font-smoothing:        false !default;
+
 
 /**
  * 1. Set the default `font-size`, `line-height` and `font-family` for the
@@ -31,6 +32,7 @@ html {
   font-family: $font-family-base; // [1]
   color: $color-text-base;
   background: $html-element-background-color;
+
   @if $apply-osx-font-smoothing {
     -moz-osx-font-smoothing: grayscale; // [2]
     -webkit-font-smoothing: antialiased; // [2]

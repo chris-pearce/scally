@@ -16,13 +16,6 @@
 
 
 .c-button-faux-link {
-  // `@extend`ing the Button object
   @extend %o-button;
-  color: $link-color;
-
-  &:hover,
-  &:focus {
-    color: $link-color-hover;
-    text-decoration: underline;
-  }
+  @include base-link();
 }
