@@ -71,8 +71,8 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
 
   %o-link-complex__target,
   .o-link-complex__target {
-    cursor: pointer;
     @include base-link();
+    cursor: pointer;
   }
 
   @if $o-link-complex-apply-at-breakpoints-for-target {
