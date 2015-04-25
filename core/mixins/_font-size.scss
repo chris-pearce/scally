@@ -18,7 +18,7 @@
    }
  *
  * If you do not want Scally to generate you a line-height automatically, you
- * simply pass in your own as a second paramater:
+ * simply pass in your own as a second parameter:
  *
    .foo {@include font-size(12, 1.5);}
  *
@@ -30,7 +30,7 @@
    }
  *
  * This parameter can be any integer, `inherit`, or `normal`. If you don't
- * want a line-height at all, pass in a second paramater of `none` or `false`:
+ * want a line-height at all, pass in a second parameter of `none` or `false`:
  *
    .foo {@include font-size(12, none);}
  *

@@ -9,8 +9,8 @@
  *
  * @markup
    <div class="l-side-by-side [modifier(s)]">
-     <div class="l-side-by-side__left"> ... </div>
-     <div class="l-side-by-side__right"> ... </div>
+     <div class="l-side-by-side__left"> [...] </div>
+     <div class="l-side-by-side__right"> [...] </div>
    </div>
  *
  * @credit
@@ -28,7 +28,7 @@
 $l-side-by-side-apply-linear:       true !default;
 
 // At what breakpoint to make linear? Can be one of the main breakpoints or any
-// interger
+// integer
 // N.B. served via a `max-width` media query
 $l-side-by-side-apply-linear-when:  palm !default;
 
@@ -204,7 +204,7 @@ $l-side-by-side-gutter-huge:        $spacing-double !default;
    * Right side.
    *
    * 1. Create a new block formatting context (NBFC).
-   * 2. Avoid shrink-wrap behaviour of table-cell.
+   * 2. Avoid shrink-wrap behavior of table-cell.
    */
 
   .l-side-by-side__right {

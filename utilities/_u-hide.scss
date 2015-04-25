@@ -111,11 +111,11 @@ $u-hide-js-is-off-class:                           no-js !default;
 
 /**
  * Hide elements for JavaScript users and non-JavaScript users, this is
- * necessary when building accessibile and progressively enhanced UI's. This
+ * necessary when building accessible and progressively enhanced UI's. This
  * will require functionality that can append a hook to an element
  * (typically the `html` element) if JavaScript is on.
  *
- * N.B. it is okay to use `!important` here as we're doing it pre-emptively
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
  * i.e. you know you will always want the rule it's applied too to take
  * precedence.
  */

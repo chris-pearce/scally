@@ -18,9 +18,9 @@
  *    main content area. The markup will live in the part of the UI it's
  *    covering.
  *
- * N.B. The `z-index` should be managed by: Core -> Settings -> Postioning. And
- * this may end up not being used instead being sucked into a component e.g. a
- * Modal component.
+ * N.B. The `z-index` should be managed by: Core -> Settings -> Positioning.
+ * And this may end up not being used instead being sucked into a component
+ * e.g. a Modal component.
  *
  * @markup
    <div class="o-overlay [modifier(s)]">
@@ -78,7 +78,7 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 
   /**
    * The inner element that pins itself to it's parent including the `:before`
-   * psuedo element for the Hover modifier version.
+   * pseudo element for the Hover modifier version.
    */
 
   %o-overlay__inner,
@@ -98,8 +98,8 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    */
 
   %o-overlay--dark .o-overlay__inner,
-  .o-overlay--dark .o-overlay__inner {background-color: rgba($o-overlay-color-dark,
-    $o-overlay-opacity-strength-dark);}
+  .o-overlay--dark .o-overlay__inner {background-color:
+    rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
 
 
   /**
@@ -107,8 +107,8 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    */
 
   %o-overlay--light .o-overlay__inner,
-  .o-overlay--light .o-overlay__inner {background-color: rgba($o-overlay-color-light,
-    $o-overlay-opacity-strength-light);}
+  .o-overlay--light .o-overlay__inner {background-color:
+    rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
 
 
 /*
@@ -142,10 +142,12 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 %o-overlay--hover.o-overlay--dark:hover:before,
 %o-overlay--hover.o-overlay--dark:focus:before,
 .o-overlay--hover.o-overlay--dark:hover:before,
-.o-overlay--hover.o-overlay--dark:focus:before {background-color: rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
+.o-overlay--hover.o-overlay--dark:focus:before {background-color:
+  rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
 
 // Light
 %o-overlay--hover.o-overlay--light:hover:before,
 %o-overlay--hover.o-overlay--light:focus:before,
 .o-overlay--hover.o-overlay--light:hover:before,
-.o-overlay--hover.o-overlay--light:focus:before {background-color: rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
+.o-overlay--hover.o-overlay--light:focus:before {background-color:
+  rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}

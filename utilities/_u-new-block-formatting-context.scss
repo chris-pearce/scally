@@ -41,7 +41,7 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
 
 /**
  * 1. Create a new block formatting context (NBFC).
- * 2. Avoid shrink-wrap behaviour of table-cell.
+ * 2. Avoid shrink-wrap behavior of table-cell.
  *
  * N.B. this breaks down in some browsers when elements within this element
  * exceed its width.

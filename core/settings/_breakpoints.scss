@@ -14,7 +14,7 @@
  *
  * Here's the thinking:
  *
- * - Palm: smartphones and featurephones i.e. anything that can fit into the
+ * - Palm: smartphones and feature phones i.e. anything that can fit into the
  *   palm of a hand.
  * - Lap: typically tablets, notebooks and laptops i.e. anything that is
  *   portable that doesn't include phones.
@@ -36,8 +36,8 @@
  * - Desk large:   1366px +
  *
  * @credit
- * - http://www.lukew.com/ff/entry.asp?1679
- * - https://developers.google.com/webmasters/smartphone-sites/details?hl=en
+ * http://www.lukew.com/ff/entry.asp?1679
+ * https://developers.google.com/webmasters/smartphone-sites/details?hl=en
  */
 
 
@@ -58,10 +58,8 @@ $breakpoints: (
 
 
 /**
- * Define the breakpoints that we want certain modules e.g. utilities to use
- * applied via the `generate-at-breakpoints` mixin found in Core -> Mixins.
- * By default we set it to Lap but this can be overriden at the individual
- * partial level.
+ * A global setting to define the common breakpoint(s) for Scally and your
+ * project. This is mainly used by the Generate at breakpoints mixin.
  */
 
 $default-breakpoints: (lap) !default;

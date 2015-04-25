@@ -30,19 +30,22 @@ $apply-close-button-for-ie10plus-inputs:                false !default;
  * Text inputs and `select`s styles.
  */
 
-$text-input-and-select-text-color:                      $color-text-base !default;
+$text-input-and-select-text-color:
+$color-text-base !default;
 
 $text-input-and-select-background-color:                $color-white !default;
 
 $text-input-and-select-rounded-corners-size:            $border-radius !default;
 
-$text-input-and-select-padding:                         $spacing-quarter !default;
+$text-input-and-select-padding:
+$spacing-quarter !default;
 
 $text-input-and-select-border-thickness:                1px !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
-$text-input-and-select-border-color:                    lighten($color-black, 30%) !default;
+$text-input-and-select-border-color:
+lighten($color-black, 30%) !default;
 
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
 

@@ -101,7 +101,8 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 
 %o-table--striped,
 .o-table--striped {
-  tr:nth-of-type(odd) td {background-color: $o-table-striped-background-cell-color;}
+  tr:nth-of-type(odd) td {background-color:
+    $o-table-striped-background-cell-color;}
 }
 
 @if $o-table-apply-at-breakpoints-for-striped {
@@ -156,9 +157,10 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 
 
 /**
- * Modifier: small cell padding.
+ * Modifiers: cell padding.
  */
 
+// Small padding
 %o-table--cell-padding-small,
 .o-table--cell-padding-small {
   th,
@@ -174,10 +176,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 }// endif
 
 
-/**
- * Modifier: large cell padding.
- */
-
+// Large padding
 %o-table--cell-padding-large,
 .o-table--cell-padding-large {
   th,
@@ -193,10 +192,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 }// endif
 
 
-/**
- * Modifier: no cell padding.
- */
-
+// No padding
 %o-table--no-cell-padding,
 .o-table--no-cell-padding {
   th,
