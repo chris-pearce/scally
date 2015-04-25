@@ -1,5 +1,12 @@
 === HEAD
 
+=== 1.9.1 (April 25, 2015)
+
+- [Issue #96](https://github.com/chris-pearce/scally/issues/96) applied, thanks
+  to @stowball.
+- [Issue #103](https://github.com/chris-pearce/scally/issues/103) fixed, thanks
+  to @stowball.
+
 === 1.8.2 (April 23, 2015)
 
 - Correctly handle Sass units for the `html` element, thanks to

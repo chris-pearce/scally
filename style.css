@@ -310,7 +310,7 @@
  * A string helper which replaces a set of characters in a string.
  *
  * @credit
- * https://github.com/hail2u/scss-functions/blob/master/string/_str-replace.scss
+ * http://sassmeister.com/gist/1b4f2da5527830088e4d
  *
  * @example
    str-replace("my-long-string", "long", "longer");
@@ -1172,7 +1172,9 @@ ins {
  *    render text using sub-pixel anti-aliasing.
  */
 html {
-  font: 0.66667em Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
   color: #000;
   background: #fff;
   -moz-osx-font-smoothing: grayscale;
