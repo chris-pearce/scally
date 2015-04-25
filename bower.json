@@ -1,8 +1,7 @@
 {
   "name": "scally",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "homepage": "https://github.com/chris-pearce/scally",
-  "main": "style.css",
   "authors": [
     "Chris Pearce <hi@chris-pearce.me>",
     "Kate Levin <kllevin@gmail.com>",
@@ -18,16 +17,13 @@
     "bem",
     "responsive"
   ],
-  "license": "The MIT License (MIT)",
+  "license": "Apache 2",
   "ignore": [
     ".gitignore",
-    "settings.scss",
-    "style.scss",
-    "style-test.scss",
+    ".npmignore",
     "CHANGELOG.md",
     "package.json",
-    "test.html",
-    ".version",
-    ".npmignore"
+    "test.scss",
+    "test.html"
   ]
 }

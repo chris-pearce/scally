@@ -42,7 +42,7 @@ Scally is designed to be configurable, only requiring you to bring in the parts 
 
 
 
-# Demo's 
+# Demo's
 
 *A website—featuring demos of everything in Scally—is coming soon, in the meantime they're CodePen's that can be looked at (work in progress):*
 
@@ -150,11 +150,9 @@ You can install Scally via the [**Download by zip**](https://github.com/chris-pe
 
 ## Setting up your master stylesheet
 
-Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, that will live in the root of the folder where you keep all of your CSS.
+Once you have installed Scally you will need to create a master Sass stylesheet called `style.scss`, or whatever you want to name it, but for the purpose of this document `style.scss` will be the expected name. This file will live at the root of the folder where you keep all of your CSS.
 
-Once you have created this file grab everything [from here](https://github.com/chris-pearce/scally/blob/master/style.scss) and paste it into your master stylesheet.
-
-This master stylesheet is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
+This will be your master stylesheet and is what you will link too from your HTML head, once compiled that is, you can run a basic Sass watch command to compile your Sass, like this:
 
 ```
 sass --watch style.scss:style.css
@@ -168,29 +166,27 @@ Then add a reference to the compiled master stylesheet in your HTML head:
 <link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
 ```
 
-This master stylesheet is designed to pull in everything from Scally plus your project-specific styles and compile down to a single css file.
-
 ## Master stylesheet overview
 
 Your master stylesheet is split into three main sections:
 
-- [**Your settings.**](#your-settings) All of your project-specific settings in the form of Sass variables.
-- [**Scally framework.**](#scally-framework) The entire Scally framework including your overrides.
-- [**Your styles.**](#your-styles) All of the CSS you will write for your project.
+1. [**Your settings.**](#your-settings) All of your project-specific settings in the form of Sass variables.
+2. [**Scally framework.**](#scally-framework) The entire Scally framework including your overrides.
+3. [**Your styles.**](#your-styles) All of the CSS you will write for your project.
 
 **N.B.** it's imperative this order is maintained otherwise Scally won't work.
 
 ### Your settings
 
-This first section consists of one Sass partial:
+Create a new `.scss` file called `settings.scss` that will live in the root of the folder where you keep all of your CSS, along with your master Sass stylesheet: `style.scss`, and link to this file from `style.scss` like so:
 
 ```
 @import "settings";
 ```
 
-Which should live at the same level in your project file structure as your master stylesheet: `style.scss`, see an [example here](https://raw.githubusercontent.com/chris-pearce/scally/master/settings.scss).
+**This must come before the other two sections.**
 
-In this partial you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
+In this file you will store all of your common project-specific settings, beyond what Scally offers. Typically you won't have many of these.
 
 Common project-specific settings might be adding more colours, so if you decide you need a new colour then in `settings.scss` you can create one like so:
 
