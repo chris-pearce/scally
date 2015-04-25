@@ -70,36 +70,36 @@ $c-button-apply-group-rounded-corners:        true !default;
 /**
  * Box sizing, here we set a variable assuming that `box-sizing: border-box;`
  * is not set globally. If it has been previously been defined, the following
- * variable will be overriden and will be set to `true`.
+ * variable will be overridden and will be set to `true`.
  */
 
-$apply-friendly-box-model:                  false !default;
+$apply-friendly-box-model:                    false !default;
 
 /**
  * Colours.
  */
 
-$c-button-background-color:                 $color-primary !default;
+$c-button-background-color:                   $color-primary !default;
 
-$c-button-background-color-secondary:       $color-secondary !default;
+$c-button-background-color-secondary:         $color-secondary !default;
 
-$c-button-foreground-color:                 $color-white !default;
+$c-button-foreground-color:                   $color-white !default;
 
-$c-button-foreground-color-secondary:       $c-button-foreground-color !default;
+$c-button-foreground-color-secondary:         $c-button-foreground-color !default;
 
 /**
  * Padding.
  */
 
-$c-button-padding-base:                     $spacing-base !default;
+$c-button-padding-base:                       $spacing-base !default;
 
-$c-button-padding-tiny:                     $spacing-third !default;
+$c-button-padding-tiny:                       $spacing-third !default;
 
-$c-button-padding-small:                    $spacing-half !default;
+$c-button-padding-small:                      $spacing-half !default;
 
-$c-button-padding-large:                    $spacing-base-plus-half !default;
+$c-button-padding-large:                      $spacing-base-plus-half !default;
 
-$c-button-padding-huge:                     $spacing-double !default;
+$c-button-padding-huge:                       $spacing-double !default;
 
 /**
  * Border.
@@ -107,29 +107,31 @@ $c-button-padding-huge:                     $spacing-double !default;
  * N.B. also includes the borders used in the 'Grouping' option.
  */
 
-$c-button-border-thickness:                 1px !default;
+$c-button-border-thickness:                   1px !default;
 
-$c-button-border-style:                     solid !default;
+$c-button-border-style:                       solid !default;
 
-$c-button-border-color:                     darken($c-button-background-color, 10%) !default;
+$c-button-border-color:
+darken($c-button-background-color, 10%) !default;
 
-$c-button-border-color-secondary:           darken($c-button-background-color-secondary, 10%) !default;
+$c-button-border-color-secondary:
+darken($c-button-background-color-secondary, 10%) !default;
 
 /**
  * Rounded corners.
  */
 
-$c-button-rounded-corners-size:             $border-radius !default;
+$c-button-rounded-corners-size:               $border-radius !default;
 
 /**
  * Hover/focus styles, simple fade out effect via `opacity`
  */
 
-$c-button-hover-opacity-strength:           0.7 !default;
+$c-button-hover-opacity-strength:             0.7 !default;
 
-$c-button-hover-transition-duration:        0.15s !default;
+$c-button-hover-transition-duration:          0.15s !default;
 
-$c-button-hover-transition-timing-function: linear !default;
+$c-button-hover-transition-timing-function:   linear !default;
 
 
 .c-button {
@@ -255,7 +257,7 @@ $c-button-hover-transition-timing-function: linear !default;
       @if $c-button-apply-border == false {
         border: $c-button-border-thickness $c-button-border-style
           $c-button-border-color;
-      }
+      }// endif
 
       // Turn off right borders so they don't double up, except for the last
       // one
@@ -265,10 +267,11 @@ $c-button-hover-transition-timing-function: linear !default;
       // the first and last buttons in the group need rounded corners
       @if $c-button-apply-rounded-corners {
         border-radius: 0;
-      }
+      }// endif
 
       // Round off the first and last buttons in the group
-      @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
+      @if $c-button-apply-group-rounded-corners or
+      $c-button-apply-rounded-corners {
         &:first-child {
           border-top-left-radius: $c-button-rounded-corners-size;
           border-bottom-left-radius: $c-button-rounded-corners-size;
@@ -278,7 +281,7 @@ $c-button-hover-transition-timing-function: linear !default;
           border-top-right-radius: $c-button-rounded-corners-size;
           border-bottom-right-radius: $c-button-rounded-corners-size;
         }
-      }
+      }// endif
 
     }
 
@@ -305,7 +308,8 @@ $c-button-hover-transition-timing-function: linear !default;
         &:not(:last-child) {border-bottom: 0;}
 
         // Round off the first and last buttons in the group
-        @if $c-button-apply-group-rounded-corners or $c-button-apply-rounded-corners {
+        @if $c-button-apply-group-rounded-corners or
+        $c-button-apply-rounded-corners {
           &:first-child {
             border-bottom-left-radius: 0;
             border-top-left-radius: $c-button-rounded-corners-size;
@@ -317,7 +321,7 @@ $c-button-hover-transition-timing-function: linear !default;
             border-bottom-left-radius: $c-button-rounded-corners-size;
             border-bottom-right-radius: $c-button-rounded-corners-size;
           }
-        }
+        }// endif
       }
     }
   }

@@ -42,7 +42,7 @@ img {
 
     /**
      * Google Maps breaks if `max-width: 100%` acts upon it; use their
-     * selector to remove the effects.
+     * selector to turn this off.
      */
 
     #{$google-map-selector-to-turn-off-responsive-images} & {max-width: none;}

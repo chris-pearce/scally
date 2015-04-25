@@ -6,6 +6,8 @@
 /**
  * To convert `px` to `em`s or `rem`s.
  *
+ * N.B. this function is used mainly to feed the mixins.
+ *
  * @example
    .foo {margin-left: to-em(8, 20);}
    .foo {padding: to-rem(8) 0;}

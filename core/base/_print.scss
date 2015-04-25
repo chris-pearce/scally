@@ -44,7 +44,10 @@
    * Ensure ALL images are responsive.
    */
 
-  img {max-width: 100% !important;}
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 
 
   /**
@@ -53,7 +56,10 @@
 
   a {
     &,
-    &:visited {text-decoration: underline !important;}
+    &:visited {
+      text-decoration: underline !important;
+      border-bottom: 0 !important;
+    }
   }
 
 

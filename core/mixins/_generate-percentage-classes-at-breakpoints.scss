@@ -4,8 +4,8 @@
 
 
 /**
- * Generate percentage classes defined by the settings here:
- * Core -> Settings -> Widths.
+ * Generate percentage classes defined by the settings here: Core -> Settings
+ * -> Widths.
  *
  * The default format for these classes is:
  *
@@ -27,14 +27,18 @@
  *
  * The more terse format is turned off by default, to turn it on change this
  * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
- * `@import` for this mixin in your master stylesheet.
+ * `@import` for this mixin in your master stylesheet e.g.
+ *
+   $mixin-apply-terse-percentage-class-names: true;
+   @import "scally/core/mixins/generate-percentage-classes-at-breakpoints";
  *
  * The percentage classes can be applied at any breakpoint or any of the set
  * breakpoints defined here: Core -> Settings -> Breakpoints. If the breakpoint
- * is set via a min-width media query (the default)—say the 'desk'
+ * is set via a `min-width` media query (the default)—say the 'desk'
  * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
- * breakpoint is set via a max-width media query then the format will be:
- * `.u-one-half-up-to-desk`.
+ * breakpoint is set via a `max-width` media query then the format will be:
+ * `.u-one-half-up-to-desk`. For more info on how applying the breakpoints
+ * work see the 'Generate at breakpoints' mixin.
  *
  * @example
    @include generate-percentage-classes-at-breakpoints(

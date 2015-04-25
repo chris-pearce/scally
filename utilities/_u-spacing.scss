@@ -318,7 +318,7 @@ $u-spacing-sizes: (
   huge:  $u-spacing-huge
 );
 
-// Spacing type map (abbreviation + css property)
+// Spacing type map (abbreviation + CSS property)
 $u-spacing-types: (
 
   // All
@@ -1163,7 +1163,7 @@ $u-spacing-types: (
           // Negative spacing
           @if str_index($abbreviation, "-n") != null {
             $size-value: $size-value * -1;
-          }
+          }// endif
 
           // All other spacing
           @include to-rem($type, $size-value, !important);
