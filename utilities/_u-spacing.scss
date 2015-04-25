@@ -1151,7 +1151,7 @@ $u-spacing-types: (
   @else {
 
     // Loop through the sizes
-    @each $size in (micro base tiny small large huge) {
+    @each $size, $value in $u-spacing-sizes {
       $class-name: ".u-s-#{$abbreviation}-#{$size}";
       @if index($u-spacing-apply-classes-for-breakpoints, $class-name) != null {
         @include generate-at-breakpoints($class-name,
