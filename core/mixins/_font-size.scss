@@ -52,6 +52,8 @@
 
 @mixin font-size($font-size-value, $line-height-value: auto) {
 
+  $font-size-value: strip-unit($font-size-value);
+  
   font-size: ($font-size-value / $font-size) * 1rem;
 
   @if $line-height-value == auto {

@@ -39,7 +39,7 @@
  */
 
 @mixin respond-to($value, $limit: "min", $axis: "width") {
-  @media (#{$limit}-#{$axis}: to-em($value, 16)) {
+  @media (#{$limit}-#{$axis}: to-em(strip-unit($value), 16)) {
     @content;
   }
 }
@@ -80,7 +80,7 @@
     }
   }
 
-  @media (min-#{$axis}: to-em($min-value, 16)) and (max-#{$axis}: to-em($max-value, 16))
+  @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16))
   {
     @content;
   }
