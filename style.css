@@ -402,6 +402,7 @@
  * @example
    @include font-size(18);
    @include font-size(12, 1.5);
+   @include font-size(12, 18px);
    @include font-size(12, none);
    @include font-size(24, inherit);
    @include font-size(24, normal);

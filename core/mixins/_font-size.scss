@@ -41,6 +41,7 @@
  * @example
    @include font-size(18);
    @include font-size(12, 1.5);
+   @include font-size(12, 18px);
    @include font-size(12, none);
    @include font-size(24, inherit);
    @include font-size(24, normal);
@@ -63,8 +64,16 @@
 
   @else {
 
-    @if (type-of($line-height-value) == number or $line-height-value == inherit
-      or $line-height-value == normal) {
+    @if (type-of($line-height-value) == number) {
+      @if unitless($line-height-value) {
+        line-height: $line-height-value;
+      }
+      @else {
+        line-height: strip-unit($line-height-value) / $font-size-value;
+      }
+    }
+
+    @elseif $line-height-value == inherit or $line-height-value == normal {
       line-height: $line-height-value;
     }
 
