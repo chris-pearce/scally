@@ -47,7 +47,8 @@ $text-input-and-select-border-color:                    lighten($color-black, 30
 $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
 
 /**
- * The class to use to remove the top inner shadow from iOS inputs.
+ * The name of the class to target iOS so the top inner shadow from iOS inputs
+ * can be removed.
  */
 
 $remove-top-inner-shadow-from-ios-inputs-class:         ios;
