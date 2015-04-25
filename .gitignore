@@ -1,9 +1,9 @@
 # Specific files #
 ###################
-style-test.scss
+test.scss
 test.html
-style.css.map
-Gruntfile.js
+test.css.map
+test.css
 
 
 # Compiled source #

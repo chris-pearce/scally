@@ -21,6 +21,10 @@
 - Make Button Group component optional (#77).
 - Apply [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) CSS updates where applicable (#43).
 
+=== 1.10.0 (April 25, 2015)
+
+- [Issue #108](https://github.com/chris-pearce/scally/issues/108) applied.
+
 === 1.9.1 (April 25, 2015)
 
 - [Issue #96](https://github.com/chris-pearce/scally/issues/96) applied, thanks
