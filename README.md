@@ -673,15 +673,35 @@ for some feedback from the Scally community before writing any code.
 
 To submit code to Scally fork the Scally repository, do your changes, then
 create a [GitHub Pull Request](https://help.github.com/articles/using-pull-requests/)
-back to the Scally master branch.
+back to the Scally master branch for review.
 
-Make sure your code is:
+Your PR title should use the same title as it's corresponding GitHub issue but
+prefixed with the issue number e.g.
 
-- Throughly tested e.g.
+>> Issue #108: Remove style.scss and style.cssfrom the repo and package json files
+
+And in the PR description include:
+
+>> This fixes #[x]
+
+Where 'x' is the issue number. GitHub will offer an auto-complete menu as soon
+as you type '#' where you can choose the issue the PR corresponds to.
+
+And you should add a comment in the GitHub issue linking to the PR.
+
+**Make sure your code is:**
+
+- Throughly tested:
   - Your Sass compiles both with the Ruby compiler and the LibSass compiler.
   - Tested in all supported browsers, [see](#browser-support).
-- Linted, lint your Sass, [see](#linting). Scally's build tests will catch any
-  linting issues however it's good practice to run linting manually also.
+- Versioned, update the [CHANGELOG.md](CHANGELOG.md) file following the existing
+  format. Update the version number—following the
+  [Semantic Versioning guidelines](http://semver.org/)—in the following files:
+  - [.version](.version)
+  - [bower.json](bower.json)
+  - [package.json](package.json)
+- Linted, [see](#linting). Scally's build tests will catch any linting issues
+  however it's good practice to run linting manually also.
 - Following these [CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/).
   Linting will catch a lot of this but not everything.
 
