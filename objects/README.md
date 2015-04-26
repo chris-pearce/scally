@@ -8,7 +8,7 @@
 - [What are they?](#what-are-they)
 - [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
-- [Namespace](#namespace)
+- [Namespacing](#namespacing)
 - [Further reading](#further-reading)
 
 
@@ -61,7 +61,7 @@ alter one responsibility.
 
 
 
-## Namespace
+## Namespacing
 
 All object classes, silent placeholder selectors, settings, and filenames
 are prefixed with `o-` so that they're easily identifiable e.g.

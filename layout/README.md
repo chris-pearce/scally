@@ -15,7 +15,7 @@
   - [Side-by-side](#side-by-side)
   - [Combined](#combined)
   - [Do not mix other styles](#do-not-mix-other-styles)
-- [Namespace](#namespace)
+- [Namespacing](#namespacing)
 - [Further reading](#further-reading)
 
 
@@ -400,7 +400,7 @@ nav component to the right grid cell we would mark it up like this:
 
 
 
-## Namespace
+## Namespacing
 
 All layout classes, settings, and filenames are prefixed with `l-` so that
 they're easily identifiable e.g.

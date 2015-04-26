@@ -12,7 +12,7 @@
   - [An example](#an-example)
   - [Applying to components](#applying-to-components)
 - [Specificity](#specificity)
-- [Namespace](#namespace)
+- [Namespacing](#namespacing)
 - [Further reading](#further-reading)
 
 
@@ -247,7 +247,7 @@ To ensure this Scally does the following:
 
 
 
-## Namespace
+## Namespacing
 
 All utility classes, silent placeholder selectors, settings, and filenames
 are prefixed with `u-` so that they're easily identifiable e.g.
