@@ -20,6 +20,8 @@ $apply-text-input-and-select-rounded-corners:           false !default;
 
 $apply-text-input-and-select-disabled-state:            true !default;
 
+$apply-text-input-full-bleed:                           true !default;
+
 // Remove the top inner shadow from iOS inputs
 $apply-top-inner-shadow-for-ios-inputs:                 false !default;
 
@@ -51,7 +53,17 @@ $text-input-and-select-disabled-state-opacity-strength: 0.6 !default;
  * can be removed.
  */
 
-$remove-top-inner-shadow-from-ios-inputs-class:         ios;
+$remove-top-inner-shadow-from-ios-inputs-class:         ios !default;
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+
+$apply-friendly-box-model:                             false !default;
 
 
 /**
@@ -192,6 +204,16 @@ legend {
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
       border-radius: $text-input-and-select-rounded-corners-size;
+    }// endif
+
+    // Make 100% wide
+    @if $apply-text-input-full-bleed {
+      width: 100%;
+
+      // Need to apply `box-sizing: border-box` if it hasn't been set globally
+      @if $apply-friendly-box-model == false {
+        box-sizing: border-box;
+      }// endif
     }// endif
   }
 }// endif
