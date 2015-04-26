@@ -489,6 +489,7 @@ they're easily identifiable e.g.
 
 *Make sure to read the documentation within each component Sass partial file as it will contain information about the component and it's implementation.*
 
+- [More Transparent UI Code with Namespaces -> Component Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#component-namespaces-c-)
 - [SMACCS](http://smacss.com/)
   - [SMACCS - Module Rules](https://smacss.com/book/type-module)
 - [SUIT CSS components](https://github.com/westfieldlabs/scally/blob/master/utilities/README.md#namespace)

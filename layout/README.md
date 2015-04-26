@@ -5,9 +5,9 @@
 
 ## Contents
 
-- [What is layout?](#what-is-layout)
+- [What are they?](#what-are-they)
 - [Demos](#demos)
-- [Why have layout?](#why-have-layout)
+- [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
   - [Container](#container)
   - [Grid](#grid)
@@ -21,7 +21,7 @@
 
 
 
-## What is layout?
+## What are they?
 
 Think of layout as Lego&reg;; the bits and pieces you need to construct a UI.
 
@@ -45,6 +45,9 @@ Scally features four powerful layout modules:
 should take care of most—if not all—the main layout patterns you'll find in a
 UI.*
 
+Layout modules follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
+
 
 
 
@@ -55,21 +58,13 @@ UI.*
 
 
 
-## Why have layout?
+## Why have them?
 
-Layout modules can form a wide variety of UI layout patterns meaning as CSS
-authors you don't have to keep writing the same styles over and over again,
-instead you can abstract those common styles into nice reusable layout modules,
-mentioned above.
+See the [Why have layout?](../objects/README.md#why-have-them) section in the
+objects README.
 
 Layout modules are extremely powerful and are the real work horses of any sort
-of UI build especially large-scale UI builds, and here are some reasons why:
-
-- Your CSS will be a lot DRYer and maintainable.
-- You can make far-reaching changes to your UI with simple modifications to a
-  single layout module.
-- You have confidence in your changes because edits to a layout module only
-  ever alter one responsibility.
+of UI build especially large-scale UI builds.
 
 
 
@@ -422,6 +417,7 @@ they're easily identifiable e.g.
 *Make sure to read the documentation within each layout Sass partial file as it
 will contain information about the layout module and it's implementations.*
 
+- [More Transparent UI Code with Namespaces -> Object Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#object-namespaces-o-)
 - [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)

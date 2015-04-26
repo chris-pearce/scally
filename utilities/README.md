@@ -28,8 +28,11 @@ an element to the right: `.u-float-right`, or a very simple, universal pattern
 (multiline declaration) e.g. hide an element but only visually:
 `.u-hide-visually`.
 
-They never have any styles that are concerned with cosmetics and they must
-always follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+There scope is only ever one element i.e. utilities can't affect child elements
+of the element they're being applied too and they never have any styles that are
+concerned with cosmetics.
+
+Utilities follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
 
 
@@ -97,7 +100,7 @@ Or a very simple, universal pattern (multiline declaration) e.g.
 ```
 
 To apply utilities you apply the utility class directly to the HTML element or
-in the case of [components](../components/) they ideally will be `@extend`'d.
+`@extend` it via it's [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_).
 
 If the element already has a component class e.g. `.c-box` then utility classes
 shouldn't be applied to the element as the styling needs to be taken care of by
@@ -107,14 +110,16 @@ the section below: [Applying to components](#applying-to-components).
 It should be acknowledged—like with most things CSS related—that the above is
 not completely black and white, what matters is that you know when you're
 overusing utilities. And this comes back to the last resort approach mentioned
-in the [What are they?](#what-are-they) section above. Also they're two
-exceptions to utilities being your last resort: the [**Spacing**](_u-spacing.scss)
-utility and the [**Percentage widths**](_u-widths.scss) utility. The
-**Percentage widths** utility is a fundamental part of the Grid layout module
-giving the grid items their percentage based widths e.g. `.u-one-half` (50%).
-The **Spacing** utility includes a load of common whitespace rules via `margin`
-and `padding` so should be used to apply *outside* (`margin`) whitespace to
-elements including components.
+in the [What are they?](#what-are-they) section above.
+
+They're two exceptions to utilities being your last resort: the
+[**Spacing**](_u-spacing.scss) utility and the
+[**Percentage widths**](_u-widths.scss) utility. The **Percentage widths**
+utility is a fundamental part of the Grid layout module giving the grid items
+their percentage based widths e.g. `.u-one-half`, `.u-three-quarters`, etc. The
+**Spacing** utility which includes a lot of spacing rules via the `margin` and
+`padding` properties can be used to apply spacing to the *outside* (`margin`)
+of elements especially components.
 
 ### An example
 
@@ -172,9 +177,9 @@ self-contained, portable, and maintainable as they need to be. The exception to
 this is when we need to apply really common universal patterns which are
 multiline declaration blocks e.g. hide an element but only visually:
 `.u-hide-visually`. When these types of utilities are needed you would apply
-the utility via its [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
-using the `@extend` directive, rather than applying the utility class to the
-component HTML, however some utilities can be applied to the component HTML:
+the utility via its Sass silent placeholder selector using the `@extend`
+directive, rather than applying the utility class to the component HTML, however
+some utilities can be applied to the component HTML:
 
 - [Hide](_u-hide.scss)
 - [Toggle visibility](_u-toggle-visibility.scss)
@@ -260,7 +265,9 @@ are prefixed with `u-` so that they're easily identifiable e.g.
 *Make sure to read the documentation within each utility Sass partial file as
 it will contain information about the utility and it's implementation.*
 
+- [More Transparent UI Code with Namespaces -> Utility Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utility-namespaces-u-)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
 - [When to use `@extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
 - [The Role of Utility Classes](http://davidtheclark.com/on-utility-classes/)
+- [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
