@@ -9,12 +9,12 @@
 - [Demos](#demos)
 - [Why have layout?](#why-have-layout)
 - [How to use](#how-to-use)
-    - [Container](#container)
-    - [Grid](#grid)
-        - [Responsive grid](#responsive-grid)
-    - [Side-by-side](#side-by-side)
-    - [Combined](#combined)
-    - [Do not mix other styles](#do-not-mix-other-styles)
+  - [Container](#container)
+  - [Grid](#grid)
+    - [Responsive grid](#responsive-grid)
+  - [Side-by-side](#side-by-side)
+  - [Combined](#combined)
+  - [Do not mix other styles](#do-not-mix-other-styles)
 - [Namespace](#namespace)
 - [Further reading](#further-reading)
 
@@ -28,17 +28,22 @@ Think of layout as Lego&reg;; the bits and pieces you need to construct a UI.
 Scally features four powerful layout modules:
 
 1. [**Container**](_l-container.scss): is designed to wrap all major UI layout
-   pieces and ensure the UI maintains a consistent width. Container is responsive. It is a fluid width controlled by percentages until it reaches it's maximum width, at which point it becomes center aligned.
+   pieces and ensure the UI maintains a consistent width. Container is
+   responsive in that it's a fluid width controlled by percentages until it
+   reaches a maximum width, at which point it becomes center aligned.
 2. [**Grid**](_l-grid.scss): is a powerful, fluid, nestable, mobile first grid
    system that allows you to set custom column widths at different viewports,
    making responsive layouts a sinch.
 3. [**Side-by-side**](_l-side-by-side.scss): is a simple yet very powerful
    layout module that places any two elements side-by-side, typically for an
-   image- and text-like content. There is also an alternative version that allows control over vertical alignment.
+   image—and text-like content. There is also an alternative version that allows
+   control over vertical alignment.
 4. [**Columns**](_l-columns.scss): lets you create columns out of one element
    using CSS3 Columns.
 
-*From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
+*From global page templates to component level layouts, the above layout modules
+should take care of most—if not all—the main layout patterns you'll find in a
+UI.*
 
 
 
@@ -189,10 +194,10 @@ which sit inside an inner container (the black box).
 
 The grid comes with the ability to apply widths to the grid cells at different
 viewports making it easy to construct responsive UI's. This ability isn't tied
-into the grid itself but uses the
-[**Percentage widths**](../utilities/_u-widths.scss) utilities.
+into the grid itself but uses the [**Percentage widths**](../utilities/_u-widths.scss)
+utilities.
 
-By default grid cells will stack on top of eachother unless told otherwise i.e.
+By default grid cells will stack on top of each other unless told otherwise i.e.
 they're completely linear. At small viewport widths e.g. handheld devices
 typically this is what you want, however as the viewport increases in width you
 can then apply widths to the grid cells turning them into columns.
@@ -257,24 +262,24 @@ You might be wondering why don't we just use the grid for this? You certainly
 can use the grid however you will need to specify widths for each grid cell and
 those widths might need changing based on the viewport size,
 [see here](#responsive-grid). The side-by-side layout module cells do not
-require widths instead the left and right cells will shrink wrap it's content
+require widths, instead the left and right cells will shrink wrap it's content
 making it much more easier to implement this type of layout than the grid.
 
 The side-by-side layout module is responsive friendly just like the grid. The
-left and right parts will stack on top of eachother up until a certain
-breakpoint where they'll then become–well side-by-side. This behaviour is
+left and right parts will stack on top of each other up until a certain
+breakpoint where they'll then become–well side-by-side. This behavior is
 configurable by these two settings:
 
 ```
-$l-side-by-side-apply-linear: [true/false];
-$l-side-by-side-apply-linear-when: [a breakpoint];
+$l-side-by-side-apply-linear:       [true/false];
+$l-side-by-side-apply-linear-when:  [a breakpoint];
 ```
 
 The default values for these settings are:
 
 ```
-$l-side-by-side-apply-linear: true !default;
-$l-side-by-side-apply-linear-when: palm !default;
+$l-side-by-side-apply-linear:       true !default;
+$l-side-by-side-apply-linear-when:  palm !default;
 ```
 
 ### Combined
@@ -296,10 +301,10 @@ layout:
 
 In order of stacking (bottom to top):
 
-- Container *(modifier: full-bleed)*
-- Container
-- Grid
-- Side-by-side
+- Red = Container *(modifier: full-bleed)*
+- Yellow = Container
+- Black = Grid
+- Blue = Side-by-side
 
 **The HTML**
 
@@ -349,7 +354,8 @@ In order of stacking (bottom to top):
 
 You should **never** mix in any other styles with any of the layout modules.
 This ties in with the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
-and the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) which is used for utilities and objects.
+and the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
+which is used for [Utilities](../utilities/) and [Objects](../objects/).
 
 So if we look at the HTML for the header demo'd above for this piece of UI:
 
@@ -401,11 +407,12 @@ nav component to the right grid cell we would mark it up like this:
 
 ## Namespace
 
-All layout classes and settings are prefixed with `l-` so that they're easily
-identifiable e.g.
+All layout classes, settings, and filenames are prefixed with `l-` so that
+they're easily identifiable e.g.
 
 - `.l-grid`
 - `$l-grid-apply-at-breakpoints`
+- `_l-grid.scss`
 
 
 
