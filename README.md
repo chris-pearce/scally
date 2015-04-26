@@ -19,7 +19,7 @@
     - [Your settings](#your-settings)
     - [Scally framework](#scally-framework)
     - [Your styles](#your-styles)
-    - [Master stylesheet template](#master-stylesheet-template)
+    - [Sample master stylesheet](#sample-master-stylesheet)
     - [Example architecture](#example-architecture)
 - [Browser support](#browser-support)
 - [Authoring guidelines](#authoring-guidelines)
@@ -98,8 +98,8 @@ The breakdown of these layers from bottom to top (order of their specificity):
 
     *We advise you to setup Autoprefixer as part of your build process e.g. if
     you're using [Grunt](http://gruntjs.com/) then you can create a Grunt task
-    for Autoprefixer using something
-    [like](https://github.com/nDmitry/grunt-autoprefixer)*.
+    for Autoprefixer using a Grunt task such as
+    [this](https://github.com/nDmitry/grunt-autoprefixer)*.
 
 
 
@@ -161,8 +161,9 @@ project root
 changes directly in Scally you will not be able to seamlessly update your
 version of Scally to the latest version.
 
-*This is a very simple overview of npm and Bower so if you're new to them then
-please take the time to read up on them.*
+This is a very simple overview of npm and Bower so if you are new to them you
+can learn more about npm [here](https://www.npmjs.com/) and check out Bower
+[here](http://bower.io/).
 
 ## Git clone
 
@@ -192,14 +193,13 @@ third-party dependencies.**
 
 Once you have installed Scally you will need to create a master Sass stylesheet
 called `style.scss`, or whatever you want to name it, but for the purpose of
-this document `style.scss` will be the expected name. Then read the next
-section: [Master stylesheet overview](#master-stylesheet-overview).
+this document `style.scss` will be the expected name.
 
 This file will live at the root of the folder where you keep all of your CSS.
 
-This will be your master stylesheet and is what you will link too from your HTML
-head, once compiled that is, you can run a basic Sass watch command to compile
-your Sass, like this:
+This will be your master stylesheet and is what you will link too from your
+HTML head, once compiled that is, you can run a basic Sass watch command to
+compile your Sass, like this:
 
 ```
 sass --watch style.scss:style.css
@@ -207,7 +207,8 @@ sass --watch style.scss:style.css
 
 But for most projects your Sass will be compiling as part of your build process
 e.g. if you're using [Grunt](http://gruntjs.com/) then you can create a Grunt
-task to compile Sass using something [like](https://github.com/gruntjs/grunt-contrib-sass).
+task such as [this](https://github.com/gruntjs/grunt-contrib-sass) to compile
+Sass.
 
 Then add a reference to the compiled master stylesheet in your HTML head:
 
@@ -215,9 +216,9 @@ Then add a reference to the compiled master stylesheet in your HTML head:
 <link href="[path/to/your/css/folder]/style.css" rel="stylesheet">
 ```
 
-This master stylesheet is designed to pull in everything from Scally–however
-only the **Core** section is mandatory–plus your project-specific styles and
-compile down to a single css file.
+This master stylesheet is designed to pull together the Scally framework and
+your project specific styles together and compile down to a single CSS file.
+We'll dig into how we suggest you set this up in the next section.
 
 ## Master stylesheet overview
 
@@ -265,20 +266,21 @@ the rest of your styles.
 
 ### Scally framework
 
-This section pulls in the entire Scally framework via Sass [`@import`'s](http://sass-lang.com/guide#topic-5)
-and is where you override Scally's settings.
+This section pulls in the entire Scally framework via individual Sass
+[`@import`'s](http://sass-lang.com/guide#topic-5) and is where you override
+Scally's settings.
 
-This is what makes Scally so powerful as Scally can be completely modified by
+This is what makes Scally so powerful as it can be completely modified by
 changing the settings without ever having to alter the framework itself.
 
-So for example if you wanted to change the global font size for your project
+For example if you wanted to change the global font size for your project
 then you assign a new value to the relevant Scally setting which in this case
 would be `$font-size` then simply declare it **above** the relevant `@import`
 partial in `style.scss`, like so:
 
 ```
 $font-size: 14;
-@import "[path/to/the/scally]framework]/scally/core/settings/typography";
+@import "[path/to/the/scally/framework]/scally/core/settings/typography";
 ```
 
 You can use your own project-specific settings from your
@@ -287,12 +289,12 @@ e.g.
 
 ```
 $color-text-base: $color-hotpink;
-@import "[path/to/the/scally]framework]/scally/core/settings/colours";
+@import "[path/to/the/scally/framework]/scally/core/settings/colours";
 ```
 
-By default everything in the framework is imported. But if you want to be
-selective and you definitely should, so your CSS is as lean as possible, then
-only import what you need.
+The sample master stylesheet available [here](#sample-master-stylesheet)
+imports everything in the framework by default. You should be selective, so
+your CSS is as lean as possible, and only import what you need.
 
 So if you decide you only need to use half of Scally's utilities then simply
 remove the relevant utility partial `@import`s you don't need from `style.scss`.
@@ -306,9 +308,9 @@ This section is where you pull in all of your project-specific styles. We
 recommend following the [same architecture](#scally-architecture) as the Scally
 framework.
 
-### Master stylesheet template
+### Sample master stylesheet
 
-Here is a master stylesheet template you could use for your `style.scss`:
+Here is a sample of a master stylesheet you could use for your `style.scss`:
 
 ```
 @charset "UTF-8";
@@ -365,12 +367,12 @@ Here is a master stylesheet template you could use for your `style.scss`:
  * simply redeclare it above the relevant `@import`, like so:
  *
    $font-size: 14;
-   @import "[path/to/the/scally]framework]/core/settings/typography";
+   @import "[path/to/the/scally/framework]/core/settings/typography";
  *
  * If you want to use a Scally setting to override something then you need to
  * define the override below the `@import`, like so:
  *
-   @import "[path/to/the/scally]framework]/core/settings/colours";
+   @import "[path/to/the/scally/framework]/core/settings/colours";
    $color-text-base: $color-brand;
  *
  * If you try to redeclare above the `@import` your Sass won't compile as you
@@ -380,7 +382,7 @@ Here is a master stylesheet template you could use for your `style.scss`:
  *
    $o-arrow-size-base: 14;
    $o-arrow-color: orange;
-   @import "[path/to/the/scally]framework]/objects/o-arrow";
+   @import "[path/to/the/scally/framework]/objects/o-arrow";
  *
  * Scally ignores its own settings in favour of using your own, so you can
  * completely modify how Scally works without ever having to alter the
@@ -406,77 +408,77 @@ Here is a master stylesheet template you could use for your `style.scss`:
  */
 
 // Settings
-@import "[path/to/the/scally]framework]/core/settings/typography";
+@import "[path/to/the/scally/framework]/core/settings/typography";
 
-@import "[path/to/the/scally]framework]/core/settings/spacing";
+@import "[path/to/the/scally/framework]/core/settings/spacing";
 
-@import "[path/to/the/scally]framework]/core/settings/breakpoints";
+@import "[path/to/the/scally/framework]/core/settings/breakpoints";
 
-@import "[path/to/the/scally]framework]/core/settings/widths";
+@import "[path/to/the/scally/framework]/core/settings/widths";
 
-@import "[path/to/the/scally]framework]/core/settings/colours";
+@import "[path/to/the/scally/framework]/core/settings/colours";
 
-@import "[path/to/the/scally]framework]/core/settings/positioning";
+@import "[path/to/the/scally/framework]/core/settings/positioning";
 
-@import "[path/to/the/scally]framework]/core/settings/cosmetics";
+@import "[path/to/the/scally/framework]/core/settings/cosmetics";
 
 // Functions
-@import "[path/to/the/scally]framework]/core/functions/convert-px-to-em-rem";
+@import "[path/to/the/scally/framework]/core/functions/convert-px-to-em-rem";
 
-@import "[path/to/the/scally]framework]/core/functions/math-helpers";
+@import "[path/to/the/scally/framework]/core/functions/math-helpers";
 
-@import "[path/to/the/scally]framework]/core/functions/string-replace";
+@import "[path/to/the/scally/framework]/core/functions/string-replace";
 
 // Mixins
-@import "[path/to/the/scally]framework]/core/mixins/convert-px-to-em-rem";
+@import "[path/to/the/scally/framework]/core/mixins/convert-px-to-em-rem";
 
-@import "[path/to/the/scally]framework]/core/mixins/font-size";
+@import "[path/to/the/scally/framework]/core/mixins/font-size";
 
-@import "[path/to/the/scally]framework]/core/mixins/gradients";
+@import "[path/to/the/scally/framework]/core/mixins/gradients";
 
-@import "[path/to/the/scally]framework]/core/mixins/media-queries";
+@import "[path/to/the/scally/framework]/core/mixins/media-queries";
 
-@import "[path/to/the/scally]framework]/core/mixins/generate-at-breakpoints";
+@import "[path/to/the/scally/framework]/core/mixins/generate-at-breakpoints";
 
-@import "[path/to/the/scally]framework]/core/mixins/generate-percentage-classes-at-breakpoints";
+@import "[path/to/the/scally/framework]/core/mixins/generate-percentage-classes-at-breakpoints";
 
-@import "[path/to/the/scally]framework]/core/mixins/retina-bg-image";
+@import "[path/to/the/scally/framework]/core/mixins/retina-bg-image";
 
-@import "[path/to/the/scally]framework]/core/mixins/target-browsers";
+@import "[path/to/the/scally/framework]/core/mixins/target-browsers";
 
-@import "[path/to/the/scally]framework]/core/mixins/target-headings";
+@import "[path/to/the/scally/framework]/core/mixins/target-headings";
 
 // Normalize
-@import "[path/to/the/scally]framework]/core/normalize";
+@import "[path/to/the/scally/framework]/core/normalize";
 
 // Reset
-@import "[path/to/the/scally]framework]/core/reset";
+@import "[path/to/the/scally/framework]/core/reset";
 
 // Base
-@import "[path/to/the/scally]framework]/core/base/root";
+@import "[path/to/the/scally/framework]/core/base/root";
 
-@import "[path/to/the/scally]framework]/core/base/abbreviation";
+@import "[path/to/the/scally/framework]/core/base/abbreviation";
 
-@import "[path/to/the/scally]framework]/core/base/forms";
+@import "[path/to/the/scally/framework]/core/base/forms";
 
-@import "[path/to/the/scally]framework]/core/base/details";
+@import "[path/to/the/scally/framework]/core/base/details";
 
-@import "[path/to/the/scally]framework]/core/base/headings";
+@import "[path/to/the/scally/framework]/core/base/headings";
 
-@import "[path/to/the/scally]framework]/core/base/horizontal-rule";
+@import "[path/to/the/scally/framework]/core/base/horizontal-rule";
 
-@import "[path/to/the/scally]framework]/core/base/links";
+@import "[path/to/the/scally/framework]/core/base/links";
 
-@import "[path/to/the/scally]framework]/core/base/media";
+@import "[path/to/the/scally/framework]/core/base/media";
 
-@import "[path/to/the/scally]framework]/core/base/paragraphs";
+@import "[path/to/the/scally/framework]/core/base/paragraphs";
 
-@import "[path/to/the/scally]framework]/core/base/print";
+@import "[path/to/the/scally/framework]/core/base/print";
 
-@import "[path/to/the/scally]framework]/core/base/viewport";
+@import "[path/to/the/scally/framework]/core/base/viewport";
 
 // Placeholders
-@import "[path/to/the/scally]framework]/core/placeholders/bottom-spacing";
+@import "[path/to/the/scally/framework]/core/placeholders/bottom-spacing";
 
 
 /**
@@ -484,91 +486,91 @@ Here is a master stylesheet template you could use for your `style.scss`:
  */
 
 // Main container
-@import "[path/to/the/scally]framework]/layout/l-container";
+@import "[path/to/the/scally/framework]/layout/l-container";
 
 // Grid
-@import "[path/to/the/scally]framework]/layout/l-grid";
+@import "[path/to/the/scally/framework]/layout/l-grid";
 
-@import "[path/to/the/scally]framework]/layout/l-grid-pull";
+@import "[path/to/the/scally/framework]/layout/l-grid-pull";
 
-@import "[path/to/the/scally]framework]/layout/l-grid-push";
+@import "[path/to/the/scally/framework]/layout/l-grid-push";
 
 // Side-by-side
-@import "[path/to/the/scally]framework]/layout/l-side-by-side";
+@import "[path/to/the/scally/framework]/layout/l-side-by-side";
 
-@import "[path/to/the/scally]framework]/layout/l-side-by-side-alt";
+@import "[path/to/the/scally/framework]/layout/l-side-by-side-alt";
 
 // CSS3 columns
-@import "[path/to/the/scally]framework]/layout/l-columns";
+@import "[path/to/the/scally/framework]/layout/l-columns";
 
 
 /**
  * OBJECTS.
  */
 
-@import "[path/to/the/scally]framework]/objects/o-drop-down";
+@import "[path/to/the/scally/framework]/objects/o-drop-down";
 
-@import "[path/to/the/scally]framework]/objects/o-flexible-embed";
+@import "[path/to/the/scally/framework]/objects/o-flexible-embed";
 
-@import "[path/to/the/scally]framework]/objects/o-link-complex";
+@import "[path/to/the/scally/framework]/objects/o-link-complex";
 
-@import "[path/to/the/scally]framework]/objects/o-link-disguised";
+@import "[path/to/the/scally/framework]/objects/o-link-disguised";
 
-@import "[path/to/the/scally]framework]/objects/o-list";
+@import "[path/to/the/scally/framework]/objects/o-list";
 
-@import "[path/to/the/scally]framework]/objects/o-list-block";
+@import "[path/to/the/scally/framework]/objects/o-list-block";
 
-@import "[path/to/the/scally]framework]/objects/o-list-inline";
+@import "[path/to/the/scally/framework]/objects/o-list-inline";
 
-@import "[path/to/the/scally]framework]/objects/o-arrow";
+@import "[path/to/the/scally/framework]/objects/o-arrow";
 
-@import "[path/to/the/scally]framework]/objects/o-overlay";
+@import "[path/to/the/scally/framework]/objects/o-overlay";
 
-@import "[path/to/the/scally]framework]/objects/o-table";
+@import "[path/to/the/scally/framework]/objects/o-table";
 
-@import "[path/to/the/scally]framework]/objects/o-button";
+@import "[path/to/the/scally/framework]/objects/o-button";
 
 
 /**
  * COMPONENTS.
  */
 
-@import "[path/to/the/scally]framework]/components/c-button";
+@import "[path/to/the/scally/framework]/components/c-button";
 
-@import "[path/to/the/scally]framework]/components/c-button-faux-link";
+@import "[path/to/the/scally/framework]/components/c-button-faux-link";
 
 
 /**
  * UTILITIES.
  */
 
-@import "[path/to/the/scally]framework]/utilities/u-clear-fix";
+@import "[path/to/the/scally/framework]/utilities/u-clear-fix";
 
-@import "[path/to/the/scally]framework]/utilities/u-text";
+@import "[path/to/the/scally/framework]/utilities/u-text";
 
-@import "[path/to/the/scally]framework]/utilities/u-widths";
+@import "[path/to/the/scally/framework]/utilities/u-widths";
 
-@import "[path/to/the/scally]framework]/utilities/u-alignments";
+@import "[path/to/the/scally/framework]/utilities/u-alignments";
 
-@import "[path/to/the/scally]framework]/utilities/u-toggle-visibility";
+@import "[path/to/the/scally/framework]/utilities/u-toggle-visibility";
 
-@import "[path/to/the/scally]framework]/utilities/u-momentum-scrolling";
+@import "[path/to/the/scally/framework]/utilities/u-momentum-scrolling";
 
-@import "[path/to/the/scally]framework]/utilities/u-float";
+@import "[path/to/the/scally/framework]/utilities/u-float";
 
-@import "[path/to/the/scally]framework]/utilities/u-new-block-formatting-context";
+@import "[path/to/the/scally/framework]/utilities/u-new-block-formatting-context";
 
-@import "[path/to/the/scally]framework]/utilities/u-gpu-accelerated";
+@import "[path/to/the/scally/framework]/utilities/u-gpu-accelerated";
 
-@import "[path/to/the/scally]framework]/utilities/u-position";
+@import "[path/to/the/scally/framework]/utilities/u-position";
 
-@import "[path/to/the/scally]framework]/utilities/u-display";
+@import "[path/to/the/scally/framework]/utilities/u-display";
 
-@import "[path/to/the/scally]framework]/utilities/u-spacing";
+@import "[path/to/the/scally/framework]/utilities/u-spacing";
 
-@import "[path/to/the/scally]framework]/utilities/u-overflow";
+@import "[path/to/the/scally/framework]/utilities/u-overflow";
 
-@import "[path/to/the/scally]framework]/utilities/u-hide";
+@import "[path/to/the/scally/framework]/utilities/u-hide";
 
 
 
@@ -594,8 +596,8 @@ project root
 |   └───scally
 |
 └───css
-    |   style.scss
     |   settings.scss
+    |   style.scss
     |
     └───partials
         |
@@ -660,9 +662,10 @@ Scally gratefully welcomes contributions from the open-source community.
 
 ## Keep it simple
 
-Scally is written in Sass, which provides a lot of incredibly powerful features.
-However, Scally does not want to become a platform for Sass' capabilities—all
-code that comes into Scally should be as simple and CSS-like as possible.
+Scally is written in Sass, which provides a lot of incredibly powerful
+features. However, Scally does not want to become a platform for Sass'
+capabilities—all code that comes into Scally should be as simple and CSS-like
+as possible.
 
 ## Submitting code to Scally
 
@@ -672,13 +675,15 @@ create a new issue and label appropriately. It's a good idea to wait a few days
 for some feedback from the Scally community before writing any code.
 
 To submit code to Scally fork the Scally repository, do your changes, then
-create a [GitHub Pull Request](https://help.github.com/articles/using-pull-requests/)
+create a
+[GitHub Pull Request](https://help.github.com/articles/using-pull-requests/)
 back to the Scally master branch for review.
 
 Your PR title should use the same title as it's corresponding GitHub issue but
 prefixed with the issue number e.g.
 
->> Issue #108: Remove style.scss and style.cssfrom the repo and package json files
+>> Issue #108: Remove style.scss and style.cssfrom the repo and package json
+files
 
 And in the PR description include:
 
@@ -694,31 +699,33 @@ And you should add a comment in the GitHub issue linking to the PR.
 - Throughly tested:
   - Your Sass compiles both with the Ruby compiler and the LibSass compiler.
   - Tested in all supported browsers, [see](#browser-support).
-- Versioned, update the [CHANGELOG.md](CHANGELOG.md) file following the existing
-  format. Update the version number—following the
+- Versioned, update the [CHANGELOG.md](CHANGELOG.md) file following the
+  existing format. Update the version number—following the
   [Semantic Versioning guidelines](http://semver.org/)—in the following files:
   - [.version](.version)
   - [bower.json](bower.json)
   - [package.json](package.json)
 - Linted, [see](#linting). Scally's build tests will catch any linting issues
   however it's good practice to run linting manually also.
-- Following these [CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/).
+- Following these
+  [CSS authoring guidelines](https://github.com/chris-pearce/css-guidelines/).
   Linting will catch a lot of this but not everything.
 
 ## Scally GitHub issues
 
 If you would like to suggest any new additions to Scally, any improvements, log
-any issues or bugs, or just ask a question, please [open a new GitHub issue](https://github.com/chris-pearce/scally/issues)
-and label appropriately.
+any issues or bugs, or just ask a question, please
+[open a new GitHub issue](https://github.com/chris-pearce/scally/issues) and
+label appropriately.
 
 
 
 
 # Versioning
 
-Scally is maintained under the [Semantic Versioning guidelines](http://semver.org/)
-however sometimes we get it wrong, but we will do our best to adhere to thoee
-rules as much as possible and strive to maintain backwards compatibility.
+Scally is maintained under the
+[Semantic Versioning guidelines](http://semver.org/). We will do our best to
+adhere to those guidelines and strive to maintain backwards compatibility.
 
 [See the **CHANGELOG**](CHANGELOG.md).
 
@@ -746,8 +753,8 @@ Copyright 2015 Chris Pearce.
 Licensed under the [Apache v2.0](http://www.apache.org/licenses/LICENSE-2.0)
 license.
 
-Scally was originally created at [Westfield Labs](http://www.westfieldlabs.com/)
-whilst I was an employee there.
+Scally was originally created at
+[Westfield Labs](http://www.westfieldlabs.com/) whilst I was an employee there.
 
 Scally was something I brought to Westfield Labs, and something I worked on
 full-time for a period of time as the main developer. Other Westfield Labs
@@ -765,5 +772,5 @@ the framework myself under my own personal GitHub account.
 
 # Further documentation
 
-- [A presentation on Scally on Jan 2015](http://scally.chris-pearce.me/presentation)
-  —for my current employer [Campaign Monitor](https://www.campaignmonitor.com/).
+- [A presentation on Scally](http://scally.chris-pearce.me/presentation)
+  —given at [Campaign Monitor](https://www.campaignmonitor.com/) on Jan 2015.
