@@ -41,6 +41,7 @@
    .u-text-kern
    .u-text-break-word
    .u-text-hyphenate
+   .u-text-osx-font-smoothing
  */
 
 
@@ -118,6 +119,8 @@ $u-text-apply-at-breakpoints-for-truncate:               false !default;
 $u-text-apply-at-breakpoints-for-break-word:             false !default;
 
 $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
+
+$u-text-apply-at-breakpoints-for-osx-font-smoothing:     false !default;
 
 
 /**
@@ -470,3 +473,31 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
   @include generate-at-breakpoints('.u-text-hyphenate',
     $u-text-apply-at-breakpoints) {hyphens: auto !important;}
 }// endif
+
+
+/**
+ * OSX font smoothing.
+ *
+ * Fonts on OSX will look more consistent with other systems that do not
+ * render text using sub-pixel anti-aliasing.
+ *
+ * N.B. this can be applied globally on the `html` element in Core -> Base ->
+ * Root therefore it's only applied here if that global setting is set to
+ * `false` which is the default.
+ */
+
+@if $apply-osx-font-smoothing == false {
+  %u-text-osx-font-smoothing,
+  .u-text-osx-font-smoothing {
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  @if $u-text-apply-at-breakpoints-for-osx-font-smoothing {
+    @include generate-at-breakpoints('.u-text-osx-font-smoothing',
+      $u-text-apply-at-breakpoints) {
+      -moz-osx-font-smoothing: grayscale !important;
+      -webkit-font-smoothing: antialiased !important;
+    }
+  }// endif
+}// end if
