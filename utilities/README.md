@@ -64,10 +64,10 @@ these scenarios, if utilities didn't exist, we would have issues like:
 - CSS not being as DRY and maintainable as it could be because we would have to
   keep writing the same styles over and over again.
 
-So utilities help keep our CSS a lot DRYer and maintainable and enable us to
-make far-reaching changes to our UI with simple modifications to a single
-utility because we have the confidence that edits to a utility will only ever
-alter one responsibility.
+So utilities help keep our CSS DRY and maintainable and enable us to make
+far-reaching changes to our UI with simple modifications to a single utility
+because we have the confidence that edits to a utility will only ever alter one
+responsibility.
 
 
 
@@ -96,21 +96,25 @@ Or a very simple, universal pattern (multiline declaration) e.g.
 }
 ```
 
-To apply utilities you apply the utility class directly to the HTML element. If
-the element already has a component class e.g. `.c-box` then you cannot add the
-utility class to the element as the styling needs to be taken care of by the
-component. This comes back to the last resort approach mentioned in the
-[What are they?](#what-are-they) section above.
+To apply utilities you apply the utility class directly to the HTML element or
+in the case of [components](../components/) they ideally will be `@extend`'d.
+
+If the element already has a component class e.g. `.c-box` then utility classes
+shouldn't be applied to the element as the styling needs to be taken care of by
+the component itself in order to keep the component nicely self-contained, see
+the section below: [Applying to components](#applying-to-components).
 
 It should be acknowledged—like with most things CSS related—that the above is
 not completely black and white, what matters is that you know when you're
-overusing utilities. Also they're two exceptions to utilities being your last
-resort: the [**Spacing**](_u-spacing.scss) utility and the
-[**Percentage widths**](_u-widths.scss) utility. **Percentage widths** is a
-fundamental part of the Grid layout module giving the grid items their
-percentage based widths e.g. `.u-one-half`. **Spacing** takes care of all the
-common whitespace in the UI especially because components can't handle any
-whitespace that exist on the *outside* of a component.
+overusing utilities. And this comes back to the last resort approach mentioned
+in the [What are they?](#what-are-they) section above. Also they're two
+exceptions to utilities being your last resort: the [**Spacing**](_u-spacing.scss)
+utility and the [**Percentage widths**](_u-widths.scss) utility. The
+**Percentage widths** utility is a fundamental part of the Grid layout module
+giving the grid items their percentage based widths e.g. `.u-one-half` (50%).
+The **Spacing** utility includes a load of common whitespace rules via `margin`
+and `padding` so should be used to apply *outside* (`margin`) whitespace to
+elements including components.
 
 ### An example
 
@@ -180,7 +184,8 @@ As mentioned already the most important thing with utilities is knowing how to u
 So if we had a **Modal dialog** component and part of that component was the
 overlay that sits behind the dialog—covering the entire viewport—we could make
 use of one of the **Position** utilities: `.u-position-pin-all` which will pin
-an element—in this case the overlay—to all corners of it's parent—in this case the main viewport.
+an element—in this case the overlay—to all corners of it's parent—in this case
+the main viewport.
 
 A code example:
 
@@ -199,7 +204,10 @@ A code example:
 }
 ```
 
-And we may have to provide some text in this component for users of assistive technology e.g. screen reader users. So in this case we can apply the utility class direct to the HTML as the element we're applying it too only exists for this reason therefore it's overkill to have to create a new component class
+And we may have to provide some text in this component for users of assistive
+technology e.g. screen reader users. So in this case we can apply the utility
+class direct to the HTML as the element we're applying it too only exists for
+this reason therefore it's overkill to have to create a new component class
 just for this, especially when we may have to apply this treatment a few
 times. So it might look something like this:
 
@@ -211,7 +219,9 @@ times. So it might look something like this:
 </div>
 ```
 
-**Do not `@extend` single line declarations** as there is no benefit in doing this, components only need to make use of utilities when they're applying universal patterns which are multiline declarations.
+**Do not `@extend` single line declarations** as there is no benefit in doing
+this, components only need to make use of utilities when they're applying
+universal patterns which are multiline declarations.
 
 
 
@@ -234,8 +244,8 @@ To ensure this Scally does the following:
 
 ## Namespace
 
-All utility class selectors, silent placeholder selectors, Sass settings, and
-Sass partials are prefixed with `u-` so that they're easily identifiable e.g.
+All utility classes, silent placeholder selectors, settings, and filenames
+are prefixed with `u-` so that they're easily identifiable e.g.
 
 - `.u-text-align-center`
 - `%u-text-align-center`

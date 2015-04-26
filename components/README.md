@@ -294,7 +294,7 @@ spacing utility like so:
 <nav class="c-pagination  u-s-mb-base" role="navigation" aria-label="Pagination">
 ```
 
-**So the rule is;** never apply single-line declaration utilities e.g.
+**So the rule is;** never apply single line declaration utilities e.g.
 `.u-float-right {float: right;}` to a component unless it's the Spacing utility,
 the rest of the time only use utilities concerned with simple, universal patterns
 (multiline declarations) e.g. hide an element but only visually:
