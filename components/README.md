@@ -25,9 +25,8 @@
 
 ## What are they?
 
-Components are the discrete custom elements of a User Interface (UI) that
-enclose specific semantics and styling, they also make up the bulk of a UI.
-Some examples:
+Components are the discrete custom elements of a UI that enclose specific
+semantics and styling, they also make up the bulk of a UI. Some examples:
 
 - [Button](_button.scss)
 - Pagination
@@ -36,27 +35,25 @@ Some examples:
 - Icon
 
 Components are extremely focused implementing only a single part of a UI, so
-they should never try to do too much. They also shouldn't be concerned or have
-any dependencies on ancestral context i.e. where they live in a UI, making them
-extremely [portable and robust](#portable-and-robust). So each component should
-be designed to exist as a stand-alone thing.
+they should never try to do too much. They also shouldn't have any dependencies
+on ancestral context i.e. where the live in a UI. This makes them extremely
+[portable and robust](#portable-and-robust). Each component should be designed
+to stand-alone.
 
 
 
 
 ## When to use?
 
-The [**layout modules**](../layout/README.md) and [**objects**](../objects/README.md)
-is what you want to look at before implementing a component as they take care of
-the many styles you may need. In fact your components should hardly ever need
-any CSS concerned with layout as the **Layout** section exists to take care of
-that for you. [**Utilities**](../utilities/README.md) should also be looked at
-but only if you're needing the utilities concerned with simple, universal patterns
-(multiline declarations) e.g. hide an element but only visually: `.u-hide-visually`.
+Before utilising components consider the [**layout modules**](../layout/README.md)
+and [**objects**](../objects/README.md). Many of the styles you need will exist
+in these two sections. In fact your components should hardly ever need any CSS
+concerned with layout. Utilities should also be considered if you are needing
+to implement simple, universal patterns such as hiding an element visually
+(`.u-hide-visually`), but these are generally used sparingly.
 
-So you would create a new component when you feel you have a discrete piece of
-the UI that can't be built alone via the [**layout modules**](../layout/README.md)
-and [**objects**](../objects/README.md).
+Create a new component when you have a discrete piece of UI that can not be
+achieved using the layout and objects modules alone.
 
 
 
@@ -200,11 +197,11 @@ $c-pagination-border-color: darken(#eee, 4%);
 #### Layout modules
 
 As mentioned above your components should avoid having any CSS concerned with
-layout as that's the job of the [**Layout** section](../layout/). What will
-typically give you the layout you need will be the [**Grid**](../layout/_grid.scss)
-layout module or the [**Side-by-side**](../layout/_side-by-side.scss) layout
-module. So not matter how small your layout is, always use a layout module and
-apply the layout module classes direct to the components HTML.
+layout as that's the job of the layout modules. The most common layout modules
+you will need are the [**Grid**](../layout/_grid.scss) and the
+[**Side-by-side**](../layout/_side-by-side.scss) layout module. No matter how
+small your layout is, always use a layout module. The layout module classes
+should be applied directly to the components HTML.
 
 So if we look at this UI:
 
@@ -231,7 +228,7 @@ classes direct to the component's HTML like so:
 </button>
 ```
 
-**So the rule is;** never write any CSS concerned with layout for your
+**In summary, the rule is;** never write any CSS concerned with layout for your
 components if it can be taken care of by one of the layout modules and apply
 the layout module classes direct to the components HTML.
 
@@ -239,12 +236,11 @@ the layout module classes direct to the components HTML.
 
 [**Objects**](../objects/) should be treated the same as layout modules in that
 they should always be used if they can. The difference is that objects should
-be `@extend`'d within the component partial to avoid having object classes
-littered in the component's HTML. This allows components to be more easily
-updated and keeps a component self-contained. However this isn't always
-possible so this rule is not set in stone.
+be `@extend`ed within the component partial to avoid having object classes
+littered in the components HTML. This allows components to be more easily
+updated and keeps a component self-contained.
 
-The pagination component (demo'd above) is `@extend`ing the
+The pagination component demo'd above is `@extend`ing the
 [**List inline**](../objects/_o-list-inline.scss) object and one of it's
 modifiers, like so:
 
@@ -256,7 +252,7 @@ modifiers, like so:
 }
 ```
 
-**So the rule is;** if an object exists that gives you the CSS you need then
+**In summary, the rule is;** if an object exists that gives you the CSS you need then
 use it in your component by `@extend`ing it's silent placeholder selector, if
 `@extend` isn't suitable then use the object's class direct in the component's
 HTML.
@@ -268,13 +264,14 @@ typically exist to apply styles to elements that don't already have any style
 hooks in place and where making those types of elements a component isn't
 appropriate.
 
-Ideally utilities should be `@extend`'d within the component partial like
-Objects but if this isn't possible then using the utility class in the
-components HTML is OK however this needs to be done very sparingly and only when
-a component class doesn't already exist to attach the utility too. The most
-common use-case for this is when you want to hide an element but only visually,
-so if we look at a snippet of the HTML from the pagination component demo'd
-above we can see this utility: `.u-hide-visually` being applied in the HTML:
+Ideally utilities should be `@extend`ed within the component partial. There are
+times when this isn't possible and it is OK to use a utility class directly in
+the HTML of the component. This technique should be used sparingly, and only
+when a component class doesn't already exist, as it is more difficult to
+maintain. The most common use-case for this is when you want to hide an element
+but only visually. If we look at a snippet of the HTML from the pagination
+component demo'd above we can see this utility: `.u-hide-visually` being
+applied in the HTML:
 
 ```
 <li class="c-pagination__list__item">
@@ -282,19 +279,19 @@ above we can see this utility: `.u-hide-visually` being applied in the HTML:
 </li>
 ```
 
-The one exception to utilities being your last resort within components is when
-you need to apply whitespace (`margin`) to the *outside* of the component,
-you apply this whitespace with the [**Spacing**](_u-spacing.scss) utility, this
-keeps with making components extremely [**Portable and robust**](#portable-and-robust)
+Utilities within components HTML should be a last resort. The one exception to
+this is when you need to apply whitespace (`margin`) to the *outside* of a
+component, you apply this whitespace with the [**Spacing**](_u-spacing.scss)
+utility, this keeps components extremely [**Portable and robust**](#portable-and-robust)
 and [**Free of constraints**](#free-of-constraints). So if we wanted to apply
-some bottom margin to the pagination component (demo'd above) we would apply a
+a bottom margin to the pagination component demo'd above we would apply a
 spacing utility like so:
 
 ```
 <nav class="c-pagination  u-s-mb-base" role="navigation" aria-label="Pagination">
 ```
 
-**So the rule is;** never apply single line declaration utilities e.g.
+**In summary, the rule is;** never apply single line declaration utilities e.g.
 `.u-float-right {float: right;}` to a component unless it's the Spacing utility,
 the rest of the time only use utilities concerned with simple, universal patterns
 (multiline declarations) e.g. hide an element but only visually:
@@ -312,7 +309,7 @@ components—if built well—can be moved to different parts of a UI without
 breaking, making them extremely portable and robust.
 
 To demonstrate this, let's say there is a requirement to also feature the
-pagination component (demo'd above) in another part of the UI e.g. a
+pagination component demo'd above in another part of the UI e.g. a
 dialog component. The dialog component has a lot less real estate for the
 pagination component to fit into meaning the component has to be modified in
 some way to accommodate this, basically we need a *compact* version.
@@ -362,7 +359,7 @@ like so:
 
 #### Nested components
 
-Like shown in the example above components can exist within other components
+As shown in the example above components can exist within other components
 i.e. the pagination component can exist in the dialog component.
 
 Nested components like this are perfectly fine. It is important though that
@@ -375,9 +372,8 @@ the context of a component being nested within another component but this
 should be scrutinised over to make sure it's the most optimal way of handling
 things as this can be hard to refactor down the track.
 
-Basically the last thing you want is a setup where you have many cross
-dependencies across your components, as things will fast become a
-**house of cards**.
+The last thing you want is a setup where you have many cross dependencies
+across your components, as things can fast become a house of cards.
 
 Here is one example of when you might need to make adjustments to a component
 when it's nested within another component; say you have a [**Button**](_button.scss)
@@ -393,8 +389,8 @@ not just the site header. However if you feel a BEM modifier isn't the right
 choice because the adjustments are extremely specific to the site header then
 you will make the adjustments within the site header component partial.
 
-When you do this you need to include a comment so that other developers are
-aware of the relationship between the components, like so:
+When you do this you include a comment so that other developers are aware of the
+relationship between the components, like so:
 
 ```
 .c-site-header {
@@ -420,7 +416,7 @@ This allows components to be extremely portable as they can better adapt to the
 dimensions of an ancestral context.
 
 Avoiding widths and margins is the most crucial here. If we use the
-**Pagination** component (demo'd above) and add these styles to the base class:
+pagination component demo'd above and add these styles to the base class:
 
 ```
 .c-pagination {
@@ -487,7 +483,9 @@ they're easily identifiable e.g.
 
 ## Further reading
 
-*Make sure to read the documentation within each component Sass partial file as it will contain information about the component and it's implementation.*
+*Make sure to read the documentation within each component Sass partial file as
+it will contain information about the specific component and it's
+implementation.*
 
 - [More Transparent UI Code with Namespaces -> Component Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#component-namespaces-c-)
 - [SMACCS](http://smacss.com/)

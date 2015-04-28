@@ -688,7 +688,7 @@ And in the PR description include:
 > This fixes #[x]
 
 Where 'x' is the issue number. GitHub will offer an auto-complete menu as soon
-as you type '#' where you can choose the issue the PR corresponds to.
+as you type '#' where you can choose the corresponding PR.
 
 You should also add a comment in the GitHub issue linking to the PR.
 

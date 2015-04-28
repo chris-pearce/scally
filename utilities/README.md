@@ -29,8 +29,8 @@ an element to the right: `.u-float-right`, or a very simple, universal pattern
 `.u-hide-visually`.
 
 There scope is only ever one element i.e. utilities can't affect child elements
-of the element they're being applied too and they never have any styles that are
-concerned with cosmetics.
+of the element they're being applied too and they never have any styles that
+are concerned with cosmetics.
 
 Utilities follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
@@ -59,15 +59,15 @@ inline styles.
 With that said and even though it's rare they'll always be the need to apply
 utilities to a UI as not everything can be a
 [component](../components/README.md) or taken care of by
-[objects](../objects/README.md) and [layout modules](../layout/README.md). In
-these scenarios, if utilities didn't exist, we would have issues like:
+objects and layout modules. In these scenarios, if utilities didn't exist, we
+would have issues like:
 
 - Where do these types of styles live in our CSS architecture?
 - Lots of *micro* components that aren't *true* components.
 - CSS not being as DRY and maintainable as it could be because we would have to
   keep writing the same styles over and over again.
 
-So utilities help keep our CSS DRY and maintainable and enable us to make
+Utilities help keep our CSS DRY and maintainable and enable us to make
 far-reaching changes to our UI with simple modifications to a single utility
 because we have the confidence that edits to a utility will only ever alter one
 responsibility.
@@ -99,8 +99,8 @@ Or a very simple, universal pattern (multiline declaration) e.g.
 }
 ```
 
-To apply utilities you apply the utility class directly to the HTML element or
-`@extend` it via it's [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_).
+Utility classes are applied directly to the HTML element or `@extend`ed via
+it's [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_).
 
 If the element already has a component class e.g. `.c-box` then utility classes
 shouldn't be applied to the element as the styling needs to be taken care of by
@@ -148,8 +148,8 @@ we'd have to **a)** create a *micro* component/object that just applies
 component/object *OR* **b)** just hack that style into our CSS architecture
 somewhere which can get real messy quick.
 
-So we could just apply the utility to the main container element which would be
-the [Container layout module](../layout/_l-container.scss), like so:
+We could just apply the utility to the main container element which would be
+the container layout module, like so:
 
 ```
 <div class="l-container l-container--full-bleed  u-text-align-center">
@@ -186,7 +186,7 @@ some utilities can be applied to the component HTML:
 
 As mentioned already the most important thing with utilities is knowing how to use them appropriately.
 
-So if we had a **Modal dialog** component and part of that component was the
+If we had a **Modal dialog** component and part of that component was the
 overlay that sits behind the dialog—covering the entire viewport—we could make
 use of one of the **Position** utilities: `.u-position-pin-all` which will pin
 an element—in this case the overlay—to all corners of it's parent—in this case
@@ -210,7 +210,7 @@ A code example:
 ```
 
 And we may have to provide some text in this component for users of assistive
-technology e.g. screen reader users. So in this case we can apply the utility
+technology e.g. screen reader users. In this case we can apply the utility
 class direct to the HTML as the element we're applying it too only exists for
 this reason therefore it's overkill to have to create a new component class
 just for this, especially when we may have to apply this treatment a few
@@ -224,7 +224,7 @@ times. So it might look something like this:
 </div>
 ```
 
-**Do not `@extend` single line declarations** as there is no benefit in doing
+**Do not `@extend` single declarations** as there is no benefit in doing
 this, components only need to make use of utilities when they're applying
 universal patterns which are multiline declarations.
 
@@ -263,7 +263,7 @@ are prefixed with `u-` so that they're easily identifiable e.g.
 ## Further reading
 
 *Make sure to read the documentation within each utility Sass partial file as
-it will contain information about the utility and it's implementation.*
+it will contain information about the specific utility and it's implementation.*
 
 - [More Transparent UI Code with Namespaces -> Utility Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utility-namespaces-u-)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)

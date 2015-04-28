@@ -33,7 +33,7 @@ Scally features four powerful layout modules:
    reaches a maximum width, at which point it becomes center aligned.
 2. [**Grid**](_l-grid.scss): is a powerful, fluid, nestable, mobile first grid
    system that allows you to set custom column widths at different viewports,
-   making responsive layouts a sinch.
+   making responsive layouts a cinch.
 3. [**Side-by-side**](_l-side-by-side.scss): is a simple yet very powerful
    layout module that places any two elements side-by-side, typically for an
    image—and text-like content. There is also an alternative version that allows
@@ -41,9 +41,9 @@ Scally features four powerful layout modules:
 4. [**Columns**](_l-columns.scss): lets you create columns out of one element
    using CSS3 Columns.
 
-*From global page templates to component level layouts, the above layout modules
-should take care of most—if not all—the main layout patterns you'll find in a
-UI.*
+*From global page templates to component level layouts, the above layout
+modules should take care of most—if not all—the main layout patterns you'll
+find in a UI.*
 
 Layout modules follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
@@ -60,8 +60,8 @@ and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-p
 
 ## Why have them?
 
-See the [Why have layout?](../objects/README.md#why-have-them) section in the
-objects README.
+See the [Why have them?](../objects/README.md#why-have-them) section in the
+Objects README.
 
 Layout modules are extremely powerful and are the real work horses of any sort
 of UI build especially large-scale UI builds.
@@ -195,7 +195,7 @@ utilities.
 By default grid cells will stack on top of each other unless told otherwise i.e.
 they're completely linear. At small viewport widths e.g. handheld devices
 typically this is what you want, however as the viewport increases in width you
-can then apply widths to the grid cells turning them into columns.
+can then apply widths to the grid cells turning them to columns.
 
 So if we had a grid cell like this:
 
@@ -204,8 +204,8 @@ So if we had a grid cell like this:
 ```
 
 This would give you a grid item which is 100% wide unless it is on a
-[lap](../core/settings/_breakpoints.scss) device, at which point it becomes
-50% wide, or it is on a desktop device, at which point it becomes 33.333% wide.
+lap device, at which point it becomes 50% wide, or it is on a desktop device,
+at which point it becomes 33.333% wide.
 
 ### Side-by-side
 
@@ -257,8 +257,8 @@ You might be wondering why don't we just use the grid for this? You certainly
 can use the grid however you will need to specify widths for each grid cell and
 those widths might need changing based on the viewport size,
 [see here](#responsive-grid). The side-by-side layout module cells do not
-require widths, instead the left and right cells will shrink wrap it's content
-making it much more easier to implement this type of layout than the grid.
+require widths, instead the left and right cells will shrink wrap its content
+making it more easier to implement this type of layout than the grid.
 
 The side-by-side layout module is responsive friendly just like the grid. The
 left and right parts will stack on top of each other up until a certain
@@ -280,8 +280,8 @@ $l-side-by-side-apply-linear-when:  palm !default;
 ### Combined
 
 Layout modules work perfectly well with each other meaning they can be nested
-within each other e.g. the **side-by-side** layout module can be nested within
-the **grid** layout module which itself can be nested within the **container**
+within each other e.g. the side-by-side layout module can be nested within
+the grid layout module which itself can be nested within the container
 layout module. When layout modules are combined like this they're extremely
 powerful taking care of most—if not all—of your UI layout needs.
 
@@ -350,7 +350,7 @@ In order of stacking (bottom to top):
 You should **never** mix in any other styles with any of the layout modules.
 This ties in with the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 and the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
-which is used for [Utilities](../utilities/) and [Objects](../objects/).
+which is used for utilities and objects.
 
 So if we look at the HTML for the header demo'd above for this piece of UI:
 
@@ -415,7 +415,8 @@ they're easily identifiable e.g.
 ## Further reading
 
 *Make sure to read the documentation within each layout Sass partial file as it
-will contain information about the layout module and it's implementations.*
+will contain information about the specific layout module and it's
+implementations.*
 
 - [More Transparent UI Code with Namespaces -> Object Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#object-namespaces-o-)
 - [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
