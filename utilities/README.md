@@ -23,9 +23,9 @@
 Utilities are your helper classes and typically your last resort when needing
 to apply styles to an element.
 
-They apply really common CSS styles either as a single declaration e.g. float
-an element to the right: `.u-float-right`, or a very simple, universal pattern
-(multiline declaration) e.g. hide an element but only visually:
+They apply really common CSS styles either as a single declaration e.g. *float
+an element to the right:* `.u-float-right`, or a very simple, universal pattern
+(multiline declaration) e.g. *hide an element but only visually:*
 `.u-hide-visually`.
 
 There scope is only ever one element i.e. utilities can't affect child elements
@@ -67,9 +67,10 @@ would have issues like:
 - CSS not being as DRY and maintainable as it could be because we would have to
   keep writing the same styles over and over again.
 
-Utilities help keep our CSS DRY and maintainable and enable us to make
-far-reaching changes to our UI with simple modifications to a single utility
-because we have the confidence that edits to a utility will only ever alter one
+Utilities help keep our CSS DRY and maintainable and more performant—resulting
+in drastically smaller stylesheets. And utilities allow you to make far-reaching
+changes to your UI with simple modifications to a single utility as you have the
+confidence in your changes because edits to a utility only ever alter one
 responsibility.
 
 
@@ -79,7 +80,7 @@ responsibility.
 
 Each utility applies a single style e.g.
 
-```
+```scss
 // Center align text
 %u-text-align-center,
 .u-text-align-center {text-align: center;}
@@ -87,7 +88,7 @@ Each utility applies a single style e.g.
 
 Or a very simple, universal pattern (multiline declaration) e.g.
 
-```
+```scss
 // Pin an element to all corners of its parent
 %u-position-pin-all,
 .u-position-pin-all {
@@ -109,8 +110,7 @@ the section below: [Applying to components](#applying-to-components).
 
 It should be acknowledged—like with most things CSS related—that the above is
 not completely black and white, what matters is that you know when you're
-overusing utilities. And this comes back to the last resort approach mentioned
-in the [What are they?](#what-are-they) section above.
+overusing utilities.
 
 They're two exceptions to utilities being your last resort: the
 [**Spacing**](_u-spacing.scss) utility and the
@@ -118,8 +118,8 @@ They're two exceptions to utilities being your last resort: the
 utility is a fundamental part of the Grid layout module giving the grid items
 their percentage based widths e.g. `.u-one-half`, `.u-three-quarters`, etc. The
 **Spacing** utility which includes a lot of spacing rules via the `margin` and
-`padding` properties can be used to apply spacing to the *outside* (`margin`)
-of elements especially components.
+`padding` properties and should be used to apply spacing to the *outside*
+(`margin`) of elements especially components.
 
 ### An example
 
@@ -142,16 +142,16 @@ We can construct almost all of it using a mixture of:
 
 The missing treatment is the center alignment of all the text and this is where
 using a utility—one of the **Text** alignment utilities:
-[`.u-text-align-center`](../utilities/_u-text.scss)—would make sense, otherwise
-we'd have to **a)** create a *micro* component/object that just applies
-`text-align: center` which is overkill and doesn't fit the criteria of a
-component/object *OR* **b)** just hack that style into our CSS architecture
-somewhere which can get real messy quick.
+`.u-text-align-center`—would make sense, otherwise we'd have to **a)** create a
+*micro* component/object that just applies `text-align: center` which is
+overkill and doesn't fit the criteria of a component/object *OR* **b)** just
+hack that style into our CSS architecture somewhere which can get real messy
+quick.
 
 We could just apply the utility to the main container element which would be
 the container layout module, like so:
 
-```
+```html
 <div class="l-container l-container--full-bleed  u-text-align-center">
   <div class="l-container">
     [ ... ]
@@ -196,13 +196,13 @@ A code example:
 
 **HTML**
 
-```
+```html
 <div class="c-modal-dialog__overlay"></div>
 ```
 
 **CSS**
 
-```
+```scss
 .modal__overlay {
     @extend %u-position-pin-all;
     [ ... ]
@@ -216,7 +216,7 @@ this reason therefore it's overkill to have to create a new component class
 just for this, especially when we may have to apply this treatment a few
 times. So it might look something like this:
 
-```
+```html
 <div class="c-modal-dialog__header">
   <span class="u-hide-visually">Beginning of dialog window. It begins with a heading 1 called "Registration Form". Escape will cancel and close the window. This form does not collect any actual information.</span>
   <h1 class="c-modal-dialog__title">Registration Form</h1>

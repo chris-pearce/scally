@@ -16,9 +16,9 @@
 
 ## What are they?
 
-Objects like [layout modules](../layout/) abstract out the really common
-treatments of a UI. They're mostly concerned with the structural aspects of the
-UI and carry zero cosmetic styles—objects by themselves never look like
+Objects like [layout modules](../layout/README.md) abstract out the really
+common treatments of a UI. They're mostly concerned with the structural aspects
+of the UI and carry zero cosmetic styles—objects by themselves never look like
 designed ‘things’.
 
 Layout modules *are* technically objects, they just exist in their own section
@@ -43,13 +43,14 @@ or simple universal patterns), and these were converted to objects.*
 
 Objects take care of the really common treatments of a UI meaning you don't
 have to keep writing the same styles over and over again, instead you can focus
-on writing the CSS concerned with the meat of a UI; it's [components](../components/).
+on writing the CSS concerned with the meat of a UI; it's
+[components](../components/README.md).
 
-Objects make your CSS a lot DRYer, more maintainable, and more performant—resulting
-in drastically smaller stylesheets. And objects allow you to make
-far-reaching changes to your UI with simple modifications to a single object as
-you have the confidence in your changes because edits to a object only ever
-alter one responsibility.
+Objects help keep our CSS DRY and maintainable and more performant—resulting in
+drastically smaller stylesheets. And objects allow you to make far-reaching
+changes to your UI with simple modifications to a single object as you have the
+confidence in your changes because edits to a object only ever alter one
+responsibility.
 
 
 
@@ -57,7 +58,63 @@ alter one responsibility.
 
 ## How to use
 
-[TODO]
+Objects like layout modules should be considered first when creating any new UI
+including when in the context of components.
+
+Objects can be applied directly to the HTML if what they're being applied too
+isn't a component. If it is a component then it should be `@extend`ed via it's
+[Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
+from within the component partial. However if this means creating component
+classes that exist only for objects to be `@extend`ed from then avoid this and
+just apply the object directly to the HTML. It's not a hard rule how objects
+are applied within components, the main thing is to strive for consistency.
+
+The most used and the most powerful object is the
+[**List inline**](_o-list-inline.scss) object which simply renders list items
+(`li`) horizontally instead of their default vertical rendering. This object
+can potentially save hundreds of lines of CSS as having list items render
+horizontally is such a common UI treatment. Some examples of its application
+within components:
+
+```scss
+.c-pagination {
+  @extend %o-list-inline;
+  @extend %o-list-inline--spacing-tiny;
+}
+```
+
+```scss
+.c-nav-main {
+  @extend %o-list-inline;
+  @extend %o-list-inline--spacing-small;
+}
+```
+
+```scss
+.c-breadcrumbs {
+  @extend %o-list-inline;
+  @extend %o-list-inline--spacing-base-both;
+  @extend %o-list-inline--delimited-slash;
+}
+```
+
+Or on an element that isn't really part of any component:
+
+```html
+<ul class="o-list-inline">
+  <li><a href="/terms">Terms &amp; Conditions</a></li>
+  <li><a href="/policy">Privacy policy</a></li>
+  <li><small>&copy; Scally 2015</small></li>
+</ul>
+```
+
+They're some objects that setup base styles for elements e.g.
+
+- [**Table** object](_o-table.scss)
+- [**List** object](_o-list.scss)
+
+And some objects that normalize certain elements e.g. the [**Button** object](
+_o-button.scss).
 
 
 

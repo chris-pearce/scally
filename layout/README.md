@@ -99,7 +99,7 @@ viewport.
 
 **The HTML**
 
-```
+```html
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     [...]
@@ -120,7 +120,7 @@ which sit inside an inner container (the black box).
 
 **The HTML** *incl. the containers*
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
@@ -199,7 +199,7 @@ can then apply widths to the grid cells turning them to columns.
 
 So if we had a grid cell like this:
 
-```
+```html
 <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
 ```
 
@@ -219,7 +219,7 @@ The grey boxes represent each side-by-side layout module.
 
 **The HTML**
 
-```
+```html
 <div class="l-side-by-side">
   <div class="l-side-by-side__left">
     [...]
@@ -265,14 +265,14 @@ left and right parts will stack on top of each other up until a certain
 breakpoint where they'll then become–well side-by-side. This behavior is
 configurable by these two settings:
 
-```
+```scss
 $l-side-by-side-apply-linear:       [true/false];
 $l-side-by-side-apply-linear-when:  [a breakpoint];
 ```
 
 The default values for these settings are:
 
-```
+```scss
 $l-side-by-side-apply-linear:       true !default;
 $l-side-by-side-apply-linear-when:  palm !default;
 ```
@@ -303,7 +303,7 @@ In order of stacking (bottom to top):
 
 **The HTML**
 
-```
+```html
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
@@ -356,7 +356,7 @@ So if we look at the HTML for the header demo'd above for this piece of UI:
 
 [![alt text](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png "Manchester City Council header")](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png)
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
@@ -376,7 +376,7 @@ So if we look at the HTML for the header demo'd above for this piece of UI:
 And we need to add padding to all sides of the left grid cell and add the sub
 nav component to the right grid cell we would mark it up like this:
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
