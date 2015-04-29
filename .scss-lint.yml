@@ -2,8 +2,7 @@
 
 exclude: [
   "*.css",
-  "core/_normalize.scss",
-  "core/_debug.scss"
+  "core/_normalize.scss"
 ]
 
 linters:
@@ -24,7 +23,6 @@ linters:
   ColorKeyword:
     severity: error
     enabled: true
-    exclude: "core/_debug.scss"
 
   # https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md#comment
   Comment:
