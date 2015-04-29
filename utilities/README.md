@@ -12,7 +12,7 @@
   - [An example](#an-example)
   - [Applying to components](#applying-to-components)
 - [Specificity](#specificity)
-- [Namespace](#namespace)
+- [Namespacing](#namespacing)
 - [Further reading](#further-reading)
 
 
@@ -23,13 +23,16 @@
 Utilities are your helper classes and typically your last resort when needing
 to apply styles to an element.
 
-They apply really common CSS styles either as a single declaration e.g. float
-an element to the right: `.u-float-right`, or a very simple, universal pattern
-(multiline declaration) e.g. hide an element but only visually:
+They apply really common CSS styles either as a single declaration e.g. *float
+an element to the right:* `.u-float-right`, or a very simple, universal pattern
+(multiline declaration) e.g. *hide an element but only visually:*
 `.u-hide-visually`.
 
-They never have any styles that are concerned with cosmetics and they must
-always follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+There scope is only ever one element i.e. utilities can't affect child elements
+of the element they're being applied too and they never have any styles that
+are concerned with cosmetics.
+
+Utilities follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
 
 
@@ -56,18 +59,19 @@ inline styles.
 With that said and even though it's rare they'll always be the need to apply
 utilities to a UI as not everything can be a
 [component](../components/README.md) or taken care of by
-[objects](../objects/README.md) and [layout modules](../layout/README.md). In
-these scenarios, if utilities didn't exist, we would have issues like:
+objects and layout modules. In these scenarios, if utilities didn't exist, we
+would have issues like:
 
 - Where do these types of styles live in our CSS architecture?
 - Lots of *micro* components that aren't *true* components.
 - CSS not being as DRY and maintainable as it could be because we would have to
   keep writing the same styles over and over again.
 
-So utilities help keep our CSS a lot DRYer and maintainable and enable us to
-make far-reaching changes to our UI with simple modifications to a single
-utility because we have the confidence that edits to a utility will only ever
-alter one responsibility.
+Utilities help keep our CSS DRY and maintainable and more performant—resulting
+in drastically smaller stylesheets. And utilities allow you to make far-reaching
+changes to your UI with simple modifications to a single utility as you have the
+confidence in your changes because edits to a utility only ever alter one
+responsibility.
 
 
 
@@ -76,7 +80,7 @@ alter one responsibility.
 
 Each utility applies a single style e.g.
 
-```
+```scss
 // Center align text
 %u-text-align-center,
 .u-text-align-center {text-align: center;}
@@ -84,7 +88,7 @@ Each utility applies a single style e.g.
 
 Or a very simple, universal pattern (multiline declaration) e.g.
 
-```
+```scss
 // Pin an element to all corners of its parent
 %u-position-pin-all,
 .u-position-pin-all {
@@ -96,21 +100,26 @@ Or a very simple, universal pattern (multiline declaration) e.g.
 }
 ```
 
-To apply utilities you apply the utility class directly to the HTML element. If
-the element already has a component class e.g. `.c-box` then you cannot add the
-utility class to the element as the styling needs to be taken care of by the
-component. This comes back to the last resort approach mentioned in the
-[What are they?](#what-are-they) section above.
+Utility classes are applied directly to the HTML element or `@extend`ed via
+it's [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_).
+
+If the element already has a component class e.g. `.c-box` then utility classes
+shouldn't be applied to the element as the styling needs to be taken care of by
+the component itself in order to keep the component nicely self-contained, see
+the section below: [Applying to components](#applying-to-components).
 
 It should be acknowledged—like with most things CSS related—that the above is
 not completely black and white, what matters is that you know when you're
-overusing utilities. Also they're two exceptions to utilities being your last
-resort: the [**Spacing**](_u-spacing.scss) utility and the
-[**Percentage widths**](_u-widths.scss) utility. **Percentage widths** is a
-fundamental part of the Grid layout module giving the grid items their
-percentage based widths e.g. `.u-one-half`. **Spacing** takes care of all the
-common whitespace in the UI especially because components can't handle any
-whitespace that exist on the *outside* of a component.
+overusing utilities.
+
+They're two exceptions to utilities being your last resort: the
+[**Spacing**](_u-spacing.scss) utility and the
+[**Percentage widths**](_u-widths.scss) utility. The **Percentage widths**
+utility is a fundamental part of the Grid layout module giving the grid items
+their percentage based widths e.g. `.u-one-half`, `.u-three-quarters`, etc. The
+**Spacing** utility which includes a lot of spacing rules via the `margin` and
+`padding` properties and should be used to apply spacing to the *outside*
+(`margin`) of elements especially components.
 
 ### An example
 
@@ -133,16 +142,16 @@ We can construct almost all of it using a mixture of:
 
 The missing treatment is the center alignment of all the text and this is where
 using a utility—one of the **Text** alignment utilities:
-[`.u-text-align-center`](../utilities/_u-text.scss)—would make sense, otherwise
-we'd have to **a)** create a *micro* component/object that just applies
-`text-align: center` which is overkill and doesn't fit the criteria of a
-component/object *OR* **b)** just hack that style into our CSS architecture
-somewhere which can get real messy quick.
+`.u-text-align-center`—would make sense, otherwise we'd have to **a)** create a
+*micro* component/object that just applies `text-align: center` which is
+overkill and doesn't fit the criteria of a component/object *OR* **b)** just
+hack that style into our CSS architecture somewhere which can get real messy
+quick.
 
-So we could just apply the utility to the main container element which would be
-the [Container layout module](../layout/_l-container.scss), like so:
+We could just apply the utility to the main container element which would be
+the container layout module, like so:
 
-```
+```html
 <div class="l-container l-container--full-bleed  u-text-align-center">
   <div class="l-container">
     [ ... ]
@@ -168,42 +177,46 @@ self-contained, portable, and maintainable as they need to be. The exception to
 this is when we need to apply really common universal patterns which are
 multiline declaration blocks e.g. hide an element but only visually:
 `.u-hide-visually`. When these types of utilities are needed you would apply
-the utility via its [Sass silent placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)
-using the `@extend` directive, rather than applying the utility class to the
-component HTML, however some utilities can be applied to the component HTML:
+the utility via its Sass silent placeholder selector using the `@extend`
+directive, rather than applying the utility class to the component HTML, however
+some utilities can be applied to the component HTML:
 
 - [Hide](_u-hide.scss)
 - [Toggle visibility](_u-toggle-visibility.scss)
 
 As mentioned already the most important thing with utilities is knowing how to use them appropriately.
 
-So if we had a **Modal dialog** component and part of that component was the
+If we had a **Modal dialog** component and part of that component was the
 overlay that sits behind the dialog—covering the entire viewport—we could make
 use of one of the **Position** utilities: `.u-position-pin-all` which will pin
-an element—in this case the overlay—to all corners of it's parent—in this case the main viewport.
+an element—in this case the overlay—to all corners of it's parent—in this case
+the main viewport.
 
 A code example:
 
 **HTML**
 
-```
+```html
 <div class="c-modal-dialog__overlay"></div>
 ```
 
 **CSS**
 
-```
+```scss
 .modal__overlay {
     @extend %u-position-pin-all;
     [ ... ]
 }
 ```
 
-And we may have to provide some text in this component for users of assistive technology e.g. screen reader users. So in this case we can apply the utility class direct to the HTML as the element we're applying it too only exists for this reason therefore it's overkill to have to create a new component class
+And we may have to provide some text in this component for users of assistive
+technology e.g. screen reader users. In this case we can apply the utility
+class direct to the HTML as the element we're applying it too only exists for
+this reason therefore it's overkill to have to create a new component class
 just for this, especially when we may have to apply this treatment a few
 times. So it might look something like this:
 
-```
+```html
 <div class="c-modal-dialog__header">
   <span class="u-hide-visually">Beginning of dialog window. It begins with a heading 1 called "Registration Form". Escape will cancel and close the window. This form does not collect any actual information.</span>
   <h1 class="c-modal-dialog__title">Registration Form</h1>
@@ -211,7 +224,9 @@ times. So it might look something like this:
 </div>
 ```
 
-**Do not `@extend` single line declarations** as there is no benefit in doing this, components only need to make use of utilities when they're applying universal patterns which are multiline declarations.
+**Do not `@extend` single declarations** as there is no benefit in doing
+this, components only need to make use of utilities when they're applying
+universal patterns which are multiline declarations.
 
 
 
@@ -232,10 +247,10 @@ To ensure this Scally does the following:
 
 
 
-## Namespace
+## Namespacing
 
-All utility class selectors, silent placeholder selectors, Sass settings, and
-Sass partials are prefixed with `u-` so that they're easily identifiable e.g.
+All utility classes, silent placeholder selectors, settings, and filenames
+are prefixed with `u-` so that they're easily identifiable e.g.
 
 - `.u-text-align-center`
 - `%u-text-align-center`
@@ -248,9 +263,11 @@ Sass partials are prefixed with `u-` so that they're easily identifiable e.g.
 ## Further reading
 
 *Make sure to read the documentation within each utility Sass partial file as
-it will contain information about the utility and it's implementation.*
+it will contain information about the specific utility and it's implementation.*
 
+- [More Transparent UI Code with Namespaces -> Utility Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utility-namespaces-u-)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
 - [When to use `@extend`; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/)
 - [The Role of Utility Classes](http://davidtheclark.com/on-utility-classes/)
+- [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)

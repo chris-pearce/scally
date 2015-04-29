@@ -5,40 +5,48 @@
 
 ## Contents
 
-- [What is layout?](#what-is-layout)
+- [What are they?](#what-are-they)
 - [Demos](#demos)
-- [Why have layout?](#why-have-layout)
+- [Why have them?](#why-have-them)
 - [How to use](#how-to-use)
-    - [Container](#container)
-    - [Grid](#grid)
-        - [Responsive grid](#responsive-grid)
-    - [Side-by-side](#side-by-side)
-    - [Combined](#combined)
-    - [Do not mix other styles](#do-not-mix-other-styles)
-- [Namespace](#namespace)
+  - [Container](#container)
+  - [Grid](#grid)
+    - [Responsive grid](#responsive-grid)
+  - [Side-by-side](#side-by-side)
+  - [Combined](#combined)
+  - [Do not mix other styles](#do-not-mix-other-styles)
+- [Namespacing](#namespacing)
 - [Further reading](#further-reading)
 
 
 
 
-## What is layout?
+## What are they?
 
 Think of layout as Lego&reg;; the bits and pieces you need to construct a UI.
 
 Scally features four powerful layout modules:
 
 1. [**Container**](_l-container.scss): is designed to wrap all major UI layout
-   pieces and ensure the UI maintains a consistent width. Container is responsive. It is a fluid width controlled by percentages until it reaches it's maximum width, at which point it becomes center aligned.
+   pieces and ensure the UI maintains a consistent width. Container is
+   responsive in that it's a fluid width controlled by percentages until it
+   reaches a maximum width, at which point it becomes center aligned.
 2. [**Grid**](_l-grid.scss): is a powerful, fluid, nestable, mobile first grid
    system that allows you to set custom column widths at different viewports,
-   making responsive layouts a sinch.
+   making responsive layouts a cinch.
 3. [**Side-by-side**](_l-side-by-side.scss): is a simple yet very powerful
    layout module that places any two elements side-by-side, typically for an
-   image- and text-like content. There is also an alternative version that allows control over vertical alignment.
+   image—and text-like content. There is also an alternative version that allows
+   control over vertical alignment.
 4. [**Columns**](_l-columns.scss): lets you create columns out of one element
    using CSS3 Columns.
 
-*From global page templates to component level layouts, the above layout modules should take care of most—if not all—the main layout patterns you'll find in a UI.*
+*From global page templates to component level layouts, the above layout
+modules should take care of most—if not all—the main layout patterns you'll
+find in a UI.*
+
+Layout modules follow the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
+and the [open/closed principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/).
 
 
 
@@ -50,21 +58,13 @@ Scally features four powerful layout modules:
 
 
 
-## Why have layout?
+## Why have them?
 
-Layout modules can form a wide variety of UI layout patterns meaning as CSS
-authors you don't have to keep writing the same styles over and over again,
-instead you can abstract those common styles into nice reusable layout modules,
-mentioned above.
+See the [Why have them?](../objects/README.md#why-have-them) section in the
+Objects README.
 
 Layout modules are extremely powerful and are the real work horses of any sort
-of UI build especially large-scale UI builds, and here are some reasons why:
-
-- Your CSS will be a lot DRYer and maintainable.
-- You can make far-reaching changes to your UI with simple modifications to a
-  single layout module.
-- You have confidence in your changes because edits to a layout module only
-  ever alter one responsibility.
+of UI build especially large-scale UI builds.
 
 
 
@@ -99,7 +99,7 @@ viewport.
 
 **The HTML**
 
-```
+```html
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     [...]
@@ -120,7 +120,7 @@ which sit inside an inner container (the black box).
 
 **The HTML** *incl. the containers*
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
@@ -189,23 +189,23 @@ which sit inside an inner container (the black box).
 
 The grid comes with the ability to apply widths to the grid cells at different
 viewports making it easy to construct responsive UI's. This ability isn't tied
-into the grid itself but uses the
-[**Percentage widths**](../utilities/_u-widths.scss) utilities.
+into the grid itself but uses the [**Percentage widths**](../utilities/_u-widths.scss)
+utilities.
 
-By default grid cells will stack on top of eachother unless told otherwise i.e.
+By default grid cells will stack on top of each other unless told otherwise i.e.
 they're completely linear. At small viewport widths e.g. handheld devices
 typically this is what you want, however as the viewport increases in width you
-can then apply widths to the grid cells turning them into columns.
+can then apply widths to the grid cells turning them to columns.
 
 So if we had a grid cell like this:
 
-```
+```html
 <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
 ```
 
 This would give you a grid item which is 100% wide unless it is on a
-[lap](../core/settings/_breakpoints.scss) device, at which point it becomes
-50% wide, or it is on a desktop device, at which point it becomes 33.333% wide.
+lap device, at which point it becomes 50% wide, or it is on a desktop device,
+at which point it becomes 33.333% wide.
 
 ### Side-by-side
 
@@ -219,7 +219,7 @@ The grey boxes represent each side-by-side layout module.
 
 **The HTML**
 
-```
+```html
 <div class="l-side-by-side">
   <div class="l-side-by-side__left">
     [...]
@@ -257,31 +257,31 @@ You might be wondering why don't we just use the grid for this? You certainly
 can use the grid however you will need to specify widths for each grid cell and
 those widths might need changing based on the viewport size,
 [see here](#responsive-grid). The side-by-side layout module cells do not
-require widths instead the left and right cells will shrink wrap it's content
-making it much more easier to implement this type of layout than the grid.
+require widths, instead the left and right cells will shrink wrap its content
+making it more easier to implement this type of layout than the grid.
 
 The side-by-side layout module is responsive friendly just like the grid. The
-left and right parts will stack on top of eachother up until a certain
-breakpoint where they'll then become–well side-by-side. This behaviour is
+left and right parts will stack on top of each other up until a certain
+breakpoint where they'll then become–well side-by-side. This behavior is
 configurable by these two settings:
 
-```
-$l-side-by-side-apply-linear: [true/false];
-$l-side-by-side-apply-linear-when: [a breakpoint];
+```scss
+$l-side-by-side-apply-linear:       [true/false];
+$l-side-by-side-apply-linear-when:  [a breakpoint];
 ```
 
 The default values for these settings are:
 
-```
-$l-side-by-side-apply-linear: true !default;
-$l-side-by-side-apply-linear-when: palm !default;
+```scss
+$l-side-by-side-apply-linear:       true !default;
+$l-side-by-side-apply-linear-when:  palm !default;
 ```
 
 ### Combined
 
 Layout modules work perfectly well with each other meaning they can be nested
-within each other e.g. the **side-by-side** layout module can be nested within
-the **grid** layout module which itself can be nested within the **container**
+within each other e.g. the side-by-side layout module can be nested within
+the grid layout module which itself can be nested within the container
 layout module. When layout modules are combined like this they're extremely
 powerful taking care of most—if not all—of your UI layout needs.
 
@@ -296,14 +296,14 @@ layout:
 
 In order of stacking (bottom to top):
 
-- Container *(modifier: full-bleed)*
-- Container
-- Grid
-- Side-by-side
+- Red = Container *(modifier: full-bleed)*
+- Yellow = Container
+- Black = Grid
+- Blue = Side-by-side
 
 **The HTML**
 
-```
+```html
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
     <div class="l-grid">
@@ -349,13 +349,14 @@ In order of stacking (bottom to top):
 
 You should **never** mix in any other styles with any of the layout modules.
 This ties in with the [single responsibility principle](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
-and the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) which is used for utilities and objects.
+and the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
+which is used for utilities and objects.
 
 So if we look at the HTML for the header demo'd above for this piece of UI:
 
 [![alt text](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png "Manchester City Council header")](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png)
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
@@ -375,7 +376,7 @@ So if we look at the HTML for the header demo'd above for this piece of UI:
 And we need to add padding to all sides of the left grid cell and add the sub
 nav component to the right grid cell we would mark it up like this:
 
-```
+```html
 <!-- Header -->
 <div class="l-container l-container--full-bleed">
   <div class="l-container">
@@ -399,13 +400,14 @@ nav component to the right grid cell we would mark it up like this:
 
 
 
-## Namespace
+## Namespacing
 
-All layout classes and settings are prefixed with `l-` so that they're easily
-identifiable e.g.
+All layout classes, settings, and filenames are prefixed with `l-` so that
+they're easily identifiable e.g.
 
 - `.l-grid`
 - `$l-grid-apply-at-breakpoints`
+- `_l-grid.scss`
 
 
 
@@ -413,8 +415,10 @@ identifiable e.g.
 ## Further reading
 
 *Make sure to read the documentation within each layout Sass partial file as it
-will contain information about the layout module and it's implementations.*
+will contain information about the specific layout module and it's
+implementations.*
 
+- [More Transparent UI Code with Namespaces -> Object Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#object-namespaces-o-)
 - [CSS guidelines - The separation of concerns](http://cssguidelin.es/#the-separation-of-concerns)
 - [The single responsibility principle applied to CSS](http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/)
 - [The open/closed principle applied to CSS](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/)
