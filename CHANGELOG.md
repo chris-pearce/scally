@@ -1,5 +1,9 @@
 # HEAD
 
+## 2.0.1 (April 30, 2015)
+
+- Remove `test.css` from package json files.
+
 ## 2.0.0 (April 29, 2015)
 
 - **Non-backwards compatible:**
