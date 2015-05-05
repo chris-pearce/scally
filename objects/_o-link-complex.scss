@@ -1,0 +1,84 @@
+/* ============================================================================
+   @OBJECTS -> LINK COMPLEX
+   ========================================================================= */
+
+
+/**
+ * A common pattern is to have a link with several pieces of text and/or an
+ * icon, where only one piece of text should act like a link when the link is
+ * the subject of user interaction.
+ *
+ * @markup
+   <a class="o-link-complex" href="#">
+     Link complex
+     <span class="o-link-complex__target">target</span>
+   </a>
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/dPmYBj/
+ *
+ * @credit
+ * https://github.com/suitcss/utils-link/blob/master/lib/link.css
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-link-complex-apply-at-breakpoints:              $default-breakpoints !default;
+
+// From the above breakpoints choose what you wish to apply it too
+$o-link-complex-apply-at-breakpoints-for-default:  false !default;
+
+$o-link-complex-apply-at-breakpoints-for-target:   false !default;
+
+
+%o-link-complex,
+.o-link-complex {
+  &,
+  &:hover,
+  &:focus {
+    border-bottom: 0;
+    text-decoration: none;
+    color: inherit;
+    cursor: text;
+  }
+}
+
+@if $o-link-complex-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.o-link-complex',
+    $o-link-complex-apply-at-breakpoints) {
+    &,
+    &:hover,
+    &:focus {
+      border-bottom: 0;
+      text-decoration: none;
+      color: inherit;
+      cursor: text;
+    }
+  }
+}// endif
+
+
+  /**
+   * The piece of the link that needs to act like a link.
+   */
+
+  %o-link-complex__target,
+  .o-link-complex__target {
+    @include base-link();
+    cursor: pointer;
+  }
+
+  @if $o-link-complex-apply-at-breakpoints-for-target {
+    @include generate-at-breakpoints('.o-link-complex__target',
+      $o-link-complex-apply-at-breakpoints) {
+      cursor: pointer;
+      @include base-link();
+    }
+  }// endif

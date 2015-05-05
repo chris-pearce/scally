@@ -7,9 +7,10 @@
  * A powerful fluid and nestable mobile first grid system.
  *
  * Combine with the viewport specific width classes found in Utilities ->
+ * Widths which all feed from the width settings set here: Core -> Settings ->
  * Widths to apply grid widths at specific viewports, for example:
  *
-   <div class="l-grid__item u-one-half-from-lap u-one-third-from-desk">
+   <div class="l-grid__item  u-one-half-from-lap u-one-third-from-desk">
  *
  * This would give you a grid item which is 100% width unless it is on a lap
  * device, at which point it becomes 50% wide, or it is on a desktop device,
@@ -27,16 +28,19 @@
  * purposes only. Apply styling to content inside a grid item.
  *
  * @markup
-   <div class="l-grid">
-     <div class="l-grid__item u-one-half"> ... </div>
-     <div class="l-grid__item u-one-half"> ... </div>
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-half"> [...] </div>
+     <div class="l-grid__item  u-one-half"> [...] </div>
    </div>
 
-   <div class="l-grid">
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
-     <div class="l-grid__item u-one-third"> ... </div>
+   <div class="l-grid [modifier(s)]">
+     <div class="l-grid__item  u-one-third"> [...] </div>
+     <div class="l-grid__item  u-one-third"> [...] </div>
+     <div class="l-grid__item  u-one-third"> [...] </div>
    </div>
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/emQqxo
  *
  * @credit
  * https://github.com/csswizardry/csswizardry-grids/blob/master/csswizardry-grids.scss
@@ -46,12 +50,6 @@
 /**
  * Settings.
  */
-
-/**
- * Toggle on/off certain styles and treatments.
- */
-
-$l-grid-apply-at-breakpoints:   $default-breakpoints !default;
 
 /**
  * Gutter sizes.
@@ -72,7 +70,7 @@ $l-grid-gutter-huge:            $spacing-double !default;
  *
  * Here we set a variable assuming that `box-sizing: border-box;` is not set
  * globally. If it has been previously been defined, the following variable
- * will be overriden and will be set to `true`.
+ * will be overridden and will be set to `true`.
  */
 
 $apply-friendly-box-model:      false !default;
@@ -98,7 +96,7 @@ $apply-friendly-box-model:      false !default;
    * 1. Cause columns to stack side-by-side.
    * 2. Space columns apart.
    * 3. Full-width unless told to behave otherwise.
-   * 4. Align coloumns to the top of each other.
+   * 4. Align columns to the top of each other.
    * 5. Reset font size to be the global default.
    * 6. Required to combine fluid widths and fixed gutters.
    */
@@ -117,53 +115,38 @@ $apply-friendly-box-model:      false !default;
 
 
 /**
- * Modifier: gutterless.
+ * Modifiers: gutters.
  */
 
+// Gutterless
 .l-grid--gutterless {
   margin-left: 0;
 
   > .l-grid__item {padding-left: 0;}
 }
 
-
-/**
- * Modifier: gutter tiny.
- */
-
+// Gutter tiny
 .l-grid--gutter-tiny {
   @include to-rem(margin-left, -$l-grid-gutter-tiny);
 
   > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-tiny);}
 }
 
-
-/**
- * Modifier: gutter small.
- */
-
+// Gutter small
 .l-grid--gutter-small {
   @include to-rem(margin-left, -$l-grid-gutter-small);
 
   > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
 }
 
-
-/**
- * Modifier: gutter large.
- */
-
+// Gutter large
 .l-grid--gutter-large {
   @include to-rem(margin-left, -$l-grid-gutter-large);
 
   > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
 }
 
-
-/**
- * Modifier: gutter huge.
- */
-
+// Gutter huge
 .l-grid--gutter-huge {
   @include to-rem(margin-left, -$l-grid-gutter-huge);
 
@@ -190,34 +173,28 @@ $apply-friendly-box-model:      false !default;
 
 
 /**
- * Modifier: vertical align middle.
+ * Modifiers: vertical alignments.
  */
 
+// Middle alignment
 .l-grid--align-middle > .l-grid__item {vertical-align: middle;}
 
-
-/**
- * Modifier: vertical align bottom.
- */
-
+// Bottom alignment
 .l-grid--align-bottom > .l-grid__item {vertical-align: bottom;}
 
 
 /**
- * Modifier: align right.
+ * Modifiers: horizontal alignments.
  */
 
+// Right alignment
 .l-grid--align-right {
   text-align: right;
 
   > .l-grid__item {text-align: left;}
 }
 
-
-/**
- * Modifier: align center.
- */
-
+// Center alignment
 .l-grid--align-center {
   text-align: center;
 

@@ -4,8 +4,8 @@
 
 
 /**
- * Generate percentage classes defined by the settings here:
- * Core -> Settings -> Widths.
+ * Generate percentage classes defined by the settings here: Core -> Settings
+ * -> Widths.
  *
  * The default format for these classes is:
  *
@@ -27,14 +27,18 @@
  *
  * The more terse format is turned off by default, to turn it on change this
  * setting: `$mixin-apply-terse-percentage-class-names` to 'true' above the
- * `@import` for this mixin in your master stylesheet.
+ * `@import` for this mixin in your master stylesheet e.g.
+ *
+   $mixin-apply-terse-percentage-class-names: true;
+   @import "scally/core/mixins/generate-percentage-classes-at-breakpoints";
  *
  * The percentage classes can be applied at any breakpoint or any of the set
  * breakpoints defined here: Core -> Settings -> Breakpoints. If the breakpoint
- * is set via a min-width media query (the default)—say the 'desk'
+ * is set via a `min-width` media query (the default)—say the 'desk'
  * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
- * breakpoint is set via a max-width media query then the format will be:
- * `.u-one-half-up-to-desk`.
+ * breakpoint is set via a `max-width` media query then the format will be:
+ * `.u-one-half-up-to-desk`. For more info on how applying the breakpoints
+ * work see the 'Generate at breakpoints' mixin.
  *
  * @example
    @include generate-percentage-classes-at-breakpoints(
@@ -70,17 +74,17 @@ $mixin-apply-terse-percentage-class-names: false !default;
 
   @if $class-name {
     $class-name: "#{$class-name}-";
-  }
+  }// endif
 
   $all-breakpoint-names: map-keys($breakpoints);
 
   @if $breakpoint-names == all {
     $breakpoint-names: $all-breakpoint-names;
-  }
+  }// endif
 
   @include generate-percentage-classes("", $scally-type, $class-name,
     $css-property);
-  
+
   @if length($breakpoint-names) == 2 and index((min max),
     nth($breakpoint-names, 2)) {
     $breakpoint-names-copy: $breakpoint-names;
@@ -88,7 +92,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
     $breakpoint-names: append($breakpoint-names, (nth($breakpoint-names-copy, 1)
      nth($breakpoint-names-copy, 2)));
   }
-    
+
   @each $breakpoint-name in $breakpoint-names {
     $limit: "min";
     $joiner: "from";
@@ -105,14 +109,14 @@ $mixin-apply-terse-percentage-class-names: false !default;
     @if $limit == max {
       $joiner: "up-to";
     }
-    
+
     @include respond-to($breakpoint-name, $limit) {
       $breakpoint: "";
-      
+
       @if $breakpoint-name {
         $suffix: if($limit == "min", "-from", "-up-to");
         $breakpoint: "#{$suffix}-#{$breakpoint-name}";
-      }
+      }// endif
 
       @include generate-percentage-classes($breakpoint, $scally-type,
         $class-name, $css-property);
@@ -134,7 +138,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
         }
         @else {
           $percent-width-class: floor($percent-width-class);
-        }
+        }// endif
 
         .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
           $numerator)}-#{nth($mixin-denominator-words,
@@ -149,7 +153,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
             $denominator)}#{$denominator-suffix}#{$breakpoint} {
               #{$css-property}: percentage($numerator/$denominator);
         }
-      }
+      }// endif
     }
   }
 }

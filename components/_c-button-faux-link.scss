@@ -1,0 +1,21 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON FAUX LINK
+   ========================================================================= */
+
+
+/**
+ * A button that looks like a link.
+ *
+ * @markup
+   <button class="c-button-faux-link">Button text</button>
+ *
+ * @dependency
+ * This component is dependent on the Button object therefore it is
+ * `@extend`ed from this component.
+ */
+
+
+.c-button-faux-link {
+  @extend %o-button;
+  @include base-link();
+}

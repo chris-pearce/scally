@@ -1,8 +1,7 @@
 {
   "name": "scally",
-  "version": "1.9.1",
+  "version": "2.0.1",
   "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
-  "main": "style.css",
   "homepage": "https://github.com/chris-pearce/scally",
   "keywords": [
     "scally",
@@ -42,7 +41,7 @@
     "url": "https://github.com/chris-pearce/scally/issues"
   },
   "license": {
-    "type": "The MIT License (MIT)",
+    "type": "Apache 2",
     "url":  "https://github.com/chris-pearce/scally/blob/master/LICENSE"
   }
 }

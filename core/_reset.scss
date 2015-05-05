@@ -6,7 +6,7 @@
 /**
  * In addition to normalize.css we also apply a reset which mainly removes all
  * margins, paddings, and borders, from all elements, and applies the nice
- * `border-box` value for `box-sizing`. And a few other things.
+ * `border-box` value for `box-sizing` amongst a few other things.
  */
 
 
@@ -111,7 +111,6 @@ menu {
  */
 
 @if $apply-friendly-box-model {
-
   html {box-sizing: border-box;}
 
   * {
@@ -119,7 +118,6 @@ menu {
     &:before,
     &:after {box-sizing: inherit;}
   }
-
 }// endif
 
 
@@ -137,7 +135,7 @@ ol {list-style-type: none;}
  * might still respond to pointer events.
  *
  * N.B. it is okay to use `!important` here as we're doing it preemptively
- * i.e. you know you willalways want the rule it's applied too to take
+ * i.e. you know you will always want the rule it's applied too to take
  * precedence.
  *
  * @credit
@@ -159,4 +157,4 @@ ins {text-decoration: none;}
  * Apply faux underlines to inserted text via `border-bottom`.
  */
 
-ins {@include to-rem(border-bottom, 1 solid);}
+ins {border-bottom: 1px solid;}

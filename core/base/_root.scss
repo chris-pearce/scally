@@ -12,9 +12,9 @@
  * Settings.
  */
 
-$html-element-background-colour:      $colour-white !default;
+$html-element-background-color:   $color-white !default;
 
-$apply-none-sub-pixel-anti-aliasing:  true !default;
+$apply-osx-font-smoothing:        false !default;
 
 
 /**
@@ -30,10 +30,11 @@ html {
   font-size: $font-size / 16 * 1em; // [1]
   line-height: $line-height-ratio; // [1]
   font-family: $font-family-base; // [1]
-  color: $colour-text-base;
-  background: $html-element-background-colour;
-  @if $apply-none-sub-pixel-anti-aliasing {
+  color: $color-text-base;
+  background: $html-element-background-color;
+
+  @if $apply-osx-font-smoothing {
     -moz-osx-font-smoothing: grayscale; // [2]
     -webkit-font-smoothing: antialiased; // [2]
-  }
+  }// endif
 }

@@ -4,11 +4,13 @@
 
 
 /**
- * A utility for applying the most common types of box renderings and for
- * hiding / showing elements.
+ * A utility for applying the most common types of box renderings.
  *
- * @todo
- * Look at adding 'Flexbox'.
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-display-block
+   .u-display-inline
+   .u-display-inline-block
  */
 
 
@@ -17,227 +19,53 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
-$u-display-apply-at-breakpoints:                       $default-breakpoints !default;
+$u-display-apply-at-breakpoints:                      $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
-$u-display-apply-at-breakpoints-for-block:             false !default;
+// From the above breakpoints choose which utilities you wish to apply it too
+$u-display-apply-at-breakpoints-for-block:            false !default;
 
-$u-display-apply-at-breakpoints-for-inline:            false !default;
+$u-display-apply-at-breakpoints-for-inline:           false !default;
 
-$u-display-apply-at-breakpoints-for-inline-block:      false !default;
-
-$u-display-apply-at-breakpoints-for-table:             false !default;
-
-$u-display-apply-at-breakpoints-for-table-row:         false !default;
-
-$u-display-apply-at-breakpoints-for-table-cell:        false !default;
-
-$u-display-apply-at-breakpoints-for-inherit:           false !default;
-
-$u-display-apply-at-breakpoints-for-hide:              false !default;
-
-$u-display-apply-at-breakpoints-for-hide-invisible:    false !default;
-
-$u-display-apply-at-breakpoints-for-hide-visually:     false !default;
-
-/**
- * Classes to detect if JavaScript is on or off.
- */
-
-$u-display-js-is-on-class:                              js !default;
-
-$u-display-js-is-off-class:                             no-js !default;
+$u-display-apply-at-breakpoints-for-inline-block:     false !default;
 
 
 /**
- * Block, inline, and inline-block display.
+ * Block.
  */
 
-// Block
 %u-display-block,
-.u-display-block {display: block;}
+.u-display-block {display: block !important;}
 
 @if $u-display-apply-at-breakpoints-for-block {
-  @include generate-at-breakpoints('.u-display-block', $u-display-apply-at-breakpoints) {display: block;}
-}// end if
+  @include generate-at-breakpoints('.u-display-block',
+    $u-display-apply-at-breakpoints) {display: block !important;}
+}// endif
 
-// Inline
+
+/**
+ * Inline.
+ */
+
 %u-display-inline,
-.u-display-inline {display: inline;}
+.u-display-inline {display: inline !important;}
 
 @if $u-display-apply-at-breakpoints-for-inline {
-  @include generate-at-breakpoints('.u-display-inline', $u-display-apply-at-breakpoints) {display: inline;}
-}// end if
+  @include generate-at-breakpoints('.u-display-inline',
+    $u-display-apply-at-breakpoints) {display: inline !important;}
+}// endif
 
-// Inline block
+
+/**
+ * Inline-block.
+ */
+
 %u-display-inline-block,
-.u-display-inline-block {display: inline-block;}
+.u-display-inline-block {display: inline-block !important;}
 
 @if $u-display-apply-at-breakpoints-for-inline-block {
-  @include generate-at-breakpoints('.u-display-inline-block', $u-display-apply-at-breakpoints
-    ) {display: inline-block;}
-}// end if
-
-
-/**
- * Table display.
- */
-
-// Table
-%u-display-table,
-.u-display-table {display: table;}
-
-@if $u-display-apply-at-breakpoints-for-table {
-  @include generate-at-breakpoints('.u-display-table', $u-display-apply-at-breakpoints) {display: table;}
-}// end if
-
-// Table row
-%u-display-table-row,
-.u-display-table-row {display: table-row;}
-
-@if $u-display-apply-at-breakpoints-for-table-row {
-  @include generate-at-breakpoints('.u-display-table-row', $u-display-apply-at-breakpoints
-    ) {display: table-row;}
-}// end if
-
-// Table cell
-%u-display-table-cell,
-.u-display-table-cell {display: table-cell;}
-
-@if $u-display-apply-at-breakpoints-for-table-cell {
-  @include generate-at-breakpoints('.u-display-table-cell', $u-display-apply-at-breakpoints
-    ) {display: table-cell;}
-}// end if
-
-
-/**
- * Inherit.
- */
-
-%u-display-inherit,
-.u-display-inherit {display: inherit;}
-
-@if $u-display-apply-at-breakpoints-for-inherit {
-  @include generate-at-breakpoints('.u-display-inherit', $u-display-apply-at-breakpoints) {display: inherit;}
-}// end if
-
-
-/**
- * Hide elements from both screen readers and the document flow.
- */
-
-%u-hide,
-.u-hide {
-  display: none;
-  visibility: hidden;
-}
-
-@if $u-display-apply-at-breakpoints-for-hide {
-  @include generate-at-breakpoints('.u-hide', $u-display-apply-at-breakpoints) {
-    display: none;
-    visibility: hidden;
-  }
-}// end if
-
-
-/**
- * Hide elements without affecting the document flow.
- */
-
-%u-hide-invisible,
-.u-hide-invisible {visibility: hidden;}
-
-@if $u-display-apply-at-breakpoints-for-hide-invisible {
-  @include generate-at-breakpoints('.u-hide-invisible', $u-display-apply-at-breakpoints) {visibility: hidden;}
-}// end if
-
-
-/**
- * Hide elements only visually but have it available for screen readers.
- */
-
-%u-hide-visually,
-.u-hide-visually {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  border: 0;
-
-
-  /**
-   * Form `legend`s need different treatment.
-   */
-
-  &.legend {left: $off-screen-distance;}
-}
-
-@if $u-display-apply-at-breakpoints-for-hide-visually {
-  @include generate-at-breakpoints('.u-hide-visually', $u-display-apply-at-breakpoints) {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    padding: 0;
-    border: 0;
-
-
-    /**
-     * Form `legend`s need different treatment.
-     */
-
-    &.legend {left: $off-screen-distance;}
-  }
-}// end if
-
-
-/**
- * Hide elements for JavaScript users and non-JavaScript users, this is
- * necessary when building accessibile and progressively enhanced UI's.
- *
- * N.B. this will require functionality that can append a hook to an element
- * (typically the `html` element) if JavaScript is on.
- *
- * N.B. it is okay to use `!important` here as we're doing it pre-emptively
- * i.e. you know you will always want the rule it's applied too to take
- * precedence.
- */
-
-// Hide / show elements if JavaScript is on
-.#{$u-display-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
-
-// Hide / show elements if JavaScript is off
-.#{$u-display-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
-
-
-/**
- * Hide / show elements for print media.
- */
-
-// Show
-.u-show-for-print,
-.u-show-for-print-inline,
-.u-show-for-print-inline-block {display: none;}
-
-@media print {
-
-  // Hide
-  .u-hide-for-print {display: none;}
-
-  // Show
-  .u-show-for-print {display: block;}
-
-  .u-show-for-print-inline {display: inline;}
-
-  .u-show-for-print-inline-block {display: inline-block;}
-
-}
+  @include generate-at-breakpoints('.u-display-inline-block',
+    $u-display-apply-at-breakpoints) {display: inline-block !important;}
+}// endif

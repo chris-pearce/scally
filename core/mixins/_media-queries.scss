@@ -4,8 +4,12 @@
 
 
 /**
- * Setup media queries for minimum and maximum widths/heights, with width
- * being the default, also includes the ability to apply ranges.
+ * Setup media queries for minimum and maximum widths and heights, with width
+ * being the default, also includes the ability to apply ranges. The mixin will
+ * accept any of Scally's breakpoints defined here: Core -> Settings ->
+ * Breakpoints or any integer. For `max-width` media queries the "max" flag
+ * needs to be applied, and for height media queries the `$axis` parameter needs
+ * to be set to "height".
  *
  * @example
    @include respond-to(lap) {
@@ -35,7 +39,7 @@
 
 
 /**
- * Simple minimum and maximum width/height values.
+ * Simple minimum and maximum width and height values.
  */
 
 @mixin respond-to($value, $limit: "min", $axis: "width") {
@@ -56,7 +60,7 @@
   @if type-of($min-value) == "string" and $max-value == 0 {
 
     $breakpoint-values: map-keys($breakpoints);
-    $breakpoint-index: index($breakpoint-values, $min-value);
+    $breakpoint-index:  index($breakpoint-values, $min-value);
 
     @if type-of($breakpoint-index) == "number" {
 
@@ -64,24 +68,21 @@
 
       @if $min-value == "lap" {
         $next-breakpoint-index: $breakpoint-index + 2;
-      }
+      }// endif
 
       @if $next-breakpoint-index <= length($breakpoint-values) {
         $max-value: nth($breakpoint-values, $next-breakpoint-index);
       }
-
       @else {
         @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
-      }
+      }// endif
     }
-
     @else {
       @warn "Breakpoint name '#{$min-value}' not recognised.";
     }
-  }
+  }// endif
 
-  @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16))
-  {
+  @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16)) {
     @content;
   }
 }

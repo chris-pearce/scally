@@ -4,21 +4,58 @@
 
 
 /**
+ * Base link styles, at the bare minimum a colour is applied for both default
+ * and hover states. There is the option to remove the underline for the
+ * default state and apply on hover state and an option to transition the
+ * colour on hover.
+ *
+ * N.B. a mixin is used to contain the base link styles so that it can be
+ * easily shared with other parts of Scally e.g. Link complex object.
+ */
+
+
+/**
  * Settings.
  */
 
-$link-colour:         $colour-brand !default;
+// Toggle on/off certain styles and treatments
+$apply-link-underline-on-hover:     true !default;
 
-$link-colour-hover:   darken($link-colour, 10%) !default;
+$apply-link-transition-on-hover:    true !default;
+
+// Colours
+$link-color:                        $color-brand !default;
+
+$link-color-hover:                  darken($link-color, 10%) !default;
+
+// Transition parameters
+$link-transition-duration:          0.15s !default;
+
+$link-transition-timing-function:   ease !default;
 
 
-a {
-  color: $link-colour;
-  text-decoration: none;
+@mixin base-link {
+  color: $link-color;
+
+  // Remove underline and apply on hover
+  @if $apply-link-underline-on-hover {
+    text-decoration: none;
+  }// endif
+
+  // Apply a transition on hover
+  @if $apply-link-transition-on-hover {
+    transition: color $link-transition-duration
+    $link-transition-timing-function;
+  }// endif
 
   &:hover,
-	&:focus {
-    color: $link-colour-hover;
-    text-decoration: underline;
-	}
+  &:focus {
+    color: $link-color-hover;
+
+    @if $apply-link-underline-on-hover {
+      text-decoration: underline;
+    }// endif
+  }
 }
+
+a {@include base-link();}

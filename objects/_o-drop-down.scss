@@ -1,0 +1,111 @@
+/* ============================================================================
+   @OBJECTS -> DROP DOWN
+   ========================================================================= */
+
+
+/**
+ * A generic drop down object powered by some JavaScript which toggles a
+ * class e.g. `is-visible` on the drop down trigger (the button that makes the
+ * drop down visible and invisible) and the target (the actual drop down).
+ * This class will be used to make the drop down target visible when the
+ * trigger is selected. There is also a version for showing the drop down via
+ * the `:hover` pseudo class which is turned off for touch devices.
+ *
+ * @markup
+   <div class="o-drop-down">
+     <!-- The trigger -->
+     <button class="o-drop-down__trigger"> [...] </button>
+     <!-- The target -->
+     <div class="o-drop-down__target"> [...] </div>
+   </div>
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at these breakpoints (turned off by default).
+ */
+
+$o-drop-down-apply-at-breakpoints:               $default-breakpoints !default;
+
+// From the above breakpoints choose what you wish to apply it too
+$o-drop-down-apply-at-breakpoints-for-default:   false !default;
+
+$o-drop-down-apply-at-breakpoints-for-target:    false !default;
+
+$o-drop-down-apply-at-breakpoints-for-on-hover:  false !default;
+
+/**
+ * State classes.
+ */
+
+// The state class that is powered by JavaScript
+$o-drop-down-state-class:                        is-visible !default;
+
+// Class that is used to identify touch support
+$o-drop-down-touch-support-class:                is-touch !default;
+
+
+/**
+ * Drop down container for the trigger and target.
+ *
+ * 1. Sets the positioning context for the target.
+ */
+
+%o-drop-down,
+.o-drop-down {position: relative;} // [1]
+
+@if $o-drop-down-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.o-drop-down',
+    $o-drop-down-apply-at-breakpoints) {position: relative;}
+}// endif
+
+
+  /**
+   * The target, the actual drop down.
+   */
+
+  %o-drop-down__target,
+  .o-drop-down__target {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    // Show the drop down via the JavaScript powered state class and via the
+    // hover modifier.
+    &.#{$o-drop-down-state-class},
+    .o-drop-down--on-hover:hover & {display: block;}
+  }
+
+  @if $o-drop-down-apply-at-breakpoints-for-target {
+    @include generate-at-breakpoints('.o-drop-down__target',
+      $o-drop-down-apply-at-breakpoints) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      &.#{$o-drop-down-state-class},
+      .o-drop-down--on-hover:hover & {display: block;}
+    }
+  }// endif
+
+
+  /**
+   * Disable for touch devices as they don't have `:hover` support.
+   *
+   * N.B. this will require functionality that can append a hook to an element
+   * (typically the `html` element) if touch is supported.
+   */
+
+  %#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target,
+  .#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target {display: none;}
+
+  @if $o-drop-down-apply-at-breakpoints-for-on-hover {
+    @include generate-at-breakpoints('.#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target',
+      $o-drop-down-apply-at-breakpoints) {display: none;}
+  }// endif

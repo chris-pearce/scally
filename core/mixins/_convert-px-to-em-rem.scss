@@ -23,9 +23,7 @@
 
 
 /**
- * `em-or-rem`.
- *
- * Generic mixin which is used by the `to-em` and `to-rem` mixins below
+ * A generic mixin that is used by the `to-em` and `to-rem` mixins below.
  */
 
 @mixin to-em-or-rem($unit, $properties, $sizes, $context, $sledgehammer) {
@@ -47,11 +45,10 @@
 
       $values: append($values, join((), $vv));
     }
-
     @else {
       $values: append($values, if(type-of($s) == number and $s != 0, strip-unit($s) / strip-unit($context) * $unit,
         strip-unit($s)));
-    }
+    }// endif
   }
 
   $value: join((), $values, if($sublists, comma, space));

@@ -7,17 +7,17 @@
  * Settings.
  */
 
-$hr-colour:       $colour-text-base !default;
+$hr-color:      $color-text-base !default;
 
-$hr-style:        solid !default;
+$hr-style:      solid !default;
 
-$hr-thickness:    1 !default;
+$hr-thickness:  1px !default;
 
 
 hr {
-  @extend %c-bottom-spacing;
+  @extend %bottom-spacing;
   display: block;
   border: 0;
-  @include to-rem(border, $hr-thickness $hr-style $hr-colour);
+  border: $hr-thickness $hr-style $hr-color;
   padding: 0;
 }

@@ -5,6 +5,9 @@
 
 /**
  * Make an element expand to contain floated children.
+ *
+ * @demo
+ * http://codepen.io/chris-pearce/full/LEQrbV
  */
 
 
@@ -13,22 +16,21 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints.
  */
 
-// Apply at these breakpoints
 $u-clear-fix-apply-at-breakpoints:          $default-breakpoints !default;
 
-// From above choose to turn this on or off
+// From the above choose to turn this on or off
 $u-clear-fix-apply-at-breakpoints-toggle:   false !default;
 
 
 %u-clear-fix,
 .u-clear-fix {
   &:after {
-    content: "";
-    display: table;
-    clear: both;
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
   }
 }
 
@@ -36,9 +38,9 @@ $u-clear-fix-apply-at-breakpoints-toggle:   false !default;
   @include generate-at-breakpoints('.u-clear-fix',
     $u-clear-fix-apply-at-breakpoints) {
     &:after {
-      content: "";
-      display: table;
-      clear: both;
+      content: "" !important;
+      display: table !important;
+      clear: both !important;
     }
   }
-}// end if
+}// endif

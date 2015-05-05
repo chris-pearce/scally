@@ -5,6 +5,43 @@
 
 /**
  * Various handy utilities for text.
+ *
+ * All the utilities (available as silent placeholder selectors also):
+ *
+   .u-text-size-small
+   .u-text-size-x-small
+   .u-text-size-xx-small
+   .u-text-size-xxx-small
+   .u-text-size-large
+   .u-text-size-x-large
+   .u-text-size-xx-large
+   .u-text-size-xxx-large
+   .u-text-size-base
+   .u-text-size-inherit
+   .u-text-align-center
+   .u-text-align-left
+   .u-text-align-right
+   .u-text-align-inherit
+   .u-text-style-italic
+   .u-text-style-normal
+   .u-text-style-inherit
+   .u-text-weight-lighter
+   .u-text-weight-bold
+   .u-text-weight-inherit
+   .u-text-weight-normal
+   .u-text-transform-uppercase
+   .u-text-transform-lowercase
+   .u-text-transform-capitalise
+   .u-text-transform-inherit
+   .u-text-transform-none
+   .u-text-whitespace-normal
+   .u-text-whitespace-pre
+   .u-text-whitespace-nowrap
+   .u-text-truncate
+   .u-text-kern
+   .u-text-break-word
+   .u-text-hyphenate
+   .u-text-osx-font-smoothing
  */
 
 
@@ -13,13 +50,12 @@
  */
 
 /**
- * Toggle on/off certain styles and treatments.
+ * Apply at these breakpoints (turned off by default).
  */
 
-// Apply at these breakpoints
 $u-text-apply-at-breakpoints:                            $default-breakpoints !default;
 
-// From the above choose what you want to apply it too
+// From the above breakpoints choose which utilities you wish to apply it too
 $u-text-apply-at-breakpoints-for-size-small:             false !default;
 
 $u-text-apply-at-breakpoints-for-size-x-small:           false !default;
@@ -58,8 +94,6 @@ $u-text-apply-at-breakpoints-for-weight-lighter:         false !default;
 
 $u-text-apply-at-breakpoints-for-weight-bold:            false !default;
 
-$u-text-apply-at-breakpoints-for-weight-bolder:          false !default;
-
 $u-text-apply-at-breakpoints-for-weight-inherit:         false !default;
 
 $u-text-apply-at-breakpoints-for-weight-normal:          false !default;
@@ -74,50 +108,6 @@ $u-text-apply-at-breakpoints-for-transform-inherit:      false !default;
 
 $u-text-apply-at-breakpoints-for-transform-none:         false !default;
 
-$u-text-apply-at-breakpoints-for-line-height-0-5:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1:          false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-1:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-2:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-3:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-4:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-5:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-6:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-7:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-8:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-1-9:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-2:          false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-2-5:        false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-normal:     false !default;
-
-$u-text-apply-at-breakpoints-for-line-height-inherit:    false !default;
-
-$u-text-apply-at-breakpoints-for-colour-white:           false !default;
-
-$u-text-apply-at-breakpoints-for-colour-black:           false !default;
-
-$u-text-apply-at-breakpoints-for-colour-brand:           false !default;
-
-$u-text-apply-at-breakpoints-for-colour-text-base:       false !default;
-
-$u-text-apply-at-breakpoints-for-colour-text-primary:    false !default;
-
-$u-text-apply-at-breakpoints-for-colour-text-secondary:  false !default;
-
-$u-text-apply-at-breakpoints-for-colour-inherit:         false !default;
-
 $u-text-apply-at-breakpoints-for-whitespace-normal:      false !default;
 
 $u-text-apply-at-breakpoints-for-whitespace-pre:         false !default;
@@ -130,6 +120,8 @@ $u-text-apply-at-breakpoints-for-break-word:             false !default;
 
 $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 
+$u-text-apply-at-breakpoints-for-osx-font-smoothing:     false !default;
+
 
 /**
  * Size.
@@ -137,87 +129,87 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 
 // Smaller
 %u-text-size-small,
-.u-text-size-small {@include font-size($font-size-small);}
+.u-text-size-small {@include font-size($font-size-small, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-small {
   @include generate-at-breakpoints('.u-text-size-small',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-small);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-small, auto, !important);}
+}// endif
 
 %u-text-size-x-small,
-.u-text-size-x-small {@include font-size($font-size-x-small);}
+.u-text-size-x-small {@include font-size($font-size-x-small, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-x-small {
   @include generate-at-breakpoints('.u-text-size-x-small',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-x-small);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-x-small, auto, !important);}
+}// endif
 
 %u-text-size-xx-small,
-.u-text-size-xx-small {@include font-size($font-size-xx-small);}
+.u-text-size-xx-small {@include font-size($font-size-xx-small, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-xx-small {
   @include generate-at-breakpoints('.u-text-size-xx-small',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-small);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-small, auto, !important);}
+}// endif
 
 %u-text-size-xxx-small,
-.u-text-size-xxx-small {@include font-size($font-size-xxx-small);}
+.u-text-size-xxx-small {@include font-size($font-size-xxx-small, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-xxx-small {
   @include generate-at-breakpoints('.u-text-size-xxx-small',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-small);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-small, auto, !important);}
+}// endif
 
 // Larger
 %u-text-size-large,
-.u-text-size-large {@include font-size($font-size-large);}
+.u-text-size-large {@include font-size($font-size-large, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-large {
   @include generate-at-breakpoints('.u-text-size-large',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-large);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-large, auto, !important);}
+}// endif
 
 %u-text-size-x-large,
-.u-text-size-x-large {@include font-size($font-size-x-large);}
+.u-text-size-x-large {@include font-size($font-size-x-large, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-x-large {
   @include generate-at-breakpoints('.u-text-size-x-large',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-x-large);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-x-large, auto, !important);}
+}// endif
 
 %u-text-size-xx-large,
-.u-text-size-xx-large {@include font-size($font-size-xx-large);}
+.u-text-size-xx-large {@include font-size($font-size-xx-large, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-xx-large {
   @include generate-at-breakpoints('.u-text-size-xx-large',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-large);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-xx-large, auto, !important);}
+}// endif
 
 %u-text-size-xxx-large,
-.u-text-size-xxx-large {@include font-size($font-size-xxx-large);}
+.u-text-size-xxx-large {@include font-size($font-size-xxx-large, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-xxx-large {
   @include generate-at-breakpoints('.u-text-size-xxx-large',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-large);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size-xxx-large, auto, !important);}
+}// endif
 
 // Base
 %u-text-size-base,
-.u-text-size-base {@include font-size($font-size);}
+.u-text-size-base {@include font-size($font-size, auto, !important);}
 
 @if $u-text-apply-at-breakpoints-for-size-base {
   @include generate-at-breakpoints('.u-text-size-base',
-    $u-text-apply-at-breakpoints) {@include font-size($font-size);}
-}// end if
+    $u-text-apply-at-breakpoints) {@include font-size($font-size, auto, !important);}
+}// endif
 
 // Inherit
 %u-text-size-inherit,
-.u-text-size-inherit {font-size: inherit;}
+.u-text-size-inherit {font-size: inherit !important;}
 
 @if $u-text-apply-at-breakpoints-for-size-inherit {
   @include generate-at-breakpoints('.u-text-size-inherit',
-    $u-text-apply-at-breakpoints) {font-size: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-size: inherit !important;}
+}// endif
 
 
 /**
@@ -225,36 +217,36 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-align-center,
-.u-text-align-center {text-align: center;}
+.u-text-align-center {text-align: center !important;}
 
 @if $u-text-apply-at-breakpoints-for-align-center {
   @include generate-at-breakpoints('.u-text-align-center',
-    $u-text-apply-at-breakpoints) {text-align: center;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-align: center !important;}
+}// endif
 
 %u-text-align-left,
-.u-text-align-left {text-align: left;}
+.u-text-align-left {text-align: left !important;}
 
 @if $u-text-apply-at-breakpoints-for-align-left {
   @include generate-at-breakpoints('.u-text-align-left',
-    $u-text-apply-at-breakpoints) {text-align: left;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-align: left !important;}
+}// endif
 
 %u-text-align-right,
-.u-text-align-right {text-align: right;}
+.u-text-align-right {text-align: right !important;}
 
 @if $u-text-apply-at-breakpoints-for-align-right {
   @include generate-at-breakpoints('.u-text-align-right',
-    $u-text-apply-at-breakpoints) {text-align: right;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-align: right !important;}
+}// endif
 
 %u-text-align-inherit,
-.u-text-align-inherit {text-align: inherit;}
+.u-text-align-inherit {text-align: inherit !important;}
 
 @if $u-text-apply-at-breakpoints-for-align-inherit {
   @include generate-at-breakpoints('.u-text-align-inherit',
-    $u-text-apply-at-breakpoints) {text-align: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-align: inherit !important;}
+}// endif
 
 
 /**
@@ -262,28 +254,28 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-style-italic,
-.u-text-style-italic {font-style: italic;}
+.u-text-style-italic {font-style: italic !important;}
 
 @if $u-text-apply-at-breakpoints-for-style-italic {
   @include generate-at-breakpoints('.u-text-style-italic',
-    $u-text-apply-at-breakpoints) {font-style: italic;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-style: italic !important;}
+}// endif
 
 %u-text-style-normal,
-.u-text-style-normal {font-style: normal;}
+.u-text-style-normal {font-style: normal !important;}
 
 @if $u-text-apply-at-breakpoints-for-style-normal {
   @include generate-at-breakpoints('.u-text-style-normal',
-    $u-text-apply-at-breakpoints) {font-style: normal;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-style: normal !important;}
+}// endif
 
 %u-text-style-inherit,
-.u-text-style-inherit {font-style: inherit;}
+.u-text-style-inherit {font-style: inherit !important;}
 
 @if $u-text-apply-at-breakpoints-for-style-inherit {
   @include generate-at-breakpoints('.u-text-style-inherit',
-    $u-text-apply-at-breakpoints) {font-style: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-style: inherit !important;}
+}// endif
 
 
 /**
@@ -292,47 +284,39 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 
 // Lighter
 %u-text-weight-lighter,
-.u-text-weight-lighter {font-weight: lighter;}
+.u-text-weight-lighter {font-weight: lighter !important;}
 
 @if $u-text-apply-at-breakpoints-for-weight-lighter {
   @include generate-at-breakpoints('.u-text-weight-lighter',
-    $u-text-apply-at-breakpoints) {font-weight: lighter;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-weight: lighter !important;}
+}// endif
 
 // Bolder
 %u-text-weight-bold,
-.u-text-weight-bold {font-weight: bold;}
+.u-text-weight-bold {font-weight: bold !important;}
 
 @if $u-text-apply-at-breakpoints-for-weight-bold {
   @include generate-at-breakpoints('.u-text-weight-bold',
-    $u-text-apply-at-breakpoints) {font-weight: bold;}
-}// end if
-
-%u-text-weight-bolder,
-.u-text-weight-bolder {font-weight: bolder;}
-
-@if $u-text-apply-at-breakpoints-for-weight-bolder {
-  @include generate-at-breakpoints('.u-text-weight-bolder',
-    $u-text-apply-at-breakpoints) {font-weight: bolder;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-weight: bold !important;}
+}// endif
 
 // Inherit
 %u-text-weight-inherit,
-.u-text-weight-inherit {font-weight: inherit;}
+.u-text-weight-inherit {font-weight: inherit !important;}
 
 @if $u-text-apply-at-breakpoints-for-weight-inherit {
   @include generate-at-breakpoints('.u-text-weight-inherit',
-    $u-text-apply-at-breakpoints) {font-weight: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-weight: inherit !important;}
+}// endif
 
 // Normal
 %u-text-weight-normal,
-.u-text-weight-normal {font-weight: normal;}
+.u-text-weight-normal {font-weight: normal !important;}
 
 @if $u-text-apply-at-breakpoints-for-weight-normal {
   @include generate-at-breakpoints('.u-text-weight-normal',
-    $u-text-apply-at-breakpoints) {font-weight: normal;}
-}// end if
+    $u-text-apply-at-breakpoints) {font-weight: normal !important;}
+}// endif
 
 
 /**
@@ -340,234 +324,44 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-transform-uppercase,
-.u-text-transform-uppercase {text-transform: uppercase;}
+.u-text-transform-uppercase {text-transform: uppercase !important;}
 
 @if $u-text-apply-at-breakpoints-for-transform-uppercase {
   @include generate-at-breakpoints('.u-text-transform-uppercase',
-    $u-text-apply-at-breakpoints) {text-transform: uppercase;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-transform: uppercase !important;}
+}// endif
 
 %u-text-transform-lowercase,
-.u-text-transform-lowercase {text-transform: lowercase;}
+.u-text-transform-lowercase {text-transform: lowercase !important;}
 
 @if $u-text-apply-at-breakpoints-for-transform-lowercase {
   @include generate-at-breakpoints('.u-text-transform-lowercase',
-    $u-text-apply-at-breakpoints) {text-transform: lowercase;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-transform: lowercase !important;}
+}// endif
 
 %u-text-transform-capitalise,
-.u-text-transform-capitalise {text-transform: capitalize;}
+.u-text-transform-capitalise {text-transform: capitalize !important;}
 
 @if $u-text-apply-at-breakpoints-for-transform-capitalise {
   @include generate-at-breakpoints('.u-text-transform-capitalise',
-    $u-text-apply-at-breakpoints) {text-transform: capitalize;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-transform: capitalize !important;}
+}// endif
 
 %u-text-transform-inherit,
-.u-text-transform-inherit {text-transform: inherit;}
+.u-text-transform-inherit {text-transform: inherit !important;}
 
 @if $u-text-apply-at-breakpoints-for-transform-inherit {
   @include generate-at-breakpoints('.u-text-transform-inherit',
-    $u-text-apply-at-breakpoints) {text-transform: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-transform: inherit !important;}
+}// endif
 
 %u-text-transform-none,
-.u-text-transform-none {text-transform: none;}
+.u-text-transform-none {text-transform: none !important;}
 
 @if $u-text-apply-at-breakpoints-for-transform-none {
   @include generate-at-breakpoints('.u-text-transform-none',
-    $u-text-apply-at-breakpoints) {text-transform: none;}
-}// end if
-
-
-/**
- * Line height.
- *
- * N.B. setting custom line heights should be avoided in favour of trying to
- * keep a consistent vertical rhythm. The `@font-size` mixin takes care of this
- * by applying appropiate line heights based on the size of the font.
- */
-
-%u-text-line-height-0-5,
-.u-text-line-height-0-5 {line-height: 0.5;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-0-5 {
-  @include generate-at-breakpoints('.u-text-line-height-0-5',
-    $u-text-apply-at-breakpoints) {line-height: 0.5;}
-}// end if
-
-%u-text-line-height-1,
-.u-text-line-height-1 {line-height: 1;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1 {
-  @include generate-at-breakpoints('.u-text-line-height-1',
-    $u-text-apply-at-breakpoints) {line-height: 1;}
-}// end if
-
-%u-text-line-height-1-1,
-.u-text-line-height-1-1 {line-height: 1.1;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-1 {
-  @include generate-at-breakpoints('.u-text-line-height-1-1',
-    $u-text-apply-at-breakpoints) {line-height: 1.1;}
-}// end if
-
-%u-text-line-height-1-2,
-.u-text-line-height-1-2 {line-height: 1.2;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-2 {
-  @include generate-at-breakpoints('.u-text-line-height-1-2',
-    $u-text-apply-at-breakpoints) {line-height: 1.2;}
-}// end if
-
-%u-text-line-height-1-3,
-.u-text-line-height-1-3 {line-height: 1.3;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-3 {
-  @include generate-at-breakpoints('.u-text-line-height-1-3',
-    $u-text-apply-at-breakpoints) {line-height: 1.3;}
-}// end if
-
-%u-text-line-height-1-4,
-.u-text-line-height-1-4 {line-height: 1.4;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-4 {
-  @include generate-at-breakpoints('.u-text-line-height-1-4',
-    $u-text-apply-at-breakpoints) {line-height: 1.4;}
-}// end if
-
-%u-text-line-height-1-5,
-.u-text-line-height-1-5 {line-height: 1.5;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-5 {
-  @include generate-at-breakpoints('.u-text-line-height-1-5',
-    $u-text-apply-at-breakpoints) {line-height: 1.5;}
-}// end if
-
-%u-text-line-height-1-6,
-.u-text-line-height-1-6 {line-height: 1.6;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-6 {
-  @include generate-at-breakpoints('.u-text-line-height-1-6',
-    $u-text-apply-at-breakpoints) {line-height: 1.6;}
-}// end if
-
-%u-text-line-height-1-7,
-.u-text-line-height-1-7 {line-height: 1.7;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-7 {
-  @include generate-at-breakpoints('.u-text-line-height-1-7',
-    $u-text-apply-at-breakpoints) {line-height: 1.7;}
-}// end if
-
-%u-text-line-height-1-8,
-.u-text-line-height-1-8 {line-height: 1.8;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-8 {
-  @include generate-at-breakpoints('.u-text-line-height-1-8',
-    $u-text-apply-at-breakpoints) {line-height: 1.8;}
-}// end if
-
-%u-text-line-height-1-9,
-.u-text-line-height-1-9 {line-height: 1.9;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-1-9 {
-  @include generate-at-breakpoints('.u-text-line-height-1-9',
-    $u-text-apply-at-breakpoints) {line-height: 1.9;}
-}// end if
-
-%u-text-line-height-2,
-.u-text-line-height-2 {line-height: 2;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-2 {
-  @include generate-at-breakpoints('.u-text-line-height-2',
-    $u-text-apply-at-breakpoints) {line-height: 2;}
-}// end if
-
-%u-text-line-height-2-5,
-.u-text-line-height-2-5 {line-height: 2.5;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-2-5 {
-  @include generate-at-breakpoints('.u-text-line-height-2-5',
-    $u-text-apply-at-breakpoints) {line-height: 2.5;}
-}// end if
-
-%u-text-line-height-normal,
-.u-text-line-height-normal {line-height: normal;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-normal {
-  @include generate-at-breakpoints('.u-text-line-height-normal',
-    $u-text-apply-at-breakpoints) {line-height: normal;}
-}// end if
-
-%u-text-line-height-inherit,
-.u-text-line-height-inherit {line-height: inherit;}
-
-@if $u-text-apply-at-breakpoints-for-line-height-inherit {
-  @include generate-at-breakpoints('.u-text-line-height-inherit',
-    $u-text-apply-at-breakpoints) {line-height: inherit;}
-}// end if
-
-
-/**
- * Colour.
- */
-
-%u-text-colour-white,
-.u-text-colour-white {color: $colour-white;}
-
-@if $u-text-apply-at-breakpoints-for-colour-white {
-  @include generate-at-breakpoints('.u-text-colour-white',
-    $u-text-apply-at-breakpoints) {color: $colour-white;}
-}// end if
-
-%u-text-colour-black,
-.u-text-colour-black {color: $colour-black;}
-
-@if $u-text-apply-at-breakpoints-for-colour-black {
-  @include generate-at-breakpoints('.u-text-colour-black',
-    $u-text-apply-at-breakpoints) {color: $colour-black;}
-}// end if
-
-%u-text-colour-brand,
-.u-text-colour-brand {color: $colour-brand;}
-
-@if $u-text-apply-at-breakpoints-for-colour-brand {
-  @include generate-at-breakpoints('.u-text-colour-brand',
-    $u-text-apply-at-breakpoints) {color: $colour-brand;}
-}// end if
-
-%u-text-colour-text-base,
-.u-text-colour-text-base {color: $colour-text-base;}
-
-@if $u-text-apply-at-breakpoints-for-colour-text-base {
-  @include generate-at-breakpoints('.u-text-colour-text-base',
-    $u-text-apply-at-breakpoints) {color: $colour-text-base;}
-}// end if
-
-%u-text-colour-text-primary,
-.u-text-colour-text-primary {color: $colour-primary;}
-
-@if $u-text-apply-at-breakpoints-for-colour-text-primary {
-  @include generate-at-breakpoints('.u-text-colour-text-primary',
-    $u-text-apply-at-breakpoints) {color: $colour-primary;}
-}// end if
-
-%u-text-colour-text-secondary,
-.u-text-colour-text-secondary {color: $colour-secondary;}
-
-@if $u-text-apply-at-breakpoints-for-colour-text-secondary {
-  @include generate-at-breakpoints('.u-text-colour-text-secondary',
-    $u-text-apply-at-breakpoints) {color: $colour-secondary;}
-}// end if
-
-%u-text-colour-inherit,
-.u-text-colour-inherit {color: inherit;}
-
-@if $u-text-apply-at-breakpoints-for-colour-inherit {
-  @include generate-at-breakpoints('.u-text-colour-inherit',
-    $u-text-apply-at-breakpoints) {color: inherit;}
-}// end if
+    $u-text-apply-at-breakpoints) {text-transform: none !important;}
+}// endif
 
 
 /**
@@ -575,28 +369,28 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-whitespace-normal,
-.u-text-whitespace-normal {white-space: normal;}
+.u-text-whitespace-normal {white-space: normal !important;}
 
 @if $u-text-apply-at-breakpoints-for-whitespace-normal {
   @include generate-at-breakpoints('.u-text-whitespace-normal',
-    $u-text-apply-at-breakpoints) {white-space: normal;}
-}// end if
+    $u-text-apply-at-breakpoints) {white-space: normal !important;}
+}// endif
 
 %u-text-whitespace-pre,
-.u-text-whitespace-pre {white-space: pre;}
+.u-text-whitespace-pre {white-space: pre !important;}
 
 @if $u-text-apply-at-breakpoints-for-whitespace-pre {
   @include generate-at-breakpoints('.u-text-whitespace-pre',
-    $u-text-apply-at-breakpoints) {white-space: pre;}
-}// end if
+    $u-text-apply-at-breakpoints) {white-space: pre !important;}
+}// endif
 
 %u-text-whitespace-nowrap,
-.u-text-whitespace-nowrap {white-space: nowrap;}
+.u-text-whitespace-nowrap {white-space: nowrap !important;}
 
 @if $u-text-apply-at-breakpoints-for-whitespace-nowrap {
   @include generate-at-breakpoints('.u-text-whitespace-nowrap',
-    $u-text-apply-at-breakpoints) {white-space: nowrap;}
-}// end if
+    $u-text-apply-at-breakpoints) {white-space: nowrap !important;}
+}// endif
 
 
 /**
@@ -615,23 +409,23 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 
 %u-text-truncate,
 .u-text-truncate {
-  max-width: 100%; // [1]
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal; // [2]
+  max-width: 100% !important; // [1]
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important; // [2]
 }
 
 @if $u-text-apply-at-breakpoints-for-truncate {
   @include generate-at-breakpoints('.u-text-truncate',
     $u-text-apply-at-breakpoints) {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
   }
-}// end if
+}// endif
 
 
 /**
@@ -647,9 +441,9 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
 
 %u-text-kern,
 .u-text-kern {
-  text-rendering: optimizeLegibility; // [1]
-  font-feature-settings: "kern" 1; // [2]
-  font-kerning: normal; // [3]
+  text-rendering: optimizeLegibility !important; // [1]
+  font-feature-settings: "kern" 1 !important; // [2]
+  font-kerning: normal !important; // [3]
 }
 
 
@@ -660,12 +454,12 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-break-word,
-.u-text-break-word {word-wrap: break-word;}
+.u-text-break-word {word-wrap: break-word !important;}
 
 @if $u-text-apply-at-breakpoints-for-break-word {
   @include generate-at-breakpoints('.u-text-break-word',
-    $u-text-apply-at-breakpoints) {word-wrap: break-word;}
-}// end if
+    $u-text-apply-at-breakpoints) {word-wrap: break-word !important;}
+}// endif
 
 
 /**
@@ -673,9 +467,37 @@ $u-text-apply-at-breakpoints-for-hyphenate:              false !default;
  */
 
 %u-text-hyphenate,
-.u-text-hyphenate {hyphens: auto;}
+.u-text-hyphenate {hyphens: auto !important;}
 
 @if $u-text-apply-at-breakpoints-for-hyphenate {
   @include generate-at-breakpoints('.u-text-hyphenate',
-    $u-text-apply-at-breakpoints) {hyphens: auto;}
+    $u-text-apply-at-breakpoints) {hyphens: auto !important;}
+}// endif
+
+
+/**
+ * OSX font smoothing.
+ *
+ * Fonts on OSX will look more consistent with other systems that do not
+ * render text using sub-pixel anti-aliasing.
+ *
+ * N.B. this can be applied globally on the `html` element in Core -> Base ->
+ * Root therefore it's only applied here if that global setting is set to
+ * `false` which is the default.
+ */
+
+@if $apply-osx-font-smoothing == false {
+  %u-text-osx-font-smoothing,
+  .u-text-osx-font-smoothing {
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  @if $u-text-apply-at-breakpoints-for-osx-font-smoothing {
+    @include generate-at-breakpoints('.u-text-osx-font-smoothing',
+      $u-text-apply-at-breakpoints) {
+      -moz-osx-font-smoothing: grayscale !important;
+      -webkit-font-smoothing: antialiased !important;
+    }
+  }// endif
 }// end if
