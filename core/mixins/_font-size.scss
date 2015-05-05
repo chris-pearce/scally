@@ -41,6 +41,7 @@
  * @example
    @include font-size(18);
    @include font-size(12, 1.5);
+   @include font-size(12, 18px);
    @include font-size(12, none);
    @include font-size(24, inherit);
    @include font-size(24, normal);
@@ -55,17 +56,25 @@
 @mixin font-size($font-size-value, $line-height-value: auto, $sledgehammer: false) {
 
   $important: if($sledgehammer, "!important", "");
+  $font-size-value: strip-unit($font-size-value);
+  
   font-size: ($font-size-value / $font-size) * 1rem #{$important};
 
   @if $line-height-value == auto {
     line-height: ceil($font-size-value / $line-height) * ($line-height /
-      $font-size-value)#{$important};
+      $font-size-value) #{$important};
   }
   @else {
-
-    @if (type-of($line-height-value) == number or $line-height-value == inherit
-      or $line-height-value == normal) {
-      line-height: $line-height-value#{$important};
+    @if (type-of($line-height-value) == number) {
+      @if unitless($line-height-value) {
+        line-height: $line-height-value #{$important};
+      }
+      @else {
+        line-height: strip-unit($line-height-value) / $font-size-value #{$important};
+      }// endif
+    }
+    @elseif $line-height-value == inherit or $line-height-value == normal {
+      line-height: $line-height-value #{$important};
     }
     @elseif ($line-height-value != none and $line-height-value != false) {
       @warn "D'oh! `#{$line-height-value}` is not a valid value for `line-height`."

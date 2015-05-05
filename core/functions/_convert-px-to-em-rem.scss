@@ -28,7 +28,7 @@
       @warn "Breakpoint name '#{$value}' not recognised.";
     }// endif
   }// endif
-  @return $value / $context * 1em;
+  @return strip-unit($value) / strip-unit($context) * 1em;
 }
 
 
@@ -37,5 +37,5 @@
  */
 
 @function to-rem($value) {
-  @return $value / $font-size * 1rem;
+  @return strip-unit($value) / strip-unit($font-size) * 1rem;
 }

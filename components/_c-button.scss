@@ -107,7 +107,7 @@ $c-button-padding-huge:                       $spacing-double !default;
  * N.B. also includes the borders used in the 'Grouping' option.
  */
 
-$c-button-border-thickness:                   1px !default;
+$c-button-border-thickness:                   1 !default;
 
 $c-button-border-style:                       solid !default;
 
@@ -142,7 +142,7 @@ $c-button-hover-transition-timing-function:   linear !default;
 
   // Apply a border
   @if $c-button-apply-border {
-    border: $c-button-border-thickness $c-button-border-style
+    border: strip-unit($c-button-border-thickness) * 1px $c-button-border-style
       $c-button-border-color;
   }// endif
 
@@ -151,7 +151,7 @@ $c-button-hover-transition-timing-function:   linear !default;
     // N.B. ugly hack in order to increase the specificity to override the
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
-    html & {border-radius: $c-button-rounded-corners-size;}
+    html & {border-radius: strip-unit($c-button-rounded-corners-size) * 1px;}
   }// endif
 
   // Foreground colour
@@ -273,13 +273,13 @@ $c-button-hover-transition-timing-function:   linear !default;
       @if $c-button-apply-group-rounded-corners or
       $c-button-apply-rounded-corners {
         &:first-child {
-          border-top-left-radius: $c-button-rounded-corners-size;
-          border-bottom-left-radius: $c-button-rounded-corners-size;
+          border-top-left-radius: strip-unit($c-button-rounded-corners-size) * 1px;
+          border-bottom-left-radius: strip-unit($c-button-rounded-corners-size) * 1px;
         }
 
         &:last-child {
-          border-top-right-radius: $c-button-rounded-corners-size;
-          border-bottom-right-radius: $c-button-rounded-corners-size;
+          border-top-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
+          border-bottom-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
         }
       }// endif
 
@@ -312,14 +312,14 @@ $c-button-hover-transition-timing-function:   linear !default;
         $c-button-apply-rounded-corners {
           &:first-child {
             border-bottom-left-radius: 0;
-            border-top-left-radius: $c-button-rounded-corners-size;
-            border-top-right-radius: $c-button-rounded-corners-size;
+            border-top-left-radius: strip-unit($c-button-rounded-corners-size) * 1px;
+            border-top-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
           }
 
           &:last-child {
             border-top-right-radius: 0;
-            border-bottom-left-radius: $c-button-rounded-corners-size;
-            border-bottom-right-radius: $c-button-rounded-corners-size;
+            border-bottom-left-radius: strip-unit($c-button-rounded-corners-size) * 1px;
+            border-bottom-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
           }
         }// endif
       }
