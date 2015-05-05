@@ -1,5 +1,11 @@
 # HEAD
 
+## 2.0.2 (May 5, 2015)
+
+- Updating the `font-size()` mixin to fix the issue of Scally not compiling
+  with LibSass, thanks to @stowball
+  ([#120](https://github.com/chris-pearce/scally/issues/120)).
+
 ## 2.0.1 (April 30, 2015)
 
 - Remove `test.css` from package json files.
