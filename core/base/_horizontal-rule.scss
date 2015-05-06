@@ -18,6 +18,6 @@ hr {
   @extend %bottom-spacing;
   display: block;
   border: 0;
-  border: strip-unit($hr-thickness) * 1px $hr-style $hr-color;
+  border-top: strip-unit($hr-thickness) * 1px $hr-style $hr-color;
   padding: 0;
 }
