@@ -117,8 +117,8 @@
 
   $important: if($sledgehammer, "!important", "");
   $font-size-value: strip-unit($font-size-value);
-  
-  font-size: ($font-size-value / $font-size) * 1rem #{$important};
+
+  font-size: ($font-size-value / strip-unit($font-size)) * 1rem #{$important};
 
   @if $line-height-value == auto {
     line-height: ceil($font-size-value / $line-height) * ($line-height /
