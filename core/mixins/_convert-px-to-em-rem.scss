@@ -11,14 +11,41 @@
  * an optional argument that allows making measurements relative to the parent
  * font size rather than the current.
  *
+ * N.B. a `px` unit is not necessary but will work if specified e.g. "20" is
+ * fine, so is "20px" e.g.
+ *
+   .foo {
+     @include to-em(height, 125);
+   }
+
+   .foo {
+     @include to-em(height, 125px);
+   }
+ *
  * @example
-   @include to-em(line-height, 30, 12);
-   @include to-em(width height, 125);
-   @include to-rem(padding, 0 25);
-   @include to-em(text-shadow, (#0d6e28 1 1) (#777 0 0 2), 16);
-   @include to-rem(box-shadow, (inset 0 0 0 1 #2a9022) (inset 0 0 3 #459966));
-   @include to-em(padding margin, $spacing-base, false, true);
-   @include to-rem(margin, 12);
+   .foo {
+     @include to-em(width height, 125);
+   }
+
+   .foo {
+     @include to-rem(padding, 0 25);
+   }
+
+   .foo {
+     @include to-em(text-shadow, (#0d6e28 1 1) (#777 0 0 2), 16);
+   }
+
+   .foo {
+     @include to-rem(box-shadow, (inset 0 0 0 1 #2a9022) (inset 0 0 3 #459966));
+   }
+
+   .foo {
+     @include to-em(padding margin, $spacing-base, false, true);
+   }
+
+   .foo {
+     @include to-rem(padding margin, $spacing-base, true);
+   }
  */
 
 
