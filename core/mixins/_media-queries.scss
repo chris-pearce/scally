@@ -8,8 +8,19 @@
  * being the default, also includes the ability to apply ranges. The mixin will
  * accept any of Scally's breakpoints defined here: Core -> Settings ->
  * Breakpoints or any integer. For `max-width` media queries the "max" flag
- * needs to be applied, and for height media queries the `$axis` parameter needs
- * to be set to "height".
+ * needs to be applied, and for height media queries the `$axis` parameter
+ * needs to be set to "height".
+ *
+ * N.B. a `px` unit is not necessary but will work if specified e.g. "400" is
+ * fine, so is "400px" e.g.
+ *
+   @include respond-to(400) {
+     .foo {background: red;}
+   }
+
+   @include respond-to(400px) {
+     .foo {background: red;}
+   }
  *
  * @example
    @include respond-to(lap) {
@@ -43,7 +54,7 @@
  */
 
 @mixin respond-to($value, $limit: "min", $axis: "width") {
-  @media (#{$limit}-#{$axis}: to-em($value, 16)) {
+  @media (#{$limit}-#{$axis}: to-em(strip-unit($value), 16)) {
     @content;
   }
 }
@@ -82,7 +93,7 @@
     }
   }// endif
 
-  @media (min-#{$axis}: to-em($min-value, 16)) and (max-#{$axis}: to-em($max-value, 16)) {
+  @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16)) {
     @content;
   }
 }

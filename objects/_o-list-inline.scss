@@ -96,7 +96,7 @@ $o-list-inline-item-spacing-huge:                                      $spacing-
 
 $o-list-inline-divider-color:                                          $color-text-base !default;
 
-$o-list-inline-divider-thickness:                                      1px !default;
+$o-list-inline-divider-thickness:                                      1 !default;
 
 
 %o-list-inline,
@@ -356,14 +356,15 @@ $o-list-inline-divider-thickness:                                      1px !defa
 
 %o-list-inline--divider,
 .o-list-inline--divider {
-  > li + li {border-left: $o-list-inline-divider-thickness
+  > li + li {border-left: strip-unit($o-list-inline-divider-thickness) * 1px
       solid $o-list-inline-divider-color;}
 }
 
 @if $o-list-inline-apply-at-breakpoints-for-divider {
   @include generate-at-breakpoints('.o-list-inline--divider{bp} > li + li',
     $o-list-inline-apply-at-breakpoints) {border-left:
-      $o-list-inline-divider-thickness solid $o-list-inline-divider-color;
+      strip-unit($o-list-inline-divider-thickness) * 1px solid
+        $o-list-inline-divider-color;
   }
 }// endif
 

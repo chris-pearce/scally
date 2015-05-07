@@ -428,6 +428,8 @@ Here is a sample of a master stylesheet you could use for your `style.scss`:
 
 @import "[path/to/the/scally/framework]/core/functions/string-replace";
 
+@import "[path/to/the/scally/framework]/core/functions/strip-unit";
+
 // Mixins
 @import "[path/to/the/scally/framework]/core/mixins/convert-px-to-em-rem";
 

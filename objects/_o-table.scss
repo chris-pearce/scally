@@ -59,7 +59,7 @@ $o-table-cell-padding-large:                           $spacing-base !default;
 
 $o-table-border-color:                                 darken($color-white, 10%) !default;
 
-$o-table-border-thickness:                             1px !default;
+$o-table-border-thickness:                             1 !default;
 
 $o-table-border-style:                                 solid !default;
 
@@ -121,7 +121,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 .o-table--border {
   th,
   td {
-    border: $o-table-border-thickness $o-table-border-style
+    border: strip-unit($o-table-border-thickness) * 1px $o-table-border-style
       $o-table-border-color;
 
     // No borders for empty cells
@@ -134,7 +134,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     $o-table-apply-at-breakpoints) {
     th,
     td {
-      border: $o-table-border-thickness $o-table-border-style
+      border: strip-unit($o-table-border-thickness) * 1px $o-table-border-style
         $o-table-border-color;
 
       &:empty {border: 0;}

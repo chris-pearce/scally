@@ -19,7 +19,7 @@
  */
 
 // Sizes
-$o-arrow-size-base:     8px !default;
+$o-arrow-size-base:     8 !default;
 
 $o-arrow-size-tiny:     $o-arrow-size-base - 4 !default;
 
@@ -38,7 +38,7 @@ $o-arrow-color:         $color-text-base !default;
   display: inline-block;
   width: 0;
   height: 0;
-  border: $o-arrow-size-base solid transparent;
+  border: strip-unit($o-arrow-size-base) * 1px solid transparent;
   vertical-align: middle;
 }
 
@@ -49,19 +49,19 @@ $o-arrow-color:         $color-text-base !default;
 
 // Tiny
 %o-arrow--tiny,
-.o-arrow--tiny {border-width: $o-arrow-size-tiny;}
+.o-arrow--tiny {border-width: strip-unit($o-arrow-size-tiny) * 1px;}
 
 // Small
 %o-arrow--small,
-.o-arrow--small {border-width: $o-arrow-size-small;}
+.o-arrow--small {border-width: strip-unit($o-arrow-size-small) * 1px;}
 
 // Large
 %o-arrow--large,
-.o-arrow--large {border-width: $o-arrow-size-large;}
+.o-arrow--large {border-width: strip-unit($o-arrow-size-large) * 1px;}
 
 // Huge
 %o-arrow--huge,
-.o-arrow--huge {border-width: $o-arrow-size-huge;}
+.o-arrow--huge {border-width: strip-unit($o-arrow-size-huge) * 1px;}
 
 
 /**

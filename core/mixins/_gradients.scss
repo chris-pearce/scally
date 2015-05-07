@@ -13,13 +13,33 @@
  * direction is `bottom`), and an optional IE 9 fallback.
  *
  * @example
-   @include linear-gradient(blue, red);
-   @include linear-gradient(blue, red, left);
-   @include linear-gradient(blue, red, top left);
-   @include linear-gradient(blue, red, top right);
-   @include linear-gradient(blue, red, bottom left);
-   @include linear-gradient(blue, red, bottom right);
-   @include linear-gradient(blue, red, top, true);
+   .foo {
+     @include linear-gradient(blue, red);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top right);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, bottom left);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, bottom right);
+   }
+
+   .foo {
+     @include linear-gradient(blue, red, top, true);
+   }
  */
 
 

@@ -9,8 +9,13 @@
  * N.B. this function is used mainly to feed the mixins.
  *
  * @example
-   .foo {margin-left: to-em(8, 20);}
-   .foo {padding: to-rem(8) 0;}
+   .foo {
+     margin-left: to-em(8, 20);
+   }
+
+   .foo {
+     padding: to-rem(8) 0;
+   }
  *
  */
 
@@ -28,7 +33,7 @@
       @warn "Breakpoint name '#{$value}' not recognised.";
     }// endif
   }// endif
-  @return $value / $context * 1em;
+  @return strip-unit($value) / strip-unit($context) * 1em;
 }
 
 
@@ -37,5 +42,5 @@
  */
 
 @function to-rem($value) {
-  @return $value / $font-size * 1rem;
+  @return strip-unit($value) / strip-unit($font-size) * 1rem;
 }

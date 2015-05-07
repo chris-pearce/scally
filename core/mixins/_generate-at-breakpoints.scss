@@ -34,8 +34,9 @@
  * override this setting and apply any of the Scally breakpoints or any
  * custom breakpoint you wish i.e. it will accept any integer. So if we wanted
  * this utility: `.u-align-v-inline-top` to be applied at the following Scally
- * breakpoints: 'Lap', 'Lap-large', 'Desk', and 'Desk-large' we would update the
- * `$u-align-apply-at-breakpoints` setting in our master stylesheet like so:
+ * breakpoints: 'Lap', 'Lap-large', 'Desk', and 'Desk-large' we would update
+ * the `$u-align-apply-at-breakpoints` setting in our master stylesheet like
+ * so:
  *
    // Set the breakpoints
    $u-align-apply-at-breakpoints: (lap, lap-large, desk, desk-large);

@@ -40,7 +40,7 @@ $text-input-and-select-rounded-corners-size:            $border-radius !default;
 
 $text-input-and-select-padding:                         $spacing-quarter !default;
 
-$text-input-and-select-border-thickness:                1px !default;
+$text-input-and-select-border-thickness:                1 !default;
 
 $text-input-and-select-border-style:                    solid !default;
 
@@ -193,7 +193,7 @@ legend {
 
     // Apply a border but make it optional
     @if $apply-text-input-and-select-border {
-      border: $text-input-and-select-border-thickness
+      border: strip-unit($text-input-and-select-border-thickness) * 1px
               $text-input-and-select-border-style
               $text-input-and-select-border-color;
     }
@@ -203,7 +203,7 @@ legend {
 
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
-      border-radius: $text-input-and-select-rounded-corners-size;
+      border-radius: strip-unit($text-input-and-select-rounded-corners-size) * 1px;
     }// endif
 
     // Make 100% wide

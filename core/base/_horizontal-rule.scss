@@ -11,13 +11,13 @@ $hr-color:      $color-text-base !default;
 
 $hr-style:      solid !default;
 
-$hr-thickness:  1px !default;
+$hr-thickness:  1 !default;
 
 
 hr {
   @extend %bottom-spacing;
   display: block;
   border: 0;
-  border: $hr-thickness $hr-style $hr-color;
+  border-top: strip-unit($hr-thickness) * 1px $hr-style $hr-color;
   padding: 0;
 }
