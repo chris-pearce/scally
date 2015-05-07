@@ -1,5 +1,10 @@
 # HEAD
 
+## 2.1.0 (May 7, 2015)
+
+- Strip units on passed in values to all functions and mixins
+  ([#80](https://github.com/chris-pearce/scally/issues/80)).
+
 ## 2.0.2 (May 5, 2015)
 
 - Updating the `font-size()` mixin to fix the issue of Scally not compiling
