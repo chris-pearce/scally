@@ -5,7 +5,7 @@
 
 /**
  * Here we set breakpoints. Not every media query will be able to use one of
- * these breakpoints and that's fine as they're no magic numbers with
+ * these breakpoints and that's fine as there are no magic numbers with
  * breakpoints i.e. if the UI needs to change then it needs to change. But
  * most of the time we can use them.
  *
@@ -20,9 +20,9 @@
  *   portable that doesn't include phones.
  * - Lap small: smaller tablets/notebooks and e-readers e.g. Kindle.
  * - Lap large: larger tablets and laptops.
- * - Desk: desktop computers, TV's, etc. i.e. anything that is not portable.
+ * - Desk: desktop computers, TVs, etc. i.e. anything that is not portable.
  * - Desk small: smaller desktop computer monitors.
- * - Desk large: larger desktop computer monitors, TV's, and who knows what
+ * - Desk large: larger desktop computer monitors, TVs, and who knows what
  *   else?
  *
  * The breakpoints:
@@ -59,7 +59,7 @@ $breakpoints: (
 
 /**
  * A global setting to define the common breakpoint(s) for Scally and your
- * project. This is mainly used by the Generate at breakpoints mixin.
+ * project. This is mainly used by the `generate-at-breakpoints()` mixin.
  */
 
 $default-breakpoints: (lap) !default;
