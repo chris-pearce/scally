@@ -1,5 +1,14 @@
 # HEAD
 
+## 2.2.0 (May 12, 2015
+
+- Added a new global setting to set the resolution for targeting hi-dpi
+  (retina) devices which feeds into the newly created `respond-retina()` mixin
+  and the already existing `retina-bg-image()` mixin. The `retina-bg-image()`
+  mixin also got some other handy updates such as being able to specify the
+  `auto` keyword for the bg image width and/or height. Thanks to @stowball.
+  ([#123](https://github.com/chris-pearce/scally/issues/123)).
+
 ## 2.1.0 (May 7, 2015)
 
 - Strip units on passed in values to all functions and mixins
