@@ -411,6 +411,8 @@ Here is a sample of a master stylesheet you could use for your `style.scss`:
 
 @import "[path/to/the/scally/framework]/core/settings/spacing";
 
+@import "[path/to/the/scally/framework]/core/settings/retina-resolution";
+
 @import "[path/to/the/scally/framework]/core/settings/breakpoints";
 
 @import "[path/to/the/scally/framework]/core/settings/widths";

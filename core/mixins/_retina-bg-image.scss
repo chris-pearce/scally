@@ -9,7 +9,7 @@
  * @example
    .foo {
       background: url("logo.png") no-repeat;
-      @include retina-bg-image("logo@2x.png", 100px, 25px);
+      @include retina-bg-image("logo@2x.png", 100px, 25px, 1.5);
     }
   *
   * @credit
@@ -17,11 +17,13 @@
  */
 
 
-@mixin retina-bg-image($image, $width, $height) {
-  @media (-o-min-device-pixel-ratio: 5/4),
-         (-webkit-min-device-pixel-ratio: 1.25),
-         (min-resolution: 120dpi) {
-           background-image: url($image);
-           background-size: $width $height;
+@mixin retina-bg-image($image, $width: auto, $height: auto, $resolution: $retina-resolution) {
+  $width: if($width, $width, auto);
+  $height: if($height, $height, auto);
+  $resolution: if(unitless($resolution), $resolution * 96dpi, $resolution);
+  
+  @media (min-resolution: $resolution) {
+    background-image: url($image);
+    background-size: $width $height;
   }
 }

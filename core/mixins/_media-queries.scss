@@ -5,11 +5,11 @@
 
 /**
  * Setup media queries for minimum and maximum widths and heights, with width
- * being the default, also includes the ability to apply ranges. The mixin will
- * accept any of Scally's breakpoints defined here: Core -> Settings ->
- * Breakpoints or any integer. For `max-width` media queries the "max" flag
- * needs to be applied, and for height media queries the `$axis` parameter
- * needs to be set to "height".
+ * being the default, also includes the ability to apply ranges and respond to
+ * retina/hi-dpi devices. The mixin will accept any of Scally's breakpoints
+ * defined here: Core -> Settings -> Breakpoints or any integer. For `max-width`
+ * media queries the "max" flag needs to be applied, and for height media
+ * queries the `$axis` parameter needs to be set to "height".
  *
  * N.B. a `px` unit is not necessary but will work if specified e.g. "400" is
  * fine, so is "400px" e.g.
@@ -45,6 +45,14 @@
 
    @include respond-range(lap) {
      .foo {background: red;}
+   }
+
+   @include respond-retina(2) {
+     .foo {background-size: 100px auto;}
+   }
+
+  @include respond-retina(144dpi) {
+     .foo {background-size: 100px auto;}
    }
  */
 
@@ -94,6 +102,19 @@
   }// endif
 
   @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16)) {
+    @content;
+  }
+}
+
+
+/**
+ * Retina.
+ */
+
+@mixin respond-retina($resolution: $retina-resolution) {
+  $resolution: if(unitless($resolution), $resolution * 96dpi, $resolution);
+  
+  @media (min-resolution: $resolution) {
     @content;
   }
 }
