@@ -4,12 +4,21 @@
 
 
 /**
- * Creates a retina background image.
+ * Creates a hi-dpi (retina) background image by passing in the image url, the
+ * image width and height—or the `auto` keyword`, and the resolution you want
+ * to target. By default the resolution comes from: Core -> Settings -> Retina
+ * Resolution but if you want to override this then you can pass in either a
+ * unitless device pixel ratio (dpr) or a `dpi` value.
  *
  * @example
    .foo {
       background: url("logo.png") no-repeat;
       @include retina-bg-image("logo@2x.png", 100px, 25px, 1.5);
+    }
+
+    .foo {
+      background: url("logo.png") no-repeat;
+      @include retina-bg-image("logo@2x.png", 100px, auto, 144dpi);
     }
   *
   * @credit
@@ -17,11 +26,12 @@
  */
 
 
-@mixin retina-bg-image($image, $width: auto, $height: auto, $resolution: $retina-resolution) {
+@mixin retina-bg-image($image, $width: auto, $height: auto,
+  $resolution: $retina-resolution) {
   $width: if($width, $width, auto);
   $height: if($height, $height, auto);
   $resolution: if(unitless($resolution), $resolution * 96dpi, $resolution);
-  
+
   @media (min-resolution: $resolution) {
     background-image: url($image);
     background-size: $width $height;

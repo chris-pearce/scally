@@ -4,11 +4,15 @@
 
 
 /**
- * A global setting to define the dpr/dpi for retina mixins.
- * Default value set to 1.3 to target Google Nexus 7
- * (http://bjango.com/articles/min-device-pixel-ratio/)
+ * A global setting for targeting hi-dpi (retina) devices which is used in the
+ * retina based mixins. The default value uses a device pixel ratio (dpr) of
+ * "1.3", "1.3" provides the best coverage of retina devices on the market
+ * today, see:
  *
- * Can be either a unitless dpr (1.5) or a dpi (144dpi)
+ * - http://bjango.com/articles/min-device-pixel-ratio/
+ * - https://gist.github.com/marcedwards/3446599
+ *
+ * The setting will also accept a `dpi` unit e.g. `144dpi`.
  */
 
 $retina-resolution: 1.3 !default;
