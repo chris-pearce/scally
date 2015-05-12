@@ -250,6 +250,36 @@
    .u-s-me-n-huge
    .u-s-pe-n-huge
 
+   // Mega
+   .u-s-m-mega
+   .u-s-p-mega
+   .u-s-m-n-mega
+   .u-s-p-n-mega
+   .u-s-mt-mega
+   .u-s-pt-mega
+   .u-s-mt-n-mega
+   .u-s-pt-n-mega
+   .u-s-mr-mega
+   .u-s-pr-mega
+   .u-s-mr-n-mega
+   .u-s-pr-n-mega
+   .u-s-mb-mega
+   .u-s-pb-mega
+   .u-s-mb-n-mega
+   .u-s-pb-n-mega
+   .u-s-ml-mega
+   .u-s-pl-mega
+   .u-s-ml-n-mega
+   .u-s-pl-n-mega
+   .u-s-ms-mega
+   .u-s-ps-mega
+   .u-s-ms-n-mega
+   .u-s-ps-n-mega
+   .u-s-me-mega
+   .u-s-pe-mega
+   .u-s-me-n-mega
+   .u-s-pe-n-mega
+
    // None
    .u-s-m-none
    .u-s-p-none
@@ -291,17 +321,19 @@ $u-spacing-apply-classes-for-breakpoints:   () !default;
  * Spacing sizes.
  */
 
-$u-spacing-base:                            $spacing-base !default;
-
 $u-spacing-micro:                           $spacing-micro !default;
 
 $u-spacing-tiny:                            $spacing-third !default;
 
 $u-spacing-small:                           $spacing-half !default;
 
+$u-spacing-base:                            $spacing-base !default;
+
 $u-spacing-large:                           $spacing-base-plus-half !default;
 
 $u-spacing-huge:                            $spacing-double !default;
+
+$u-spacing-mega:                            $spacing-quadruple !default;
 
 
 /**
@@ -315,7 +347,8 @@ $u-spacing-sizes: (
   tiny:  $u-spacing-tiny,
   small: $u-spacing-small,
   large: $u-spacing-large,
-  huge:  $u-spacing-huge
+  huge:  $u-spacing-huge,
+  mega:  $u-spacing-mega
 );
 
 // Spacing type map (abbreviation + CSS property)
@@ -379,117 +412,6 @@ $u-spacing-types: (
   me-none: (margin-top, margin-bottom),
   pe-none: (padding-top, padding-bottom)
 );
-
-
-
-
-/**
- * Base.
- */
-
-// All
-%u-s-m-base,
-.u-s-m-base {@include to-rem(margin, $u-spacing-base, !important);}
-
-%u-s-p-base,
-.u-s-p-base {@include to-rem(padding, $u-spacing-base, !important);}
-
-// Negative
-%u-s-m-n-base,
-.u-s-m-n-base {@include to-rem(margin, -$u-spacing-base, !important);}
-
-%u-s-p-n-base,
-.u-s-p-n-base {@include to-rem(padding, -$u-spacing-base, !important);}
-
-
-// Top
-%u-s-mt-base,
-.u-s-mt-base {@include to-rem(margin-top, $u-spacing-base, !important);}
-
-%u-s-pt-base,
-.u-s-pt-base {@include to-rem(padding-top, $u-spacing-base, !important);}
-
-// Negative
-%u-s-mt-n-base,
-.u-s-mt-n-base {@include to-rem(margin-top, -$u-spacing-base, !important);}
-
-%u-s-pt-n-base,
-.u-s-pt-n-base {@include to-rem(padding-top, -$u-spacing-base, !important);}
-
-
-// Right
-%u-s-mr-base,
-.u-s-mr-base {@include to-rem(margin-right, $u-spacing-base, !important);}
-
-%u-s-pr-base,
-.u-s-pr-base {@include to-rem(padding-right, $u-spacing-base, !important);}
-
-// Negative
-%u-s-mr-n-base,
-.u-s-mr-n-base {@include to-rem(margin-right, -$u-spacing-base, !important);}
-
-%u-s-pr-n-base,
-.u-s-pr-n-base {@include to-rem(padding-right, -$u-spacing-base, !important);}
-
-
-// Bottom
-%u-s-mb-base,
-.u-s-mb-base {@include to-rem(margin-bottom, $u-spacing-base, !important);}
-
-%u-s-pb-base,
-.u-s-pb-base {@include to-rem(padding-bottom, $u-spacing-base, !important);}
-
-// Negative
-%u-s-mb-n-base,
-.u-s-mb-n-base {@include to-rem(margin-bottom, -$u-spacing-base, !important);}
-
-%u-s-pb-n-base,
-.u-s-pb-n-base {@include to-rem(padding-bottom, -$u-spacing-base, !important);}
-
-
-// Left
-%u-s-ml-base,
-.u-s-ml-base {@include to-rem(margin-left, $u-spacing-base, !important);}
-
-%u-s-pl-base,
-.u-s-pl-base {@include to-rem(padding-left, $u-spacing-base, !important);}
-
-// Negative
-%u-s-ml-n-base,
-.u-s-ml-n-base {@include to-rem(margin-left, -$u-spacing-base, !important);}
-
-%u-s-pl-n-base,
-.u-s-pl-n-base {@include to-rem(padding-left, -$u-spacing-base, !important);}
-
-
-// Sides
-%u-s-ms-base,
-.u-s-ms-base {@include to-rem(margin-left margin-right, $u-spacing-base, !important);}
-
-%u-s-ps-base,
-.u-s-ps-base {@include to-rem(padding-left padding-right, $u-spacing-base, !important);}
-
-// Negative
-%u-s-ms-n-base,
-.u-s-ms-n-base {@include to-rem(margin-left margin-right, -$u-spacing-base, !important);}
-
-%u-s-ps-n-base,
-.u-s-ps-n-base {@include to-rem(padding-left padding-right, -$u-spacing-base, !important);}
-
-
-// Ends
-%u-s-me-base,
-.u-s-me-base {@include to-rem(margin-top margin-bottom, $u-spacing-base, !important);}
-
-%u-s-pe-base,
-.u-s-pe-base {@include to-rem(padding-top padding-bottom, $u-spacing-base, !important);}
-
-// Negative
-%u-s-me-n-base,
-.u-s-me-n-base {@include to-rem(margin-top margin-bottom, -$u-spacing-base, !important);}
-
-%u-s-pe-n-base,
-.u-s-pe-n-base {@include to-rem(padding-top padding-bottom, -$u-spacing-base, !important);}
 
 
 
@@ -832,6 +754,117 @@ $u-spacing-types: (
 
 
 /**
+ * Base.
+ */
+
+// All
+%u-s-m-base,
+.u-s-m-base {@include to-rem(margin, $u-spacing-base, !important);}
+
+%u-s-p-base,
+.u-s-p-base {@include to-rem(padding, $u-spacing-base, !important);}
+
+// Negative
+%u-s-m-n-base,
+.u-s-m-n-base {@include to-rem(margin, -$u-spacing-base, !important);}
+
+%u-s-p-n-base,
+.u-s-p-n-base {@include to-rem(padding, -$u-spacing-base, !important);}
+
+
+// Top
+%u-s-mt-base,
+.u-s-mt-base {@include to-rem(margin-top, $u-spacing-base, !important);}
+
+%u-s-pt-base,
+.u-s-pt-base {@include to-rem(padding-top, $u-spacing-base, !important);}
+
+// Negative
+%u-s-mt-n-base,
+.u-s-mt-n-base {@include to-rem(margin-top, -$u-spacing-base, !important);}
+
+%u-s-pt-n-base,
+.u-s-pt-n-base {@include to-rem(padding-top, -$u-spacing-base, !important);}
+
+
+// Right
+%u-s-mr-base,
+.u-s-mr-base {@include to-rem(margin-right, $u-spacing-base, !important);}
+
+%u-s-pr-base,
+.u-s-pr-base {@include to-rem(padding-right, $u-spacing-base, !important);}
+
+// Negative
+%u-s-mr-n-base,
+.u-s-mr-n-base {@include to-rem(margin-right, -$u-spacing-base, !important);}
+
+%u-s-pr-n-base,
+.u-s-pr-n-base {@include to-rem(padding-right, -$u-spacing-base, !important);}
+
+
+// Bottom
+%u-s-mb-base,
+.u-s-mb-base {@include to-rem(margin-bottom, $u-spacing-base, !important);}
+
+%u-s-pb-base,
+.u-s-pb-base {@include to-rem(padding-bottom, $u-spacing-base, !important);}
+
+// Negative
+%u-s-mb-n-base,
+.u-s-mb-n-base {@include to-rem(margin-bottom, -$u-spacing-base, !important);}
+
+%u-s-pb-n-base,
+.u-s-pb-n-base {@include to-rem(padding-bottom, -$u-spacing-base, !important);}
+
+
+// Left
+%u-s-ml-base,
+.u-s-ml-base {@include to-rem(margin-left, $u-spacing-base, !important);}
+
+%u-s-pl-base,
+.u-s-pl-base {@include to-rem(padding-left, $u-spacing-base, !important);}
+
+// Negative
+%u-s-ml-n-base,
+.u-s-ml-n-base {@include to-rem(margin-left, -$u-spacing-base, !important);}
+
+%u-s-pl-n-base,
+.u-s-pl-n-base {@include to-rem(padding-left, -$u-spacing-base, !important);}
+
+
+// Sides
+%u-s-ms-base,
+.u-s-ms-base {@include to-rem(margin-left margin-right, $u-spacing-base, !important);}
+
+%u-s-ps-base,
+.u-s-ps-base {@include to-rem(padding-left padding-right, $u-spacing-base, !important);}
+
+// Negative
+%u-s-ms-n-base,
+.u-s-ms-n-base {@include to-rem(margin-left margin-right, -$u-spacing-base, !important);}
+
+%u-s-ps-n-base,
+.u-s-ps-n-base {@include to-rem(padding-left padding-right, -$u-spacing-base, !important);}
+
+
+// Ends
+%u-s-me-base,
+.u-s-me-base {@include to-rem(margin-top margin-bottom, $u-spacing-base, !important);}
+
+%u-s-pe-base,
+.u-s-pe-base {@include to-rem(padding-top padding-bottom, $u-spacing-base, !important);}
+
+// Negative
+%u-s-me-n-base,
+.u-s-me-n-base {@include to-rem(margin-top margin-bottom, -$u-spacing-base, !important);}
+
+%u-s-pe-n-base,
+.u-s-pe-n-base {@include to-rem(padding-top padding-bottom, -$u-spacing-base, !important);}
+
+
+
+
+/**
  * Large.
  */
 
@@ -1051,6 +1084,117 @@ $u-spacing-types: (
 
 %u-s-pe-n-huge,
 .u-s-pe-n-huge {@include to-rem(padding-top padding-bottom, -$u-spacing-huge, !important);}
+
+
+
+
+/**
+ * Mega.
+ */
+
+// All
+%u-s-m-mega,
+.u-s-m-mega {@include to-rem(margin, $u-spacing-mega, !important);}
+
+%u-s-p-mega,
+.u-s-p-mega {@include to-rem(padding, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-m-n-mega,
+.u-s-m-n-mega {@include to-rem(margin, -$u-spacing-mega, !important);}
+
+%u-s-p-n-mega,
+.u-s-p-n-mega {@include to-rem(padding, -$u-spacing-mega, !important);}
+
+
+// Top
+%u-s-mt-mega,
+.u-s-mt-mega {@include to-rem(margin-top, $u-spacing-mega, !important);}
+
+%u-s-pt-mega,
+.u-s-pt-mega {@include to-rem(padding-top, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-mt-n-mega,
+.u-s-mt-n-mega {@include to-rem(margin-top, -$u-spacing-mega, !important);}
+
+%u-s-pt-n-mega,
+.u-s-pt-n-mega {@include to-rem(padding-top, -$u-spacing-mega, !important);}
+
+
+// Right
+%u-s-mr-mega,
+.u-s-mr-mega {@include to-rem(margin-right, $u-spacing-mega, !important);}
+
+%u-s-pr-mega,
+.u-s-pr-mega {@include to-rem(padding-right, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-mr-n-mega,
+.u-s-mr-n-mega {@include to-rem(margin-right, -$u-spacing-mega, !important);}
+
+%u-s-pr-n-mega,
+.u-s-pr-n-mega {@include to-rem(padding-right, -$u-spacing-mega, !important);}
+
+
+// Bottom
+%u-s-mb-mega,
+.u-s-mb-mega {@include to-rem(margin-bottom, $u-spacing-mega, !important);}
+
+%u-s-pb-mega,
+.u-s-pb-mega {@include to-rem(padding-bottom, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-mb-n-mega,
+.u-s-mb-n-mega {@include to-rem(margin-bottom, -$u-spacing-mega, !important);}
+
+%u-s-pb-n-mega,
+.u-s-pb-n-mega {@include to-rem(padding-bottom, -$u-spacing-mega, !important);}
+
+
+// Left
+%u-s-ml-mega,
+.u-s-ml-mega {@include to-rem(margin-left, $u-spacing-mega, !important);}
+
+%u-s-pl-mega,
+.u-s-pl-mega {@include to-rem(padding-left, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-ml-n-mega,
+.u-s-ml-n-mega {@include to-rem(margin-left, -$u-spacing-mega, !important);}
+
+%u-s-pl-n-mega,
+.u-s-pl-n-mega {@include to-rem(padding-left, -$u-spacing-mega, !important);}
+
+
+// Sides
+%u-s-ms-mega,
+.u-s-ms-mega {@include to-rem(margin-left margin-right, $u-spacing-mega, !important);}
+
+%u-s-ps-mega,
+.u-s-ps-mega {@include to-rem(padding-left padding-right, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-ms-n-mega,
+.u-s-ms-n-mega {@include to-rem(margin-left margin-right, -$u-spacing-mega, !important);}
+
+%u-s-ps-n-mega,
+.u-s-ps-n-mega {@include to-rem(padding-left padding-right, -$u-spacing-mega, !important);}
+
+
+// Ends
+%u-s-me-mega,
+.u-s-me-mega {@include to-rem(margin-top margin-bottom, $u-spacing-mega, !important);}
+
+%u-s-pe-mega,
+.u-s-pe-mega {@include to-rem(padding-top padding-bottom, $u-spacing-mega, !important);}
+
+// Negative
+%u-s-me-n-mega,
+.u-s-me-n-mega {@include to-rem(margin-top margin-bottom, -$u-spacing-mega, !important);}
+
+%u-s-pe-n-mega,
+.u-s-pe-n-mega {@include to-rem(padding-top padding-bottom, -$u-spacing-mega, !important);}
 
 
 
