@@ -22,6 +22,8 @@ $apply-text-input-and-select-disabled-state:            true !default;
 
 $apply-text-input-full-bleed:                           true !default;
 
+$apply-text-input-placeholder-color:                    true !default;
+
 // Remove the top inner shadow from iOS inputs
 $apply-top-inner-shadow-for-ios-inputs:                 false !default;
 
@@ -216,6 +218,16 @@ legend {
       }// endif
     }// endif
   }
+}// endif
+
+
+/**
+ * Text input placeholder colour which uses the
+ * `text-input-placeholder-color()` mixin.
+ */
+
+@if $apply-text-input-placeholder-color {
+  @include text-input-placeholder-color();
 }// endif
 
 

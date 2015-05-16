@@ -7,21 +7,21 @@
  * Brand.
  */
 
-$color-brand:               #2aa198 !default;
+$color-brand:                   #2aa198 !default;
 
 
 /**
  * Black.
  */
 
-$color-black:               #000 !default;
+$color-black:                   #000 !default;
 
 
 /**
  * White.
  */
 
-$color-white:               #fff !default;
+$color-white:                   #fff !default;
 
 
 /**
@@ -29,16 +29,16 @@ $color-white:               #fff !default;
  */
 
 // Base
-$color-text-base:           $color-black !default;
+$color-text-base:               $color-black !default;
 
 
 /**
  * Primary / Secondary.
  */
 
-$color-primary:             $color-brand !default;
+$color-primary:                 $color-brand !default;
 
-$color-secondary:           lighten($color-brand, 10%) !default;
+$color-secondary:               lighten($color-brand, 10%) !default;
 
 
 /**
@@ -46,13 +46,20 @@ $color-secondary:           lighten($color-brand, 10%) !default;
  */
 
 // Error
-$color-state-error:         #dc322f !default;
+$color-state-error:             #dc322f !default;
 
 // Success
-$color-state-success:       #859900 !default;
+$color-state-success:           #859900 !default;
 
 // Warning
-$color-state-warning:       #b58900 !default;
+$color-state-warning:           #b58900 !default;
 
 // Information
-$color-state-information:   #268bd2 !default;
+$color-state-information:       #268bd2 !default;
+
+
+/**
+ * Text input placeholder colour.
+ */
+
+$color-text-input-placeholder:  #999 !default;
