@@ -1,5 +1,10 @@
 # HEAD
 
+## 2.3.1 (May 15, 2015)
+
+- Adding a missing reference to the 'Mega' Spacing utility in the intro block
+  comments.
+
 ## 2.3.0 (May 15, 2015)
 
 - New `text-input-placeholder-color()` mixin to override the browser default
