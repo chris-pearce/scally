@@ -1,6 +1,15 @@
 # HEAD
 
-## 2.2.0 (May 12, 2015
+## 2.3.0 (May 15, 2015)
+
+- New `text-input-placeholder-color()` mixin to override the browser default
+  `color` style of the input `placeholder` attribute and resets Firefox's
+  `opacity` value of '0.4' to '1'
+  ([#117](https://github.com/chris-pearce/scally/issues/117)).
+- A new **Mega** spacing utility
+  ([#58](https://github.com/chris-pearce/scally/issues/58)).
+
+## 2.2.0 (May 12, 2015)
 
 - Added a new global setting to set the resolution for targeting hi-dpi
   (retina) devices which feeds into the newly created `respond-retina()` mixin
