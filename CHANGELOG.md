@@ -1,5 +1,13 @@
 # HEAD
 
+## 2.3.0 (May 16, 2015)
+
+- Making it easy to override the browser default `color` for the `placeholder`
+  attribute and normalising Firefox's default `opacity` style
+  ([#117](https://github.com/chris-pearce/scally/issues/117)).
+- A new 'mega' spacing utility
+  ([#58](https://github.com/chris-pearce/scally/issues/58)).
+
 ## 2.2.0 (May 12, 2015
 
 - Added a new global setting to set the resolution for targeting hi-dpi
