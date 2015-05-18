@@ -11,7 +11,7 @@
  * Toggle on/off certain styles and treatments.
  */
 
-// Turn styling on for inputs and `select`s
+// Turn styling on for inputs and `select`'s
 $apply-text-input-and-select-styles:                    true !default;
 
 $apply-text-input-and-select-border:                    true !default;
@@ -31,7 +31,7 @@ $apply-top-inner-shadow-for-ios-inputs:                 false !default;
 $apply-close-button-for-ie10plus-inputs:                false !default;
 
 /**
- * Text inputs and `select`s styles.
+ * Text inputs and `select`'s styles.
  */
 
 $text-input-and-select-text-color:                      $color-text-base !default;
@@ -77,7 +77,7 @@ label,
 
 
 /**
- * Disable `textarea`s from being resized horizontally.
+ * Disable `textarea`'s from being resized horizontally.
  */
 
 textarea {resize: vertical;}
@@ -89,7 +89,7 @@ textarea {resize: vertical;}
 
 @if $apply-friendly-box-model {
   input[type="search"] {box-sizing: border-box;}
-}// endif
+}
 
 
 /**
@@ -134,8 +134,8 @@ legend {
 
 
 /**
- * Set whitespace for `legend`s via a class, we use `padding` over `margin` as
- * `padding` is the most cross-browser compatible for `legend`s.
+ * Set whitespace for `legend`'s via a class, we use `padding` over `margin` as
+ * `padding` is the most cross-browser compatible for `legend`'s.
  */
 
 .form-heading {@include to-rem(padding-bottom, $spacing-base);}
@@ -168,7 +168,7 @@ legend {
     background: inherit !important;
     text-decoration: none !important;
   }
-}// endif
+}
 
 
 /**
@@ -182,7 +182,7 @@ legend {
 
 
 /**
- * Text inputs via the `.text-input` class, `textarea`s, and `select` lists.
+ * Text inputs via the `.text-input` class, `textarea`'s, and `select` lists.
  */
 
 @if $apply-text-input-and-select-styles {
@@ -201,12 +201,12 @@ legend {
     }
     @else {
       border: 0;
-    }// endif
+    }
 
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
       border-radius: strip-unit($text-input-and-select-rounded-corners-size) * 1px;
-    }// endif
+    }
 
     // Make 100% wide
     @if $apply-text-input-full-bleed {
@@ -215,10 +215,10 @@ legend {
       // Need to apply `box-sizing: border-box` if it hasn't been set globally
       @if $apply-friendly-box-model == false {
         box-sizing: border-box;
-      }// endif
-    }// endif
+      }
+    }
   }
-}// endif
+}
 
 
 /**
@@ -228,7 +228,7 @@ legend {
 
 @if $apply-text-input-placeholder-color {
   @include text-input-placeholder-color();
-}// endif
+}
 
 
 /**
@@ -245,7 +245,7 @@ legend {
     .text-input,
     textarea {-webkit-appearance: caret;}
   }
-}// endif
+}
 
 
 /**
@@ -255,4 +255,4 @@ legend {
 @if $apply-close-button-for-ie10plus-inputs {
   .hide-close-button-for-ie-inputs::-ms-clear,
   .text-input::-ms-clear {display: none;}
-}// endif
+}

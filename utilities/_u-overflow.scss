@@ -78,7 +78,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-visible {
   @include generate-at-breakpoints('.u-overflow-visible',
     $u-overflow-apply-at-breakpoints) {overflow: visible !important;}
-}// endif
+}
 
 // At the left and right edges
 %u-overflow-x-visible,
@@ -87,7 +87,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-visible-x {
   @include generate-at-breakpoints('.u-overflow-x-visible',
     $u-overflow-apply-at-breakpoints) {overflow-x: visible !important;}
-}// endif
+}
 
 // At the bottom and top edges
 %u-overflow-y-visible,
@@ -96,7 +96,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-visible-y {
   @include generate-at-breakpoints('.u-overflow-y-visible',
     $u-overflow-apply-at-breakpoints) {overflow-y: visible !important;}
-}// endif
+}
 
 
 /**
@@ -109,7 +109,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-hidden {
   @include generate-at-breakpoints('.u-overflow-hidden',
     $u-overflow-apply-at-breakpoints) {overflow: hidden !important;}
-}// endif
+}
 
 // At the left and right edges
 %u-overflow-x-hidden,
@@ -118,7 +118,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-hidden-x {
   @include generate-at-breakpoints('.u-overflow-x-hidden',
     $u-overflow-apply-at-breakpoints) {overflow-x: hidden !important;}
-}// endif
+}
 
 // At the bottom and top edges
 %u-overflow-y-hidden,
@@ -127,7 +127,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-hidden-y {
   @include generate-at-breakpoints('.u-overflow-y-hidden',
     $u-overflow-apply-at-breakpoints) {overflow-y: hidden !important;}
-}// endif
+}
 
 
 /**
@@ -140,7 +140,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-scroll {
   @include generate-at-breakpoints('.u-overflow-scroll',
     $u-overflow-apply-at-breakpoints) {overflow: scroll !important;}
-}// endif
+}
 
 // At the left and right edges
 %u-overflow-x-scroll,
@@ -149,7 +149,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-scroll-x {
   @include generate-at-breakpoints('.u-overflow-x-scroll',
     $u-overflow-apply-at-breakpoints) {overflow-x: scroll !important;}
-}// endif
+}
 
 // At the bottom and top edges
 %u-overflow-y-scroll,
@@ -158,7 +158,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-scroll-y {
   @include generate-at-breakpoints('.u-overflow-y-scroll',
     $u-overflow-apply-at-breakpoints) {overflow-y: scroll !important;}
-}// endif
+}
 
 
 /**
@@ -171,7 +171,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-auto {
   @include generate-at-breakpoints('.u-overflow-auto',
     $u-overflow-apply-at-breakpoints) {overflow: auto !important;}
-}// endif
+}
 
 // At the left and right edges
 %u-overflow-x-auto,
@@ -180,7 +180,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-auto-x {
   @include generate-at-breakpoints('.u-overflow-x-auto',
     $u-overflow-apply-at-breakpoints) {overflow-x: auto !important;}
-}// endif
+}
 
 // At the bottom and top edges
 %u-overflow-y-auto,
@@ -189,7 +189,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-auto-y {
   @include generate-at-breakpoints('.u-overflow-y-auto',
     $u-overflow-apply-at-breakpoints) {overflow-y: auto !important;}
-}// endif
+}
 
 
 /**
@@ -202,7 +202,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-inherit {
   @include generate-at-breakpoints('.u-overflow-inherit',
     $u-overflow-apply-at-breakpoints) {overflow: inherit !important;}
-}// endif
+}
 
 // At the left and right edges
 %u-overflow-x-inherit,
@@ -211,7 +211,7 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-inherit-x {
   @include generate-at-breakpoints('.u-overflow-x-inherit',
     $u-overflow-apply-at-breakpoints) {overflow-x: inherit !important;}
-}// endif
+}
 
 // At the bottom and top edges
 %u-overflow-y-inherit,
@@ -220,4 +220,4 @@ $u-overflow-apply-at-breakpointa-for-inherit-y:    false !default;
 @if $u-overflow-apply-at-breakpointa-for-inherit-y {
   @include generate-at-breakpoints('.u-overflow-y-inherit',
     $u-overflow-apply-at-breakpoints) {overflow-y: inherit !important;}
-}// endif
+}

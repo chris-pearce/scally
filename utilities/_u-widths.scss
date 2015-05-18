@@ -192,7 +192,7 @@ $apply-friendly-box-model:                                   false !default;
     float: left !important;
     width: auto !important;
   }
-}// endif
+}
 
 // Float it right
 %u-width-shrink-wrap--right,
@@ -201,7 +201,7 @@ $apply-friendly-box-model:                                   false !default;
 @if $u-width-apply-at-breakpoints-for-shrink-wrap {
   @include generate-at-breakpoints('.u-width-shrink-wrap--right',
     $u-width-intrinsic-apply-at-breakpoints) {float: right !important;}
-}// endif
+}
 
 
 /**
@@ -226,7 +226,7 @@ $apply-friendly-box-model:                                   false !default;
     overflow: hidden !important;
     width: auto !important;
   }
-}// endif
+}
 
 // Alternative method
 %u-width-fill-remaining-space-alt,
@@ -243,7 +243,7 @@ $apply-friendly-box-model:                                   false !default;
     max-width: 100% !important;
     width: 10000px !important;
   }
-}// endif
+}
 
 
 /**
@@ -257,7 +257,7 @@ $apply-friendly-box-model:                                   false !default;
 
   @if $apply-friendly-box-model == false {
     box-sizing: border-box !important;
-  }//endif
+  }
 }
 
 @if $u-width-apply-at-breakpoints-for-full-bleed {
@@ -268,9 +268,9 @@ $apply-friendly-box-model:                                   false !default;
 
     @if $apply-friendly-box-model == false {
       box-sizing: border-box !important;
-    }//endif
+    }
   }
-}// endif
+}
 
 
 /**

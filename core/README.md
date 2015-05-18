@@ -83,7 +83,7 @@ $apply-paragraph-bottom-margin: true !default;
 
 @if $apply-paragraph-bottom-margin {
   p {@extend %bottom-spacing;}
-}// endif
+}
 ```
 
 #### Sensible styles

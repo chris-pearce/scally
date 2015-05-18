@@ -62,7 +62,7 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
       cursor: text;
     }
   }
-}// endif
+}
 
 
   /**
@@ -81,4 +81,4 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
       cursor: pointer;
       @include base-link();
     }
-  }// endif
+  }

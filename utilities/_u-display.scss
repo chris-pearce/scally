@@ -42,7 +42,7 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
 @if $u-display-apply-at-breakpoints-for-block {
   @include generate-at-breakpoints('.u-display-block',
     $u-display-apply-at-breakpoints) {display: block !important;}
-}// endif
+}
 
 
 /**
@@ -55,7 +55,7 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
 @if $u-display-apply-at-breakpoints-for-inline {
   @include generate-at-breakpoints('.u-display-inline',
     $u-display-apply-at-breakpoints) {display: inline !important;}
-}// endif
+}
 
 
 /**
@@ -68,4 +68,4 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
 @if $u-display-apply-at-breakpoints-for-inline-block {
   @include generate-at-breakpoints('.u-display-inline-block',
     $u-display-apply-at-breakpoints) {display: inline-block !important;}
-}// endif
+}

@@ -63,7 +63,7 @@ $o-drop-down-touch-support-class:                is-touch !default;
 @if $o-drop-down-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.o-drop-down',
     $o-drop-down-apply-at-breakpoints) {position: relative;}
-}// endif
+}
 
 
   /**
@@ -110,7 +110,7 @@ $o-drop-down-touch-support-class:                is-touch !default;
         left: auto;
         right: 0;
     }
-  }// endif
+  }
 
 
   /**
@@ -134,4 +134,4 @@ $o-drop-down-touch-support-class:                is-touch !default;
   @if $o-drop-down-apply-at-breakpoints-for-on-hover {
     @include generate-at-breakpoints('.o-drop-down__trigger--hover{bp}:hover + .o-drop-down__target',
       $o-drop-down-apply-at-breakpoints) {display: block;}
-  }// endif
+  }

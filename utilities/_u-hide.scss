@@ -53,7 +53,7 @@ $u-hide-js-is-off-class:                           no-js !default;
   @include generate-at-breakpoints('.u-hide', $u-hide-apply-at-breakpoints) {
     display: none !important;
   }
-}// endif
+}
 
 
 /**
@@ -66,7 +66,7 @@ $u-hide-js-is-off-class:                           no-js !default;
 @if $u-hide-apply-at-breakpoints-for-hide-invisible {
   @include generate-at-breakpoints('.u-hide-invisible',
     $u-hide-apply-at-breakpoints) {visibility: hidden !important;}
-}// endif
+}
 
 
 /**
@@ -86,7 +86,7 @@ $u-hide-js-is-off-class:                           no-js !default;
 
 
   /**
-   * Form `legend`s need different treatment.
+   * Form `legend`'s need different treatment.
    */
 
   &.legend {left: $off-screen-distance !important;}
@@ -106,7 +106,7 @@ $u-hide-js-is-off-class:                           no-js !default;
 
     &.legend {left: $off-screen-distance !important;}
   }
-}// endif
+}
 
 
 /**

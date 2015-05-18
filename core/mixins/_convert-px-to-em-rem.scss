@@ -75,7 +75,7 @@
     @else {
       $values: append($values, if(type-of($s) == number and $s != 0, strip-unit($s) / strip-unit($context) * $unit,
         strip-unit($s)));
-    }// endif
+    }
   }
 
   $value: join((), $values, if($sublists, comma, space));

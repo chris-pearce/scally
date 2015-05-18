@@ -31,8 +31,8 @@
       $value: map-get($breakpoints, $value);
     } @else {
       @warn "Breakpoint name '#{$value}' not recognised.";
-    }// endif
-  }// endif
+    }
+  }
   @return strip-unit($value) / strip-unit($context) * 1em;
 }
 

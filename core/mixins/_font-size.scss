@@ -131,13 +131,13 @@
       }
       @else {
         line-height: strip-unit($line-height-value) / $font-size-value #{$important};
-      }// endif
+      }
     }
     @elseif $line-height-value == inherit or $line-height-value == normal {
       line-height: $line-height-value #{$important};
     }
     @elseif ($line-height-value != none and $line-height-value != false) {
       @warn "D'oh! `#{$line-height-value}` is not a valid value for `line-height`."
-    }// endif
-  }// endif
+    }
+  }
 }

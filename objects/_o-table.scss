@@ -90,7 +90,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     th,
     td {@include to-rem(padding, $o-table-cell-padding-base);}
   }
-}// endif
+}
 
 
 /**
@@ -110,7 +110,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color:
     $o-table-striped-background-cell-color;}
   }
-}// endif
+}
 
 
 /**
@@ -140,7 +140,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
       &:empty {border: 0;}
     }
   }
-}// endif
+}
 
 
 /**
@@ -153,7 +153,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 @if $o-table-apply-at-breakpoints-for-fixed {
   @include generate-at-breakpoints('.o-table--fixed',
     $o-table-apply-at-breakpoints) {table-layout: fixed;}
-}// endif
+}
 
 
 /**
@@ -173,7 +173,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     th,
     td {@include to-rem(padding, $o-table-cell-padding-small);}
   }
-}// endif
+}
 
 
 // Large padding
@@ -189,7 +189,7 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     th,
     td {@include to-rem(padding, $o-table-cell-padding-large);}
   }
-}// endif
+}
 
 
 // No padding
@@ -205,4 +205,4 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     th,
     td {padding: 0;}
   }
-}// endif
+}
