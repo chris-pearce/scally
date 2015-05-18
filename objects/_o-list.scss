@@ -7,6 +7,12 @@
  * Standard list styles for unordered and ordered lists as they're removed in
  * Core -> Reset.
  *
+ * All the objects (available as silent placeholder selectors also):
+ *
+   .o-list
+   ul.o-list
+   ol.o-list
+ *
  * @markup
    <ul class="o-list">
      <li>Lorem</li>
