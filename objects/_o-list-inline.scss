@@ -382,6 +382,8 @@ $o-list-inline-divider-thickness:                                      1 !defaul
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+
+  > li {flex-grow: 1;}
 }
 
 @if $o-list-inline-apply-at-breakpoints-for-fit-flexbox {
@@ -390,6 +392,8 @@ $o-list-inline-divider-thickness:                                      1 !defaul
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+
+    > li {flex-grow: 1;}
   }
 }// endif
 
