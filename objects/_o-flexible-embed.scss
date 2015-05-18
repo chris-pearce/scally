@@ -7,6 +7,15 @@
  * For use with embeds like videos, iframes, or even images that need to retain
  * a specific aspect ratio but adapt to the width of their containing element.
  *
+ * All the objects (available as silent placeholder selectors also):
+ *
+   .o-flexible-embed
+   .o-flexible-embed__ratio
+   .o-flexible-embed__ratio--16-by-9
+   .o-flexible-embed__ratio--2-by-1
+   .o-flexible-embed__ratio--4-by-3
+   .o-flexible-embed__content
+ *
  * @markup
    <div class="o-flexible-embed">
      <!-- The content e.g. a video (`iframe`) -->

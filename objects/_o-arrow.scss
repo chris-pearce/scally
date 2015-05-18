@@ -6,6 +6,18 @@
 /**
  * Creates arrow shapes using only CSS.
  *
+ * All the objects (available as silent placeholder selectors also):
+ *
+   .o-arrow
+   .o-arrow--tiny
+   .o-arrow--small
+   .o-arrow--large
+   .o-arrow--huge
+   .o-arrow--down
+   .o-arrow--up
+   .o-arrow--left
+   .o-arrow--right
+ *
  * @markup
    <span class="o-arrow [modifier(s)]"></span>
  *

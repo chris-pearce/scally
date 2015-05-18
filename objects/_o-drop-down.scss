@@ -11,6 +11,11 @@
  * trigger is selected. There is also a version for showing the drop down via
  * the `:hover` pseudo class which is turned off for touch devices.
  *
+ * All the objects (available as silent placeholder selectors also):
+ *
+   .o-drop-down
+   .o-drop-down__target
+ *
  * @markup
    <div class="o-drop-down">
      <!-- The trigger -->
