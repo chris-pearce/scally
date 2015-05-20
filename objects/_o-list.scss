@@ -177,14 +177,14 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
     ul,
     ol {@include to-rem(margin-left, $o-list-indent);}
 
-    // Unordered lists bullets
+    // Unordered list bullets
     ul {
       list-style-type: $o-list-bullet-unordered-nested-once;
 
       ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
     }
 
-    // Ordered lists bullets
+    // Ordered list bullets
     ol {list-style-type: $o-list-bullet-ordered;}
   }
 
