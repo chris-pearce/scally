@@ -109,7 +109,7 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
   @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
     .l-side-by-side-alt--remove {direction: ltr;} // [1]
   }
-}// endif
+}
 
 
   /**
@@ -154,7 +154,7 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
       @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
         .l-side-by-side-alt--remove > & {display: block;}
       }
-    }// endif
+    }
   }
 
 
@@ -273,7 +273,7 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
             margin-bottom: 0;}
 
       }
-    }// endif
+    }
 
 
       /**
@@ -294,6 +294,6 @@ $l-side-by-side-alt-gutter-huge:        $spacing-double !default;
           @include respond-to($l-side-by-side-alt-apply-linear-when, max) {
             max-width: 100%;
           }
-        }// endif
+        }
       }
   }

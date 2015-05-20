@@ -4,7 +4,7 @@
 
 
 /**
- * Convert `px` to `em`'s or `rem`'s for multiple properties or values or
+ * Convert `px` to `em`s or `rem`s for multiple properties or values or
  * both. Accepts a list of lists (instead a list of values) for properties
  * that accept multiple lists of values. Only numbers are converted;
  * everything else is passed through. For the `to-em` `@mixin` `$context` is
@@ -75,7 +75,7 @@
     @else {
       $values: append($values, if(type-of($s) == number and $s != 0, strip-unit($s) / strip-unit($context) * $unit,
         strip-unit($s)));
-    }// endif
+    }
   }
 
   $value: join((), $values, if($sublists, comma, space));

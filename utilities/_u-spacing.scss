@@ -1289,8 +1289,8 @@ $u-spacing-types: (
         $u-spacing-apply-at-breakpoints) {
         @include to-rem($type, 0, !important);
       }
-    }// endif
-  }// endif
+    }
+  }
 
   // Everything else
   @else {
@@ -1308,12 +1308,12 @@ $u-spacing-types: (
           // Negative spacing
           @if str_index($abbreviation, "-n") != null {
             $size-value: $size-value * -1;
-          }// endif
+          }
 
           // All other spacing
           @include to-rem($type, $size-value, !important);
         }
-      }// endif
+      }
     }
   }
 }

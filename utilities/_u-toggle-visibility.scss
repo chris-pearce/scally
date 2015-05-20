@@ -54,7 +54,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: block !important;}
   }
-}// endif
+}
 
 
 /**
@@ -78,7 +78,7 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline !important;}
   }
-}// endif
+}
 
 
 /**
@@ -102,4 +102,4 @@ $u-toggle-visibility-state-class:                            is-visible !default
     &.#{$u-toggle-visibility-state-class},
     .no-js & {display: inline-block !important;}
   }
-}// endif
+}

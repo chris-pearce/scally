@@ -131,7 +131,7 @@ $o-overlay-hover-transition-timing-function:  ease !default;
     @if $o-overlay-hover-apply-transition {
       transition: background-color $o-overlay-hover-transition-duration
       $o-overlay-hover-transition-timing-function;
-    }// endif
+    }
 
     background-color: transparent; // [3]
     pointer-events: none; // [4]

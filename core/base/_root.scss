@@ -36,5 +36,5 @@ html {
   @if $apply-osx-font-smoothing {
     -moz-osx-font-smoothing: grayscale; // [2]
     -webkit-font-smoothing: antialiased; // [2]
-  }// endif
+  }
 }

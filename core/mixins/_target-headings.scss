@@ -27,7 +27,7 @@
 
       @if $double-stranded {
         $selector: "#{$selector}, .#{$selector}";
-      }// endif
+      }
 
       $selector-list: append($selector-list, unquote($selector), comma);
     }
@@ -38,5 +38,5 @@
   }
   @else {
     @warn "You can only target headings 1 to 6";
-  }// endif
+  }
 }

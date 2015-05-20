@@ -52,7 +52,7 @@
      .foo {background: red;}
    }
  *
- * And to target the height the $axis parameter needs to be set to "height"
+ * And to target the height the `$axis` parameter needs to be set to "height"
  * e.g.
  *
    @include respond-to(780, $axis: height) {
@@ -90,7 +90,7 @@
      .foo {background: red;}
    }
  *
- * Where max-height: 75em is the "lap-large" breakpoint.
+ * Where `max-height: 75em` is the "lap-large" breakpoint.
  *
  * N.B. the width and height mixins accept unitless integers or integers with
  * `px` e.g.
@@ -156,19 +156,19 @@
 
       @if $min-value == "lap" {
         $next-breakpoint-index: $breakpoint-index + 2;
-      }// endif
+      }
 
       @if $next-breakpoint-index <= length($breakpoint-values) {
         $max-value: nth($breakpoint-values, $next-breakpoint-index);
       }
       @else {
         @warn "No max-#{$axis} value specified and no available breakpoints to use as a substitute";
-      }// endif
+      }
     }
     @else {
       @warn "Breakpoint name '#{$min-value}' not recognised.";
     }
-  }// endif
+  }
 
   @media (min-#{$axis}: to-em(strip-unit($min-value), 16)) and (max-#{$axis}: to-em(strip-unit($max-value), 16)) {
     @content;

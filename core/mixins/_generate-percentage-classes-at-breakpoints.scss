@@ -74,13 +74,13 @@ $mixin-apply-terse-percentage-class-names: false !default;
 
   @if $class-name {
     $class-name: "#{$class-name}-";
-  }// endif
+  }
 
   $all-breakpoint-names: map-keys($breakpoints);
 
   @if $breakpoint-names == all {
     $breakpoint-names: $all-breakpoint-names;
-  }// endif
+  }
 
   @include generate-percentage-classes("", $scally-type, $class-name,
     $css-property);
@@ -116,7 +116,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
       @if $breakpoint-name {
         $suffix: if($limit == "min", "-from", "-up-to");
         $breakpoint: "#{$suffix}-#{$breakpoint-name}";
-      }// endif
+      }
 
       @include generate-percentage-classes($breakpoint, $scally-type,
         $class-name, $css-property);
@@ -138,7 +138,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
         }
         @else {
           $percent-width-class: floor($percent-width-class);
-        }// endif
+        }
 
         .#{$scally-type}-#{$class-name}#{nth($mixin-numerators,
           $numerator)}-#{nth($mixin-denominator-words,
@@ -153,7 +153,7 @@ $mixin-apply-terse-percentage-class-names: false !default;
             $denominator)}#{$denominator-suffix}#{$breakpoint} {
               #{$css-property}: percentage($numerator/$denominator);
         }
-      }// endif
+      }
     }
   }
 }

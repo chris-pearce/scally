@@ -89,7 +89,7 @@ textarea {resize: vertical;}
 
 @if $apply-friendly-box-model {
   input[type="search"] {box-sizing: border-box;}
-}// endif
+}
 
 
 /**
@@ -168,7 +168,7 @@ legend {
     background: inherit !important;
     text-decoration: none !important;
   }
-}// endif
+}
 
 
 /**
@@ -201,12 +201,12 @@ legend {
     }
     @else {
       border: 0;
-    }// endif
+    }
 
     // Apply rounded corners but make it optional
     @if $apply-text-input-and-select-rounded-corners {
       border-radius: strip-unit($text-input-and-select-rounded-corners-size) * 1px;
-    }// endif
+    }
 
     // Make 100% wide
     @if $apply-text-input-full-bleed {
@@ -215,10 +215,10 @@ legend {
       // Need to apply `box-sizing: border-box` if it hasn't been set globally
       @if $apply-friendly-box-model == false {
         box-sizing: border-box;
-      }// endif
-    }// endif
+      }
+    }
   }
-}// endif
+}
 
 
 /**
@@ -228,7 +228,7 @@ legend {
 
 @if $apply-text-input-placeholder-color {
   @include text-input-placeholder-color();
-}// endif
+}
 
 
 /**
@@ -245,7 +245,7 @@ legend {
     .text-input,
     textarea {-webkit-appearance: caret;}
   }
-}// endif
+}
 
 
 /**
@@ -255,4 +255,4 @@ legend {
 @if $apply-close-button-for-ie10plus-inputs {
   .hide-close-button-for-ie-inputs::-ms-clear,
   .text-input::-ms-clear {display: none;}
-}// endif
+}

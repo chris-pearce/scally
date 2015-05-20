@@ -58,7 +58,7 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
     display: table-cell !important;
     width: 10000px !important;
   }
-}// endif
+}
 
 
 /**
@@ -73,4 +73,4 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
 @if $u-nbfc-apply-at-breakpoints-for-alt {
   @include generate-at-breakpoints('.u-nbfc-alt',
     $u-nbfc-apply-at-breakpoints) {overflow: hidden !important;}
-}// endif
+}

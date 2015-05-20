@@ -38,7 +38,7 @@ $apply-heading-margins: true !default;
   @include headings(4, 6, true) {
     @extend %bottom-spacing-half;
   }
-}// endif
+}
 
 
 /**

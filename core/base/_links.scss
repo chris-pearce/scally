@@ -40,13 +40,13 @@ $link-transition-timing-function:   ease !default;
   // Remove underline and apply on hover
   @if $apply-link-underline-on-hover {
     text-decoration: none;
-  }// endif
+  }
 
   // Apply a transition on hover
   @if $apply-link-transition-on-hover {
     transition: color $link-transition-duration
     $link-transition-timing-function;
-  }// endif
+  }
 
   &:hover,
   &:focus {
@@ -54,7 +54,7 @@ $link-transition-timing-function:   ease !default;
 
     @if $apply-link-underline-on-hover {
       text-decoration: underline;
-    }// endif
+    }
   }
 }
 

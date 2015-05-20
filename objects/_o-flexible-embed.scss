@@ -4,8 +4,9 @@
 
 
 /**
- * For use with embeds like videos, iframes, or even images that need to retain
- * a specific aspect ratio but adapt to the width of their containing element.
+ * For use with embeds like videos, `iframe`s, or even images that need to
+ * retain a specific aspect ratio but adapt to the width of their containing
+ * element.
  *
  * @markup
    <div class="o-flexible-embed">
@@ -63,7 +64,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
     position: relative;
     overflow: hidden;
   }
-}// endif
+}
 
 
   /**
@@ -87,7 +88,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
       padding-bottom: 100%;
       width: 100%;
     }
-  }// endif
+  }
 
 
   /**
@@ -101,7 +102,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
   @if $o-flexible-embed-apply-at-breakpoints-for-ratio-16-by-9 {
     @include generate-at-breakpoints('.o-flexible-embed__ratio--16-by-9',
       $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 56.25%;}
-  }// endif
+  }
 
   // 3:1 aspect ratio
   %o-flexible-embed__ratio--3-by-1,
@@ -110,7 +111,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
   @if $o-flexible-embed-apply-at-breakpoints-for-ratio-3-by-1 {
     @include generate-at-breakpoints('.o-flexible-embed__ratio--3-by-1',
       $o-flexible-embed-apply-at-breakpoints) {padding-bottom: (100/3)*1%;}
-  }// endif
+  }
 
   // 2:1 aspect ratio
   %o-flexible-embed__ratio--2-by-1,
@@ -119,7 +120,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
   @if $o-flexible-embed-apply-at-breakpoints-for-ratio-2-by-1 {
     @include generate-at-breakpoints('.o-flexible-embed__ratio--2-by-1',
       $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 50%;}
-  }// endif
+  }
 
   // 4:3 aspect ratio
   %o-flexible-embed__ratio--4-by-3,
@@ -128,7 +129,7 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
   @if $o-flexible-embed-apply-at-breakpoints-for-ratio-4-by-3 {
     @include generate-at-breakpoints('.o-flexible-embed__ratio--4-by-3',
       $o-flexible-embed-apply-at-breakpoints) {padding-bottom: 75%;}
-  }// endif
+  }
 
 
   /**
@@ -153,4 +154,4 @@ $o-flexible-embed-apply-at-breakpoints-for-content:         false !default;
       width: 100%;
       height: 100%;
     }
-  }// endif
+  }

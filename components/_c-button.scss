@@ -144,7 +144,7 @@ $c-button-hover-transition-timing-function:   linear !default;
   @if $c-button-apply-border {
     border: strip-unit($c-button-border-thickness) * 1px $c-button-border-style
       $c-button-border-color;
-  }// endif
+  }
 
   // Apply rounded corners
   @if $c-button-apply-rounded-corners {
@@ -152,7 +152,7 @@ $c-button-hover-transition-timing-function:   linear !default;
     // removal of rounded corners that iOS applies set in Core -> Base ->
     // Forms
     html & {border-radius: strip-unit($c-button-rounded-corners-size) * 1px;}
-  }// endif
+  }
 
   // Foreground colour
   &,
@@ -167,7 +167,7 @@ $c-button-hover-transition-timing-function:   linear !default;
 
     &:hover,
     &:focus {opacity: $c-button-hover-opacity-strength;}
-  }// endif
+  }
 }
 
 
@@ -181,7 +181,7 @@ $c-button-hover-transition-timing-function:   linear !default;
   // Apply a border
   @if $c-button-apply-border {
     border-color: $c-button-border-color-secondary;
-  }// endif
+  }
 
   // Foreground colour
   &,
@@ -237,7 +237,7 @@ $c-button-hover-transition-timing-function:   linear !default;
     // Scally cannot help you in this case
     padding-right: 0;
     padding-left: 0;
-  }// endif
+  }
 }
 
 
@@ -257,7 +257,7 @@ $c-button-hover-transition-timing-function:   linear !default;
       @if $c-button-apply-border == false {
         border: $c-button-border-thickness $c-button-border-style
           $c-button-border-color;
-      }// endif
+      }
 
       // Turn off right borders so they don't double up, except for the last
       // one
@@ -267,7 +267,7 @@ $c-button-hover-transition-timing-function:   linear !default;
       // the first and last buttons in the group need rounded corners
       @if $c-button-apply-rounded-corners {
         border-radius: 0;
-      }// endif
+      }
 
       // Round off the first and last buttons in the group
       @if $c-button-apply-group-rounded-corners or
@@ -281,7 +281,7 @@ $c-button-hover-transition-timing-function:   linear !default;
           border-top-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
           border-bottom-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
         }
-      }// endif
+      }
 
     }
 
@@ -321,8 +321,8 @@ $c-button-hover-transition-timing-function:   linear !default;
             border-bottom-left-radius: strip-unit($c-button-rounded-corners-size) * 1px;
             border-bottom-right-radius: strip-unit($c-button-rounded-corners-size) * 1px;
           }
-        }// endif
+        }
       }
     }
   }
-}// endif
+}
