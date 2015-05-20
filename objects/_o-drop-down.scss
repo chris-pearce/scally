@@ -12,7 +12,7 @@
  * the `:hover` pseudo class which is turned off for touch devices.
  *
  * @markup
-   <div class="o-drop-down">
+   <div class="o-drop-down [modifier]">
      <!-- The trigger -->
      <button class="o-drop-down__trigger"> [...] </button>
      <!-- The target -->
@@ -29,14 +29,16 @@
  * Apply at these breakpoints (turned off by default).
  */
 
-$o-drop-down-apply-at-breakpoints:               $default-breakpoints !default;
+$o-drop-down-apply-at-breakpoints:                  $default-breakpoints !default;
 
 // From the above breakpoints choose what you wish to apply it too
-$o-drop-down-apply-at-breakpoints-for-default:   false !default;
+$o-drop-down-apply-at-breakpoints-for-default:      false !default;
 
-$o-drop-down-apply-at-breakpoints-for-target:    false !default;
+$o-drop-down-apply-at-breakpoints-for-target:       false !default;
 
-$o-drop-down-apply-at-breakpoints-for-on-hover:  false !default;
+$o-drop-down-apply-at-breakpoints-for-target-right: false !default;
+
+$o-drop-down-apply-at-breakpoints-for-on-hover:     false !default;
 
 /**
  * State classes.
@@ -75,10 +77,8 @@ $o-drop-down-touch-support-class:                is-touch !default;
     top: 100%;
     left: 0;
 
-    // Show the drop down via the JavaScript powered state class and via the
-    // hover modifier.
-    &.#{$o-drop-down-state-class},
-    .o-drop-down--on-hover:hover & {display: block;}
+    // Show the drop down via the JavaScript powered state class.
+    &.#{$o-drop-down-state-class} {display: block;}
   }
 
   @if $o-drop-down-apply-at-breakpoints-for-target {
@@ -89,8 +89,26 @@ $o-drop-down-touch-support-class:                is-touch !default;
       top: 100%;
       left: 0;
 
-      &.#{$o-drop-down-state-class},
-      .o-drop-down--on-hover:hover & {display: block;}
+      &.#{$o-drop-down-state-class} {display: block;}
+    }
+  }// endif
+
+
+  /**
+   * Modifier: position to the right instead of the left.
+   */
+
+  %o-drop-down__target--right,
+  .o-drop-down__target--right {
+    left: auto;
+    right: 0;
+  }
+
+  @if $o-drop-down-apply-at-breakpoints-for-target-right {
+    @include generate-at-breakpoints('.o-drop-down__target--right',
+      $o-drop-down-apply-at-breakpoints) {
+        left: auto;
+        right: 0;
     }
   }// endif
 
@@ -102,10 +120,18 @@ $o-drop-down-touch-support-class:                is-touch !default;
    * (typically the `html` element) if touch is supported.
    */
 
-  %#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target,
-  .#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target {display: none;}
+  %o-drop-down__trigger--hover:hover,
+  .o-drop-down__trigger--hover:hover {
+    + %o-drop-down__target,
+    + .o-drop-down__target {display: block;}
+  }
+
+  // Hide for touch devices
+  .#{$o-drop-down-touch-support-class} %o-drop-down__target,
+  .#{$o-drop-down-touch-support-class} .o-drop-down__target {
+    display: none !important;}
 
   @if $o-drop-down-apply-at-breakpoints-for-on-hover {
-    @include generate-at-breakpoints('.#{$o-drop-down-touch-support-class} .o-drop-down--on-hover .o-drop-down__target',
-      $o-drop-down-apply-at-breakpoints) {display: none;}
+    @include generate-at-breakpoints('.o-drop-down__trigger--hover{bp}:hover + .o-drop-down__target',
+      $o-drop-down-apply-at-breakpoints) {display: block;}
   }// endif
