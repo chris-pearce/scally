@@ -378,7 +378,7 @@ makes sure it's using the latest version.
 In addition to normalize.css Scally also provides a powerful reset, resetting
 things like:
 
-- `margin`, `padding`, and `border`'s to zero, for **ALL** HTML elements.
+- `margin`, `padding`, and `border`s to zero, for **ALL** HTML elements.
 - `box-sizing` to the more friendly `border-box` value.
 - no bullets for unordered (`ul`) and ordered (`ol`) lists .
 

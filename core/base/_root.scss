@@ -20,7 +20,7 @@ $apply-osx-font-smoothing:        false !default;
 /**
  * 1. Set the default `font-size`, `line-height` and `font-family` for the
  *    entire project, sourced from the Scally settings. The `font-size` is
- *    calculated to exist in `em`'s, the `line-height` is calculated to exist
+ *    calculated to exist in `em`s, the `line-height` is calculated to exist
  *    unitlessly.
  * 2. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.

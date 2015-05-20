@@ -4,7 +4,7 @@
 
 
 /**
- * Convert `px` to `em`'s or `rem`'s for multiple properties or values or
+ * Convert `px` to `em`s or `rem`s for multiple properties or values or
  * both. Accepts a list of lists (instead a list of values) for properties
  * that accept multiple lists of values. Only numbers are converted;
  * everything else is passed through. For the `to-em` `@mixin` `$context` is
