@@ -1,5 +1,19 @@
 # HEAD
 
+## 2.4.0 (May 21, 2015)
+
+- New modifier for the Drop Down object which positions the drop down target
+  to the right
+  ([#125](https://github.com/chris-pearce/scally/issues/125)).
+- Added the dialog element and alphabetised the list of elements
+  in the `margin`, `padding`, and `border` reset block
+  ([#134](https://github.com/chris-pearce/scally/issues/134)).
+- Fixed a bug where the `li`s in the List Inline -> Flex Fit modifier object
+  didn't have the `flex-grow` property
+  ([#137](https://github.com/chris-pearce/scally/issues/137)).
+- Fixed typos and removed all instances of the `// endif` comment
+  ([#138](https://github.com/chris-pearce/scally/issues/138)).
+
 ## 2.3.1 (May 15, 2015)
 
 - Adding a missing reference to the 'Mega' Spacing utility in the intro block
