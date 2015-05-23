@@ -451,6 +451,8 @@ Here is a sample of a master stylesheet you could use for your `style.scss`:
 
 @import "[path/to/the/scally/framework]/core/mixins/target-headings";
 
+@import "[path/to/the/scally/framework]/core/mixins/text-input-placeholder-colour.scss";
+
 // Normalize
 @import "[path/to/the/scally/framework]/core/normalize";
 
