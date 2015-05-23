@@ -160,10 +160,8 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
    * Nested lists.
    */
 
-  %ul.o-list,
-  ul.o-list,
-  %ol.o-list,
-  ol.o-list {
+  %o-list,
+  .o-list {
 
     // Apply spacing between the lists
     @if $o-list-apply-top-bottom-margin-to-nested {
@@ -188,27 +186,25 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
     ol {list-style-type: $o-list-bullet-ordered;}
   }
 
-  @each $o-list-type in (ul ol) {
-    @if $o-list-apply-at-breakpoints-for-nested {
-      @include generate-at-breakpoints("#{$o-list-type}.o-list{bp}",
-        $o-list-apply-at-breakpoints) {
-        @if $o-list-apply-top-bottom-margin-to-nested {
-          ul,
-          ol {
-            @include to-rem(margin-bottom margin-top, $o-list-nested-top-bottom-margin);
-          }
-        }
-
+  @if $o-list-apply-at-breakpoints-for-nested {
+    @include generate-at-breakpoints(".o-list",
+      $o-list-apply-at-breakpoints) {
+      @if $o-list-apply-top-bottom-margin-to-nested {
         ul,
-        ol {@include to-rem(margin-left, $o-list-indent);}
-
-        ul {
-          list-style-type: $o-list-bullet-unordered-nested-once;
-
-          ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+        ol {
+          @include to-rem(margin-bottom margin-top, $o-list-nested-top-bottom-margin);
         }
-
-        ol {list-style-type: $o-list-bullet-ordered;}
       }
+
+      ul,
+      ol {@include to-rem(margin-left, $o-list-indent);}
+
+      ul {
+        list-style-type: $o-list-bullet-unordered-nested-once;
+
+        ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+      }
+
+      ol {list-style-type: $o-list-bullet-ordered;}
     }
   }
