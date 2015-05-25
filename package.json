@@ -40,8 +40,5 @@
   "bugs": {
     "url": "https://github.com/chris-pearce/scally/issues"
   },
-  "license": {
-    "type": "Apache 2",
-    "url":  "https://github.com/chris-pearce/scally/blob/master/LICENSE"
-  }
+  "license": "Apache-2.0"
 }
