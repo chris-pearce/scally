@@ -30,6 +30,24 @@
  */
 
 /**
+ * Toggle on/off certain styles and treatments.
+ */
+
+/**
+ * Margins.
+ */
+
+$o-list-apply-bottom-margin:                  true !default;
+
+$o-list-apply-top-bottom-margin-to-nested:    false !default;
+
+/**
+ * Hanging bullets.
+ */
+
+$o-list-apply-hanging-bullets:                false !default;
+
+/**
  * Apply at these breakpoints (turned off by default).
  */
 
@@ -45,10 +63,18 @@ $o-list-apply-at-breakpoints-for-ordered:     false !default;
 $o-list-apply-at-breakpoints-for-nested:      false !default;
 
 /**
- * Indent.
+ * Margins.
  */
 
-$o-list-indent:                               $spacing-base !default;
+$o-list-bottom-margin:                        $spacing-base !default;
+
+$o-list-nested-top-bottom-margin:             $o-list-bottom-margin / 2 !default;
+
+/**
+ * Left indentation.
+ */
+
+$o-list-indent:                               $o-list-bottom-margin !default;
 
 /**
  * Bullets.
@@ -65,27 +91,37 @@ $o-list-bullet-ordered:                       decimal !default;
 
 %o-list,
 .o-list {
-  // Default bottom spacing
-  @include to-rem(margin-bottom, $spacing-base);
+  // Apply bottom spacing
+  @if $o-list-apply-bottom-margin {
+    @include to-rem(margin-bottom, $o-list-bottom-margin);
 
-  // Remove from the last child
-  &:last-child {margin-bottom: 0;}
+    // Remove from the last child
+    &:last-child {margin-bottom: 0;}
+  }
 
-  // Left indent including nested lists
-  &,
-  ul,
-  ol {@include to-rem(margin-left, $o-list-indent);}
+  // Apply hanging bullets
+  @if $o-list-apply-hanging-bullets {
+    list-style-position: outside;
+  }
+  @else {
+    @include to-rem(margin-left, $o-list-indent);
+  }
 }
 
 @if $o-list-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.o-list', $o-list-apply-at-breakpoints) {
-    @include to-rem(margin-bottom, $spacing-base);
+    @if $o-list-apply-bottom-margin {
+      @include to-rem(margin-bottom, $o-list-bottom-margin);
 
-    &:last-child {margin-bottom: 0;}
+      &:last-child {margin-bottom: 0;}
+    }
 
-    &,
-    ul,
-    ol {@include to-rem(margin-left, $o-list-indent);}
+    @if $o-list-apply-hanging-bullets {
+      list-style-position: outside;
+    }
+    @else {
+      @include to-rem(margin-left, $o-list-indent);
+    }
   }
 }
 
@@ -119,38 +155,56 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
   }
 }
 
-  // Nested lists
-  %ul.o-list,
-  ul.o-list,
-  %ol.o-list,
-  ol.o-list {
 
-    // Unordered lists
+  /**
+   * Nested lists.
+   */
+
+  %o-list,
+  .o-list {
+
+    // Apply spacing between the lists
+    @if $o-list-apply-top-bottom-margin-to-nested {
+      ul,
+      ol {
+        @include to-rem(margin-bottom margin-top, $o-list-nested-top-bottom-margin);
+      }
+    }
+
+    // Left indentation
+    ul,
+    ol {@include to-rem(margin-left, $o-list-indent);}
+
+    // Unordered list bullets
     ul {
       list-style-type: $o-list-bullet-unordered-nested-once;
 
       ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
     }
 
-    // Ordered lists
+    // Ordered list bullets
     ol {list-style-type: $o-list-bullet-ordered;}
   }
 
-  // Nested lists
-  @each $o-list-type in (ul ol) {
-    @if $o-list-apply-at-breakpoints-for-nested {
-      @include generate-at-breakpoints("#{$o-list-type}.o-list{bp}",
-        $o-list-apply-at-breakpoints) {
-
-        // Unordered lists
-        ul {
-          list-style-type: $o-list-bullet-unordered-nested-once;
-
-          ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+  @if $o-list-apply-at-breakpoints-for-nested {
+    @include generate-at-breakpoints(".o-list",
+      $o-list-apply-at-breakpoints) {
+      @if $o-list-apply-top-bottom-margin-to-nested {
+        ul,
+        ol {
+          @include to-rem(margin-bottom margin-top, $o-list-nested-top-bottom-margin);
         }
-
-        // Ordered lists
-        ol {list-style-type: $o-list-bullet-ordered;}
       }
+
+      ul,
+      ol {@include to-rem(margin-left, $o-list-indent);}
+
+      ul {
+        list-style-type: $o-list-bullet-unordered-nested-once;
+
+        ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+      }
+
+      ol {list-style-type: $o-list-bullet-ordered;}
     }
   }
