@@ -1,5 +1,18 @@
 # HEAD
 
+## 2.5.0 (May 25, 2015)
+
+- Updates to the List object:
+  - Make the left indent optional.
+  - A new option to apply **hanging bullets**.
+
+  ([#135](https://github.com/chris-pearce/scally/issues/135))
+- Add an `@import` for the new `text-input-placeholder-colour()` mixin file in
+  the main README master stylesheet example
+  ([#146](https://github.com/chris-pearce/scally/pull/146)).
+- Update the license attribute in the 'package.json' file. Thanks to @pdehaan.
+  ([#148](https://github.com/chris-pearce/scally/pull/148)).
+
 ## 2.4.0 (May 21, 2015)
 
 - New modifier for the Drop Down object which positions the drop down target
