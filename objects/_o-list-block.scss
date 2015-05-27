@@ -7,7 +7,8 @@
  * Creates blocky list items out of a `ul` or `ol` which is usually for a
  * vertical list of links.
  *
- * All the objects and their children (available as silent placeholder selectors also):
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
  *
    .o-list-block
    .o-list-block--tiny

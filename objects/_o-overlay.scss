@@ -22,7 +22,8 @@
  * And this may end up not being used instead being sucked into a component
  * e.g. a Modal component.
  *
- * All the objects and their children (available as silent placeholder selectors also):
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
  *
   .o-overlay
   .o-overlay--in-context
