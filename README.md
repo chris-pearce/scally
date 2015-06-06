@@ -775,5 +775,5 @@ Since then, there have been other contributions to Scally from:
 
 # Further documentation
 
-- [A presentation on Scally](http://scally.chris-pearce.me/presentation)—given
+- [A presentation on Scally](http://presentation.chris-pearce.me/scally)—given
   at [Campaign Monitor](https://www.campaignmonitor.com/) on Jan 2015.
