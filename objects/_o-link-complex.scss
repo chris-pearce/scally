@@ -8,6 +8,12 @@
  * icon, where only one piece of text should act like a link when the link is
  * the subject of user interaction.
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-link-complex
+   .o-link-complex__target
+ *
  * @markup
    <a class="o-link-complex" href="#">
      Link complex

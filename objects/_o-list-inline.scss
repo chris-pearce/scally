@@ -12,6 +12,26 @@
  * inserting HTML comments between the opening and closing `li`s (see @markup
  * section below). Or you can omit the closing `li` which isn't recommended :)
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-list-inline
+   .o-list-inline--spacing-base
+   .o-list-inline--spacing-base-both
+   .o-list-inline--spacing-tiny
+   .o-list-inline--spacing-tiny-both
+   .o-list-inline--spacing-small
+   .o-list-inline--spacing-small-both
+   .o-list-inline--spacing-large
+   .o-list-inline--spacing-large-both
+   .o-list-inline--spacing-huge
+   .o-list-inline--spacing-huge-both
+   .o-list-inline--divider
+   .o-list-inline--fit-flexbox
+   .o-list-inline--fit-table
+   .o-list-inline--delimited-slash
+   .o-list-inline--delimited-comma
+ *
  * @markup
    <ul class="o-list-inline [modifiers(s)]">
      <li>Lorem</li><!--

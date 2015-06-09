@@ -7,6 +7,17 @@
  * A table object that provides very common table styles which can be
  * extended with a number of modifiers.
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-table
+   .o-table--striped
+   .o-table--border
+   .o-table--fixed
+   .o-table--cell-padding-small
+   .o-table--cell-padding-large
+   .o-table--no-cell-padding
+ *
  * @markup
    <table class="o-table [modifier(s)]" cellspacing="0">
      <tr>
