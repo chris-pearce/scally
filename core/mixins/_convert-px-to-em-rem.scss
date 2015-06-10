@@ -50,7 +50,7 @@
 
 
 /**
- * A generic mixin that is used by the `to-em` and `to-rem` mixins below.
+ * A generic mixin that is used by the `to-em()` and `to-rem()` mixins below.
  */
 
 @mixin to-em-or-rem($unit, $properties, $sizes, $context, $sledgehammer) {
