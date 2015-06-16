@@ -36,7 +36,7 @@ semantics and styling, they also make up the bulk of a UI. Some examples:
 
 Components are extremely focused implementing only a single part of a UI, so
 they should never try to do too much. They also shouldn't have any dependencies
-on ancestral context i.e. where the live in a UI. This makes them extremely
+on ancestral context i.e. where they live in a UI. This makes them extremely
 [portable and robust](#portable-and-robust). Each component should be designed
 to stand-alone.
 
