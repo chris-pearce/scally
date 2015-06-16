@@ -1,5 +1,15 @@
 # HEAD
 
+## 2.6.0 (June 16, 2015)
+
+- Fixed a typo in the Components README
+  ([#151](https://github.com/chris-pearce/scally/issues/151)).
+- Listed all the available classes for each Object, in the intro block (like
+  utilities)
+  ([#136](https://github.com/chris-pearce/scally/issues/136)).
+- Applied a new format for mixin names when inside comments
+  ([#128](https://github.com/chris-pearce/scally/issues/128)).
+
 ## 2.5.0 (May 25, 2015)
 
 - Updates to the List object:
