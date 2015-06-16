@@ -78,7 +78,7 @@ $o-link-complex-apply-at-breakpoints-for-target:   false !default;
   @if $o-link-complex-apply-at-breakpoints-for-target {
     @include generate-at-breakpoints('.o-link-complex__target',
       $o-link-complex-apply-at-breakpoints) {
-      cursor: pointer;
       @include base-link();
+      cursor: pointer;
     }
   }

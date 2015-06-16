@@ -4,13 +4,19 @@
 
 
 /**
- * Base link styles, at the bare minimum a colour is applied for both default
+ * Base link styles. At the bare minimum a colour is applied for both default
  * and hover states. There is the option to remove the underline for the
- * default state and apply on hover state and an option to transition the
- * colour on hover.
+ * default state and apply it on the hover state instead, and an option to
+ * apply a bottom border as the underline instead of the browser default
+ * `text-decoration: underline`. You can also choose to apply a transition to
+ *  link colour and its underline—if the bottom border option is selected—when
+ *  hovering the link.
  *
  * N.B. a mixin is used to contain the base link styles so that it can be
- * easily shared with other parts of Scally e.g. Link complex object.
+ * easily shared with other parts of Scally e.g.
+ *
+ * - Link complex object
+ * - Button faux component
  */
 
 
@@ -19,32 +25,58 @@
  */
 
 // Toggle on/off certain styles and treatments
-$apply-link-underline-on-hover:     true !default;
+$apply-link-underline-on-hover:           true !default;
 
-$apply-link-transition-on-hover:    true !default;
+$apply-link-transition-on-hover:          true !default;
+
+$apply-link-border-instead-of-underline:  false !default;
 
 // Colours
-$link-color:                        $color-brand !default;
+$link-color:                              $color-brand !default;
 
-$link-color-hover:                  darken($link-color, 10%) !default;
+$link-color-hover:                        darken($link-color, 10%) !default;
 
 // Transition parameters
-$link-transition-duration:          0.15s !default;
+$link-transition-duration:                0.15s !default;
 
-$link-transition-timing-function:   ease !default;
+$link-transition-timing-function:         ease !default;
+
+// Border styles
+$link-border-thickness:                   1 !default;
+
+$link-border-style:                       solid !default;
+
+$link-border-color:                       $link-color !default;
+
+$link-border-color-hover:                 $link-color-hover !default;
 
 
 @mixin base-link {
   color: $link-color;
+  text-decoration: underline;
 
   // Remove underline and apply on hover
   @if $apply-link-underline-on-hover {
     text-decoration: none;
   }
 
+  // Apply a border as the underline instead of `text-decoration: underline`
+  @if $apply-link-border-instead-of-underline {
+    border-bottom: strip-unit($link-border-thickness) * 1px
+    $link-border-style $link-border-color;
+    text-decoration: none;
+  }
+
+  // Remove the border colour but only visually if it's to be applied on hover,
+  // this ensures the transition is seamless
+  @if $apply-link-underline-on-hover and
+  $apply-link-border-instead-of-underline {
+    border-bottom-color: transparent;
+  }
+
   // Apply a transition on hover
   @if $apply-link-transition-on-hover {
-    transition: color $link-transition-duration
+    transition: all $link-transition-duration
     $link-transition-timing-function;
   }
 
@@ -54,6 +86,16 @@ $link-transition-timing-function:   ease !default;
 
     @if $apply-link-underline-on-hover {
       text-decoration: underline;
+    }
+
+    @if $apply-link-border-instead-of-underline {
+      border-bottom-color: $link-border-color-hover;
+    }
+
+    @if $apply-link-underline-on-hover and
+    $apply-link-border-instead-of-underline {
+      border-bottom-color: $link-border-color-hover;
+      text-decoration: none;
     }
   }
 }
