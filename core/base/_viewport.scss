@@ -19,8 +19,16 @@ $apply-viewport-device-width: true !default;
 
 
 @if $apply-viewport-device-width {
-  @-webkit-viewport {width: device-width;}
-  @-moz-viewport {width: device-width;}
-  @-o-viewport {width: device-width;}
-  @viewport {width: device-width;}
+  @-webkit-viewport {
+    width: device-width;
+  }
+  @-moz-viewport {
+    width: device-width;
+  }
+  @-o-viewport {
+    width: device-width;
+  }
+  @viewport {
+    width: device-width;
+  }
 }

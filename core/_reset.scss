@@ -112,12 +112,16 @@ var {
  */
 
 @if $apply-friendly-box-model {
-  html {box-sizing: border-box;}
+  html {
+    box-sizing: border-box;
+  }
 
   * {
     &,
     &:before,
-    &:after {box-sizing: inherit;}
+    &:after {
+      box-sizing: inherit;
+    }
   }
 }
 
@@ -127,7 +131,9 @@ var {
  */
 
 ul,
-ol {list-style-type: none;}
+ol {
+  list-style-type: none;
+}
 
 
 /**
@@ -143,7 +149,9 @@ ol {list-style-type: none;}
  * https://github.com/suitcss/
  */
 
-[tabindex="-1"]:focus {outline: none !important;}
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
 
 
 /**
@@ -151,11 +159,15 @@ ol {list-style-type: none;}
  */
 
 u,
-ins {text-decoration: none;}
+ins {
+  text-decoration: none;
+}
 
 
 /**
  * Apply faux underlines to inserted text via `border-bottom`.
  */
 
-ins {border-bottom: 1px solid;}
+ins {
+  border-bottom: 1px solid;
+}

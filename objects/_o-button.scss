@@ -44,5 +44,7 @@
   &,
   &:hover,
   &:focus,
-  &:active {text-decoration: none;} // [10]
+  &:active {
+    text-decoration: none; // [10]
+  }
 }

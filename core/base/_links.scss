@@ -58,4 +58,6 @@ $link-transition-timing-function:   ease !default;
   }
 }
 
-a {@include base-link();}
+a {
+  @include base-link();
+}

@@ -62,19 +62,27 @@ $o-arrow-color:         $color-text-base !default;
 
 // Tiny
 %o-arrow--tiny,
-.o-arrow--tiny {border-width: strip-unit($o-arrow-size-tiny) * 1px;}
+.o-arrow--tiny {
+  border-width: strip-unit($o-arrow-size-tiny) * 1px;
+}
 
 // Small
 %o-arrow--small,
-.o-arrow--small {border-width: strip-unit($o-arrow-size-small) * 1px;}
+.o-arrow--small {
+  border-width: strip-unit($o-arrow-size-small) * 1px;
+}
 
 // Large
 %o-arrow--large,
-.o-arrow--large {border-width: strip-unit($o-arrow-size-large) * 1px;}
+.o-arrow--large {
+  border-width: strip-unit($o-arrow-size-large) * 1px;
+}
 
 // Huge
 %o-arrow--huge,
-.o-arrow--huge {border-width: strip-unit($o-arrow-size-huge) * 1px;}
+.o-arrow--huge {
+  border-width: strip-unit($o-arrow-size-huge) * 1px;
+}
 
 
 /**
@@ -82,7 +90,9 @@ $o-arrow-color:         $color-text-base !default;
  */
 
 %o-arrow--down,
-.o-arrow--down {border-top-color: $o-arrow-color;}
+.o-arrow--down {
+  border-top-color: $o-arrow-color;
+}
 
 
 /**
@@ -90,7 +100,9 @@ $o-arrow-color:         $color-text-base !default;
  */
 
 %o-arrow--up,
-.o-arrow--up {border-bottom-color: $o-arrow-color;}
+.o-arrow--up {
+  border-bottom-color: $o-arrow-color;
+}
 
 
 /**
@@ -98,7 +110,9 @@ $o-arrow-color:         $color-text-base !default;
  */
 
 %o-arrow--left,
-.o-arrow--left {border-right-color: $o-arrow-color;}
+.o-arrow--left {
+  border-right-color: $o-arrow-color;
+}
 
 
 /**
@@ -106,4 +120,6 @@ $o-arrow-color:         $color-text-base !default;
  */
 
 %o-arrow--right,
-.o-arrow--right {border-left-color: $o-arrow-color;}
+.o-arrow--right {
+  border-left-color: $o-arrow-color;
+}

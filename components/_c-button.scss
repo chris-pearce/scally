@@ -158,7 +158,9 @@ $c-button-hover-transition-timing-function:   linear !default;
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-button-foreground-color;}
+  &:active {
+    color: $c-button-foreground-color;
+  }
 
   // Apply hover/focus styles
   @if $c-button-apply-hover-styles {
@@ -166,7 +168,9 @@ $c-button-hover-transition-timing-function:   linear !default;
       $c-button-hover-transition-timing-function;
 
     &:hover,
-    &:focus {opacity: $c-button-hover-opacity-strength;}
+    &:focus {
+      opacity: $c-button-hover-opacity-strength;
+    }
   }
 }
 
@@ -187,7 +191,9 @@ $c-button-hover-transition-timing-function:   linear !default;
   &,
   &:hover,
   &:focus,
-  &:active {color: $c-button-foreground-color-secondary;}
+  &:active {
+    color: $c-button-foreground-color-secondary;
+  }
 }
 
 
@@ -195,32 +201,36 @@ $c-button-hover-transition-timing-function:   linear !default;
  * Modifier: tiny padding.
  */
 
-.c-button--tiny {@include to-rem(padding, $c-button-padding-tiny
- / 2 $c-button-padding-tiny);}
+.c-button--tiny {
+  @include to-rem(padding, $c-button-padding-tiny / 2 $c-button-padding-tiny);
+}
 
 
 /**
  * Modifier: small padding.
  */
 
-.c-button--small {@include to-rem(padding, $c-button-padding-small
- / 2 $c-button-padding-small);}
+.c-button--small {
+  @include to-rem(padding, $c-button-padding-small / 2 $c-button-padding-small);
+}
 
 
 /**
  * Modifier: large padding.
  */
 
-.c-button--large {@include to-rem(padding, $c-button-padding-large
- / 2 $c-button-padding-large);}
+.c-button--large {
+  @include to-rem(padding, $c-button-padding-large / 2 $c-button-padding-large);
+}
 
 
 /**
  * Modifier: huge padding.
  */
 
-.c-button--huge {@include to-rem(padding, $c-button-padding-huge
- / 2 $c-button-padding-huge);}
+.c-button--huge {
+  @include to-rem(padding, $c-button-padding-huge / 2 $c-button-padding-huge);
+}
 
 
 /**
@@ -261,7 +271,9 @@ $c-button-hover-transition-timing-function:   linear !default;
 
       // Turn off right borders so they don't double up, except for the last
       // one
-      &:not(:last-child) {border-right: 0;}
+      &:not(:last-child) {
+        border-right: 0;
+      }
 
       // Turn off rounded corners if rounded corners are on by default as only
       // the first and last buttons in the group need rounded corners
@@ -305,7 +317,9 @@ $c-button-hover-transition-timing-function:   linear !default;
 
         // Turn off bottom borders so they don't double up, except for the last
         // one
-        &:not(:last-child) {border-bottom: 0;}
+        &:not(:last-child) {
+          border-bottom: 0;
+        }
 
         // Round off the first and last buttons in the group
         @if $c-button-apply-group-rounded-corners or

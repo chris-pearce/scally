@@ -64,11 +64,15 @@ $o-drop-down-touch-support-class:                is-touch !default;
  */
 
 %o-drop-down,
-.o-drop-down {position: relative;} // [1]
+.o-drop-down {
+  position: relative; // [1]
+}
 
 @if $o-drop-down-apply-at-breakpoints-for-default {
   @include generate-at-breakpoints('.o-drop-down',
-    $o-drop-down-apply-at-breakpoints) {position: relative;}
+    $o-drop-down-apply-at-breakpoints) {
+    position: relative;
+  }
 }
 
 
@@ -84,7 +88,9 @@ $o-drop-down-touch-support-class:                is-touch !default;
     left: 0;
 
     // Show the drop down via the JavaScript powered state class.
-    &.#{$o-drop-down-state-class} {display: block;}
+    &.#{$o-drop-down-state-class} {
+      display: block;
+    }
   }
 
   @if $o-drop-down-apply-at-breakpoints-for-target {
@@ -95,7 +101,9 @@ $o-drop-down-touch-support-class:                is-touch !default;
       top: 100%;
       left: 0;
 
-      &.#{$o-drop-down-state-class} {display: block;}
+      &.#{$o-drop-down-state-class} {
+        display: block;
+      }
     }
   }// endif
 
@@ -129,15 +137,20 @@ $o-drop-down-touch-support-class:                is-touch !default;
   %o-drop-down__trigger--hover:hover,
   .o-drop-down__trigger--hover:hover {
     + %o-drop-down__target,
-    + .o-drop-down__target {display: block;}
+    + .o-drop-down__target {
+      display: block;
+    }
   }
 
   // Hide for touch devices
   .#{$o-drop-down-touch-support-class} %o-drop-down__target,
   .#{$o-drop-down-touch-support-class} .o-drop-down__target {
-    display: none !important;}
+    display: none !important;
+  }
 
   @if $o-drop-down-apply-at-breakpoints-for-on-hover {
     @include generate-at-breakpoints('.o-drop-down__trigger--hover{bp}:hover + .o-drop-down__target',
-      $o-drop-down-apply-at-breakpoints) {display: block;}
+      $o-drop-down-apply-at-breakpoints) {
+      display: block;
+    }
   }

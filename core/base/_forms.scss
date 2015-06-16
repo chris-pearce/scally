@@ -73,14 +73,18 @@ $apply-friendly-box-model:                             false !default;
  */
 
 label,
-.faux-label {cursor: pointer;}
+.faux-label {
+  cursor: pointer;
+}
 
 
 /**
  * Disable `textarea`s from being resized horizontally.
  */
 
-textarea {resize: vertical;}
+textarea {
+  resize: vertical;
+}
 
 
 /**
@@ -88,7 +92,9 @@ textarea {resize: vertical;}
  */
 
 @if $apply-friendly-box-model {
-  input[type="search"] {box-sizing: border-box;}
+  input[type="search"] {
+    box-sizing: border-box;
+  }
 }
 
 
@@ -98,7 +104,9 @@ textarea {resize: vertical;}
  * See: https://github.com/necolas/normalize.css/issues/360.
  */
 
-input[type="search"] {appearance: none;}
+input[type="search"] {
+  appearance: none;
+}
 
 
 /**
@@ -113,7 +121,9 @@ input[type="submit"],
 input[type="button"],
 input[type="image"],
 input[type="reset"],
-select {border-radius: 0;}
+select {
+  border-radius: 0;
+}
 
 
 /**
@@ -138,7 +148,9 @@ legend {
  * `padding` is the most cross-browser compatible for `legend`s.
  */
 
-.form-heading {@include to-rem(padding-bottom, $spacing-base);}
+.form-heading {
+  @include to-rem(padding-bottom, $spacing-base);
+}
 
 
 /**
@@ -243,7 +255,9 @@ legend {
   .#{$remove-top-inner-shadow-from-ios-inputs-class} {
     .remove-top-inner-shadow-from-ios-inputs,
     .text-input,
-    textarea {-webkit-appearance: caret;}
+    textarea {
+      -webkit-appearance: caret;
+    }
   }
 }
 
@@ -254,5 +268,7 @@ legend {
 
 @if $apply-close-button-for-ie10plus-inputs {
   .hide-close-button-for-ie-inputs::-ms-clear,
-  .text-input::-ms-clear {display: none;}
+  .text-input::-ms-clear {
+    display: none;
+  }
 }

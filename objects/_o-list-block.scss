@@ -71,7 +71,9 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 .o-list-block > li {
 
   &,
-  > a {@include to-rem(padding, $o-list-block-item-padding-base);}
+  > a {
+    @include to-rem(padding, $o-list-block-item-padding-base);
+  }
 
   > a {
     display: block;
@@ -84,7 +86,9 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
     $o-list-block-apply-at-breakpoints) {
 
       &,
-      > a {@include to-rem(padding, $o-list-block-item-padding-base);}
+      > a {
+        @include to-rem(padding, $o-list-block-item-padding-base);
+      }
 
       > a {
         display: block;
@@ -102,9 +106,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 .o-list-block--tiny > li {
 
   &,
-  > a {@include to-rem(padding, $o-list-block-item-padding-tiny);}
+  > a {
+    @include to-rem(padding, $o-list-block-item-padding-tiny);
+  }
 
-  > a {@include to-rem(margin, -$o-list-block-item-padding-tiny);}
+  > a {
+    @include to-rem(margin, -$o-list-block-item-padding-tiny);
+  }
 }
 
 @if $o-list-block-apply-at-breakpoints-for-tiny {
@@ -112,9 +120,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
     $o-list-block-apply-at-breakpoints) {
 
       &,
-      > a {@include to-rem(padding, $o-list-block-item-padding-tiny);}
+      > a {
+        @include to-rem(padding, $o-list-block-item-padding-tiny);
+      }
 
-      > a {@include to-rem(margin, -$o-list-block-item-padding-tiny);}
+      > a {
+        @include to-rem(margin, -$o-list-block-item-padding-tiny);
+      }
   }
 }
 
@@ -126,9 +138,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 %o-list-block--small > li,
 .o-list-block--small > li {
   &,
-  > a {@include to-rem(padding, $o-list-block-item-padding-small);}
+  > a {
+    @include to-rem(padding, $o-list-block-item-padding-small);
+  }
 
-  > a {@include to-rem(margin, -$o-list-block-item-padding-small);}
+  > a {
+    @include to-rem(margin, -$o-list-block-item-padding-small);
+  }
 }
 
 @if $o-list-block-apply-at-breakpoints-for-small {
@@ -136,9 +152,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
     $o-list-block-apply-at-breakpoints) {
 
     &,
-    > a {@include to-rem(padding, $o-list-block-item-padding-small);}
+    > a {
+      @include to-rem(padding, $o-list-block-item-padding-small);
+    }
 
-    > a {@include to-rem(margin, -$o-list-block-item-padding-small);}
+    > a {
+      @include to-rem(margin, -$o-list-block-item-padding-small);
+    }
   }
 }
 
@@ -151,9 +171,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 .o-list-block--large > li {
 
   &,
-  > a {@include to-rem(padding, $o-list-block-item-padding-large);}
+  > a {
+    @include to-rem(padding, $o-list-block-item-padding-large);
+  }
 
-  > a {@include to-rem(margin, -$o-list-block-item-padding-large);}
+  > a {
+    @include to-rem(margin, -$o-list-block-item-padding-large);
+  }
 }
 
 @if $o-list-block-apply-at-breakpoints-for-large {
@@ -161,9 +185,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
     $o-list-block-apply-at-breakpoints) {
 
     &,
-    > a {@include to-rem(padding, $o-list-block-item-padding-large);}
+    > a {
+      @include to-rem(padding, $o-list-block-item-padding-large);
+    }
 
-    > a {@include to-rem(margin, -$o-list-block-item-padding-large);}
+    > a {
+      @include to-rem(margin, -$o-list-block-item-padding-large);
+    }
   }
 }
 
@@ -176,9 +204,13 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
 .o-list-block--huge > li {
 
   &,
-  > a {@include to-rem(padding, $o-list-block-item-padding-huge);}
+  > a {
+    @include to-rem(padding, $o-list-block-item-padding-huge);
+  }
 
-  > a {@include to-rem(margin, -$o-list-block-item-padding-huge);}
+  > a {
+    @include to-rem(margin, -$o-list-block-item-padding-huge);
+  }
 }
 
 @if $o-list-block-apply-at-breakpoints-for-huge {
@@ -186,8 +218,12 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
     $o-list-block-apply-at-breakpoints) {
 
     &,
-    > a {@include to-rem(padding, $o-list-block-item-padding-huge);}
+    > a {
+      @include to-rem(padding, $o-list-block-item-padding-huge);
+    }
 
-    > a {@include to-rem(margin, -$o-list-block-item-padding-huge);}
+    > a {
+      @include to-rem(margin, -$o-list-block-item-padding-huge);
+    }
   }
 }
