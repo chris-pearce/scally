@@ -8,6 +8,16 @@
  * retain a specific aspect ratio but adapt to the width of their containing
  * element.
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-flexible-embed
+   .o-flexible-embed__ratio
+   .o-flexible-embed__ratio--16-by-9
+   .o-flexible-embed__ratio--2-by-1
+   .o-flexible-embed__ratio--4-by-3
+   .o-flexible-embed__content
+ *
  * @markup
    <div class="o-flexible-embed">
      <!-- The content e.g. a video (`iframe`) -->
