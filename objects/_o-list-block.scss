@@ -7,6 +7,15 @@
  * Creates blocky list items out of a `ul` or `ol` which is usually for a
  * vertical list of links.
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+   .o-list-block
+   .o-list-block--tiny
+   .o-list-block--small
+   .o-list-block--large
+   .o-list-block--huge
+ *
  * @markup
    <ul class="o-list-block [modifier]">
      <li>
@@ -58,7 +67,7 @@ $o-list-block-item-padding-large:                $spacing-base !default;
 $o-list-block-item-padding-huge:                 $spacing-double !default;
 
 
-%u-list-block > li,
+%o-list-block > li,
 .o-list-block > li {
 
   &,
@@ -89,7 +98,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
  * Modifier: tiny padding.
  */
 
-%u-list-block--tiny > li,
+%o-list-block--tiny > li,
 .o-list-block--tiny > li {
 
   &,
@@ -114,7 +123,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
  * Modifier: small padding.
  */
 
-%u-list-block--small > li,
+%o-list-block--small > li,
 .o-list-block--small > li {
   &,
   > a {@include to-rem(padding, $o-list-block-item-padding-small);}
@@ -138,7 +147,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
  * Modifier: large padding.
  */
 
-%u-list-block--large > li,
+%o-list-block--large > li,
 .o-list-block--large > li {
 
   &,
@@ -163,7 +172,7 @@ $o-list-block-item-padding-huge:                 $spacing-double !default;
  * Modifier: huge padding.
  */
 
-%u-list-block--huge > li,
+%o-list-block--huge > li,
 .o-list-block--huge > li {
 
   &,

@@ -22,6 +22,16 @@
  * And this may end up not being used instead being sucked into a component
  * e.g. a Modal component.
  *
+ * The objects block class, its modifier class(s), and its element class(s)
+ * (available as silent placeholder selectors also):
+ *
+  .o-overlay
+  .o-overlay--in-context
+  .o-overlay--dark
+  .o-overlay--light
+  .o-overlay--hover
+  .o-overlay__inner
+ *
  * @markup
    <div class="o-overlay [modifier]">
      <div class="o-overlay__inner"></div>
