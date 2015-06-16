@@ -38,7 +38,7 @@
  * breakpoint—then the format will be: `.u-one-half-from-desk`, but if the
  * breakpoint is set via a `max-width` media query then the format will be:
  * `.u-one-half-up-to-desk`. For more info on how applying the breakpoints
- * work see the 'Generate at breakpoints' mixin.
+ * work see the `generate-at-breakpoints()` mixin.
  *
  * @example
    @include generate-percentage-classes-at-breakpoints(
