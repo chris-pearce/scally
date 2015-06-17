@@ -1,5 +1,13 @@
 # HEAD
 
+## 2.7.0 (June 17, 2015)
+
+- Added a browserlist file
+  ([#150](https://github.com/chris-pearce/scally/issues/150)).
+- Adding more styling options to the Base link which came about from this
+  bug: "Base link mixin doesn't work very well"
+  ([#132](https://github.com/chris-pearce/scally/issues/132)).
+
 ## 2.6.0 (June 16, 2015)
 
 - Fixed a typo in the Components README
