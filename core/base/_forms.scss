@@ -220,7 +220,7 @@ legend {
       border-radius: strip-unit($text-input-and-select-rounded-corners-size) * 1px;
     }
 
-    // Make 100% wide
+    // Make 100% wide but make it optional
     @if $apply-text-input-full-bleed {
       width: 100%;
 

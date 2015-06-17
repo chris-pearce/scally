@@ -89,38 +89,54 @@ $u-position-apply-at-breakpoints-for-middle:             false !default;
 
 // Relative
 %u-position-relative,
-.u-position-relative {position: relative !important;}
+.u-position-relative {
+  position: relative !important;
+}
 
 @if $u-position-apply-at-breakpoints-for-relative {
   @include generate-at-breakpoints('.u-position-relative',
-    $u-position-apply-at-breakpoints) {position: relative !important;}
+    $u-position-apply-at-breakpoints) {
+    position: relative !important;
+  }
 }
 
 // Absolute
 %u-position-absolute,
-.u-position-absolute {position: absolute !important;}
+.u-position-absolute {
+  position: absolute !important;
+}
 
 @if $u-position-apply-at-breakpoints-for-absolute {
   @include generate-at-breakpoints('.u-position-absolute',
-    $u-position-apply-at-breakpoints) {position: absolute !important;}
+    $u-position-apply-at-breakpoints) {
+    position: absolute !important;
+  }
 }
 
 // Fixed
 %u-position-fixed,
-.u-position-fixed {position: fixed !important;}
+.u-position-fixed {
+  position: fixed !important;
+}
 
 @if $u-position-apply-at-breakpoints-for-fixed {
   @include generate-at-breakpoints('.u-position-fixed',
-    $u-position-apply-at-breakpoints) {position: fixed !important;}
+    $u-position-apply-at-breakpoints) {
+    position: fixed !important;
+  }
 }
 
 // Static
 %u-position-static,
-.u-position-static {position: static !important;}
+.u-position-static {
+  position: static !important;
+}
 
 @if $u-position-apply-at-breakpoints-for-static {
   @include generate-at-breakpoints('.u-position-static',
-    $u-position-apply-at-breakpoints) {position: static !important;}
+    $u-position-apply-at-breakpoints) {
+    position: static !important;
+  }
 }
 
 
