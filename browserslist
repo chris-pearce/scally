@@ -1,0 +1,7 @@
+# Browsers that Scally supports
+# https://github.com/chris-pearce/scally#browser-support
+# https://github.com/ai/browserslist
+
+last 2 versions
+Android >= 2
+Explorer >= 9

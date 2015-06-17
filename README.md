@@ -616,12 +616,12 @@ project root
 
 # Browser support
 
-- Chrome (latest two versions).
-- Firefox (latest two versions).
-- Opera (latest two versions).
-- Safari (latest two versions).
+- Chrome (last two versions).
+- Firefox (last two versions).
+- Opera (last two versions).
+- Safari (last two versions).
 - IE9+.
-- iOS 6+.
+- iOS 7+.
 - Android 4+.
 
 
