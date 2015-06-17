@@ -4,7 +4,12 @@
 
 
 /**
- * Creates arrow shapes using only CSS.
+ * Creates arrow shapes using only CSS, includes the following directions:
+ *
+ * Down / Down right / Down left
+ * Up / Up right / Up left
+ * Left
+ * Right
  *
  * The objects block class, its modifier class(s), and its element class(s)
  * (available as silent placeholder selectors also):
@@ -15,7 +20,11 @@
    .o-arrow--large
    .o-arrow--huge
    .o-arrow--down
+   .o-arrow--down-right
+   .o-arrow--down-left
    .o-arrow--up
+   .o-arrow--up-right
+   .o-arrow--up-left
    .o-arrow--left
    .o-arrow--right
  *
@@ -86,39 +95,160 @@ $o-arrow-color:         $color-text-base !default;
 
 
 /**
- * Modifier: down arrow.
+ * Modifier: directions.
  */
 
+// Down
 %o-arrow--down,
 .o-arrow--down {
   border-top-color: $o-arrow-color;
 }
 
+// Down right
+%o-arrow--down-right,
+.o-arrow--down-right {
+  border-bottom-color: $o-arrow-color;
+  border-width: 0;
+  border-bottom-width: strip-unit($o-arrow-size-base) * 1px;
+  border-left-width: strip-unit($o-arrow-size-base) * 1px;
+}
 
-/**
- * Modifier: up arrow.
- */
+%o-arrow--down-right%o-arrow--tiny,
+.o-arrow--down-right.o-arrow--tiny {
+  border-bottom-width: strip-unit($o-arrow-size-tiny) * 1px;
+  border-left-width: strip-unit($o-arrow-size-tiny) * 1px;
+}
 
+%o-arrow--down-right%o-arrow--small,
+.o-arrow--down-right.o-arrow--small {
+  border-bottom-width: strip-unit($o-arrow-size-small) * 1px;
+  border-left-width: strip-unit($o-arrow-size-small) * 1px;
+}
+
+%o-arrow--down-right%o-arrow--large,
+.o-arrow--down-right.o-arrow--large {
+  border-bottom-width: strip-unit($o-arrow-size-large) * 1px;
+  border-left-width: strip-unit($o-arrow-size-large) * 1px;
+}
+
+%o-arrow--down-right%o-arrow--huge,
+.o-arrow--down-right.o-arrow--huge {
+  border-bottom-width: strip-unit($o-arrow-size-huge) * 1px;
+  border-left-width: strip-unit($o-arrow-size-huge) * 1px;
+}
+
+// Down left
+%o-arrow--down-left,
+.o-arrow--down-left {
+  border-left-color: $o-arrow-color;
+  border-width: 0;
+  border-top-width: strip-unit($o-arrow-size-base) * 1px;
+  border-left-width: strip-unit($o-arrow-size-base) * 1px;
+}
+
+%o-arrow--down-left%o-arrow--tiny,
+.o-arrow--down-left.o-arrow--tiny {
+  border-top-width: strip-unit($o-arrow-size-tiny) * 1px;
+  border-left-width: strip-unit($o-arrow-size-tiny) * 1px;
+}
+
+%o-arrow--down-left%o-arrow--small,
+.o-arrow--down-left.o-arrow--small {
+  border-top-width: strip-unit($o-arrow-size-small) * 1px;
+  border-left-width: strip-unit($o-arrow-size-small) * 1px;
+}
+
+%o-arrow--down-left%o-arrow--large,
+.o-arrow--down-left.o-arrow--large {
+  border-top-width: strip-unit($o-arrow-size-large) * 1px;
+  border-left-width: strip-unit($o-arrow-size-large) * 1px;
+}
+
+%o-arrow--down-left%o-arrow--huge,
+.o-arrow--down-left.o-arrow--huge {
+  border-top-width: strip-unit($o-arrow-size-huge) * 1px;
+  border-left-width: strip-unit($o-arrow-size-huge) * 1px;
+}
+
+// Up
 %o-arrow--up,
 .o-arrow--up {
   border-bottom-color: $o-arrow-color;
 }
 
+// Up right
+%o-arrow--up-right,
+.o-arrow--up-right {
+  border-right-color: $o-arrow-color;
+  border-width: 0;
+  border-right-width: strip-unit($o-arrow-size-base) * 1px;
+  border-bottom-width: strip-unit($o-arrow-size-base) * 1px;
+}
 
-/**
- * Modifier: left arrow.
- */
+%o-arrow--up-right%o-arrow--tiny,
+.o-arrow--up-right.o-arrow--tiny {
+  border-right-width: strip-unit($o-arrow-size-tiny) * 1px;
+  border-bottom-width: strip-unit($o-arrow-size-tiny) * 1px;
+}
 
+%o-arrow--up-right%o-arrow--small,
+.o-arrow--up-right.o-arrow--small {
+  border-right-width: strip-unit($o-arrow-size-small) * 1px;
+  border-bottom-width: strip-unit($o-arrow-size-small) * 1px;
+}
+
+%o-arrow--up-right%o-arrow--large,
+.o-arrow--up-right.o-arrow--large {
+  border-right-width: strip-unit($o-arrow-size-large) * 1px;
+  border-bottom-width: strip-unit($o-arrow-size-large) * 1px;
+}
+
+%o-arrow--up-right%o-arrow--huge,
+.o-arrow--up-right.o-arrow--huge {
+  border-right-width: strip-unit($o-arrow-size-huge) * 1px;
+  border-bottom-width: strip-unit($o-arrow-size-huge) * 1px;
+}
+
+// Up left
+%o-arrow--up-left,
+.o-arrow--up-left {
+  border-top-color: $o-arrow-color;
+  border-width: 0;
+  border-top-width: strip-unit($o-arrow-size-base) * 1px;
+  border-right-width: strip-unit($o-arrow-size-base) * 1px;
+}
+
+%o-arrow--up-left%o-arrow--tiny,
+.o-arrow--up-left.o-arrow--tiny {
+  border-top-width: strip-unit($o-arrow-size-tiny) * 1px;
+  border-right-width: strip-unit($o-arrow-size-tiny) * 1px;
+}
+
+%o-arrow--up-left%o-arrow--small,
+.o-arrow--up-left.o-arrow--small {
+  border-top-width: strip-unit($o-arrow-size-small) * 1px;
+  border-right-width: strip-unit($o-arrow-size-small) * 1px;
+}
+
+%o-arrow--up-left%o-arrow--large,
+.o-arrow--up-left.o-arrow--large {
+  border-top-width: strip-unit($o-arrow-size-large) * 1px;
+  border-right-width: strip-unit($o-arrow-size-large) * 1px;
+}
+
+%o-arrow--up-left%o-arrow--huge,
+.o-arrow--up-left.o-arrow--huge {
+  border-top-width: strip-unit($o-arrow-size-huge) * 1px;
+  border-right-width: strip-unit($o-arrow-size-huge) * 1px;
+}
+
+// Left
 %o-arrow--left,
 .o-arrow--left {
   border-right-color: $o-arrow-color;
 }
 
-
-/**
- * Modifier: right arrow.
- */
-
+// Right
 %o-arrow--right,
 .o-arrow--right {
   border-left-color: $o-arrow-color;
