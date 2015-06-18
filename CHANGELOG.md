@@ -1,5 +1,13 @@
 # HEAD
 
+## 2.8.0 (June 18, 2015)
+
+- Made all single line declarations be on there own line which is the start of
+  the work to update the code base to be inline with some of the new CSS Guidelines
+  ([#114](https://github.com/chris-pearce/scally/issues/114)).
+- Added corner versions to the Arrow object
+  ([#149](https://github.com/chris-pearce/scally/issues/149)).
+
 ## 2.7.0 (June 17, 2015)
 
 - Added a browserlist file
