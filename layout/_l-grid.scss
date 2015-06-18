@@ -122,35 +122,45 @@ $apply-friendly-box-model:      false !default;
 .l-grid--gutterless {
   margin-left: 0;
 
-  > .l-grid__item {padding-left: 0;}
+  > .l-grid__item {
+    padding-left: 0;
+  }
 }
 
 // Gutter tiny
 .l-grid--gutter-tiny {
   @include to-rem(margin-left, -$l-grid-gutter-tiny);
 
-  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-tiny);}
+  > .l-grid__item {
+    @include to-rem(padding-left, $l-grid-gutter-tiny);
+  }
 }
 
 // Gutter small
 .l-grid--gutter-small {
   @include to-rem(margin-left, -$l-grid-gutter-small);
 
-  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-small);}
+  > .l-grid__item {
+    @include to-rem(padding-left, $l-grid-gutter-small);
+  }
 }
 
 // Gutter large
 .l-grid--gutter-large {
   @include to-rem(margin-left, -$l-grid-gutter-large);
 
-  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-large);}
+  > .l-grid__item {
+    @include to-rem(padding-left, $l-grid-gutter-large);
+  }
 }
 
 // Gutter huge
 .l-grid--gutter-huge {
   @include to-rem(margin-left, -$l-grid-gutter-huge);
 
-  > .l-grid__item {@include to-rem(padding-left, $l-grid-gutter-huge);}
+  > .l-grid__item {
+    @include to-rem(padding-left, $l-grid-gutter-huge);
+  }
 }
 
 
@@ -177,10 +187,14 @@ $apply-friendly-box-model:      false !default;
  */
 
 // Middle alignment
-.l-grid--align-middle > .l-grid__item {vertical-align: middle;}
+.l-grid--align-middle > .l-grid__item {
+  vertical-align: middle;
+}
 
 // Bottom alignment
-.l-grid--align-bottom > .l-grid__item {vertical-align: bottom;}
+.l-grid--align-bottom > .l-grid__item {
+  vertical-align: bottom;
+}
 
 
 /**
@@ -191,14 +205,18 @@ $apply-friendly-box-model:      false !default;
 .l-grid--align-right {
   text-align: right;
 
-  > .l-grid__item {text-align: left;}
+  > .l-grid__item {
+    text-align: left;
+  }
 }
 
 // Center alignment
 .l-grid--align-center {
   text-align: center;
 
-  > .l-grid__item {text-align: left;}
+  > .l-grid__item {
+    text-align: left;
+  }
 }
 
 
@@ -208,4 +226,6 @@ $apply-friendly-box-model:      false !default;
  * Make it be the width of it's content.
  */
 
-.l-grid--shrink-wrap > .l-grid__item {width: auto;}
+.l-grid--shrink-wrap > .l-grid__item {
+  width: auto;
+}

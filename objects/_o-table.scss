@@ -84,11 +84,15 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 
   // Some sensible defaults
   caption,
-  th {text-align: left;}
+  th {
+    text-align: left;
+  }
 
   // Cell padding
   th,
-  td {@include to-rem(padding, $o-table-cell-padding-base);}
+  td {
+    @include to-rem(padding, $o-table-cell-padding-base);
+  }
 }
 
 @if $o-table-apply-at-breakpoints-for-default {
@@ -96,10 +100,14 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
     width: 100%;
 
     caption,
-    th {text-align: left;}
+    th {
+      text-align: left;
+    }
 
     th,
-    td {@include to-rem(padding, $o-table-cell-padding-base);}
+    td {
+      @include to-rem(padding, $o-table-cell-padding-base);
+    }
   }
 }
 
@@ -112,14 +120,17 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 
 %o-table--striped,
 .o-table--striped {
-  tr:nth-of-type(odd) td {background-color:
-    $o-table-striped-background-cell-color;}
+  tr:nth-of-type(odd) td {
+    background-color: $o-table-striped-background-cell-color;
+  }
 }
 
 @if $o-table-apply-at-breakpoints-for-striped {
   @include generate-at-breakpoints('.o-table--striped',
-    $o-table-apply-at-breakpoints) {tr:nth-of-type(odd) td {background-color:
-    $o-table-striped-background-cell-color;}
+    $o-table-apply-at-breakpoints) {
+    tr:nth-of-type(odd) td {
+      background-color: $o-table-striped-background-cell-color;
+    }
   }
 }
 
@@ -136,7 +147,9 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
       $o-table-border-color;
 
     // No borders for empty cells
-    &:empty {border: 0;}
+    &:empty {
+      border: 0;
+    }
   }
 }
 
@@ -148,7 +161,9 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
       border: strip-unit($o-table-border-thickness) * 1px $o-table-border-style
         $o-table-border-color;
 
-      &:empty {border: 0;}
+      &:empty {
+        border: 0;
+      }
     }
   }
 }
@@ -159,11 +174,14 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
  */
 
 %o-table--fixed,
-.o-table--fixed {table-layout: fixed;}
+.o-table--fixed {
+  table-layout: fixed;
+}
 
 @if $o-table-apply-at-breakpoints-for-fixed {
-  @include generate-at-breakpoints('.o-table--fixed',
-    $o-table-apply-at-breakpoints) {table-layout: fixed;}
+  @include generate-at-breakpoints('.o-table--fixed', $o-table-apply-at-breakpoints) {
+    table-layout: fixed;
+  }
 }
 
 
@@ -175,14 +193,18 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 %o-table--cell-padding-small,
 .o-table--cell-padding-small {
   th,
-  td {@include to-rem(padding, $o-table-cell-padding-small);}
+  td {
+    @include to-rem(padding, $o-table-cell-padding-small);
+  }
 }
 
 @if $o-table-apply-at-breakpoints-for-cell-padding-small {
   @include generate-at-breakpoints('.o-table--cell-padding-small',
     $o-table-apply-at-breakpoints) {
     th,
-    td {@include to-rem(padding, $o-table-cell-padding-small);}
+    td {
+      @include to-rem(padding, $o-table-cell-padding-small);
+    }
   }
 }
 
@@ -191,14 +213,18 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 %o-table--cell-padding-large,
 .o-table--cell-padding-large {
   th,
-  td {@include to-rem(padding, $o-table-cell-padding-large);}
+  td {
+    @include to-rem(padding, $o-table-cell-padding-large);
+  }
 }
 
 @if $o-table-apply-at-breakpoints-for-cell-padding-large {
   @include generate-at-breakpoints('.o-table--cell-padding-large',
     $o-table-apply-at-breakpoints) {
     th,
-    td {@include to-rem(padding, $o-table-cell-padding-large);}
+    td {
+      @include to-rem(padding, $o-table-cell-padding-large);
+    }
   }
 }
 
@@ -207,13 +233,17 @@ $o-table-striped-background-cell-color:                $o-table-border-color !de
 %o-table--no-cell-padding,
 .o-table--no-cell-padding {
   th,
-  td {padding: 0;}
+  td {
+    padding: 0;
+  }
 }
 
 @if $o-table-apply-at-breakpoints-for-cell-padding-none {
   @include generate-at-breakpoints('.o-table--no-cell-padding',
     $o-table-apply-at-breakpoints) {
     th,
-    td {padding: 0;}
+    td {
+      padding: 0;
+    }
   }
 }

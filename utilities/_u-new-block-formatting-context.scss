@@ -68,9 +68,13 @@ $u-nbfc-apply-at-breakpoints-for-alt:       false !default;
  */
 
 %u-nbfc-alt,
-.u-nbfc-alt {overflow: hidden !important;}
+.u-nbfc-alt {
+  overflow: hidden !important;
+}
 
 @if $u-nbfc-apply-at-breakpoints-for-alt {
   @include generate-at-breakpoints('.u-nbfc-alt',
-    $u-nbfc-apply-at-breakpoints) {overflow: hidden !important;}
+    $u-nbfc-apply-at-breakpoints) {
+    overflow: hidden !important;
+  }
 }

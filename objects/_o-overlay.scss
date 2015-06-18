@@ -74,7 +74,9 @@ $o-overlay-hover-transition-timing-function:  ease !default;
  */
 
 %o-overlay,
-.o-overlay {display: block;} // [1]
+.o-overlay {
+  display: block; // [1]
+}
 
 
 /**
@@ -83,7 +85,9 @@ $o-overlay-hover-transition-timing-function:  ease !default;
  */
 
 %o-overlay--in-context,
-.o-overlay--in-context {position: relative;}
+.o-overlay--in-context {
+  position: relative;
+}
 
 
   /**
@@ -108,8 +112,9 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    */
 
   %o-overlay--dark %o-overlay__inner,
-  .o-overlay--dark .o-overlay__inner {background-color:
-    rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
+  .o-overlay--dark .o-overlay__inner {
+    background-color: rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);
+  }
 
 
   /**
@@ -117,8 +122,9 @@ $o-overlay-hover-transition-timing-function:  ease !default;
    */
 
   %o-overlay--light %o-overlay__inner,
-  .o-overlay--light .o-overlay__inner {background-color:
-    rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
+  .o-overlay--light .o-overlay__inner {
+    background-color: rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);
+  }
 
 
 /*
@@ -152,12 +158,14 @@ $o-overlay-hover-transition-timing-function:  ease !default;
 %o-overlay--hover%o-overlay--dark:hover:before,
 %o-overlay--hover%o-overlay--dark:focus:before,
 .o-overlay--hover.o-overlay--dark:hover:before,
-.o-overlay--hover.o-overlay--dark:focus:before {background-color:
-  rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);}
+.o-overlay--hover.o-overlay--dark:focus:before {
+  background-color: rgba($o-overlay-color-dark, $o-overlay-opacity-strength-dark);
+}
 
 // Light
 %o-overlay--hover%o-overlay--light:hover:before,
 %o-overlay--hover%o-overlay--light:focus:before,
 .o-overlay--hover.o-overlay--light:hover:before,
-.o-overlay--hover.o-overlay--light:focus:before {background-color:
-  rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);}
+.o-overlay--hover.o-overlay--light:focus:before {
+  background-color: rgba($o-overlay-color-light, $o-overlay-opacity-strength-light);
+}

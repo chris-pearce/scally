@@ -59,7 +59,9 @@ h1,
  */
 
 h2,
-.h2 {@include font-size($font-size-heading-2);}
+.h2 {
+  @include font-size($font-size-heading-2);
+}
 
 
 /**
@@ -67,7 +69,9 @@ h2,
  */
 
 h3,
-.h3 {@include font-size($font-size-heading-3);}
+.h3 {
+  @include font-size($font-size-heading-3);
+}
 
 
 /**
@@ -75,7 +79,9 @@ h3,
  */
 
 h4,
-.h4 {@include font-size($font-size-heading-4);}
+.h4 {
+  @include font-size($font-size-heading-4);
+}
 
 
 /**
@@ -83,7 +89,9 @@ h4,
  */
 
 h5,
-.h5 {@include font-size($font-size-heading-5);}
+.h5 {
+  @include font-size($font-size-heading-5);
+}
 
 
 /**
@@ -91,4 +99,6 @@ h5,
  */
 
 h6,
-.h6 {@include font-size($font-size-heading-6);}
+.h6 {
+  @include font-size($font-size-heading-6);
+}

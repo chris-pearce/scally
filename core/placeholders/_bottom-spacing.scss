@@ -12,14 +12,18 @@
  * Base.
  */
 
-%bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+%bottom-spacing {
+  @include to-rem(margin-bottom, $spacing-base);
+}
 
 
 /**
  * Half.
  */
 
-%bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
+%bottom-spacing-half {
+  @include to-rem(margin-bottom, $spacing-half);
+}
 
 
 /**
@@ -28,5 +32,7 @@
 
 %bottom-spacing,
 %bottom-spacing-half {
-  &:last-child {margin-bottom: 0;}
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -24,7 +24,9 @@ canvas,
 iframe,
 img,
 svg,
-video {vertical-align: middle;}
+video {
+  vertical-align: middle;
+}
 
 
 /**
@@ -45,7 +47,9 @@ img {
      * selector to turn this off.
      */
 
-    #{$google-map-selector-to-turn-off-responsive-images} & {max-width: none;}
+    #{$google-map-selector-to-turn-off-responsive-images} & {
+      max-width: none;
+    }
   }
 
   font-style: italic; // [2]
@@ -68,7 +72,9 @@ img {
  * cases.
  */
 
-.img-not-responsive {max-width: none;}
+.img-not-responsive {
+  max-width: none;
+}
 
 
 /**
@@ -76,4 +82,6 @@ img {
  * running Windows 8.
  */
 
-canvas {-ms-touch-action: double-tap-zoom;}
+canvas {
+  -ms-touch-action: double-tap-zoom;
+}

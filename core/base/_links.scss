@@ -100,4 +100,6 @@ $link-border-color-hover:                 $link-color-hover !default;
   }
 }
 
-a {@include base-link();}
+a {
+  @include base-link();
+}

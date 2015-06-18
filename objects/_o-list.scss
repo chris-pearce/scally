@@ -96,7 +96,9 @@ $o-list-bullet-ordered:                       decimal !default;
     @include to-rem(margin-bottom, $o-list-bottom-margin);
 
     // Remove from the last child
-    &:last-child {margin-bottom: 0;}
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   // Apply hanging bullets
@@ -113,7 +115,9 @@ $o-list-bullet-ordered:                       decimal !default;
     @if $o-list-apply-bottom-margin {
       @include to-rem(margin-bottom, $o-list-bottom-margin);
 
-      &:last-child {margin-bottom: 0;}
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @if $o-list-apply-hanging-bullets {
@@ -137,7 +141,9 @@ $o-list-bullet-ordered:                       decimal !default;
 
 // Unordered lists
 %ul.o-list,
-ul.o-list {list-style-type: $o-list-bullet-unordered-base;}
+ul.o-list {
+  list-style-type: $o-list-bullet-unordered-base;
+}
 
 @if $o-list-apply-at-breakpoints-for-unordered {
   @include generate-at-breakpoints('ul.o-list', $o-list-apply-at-breakpoints) {
@@ -147,7 +153,9 @@ ul.o-list {list-style-type: $o-list-bullet-unordered-base;}
 
 // Ordered lists
 %ol.o-list,
-ol.o-list {list-style-type: $o-list-bullet-ordered;}
+ol.o-list {
+  list-style-type: $o-list-bullet-ordered;
+}
 
 @if $o-list-apply-at-breakpoints-for-ordered {
   @include generate-at-breakpoints('ol.o-list', $o-list-apply-at-breakpoints) {
@@ -173,17 +181,23 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
 
     // Left indentation
     ul,
-    ol {@include to-rem(margin-left, $o-list-indent);}
+    ol {
+      @include to-rem(margin-left, $o-list-indent);
+    }
 
     // Unordered list bullets
     ul {
       list-style-type: $o-list-bullet-unordered-nested-once;
 
-      ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+      ul {
+        list-style-type: $o-list-bullet-unordered-nested-twice;
+      }
     }
 
     // Ordered list bullets
-    ol {list-style-type: $o-list-bullet-ordered;}
+    ol {
+      list-style-type: $o-list-bullet-ordered;
+    }
   }
 
   @if $o-list-apply-at-breakpoints-for-nested {
@@ -197,14 +211,20 @@ ol.o-list {list-style-type: $o-list-bullet-ordered;}
       }
 
       ul,
-      ol {@include to-rem(margin-left, $o-list-indent);}
+      ol {
+        @include to-rem(margin-left, $o-list-indent);
+      }
 
       ul {
         list-style-type: $o-list-bullet-unordered-nested-once;
 
-        ul {list-style-type: $o-list-bullet-unordered-nested-twice;}
+        ul {
+          list-style-type: $o-list-bullet-unordered-nested-twice;
+        }
       }
 
-      ol {list-style-type: $o-list-bullet-ordered;}
+      ol {
+        list-style-type: $o-list-bullet-ordered;
+      }
     }
   }

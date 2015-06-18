@@ -47,7 +47,9 @@ $u-hide-js-is-off-class:                           no-js !default;
  */
 
 %u-hide,
-.u-hide {display: none !important;}
+.u-hide {
+  display: none !important;
+}
 
 @if $u-hide-apply-at-breakpoints-for-hide {
   @include generate-at-breakpoints('.u-hide', $u-hide-apply-at-breakpoints) {
@@ -61,11 +63,15 @@ $u-hide-js-is-off-class:                           no-js !default;
  */
 
 %u-hide-invisible,
-.u-hide-invisible {visibility: hidden !important;}
+.u-hide-invisible {
+  visibility: hidden !important;
+}
 
 @if $u-hide-apply-at-breakpoints-for-hide-invisible {
   @include generate-at-breakpoints('.u-hide-invisible',
-    $u-hide-apply-at-breakpoints) {visibility: hidden !important;}
+    $u-hide-apply-at-breakpoints) {
+    visibility: hidden !important;
+  }
 }
 
 
@@ -89,7 +95,9 @@ $u-hide-js-is-off-class:                           no-js !default;
    * Form `legend`s need different treatment.
    */
 
-  &.legend {left: $off-screen-distance !important;}
+  &.legend {
+    left: $off-screen-distance !important;
+  }
 }
 
 @if $u-hide-apply-at-breakpoints-for-hide-visually {
@@ -104,7 +112,9 @@ $u-hide-js-is-off-class:                           no-js !default;
     padding: 0 !important;
     border: 0 !important;
 
-    &.legend {left: $off-screen-distance !important;}
+    &.legend {
+      left: $off-screen-distance !important;
+    }
   }
 }
 
@@ -121,10 +131,14 @@ $u-hide-js-is-off-class:                           no-js !default;
  */
 
 // Hide/show elements if JavaScript is on
-.#{$u-hide-js-is-on-class} .u-hide-if-js-is-on {display: none !important;}
+.#{$u-hide-js-is-on-class} .u-hide-if-js-is-on {
+  display: none !important;
+}
 
 // Hide/show elements if JavaScript is off
-.#{$u-hide-js-is-off-class} .u-hide-if-js-is-off {display: none !important;}
+.#{$u-hide-js-is-off-class} .u-hide-if-js-is-off {
+  display: none !important;
+}
 
 
 /**
@@ -134,17 +148,27 @@ $u-hide-js-is-off-class:                           no-js !default;
 // Show
 .u-show-for-print,
 .u-show-for-print-inline,
-.u-show-for-print-inline-block {display: none !important;}
+.u-show-for-print-inline-block {
+  display: none !important;
+}
 
 @media print {
 
   // Hide
-  .u-hide-for-print {display: none !important;}
+  .u-hide-for-print {
+    display: none !important;
+  }
 
   // Show
-  .u-show-for-print {display: block !important;}
+  .u-show-for-print {
+    display: block !important;
+  }
 
-  .u-show-for-print-inline {display: inline !important;}
+  .u-show-for-print-inline {
+    display: inline !important;
+  }
 
-  .u-show-for-print-inline-block {display: inline-block !important;}
+  .u-show-for-print-inline-block {
+    display: inline-block !important;
+  }
 }

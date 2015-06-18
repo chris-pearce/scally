@@ -43,7 +43,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
   // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
-  .no-js & {display: block !important;}
+  .no-js & {
+    display: block !important;
+  }
 }
 
 @if $u-toggle-visibility-apply-at-breakpoints-for-default {
@@ -52,7 +54,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
     display: none !important;
 
     &.#{$u-toggle-visibility-state-class},
-    .no-js & {display: block !important;}
+    .no-js & {
+      display: block !important;
+    }
   }
 }
 
@@ -67,7 +71,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
   // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
-  .no-js & {display: inline !important;}
+  .no-js & {
+    display: inline !important;
+  }
 }
 
 @if $u-toggle-visibility-apply-at-breakpoints-for-inline {
@@ -76,7 +82,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
     display: none !important;
 
     &.#{$u-toggle-visibility-state-class},
-    .no-js & {display: inline !important;}
+    .no-js & {
+      display: inline !important;
+    }
   }
 }
 
@@ -91,7 +99,9 @@ $u-toggle-visibility-state-class:                            is-visible !default
 
   // Show via state class and for non-JavaScript users
   &.#{$u-toggle-visibility-state-class},
-  .no-js & {display: inline-block !important;}
+  .no-js & {
+    display: inline-block !important;
+  }
 }
 
 @if $u-toggle-visibility-apply-at-breakpoints-for-inline-block {
@@ -100,6 +110,8 @@ $u-toggle-visibility-state-class:                            is-visible !default
     display: none !important;
 
     &.#{$u-toggle-visibility-state-class},
-    .no-js & {display: inline-block !important;}
+    .no-js & {
+      display: inline-block !important;
+    }
   }
 }

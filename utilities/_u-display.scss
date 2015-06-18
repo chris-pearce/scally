@@ -37,11 +37,15 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
  */
 
 %u-display-block,
-.u-display-block {display: block !important;}
+.u-display-block {
+  display: block !important;
+}
 
 @if $u-display-apply-at-breakpoints-for-block {
   @include generate-at-breakpoints('.u-display-block',
-    $u-display-apply-at-breakpoints) {display: block !important;}
+    $u-display-apply-at-breakpoints) {
+    display: block !important;
+  }
 }
 
 
@@ -50,11 +54,15 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
  */
 
 %u-display-inline,
-.u-display-inline {display: inline !important;}
+.u-display-inline {
+  display: inline !important;
+}
 
 @if $u-display-apply-at-breakpoints-for-inline {
   @include generate-at-breakpoints('.u-display-inline',
-    $u-display-apply-at-breakpoints) {display: inline !important;}
+    $u-display-apply-at-breakpoints) {
+    display: inline !important;
+  }
 }
 
 
@@ -63,9 +71,13 @@ $u-display-apply-at-breakpoints-for-inline-block:     false !default;
  */
 
 %u-display-inline-block,
-.u-display-inline-block {display: inline-block !important;}
+.u-display-inline-block {
+  display: inline-block !important;
+}
 
 @if $u-display-apply-at-breakpoints-for-inline-block {
   @include generate-at-breakpoints('.u-display-inline-block',
-    $u-display-apply-at-breakpoints) {display: inline-block !important;}
+    $u-display-apply-at-breakpoints) {
+    display: inline-block !important;
+  }
 }
