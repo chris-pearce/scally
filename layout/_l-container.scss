@@ -55,7 +55,8 @@ $l-container-maximum-width:                       1600 !default;
 }
 
 @if $l-container-apply-breakpoints-for-default {
-  @include generate-at-breakpoints('.l-container', $l-container-breakpoints) {
+  @include generate-at-breakpoints('.l-container', 
+    $l-container-apply-at-breakpoints) {
     width: $l-container-width;
     @include to-rem(min-width, $l-container-minimum-width);
     @include to-rem(max-width, $l-container-maximum-width);
@@ -80,7 +81,7 @@ $l-container-maximum-width:                       1600 !default;
 
 @if $l-container-apply-breakpoints-for-full-bleed {
   @include generate-at-breakpoints('.l-container--full-bleed',
-    $l-container-breakpoints) {
+    $l-container-apply-at-breakpoints) {
     width: auto;
     max-width: none;
   }
@@ -98,7 +99,7 @@ $l-container-maximum-width:                       1600 !default;
 
 @if $l-container-apply-breakpoints-for-not-centered {
   @include generate-at-breakpoints('.l-container--not-centered',
-    $l-container-breakpoints) {
+    $l-container-apply-at-breakpoints) {
     margin-left: 0;
     margin-right: 0;
   }
