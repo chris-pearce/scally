@@ -1,5 +1,13 @@
 # HEAD
 
+## 2.9.0 (July 4, 2015)
+
+- Added tint and shade functions to lighten and darken colours
+  ([#158](https://github.com/chris-pearce/scally/issues/158)).
+- Fixed a bug where the **Container** Layout module was using incorrect
+  variable names for the `generate-at-breakpoints()` mixin. Thanks to @kllevin.
+  ([#159](https://github.com/chris-pearce/scally/issues/159)).
+
 ## 2.8.0 (June 18, 2015)
 
 - Made all single line declarations be on there own line which is the start of
