@@ -432,6 +432,8 @@ Here is a sample of a master stylesheet you could use for your `style.scss`:
 
 @import "[path/to/the/scally/framework]/core/functions/strip-unit";
 
+@import "[path/to/the/scally/framework]/core/functions/tint-shade";
+
 // Mixins
 @import "[path/to/the/scally/framework]/core/mixins/convert-px-to-em-rem";
 
