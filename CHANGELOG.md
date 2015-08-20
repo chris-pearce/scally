@@ -1,5 +1,19 @@
 # HEAD
 
+## 2.10.0 (August 21, 2015)
+
+- Added a new setting to remove the bottom spacing half for H4–H6 headings, if
+  this setting is `false` the base bottom spacing will be used as per the H1–H3
+  headings
+  ([#168](https://github.com/chris-pearce/scally/issues/168)).
+- Fixed whitespace coming between the semi-colon and the end of the property
+  value in the **Font Size** mixin
+  ([#167](https://github.com/chris-pearce/scally/issues/167)).
+- Fixed a typo in the `_media.scss` file
+  ([#165](https://github.com/chris-pearce/scally/issues/165)).
+- Added an [.editorconfig file](http://editorconfig.org/)
+  ([#30](https://github.com/chris-pearce/scally/issues/30)).
+
 ## 2.9.0 (July 4, 2015)
 
 - Added tint and shade functions to lighten and darken colours
