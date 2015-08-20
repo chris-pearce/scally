@@ -12,7 +12,10 @@
  * Settings.
  */
 
-$apply-heading-margins: true !default;
+// Margins
+$apply-heading-margins:                     true !default;
+
+$apply-smaller-margin-for-lowest-headings:  true !default;
 
 
 /**
@@ -34,9 +37,17 @@ $apply-heading-margins: true !default;
     @extend %bottom-spacing;
   }
 
-  // Half
-  @include headings(4, 6, true) {
-    @extend %bottom-spacing-half;
+  @if $apply-smaller-margin-for-lowest-headings {
+    // Half
+    @include headings(4, 6, true) {
+      @extend %bottom-spacing-half;
+    }
+  }
+  @else {
+    // Base
+    @include headings(4, 6, true) {
+      @extend %bottom-spacing;
+    }
   }
 }
 
