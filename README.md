@@ -1,5 +1,8 @@
 <img src="https://dl.dropboxusercontent.com/s/anlzedtpekcnla7/logo.png" width="211">
 
+[![npm version](https://badge.fury.io/js/scally.svg)](http://badge.fury.io/js/scally)
+[![Bower version](https://badge.fury.io/bo/scally.svg)](http://badge.fury.io/bo/scally)
+
 
 
 
