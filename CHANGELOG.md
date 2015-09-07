@@ -1,5 +1,11 @@
 # HEAD
 
+## 2.10.1 (September 7, 2015)
+
+- Fixed a bug that allows you to remove underlines from links altogether i.e.
+  for default and hover state.
+  ([#172](https://github.com/chris-pearce/scally/issues/172)).
+
 ## 2.10.0 (August 21, 2015)
 
 - Added a new setting to remove the bottom spacing half for H4–H6 headings, if
