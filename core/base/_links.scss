@@ -8,9 +8,11 @@
  * and hover states. There is the option to remove the underline for the
  * default state and apply it on the hover state instead, and an option to
  * apply a bottom border as the underline instead of the browser default
- * `text-decoration: underline`. You can also choose to apply a transition to
- *  link colour and its underline—if the bottom border option is selected—when
- *  hovering the link.
+ * `text-decoration: underline` plus an option to remove the underline
+ * altogether. You can also choose to apply a transition to the link colour
+ * and its underline—if the bottom border option is selected—when
+ * hovering/focusing the link and this transition will apply to ALL properties
+ * that you add in your project specific styles.
  *
  * N.B. a mixin is used to contain the base link styles so that it can be
  * easily shared with other parts of Scally e.g.
@@ -25,11 +27,13 @@
  */
 
 // Toggle on/off certain styles and treatments
+$apply-link-no-underline:                 false !default;
+
+$apply-link-border-instead-of-underline:  false !default;
+
 $apply-link-underline-on-hover:           true !default;
 
 $apply-link-transition-on-hover:          true !default;
-
-$apply-link-border-instead-of-underline:  false !default;
 
 // Colours
 $link-color:                              $color-brand !default;
@@ -53,49 +57,63 @@ $link-border-color-hover:                 $link-color-hover !default;
 
 @mixin base-link {
   color: $link-color;
-  text-decoration: underline;
 
-  // Remove underline and apply on hover
-  @if $apply-link-underline-on-hover {
+  // Remove underline
+  @if $apply-link-no-underline {
     text-decoration: none;
   }
+  @else {
 
-  // Apply a border as the underline instead of `text-decoration: underline`
-  @if $apply-link-border-instead-of-underline {
-    border-bottom: strip-unit($link-border-thickness) * 1px
-    $link-border-style $link-border-color;
-    text-decoration: none;
+    // Apply underline on hover
+    @if $apply-link-underline-on-hover {
+      text-decoration: none;
+
+      // Apply underline on hover when using border option
+      @if $apply-link-border-instead-of-underline {
+        border-bottom: strip-unit($link-border-thickness) * 1px
+        $link-border-style transparent;
+      }
+    }
+
+    // Apply a border instead of `text-decoration: underline`
+    @else if $apply-link-border-instead-of-underline {
+      text-decoration: none;
+      border-bottom: strip-unit($link-border-thickness) * 1px
+      $link-border-style $link-border-color;
+    }
   }
 
-  // Remove the border colour but only visually if it's to be applied on hover,
-  // this ensures the transition is seamless
-  @if $apply-link-underline-on-hover and
-  $apply-link-border-instead-of-underline {
-    border-bottom-color: transparent;
-  }
-
-  // Apply a transition on hover
+  // Apply a transition
   @if $apply-link-transition-on-hover {
-    transition: all $link-transition-duration
-    $link-transition-timing-function;
+    transition: all $link-transition-duration $link-transition-timing-function;
   }
+
+
+  /**
+   * Hover and focus states.
+   */
 
   &:hover,
   &:focus {
     color: $link-color-hover;
 
-    @if $apply-link-underline-on-hover {
-      text-decoration: underline;
+    // Remove underline
+    @if $apply-link-no-underline {
     }
+    @else {
+      // Apply underline on hover
+      @if $apply-link-underline-on-hover {
+        text-decoration: underline;
 
-    @if $apply-link-border-instead-of-underline {
-      border-bottom-color: $link-border-color-hover;
-    }
-
-    @if $apply-link-underline-on-hover and
-    $apply-link-border-instead-of-underline {
-      border-bottom-color: $link-border-color-hover;
-      text-decoration: none;
+        @if $apply-link-border-instead-of-underline {
+          text-decoration: none;
+          border-bottom-color: $link-border-color-hover;
+        }
+      }
+      // Apply a border instead of `text-decoration: underline`
+      @else if $apply-link-border-instead-of-underline {
+        border-bottom-color: $link-border-color-hover;
+      }
     }
   }
 }
