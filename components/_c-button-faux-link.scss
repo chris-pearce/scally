@@ -18,30 +18,4 @@
 .c-button-faux-link {
   @extend %o-button;
   @include base-link();
-
-  // We have to repeat the following styles and `@if` statements from the
-  // `base-link()` mixin as this component uses the Button object which sets
-  // `text-decoration: none;` for all states
-  text-decoration: underline;
-
-  // Remove underline and apply on hover
-  @if $apply-link-underline-on-hover {
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-      text-decoration: underline;
-
-      @if $apply-link-underline-on-hover and
-      $apply-link-border-instead-of-underline {
-        text-decoration: none;
-      }
-    }
-  }
-
-  // Apply a border as the underline instead of `text-decoration: underline`
-  @if $apply-link-border-instead-of-underline {
-    text-decoration: none;
-  }
 }
