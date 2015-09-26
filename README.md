@@ -60,11 +60,9 @@ toolkit.
 
 # Demos
 
-*A website—featuring demos of everything in Scally—is coming soon. In the
-meantime there are CodePens that can be looked at but are a work in progress:*
+A website—featuring demos of everything in Scally—is under construction. 
 
-- [Layout](http://codepen.io/chris-pearce/full/jEXNWX/)
-- [Utilities](http://codepen.io/chris-pearce/full/WbMgMp/)
+So far demos of the **Core/Base** section are available: <http://scally.chris-pearce.me/documentation/core.html>.
 
 
 
