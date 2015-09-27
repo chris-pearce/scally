@@ -1,4 +1,4 @@
-<img src="https://dl.dropboxusercontent.com/s/anlzedtpekcnla7/logo.png" width="211">
+<img src="https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/v5mEk1ipcZgcLoK/logo.png" width="211">
 
 [![npm version](https://badge.fury.io/js/scally.svg)](http://badge.fury.io/js/scally)
 [![Bower version](https://badge.fury.io/bo/scally.svg)](http://badge.fury.io/bo/scally)
@@ -74,7 +74,7 @@ own level of specificity. This means each one builds on top of the other in
 terms of inheritance and CSS' first C: the cascade. Think of these sections as
 layers:
 
-<img src="https://dl.dropboxusercontent.com/s/d5dkntp1kckkvkm/layers.svg">
+<img src="https://dl.dropboxusercontent.com/s/t15yhbxkjxsgxvl/layers.svg">
 
 The breakdown of these layers from bottom to top (order of their specificity):
 
