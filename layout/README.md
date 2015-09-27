@@ -211,9 +211,9 @@ at which point it becomes 33.333% wide.
 
 And here is an example of where you would use the side-by-side layout module:
 
-[![alt text](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png "Manchester City Council home page side-by-side examples")](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png)
+[![alt text](https://dl.dropboxusercontent.com/s/kdn9z1ihqww3jiv/side-by-side%20layout%20module%20example%201.png "Manchester City Council home page side-by-side examples")](https://dl.dropboxusercontent.com/s/kdn9z1ihqww3jiv/side-by-side%20layout%20module%20example%201.png)
 
-[![alt text](https://dl.dropboxusercontent.com/s/spqikubn6gmdxn3/side-by-side%20layout%20module%20example%202.png "Manchester City Council home page side-by-side examples")](https://dl.dropboxusercontent.com/s/spqikubn6gmdxn3/side-by-side%20layout%20module%20example%202.png)
+[![alt text](https://dl.dropboxusercontent.com/s/0rg50bu655g4ef7/side-by-side%20layout%20module%20example%202.png "Manchester City Council home page side-by-side examples")](https://dl.dropboxusercontent.com/s/0rg50bu655g4ef7/side-by-side%20layout%20module%20example%202.png)
 
 The grey boxes represent each side-by-side layout module.
 
@@ -287,12 +287,12 @@ powerful taking care of most—if not all—of your UI layout needs.
 
 So if we take this piece of UI again:
 
-[![alt text](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/mvsgop57g3fm5mj/side-by-side%20layout%20module%20example%201.png)
+[![alt text](https://dl.dropboxusercontent.com/s/kdn9z1ihqww3jiv/side-by-side%20layout%20module%20example%201.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/kdn9z1ihqww3jiv/side-by-side%20layout%20module%20example%201.png)
 
 We can combine three of our layout modules and their modifiers to achieve this
 layout:
 
-[![alt text](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/a57y2wy6wc8jwsh/layout%20modules%20combined.png)
+[![alt text](https://dl.dropboxusercontent.com/s/magqe696rkw04wk/layout%20modules%20combined.png "Manchester City Council layout module combined example")](https://dl.dropboxusercontent.com/s/magqe696rkw04wk/layout%20modules%20combined.png)
 
 In order of stacking (bottom to top):
 
@@ -354,7 +354,7 @@ which is used for utilities and objects.
 
 So if we look at the HTML for the header demo'd above for this piece of UI:
 
-[![alt text](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png "Manchester City Council header")](https://dl.dropboxusercontent.com/s/mvens15cnriutog/side-by-side%20layout%20module%20example%203.png)
+[![alt text](https://dl.dropboxusercontent.com/s/4iixgts16cnihfh/side-by-side%20layout%20module%20example%203.png "Manchester City Council header")](https://dl.dropboxusercontent.com/s/4iixgts16cnihfh/side-by-side%20layout%20module%20example%203.png)
 
 ```html
 <!-- Header -->
