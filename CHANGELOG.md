@@ -1,5 +1,10 @@
 # HEAD
 
+## 3.0.0 (?)
+
+- Removed unneeded `.scss-lint.yml` file as linting will be taken care of by
+  [stylelint](http://stylelint.io/).
+
 ## 2.10.1 (September 7, 2015)
 
 - Fixed a bug that allows you to remove underlines from links altogether i.e.
