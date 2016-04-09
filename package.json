@@ -11,9 +11,9 @@
     "bem",
     "responsive"
   ],
-  "scripts": [
-    "sass-compile": "node-sass ___test.scss ___test.css"
-  ],
+  "scripts": {
+    "compile-scss": "node-sass --output-style expanded ___test.scss ___test.css"
+  },
   "main": "index.js",
   "author": [
     {
