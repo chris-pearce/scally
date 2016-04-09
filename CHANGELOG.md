@@ -1,5 +1,10 @@
 # HEAD
 
+## 3.0.0 (?)
+
+- **Non-backwards compatible:**
+  Removed the **Components** section and all its contents.
+
 ## 2.10.1 (September 7, 2015)
 
 - Fixed a bug that allows you to remove underlines from links altogether i.e.
