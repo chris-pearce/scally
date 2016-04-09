@@ -2,11 +2,15 @@
 
 ## 3.0.0 (?)
 
+- **Non-backwards compatible:**
+  Removed each section and contents to make way for a new folder structure.
+  Created a `scally.scss` file which is the main index file for the CSS
+  library.
+- **Non-backwards compatible:**
+  Removed the **Components** section and all its contents.
 - Added an `index.js` file to expose all of Scally's libraries. This allows NPM
   modules (and Webpack) to consume either the whole library or just parts of
   it.
-- **Non-backwards compatible:**
-  Removed the **Components** section and all its contents.
 - Removed unneeded `.scss-lint.yml` file as linting will be taken care of by
   [stylelint](http://stylelint.io/).
 
