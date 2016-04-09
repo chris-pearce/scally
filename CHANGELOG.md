@@ -4,6 +4,8 @@
 
 - **Non-backwards compatible:**
   Removed the **Components** section and all its contents.
+- Removed unneeded `.scss-lint.yml` file as linting will be taken care of by
+  [stylelint](http://stylelint.io/).
 
 ## 2.10.1 (September 7, 2015)
 
