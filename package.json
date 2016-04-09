@@ -12,7 +12,7 @@
     "responsive"
   ],
   "scripts": {
-    "compile-scss": "node-sass --output-style expanded ___test.scss ___test.css"
+    "compile-scss": "node-sass --output-style expanded test/___test.scss test/___test.css"
   },
   "main": "index.js",
   "author": [
