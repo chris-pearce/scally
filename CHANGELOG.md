@@ -2,6 +2,8 @@
 
 ## 3.0.0 (?)
 
+- **Non-backwards compatible:**
+  Removed the **Components** section and all its contents.
 - Removed unneeded `.scss-lint.yml` file as linting will be taken care of by
   [stylelint](http://stylelint.io/).
 
