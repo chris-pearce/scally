@@ -1,0 +1,203 @@
+/* ============================================================================
+   SETTINGS
+   ========================================================================= */
+
+
+/**
+ * All of Scally's settings (Sass variables).
+ *
+ * The settings are broken down into two categories:
+ *
+ * - **Global**.....settings for the entire Scally library.
+ * - **Local**......settings for a particular Scally partial.
+ *
+ * All settings start with a `scally` namespace followed by one hyphen:
+ *
+   $scally-
+ *
+ * This namespace prevents your project settings and Scally's settings from
+ * clashing and allows you to easily see what is coming from Scally and what
+ * isn't.
+ *
+ * In addition to the `scally` namespace we also have namespaces to identify
+ * **Global** and **Local** settings:
+ *
+ * **Global** settings include a letter `g` to easily identify them:
+ *
+   $scally-g-
+ *
+ * **Local** settings include the name of the relevant partial they belong to.
+ * For example, settings for the `_base.scss` and `_grid.scss` partials would
+ * look like this:
+ *
+   $scally-base-
+   $scally-grid-
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * CONTENTS:
+ *
+ * 1.  Colours (Global)
+ * 2.  Typography (Global)
+ */
+
+
+
+
+/* 1. Colours (Global)
+   ========================================================================= */
+
+/**
+ * Black and white.
+ */
+
+$scally-g-color-white: #fff !default;
+
+$scally-g-color-black: #000 !default;
+
+
+/**
+ * Text.
+ */
+
+// Base (global text colour)
+$scally-g-color-text-base: #444 !default;
+
+// Heading
+$scally-g-color-text-heading: $scally-g-color-text-base !default;
+
+
+/**
+ * Links.
+ */
+
+$scally-g-color-link: #0000ff !default;
+
+$scally-g-color-link-hover: #ff0000 !default;
+
+
+
+
+/* 2. Typography (Global)
+   ========================================================================= */
+
+/**
+ * Base sizes.
+ */
+
+$scally-g-font-size: 16 !default;
+
+// Decrease
+$scally-g-font-size-small: $scally-g-font-size - 1 !default;
+
+$scally-g-font-size-x-small: $scally-g-font-size - 2 !default;
+
+$scally-g-font-size-xx-small: $scally-g-font-size - 3 !default;
+
+$scally-g-font-size-xxx-small: $scally-g-font-size - 4 !default;
+
+// Increase
+$scally-g-font-size-large: $scally-g-font-size + 2 !default;
+
+$scally-g-font-size-x-large: $scally-g-font-size + 3 !default;
+
+$scally-g-font-size-xx-large: $scally-g-font-size + 4 !default;
+
+$scally-g-font-size-xxx-large: $scally-g-font-size + 5 !default;
+
+
+/**
+ * Heading sizes.
+ */
+
+$scally-g-font-size-heading: $scally-g-font-size * 1.5 !default;
+
+// Decrease
+$scally-g-font-size-heading-small: $scally-g-font-size-heading - 2 !default;
+
+$scally-g-font-size-heading-x-small: $scally-g-font-size-heading - 4 !default;
+
+$scally-g-font-size-heading-xx-small: $scally-g-font-size-heading - 6 !default;
+
+$scally-g-font-size-heading-xxx-small: $scally-g-font-size-heading - 8 !default;
+
+// Increase
+$scally-g-font-size-heading-large: $scally-g-font-size-heading + 2 !default;
+
+$scally-g-font-size-heading-x-large: $scally-g-font-size-heading + 4 !default;
+
+$scally-g-font-size-heading-xx-large: $scally-g-font-size-heading + 6 !default;
+
+$scally-g-font-size-heading-xxx-large: $scally-g-font-size-heading + 8 !default;
+
+
+/**
+ * Line height.
+ */
+
+$scally-g-line-height: $scally-g-font-size * 1.5 !default;
+
+
+/**
+ * Line height ratio.
+ *
+ * N.B. non-overridable.
+ */
+
+$scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size;
+
+
+/**
+ * Families.
+ */
+
+// Base
+$scally-g-font-family-base: sans-serif !default;
+
+// Headings
+$scally-g-font-family-headings: $scally-g-font-family-base !default;
+
+// Mono-space
+$scally-g-font-family-monospace: Consolas, monospace !default;
+
+
+/**
+ * Weights.
+ *
+ * N.B. all the font weights are there to be used when you're using webfonts
+ * i.e. fonts brought in via the `@font-face` declaration. It's better to
+ * store each webfont weights in settings rather than trying to remember each
+ * of the numbers that the weights correspond to, plus it ensures that your
+ * project's typography is applied consistency. You can use these settings for
+ * none webfonts i.e. system fonts but typically you'll only need to apply one
+ * weight which is **bold** and in that case using `font-weight: bold;` is
+ * fine.
+ */
+
+$scally-g-font-weight-normal: 400 !default;
+
+$scally-g-font-weight-thin: 100 !default;
+
+$scally-g-font-weight-extra-light: 200 !default;
+
+$scally-g-font-weight-light: 300 !default;
+
+$scally-g-font-weight-medium: 500 !default;
+
+$scally-g-font-weight-semi-bold: 600 !default;
+
+$scally-g-font-weight-bold: 700 !default;
+
+$scally-g-font-weight-extra-bold: 800 !default;
+
+$scally-g-font-weight-black: 900 !default;
+
+// Heading weight
+$scally-g-font-weight-heading: $scally-g-font-weight-bold !default;
+
+
+/**
+ * Maximum line length using the `ch` unit.
+ */
+
+$scally-g-max-line-length: 600ch !default;
