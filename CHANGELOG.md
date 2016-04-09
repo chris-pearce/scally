@@ -2,6 +2,9 @@
 
 ## 3.0.0 (?)
 
+- Added an `index.js` file to expose all of Scally's libraries. This allows NPM
+  modules (and Webpack) to consume either the whole library or just parts of
+  it.
 - **Non-backwards compatible:**
   Removed the **Components** section and all its contents.
 - Removed unneeded `.scss-lint.yml` file as linting will be taken care of by

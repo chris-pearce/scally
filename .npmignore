@@ -1,8 +1,5 @@
 .gitignore
 .npmignore
 bower.json
-CHANGELOG.md
-test.html
-test.scss
-test.css
-test.css.map
+docs
+test
