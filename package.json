@@ -1,7 +1,7 @@
 {
   "name": "scally",
-  "version": "2.10.1",
-  "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS framework that provides you with a solid foundation for building reusable UI's quickly",
+  "version": "3.0.0",
+  "description": "Scally is a Sass, BEM, OOCSS, responsive ready, CSS library that provides you with a solid foundation for building reusable UI's quickly",
   "homepage": "https://github.com/chris-pearce/scally",
   "keywords": [
     "scally",
@@ -11,6 +11,10 @@
     "bem",
     "responsive"
   ],
+  "scripts": [
+    "sass-compile": "node-sass ___test.scss ___test.css"
+  ],
+  "main": "index.js",
   "author": [
     {
       "name":   "Chris Pearce",
@@ -21,16 +25,6 @@
       "name":   "Kate Levin",
       "email":  "kllevin@gmail.com",
       "url":    "http://kllevin.com"
-    },
-    {
-      "name":   "Matt Stow",
-      "email":  "matt@mattstow.com",
-      "url":    "http://mattstow.com"
-    },
-    {
-      "name":   "Chris Wright",
-      "email":  "hello@chriswrightdesign.com",
-      "url":    "http://chriswrightdesign.com"
     }
   ],
   "repository": {
