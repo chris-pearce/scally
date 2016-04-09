@@ -1,5 +1,11 @@
 # HEAD
 
+## 3.0.0 (?)
+
+- Added an `index.js` file to expose all of Scally's libraries. This allows NPM
+  modules (and Webpack) to consume either the whole library or just parts of
+  it.
+
 ## 2.10.1 (September 7, 2015)
 
 - Fixed a bug that allows you to remove underlines from links altogether i.e.
