@@ -473,3 +473,41 @@ $scally-base-hr-color: $scally-g-color-text-base !default;
 $scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
 
 $scally-base-target-ios-selector: ".ios" !default;
+
+
+
+
+/* 9. Container (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+$scally-container-apply-center-alignment: true !default;
+
+
+/**
+ * Widths.
+ */
+
+$scally-container-maximum-width: 1600 !default;
+
+$scally-container-minimum-width: 320 !default;
+
+// Wider
+$scally-container-maximum-width-large: ceil($scally-container-maximum-width * 1.5) !default;
+
+$scally-container-maximum-width-x-large: ceil($scally-container-maximum-width * 2) !default;
+
+// Narrower
+$scally-container-maximum-width-small: floor($scally-container-maximum-width / 1.5) !default;
+
+$scally-container-maximum-width-x-small: floor($scally-container-maximum-width / 2) !default;
+
+
+/**
+ * Gutter size.
+ */
+
+$scally-container-gutter: $scally-g-spacing-x-large !default;
