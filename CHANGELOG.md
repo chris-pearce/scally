@@ -47,7 +47,7 @@
 - **Non-backwards compatible**<br>
   Completely redone the folder/file structure. Everything now lives in a
   `src` folder without any sub folders. Only Sass partials and a main index
-  file for the CSS library live in `src`.
+  file for the CSS library live in the root of the `src` folder.
 - Created a `scally.scss` file which is the main index file for the CSS
   library.
 - Added an `index.js` file for Scally's NPM module.
