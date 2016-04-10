@@ -27,8 +27,8 @@
    $scally-g-
  *
  * **Local** settings include the name of the relevant partial they belong to.
- * For example, settings for the `_base.scss` and `_grid.scss` partials would
- * look like this:
+ * For example, settings for the `_base.scss` and `_grid.scss` partials look
+ * like this:
  *
    $scally-base-
    $scally-grid-
@@ -39,6 +39,7 @@
  *
  * 1.  Colours (Global)
  * 2.  Typography (Global)
+ * 3.  Spacing (Global)
  */
 
 
@@ -201,3 +202,38 @@ $scally-g-font-weight-heading: $scally-g-font-weight-bold !default;
  */
 
 $scally-g-max-line-length: 600ch !default;
+
+
+
+
+/* 3. Spacing (Global)
+   ========================================================================= */
+
+/**
+ * The base spacing unit uses the base line height to achieve a vertical
+ * rhythm.
+ */
+
+$scally-g-spacing-base: $scally-g-line-height !default;
+
+// Decrease
+$scally-g-spacing-small: floor($scally-g-spacing-base / 1.5) !default;
+
+$scally-g-spacing-x-small: floor($scally-g-spacing-base / 2) !default;
+
+$scally-g-spacing-xx-small: floor($scally-g-spacing-base / 3) !default;
+
+$scally-g-spacing-xxx-small: floor($scally-g-spacing-base / 4) !default;
+
+$scally-g-spacing-xxxx-small: floor($scally-g-spacing-base / 6) !default;
+
+// Increase
+$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.4) !default;
+
+$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.6) !default;
+
+$scally-g-spacing-xx-large: ceil($scally-g-spacing-base * 1.8) !default;
+
+$scally-g-spacing-xxx-large: ceil($scally-g-spacing-base * 2) !default;
+
+$scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
