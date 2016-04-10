@@ -13,7 +13,9 @@
             - `$font-family-icons`.
             - `$font-family-serif`.
     - Simplified the **Spacing** settings to just use `small` and `large`
-      variations applying the `x-` pattern, e.g. `x-small`, `xx-small`, etc.
+      variations, applying the `x-` pattern, e.g. `x-small`, `xx-small`, etc.
+    - Used a Sass map for the newly named **Z-Index system**, previously this
+      was in the **Positioning** section.
 - **Non-backwards compatible**<br>
   Combined all of the Scally settings into the one partial: `_settings.scss`.
   Prior to `v3.0.0` **Local** settings existed in there relevant partial, e.g.
