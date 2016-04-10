@@ -41,6 +41,7 @@
  * 2.  Typography (Global)
  * 3.  Spacing (Global)
  * 4.  Breakpoints (Global)
+ * 5.  Z-Index system (Global)
  */
 
 
@@ -276,12 +277,22 @@ $scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
 
 
 /**
- * All the breakpoints divided by the default user-agent font-size: `16`. We
+ * All the breakpoints divided by the default user-agent font size: `16`. We
  * do this division as all viewport width and height media queries are to be
  * applied with the `em` unit. If you wish to override any of the breakpoints
  * then don't forget to apply this calculation:
  *
     ([breakpoint-value] / 16) * 1em
+ *
+ * Applying a breakpoint in a media query:
+ *
+    @media (max-width: bp(palm)) {
+        background-color: crimson;
+    }
+
+    @media (min-width: bp(desk)) {
+        background-color: crimson;
+    }
  *
  * N.B. Scally uses a Sass map to apply all the breakpoints therefore we use a
  * Sass function to make it easier to apply the map keys, see:
@@ -304,3 +315,62 @@ $scally-g-breakpoints: (
  */
 
 $scally-g-global-breakpoints: (lap) !default;
+
+
+
+
+/* 5. Z-Index system (Global)
+   ========================================================================= */
+
+/**
+ * A nice system that uses a Sass map to keep your project `z-index`s
+ * maintainable, sane, and free of those crazy `z-index: 99999;` occurrences!
+ * Be sure to read this to fully understand how the system works:
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ *
+ * Scally kicks it off by providing a standard stacking order that projects
+ * may require:
+ *
+    <body>
+        <modal>
+            <modal-close-button>
+        <modal-underlay>
+        <header>
+        <main>
+        <footer>
+    </body>
+ *
+ * You can then update the Sass map in your project's `_settings.scss`
+ * partial. And be sure to use nested maps to make the system aware of
+ * stacking contexts, as having a flat map will soon become a headache to
+ * maintain.
+ *
+ * Applying `z-index`s with this system:
+ *
+    .c-header {
+        z-index: z(header);
+    }
+ *
+ * And for nested stacking contexts (defined via a nested map):
+ *
+    .c-modal__close-button {
+        z-index: z(modal-elements, close-button);
+    }
+ *
+ * N.B. Scally uses a Sass map (and nested maps) to apply this Z-Index system
+ * therefore we use a Sass function to make it easier to apply the map keys
+ * and retrieve nested map keys, see:
+ * **Mixins/Functions -> Retrieve from maps**.
+ */
+
+$scally-g-zindexes: (
+    "modal-elements": (
+        "close-button": 1
+    ),
+    "modal": 5,
+    "modal-underlay": 4,
+    "header": 3,
+    "main": 2,
+    "footer": 1,
+    "underneath": -1
+) !default;
