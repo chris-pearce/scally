@@ -43,6 +43,7 @@
  * 4.  Breakpoints (Global)
  * 5.  Z-Index system (Global)
  * 6.  HiDPI units (Global)
+ * 7.  HTML textual `input`s (Global)
  */
 
 
@@ -392,3 +393,83 @@ $scally-g-hidpi-dpr: 1.3 !default;
 $scally-g-hidpi-dpi: ($scally-g-hidpi-dpr * 96) * 1dpi !default;
 
 $scally-g-hidpi-dppx: 1.3 * 1dppx !default;
+
+
+
+
+/* 7. HTML textual `input`s (Global)
+   ========================================================================= */
+
+$scally-g-textual-inputs: 'input[type="text"],
+                           input[type="search"],
+                           input[type="tel"],
+                           input[type="url"],
+                           input[type="email"],
+                           input[type="password"],
+                           input[type="month"],
+                           input[type="week"],
+                           input[type="time"],
+                           input[type="date"],
+                           input[type="datetime"],
+                           input[type="datetime-local"],
+                           input[type="number"]' !default;
+
+
+
+
+/* 8. Base (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+$scally-base-apply-osx-font-smoothing: false !default;
+
+$scally-base-apply-link-transition: true !default;
+
+$scally-base-apply-style-to-disabled-and-readonly-states: true !default;
+
+$scally-base-apply-bottom-margin-to-paragraphs: false !default;
+
+$scally-base-apply-print-styles: true !default;
+
+
+/**
+ * Root element.
+ */
+
+$scally-base-root-element-background-color: $scally-g-color-white !default;
+
+
+/**
+ * Links.
+ */
+
+$scally-base-link-text-decoration: underline !default;
+
+$scally-base-link-text-decoration-on-hover: none !default;
+
+$scally-base-link-transition-duration: 0.15s !default;
+
+$scally-base-link-transition-timing-function: linear !default;
+
+
+/**
+ * Horizontal rule.
+ */
+
+$scally-base-hr-thickness: 1px !default;
+
+$scally-base-hr-style: solid !default;
+
+$scally-base-hr-color: $scally-g-color-text-base !default;
+
+
+/**
+ * Forms.
+ */
+
+$scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
+
+$scally-base-target-ios-selector: ".ios" !default;
