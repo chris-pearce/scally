@@ -47,6 +47,7 @@
  * 8.  Base (Local)
  * 9.  Container (Local)
  * 10. Grid (Local)
+ * 11. Helpers (Local)
  */
 
 
@@ -608,3 +609,155 @@ $scally-grid-define-span-10-width-breakpoints: $scally-g-global-breakpoints !def
 $scally-grid-apply-span-11-width-at-breakpoints: false !default;
 
 $scally-grid-define-span-11-width-breakpoints: $scally-g-global-breakpoints !default;
+
+
+
+
+/* 11. Helpers (Local)
+   ========================================================================= */
+
+/**
+ * For certain **Helpers** turn on the ability to apply them at breakpoints
+ * via boolean settings, then define the breakpoints. See:
+ * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
+ */
+
+
+/**
+ * Text sizes.
+ */
+
+// Base
+$scally-helper-apply-text-size-base-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-base-breakpoints: $scally-g-global-breakpoints !default;
+
+// Decrease
+$scally-helper-apply-text-size-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-x-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-x-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xx-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+// Increase
+$scally-helper-apply-text-size-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-x-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xx-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Text alignments.
+ */
+
+// Center
+$scally-helper-apply-text-align-center-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-center-breakpoints: $scally-g-global-breakpoints !default;
+
+// Left
+$scally-helper-apply-text-align-left-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-left-breakpoints: $scally-g-global-breakpoints !default;
+
+// Right
+$scally-helper-apply-text-align-right-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-right-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Text truncate.
+ */
+
+$scally-helper-apply-text-truncate-at-breakpoints: false !default;
+
+$scally-helper-define-text-truncate-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Hide.
+ */
+
+// Hide elements from both screen readers and the document flow
+$scally-helper-apply-hide-at-breakpoints: false !default;
+
+$scally-helper-define-hide-breakpoints: $scally-g-global-breakpoints !default;
+
+// Hide elements only visually but have it available for screen readers
+$scally-helper-apply-hide-visually-at-breakpoints: false !default;
+
+$scally-helper-define-hide-visually-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Spacing.
+ */
+
+// Base
+$scally-helper-apply-spacing-base-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-base-breakpoints: $scally-g-global-breakpoints !default;
+
+// Decrease
+$scally-helper-apply-spacing-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-x-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-x-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+// Increase
+$scally-helper-apply-spacing-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-x-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxxx-large-breakpoints: $scally-g-global-breakpoints !default;
