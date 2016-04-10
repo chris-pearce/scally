@@ -2,7 +2,7 @@
 
 ## 3.0.0 (?)
 
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Revamped all of Scally settings, e.g.:
     - Introduced namespacing.
     - Reduced the colour settings.
@@ -12,7 +12,7 @@
         - Removed the following settings:
             - `$font-family-icons`.
             - `$font-family-serif`.
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Combined all of the Scally settings into the one partial: `_settings.scss`.
   Prior to `v3.0.0` **Local** settings existed in there relevant partial, e.g.
   `_forms.scss`, `_o-list.scss`, etc. Overriding any **Local** settings prior
@@ -30,14 +30,14 @@
       it hard to keep track of everything and created a disconnect between the
       **Global** and **Local** settings.
     - We feel your master stylesheet should only contain Sass partial imports.
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   **Components** removed as they didn't fit the model of an un-opinionated
   foundational CSS library.
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   **Objects** removed as they seemed to cause to much confusion as to exactly
   what they were. Some **Objects** still exist, whether only partially or in
   full, they're just not regarded as **Objects** any more.
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Completely redone the folder/file structure. Everything now lives in a
   `src` folder without any sub folders. Only Sass partials and a main index
   file for the CSS library live in `src`.
@@ -168,50 +168,50 @@
 
 ## 2.0.0 (April 29, 2015)
 
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Create a new section called **Objects** and convert some utilities to objects
   ([#47](https://github.com/chris-pearce/scally/issues/47)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Updates to the Button component
   ([#70](https://github.com/chris-pearce/scally/issues/70)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Change all setting instances of "colour" to "color"
   ([#67](https://github.com/chris-pearce/scally/issues/67)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Remove a bunch of utilities
   ([#60](https://github.com/chris-pearce/scally/issues/60)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Name spacing components
   ([#41](https://github.com/chris-pearce/scally/issues/41)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Make it so that all positioning utilities can be applied by one class
   ([#59](https://github.com/chris-pearce/scally/issues/59)).
 - Check wrapping at 80 chars on all files
   ([#55](https://github.com/chris-pearce/scally/issues/55)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Renamed Flex Embed utility
   ([#50](https://github.com/chris-pearce/scally/issues/50)).
 - Beef up the comments in each utility and layout-module partials
   ([#36](https://github.com/chris-pearce/scally/issues/36)).
 - Updating the CSS for the GPU accelerated utility
   ([06cdda](https://github.com/chris-pearce/scally/commit/06cdda525958fa5d4c296f8f6655e5aae6526596)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Removing colour and line-height utilities from the Text utility
   ([b807ba](https://github.com/chris-pearce/scally/commit/b807ba55189391d9522cc712b63d0993875c4cd1)).
 - Listing all the utility selectors in the intro comment blocks
   ([06cdda](https://github.com/chris-pearce/scally/commit/06cdda525958fa5d4c296f8f6655e5aae6526596)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Removing CSS Table vertical alignment method from the Alignments utility
   ([cfb41d](https://github.com/chris-pearce/scally/commit/cfb41db0cf982b28fad568e0f84eae79a4da1d15)).
 - Add `!important` to ALL utilities
   ([#66](https://github.com/chris-pearce/scally/issues/66)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Removing Debug from Core
   ([058713](https://github.com/chris-pearce/scally/commit/058713cd9fa5e7909ce62e9db06059a47731335e)).
 - Remove `rem` units for `border`, `border-radius`, `box-shadow`, and
   `text-shadow` and replace with `px` units
   ([#79](https://github.com/chris-pearce/scally/issues/79)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Make Button Group component optional
   ([#77](https://github.com/chris-pearce/scally/issues/77)).
 - Apply [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) CSS
@@ -222,7 +222,7 @@
 - A new text utility for OSX font smoothing as it's now optional on the `html`
   element
   ([#88](https://github.com/chris-pearce/scally/issues/88)).
-- **:warning: Non-backwards compatible**<br>
+- **Non-backwards compatible**<br>
   Make the `.ios` class in Core -> Base -> Forms customisable
   ([#109](https://github.com/chris-pearce/scally/issues/109)).
 - Have an option in Core -> Base -> Forms to make text inputs full bleed
