@@ -5,13 +5,15 @@
 - **Non-backwards compatible**<br>
   Revamped all of Scally settings, e.g.:
     - Introduced namespacing.
-    - Reduced the colour settings.
+    - Reduced the **Colour** settings.
     - **Typography** settings:
         - Introduced a new `$scally-g-max-line-length` setting.
         - Introduced a new set of `font-weight` settings.
         - Removed the following settings:
             - `$font-family-icons`.
             - `$font-family-serif`.
+    - Simplified the **Spacing** settings to just use `small` and `large`
+      variations applying the `x-` pattern, e.g. `x-small`, `xx-small`, etc.
 - **Non-backwards compatible**<br>
   Combined all of the Scally settings into the one partial: `_settings.scss`.
   Prior to `v3.0.0` **Local** settings existed in there relevant partial, e.g.
