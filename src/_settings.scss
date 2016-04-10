@@ -40,6 +40,7 @@
  * 1.  Colours (Global)
  * 2.  Typography (Global)
  * 3.  Spacing (Global)
+ * 4.  Breakpoints (Global)
  */
 
 
@@ -228,12 +229,78 @@ $scally-g-spacing-xxx-small: floor($scally-g-spacing-base / 4) !default;
 $scally-g-spacing-xxxx-small: floor($scally-g-spacing-base / 6) !default;
 
 // Increase
-$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.4) !default;
+$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.3) !default;
 
-$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.6) !default;
+$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.5) !default;
 
-$scally-g-spacing-xx-large: ceil($scally-g-spacing-base * 1.8) !default;
+$scally-g-spacing-xx-large: ceil($scally-g-spacing-base * 1.7) !default;
 
 $scally-g-spacing-xxx-large: ceil($scally-g-spacing-base * 2) !default;
 
 $scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
+
+
+
+
+/* 4. Breakpoints (Global)
+   ========================================================================= */
+
+/**
+ * The breakdown of the breakpoints is based off this chart:
+ * http://static.lukew.com/unified_device_design.png
+ *
+ * Here's the thinking:
+ *
+ * - Palm..........smart-phones and feature phones—anything that can fit into
+ *                 the palm of a hand.
+ * - Lap...........typically tablets, notebooks and laptops—anything that is
+ *                 portable that doesn't include phones.
+ * - Lap small.....smaller tablets/notebooks and e-readers e.g. Kindle.
+ * - Lap large.....larger tablets and laptops.
+ * - Desk..........desktop computers, TVs, etc.—anything that isn't portable.
+ * - Desk large....larger desktop computer monitors, TVs, and who knows what
+ *                 else?
+ *
+ * The breakpoints:
+ *
+ * - Palm: 0–640px
+ * - Lap: 641px +
+ * - Lap small: 768px +
+ * - Lap large: 901px +
+ * - Desk: 1200px +
+ * - Desk large: 1366px +
+ *
+ * @credit
+ * http://www.lukew.com/ff/entry.asp?1679
+ */
+
+
+/**
+ * All the breakpoints divided by the default user-agent font-size: `16`. We
+ * do this division as all viewport width and height media queries are to be
+ * applied with the `em` unit. If you wish to override any of the breakpoints
+ * then don't forget to apply this calculation:
+ *
+    ([breakpoint-value] / 16) * 1em
+ *
+ * N.B. Scally uses a Sass map to apply all the breakpoints therefore we use a
+ * Sass function to make it easier to apply the map keys, see:
+ * **Mixins/Functions -> Retrieve from maps**.
+ */
+
+$scally-g-breakpoints: (
+  "palm": (640 / 16) * 1em,
+  "lap": (641 / 16) * 1em,
+  "lap-small": (768 / 16) * 1em,
+  "lap-large": (901 / 16) * 1em,
+  "desk": (1200 / 16) * 1em,
+  "desk-large": (1366 / 16) * 1em
+) !default;
+
+
+/**
+ * Apply the default breakpoint for the
+ * **Mixins/Functions -> Apply at breakpoints** mixin.
+ */
+
+$scally-g-global-breakpoints: (lap) !default;
