@@ -18,7 +18,8 @@
       We came to dislike this approach as it wasn't easy to maintain for the
       following reasons:
         - **Local** settings being dispersed throughout the master stylesheet
-          made it hard to keep track of everything and created a disconnect between the **Global** and **Local** settings.
+          made it hard to keep track of everything and created a disconnect
+          between the **Global** and **Local** settings.
         - We feel your master stylesheet should only contain Sass partial
           imports.
     - Introduced namespacing.
