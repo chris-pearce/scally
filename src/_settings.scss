@@ -42,6 +42,7 @@
  * 3.  Spacing (Global)
  * 4.  Breakpoints (Global)
  * 5.  Z-Index system (Global)
+ * 6.  HiDPI units (Global)
  */
 
 
@@ -374,3 +375,20 @@ $scally-g-zindexes: (
     "footer": 1,
     "underneath": -1
 ) !default;
+
+
+
+
+/* 6. HiDPI units (Global)
+   ========================================================================= */
+
+/**
+ * HiDPI units, currently being used in:
+ * **Mixins/Functions -> HiDPI background images**.
+ */
+
+$scally-g-hidpi-dpr: 1.3 !default;
+
+$scally-g-hidpi-dpi: ($scally-g-hidpi-dpr * 96) * 1dpi !default;
+
+$scally-g-hidpi-dppx: 1.3 * 1dppx !default;
