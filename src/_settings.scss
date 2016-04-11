@@ -157,7 +157,7 @@ $scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size;
 
 
 /**
- * Families.
+ * Font families.
  */
 
 // Base
@@ -173,12 +173,12 @@ $scally-g-font-family-monospace: Consolas, monospace !default;
 /**
  * Weights.
  *
- * N.B. all the font weights are there to be used when you're using webfonts
- * i.e. fonts brought in via the `@font-face` declaration. It's better to
- * store each webfont weights in settings rather than trying to remember each
- * of the numbers that the weights correspond to, plus it ensures that your
- * project's typography is applied consistency. You can use these settings for
- * none webfonts i.e. system fonts but typically you'll only need to apply one
+ * N.B. all the font weights are available when you're using webfonts i.e.
+ * fonts brought in via the `@font-face` declaration. It's better to store each
+ * each webfont weights in settings rather than trying to remember each of the
+ * numbers that the weights correspond to, plus it ensures that your project's
+ * typography is applied consistency. You can use these settings for
+ * non-webfonts i.e. system fonts but typically you'll only need to apply one
  * weight which is **bold** and in that case using `font-weight: bold;` is
  * fine.
  */
@@ -200,16 +200,6 @@ $scally-g-font-weight-bold: 700 !default;
 $scally-g-font-weight-extra-bold: 800 !default;
 
 $scally-g-font-weight-black: 900 !default;
-
-// Heading weight
-$scally-g-font-weight-heading: $scally-g-font-weight-bold !default;
-
-
-/**
- * Maximum line length using the `ch` unit.
- */
-
-$scally-g-max-line-length: 600ch !default;
 
 
 
@@ -338,9 +328,9 @@ $scally-g-global-breakpoints: (lap) !default;
  * may require:
  *
     <body>
-        <modal>
-            <modal-close-button>
-        <modal-underlay>
+        <dialog>
+            <dialog-close-button>
+        <dialog-underlay>
         <header>
         <main>
         <footer>
@@ -359,8 +349,8 @@ $scally-g-global-breakpoints: (lap) !default;
  *
  * And for nested stacking contexts (defined via a nested map):
  *
-    .c-modal__close-button {
-        z-index: z(modal-elements, close-button);
+    .c-dialog__close-button {
+        z-index: z(dialog-elements, close-button);
     }
  *
  * N.B. Scally uses a Sass map (and nested maps) to apply this Z-Index system
@@ -370,11 +360,11 @@ $scally-g-global-breakpoints: (lap) !default;
  */
 
 $scally-g-zindexes: (
-    "modal-elements": (
+    "dialog-elements": (
         "close-button": 1
     ),
-    "modal": 5,
-    "modal-underlay": 4,
+    "dialog": 5,
+    "dialog-underlay": 4,
     "header": 3,
     "main": 2,
     "footer": 1,
