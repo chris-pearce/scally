@@ -513,92 +513,92 @@ $scally-container-gutter: $scally-g-spacing-x-large !default;
    ========================================================================= */
 
 /**
- * Grid item widths.
+ * Grid item span amounts.
  */
 
-$scally-grid-span-1-width: 8.333% !default;
+$scally-grid-item-span-1: 8.333% !default;
 
-$scally-grid-span-2-width: 16.666% !default;
+$scally-grid-item-span-2: 16.666% !default;
 
-$scally-grid-span-3-width: 25% !default;
+$scally-grid-item-span-3: 25% !default;
 
-$scally-grid-span-4-width: 33.333% !default;
+$scally-grid-item-span-4: 33.333% !default;
 
-$scally-grid-span-5-width: 41.666% !default;
+$scally-grid-item-span-5: 41.666% !default;
 
-$scally-grid-span-6-width: 50% !default;
+$scally-grid-item-span-6: 50% !default;
 
-$scally-grid-span-7-width: 58.333% !default;
+$scally-grid-item-span-7: 58.333% !default;
 
-$scally-grid-span-8-width: 66.666% !default;
+$scally-grid-item-span-8: 66.666% !default;
 
-$scally-grid-span-9-width: 75% !default;
+$scally-grid-item-span-9: 75% !default;
 
-$scally-grid-span-10-width: 83.333% !default;
+$scally-grid-item-span-10: 83.333% !default;
 
-$scally-grid-span-11-width: 91.666% !default;
+$scally-grid-item-span-11: 91.666% !default;
 
 
 /**
- * For all the grid item widths, turn on the ability to apply them at
+ * For all the grid item span amounts, turn on the ability to apply them at
  * breakpoints via the boolean settings, then define the breakpoints. See:
  * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
  */
 
-// Grid span 1
-$scally-grid-apply-span-1-width-at-breakpoints: false !default;
+// Grid item span 1
+$scally-grid-item-span-1-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-1-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-1-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  2
-$scally-grid-apply-span-2-width-at-breakpoints: false !default;
+// Grid item span  2
+$scally-grid-item-span-2-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-2-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-2-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  3
-$scally-grid-apply-span-3-width-at-breakpoints: false !default;
+// Grid item span  3
+$scally-grid-item-span-3-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-3-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-3-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  4
-$scally-grid-apply-span-4-width-at-breakpoints: false !default;
+// Grid item span  4
+$scally-grid-item-span-4-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-4-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-4-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  5
-$scally-grid-apply-span-5-width-at-breakpoints: false !default;
+// Grid item span  5
+$scally-grid-item-span-5-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-5-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-5-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  6
-$scally-grid-apply-span-6-width-at-breakpoints: false !default;
+// Grid item span  6
+$scally-grid-item-span-6-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-6-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-6-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  7
-$scally-grid-apply-span-7-width-at-breakpoints: false !default;
+// Grid item span  7
+$scally-grid-item-span-7-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-7-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-7-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  8
-$scally-grid-apply-span-8-width-at-breakpoints: false !default;
+// Grid item span 8
+$scally-grid-item-span-8-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-8-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-8-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span  9
-$scally-grid-apply-span-9-width-at-breakpoints: false !default;
+// Grid item span 9
+$scally-grid-item-span-9-apply-at-breakpoints: false !default;
 
-$scally-grid-define-span-9-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-9-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span 10
-$scally-grid-apply-span-10-width-at-breakpoints: false !default;
+// Grid item span 10
+$scally-grid-item-span-10-apply--at-breakpoints: false !default;
 
-$scally-grid-define-span-10-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-10-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid span 11
-$scally-grid-apply-span-11-width-at-breakpoints: false !default;
+// Grid item span 11
+$scally-grid-item-span-11-apply--at-breakpoints: false !default;
 
-$scally-grid-define-span-11-width-breakpoints: $scally-g-global-breakpoints !default;
+$scally-grid-item-span-11-define-which-breakpoints: $scally-g-global-breakpoints !default;
 
 
 
