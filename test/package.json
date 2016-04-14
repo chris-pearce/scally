@@ -4,6 +4,7 @@
   "description": "Test suite for Scally",
   "scripts": {
     "compile-scally-src": "node-sass --output-style expanded -o compile-scally ../src/scally.scss",
-    "compile-scally-settings": "node-sass --output-style expanded -o compile-scally compile-scally/settings.scss"
+    "compile-scally-settings": "node-sass --output-style expanded -o compile-scally compile-scally/settings.scss",
+    "compile-scally-normalise-reset": "node-sass --output-style expanded -o compile-scally compile-scally/normalise-reset.scss"
   }
 }
