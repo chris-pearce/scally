@@ -44,10 +44,11 @@
  * 5.  Z-Index system (Global)
  * 6.  HiDPI units (Global)
  * 7.  HTML textual `input`s (Global)
- * 8.  Base (Local)
- * 9.  Container (Local)
- * 10. Grid (Local)
- * 11. Helpers (Local)
+ * 8.  Normalise and Reset (Local)
+ * 9.  Base (Local)
+ * 10. Container (Local)
+ * 11. Grid (Local)
+ * 12. Helpers (Local)
  */
 
 
@@ -411,7 +412,19 @@ $scally-g-textual-inputs: 'input[type="text"],
 
 
 
-/* 8. Base (Local)
+/* 8. Normalise and Reset (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+$shell-normalise-reset-apply-removal-of-clear-field-icon-and-reveal-password-icon-for-ie10-textual-inputs: true !default;
+
+
+
+
+/* 9. Base (Local)
    ========================================================================= */
 
 /**
@@ -471,7 +484,7 @@ $scally-base-target-ios-selector: ".ios" !default;
 
 
 
-/* 9. Container (Local)
+/* 10. Container (Local)
    ========================================================================= */
 
 /**
@@ -509,7 +522,7 @@ $scally-container-gutter: $scally-g-spacing-x-large !default;
 
 
 
-/* 10. Grid (Local)
+/* 11. Grid (Local)
    ========================================================================= */
 
 /**
@@ -603,7 +616,7 @@ $scally-grid-define-grid-item-span-11-breakpoints: $scally-g-global-breakpoints 
 
 
 
-/* 11. Helpers (Local)
+/* 12. Helpers (Local)
    ========================================================================= */
 
 /**
