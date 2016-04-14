@@ -1,0 +1,753 @@
+/* ============================================================================
+   SETTINGS
+   ========================================================================= */
+
+
+/**
+ * All of Scally's settings (Sass variables).
+ *
+ * The settings are broken down into two categories:
+ *
+ * - **Global**.....settings for the entire Scally library.
+ * - **Local**......settings for a particular Scally partial.
+ *
+ * All settings start with a `scally` namespace followed by one hyphen:
+ *
+   $scally-
+ *
+ * This namespace prevents your project settings and Scally's settings from
+ * clashing and allows you to easily see what is coming from Scally and what
+ * isn't.
+ *
+ * In addition to the `scally` namespace we also have namespaces to identify
+ * **Global** and **Local** settings:
+ *
+ * **Global** settings include a letter `g` to easily identify them:
+ *
+   $scally-g-
+ *
+ * **Local** settings include the name of the relevant partial they belong to.
+ * For example, settings for the `_base.scss` and `_grid.scss` partials look
+ * like this:
+ *
+   $scally-base-
+   $scally-grid-
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * CONTENTS:
+ *
+ * 1.  Colours (Global)
+ * 2.  Typography (Global)
+ * 3.  Spacing (Global)
+ * 4.  Breakpoints (Global)
+ * 5.  Z-Index system (Global)
+ * 6.  HiDPI units (Global)
+ * 7.  HTML textual `input`s (Global)
+ * 8.  Base (Local)
+ * 9.  Container (Local)
+ * 10. Grid (Local)
+ * 11. Helpers (Local)
+ */
+
+
+
+
+/* 1. Colours (Global)
+   ========================================================================= */
+
+/**
+ * Black and white.
+ */
+
+$scally-g-color-white: #fff !default;
+
+$scally-g-color-black: #000 !default;
+
+
+/**
+ * Text.
+ */
+
+// Base (global text colour)
+$scally-g-color-text-base: #444 !default;
+
+// Heading
+$scally-g-color-text-heading: $scally-g-color-text-base !default;
+
+
+/**
+ * Links.
+ */
+
+$scally-g-color-link: #0000ff !default;
+
+$scally-g-color-link-hover: #ff0000 !default;
+
+
+
+
+/* 2. Typography (Global)
+   ========================================================================= */
+
+/**
+ * Base sizes.
+ */
+
+$scally-g-font-size: 16 !default;
+
+// Decrease
+$scally-g-font-size-small: $scally-g-font-size - 1 !default;
+
+$scally-g-font-size-x-small: $scally-g-font-size - 2 !default;
+
+$scally-g-font-size-xx-small: $scally-g-font-size - 3 !default;
+
+$scally-g-font-size-xxx-small: $scally-g-font-size - 4 !default;
+
+// Increase
+$scally-g-font-size-large: $scally-g-font-size + 2 !default;
+
+$scally-g-font-size-x-large: $scally-g-font-size + 3 !default;
+
+$scally-g-font-size-xx-large: $scally-g-font-size + 4 !default;
+
+$scally-g-font-size-xxx-large: $scally-g-font-size + 5 !default;
+
+
+/**
+ * Heading sizes.
+ */
+
+$scally-g-font-size-heading: $scally-g-font-size * 1.5 !default;
+
+// Decrease
+$scally-g-font-size-heading-small: $scally-g-font-size-heading - 2 !default;
+
+$scally-g-font-size-heading-x-small: $scally-g-font-size-heading - 4 !default;
+
+$scally-g-font-size-heading-xx-small: $scally-g-font-size-heading - 6 !default;
+
+$scally-g-font-size-heading-xxx-small: $scally-g-font-size-heading - 8 !default;
+
+// Increase
+$scally-g-font-size-heading-large: $scally-g-font-size-heading + 2 !default;
+
+$scally-g-font-size-heading-x-large: $scally-g-font-size-heading + 4 !default;
+
+$scally-g-font-size-heading-xx-large: $scally-g-font-size-heading + 6 !default;
+
+$scally-g-font-size-heading-xxx-large: $scally-g-font-size-heading + 8 !default;
+
+
+/**
+ * Line height.
+ */
+
+$scally-g-line-height: $scally-g-font-size * 1.5 !default;
+
+
+/**
+ * Line height ratio.
+ *
+ * N.B. non-overridable.
+ */
+
+$scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size;
+
+
+/**
+ * Font families.
+ */
+
+// Base
+$scally-g-font-family-base: sans-serif !default;
+
+// Headings
+$scally-g-font-family-headings: $scally-g-font-family-base !default;
+
+// Mono-space
+$scally-g-font-family-monospace: Consolas, monospace !default;
+
+
+/**
+ * Weights.
+ *
+ * N.B. all the font weights are available when you're using webfonts i.e.
+ * fonts brought in via the `@font-face` declaration. It's better to store each
+ * each webfont weights in settings rather than trying to remember each of the
+ * numbers that the weights correspond to, plus it ensures that your project's
+ * typography is applied consistency. You can use these settings for
+ * non-webfonts i.e. system fonts but typically you'll only need to apply one
+ * weight which is **bold** and in that case using `font-weight: bold;` is
+ * fine.
+ */
+
+$scally-g-font-weight-normal: 400 !default;
+
+$scally-g-font-weight-thin: 100 !default;
+
+$scally-g-font-weight-extra-light: 200 !default;
+
+$scally-g-font-weight-light: 300 !default;
+
+$scally-g-font-weight-medium: 500 !default;
+
+$scally-g-font-weight-semi-bold: 600 !default;
+
+$scally-g-font-weight-bold: 700 !default;
+
+$scally-g-font-weight-extra-bold: 800 !default;
+
+$scally-g-font-weight-black: 900 !default;
+
+
+
+
+/* 3. Spacing (Global)
+   ========================================================================= */
+
+/**
+ * The base spacing unit uses the base line height to achieve a vertical
+ * rhythm.
+ */
+
+$scally-g-spacing-base: $scally-g-line-height !default;
+
+// Decrease
+$scally-g-spacing-small: floor($scally-g-spacing-base / 1.5) !default;
+
+$scally-g-spacing-x-small: floor($scally-g-spacing-base / 2) !default;
+
+$scally-g-spacing-xx-small: floor($scally-g-spacing-base / 3) !default;
+
+$scally-g-spacing-xxx-small: floor($scally-g-spacing-base / 4) !default;
+
+$scally-g-spacing-xxxx-small: floor($scally-g-spacing-base / 6) !default;
+
+// Increase
+$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.3) !default;
+
+$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.5) !default;
+
+$scally-g-spacing-xx-large: ceil($scally-g-spacing-base * 1.7) !default;
+
+$scally-g-spacing-xxx-large: ceil($scally-g-spacing-base * 2) !default;
+
+$scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
+
+
+
+
+/* 4. Breakpoints (Global)
+   ========================================================================= */
+
+/**
+ * The breakdown of the breakpoints is based off this chart:
+ * http://static.lukew.com/unified_device_design.png
+ *
+ * Here's the thinking:
+ *
+ * - Palm..........smart-phones and feature phones—anything that can fit into
+ *                 the palm of a hand.
+ * - Lap...........typically tablets, notebooks and laptops—anything that is
+ *                 portable that doesn't include phones.
+ * - Lap mid.......smaller tablets/notebooks and e-readers e.g. Kindle.
+ * - Lap large.....larger tablets and laptops.
+ * - Desk..........desktop computers, TVs, etc.—anything that isn't portable.
+ * - Desk large....larger desktop computer monitors, TVs, and who knows what
+ *                 else?
+ *
+ * The breakpoints:
+ *
+ * - Palm: 0–640px
+ * - Lap: 641px +
+ * - Lap mid: 768px +
+ * - Lap large: 901px +
+ * - Desk: 1200px +
+ * - Desk large: 1366px +
+ *
+ * @credit
+ * http://www.lukew.com/ff/entry.asp?1679
+ */
+
+
+/**
+ * All the breakpoints divided by the default user-agent font size: `16`. We
+ * do this division as all viewport width and height media queries are to be
+ * applied with the `em` unit. If you wish to override any of the breakpoints
+ * then don't forget to apply this calculation:
+ *
+    ([breakpoint-value] / 16) * 1em
+ *
+ * Applying a breakpoint in a media query:
+ *
+    @media (max-width: bp(palm)) {
+        background-color: crimson;
+    }
+
+    @media (min-width: bp(desk)) {
+        background-color: crimson;
+    }
+ *
+ * N.B. Scally uses a Sass map to apply all the breakpoints therefore we use a
+ * Sass function to make it easier to apply the map keys, see:
+ * **Mixins/Functions -> Retrieve from maps**.
+ */
+
+$scally-g-breakpoints: (
+  "palm": (640 / 16) * 1em,
+  "lap": (641 / 16) * 1em,
+  "lap-mid": (768 / 16) * 1em,
+  "lap-large": (901 / 16) * 1em,
+  "desk": (1200 / 16) * 1em,
+  "desk-large": (1366 / 16) * 1em
+) !default;
+
+
+/**
+ * Apply the default breakpoint for the
+ * **Mixins/Functions -> Apply at breakpoints** mixin.
+ */
+
+$scally-g-global-breakpoints: (lap) !default;
+
+
+
+
+/* 5. Z-Index system (Global)
+   ========================================================================= */
+
+/**
+ * A nice system that uses a Sass map to keep your project `z-index`s
+ * maintainable, sane, and free of those crazy `z-index: 99999;` occurrences!
+ * Be sure to read this to fully understand how the system works:
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ *
+ * Scally kicks it off by providing a standard stacking order that projects
+ * may require:
+ *
+    <body>
+        <dialog>
+            <dialog-close-button>
+        <dialog-underlay>
+        <header>
+        <main>
+        <footer>
+    </body>
+ *
+ * You can then update the Sass map in your project's `_settings.scss`
+ * partial. And be sure to use nested maps to make the system aware of
+ * stacking contexts, as having a flat map will soon become a headache to
+ * maintain.
+ *
+ * Applying `z-index`s with this system:
+ *
+    .c-header {
+        z-index: z(header);
+    }
+ *
+ * And for nested stacking contexts (defined via a nested map):
+ *
+    .c-dialog__close-button {
+        z-index: z(dialog-elements, close-button);
+    }
+ *
+ * N.B. Scally uses a Sass map (and nested maps) to apply this Z-Index system
+ * therefore we use a Sass function to make it easier to apply the map keys
+ * and retrieve nested map keys, see:
+ * **Mixins/Functions -> Retrieve from maps**.
+ */
+
+$scally-g-zindexes: (
+    "dialog-elements": (
+        "close-button": 1
+    ),
+    "dialog": 5,
+    "dialog-underlay": 4,
+    "header": 3,
+    "main": 2,
+    "footer": 1,
+    "underneath": -1
+) !default;
+
+
+
+
+/* 6. HiDPI units (Global)
+   ========================================================================= */
+
+/**
+ * HiDPI units, currently being used in:
+ * **Mixins/Functions -> HiDPI background images**.
+ */
+
+$scally-g-hidpi-dpr: 1.3 !default;
+
+$scally-g-hidpi-dpi: ($scally-g-hidpi-dpr * 96) * 1dpi !default;
+
+$scally-g-hidpi-dppx: 1.3 * 1dppx !default;
+
+
+
+
+/* 7. HTML textual `input`s (Global)
+   ========================================================================= */
+
+$scally-g-textual-inputs: 'input[type="text"],
+                           input[type="search"],
+                           input[type="tel"],
+                           input[type="url"],
+                           input[type="email"],
+                           input[type="password"],
+                           input[type="month"],
+                           input[type="week"],
+                           input[type="time"],
+                           input[type="date"],
+                           input[type="datetime"],
+                           input[type="datetime-local"],
+                           input[type="number"]' !default;
+
+
+
+
+/* 8. Base (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+$scally-base-apply-osx-font-smoothing: false !default;
+
+$scally-base-apply-link-transition: true !default;
+
+$scally-base-apply-style-to-disabled-and-readonly-states: true !default;
+
+$scally-base-apply-bottom-margin-to-paragraphs: false !default;
+
+$scally-base-apply-print-styles: true !default;
+
+
+/**
+ * Root element.
+ */
+
+$scally-base-root-element-background-color: $scally-g-color-white !default;
+
+
+/**
+ * Links.
+ */
+
+$scally-base-link-text-decoration: underline !default;
+
+$scally-base-link-text-decoration-on-hover: none !default;
+
+$scally-base-link-transition-duration: 0.15s !default;
+
+$scally-base-link-transition-timing-function: linear !default;
+
+
+/**
+ * Horizontal rule.
+ */
+
+$scally-base-hr-thickness: 1px !default;
+
+$scally-base-hr-style: solid !default;
+
+$scally-base-hr-color: $scally-g-color-text-base !default;
+
+
+/**
+ * Forms.
+ */
+
+$scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
+
+$scally-base-target-ios-selector: ".ios" !default;
+
+
+
+
+/* 9. Container (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+$scally-container-apply-center-alignment: true !default;
+
+
+/**
+ * Widths.
+ */
+
+$scally-container-maximum-width: 1600 !default;
+
+$scally-container-minimum-width: 320 !default;
+
+// Wider
+$scally-container-maximum-width-large: ceil($scally-container-maximum-width * 1.5) !default;
+
+$scally-container-maximum-width-x-large: ceil($scally-container-maximum-width * 2) !default;
+
+// Narrower
+$scally-container-maximum-width-small: floor($scally-container-maximum-width / 1.5) !default;
+
+$scally-container-maximum-width-x-small: floor($scally-container-maximum-width / 2) !default;
+
+
+/**
+ * Gutter size.
+ */
+
+$scally-container-gutter: $scally-g-spacing-x-large !default;
+
+
+
+
+/* 10. Grid (Local)
+   ========================================================================= */
+
+/**
+ * Grid item span amounts.
+ */
+
+$scally-grid-item-span-1: 8.333% !default;
+
+$scally-grid-item-span-2: 16.666% !default;
+
+$scally-grid-item-span-3: 25% !default;
+
+$scally-grid-item-span-4: 33.333% !default;
+
+$scally-grid-item-span-5: 41.666% !default;
+
+$scally-grid-item-span-6: 50% !default;
+
+$scally-grid-item-span-7: 58.333% !default;
+
+$scally-grid-item-span-8: 66.666% !default;
+
+$scally-grid-item-span-9: 75% !default;
+
+$scally-grid-item-span-10: 83.333% !default;
+
+$scally-grid-item-span-11: 91.666% !default;
+
+
+/**
+ * For all the grid item span amounts, turn on the ability to apply them at
+ * breakpoints via the boolean settings, then define the breakpoints. See:
+ * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
+ */
+
+// Grid item span 1
+$scally-grid-apply-grid-item-span-1-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-1-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  2
+$scally-grid-apply-grid-item-span-2-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-2-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  3
+$scally-grid-apply-grid-item-span-3-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-3-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  4
+$scally-grid-apply-grid-item-span-4-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-4-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  5
+$scally-grid-apply-grid-item-span-5-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-5-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  6
+$scally-grid-apply-grid-item-span-6-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-6-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span  7
+$scally-grid-apply-grid-item-span-7-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-7-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span 8
+$scally-grid-apply-grid-item-span-8-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-8-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span 9
+$scally-grid-apply-grid-item-span-9-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-9-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span 10
+$scally-grid-apply-grid-item-span-10-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-10-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span 11
+$scally-grid-apply-grid-item-span-11-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-11-breakpoints: $scally-g-global-breakpoints !default;
+
+
+
+
+/* 11. Helpers (Local)
+   ========================================================================= */
+
+/**
+ * For certain **Helpers** turn on the ability to apply them at breakpoints
+ * via boolean settings, then define the breakpoints. See:
+ * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
+ */
+
+
+/**
+ * Text sizes.
+ */
+
+// Base
+$scally-helper-apply-text-size-base-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-base-breakpoints: $scally-g-global-breakpoints !default;
+
+// Decrease
+$scally-helper-apply-text-size-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-x-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-x-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xx-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+// Increase
+$scally-helper-apply-text-size-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-x-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xx-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-xxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Text alignments.
+ */
+
+// Center
+$scally-helper-apply-text-align-center-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-center-breakpoints: $scally-g-global-breakpoints !default;
+
+// Left
+$scally-helper-apply-text-align-left-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-left-breakpoints: $scally-g-global-breakpoints !default;
+
+// Right
+$scally-helper-apply-text-align-right-at-breakpoints: false !default;
+
+$scally-helper-define-text-align-right-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Text truncate.
+ */
+
+$scally-helper-apply-text-truncate-at-breakpoints: false !default;
+
+$scally-helper-define-text-truncate-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Hide.
+ */
+
+// Hide elements from both screen readers and the document flow
+$scally-helper-apply-hide-at-breakpoints: false !default;
+
+$scally-helper-define-hide-breakpoints: $scally-g-global-breakpoints !default;
+
+// Hide elements only visually but have it available for screen readers
+$scally-helper-apply-hide-visually-at-breakpoints: false !default;
+
+$scally-helper-define-hide-visually-breakpoints: $scally-g-global-breakpoints !default;
+
+
+/**
+ * Spacing.
+ */
+
+// Base
+$scally-helper-apply-spacing-base-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-base-breakpoints: $scally-g-global-breakpoints !default;
+
+// Decrease
+$scally-helper-apply-spacing-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-x-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-x-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxxx-small-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxxx-small-breakpoints: $scally-g-global-breakpoints !default;
+
+// Increase
+$scally-helper-apply-spacing-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-x-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-xxxx-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-xxxx-large-breakpoints: $scally-g-global-breakpoints !default;
