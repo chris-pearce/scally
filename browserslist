@@ -2,6 +2,6 @@
 # https://github.com/chris-pearce/scally#browser-support
 # https://github.com/ai/browserslist
 
-last 2 versions
-Android >= 2
-Explorer >= 9
+ie 10
+ie 11
+last 1 version
