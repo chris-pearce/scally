@@ -4,9 +4,10 @@
 
 - **Non-backwards compatible**<br>
   Revamped Scally's **normalize.css** and **Reset**, e.g.:
-    - Combined the two.
-    - Updated to the latest version of **normalize.css** only using the parts
-      that made the most sense for Scally and its browser support.
+    - Combined the two into the 1 file: `_normalise-reset.scss`.
+    - Added some new rules.
+    - Updated to the latest version of **normalize.css** but only used the
+      parts that make the most sense for Scally.
 - **Non-backwards compatible**<br>
   Revamped all of Scally settings, e.g.:
     - Combined all of Scally's settings into the one partial: `_settings.scss`.
