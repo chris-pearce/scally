@@ -7,7 +7,7 @@
         "selector": "a",
         "test": [{
             "description": "Control <code class='b-code'>color</code>, <code class='b-code'>text-decoration</code> for both default and hover/focus states, and <code class='b-code'>transition</code>.",
-            "run": "<a href='http://campaignmonitor.com'>A link</a>",
+            "run": "<a href='https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=scally'>A link</a>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
         }]

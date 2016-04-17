@@ -18,9 +18,6 @@ $l-header-nav-link-color: $g-color-brand;
 
 $l-header-nav-link-hover-color: darken($l-header-nav-link-color, 26%);
 
-// Other
-$l-header-nav-link-underline-thickness: 3px;
-
 
 /**
  * The containers.
@@ -78,33 +75,12 @@ $l-header-nav-link-underline-thickness: 3px;
     color: $l-header-nav-link-color;
     padding-left: rem($scally-g-spacing-base);
     padding-right: rem($scally-g-spacing-base);
-    position: relative;
     text-decoration: none;
     transition: all 0.1s ease-in;
 
-    // Underline that sits off-canvas ready to be transitioned to the bottom
-    // of the link on all states
-    &::after {
-        background-color: transparent;
-        bottom: 0;
-        content: '';
-        height: $l-header-nav-link-underline-thickness;
-        left: 0;
-        position: absolute;
-        right: 0;
-        transform: translateY($l-header-nav-link-underline-thickness);
-        transition: transform 0.1s ease-in;
-    }
-
-    // States
     &:hover,
     &:focus,
     &.is-active {
         color: $l-header-nav-link-hover-color;
-
-        &::after {
-            background-color: $l-header-nav-link-hover-color;
-            transform: translateY(0);
-        }
     }
 }

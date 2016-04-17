@@ -2,6 +2,7 @@
     <div class="l-container">
         <div class="l-header__inner">
 
+            {{!-- Logo --}}
             <a href="index.html" rel="home" class="l-header__logo-link">
                 <svg viewBox="0 0 251 92">
                     <use xlink:href="img/logo.svg#logo" class="l-header__logo" />
@@ -9,6 +10,7 @@
             </a>
             {{!-- //Logo --}}
 
+            {{!-- Nav --}}
             <nav class="l-header__nav" role="navigation">
                     <ul class="l-header__nav__list">
                         {{#withSort pages 'data.nav-order'}}
