@@ -296,12 +296,12 @@ $scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
  */
 
 $scally-g-breakpoints: (
-  "palm": (640 / 16) * 1em,
-  "lap": (641 / 16) * 1em,
-  "lap-mid": (768 / 16) * 1em,
-  "lap-large": (901 / 16) * 1em,
-  "desk": (1200 / 16) * 1em,
-  "desk-large": (1366 / 16) * 1em
+  'palm': (640 / 16) * 1em,
+  'lap': (641 / 16) * 1em,
+  'lap-mid': (768 / 16) * 1em,
+  'lap-large': (901 / 16) * 1em,
+  'desk': (1200 / 16) * 1em,
+  'desk-large': (1366 / 16) * 1em
 ) !default;
 
 
@@ -360,15 +360,15 @@ $scally-g-global-breakpoints: (lap) !default;
  */
 
 $scally-g-zindexes: (
-    "dialog-elements": (
-        "close-button": 1
+    'dialog-elements': (
+        'close-button': 1
     ),
-    "dialog": 5,
-    "dialog-underlay": 4,
-    "header": 3,
-    "main": 2,
-    "footer": 1,
-    "underneath": -1
+    'dialog': 5,
+    'dialog-underlay': 4,
+    'header': 3,
+    'main': 2,
+    'footer': 1,
+    'underneath': -1
 ) !default;
 
 
@@ -466,7 +466,7 @@ $scally-base-hr-color: $scally-g-color-text-base !default;
 
 $scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
 
-$scally-base-target-ios-selector: ".ios" !default;
+$scally-base-target-ios-selector: '.ios' !default;
 
 
 
@@ -542,7 +542,7 @@ $scally-grid-item-span-11: 91.666% !default;
 /**
  * For all the grid item span amounts, turn on the ability to apply them at
  * breakpoints via the boolean settings, then define the breakpoints. See:
- * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
+ * **Mixins/Functions -> Apply at breakpoints**, to understand how this works.
  */
 
 // Grid item span 1
@@ -609,7 +609,7 @@ $scally-grid-define-grid-item-span-11-breakpoints: $scally-g-global-breakpoints 
 /**
  * For certain **Helpers** turn on the ability to apply them at breakpoints
  * via boolean settings, then define the breakpoints. See:
- * "Mixins/Functions -> Apply at breakpoints", to understand how this works.
+ * **Mixins/Functions -> Apply at breakpoints**, to understand how this works.
  */
 
 

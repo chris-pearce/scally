@@ -1,0 +1,246 @@
+/* ============================================================================
+   COMPONENTS -> TEST CASE
+   ========================================================================= */
+
+/**
+ * This component encapsulates the styles for each test case and includes
+ * adding styles to any Scally items that need to be visually recognisable.
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Spacing
+$c-test-case-spacing-between-elements: $scally-g-spacing-large;
+
+// Other
+$c-test-case-block-border-width: 5px;
+
+$c-test-case-legend-key-size: 12;
+
+$c-test-case-test-subject-height: 300;
+
+
+/**
+ * The header.
+ */
+
+.c-test-case__header {
+    margin-bottom: rem($c-test-case-spacing-between-elements);
+}
+
+
+/**
+ * The header title.
+ */
+
+.c-test-case__title {
+    font-size: rem(50);
+}
+
+
+/**
+ * Header blocks.
+ */
+
+.c-test-case__header-block {
+    margin-top: rem($scally-g-spacing-small);
+}
+
+
+/**
+ * Inner container, wraps everything except the Header.
+ */
+
+.c-test-case__inner:not(:last-child) {
+    margin-bottom: rem($c-test-case-spacing-between-elements);
+}
+
+
+/**
+ * Block, a generic container.
+ */
+
+.c-test-case__block {
+    background-color: $g-color-light-grey;
+    border-left: $c-test-case-block-border-width solid $g-color-brand;
+    color: $g-color-dark-grey;
+    display: flex;
+    margin-bottom: rem($scally-g-spacing-base);
+    margin-top: rem($scally-g-spacing-base);
+    padding: rem($scally-g-spacing-base);
+}
+
+// Adjacent blocks get a thinner border width
+.c-test-case__counter-slave .c-test-case__block {
+    border-left-width: $c-test-case-block-border-width - 1;
+}
+
+
+/**
+ * Where the test is run, here we add styles to any Scally items that need to
+ * be visually recognisable e.g. `l-container`.
+ */
+
+.c-test-case__test-run {
+    background-color: $g-color-test-case-canvas-background;
+
+    /**
+     * Scally: Container.
+     */
+
+    .l-container {
+        background-color: $g-color-test-case-subject-background;
+        height: $c-test-case-test-subject-height * 1px;
+    }
+
+    // Remove the above styles when the background canvas doesn't need a
+    // background colour
+    &.c-test-case__test-run--no-bg .l-container {
+        background: none;
+        height: auto;
+    }
+
+    /**
+     * Scally: Grid.
+     */
+
+    // Inner grid item including label
+    .l-grid__item > div {
+        background-color: $g-color-test-case-subject-background;
+        font-family: $scally-g-font-family-monospace;
+        font-weight: normal;
+        padding: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    // Grid alignment modifiers
+    .l-grid--align-middle,
+    .l-grid--align-bottom,
+    .l-grid--align-center,
+    .l-grid--align-right {
+        height: $c-test-case-test-subject-height * 1px;
+
+        .l-grid__item > div {
+            height: $c-test-case-test-subject-height / 2 * 1px;
+        }
+    }
+
+    // Nested grids
+    .l-grid .l-grid .l-grid__item > div {
+        background-color: darken($g-color-test-case-subject-background, 7%);
+        height: $c-test-case-test-subject-height / 2 * 1px;
+    }
+
+    /**
+     * Highlight form elements.
+     */
+
+    #{$scally-g-textual-inputs},
+    textarea {
+        border: 1px solid $g-color-test-case-canvas-background;
+    }
+}
+
+/**
+ * Modifier: remove the background colour on the test canvas.
+ */
+
+.c-test-case__test-run--no-bg {
+    background: none;
+}
+
+
+/**
+ * Legend.
+ */
+
+/**
+ * Legend container.
+ */
+
+.c-test-case__legend {
+    display: inline-flex;
+    opacity: 0.6;
+    transition: opacity 0.1s ease-in;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/**
+ * Legend items.
+ */
+
+.c-test-case__legend-item {
+    align-items: center;
+    color: $g-color-dark-grey;
+    display: flex;
+    font-size: rem($scally-g-font-size-small);
+    text-transform: lowercase;
+
+    &:not(:last-child) {
+        margin-right: rem($scally-g-spacing-small);
+    }
+}
+
+/**
+ * Legend keys.
+ */
+
+.c-test-case__legend-key {
+    border-radius: 3px;
+    height: rem($c-test-case-legend-key-size);
+    margin-right: rem(5);
+    width: rem($c-test-case-legend-key-size);
+}
+
+/**
+ * Modifiers: colours for legend keys.
+ */
+
+.c-test-case__legend-key--canvas {
+    background-color: $g-color-test-case-canvas-background;
+}
+
+.c-test-case__legend-key--subject {
+    background-color: $g-color-test-case-subject-background;
+}
+
+
+/**
+ * The counter styles.
+ */
+
+.c-test-case__block::before {
+    color: $g-color-medium-grey;
+    margin-right: rem($scally-g-spacing-small);
+}
+
+/**
+ * Settings the counters.
+ */
+
+// The "selector" counter (the master)
+.c-test-case {
+    counter-reset: master;
+}
+
+.c-test-case__selector::before {
+    content: counter(master);
+    counter-increment: master;
+}
+
+// The "description" counter (the slave)
+.c-test-case__counter-master {
+    counter-reset: slave;
+}
+
+.c-test-case__test-desc::before {
+    content: counter(master) "." counter(slave);
+    counter-increment: slave;
+}

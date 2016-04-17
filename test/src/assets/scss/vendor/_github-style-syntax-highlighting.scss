@@ -1,0 +1,143 @@
+/**
+ * GitHub style syntax highlighting by Vasily Polovnyov (vast@whiteants.net).
+ *
+ * N.B. modified it by adding an attribute selector to the `<code>` element to
+ * keep it encapsulated + changed the padding on this element. Also applied our
+ * four space indentation.
+ */
+
+
+/**
+ * Here we have to set the background of the `<pre>` element using parent
+ * elements as the JS Assemble uses for syntax highlighting does not provide a
+ * selector on `<pre>` element only the child `<code>` element.
+ */
+
+.c-test-case__test-html pre {
+    background-color: $scally-g-color-white;
+    border: 1px solid $g-color-light-grey;
+    display: block;
+    padding: rem($scally-g-spacing-base);
+}
+
+code[class*='language-'] {
+    color: #333;
+
+    .comment,
+    .template_comment,
+    .diff .header,
+    .javadoc {
+        color: #998;
+        font-style: italic;
+    }
+
+    .keyword,
+    .css .rule .keyword,
+    .winutils,
+    .javascript .title,
+    .nginx .title,
+    .subst,
+    .request,
+    .status {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .number,
+    .hexcolor,
+    .ruby .constant {
+        color: #099;
+    }
+
+    .string,
+    .tag .value,
+    .phpdoc,
+    .tex .formula {
+        color: #960f4a;
+    }
+
+    .title,
+    .id,
+    .coffeescript .params,
+    .scss .preprocessor {
+        color: #900;
+        font-weight: bold;
+    }
+
+    .javascript .title,
+    .lisp .title,
+    .clojure .title,
+    .subst {
+        font-weight: normal;
+    }
+
+    .class .title,
+    .haskell .type,
+    .vhdl .literal,
+    .tex .command {
+        color: #458;
+        font-weight: bold;
+    }
+
+    .tag,
+    .tag .title,
+    .rules .property,
+    .django .tag .keyword {
+        color: #000080;
+        font-weight: normal;
+    }
+
+    .attribute,
+    .variable,
+    .lisp .body {
+        color: #008080;
+    }
+
+    .regexp {
+        color: #009926;
+    }
+
+    .class {
+        color: #458;
+        font-weight: bold;
+    }
+
+    .symbol,
+    .ruby .symbol .string,
+    .lisp .keyword,
+    .tex .special,
+    .prompt {
+        color: #990073;
+    }
+
+    .built_in,
+    .lisp .title,
+    .clojure .built_in {
+        color: #0086b3;
+    }
+
+    .preprocessor,
+    .pi,
+    .doctype,
+    .shebang,
+    .cdata {
+        color: #999;
+        font-weight: bold;
+    }
+
+    .deletion {
+        background: #ffdddd;
+    }
+
+    .addition {
+        background: #ddffdd;
+    }
+
+    .diff .change {
+        background: #0086b3;
+    }
+
+    .chunk {
+        color: #aaaaaa;
+    }
+}

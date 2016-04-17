@@ -1,0 +1,29 @@
+<header class="l-header" role="banner">
+    <div class="l-container">
+        <div class="l-header__inner">
+
+            <a href="index.html" rel="home" class="l-header__logo-link">
+                <svg viewBox="0 0 251 92">
+                    <use xlink:href="img/logo.svg#logo" class="l-header__logo" />
+                </svg>
+            </a>
+            {{!-- //Logo --}}
+
+            <nav class="l-header__nav" role="navigation">
+                    <ul class="l-header__nav__list">
+                        {{#withSort pages 'data.nav-order'}}
+                            {{#if data.slug}}
+                                <li class="l-header__nav__item">
+                                    <a href="{{relative ../../page.dest this.dest}}" class="l-header__nav__link {{#is ../../page.dest this.dest}}is-active{{/is}}">
+                                        {{ data.title }}
+                                    </a>
+                                </li>
+                            {{/if}}
+                        {{/withSort}}
+                    </ul>
+            </nav>
+            {{!-- //Nav --}}
+
+        </div>
+    </div>
+</header>

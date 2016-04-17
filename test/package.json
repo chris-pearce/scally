@@ -2,8 +2,30 @@
   "name": "scally-test",
   "version": "0.0.0",
   "description": "Test suite for Scally",
-  "scripts": {
-    "compile-scally-src": "node-sass --output-style expanded -o compile-scally ../src/scally.scss",
-    "compile-scally-settings": "node-sass --output-style expanded -o compile-scally compile-scally/settings.scss"
-  }
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "grunt": "^0.4.5",
+    "grunt-assemble": "^0.4.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-cssnano": "^2.0.1",
+    "grunt-gh-pages": "^1.0.0",
+    "grunt-postcss": "^0.7.2",
+    "grunt-sass": "^1.1.0",
+    "grunt-svgmin": "^3.2.0",
+    "postcss": "^5.0.17",
+    "postcss-scss": "^0.1.5",
+    "stylelint": "^4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "git@github.com:chris-pearce/scally.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chris-pearce/scally/issues"
+  },
+  "license": "Apache-2.0"
 }
