@@ -1,8 +1,5 @@
 # Specific files #
 ###################
-___test.scss
-___test.html
-___test.css
 
 
 # Compiled source #
@@ -13,6 +10,8 @@ ___test.css
 *.exe
 *.o
 *.so
+test/scally-compile
+test/dist
 
 
 # Packages #

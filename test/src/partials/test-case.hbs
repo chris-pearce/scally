@@ -1,0 +1,68 @@
+<section class="c-test-case">
+
+    {{!-- Header --}}
+    <header class="c-test-case__header">
+        <div class="l-container">
+            <h1 class="c-test-case__title"><strong>{{ name }}</strong> tests</h1>
+            <div class="c-test-case__header-block">
+                <a href="{{ docs-url }}" rel="external" class="b-link" style="text-decoration: line-through; pointer-events: none;" title="Still being worked on sorry"><strong>Documentation</strong></a>
+                &nbsp;/&nbsp;
+                <a href="{{ source-code-url }}" rel="external" class="b-link"><strong>Source code</strong></a>
+            </div>
+            <div class="c-test-case__header-block">All associated settings ready for testing: <strong class="c-file-path">test/src/assets/scss/_settings.scss → {{ settings-location }}</strong></div>
+        </div>
+    </header>
+    {{!-- //Header --}}
+
+    {{!-- Loop through each test --}}
+    {{#each this.tests}}
+        <div class="c-test-case__inner">
+
+            {{!-- The selector(s) --}}
+            <div class="c-test-case__counter-master  l-container">
+                <div class="c-test-case__selector c-test-case__block">
+                    <h2>
+                        {{#if multiple-selectors}}
+                            {{{ selector }}}
+                        {{else}}
+                            <code class="b-code">{{ selector }}</code>
+                        {{/if}}
+                    </h2>
+                </div>
+            </div>
+            {{!-- //The selector(s) --}}
+
+            {{#each this.test}}
+
+                {{!-- The description --}}
+                <div class="c-test-case__counter-slave  l-container">
+                    <div class="c-test-case__test-desc c-test-case__block">
+                        <div>{{{ description }}}</div>
+                    </div>
+                </div>
+                {{!-- //The description --}}
+
+                {{!-- Run the test --}}
+                <div class="c-test-case__test-run{{#if remove-test-canvas-bg}} c-test-case__test-run--no-bg{{/if}}">
+                    {{#if remove-test-canvas-bg}}
+                        <div class="l-container">
+                            {{{ run }}}
+                        </div>
+                    {{else}}
+                        {{{ run }}}
+                    {{/if}}
+                </div>
+                {{!-- //Run the test --}}
+
+                {{!-- Test legend --}}
+                {{#unless remove-legend}}
+                    {{> test-case-legend}}
+                {{/unless}}
+                {{!-- //Test legend --}}
+
+            {{/each}}
+        </div>
+    {{/each}}
+    {{!-- //Loop through each test --}}
+
+</section>

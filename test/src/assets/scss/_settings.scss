@@ -1,0 +1,91 @@
+/* ============================================================================
+   SETTINGS
+   ========================================================================= */
+
+/**
+ * All global settings (Sass variables) for the Scally Test Suite and any
+ * Scally library setting overrides.
+ *
+ * Scally Test Suite settings can use any of the Scally library settings,
+ * like so:
+ *
+   $g-color-code-block-background: $scally-g-color-white;
+ *
+ * ---------------------------------------------------------------------------
+ *
+ * All settings start with a global namespace: `$g` followed by one hyphen,
+ * like this:
+ *
+   $g-;
+ *
+ * The "g" stands for "global".
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * CONTENTS:
+ *
+ * 1. Colours
+ * 2. Scally overrides
+ */
+
+
+
+
+/* 1. Colours
+   ========================================================================= */
+
+// Brand
+$g-color-brand: #333;
+
+// Greys
+$g-color-light-grey: #eee;
+
+$g-color-medium-grey: #999;
+
+$g-color-dark-grey: #666;
+
+// Others
+$g-color-dark-orange: darkorange;
+
+// Demo colours for test cases
+$g-color-test-case-canvas-background: crimson;
+
+$g-color-test-case-subject-background: lightblue;
+
+
+
+
+/* 3. Scally overrides
+   ========================================================================= */
+
+/**
+ * Colours (Global).
+ */
+
+$scally-g-color-text-base: $g-color-brand;
+
+$scally-g-color-link: #185bd3;
+
+$scally-g-color-link-hover: lighten($scally-g-color-link, 10%);
+
+
+/**
+ * Typography (Global).
+ */
+
+//$scally-g-font-family-base: 'Akkurat Regular', sans-serif;
+
+
+/**
+ * Base (Local).
+ */
+
+
+/**
+ * Grid (Local).
+ */
+
+
+/**
+ * Container (Local).
+ */

@@ -1,0 +1,37 @@
+{
+    "name": "Container",
+    "settings-location": "Container (Local)",
+    "docs-url": "#",
+    "source-code-url": "https://github.com/chris-pearce/scally/blob/master/src/_container.scss",
+    "tests": [{
+        "selector": ".l-container",
+        "test": [{
+            "description": "A percentage width until its <code class='b-code'>max-width</code> or <code class='b-code'>min-width</code> is reached, center aligned by default",
+            "run": "<div class=l-container></div>"
+        }]
+        },{
+        "selector": ".l-container--tiny",
+        "test": [{
+            "description": "The narrowest version",
+            "run": "<div class='l-container l-container--tiny'></div>"
+        }]
+        },{
+        "selector": ".l-container--small",
+        "test": [{
+            "description": "A narrower version",
+            "run": "<div class='l-container l-container--small'></div>"
+        }]
+        },{
+        "selector": ".l-container--large",
+        "test": [{
+            "description": "A wider version",
+            "run": "<div class='l-container l-container--large'></div>"
+        }]
+        },{
+        "selector": ".l-container--huge",
+        "test": [{
+            "description": "The widest version",
+            "run": "<div class='l-container l-container--huge'></div>"
+        }]
+    }]
+ }
