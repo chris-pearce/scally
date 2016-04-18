@@ -148,14 +148,23 @@
    ========================================================================= */
 
 /**
- * - Correct `block` display not defined for `<details>` or `<summary>` in
- *   IE 10/11 and Firefox.
- * - Correct `block` display not defined for `<main>` in IE 11.
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
  */
 
-details,
-main,
-summary {
+article,
+aside,
+details, /* 1 */
+figcaption,
+figure,
+footer,
+header,
+main, /* 2 */
+menu,
+nav,
+section,
+summary { /* 1 */
     display: block;
 }
 
@@ -196,6 +205,18 @@ pre {
 
 /* 3. Inline elements
    ========================================================================= */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+
 
 /**
  * 1. Remove the grey background colour from active links in IE 10.
@@ -298,6 +319,21 @@ samp {
 
 /* 4. Embedded, image and multimedia, elements
    ========================================================================= */
+
+/**
+ * Remove the gap between media elements and the bottom of their containers.
+ * See: https://github.com/h5bp/html5-boilerplate/issues/440.
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
 
 /**
  * Remove the border on images inside links in IE 10-.
@@ -408,11 +444,31 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+@if !$scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
+    button:-moz-focusring,
+    [type="button"]:-moz-focusring,
+    [type="reset"]:-moz-focusring,
+    [type="submit"]:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+}
+
+
+/**
+ * Chrome and Firefox set a `min-width: min-content;` on `<fieldset>`s, so we
+ * reset that to ensure it behaves more like a standard block element, see:
+ * http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content.
+ */
+
+fieldset {
+    min-width: 0;
+}
+
+// Firefox only
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
 }
 
 
@@ -422,7 +478,6 @@ button:-moz-focusring,
  */
 
 legend {
-    box-sizing: border-box; /* 1 */
     color: inherit; /* 2 */
     display: table; /* 1 */
     max-width: 100%; /* 1 */
@@ -530,8 +585,8 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Optional rules for iOS devices.
  *
- * We isolate these rules behind a `.ios` class—or whatever name you apply to
- * the `$scally-g-target-ios-selector` setting—that is appended to the
+ * We isolate these rules behind a `.target-ios` class—or whatever name you
+ * apply to the `$scally-g-target-ios-selector` setting—that is appended to the
  * `<html>` element via user-agent sniffing, for example:
  *
     <html class="target-ios">
@@ -543,6 +598,18 @@ input[type="search"]::-webkit-search-decoration {
 /* stylelint-disable */
 @if $scally-normalise-reset-apply-rules-for-ios-devices {
     #{$scally-g-target-ios-selector} {
+
+        /**
+         * Fixes "clickability" issue (and more generally, the firing of events
+         * such as focus as well) for traditionally non-focusable elements with
+         * `[role="button"]`, see:
+         * https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+         */
+
+        [role="button"] {
+            cursor: pointer;
+        }
+
 
         /**
          * Remove the top inner shadow from iOS inputs.
@@ -558,20 +625,11 @@ input[type="search"]::-webkit-search-decoration {
          * Remove rounded corners that iOS applies to all `<input>` buttons.
          */
 
-        input[type="submit"],
-        input[type="button"],
-        input[type="image"],
-        input[type="reset"] {
+        [type="submit"],
+        [type="button"],
+        [type="image"],
+        [type="reset"] {
             border-radius: 0;
-        }
-
-
-        /**
-         * Remove rounded corners from iOS search inputs.
-         */
-
-        input[type="search"] {
-            appearance: none;
         }
     }
 }
@@ -599,9 +657,9 @@ input[type="search"]::-webkit-search-decoration {
 
 
 /**
- * Normalise `:focus` styles for all browsers with the option to apply Webkit
- * and Blink proprietary focus ring (style of `auto` hides it, when using
- * mouse or touch).
+ * Optional way to normalise `:focus` styles for all browsers with the option
+ * to apply Webkit and Blink proprietary focus ring (style of `auto` hides it,
+ * when using mouse or touch).
  */
 
 @if $scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
