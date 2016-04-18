@@ -1,17 +1,48 @@
-# Scally test suite
+# Scally Test Suite
 
-## Install
+A place to test everything in Scally. See:
+<http://scally.github.io/scally/test>.
 
-Crack open your Terminal and…
+Any updates to the Scally library requires a test here :ok_hand:.
 
-1. `git clone git@github.com:chris-pearce/scally.git`.
-2. `cd` *into where you `git clone`d*.
-3. `cd test`.
-4. See [NPM scripts](#npm-scripts).
+Built with:
 
-### NPM scripts
+- [Scally](https://github.com/chris-pearce/scally/labels) *(of course)*
+- [Assemble](http://assemble.io/)
+- [Grunt](http://gruntjs.com/)
+- [GitHub Pages](https://pages.github.com/)
+- *And* :heart:
 
-To run these scripts crack open your Terminal, `cd test`, and…
 
-1. `npm run compile-scally-src` will compile all of the Scally library.
-2. `npm run compile-scally-settings` will compile only the Scally **Settings**.
+## Installation
+
+1. Fork the [Scally GitHub repo](https://github.com/chris-pearce/scally/labels)
+   then create a local clone of your fork using `git clone …`.
+2. `cd [to/where/you/created/a/local/clone] test`.
+3. `npm install`
+
+
+## Grunt Tasks
+
+- `grunt`
+
+    *Runs the default tasks, performs a watch on certain tasks, and makes the site available on <http://localhost:9000>.*
+- `grunt build`
+
+    *Runs the build tasks, final destination is the `dist/test` folder.
+    :small_red_triangle:*
+- `grunt deploy`
+
+    *Runs the build tasks then pushes the `dist/` folder to the remote
+    `gh-pages` branch.*
+- `grunt testScally`
+
+    *Runs the tasks to compile the Scally library for testing purposes. If
+    you're working on the Scally library then you can use
+    `grunt testScallyWatch`.*
+
+:small_red_triangle:
+We're using `dist/test` so we can have both the **Scally Test Suite** and the
+**Scally Docs** available at this GitHub Pages URL:
+<http://scally.github.io/>. **Scally Docs** sits in the root of the `gh-pages`
+branch, the **Scally Test Suite** sits in the `test` sub-folder, available at: <http://scally.github.io/scally/test>.

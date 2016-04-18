@@ -1,0 +1,86 @@
+/* ============================================================================
+   LAYOUT -> TEMPLATE -> HEADER
+   ========================================================================= */
+
+/**
+ * The site header.
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Colours
+$l-header-background-color: $scally-g-color-white;
+
+$l-header-nav-link-color: $g-color-brand;
+
+$l-header-nav-link-hover-color: darken($l-header-nav-link-color, 26%);
+
+
+/**
+ * The containers.
+ */
+
+.l-header {
+    background-color: $l-header-background-color;
+    border-bottom: 1px solid darken($g-color-light-grey, 10%);
+    box-shadow: 0 2px 3px $g-color-light-grey;
+    margin-bottom: rem($scally-g-spacing-large);
+}
+
+// Space logo and nav at either ends of each other
+.l-header__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/**
+ * The SVG logo and the wrapping link.
+ */
+
+.l-header__logo-link {
+    border-bottom: 0;
+    padding-bottom: rem($scally-g-spacing-small);
+    padding-top: rem($scally-g-spacing-small);
+    width: rem(100);
+}
+
+.l-header__logo {
+    color: $g-color-brand;
+}
+
+
+/**
+ * Make all the nav elements `display: flex` so that the links can be the
+ * height of the container.
+ */
+
+.l-header__nav,
+.l-header__nav__list,
+.l-header__nav__item,
+.l-header__nav__link {
+    display: flex;
+}
+
+
+/**
+ * Nav links.
+ */
+
+.l-header__nav__link {
+    align-items: center;
+    color: $l-header-nav-link-color;
+    padding-left: rem($scally-g-spacing-base);
+    padding-right: rem($scally-g-spacing-base);
+    text-decoration: none;
+    transition: all 0.1s ease-in;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+        color: $l-header-nav-link-hover-color;
+    }
+}

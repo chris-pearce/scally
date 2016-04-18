@@ -2,7 +2,6 @@
 ###################
 
 
-
 # Compiled source #
 ###################
 test/compile-scally/*.css
@@ -12,6 +11,8 @@ test/compile-scally/*.css
 *.exe
 *.o
 *.so
+test/scally-compile
+test/dist
 
 
 # Packages #
