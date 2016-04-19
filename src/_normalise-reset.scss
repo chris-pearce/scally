@@ -667,10 +667,6 @@ input[type="search"]::-webkit-search-decoration {
         outline: $scally-normalise-reset-focus-outline-color
                  $scally-normalise-reset-focus-outline-style
                  $scally-normalise-reset-focus-outline-width;
-
-        @if $scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-is-applied-for-all-browsers {
-            outline: -webkit-focus-ring-color auto 5px;
-        }
     }
 }
 
