@@ -1,0 +1,720 @@
+/* ============================================================================
+   NORMALISE AND RESET
+   ========================================================================= */
+
+
+/**
+ * Let's get all browsers rendering all elements more consistently and in line
+ * with modern standards, and let's nuke certain user-agent styles so that
+ * everything is on an even playing field.
+ *
+ * Up to date with normalize.css v4.1.1.
+ *
+ * @credit
+ * https://necolas.github.io/normalize.css/
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * CONTENTS:
+ *
+ * 1. Root element and global resets
+ * 2. Block-level elements
+ * 3. Inline elements
+ * 4. Embedded, image, and multimedia, elements
+ * 5. Form elements
+ * 6. Interactions
+ */
+
+
+
+
+/* 1. Root element and global resets
+   ========================================================================= */
+
+/**
+ * 1. Reset the `box-sizing` property to the more friendly `border-box` value.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+
+@if $scally-normalise-reset-apply-friendly-box-sizing {
+    html {
+        box-sizing: border-box; /* 1 */
+        -ms-text-size-adjust: 100%; /* 2 */
+        -webkit-text-size-adjust: 100%; /* 2 */
+    }
+
+    /* 1 */
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+}
+
+
+/**
+ * Remove all margins, paddings, and borders.
+ *
+ * N.B. do not include the following elements:
+ * - `<input>`
+ * - `<button>`
+ * - `<textarea>`
+ *
+ * The complete list of HTML5 elements:
+ * https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+ */
+
+@if $scally-normalise-reset-apply-global-reset-of-margins-paddings-and-borders {
+    a,
+    abbr,
+    address,
+    article,
+    aside,
+    b,
+    blockquote,
+    body,
+    caption,
+    cite,
+    code,
+    dd,
+    del,
+    details,
+    dfn,
+    dialog,
+    div,
+    dl,
+    dt,
+    em,
+    fieldset,
+    figcaption,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    html,
+    i,
+    iframe,
+    img,
+    ins,
+    kbd,
+    label,
+    legend,
+    li,
+    main,
+    menu,
+    nav,
+    object,
+    ol,
+    p,
+    pre,
+    q,
+    s,
+    samp,
+    section,
+    small,
+    span,
+    strong,
+    sub,
+    summary,
+    sup,
+    table,
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    time,
+    tr,
+    u,
+    ul,
+    var {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+}
+
+
+
+
+/* 2. Block-level elements
+   ========================================================================= */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+
+article,
+aside,
+details, /* 1 */
+figcaption,
+figure,
+footer,
+header,
+main, /* 2 */
+menu,
+nav,
+section,
+summary { /* 1 */
+    display: block;
+}
+
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+
+template,
+[hidden], { /* 1 */
+    display: none;
+}
+
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+    overflow: auto;
+}
+
+
+
+
+/* 3. Inline elements
+   ========================================================================= */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+
+
+/**
+ * 1. Remove the grey background colour from active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+
+/**
+ * Prevent `<sub>` and `<sup>` affecting line height in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+
+
+
+/* 4. Embedded, image and multimedia, elements
+   ========================================================================= */
+
+/**
+ * Remove the gap between media elements and the bottom of their containers.
+ * See: https://github.com/h5bp/html5-boilerplate/issues/440.
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+    border-style: none;
+}
+
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+
+
+/* 5. Form elements
+   ========================================================================= */
+
+/**
+ * 1. Change font properties to `inherit` in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+select,
+textarea {
+    font: inherit; /* 1 */
+    margin: 0; /* 2 */
+}
+
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+
+optgroup {
+    font-weight: bold;
+}
+
+
+/**
+ * Show the overflow in Edge.
+ * 1. Show the overflow in IE.
+ */
+
+button,
+input { /* 1 */
+    overflow: visible;
+}
+
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+    text-transform: none;
+}
+
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `<audio>` and `<video>`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+}
+
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+@if !$scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
+    button:-moz-focusring,
+    [type="button"]:-moz-focusring,
+    [type="reset"]:-moz-focusring,
+    [type="submit"]:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+}
+
+
+/**
+ * Chrome and Firefox set a `min-width: min-content;` on `<fieldset>`s, so we
+ * reset that to ensure it behaves more like a standard block element, see:
+ * http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content.
+ */
+
+fieldset {
+    min-width: 0;
+}
+
+// Firefox only
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the colour inheritance from `<fieldset>` elements in IE.
+ */
+
+legend {
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    white-space: normal; /* 1 */
+}
+
+
+/**
+ * Indicate that `<label>` will shift focus to the associated `<input>`
+ * element.
+ */
+
+label {
+    cursor: pointer;
+}
+
+
+/**
+ * Remove default vertical scrollbar in IE 10/11.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+}
+
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/**
+ * Remove the clear field button (an "X" icon) and the reveal password button
+ * (an "eye" icon) that is generated by IE 10+ for textual inputs.
+ *
+ * @credit
+ * http://stackoverflow.com/a/21869433/1116204
+ */
+
+@if $scally-normalise-reset-apply-removal-of-clear-field-and-reveal-password-icon-for-ie10-textual-inputs {
+    ::-ms-clear,
+    ::-ms-reveal {
+        display: none;
+    }
+}
+
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+
+/**
+ * Optional rules for iOS devices.
+ *
+ * We isolate these rules behind a `.target-ios` class—or whatever name you
+ * apply to the `$scally-g-target-ios-selector` setting—that is appended to the
+ * `<html>` element via user-agent sniffing, for example:
+ *
+    <html class="target-ios">
+ *
+ * N.B. this functionality is not part of the Scally library so you will need
+ * to add it yourself to your project.
+ */
+
+/* stylelint-disable */
+@if $scally-normalise-reset-apply-rules-for-ios-devices {
+    #{$scally-g-target-ios-selector} {
+
+        /**
+         * Fixes "clickability" issue (and more generally, the firing of events
+         * such as focus as well) for traditionally non-focusable elements with
+         * `[role="button"]`, see:
+         * https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+         */
+
+        [role="button"] {
+            cursor: pointer;
+        }
+
+
+        /**
+         * Remove the top inner shadow from iOS inputs.
+         */
+
+        #{$scally-g-textual-inputs},
+        textarea {
+            -webkit-appearance: caret;
+        }
+
+
+        /**
+         * Remove rounded corners that iOS applies to all `<input>` buttons.
+         */
+
+        [type="submit"],
+        [type="button"],
+        [type="image"],
+        [type="reset"] {
+            border-radius: 0;
+        }
+    }
+}
+/* stylelint-enable */
+
+
+
+
+/* 6. Interactions
+   ========================================================================= */
+
+/**
+ * Suppress the focus outline on links that cannot be accessed via a keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ *
+ * N.B. it is okay to use `!important` here as we're doing it preemptively
+ * i.e. you know you will always want the rule it's applied too to take
+ * precedence.
+ */
+
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
+
+/**
+ * Optional way to normalise `:focus` styles for all browsers with the option
+ * to apply Webkit and Blink proprietary focus ring (style of `auto` hides it,
+ * when using mouse or touch).
+ */
+
+@if $scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
+    :focus {
+        outline: $scally-normalise-reset-focus-outline-color
+                 $scally-normalise-reset-focus-outline-style
+                 $scally-normalise-reset-focus-outline-width;
+    }
+}
+
+
+/**
+ * Don't use outline on Mozilla browsers, if it's not needed.
+ */
+
+:focus:not(:-moz-focusring) {
+    outline: none;
+}
+
+
+/**
+ * Remove `:focus` styles for `coarse` input mechanisms, and on the `:hover`
+ * pseudo class.
+ */
+
+@media (pointer: coarse) and (hover: none) {
+    :focus {
+        outline: none;
+    }
+}
+
+
+/**
+ * Avoid 300ms click delay on touch devices that support the `touch-action` CSS
+ * property.
+ *
+ * In particular, unlike most other browsers, IE 11+Edge on Windows 10 on touch
+ * devices and IE Mobile 10-11 DON'T remove the click delay when
+ * `<meta name="viewport" content="width=device-width">` is present. However,
+ * they DO support removing the click delay via `touch-action: manipulation`.
+ *
+ * See:
+ * - http://caniuse.com/#feat=css-touch-action
+ * - http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+ * - https://adactio.com/journal/10019
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex="-1"]) {
+    touch-action: manipulation;
+}

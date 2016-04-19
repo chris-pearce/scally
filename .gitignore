@@ -4,6 +4,7 @@
 
 # Compiled source #
 ###################
+test/compile-scally/*.css
 *.com
 *.class
 *.dll

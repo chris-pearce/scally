@@ -3,6 +3,12 @@
 ## 3.0.0 (?)
 
 - **Non-backwards compatible**<br>
+  Revamped Scally's **normalize.css** and **Reset**, e.g.:
+    - Combined the two into the 1 file: `_normalise-reset.scss`.
+    - Added some new rules.
+    - Updated to the latest version of **normalize.css** but only used the
+      parts that make the most sense for Scally.
+- **Non-backwards compatible**<br>
   Revamped all of Scally settings, e.g.:
     - Combined all of Scally's settings into the one partial: `_settings.scss`.
       Prior to `v3.0.0` **Local** settings existed in there relevant partial,

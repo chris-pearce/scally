@@ -44,10 +44,12 @@
  * 5.  Z-Index system (Global)
  * 6.  HiDPI units (Global)
  * 7.  HTML textual `input`s (Global)
- * 8.  Base (Local)
- * 9.  Container (Local)
- * 10. Grid (Local)
- * 11. Helpers (Local)
+ * 8.  Selectors (Global)
+ * 9.  Normalise and Reset (Local)
+ * 10. Base (Local)
+ * 11. Container (Local)
+ * 12. Grid (Local)
+ * 13. Helpers (Local)
  */
 
 
@@ -411,7 +413,55 @@ $scally-g-textual-inputs: 'input[type="text"],
 
 
 
-/* 8. Base (Local)
+/* 8. Selectors (Global)
+   ========================================================================= */
+
+/**
+ * Selector for targeting iOS devices.
+ */
+
+$scally-g-target-ios-selector: '.target-ios' !default;
+
+
+
+
+/* 9. Normalise and Reset (Local)
+   ========================================================================= */
+
+/**
+ * Booleans.
+ */
+
+// Root element and global resets
+$scally-normalise-reset-apply-friendly-box-sizing: true !default;
+
+$scally-normalise-reset-apply-global-reset-of-margins-paddings-and-borders: true !default;
+
+// Form elements
+$scally-normalise-reset-apply-removal-of-clear-field-and-reveal-password-icon-for-ie10-textual-inputs: true !default;
+
+$scally-normalise-reset-apply-rules-for-ios-devices: true !default;
+
+// Interactions
+$scally-normalise-reset-apply-focus-outline-style-for-all-browsers: false !default;
+
+$scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-is-applied-for-all-browsers: false !default;
+
+
+/**
+ * `:focus` outline styles.
+ */
+
+$scally-normalise-reset-focus-outline-color: currentColor !default;
+
+$scally-normalise-reset-focus-outline-style: dotted !default;
+
+$scally-normalise-reset-focus-outline-width: thin !default;
+
+
+
+
+/* 10. Base (Local)
    ========================================================================= */
 
 /**
@@ -471,7 +521,7 @@ $scally-base-target-ios-selector: '.ios' !default;
 
 
 
-/* 9. Container (Local)
+/* 11. Container (Local)
    ========================================================================= */
 
 /**
@@ -509,7 +559,7 @@ $scally-container-gutter: $scally-g-spacing-x-large !default;
 
 
 
-/* 10. Grid (Local)
+/* 12. Grid (Local)
    ========================================================================= */
 
 /**
@@ -603,7 +653,7 @@ $scally-grid-define-grid-item-span-11-breakpoints: $scally-g-global-breakpoints 
 
 
 
-/* 11. Helpers (Local)
+/* 13. Helpers (Local)
    ========================================================================= */
 
 /**
