@@ -447,7 +447,7 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
-@if !$scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
+@if not($scally-normalise-reset-apply-focus-outline-style-for-all-browsers) {
     button:-moz-focusring,
     [type="button"]:-moz-focusring,
     [type="reset"]:-moz-focusring,
