@@ -35,6 +35,11 @@
  * Testing the "Settings" part of Scally.
  */
 
+
+/**
+ * Color.
+ */
+
 .test-settings__color {
     border: 1px dashed;
     height: rem(100);
@@ -60,6 +65,11 @@
 .test-settings__color--link-hover {
     background-color: $scally-g-color-link-hover;
 }
+
+
+/**
+ * Typography.
+ */
 
 .test-settings__typography-font-size {
     font-size: rem($scally-g-font-size);
@@ -151,4 +161,22 @@
 
 .test-settings__typography-font-weight-black {
     font-weight: $scally-g-font-weight-black;
+}
+
+
+/**
+ * Spacing.
+ */
+
+.test-settings__spacing {
+    background-color: $g-color-test-case-subject-background;
+    height: rem(60);
+}
+
+.test-settings__spacing--base {
+    margin-bottom: rem($scally-g-spacing-base);
+}
+
+.test-settings__spacing--small {
+    margin-bottom: rem($scally-g-spacing-small);
 }

@@ -11,7 +11,7 @@
                 "description": "White colour (<code class='b-code'>#fff</code>).",
                 "run": "<div class='test-settings__color test-settings__color--white'></div>",
                 "remove-legend": true,
-                "remove-test-canvas-bg": false
+                "remove-test-canvas-bg": true
             }]
         },
         {
@@ -246,6 +246,24 @@
                 "run": "<div class='test-settings__typography-font-weight-black'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
                 "remove-legend": true,
                 "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-spacing-base",
+            "test": [{
+                "description": "Spacing base.",
+                "run": "<div class='test-settings__spacing test-settings__spacing--base'></div><div class='test-settings__spacing'></div>",
+                "remove-legend": false,
+                "remove-test-canvas-bg": false
+            }]
+        },
+        {
+            "selector": "$scally-g-spacing-small",
+            "test": [{
+                "description": "Spacing small.",
+                "run": "<div class='test-settings__spacing test-settings__spacing--small'></div><div class='test-settings__spacing'></div>",
+                "remove-legend": false,
+                "remove-test-canvas-bg": false
             }]
         }
     ]
