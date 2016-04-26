@@ -1,8 +1,8 @@
 {
     "name": "Container",
-    "settings-location": "Container (Local)",
+    "intro": false,
     "docs-url": "#",
-    "source-code-url": "https://github.com/chris-pearce/scally/blob/master/src/_container.scss",
+    "source-code-url": "_container.scss",
     "tests": [{
         "selector": ".l-container",
         "test": [{

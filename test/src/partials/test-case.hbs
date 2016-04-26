@@ -7,9 +7,11 @@
             <div class="c-test-case__header-block">
                 <a href="{{ docs-url }}" rel="external" class="b-link" style="text-decoration: line-through; pointer-events: none;" title="Still being worked on sorry"><strong>Documentation</strong></a>
                 &nbsp;/&nbsp;
-                <a href="{{ source-code-url }}" rel="external" class="b-link"><strong>Source code</strong></a>
+                <a href="https://github.com/chris-pearce/scally/blob/master/src/{{ source-code-url }}" rel="external" class="b-link"><strong>Source code</strong></a>
             </div>
-            <div class="c-test-case__header-block">All associated settings ready for testing: <strong class="c-file-path">test/src/assets/scss/_settings.scss → {{ settings-location }}</strong></div>
+            {{#if intro}}
+                <div class="c-test-case__header-block">{{{ intro-text }}}</div>
+            {{/if}}
         </div>
     </header>
     {{!-- //Header --}}

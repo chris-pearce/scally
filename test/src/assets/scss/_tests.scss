@@ -1,0 +1,154 @@
+/* ============================================================================
+   TESTS
+   ========================================================================= */
+
+/**
+ * Any CSS related to testing certain parts of Scally.
+ *
+ * All classes start with a `test` namespace followed by one hyphen:
+ *
+    .test-
+ *
+ * Followed by what part of Scally we're testing and ending with a double
+ * underscore. So for Scally's "Settings":
+ *
+    .test-settings__
+ *
+ * After the double underscore comes what it is we're testing, so for one of
+ * Scally's colour settings:
+ *
+    .test-settings__color
+    .test-settings__color--white
+ *
+ * CONTENTS:
+ *
+ * 1. Settings
+ */
+
+
+
+
+/* 1. Settings
+   ========================================================================= */
+
+/**
+ * Testing the "Settings" part of Scally.
+ */
+
+.test-settings__color {
+    border: 1px dashed;
+    height: rem(100);
+    width: rem(100);
+}
+
+.test-settings__color--white {
+    background-color: $scally-g-color-white;
+}
+
+.test-settings__color--black {
+    background-color: $scally-g-color-black;
+}
+
+.test-settings__color--text-base {
+    background-color: $scally-g-color-text-base;
+}
+
+.test-settings__color--link {
+    background-color: $scally-g-color-link;
+}
+
+.test-settings__color--link-hover {
+    background-color: $scally-g-color-link-hover;
+}
+
+.test-settings__typography-font-size {
+    font-size: rem($scally-g-font-size);
+}
+
+.test-settings__typography-font-size-small {
+    font-size: rem($scally-g-font-size-small);
+}
+
+.test-settings__typography-font-size-x-small {
+    font-size: rem($scally-g-font-size-x-small);
+}
+
+.test-settings__typography-font-size-large {
+    font-size: rem($scally-g-font-size-large);
+}
+
+.test-settings__typography-font-size-x-large {
+    font-size: rem($scally-g-font-size-x-large);
+}
+
+.test-settings__typography-font-size-2x-large {
+    font-size: rem($scally-g-font-size-2x-large);
+}
+
+.test-settings__typography-font-size-3x-large {
+    font-size: rem($scally-g-font-size-3x-large);
+}
+
+.test-settings__typography-font-size-4x-large {
+    font-size: rem($scally-g-font-size-4x-large);
+}
+
+.test-settings__typography-font-size-5x-large {
+    font-size: rem($scally-g-font-size-5x-large);
+}
+
+.test-settings__typography-line-height-ratio {
+    line-height: $scally-g-line-height-ratio;
+}
+
+.test-settings__typography-font-family-base {
+    font-family: $scally-g-font-family-base;
+}
+
+.test-settings__typography-font-family-headings {
+    font-family: $scally-g-font-family-headings;
+}
+
+.test-settings__typography-font-family-monospace {
+    font-family: $scally-g-font-family-monospace;
+}
+
+.test-settings__typography-font-weight-normal {
+    font-weight: $scally-g-font-weight-normal;
+}
+
+.test-settings__typography-font-weight-thin {
+    font-weight: $scally-g-font-weight-thin;
+}
+
+.test-settings__typography-font-weight-extra-light {
+    font-weight: $scally-g-font-weight-extra-light;
+}
+
+.test-settings__typography-font-weight-light {
+    font-weight: $scally-g-font-weight-light;
+}
+
+.test-settings__typography-font-weight-medium {
+    font-weight: $scally-g-font-weight-medium;
+}
+
+.test-settings__typography-font-weight-normal {
+    font-weight: $scally-g-font-weight-normal;
+}
+
+.test-settings__typography-font-weight-semi-bold {
+    font-weight: $scally-g-font-weight-semi-bold;
+}
+
+.test-settings__typography-font-weight-bold {
+    font-weight: $scally-g-font-weight-bold;
+}
+
+.test-settings__typography-font-weight-extra-bold {
+    font-weight: $scally-g-font-weight-extra-bold;
+}
+
+.test-settings__typography-font-weight-black {
+    font-weight: $scally-g-font-weight-black;
+}

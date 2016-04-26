@@ -1,8 +1,8 @@
 {
     "name": "Grid",
-    "settings-location": "Grid (Local)",
+    "intro": false,
     "docs-url": "#",
-    "source-code-url": "https://github.com/chris-pearce/scally/blob/master/src/_grid.scss",
+    "source-code-url": "_grid.scss",
     "tests": [{
         "selector": ".l-grid__item",
         "test": [{

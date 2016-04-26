@@ -1,8 +1,8 @@
 {
     "name": "Normalise & Reset",
-    "settings-location": "Normalise & Reset (Local)",
+    "intro": false,
     "docs-url": "#",
-    "source-code-url": "https://github.com/chris-pearce/scally/blob/master/src/_normalise-reset.scss",
+    "source-code-url": "_normalise-reset.scss",
     "tests": [{
         "selector": "a",
         "test": [{

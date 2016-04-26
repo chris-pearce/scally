@@ -13,7 +13,7 @@
  *
  * All settings start with a `scally` namespace followed by one hyphen:
  *
-   $scally-
+    $scally-
  *
  * This namespace prevents your project settings and Scally's settings from
  * clashing and allows you to easily see what is coming from Scally and what
@@ -24,14 +24,14 @@
  *
  * **Global** settings include a letter `g` to easily identify them:
  *
-   $scally-g-
+    $scally-g-
  *
  * **Local** settings include the name of the relevant partial they belong to.
  * For example, settings for the `_base.scss` and `_grid.scss` partials look
  * like this:
  *
-   $scally-base-
-   $scally-grid-
+    $scally-base-
+    $scally-grid-
  *
  * ----------------------------------------------------------------------------
  *
@@ -68,7 +68,7 @@ $scally-g-color-black: #000 !default;
 
 
 /**
- * Global text colour.
+ * Base text colour.
  */
 
 $scally-g-color-text-base: #444 !default;
@@ -95,14 +95,14 @@ $scally-g-color-link-hover: #ff0000 !default;
 $scally-g-font-size: 16 !default;
 
 // Decrease
-$scally-g-font-size-small: $scally-g-font-size - 2 !default;
+$scally-g-font-size-small: floor($scally-g-font-size - 2) !default;
 
-$scally-g-font-size-x-small: $scally-g-font-size - 3 !default;
+$scally-g-font-size-x-small: floor($scally-g-font-size - 3) !default;
 
-$scally-g-font-size-2x-small: $scally-g-font-size - 4 !default;
+$scally-g-font-size-2x-small: floor($scally-g-font-size - 4) !default;
 
 // Increase
-$scally-g-font-size-large: $scally-g-font-size + 2 !default;
+$scally-g-font-size-large: ceil($scally-g-font-size + 2) !default;
 
 $scally-g-font-size-x-large: ceil($scally-g-font-size * 1.5) !default;
 
