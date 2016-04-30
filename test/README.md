@@ -1,26 +1,13 @@
-# Scally Test Suite
+# Scally Tests
 
-A place to test everything in Scally. See:
-<http://scally.github.io/scally/test>.
-
-Any updates to the Scally library requires a test here :ok_hand:.
-
-Built with:
-
-- [Scally](https://github.com/chris-pearce/scally/labels) *(of course)*
-- [Assemble](http://assemble.io/)
-- [Grunt](http://gruntjs.com/)
-- [GitHub Pages](https://pages.github.com/)
-- *And* :heart:
-
+<http://scally.github.io/scally/test>
 
 ## Installation
 
-1. Fork the [Scally GitHub repo](https://github.com/chris-pearce/scally/labels)
-   then create a local clone of your fork using `git clone …`.
+1. Fork the [Scally GitHub repo](https://github.com/chris-pearce/scally) then
+   create a local clone of your fork using `git clone …`.
 2. `cd [to/where/you/created/a/local/clone] test`.
 3. `npm install`
-
 
 ## Grunt Tasks
 

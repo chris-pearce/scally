@@ -1,70 +1,69 @@
-<section class="c-test-case">
+<article class="c-test-case">
 
-    {{!-- Header --}}
-    <header class="c-test-case__header">
-        <div class="l-container">
-            <h1 class="c-test-case__title"><strong>{{ name }}</strong> tests</h1>
-            <div class="c-test-case__header-block">
-                <a href="{{ docs-url }}" rel="external" class="b-link" style="text-decoration: line-through; pointer-events: none;" title="Still being worked on sorry"><strong>Documentation</strong></a>
-                &nbsp;/&nbsp;
-                <a href="https://github.com/chris-pearce/scally/blob/master/src/{{ source-code-url }}" rel="external" class="b-link"><strong>Source code</strong></a>
-            </div>
-            {{#if intro}}
-                <div class="c-test-case__header-block">{{{ intro-text }}}</div>
+    {{> test-case-header}}
+
+    {{!-- Loop through each test section --}}
+    {{#each this.sections}}
+        <div class="c-test-case__section">
+
+            {{!-- Section name --}}
+            {{#if section-name}}
+                <h2 class="heading heading--size-3x-large">{{ section-name }}</h2>
             {{/if}}
-        </div>
-    </header>
-    {{!-- //Header --}}
+            {{!-- //Section name --}}
 
-    {{!-- Loop through each test --}}
-    {{#each this.tests}}
-        <div class="c-test-case__inner">
+            {{!-- Loop through each test-case --}}
+            {{#each this.tests}}
 
-            {{!-- The selector(s) --}}
-            <div class="c-test-case__counter-master  l-container">
-                <div class="c-test-case__selector c-test-case__block">
-                    <h2>
-                        {{#if multiple-selectors}}
-                            {{{ selector }}}
-                        {{else}}
-                            <code class="b-code">{{ selector }}</code>
-                        {{/if}}
-                    </h2>
-                </div>
-            </div>
-            {{!-- //The selector(s) --}}
-
-            {{#each this.test}}
-
-                {{!-- The description --}}
-                <div class="c-test-case__counter-slave  l-container">
-                    <div class="c-test-case__test-desc c-test-case__block">
-                        <div>{{{ description }}}</div>
+                {{!-- Selector(s) --}}
+                <div class="l-container">
+                    <div class="c-test-case__counter-master">
+                        <div class="c-test-case__selector c-test-case__block">
+                            <h3>
+                                {{#if multiple-selectors}}
+                                    {{{ selector }}}
+                                {{else}}
+                                    <code class="c-code-inline">{{ selector }}</code>
+                                {{/if}}
+                            </h3>
+                        </div>
                     </div>
                 </div>
-                {{!-- //The description --}}
+                {{!-- //Selector(s) --}}
+
+                {{!-- Description --}}
+                <div class="l-container">
+                    <div class="c-test-case__counter-slave">
+                        <div class="c-test-case__test-description c-test-case__block">
+                            <div>{{{ description }}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- //Description --}}
 
                 {{!-- Run the test --}}
-                <div class="c-test-case__test-run{{#if remove-test-canvas-bg}} c-test-case__test-run--no-bg{{/if}}">
-                    {{#if remove-test-canvas-bg}}
+                <div class="c-test-case__test-run{{#if remove-legend}} c-test-case__test-run--no-bg{{/if}}">
+                    {{#if remove-legend}}
+                        {{{ run }}}
+                    {{else}}
                         <div class="l-container">
                             {{{ run }}}
                         </div>
-                    {{else}}
-                        {{{ run }}}
                     {{/if}}
                 </div>
                 {{!-- //Run the test --}}
 
-                {{!-- Test legend --}}
+                {{!-- Legend --}}
                 {{#unless remove-legend}}
                     {{> test-case-legend}}
                 {{/unless}}
-                {{!-- //Test legend --}}
+                {{!-- //Legend --}}
 
             {{/each}}
+            {{!-- //Loop through each test-case --}}
+
         </div>
     {{/each}}
-    {{!-- //Loop through each test --}}
+    {{!-- //Loop through each test section --}}
 
-</section>
+</article>

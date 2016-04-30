@@ -1,19 +1,15 @@
 @charset 'UTF-8';
 
 /* ============================================================================
-   SCALLY TEST SUITE STYLESHEET
+   SCALLY TEST SITE STYLESHEET
    ========================================================================= */
 
 /**
- * Styles for the Scally Test Suite.
- *
- * ----------------------------------------------------------------------------
- *
  * CONTENTS:
  *
- * 1. Scally Test Suite settings
+ * 1. Project settings
  * 2. Scally library
- * 3. Scally Test Suite styles
+ * 3. Project styles
  *
  * N.B. the above order of sections #1 and #2 must be maintained otherwise Sass
  * will not compile!
@@ -22,7 +18,7 @@
 
 
 
-/* 1. Scally Test Suite settings incl. any Scally setting overrides
+/* 1. Project settings
    ========================================================================= */
 
 @import 'settings';
@@ -33,16 +29,7 @@
 /* 2. Scally library
    ========================================================================= */
 
-/**
- * Settings.
- */
-
 @import '../../../../src/settings';
-
-
-/**
- * Mixins/Functions.
- */
 
 @function strip-unit($number) {
     @if type-of($number) == "number" and not unitless($number) {
@@ -56,70 +43,22 @@
     }
     @return strip-unit($value) / strip-unit(16) * 1rem;
 }
-//@import '../../../../src/mixins-functions';
 
-
-/**
- * Normalise/Reset.
- */
-
-//@import '../../../../src/normalise-reset';
-
-
-/**
- * Base.
- */
-
-//@import '../../../../src/base';
-
-
-/**
- * Container.
- */
-
-//@import '../../../../src/container';
-
-
-/**
- * Grid.
- */
-
-//@import '../../../../src/grid';
-
-
-/**
- * Side-by-side.
- */
-
-//@import '../../../../src/side-by-side';
-
-
-/**
- * Helpers.
- */
-
-//@import '../../../../src/helpers';
+@import '../../../../src/normalise-reset';
 
 
 
 
-/* 3. Scally Test Suite styles
+/* 3. Project styles
    ========================================================================= */
 
 /**
- * Base.
+ * Layout.
  */
 
-@import 'base';
+@import 'layout/l-header';
 
-
-/**
- * Layout Template.
- */
-
-@import 'layout/template/l-header';
-
-@import 'layout/template/l-main';
+@import 'layout/l-main';
 
 
 /**
@@ -130,12 +69,7 @@
 
 @import 'components/c-file-path';
 
-
-/**
- * Vendor.
- */
-
-//@import 'vendor/github-style-syntax-highlighting';
+@import 'components/c-code-inline';
 
 
 /**

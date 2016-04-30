@@ -3,8 +3,7 @@
    ========================================================================= */
 
 /**
- * This component encapsulates the styles for each test case and includes
- * adding styles to any Scally items that need to be visually recognisable.
+ * This component encapsulates the styles for each test case.
  */
 
 
@@ -12,10 +11,6 @@
  * Settings.
  */
 
-// Spacing
-$c-test-case-spacing-between-elements: $scally-g-spacing-large;
-
-// Other
 $c-test-case-block-border-width: 5px;
 
 $c-test-case-legend-key-size: 12;
@@ -24,22 +19,12 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * The header.
+ * Header.
  */
 
 .c-test-case__header {
-    margin-bottom: rem($c-test-case-spacing-between-elements);
+    margin-bottom: rem($scally-g-spacing-large);
 }
-
-
-/**
- * The header title.
- */
-
-.c-test-case__title {
-    font-size: rem(50);
-}
-
 
 /**
  * Header blocks.
@@ -51,16 +36,16 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * Inner container, wraps everything except the Header.
+ * Test section container.
  */
 
-.c-test-case__inner:not(:last-child) {
-    margin-bottom: rem($c-test-case-spacing-between-elements);
+.c-test-case__section:not(:last-child) {
+    margin-bottom: rem($scally-g-spacing-3x-large);
 }
 
 
 /**
- * Block, a generic container.
+ * Generic container blocks.
  */
 
 .c-test-case__block {
@@ -80,8 +65,7 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * Where the test is run, here we add styles to any Scally items that need to
- * be visually recognisable e.g. `l-container`.
+ * Where the test is run.
  */
 
 .c-test-case__test-run {
@@ -91,58 +75,58 @@ $c-test-case-test-subject-height: 300;
      * Scally: Container.
      */
 
-    .l-container {
-        background-color: $g-color-test-case-subject-background;
-        height: $c-test-case-test-subject-height * 1px;
-    }
+    // .l-container {
+    //     background-color: $g-color-test-case-subject-background;
+    //     height: $c-test-case-test-subject-height * 1px;
+    // }
 
     // Remove the above styles when the background canvas doesn't need a
     // background colour
-    &.c-test-case__test-run--no-bg .l-container {
-        background: none;
-        height: auto;
-    }
+    // &.c-test-case__test-run--no-bg .l-container {
+    //     background: none;
+    //     height: auto;
+    // }
 
     /**
      * Scally: Grid.
      */
 
     // Inner grid item including label
-    .l-grid__item > div {
-        background-color: $g-color-test-case-subject-background;
-        font-family: $scally-g-font-family-monospace;
-        font-weight: normal;
-        padding: 1rem;
-        justify-content: center;
-        width: 100%;
-    }
+    // .l-grid__item > div {
+    //     background-color: $g-color-test-case-subject-background;
+    //     font-family: $scally-g-font-family-monospace;
+    //     font-weight: normal;
+    //     padding: 1rem;
+    //     justify-content: center;
+    //     width: 100%;
+    // }
 
     // Grid alignment modifiers
-    .l-grid--align-middle,
-    .l-grid--align-bottom,
-    .l-grid--align-center,
-    .l-grid--align-right {
-        height: $c-test-case-test-subject-height * 1px;
+    // .l-grid--align-middle,
+    // .l-grid--align-bottom,
+    // .l-grid--align-center,
+    // .l-grid--align-right {
+    //     height: $c-test-case-test-subject-height * 1px;
 
-        .l-grid__item > div {
-            height: $c-test-case-test-subject-height / 2 * 1px;
-        }
-    }
+    //     .l-grid__item > div {
+    //         height: $c-test-case-test-subject-height / 2 * 1px;
+    //     }
+    // }
 
     // Nested grids
-    .l-grid .l-grid .l-grid__item > div {
-        background-color: darken($g-color-test-case-subject-background, 7%);
-        height: $c-test-case-test-subject-height / 2 * 1px;
-    }
+    // .l-grid .l-grid .l-grid__item > div {
+    //     background-color: darken($g-color-test-case-subject-background, 7%);
+    //     height: $c-test-case-test-subject-height / 2 * 1px;
+    // }
 
     /**
      * Highlight form elements.
      */
 
-    #{$scally-g-textual-inputs},
-    textarea {
-        border: 1px solid $g-color-test-case-canvas-background;
-    }
+    // #{$scally-g-textual-inputs},
+    // textarea {
+    //     border: 1px solid $g-color-test-case-canvas-background;
+    // }
 }
 
 /**
@@ -156,10 +140,6 @@ $c-test-case-test-subject-height: 300;
 
 /**
  * Legend.
- */
-
-/**
- * Legend container.
  */
 
 .c-test-case__legend {
@@ -213,7 +193,11 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * The counter styles.
+ * The CSS counter styles.
+ */
+
+/**
+ * Counter numbers.
  */
 
 .c-test-case__block::before {
@@ -222,11 +206,11 @@ $c-test-case-test-subject-height: 300;
 }
 
 /**
- * Settings the counters.
+ * Set the counters.
  */
 
-// The "selector" counter (the master)
-.c-test-case {
+// Master counter (the 'CSS selector' content)
+.c-test-case__section {
     counter-reset: master;
 }
 
@@ -235,12 +219,12 @@ $c-test-case-test-subject-height: 300;
     counter-increment: master;
 }
 
-// The "description" counter (the slave)
+// Slave counter (the 'description' content)
 .c-test-case__counter-master {
     counter-reset: slave;
 }
 
-.c-test-case__test-desc::before {
+.c-test-case__test-description::before {
     content: counter(master) "." counter(slave);
     counter-increment: slave;
 }

@@ -6,7 +6,7 @@
     "tests": [{
         "selector": "a",
         "test": [{
-            "description": "Control <code class='b-code'>color</code>, <code class='b-code'>text-decoration</code> for both default and hover/focus states, and <code class='b-code'>transition</code>.",
+            "description": "Control <code class='c-code-inline'>color</code>, <code class='c-code-inline'>text-decoration</code> for both default and hover/focus states, and <code class='c-code-inline'>transition</code>.",
             "run": "<a href='https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=scally'>A link</a>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
@@ -14,7 +14,7 @@
         },{
         "selector": "hr",
         "test": [{
-            "description": "Control <code class='b-code'>border-top-width</code>, <code class='b-code'>border-top-color</code> and <code class='b-code'>border-top-style</code>.",
+            "description": "Control <code class='c-code-inline'>border-top-width</code>, <code class='c-code-inline'>border-top-color</code> and <code class='c-code-inline'>border-top-style</code>.",
             "run": "<hr>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
@@ -22,13 +22,13 @@
         },{
         "selector": "img",
         "test": [{
-            "description": "Make responsive: <code class='b-code'>max-width: 100%;</code> and <code class='b-code'>height: auto;</code>.",
+            "description": "Make responsive: <code class='c-code-inline'>max-width: 100%;</code> and <code class='c-code-inline'>height: auto;</code>.",
             "run": "<img src='img/test-img-scally.png' alt=''>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
         }]
         },{
-        "selector": "<code class='b-code'>.remove-responsive-images img</code> / <code class='b-code'>#map_canvas img</code> / <code class='b-code'>.map_canvas img</code>",
+        "selector": "<code class='c-code-inline'>.remove-responsive-images img</code> / <code class='c-code-inline'>#map_canvas img</code> / <code class='c-code-inline'>.map_canvas img</code>",
         "multiple-selectors": true,
         "test": [{
             "description": "Turn off responsive image behaviour when the direct parent is a certain selector.",
@@ -39,7 +39,7 @@
         },{
         "selector": ":disabled",
         "test": [{
-            "description": "Reduce <code class='b-code'>opacity</code> on all elements that the <code class='b-code'>disabled</code> attribute applies to.",
+            "description": "Reduce <code class='c-code-inline'>opacity</code> on all elements that the <code class='c-code-inline'>disabled</code> attribute applies to.",
             "run": "<button type='submit' disabled>Submit</button><br><br><button type='button' disabled>Button</button><br><br><button type='reset' disabled>Reset</button><br><br><input type='submit' value='Submit' disabled><br><br><input type='button' value='Button' disabled><br><br><input type='reset' value='Reset' disabled><br><br><input type='text' disabled><br><br><input type='search' disabled><br><br><input type='tel' disabled><br><br><input type='url' disabled><br><br><input type='email' disabled><br><br><input type='password' disabled><br><br><input type='month' disabled><br><br><input type='week' disabled><br><br><input type='time' disabled><br><br><input type='date' disabled><br><br><input type='datetime' disabled><br><br><input type='datetime-local' disabled><br><br><input type='number' disabled><br><br><textarea disabled></textarea><br><br><select><optgroup disabled><option>Option in an optgroup</option><option>Option in an optgroup</option></optgroup><option disabled>Option</option><option disabled>Option</option><option disabled>Option</option></select><br><br><fieldset disabled><legend>Fieldset</legend><input type='text' disabled><br><br><input type='text' disabled><br><br></fieldset>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
@@ -47,7 +47,7 @@
         },{
         "selector": "[readonly]",
         "test": [{
-            "description": "Reduce <code class='b-code'>opacity</code> on all elements that the <code class='b-code'>readonly</code> attribute applies to.",
+            "description": "Reduce <code class='c-code-inline'>opacity</code> on all elements that the <code class='c-code-inline'>readonly</code> attribute applies to.",
             "run": "<button type='submit' readonly>Submit</button><br><br><button type='button' readonly>Button</button><br><br><button type='reset' readonly>Reset</button><br><br><input type='submit' value='Submit' readonly><br><br><input type='button' value='Button' readonly><br><br><input type='reset' value='Reset' readonly><br><br><input type='text' readonly><br><br><input type='search' readonly><br><br><input type='tel' readonly><br><br><input type='url' readonly><br><br><input type='email' readonly><br><br><input type='password' readonly><br><br><input type='month' readonly><br><br><input type='week' readonly><br><br><input type='time' readonly><br><br><input type='date' readonly><br><br><input type='datetime' readonly><br><br><input type='datetime-local' readonly><br><br><input type='number' readonly><br><br><textarea readonly></textarea><br><br><select><optgroup readonly><option>Option in an optgroup</option><option>Option in an optgroup</option></optgroup><option readonly>Option</option><option readonly>Option</option><option readonly>Option</option></select>",
             "remove-legend": true,
             "remove-test-canvas-bg": true
@@ -61,10 +61,10 @@
             "remove-test-canvas-bg": true
         }]
         },{
-        "selector": "<code class='b-code'>h1</code> / <code class='b-code'>h2</code> / <code class='b-code'>h3</code> / <code class='b-code'>h4</code> / <code class='b-code'>h5</code> / <code class='b-code'>h6</code>",
+        "selector": "<code class='c-code-inline'>h1</code> / <code class='c-code-inline'>h2</code> / <code class='c-code-inline'>h3</code> / <code class='c-code-inline'>h4</code> / <code class='c-code-inline'>h5</code> / <code class='c-code-inline'>h6</code>",
         "multiple-selectors": true,
         "test": [{
-            "description": "Neutralise all the heading elements in favour of applying styles via the <code class='b-code'>.heading</code> class and its modifiers.",
+            "description": "Neutralise all the heading elements in favour of applying styles via the <code class='c-code-inline'>.heading</code> class and its modifiers.",
             "run": "<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6>",
             "remove-legend": true,
             "remove-test-canvas-bg": true

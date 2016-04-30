@@ -1,14 +1,14 @@
 {
     "name": "Settings",
     "intro": true,
-    "intro-text": "Some of Scally's settings are to difficult to create a test case for therefore only the ones that make sense in this format are featured.",
+    "intro-text": "Some of Scally's settings are to difficult to create a test case for therefore only the ones that make sense in the format on this page are featured.",
     "docs-url": "#",
     "source-code-url": "_settings.scss",
     "tests": [
         {
             "selector": "$scally-g-color-white",
             "test": [{
-                "description": "White colour (<code class='b-code'>#fff</code>).",
+                "description": "White colour (<code class='c-code-inline'>#fff</code>).",
                 "run": "<div class='test-settings__color test-settings__color--white'></div>",
                 "remove-legend": true,
                 "remove-test-canvas-bg": true
@@ -17,7 +17,7 @@
         {
             "selector": "$scally-g-color-black",
             "test": [{
-                "description": "Black colour (<code class='b-code'>#000</code>).",
+                "description": "Black colour (<code class='c-code-inline'>#000</code>).",
                 "run": "<div class='test-settings__color test-settings__color--black'></div>",
                 "remove-legend": true,
                 "remove-test-canvas-bg": true

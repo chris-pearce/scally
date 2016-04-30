@@ -6,7 +6,7 @@
     "tests": [{
         "selector": ".l-container",
         "test": [{
-            "description": "A percentage width until its <code class='b-code'>max-width</code> or <code class='b-code'>min-width</code> is reached, center aligned by default",
+            "description": "A percentage width until its <code class='c-code-inline'>max-width</code> or <code class='c-code-inline'>min-width</code> is reached, center aligned by default",
             "run": "<div class=l-container></div>"
         }]
         },{
