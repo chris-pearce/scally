@@ -1,0 +1,13 @@
+<header class="c-test-case__header">
+    <div class="l-container">
+        <h1 class="heading heading--size-4x-large">{{ name }}</h1>
+        <div class="c-test-case__header-block">
+            {{!-- <a href="{{ docs-url }}" rel="external"><strong>Documentation</strong></a>
+            &nbsp;/&nbsp; --}}
+            <a href="https://github.com/chris-pearce/scally/blob/master/src/{{ source-code-file-name }}" rel="external"><strong>Source code</strong></a>
+        </div>
+        {{#if intro}}
+            <div class="c-test-case__header-block">{{{ intro }}}</div>
+        {{/if}}
+    </div>
+</header>

@@ -1,12 +1,12 @@
 {
     "name": "Normalise & Reset",
-    "settings-location": "Normalise & Reset (Local)",
+    "intro": false,
     "docs-url": "#",
-    "source-code-url": "https://github.com/chris-pearce/scally/blob/master/src/_normalise-reset.scss",
+    "source-code-url": "_normalise-reset.scss",
     "tests": [{
         "selector": "a",
         "test": [{
-            "description": "Control <code class='b-code'>color</code>, <code class='b-code'>text-decoration</code> for both default and hover/focus states, and <code class='b-code'>transition</code>.",
+            "description": "Control <code class='c-code-inline'>color</code>, <code class='c-code-inline'>text-decoration</code> for both default and hover/focus states, and <code class='c-code-inline'>transition</code>.",
             "run": "<a href='http://campaignmonitor.com'>A link</a>",
             "remove-legend": true,
             "remove-test-canvas-bg": true

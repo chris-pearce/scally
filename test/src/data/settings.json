@@ -1,0 +1,270 @@
+{
+    "name": "Settings",
+    "intro": true,
+    "intro-text": "Some of Scally's settings are to difficult to create a test case for therefore only the ones that make sense in the format on this page are featured.",
+    "docs-url": "#",
+    "source-code-url": "_settings.scss",
+    "tests": [
+        {
+            "selector": "$scally-g-color-white",
+            "test": [{
+                "description": "White colour (<code class='c-code-inline'>#fff</code>).",
+                "run": "<div class='test-settings__color test-settings__color--white'></div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-color-black",
+            "test": [{
+                "description": "Black colour (<code class='c-code-inline'>#000</code>).",
+                "run": "<div class='test-settings__color test-settings__color--black'></div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-color-text-base",
+            "test": [{
+                "description": "Base text colour.",
+                "run": "<div class='test-settings__color test-settings__color--text-base'></div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-color-link",
+            "test": [{
+                "description": "Link colour.",
+                "run": "<div class='test-settings__color test-settings__color--link'></div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-color-link-hover",
+            "test": [{
+                "description": "Link hover colour.",
+                "run": "<div class='test-settings__color test-settings__color--link-hover'></div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size",
+            "test": [{
+                "description": "Font size.",
+                "run": "<div class='test-settings__typography-font-size'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-small",
+            "test": [{
+                "description": "Small font size.",
+                "run": "<div class='test-settings__typography-font-size-small'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-x-small",
+            "test": [{
+                "description": "X-Small font size.",
+                "run": "<div class='test-settings__typography-font-size-x-small'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-large",
+            "test": [{
+                "description": "Large font size.",
+                "run": "<div class='test-settings__typography-font-size-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-x-large",
+            "test": [{
+                "description": "X-Large font size.",
+                "run": "<div class='test-settings__typography-font-size-x-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-2x-large",
+            "test": [{
+                "description": "2X-Large font size.",
+                "run": "<div class='test-settings__typography-font-size-2x-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-3x-large",
+            "test": [{
+                "description": "3X-Large font size.",
+                "run": "<div class='test-settings__typography-font-size-3x-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-4x-large",
+            "test": [{
+                "description": "4X-Large font size.",
+                "run": "<div class='test-settings__typography-font-size-4x-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-size-5x-large",
+            "test": [{
+                "description": "5X-Large font size.",
+                "run": "<div class='test-settings__typography-font-size-5x-large'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-line-height-ratio",
+            "test": [{
+                "description": "Line height ratio.",
+                "run": "<div class='test-settings__typography-line-height-ratio'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-family-base",
+            "test": [{
+                "description": "Font family base.",
+                "run": "<div class='test-settings__typography-font-family-base'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-family-headings",
+            "test": [{
+                "description": "Font family headings.",
+                "run": "<div class='test-settings__typography-font-family-headings'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-family-monospace",
+            "test": [{
+                "description": "Font family monospace.",
+                "run": "<div class='test-settings__typography-font-family-monospace'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-normal",
+            "test": [{
+                "description": "Font weight normal.",
+                "run": "<div class='test-settings__typography-font-weight-normal'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-thin",
+            "test": [{
+                "description": "Font weight thin.",
+                "run": "<div class='test-settings__typography-font-weight-thin'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-extra-light",
+            "test": [{
+                "description": "Font weight extra-light.",
+                "run": "<div class='test-settings__typography-font-weight-extra-light'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-light",
+            "test": [{
+                "description": "Font weight light.",
+                "run": "<div class='test-settings__typography-font-weight-light'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-medium",
+            "test": [{
+                "description": "Font weight medium.",
+                "run": "<div class='test-settings__typography-font-weight-medium'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-semi-bold",
+            "test": [{
+                "description": "Font weight semi-bold.",
+                "run": "<div class='test-settings__typography-font-weight-semi-bold'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-bold",
+            "test": [{
+                "description": "Font weight bold.",
+                "run": "<div class='test-settings__typography-font-weight-bold'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-extra-bold",
+            "test": [{
+                "description": "Font weight extra-bold.",
+                "run": "<div class='test-settings__typography-font-weight-extra-bold'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-font-weight-black",
+            "test": [{
+                "description": "Font weight black.",
+                "run": "<div class='test-settings__typography-font-weight-black'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
+                "remove-legend": true,
+                "remove-test-canvas-bg": true
+            }]
+        },
+        {
+            "selector": "$scally-g-spacing-base",
+            "test": [{
+                "description": "Spacing base.",
+                "run": "<div class='test-settings__spacing test-settings__spacing--base'></div><div class='test-settings__spacing'></div>",
+                "remove-legend": false,
+                "remove-test-canvas-bg": false
+            }]
+        },
+        {
+            "selector": "$scally-g-spacing-small",
+            "test": [{
+                "description": "Spacing small.",
+                "run": "<div class='test-settings__spacing test-settings__spacing--small'></div><div class='test-settings__spacing'></div>",
+                "remove-legend": false,
+                "remove-test-canvas-bg": false
+            }]
+        }
+    ]
+ }

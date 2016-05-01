@@ -1,0 +1,17 @@
+/* ============================================================================
+   COMPONENTS -> CODE INLINE
+   ========================================================================= */
+
+/**
+ * Style inline code to stand out from normal text.
+ */
+
+
+.c-code-inline {
+    background-color: $scally-g-color-white;
+    border-radius: 3px;
+    color: $scally-g-color-text-base;
+    font-family: $scally-g-font-family-monospace;
+    font-weight: normal;
+    padding: rem(3) rem(6);
+}

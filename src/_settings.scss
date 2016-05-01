@@ -13,7 +13,7 @@
  *
  * All settings start with a `scally` namespace followed by one hyphen:
  *
-   $scally-
+    $scally-
  *
  * This namespace prevents your project settings and Scally's settings from
  * clashing and allows you to easily see what is coming from Scally and what
@@ -24,14 +24,14 @@
  *
  * **Global** settings include a letter `g` to easily identify them:
  *
-   $scally-g-
+    $scally-g-
  *
  * **Local** settings include the name of the relevant partial they belong to.
  * For example, settings for the `_base.scss` and `_grid.scss` partials look
  * like this:
  *
-   $scally-base-
-   $scally-grid-
+    $scally-base-
+    $scally-grid-
  *
  * ----------------------------------------------------------------------------
  *
@@ -68,14 +68,10 @@ $scally-g-color-black: #000 !default;
 
 
 /**
- * Text.
+ * Base text colour.
  */
 
-// Base (global text colour)
 $scally-g-color-text-base: #444 !default;
-
-// Heading
-$scally-g-color-text-heading: $scally-g-color-text-base !default;
 
 
 /**
@@ -99,47 +95,24 @@ $scally-g-color-link-hover: #ff0000 !default;
 $scally-g-font-size: 16 !default;
 
 // Decrease
-$scally-g-font-size-small: $scally-g-font-size - 1 !default;
+$scally-g-font-size-small: floor($scally-g-font-size - 2) !default;
 
-$scally-g-font-size-x-small: $scally-g-font-size - 2 !default;
+$scally-g-font-size-x-small: floor($scally-g-font-size - 3) !default;
 
-$scally-g-font-size-xx-small: $scally-g-font-size - 3 !default;
-
-$scally-g-font-size-xxx-small: $scally-g-font-size - 4 !default;
+$scally-g-font-size-2x-small: floor($scally-g-font-size - 4) !default;
 
 // Increase
-$scally-g-font-size-large: $scally-g-font-size + 2 !default;
+$scally-g-font-size-large: ceil($scally-g-font-size + 2) !default;
 
-$scally-g-font-size-x-large: $scally-g-font-size + 3 !default;
+$scally-g-font-size-x-large: ceil($scally-g-font-size * 1.5) !default;
 
-$scally-g-font-size-xx-large: $scally-g-font-size + 4 !default;
+$scally-g-font-size-2x-large: ceil($scally-g-font-size * 1.75) !default;
 
-$scally-g-font-size-xxx-large: $scally-g-font-size + 5 !default;
+$scally-g-font-size-3x-large: ceil($scally-g-font-size * 2) !default;
 
+$scally-g-font-size-4x-large: ceil($scally-g-font-size * 2.5) !default;
 
-/**
- * Heading sizes.
- */
-
-$scally-g-font-size-heading: $scally-g-font-size * 1.5 !default;
-
-// Decrease
-$scally-g-font-size-heading-small: $scally-g-font-size-heading - 2 !default;
-
-$scally-g-font-size-heading-x-small: $scally-g-font-size-heading - 4 !default;
-
-$scally-g-font-size-heading-xx-small: $scally-g-font-size-heading - 6 !default;
-
-$scally-g-font-size-heading-xxx-small: $scally-g-font-size-heading - 8 !default;
-
-// Increase
-$scally-g-font-size-heading-large: $scally-g-font-size-heading + 2 !default;
-
-$scally-g-font-size-heading-x-large: $scally-g-font-size-heading + 4 !default;
-
-$scally-g-font-size-heading-xx-large: $scally-g-font-size-heading + 6 !default;
-
-$scally-g-font-size-heading-xxx-large: $scally-g-font-size-heading + 8 !default;
+$scally-g-font-size-5x-large: ceil($scally-g-font-size * 2.75) !default;
 
 
 /**
@@ -152,7 +125,7 @@ $scally-g-line-height: $scally-g-font-size * 1.5 !default;
 /**
  * Line height ratio.
  *
- * N.B. non-overridable.
+ * N.B. non-over-ridable.
  */
 
 $scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size;
@@ -221,22 +194,26 @@ $scally-g-spacing-small: floor($scally-g-spacing-base / 1.5) !default;
 
 $scally-g-spacing-x-small: floor($scally-g-spacing-base / 2) !default;
 
-$scally-g-spacing-xx-small: floor($scally-g-spacing-base / 3) !default;
+$scally-g-spacing-2x-small: floor($scally-g-spacing-base / 3) !default;
 
-$scally-g-spacing-xxx-small: floor($scally-g-spacing-base / 4) !default;
+$scally-g-spacing-3x-small: floor($scally-g-spacing-base / 4) !default;
 
-$scally-g-spacing-xxxx-small: floor($scally-g-spacing-base / 6) !default;
+$scally-g-spacing-4x-small: floor($scally-g-spacing-base / 6) !default;
 
 // Increase
-$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.3) !default;
+$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.2) !default;
 
-$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.5) !default;
+$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.4) !default;
 
-$scally-g-spacing-xx-large: ceil($scally-g-spacing-base * 1.7) !default;
+$scally-g-spacing-2x-large: ceil($scally-g-spacing-base * 1.6) !default;
 
-$scally-g-spacing-xxx-large: ceil($scally-g-spacing-base * 2) !default;
+$scally-g-spacing-3x-large: ceil($scally-g-spacing-base * 1.8) !default;
 
-$scally-g-spacing-xxxx-large: ceil($scally-g-spacing-base * 2.2) !default;
+$scally-g-spacing-4x-large: ceil($scally-g-spacing-base * 2) !default;
+
+$scally-g-spacing-5x-large: ceil($scally-g-spacing-base * 3) !default;
+
+$scally-g-spacing-6x-large: ceil($scally-g-spacing-base * 4) !default;
 
 
 
@@ -468,8 +445,6 @@ $scally-normalise-reset-focus-outline-width: thin !default;
  * Booleans.
  */
 
-$scally-base-apply-osx-font-smoothing: false !default;
-
 $scally-base-apply-link-transition: true !default;
 
 $scally-base-apply-style-to-disabled-and-readonly-states: true !default;
@@ -516,7 +491,7 @@ $scally-base-hr-color: $scally-g-color-text-base !default;
 
 $scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
 
-$scally-base-target-ios-selector: '.ios' !default;
+$scally-base-target-ios-selector: '.target-ios' !default;
 
 
 
@@ -554,7 +529,7 @@ $scally-container-maximum-width-x-small: floor($scally-container-maximum-width /
  * Gutter size.
  */
 
-$scally-container-gutter: $scally-g-spacing-x-large !default;
+$scally-container-gutter: $scally-g-spacing-3x-large !default;
 
 
 
@@ -681,13 +656,9 @@ $scally-helper-apply-text-size-x-small-at-breakpoints: false !default;
 
 $scally-helper-define-text-size-x-small-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-text-size-xx-small-at-breakpoints: false !default;
+$scally-helper-apply-text-size-2x-small-at-breakpoints: false !default;
 
-$scally-helper-define-text-size-xx-small-breakpoints: $scally-g-global-breakpoints !default;
-
-$scally-helper-apply-text-size-xxx-small-at-breakpoints: false !default;
-
-$scally-helper-define-text-size-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-text-size-2x-small-breakpoints: $scally-g-global-breakpoints !default;
 
 // Increase
 $scally-helper-apply-text-size-large-at-breakpoints: false !default;
@@ -698,13 +669,21 @@ $scally-helper-apply-text-size-x-large-at-breakpoints: false !default;
 
 $scally-helper-define-text-size-x-large-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-text-size-xx-large-at-breakpoints: false !default;
+$scally-helper-apply-text-size-2x-large-at-breakpoints: false !default;
 
-$scally-helper-define-text-size-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-text-size-2x-large-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-text-size-xxx-large-at-breakpoints: false !default;
+$scally-helper-apply-text-size-3x-large-at-breakpoints: false !default;
 
-$scally-helper-define-text-size-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-text-size-3x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-4x-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-4x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-text-size-5x-large-at-breakpoints: false !default;
+
+$scally-helper-define-text-size-5x-large-breakpoints: $scally-g-global-breakpoints !default;
 
 
 /**
@@ -769,17 +748,17 @@ $scally-helper-apply-spacing-x-small-at-breakpoints: false !default;
 
 $scally-helper-define-spacing-x-small-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xx-small-at-breakpoints: false !default;
+$scally-helper-apply-spacing-2x-small-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xx-small-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-2x-small-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xxx-small-at-breakpoints: false !default;
+$scally-helper-apply-spacing-3x-small-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xxx-small-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-3x-small-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xxxx-small-at-breakpoints: false !default;
+$scally-helper-apply-spacing-4x-small-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xxxx-small-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-4x-small-breakpoints: $scally-g-global-breakpoints !default;
 
 // Increase
 $scally-helper-apply-spacing-large-at-breakpoints: false !default;
@@ -790,14 +769,22 @@ $scally-helper-apply-spacing-x-large-at-breakpoints: false !default;
 
 $scally-helper-define-spacing-x-large-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xx-large-at-breakpoints: false !default;
+$scally-helper-apply-spacing-2x-large-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xx-large-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-2x-large-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xxx-large-at-breakpoints: false !default;
+$scally-helper-apply-spacing-3x-large-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xxx-large-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-3x-large-breakpoints: $scally-g-global-breakpoints !default;
 
-$scally-helper-apply-spacing-xxxx-large-at-breakpoints: false !default;
+$scally-helper-apply-spacing-4x-large-at-breakpoints: false !default;
 
-$scally-helper-define-spacing-xxxx-large-breakpoints: $scally-g-global-breakpoints !default;
+$scally-helper-define-spacing-4x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-5x-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-5x-large-breakpoints: $scally-g-global-breakpoints !default;
+
+$scally-helper-apply-spacing-6x-large-at-breakpoints: false !default;
+
+$scally-helper-define-spacing-6x-large-breakpoints: $scally-g-global-breakpoints !default;

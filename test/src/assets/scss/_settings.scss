@@ -3,15 +3,7 @@
    ========================================================================= */
 
 /**
- * All global settings (Sass variables) for the Scally Test Suite and any
- * Scally library setting overrides.
- *
- * Scally Test Suite settings can use any of the Scally library settings,
- * like so:
- *
-   $g-color-code-block-background: $scally-g-color-white;
- *
- * ---------------------------------------------------------------------------
+ * All global settings (Sass variables) for the Scally test site.
  *
  * All settings start with a global namespace: `$g` followed by one hyphen,
  * like this:
@@ -25,7 +17,6 @@
  * CONTENTS:
  *
  * 1. Colours
- * 2. Scally overrides
  */
 
 
@@ -51,41 +42,3 @@ $g-color-dark-orange: darkorange;
 $g-color-test-case-canvas-background: crimson;
 
 $g-color-test-case-subject-background: lightblue;
-
-
-
-
-/* 3. Scally overrides
-   ========================================================================= */
-
-/**
- * Colours (Global).
- */
-
-$scally-g-color-text-base: $g-color-brand;
-
-$scally-g-color-link: #185bd3;
-
-$scally-g-color-link-hover: lighten($scally-g-color-link, 10%);
-
-
-/**
- * Typography (Global).
- */
-
-//$scally-g-font-family-base: 'Akkurat Regular', sans-serif;
-
-
-/**
- * Base (Local).
- */
-
-
-/**
- * Grid (Local).
- */
-
-
-/**
- * Container (Local).
- */
