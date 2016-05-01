@@ -31,6 +31,7 @@
 
 @import '../../../../src/settings';
 
+// Temporary mixins/functions until the completed partial is done
 @function strip-unit($number) {
     @if type-of($number) == "number" and not unitless($number) {
         @return $number / ($number * 0 + 1);
@@ -43,6 +44,13 @@
     }
     @return strip-unit($value) / strip-unit(16) * 1rem;
 }
+@function bp($breakpoint) {
+    @if not map-has-key($scally-g-breakpoints, $breakpoint) {
+        @error "Sorry but `#{$breakpoint}` doesn't exist as a breakpoint name in the "Breakpoints" map.";
+    }
+    @return map-get($scally-g-breakpoints, $breakpoint);
+}
+
 
 @import '../../../../src/normalise-reset';
 

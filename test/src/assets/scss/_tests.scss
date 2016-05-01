@@ -41,8 +41,8 @@
  */
 
 .t-settings__color {
-    height: rem(100);
-    width: rem(100);
+    height: rem(60);
+    width: rem(60);
 }
 
 .t-settings__color--white {
@@ -71,6 +71,7 @@
  * Typography.
  */
 
+// Font sizes
 .t-settings__typography-font-size {
     font-size: rem($scally-g-font-size);
 }
@@ -81,6 +82,10 @@
 
 .t-settings__typography-font-size-x-small {
     font-size: rem($scally-g-font-size-x-small);
+}
+
+.t-settings__typography-font-size-2x-small {
+    font-size: rem($scally-g-font-size-2x-small);
 }
 
 .t-settings__typography-font-size-large {
@@ -107,10 +112,12 @@
     font-size: rem($scally-g-font-size-5x-large);
 }
 
+// Line height
 .t-settings__typography-line-height-ratio {
     line-height: $scally-g-line-height-ratio;
 }
 
+// Font families
 .t-settings__typography-font-family-base {
     font-family: $scally-g-font-family-base;
 }
@@ -123,6 +130,7 @@
     font-family: $scally-g-font-family-monospace;
 }
 
+// Font weights
 .t-settings__typography-font-weight-normal {
     font-weight: $scally-g-font-weight-normal;
 }
@@ -177,6 +185,124 @@
     margin-bottom: rem($scally-g-spacing-base);
 }
 
+// Small
 .t-settings__spacing--small {
     margin-bottom: rem($scally-g-spacing-small);
+}
+
+.t-settings__spacing--x-small {
+    margin-bottom: rem($scally-g-spacing-x-small);
+}
+
+.t-settings__spacing--2x-small {
+    margin-bottom: rem($scally-g-spacing-2x-small);
+}
+
+.t-settings__spacing--3x-small {
+    margin-bottom: rem($scally-g-spacing-3x-small);
+}
+
+.t-settings__spacing--4x-small {
+    margin-bottom: rem($scally-g-spacing-4x-small);
+}
+
+// Large
+.t-settings__spacing--large {
+    margin-bottom: rem($scally-g-spacing-large);
+}
+
+.t-settings__spacing--x-large {
+    margin-bottom: rem($scally-g-spacing-x-large);
+}
+
+.t-settings__spacing--2x-large {
+    margin-bottom: rem($scally-g-spacing-2x-large);
+}
+
+.t-settings__spacing--3x-large {
+    margin-bottom: rem($scally-g-spacing-3x-large);
+}
+
+.t-settings__spacing--4x-large {
+    margin-bottom: rem($scally-g-spacing-4x-large);
+}
+
+.t-settings__spacing--5x-large {
+    margin-bottom: rem($scally-g-spacing-5x-large);
+}
+
+.t-settings__spacing--6x-large {
+    margin-bottom: rem($scally-g-spacing-6x-large);
+}
+
+
+/**
+ * Breakpoints.
+ */
+
+.t-settings__breakpoints {
+    align-items: center;
+    background-color: $g-color-test-case-subject-background;
+    display: flex;
+    font-size: rem($scally-g-font-size-2x-large);
+    height: rem(160);
+    justify-content: center;
+
+    // Palm range
+    @media (min-width: 0) and (max-width: bp(lap) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 5%);
+
+        &::before {
+            content: "Palm"
+        }
+    }
+
+    // Lap range
+    @media (min-width: bp(lap)) and (max-width: bp(lap-mid) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 30%);
+
+        &::before {
+            content: "Lap"
+        }
+    }
+
+    // Lap-mid range
+    @media (min-width: bp(lap-mid)) and (max-width: bp(lap-large) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 35%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Lap-mid"
+        }
+    }
+
+    // Lap-large range
+    @media (min-width: bp(lap-large)) and (max-width: bp(desk) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 40%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Lap-large"
+        }
+    }
+
+    // Desk range
+    @media (min-width: bp(desk)) and (max-width: bp(desk-large) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 45%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Desk"
+        }
+    }
+
+    // Desk-large
+    @media (min-width: bp(desk-large)) {
+        background-color: darken($g-color-test-case-subject-background, 50%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Desk-large"
+        }
+    }
 }
