@@ -479,3 +479,15 @@ $t-setting-z-index-system-layer-dimensions: 180;
         z-index: z(underneath);
     }
 }
+
+
+/**
+ * HTML textual inputs.
+ */
+
+.t-settings__html-textual-inputs {
+    #{$scally-g-textual-inputs} {
+        background: $g-color-test-case-subject-background;
+        border: none;
+    }
+}

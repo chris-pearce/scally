@@ -282,6 +282,18 @@
                     "run": "<div class='t-settings__z-index-system'><div class='t-settings__z-index-system t-settings__z-index-system--dialog'><div class='t-settings__z-index-system t-settings__z-index-system--dialog-close-btn'></div></div><div class='t-settings__z-index-system t-settings__z-index-system--dialog-underlay'></div><div class='t-settings__z-index-system t-settings__z-index-system--header'></div><div class='t-settings__z-index-system t-settings__z-index-system--main'></div><div class='t-settings__z-index-system t-settings__z-index-system--footer'></div><div class='t-settings__z-index-system t-settings__z-index-system--underneath'></div></div>"
                 }
             ]
+        },
+
+
+        {
+            "section-name": "HTML textual inputs",
+            "tests": [
+                {
+                    "selector": "$scally-g-textual-inputs",
+                    "description": "Attribute selectors for all HTML textual inputs.",
+                    "run": "<div class='t-settings__html-textual-inputs'><input type='text'><br><br><input type='search'><br><br><input type='tel'><br><br><input type='url'><br><br><input type='email'><br><br><input type='password'><br><br><input type='month'><br><br><input type='week'><br><br><input type='time'><br><br><input type='date'><br><br><input type='datetime'><br><br><input type='datetime-local'><br><br><input type='number'></div>"
+                }
+            ]
         }
     ]
 
