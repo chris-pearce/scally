@@ -250,7 +250,7 @@
 
     // Palm range
     @media (min-width: 0) and (max-width: bp(lap) - 0.05) {
-        background-color: darken($g-color-test-case-subject-background, 5%);
+        background-color: darken($g-color-test-case-subject-background, 30%);
 
         &::before {
             content: "Palm"
@@ -259,7 +259,7 @@
 
     // Lap range
     @media (min-width: bp(lap)) and (max-width: bp(lap-mid) - 0.05) {
-        background-color: darken($g-color-test-case-subject-background, 30%);
+        background-color: darken($g-color-test-case-subject-background, 25%);
 
         &::before {
             content: "Lap"
@@ -268,7 +268,7 @@
 
     // Lap-mid range
     @media (min-width: bp(lap-mid)) and (max-width: bp(lap-large) - 0.05) {
-        background-color: darken($g-color-test-case-subject-background, 35%);
+        background-color: darken($g-color-test-case-subject-background, 15%);
 
         &::before {
             color: $scally-g-color-white;
@@ -278,7 +278,7 @@
 
     // Lap-large range
     @media (min-width: bp(lap-large)) and (max-width: bp(desk) - 0.05) {
-        background-color: darken($g-color-test-case-subject-background, 40%);
+        background-color: darken($g-color-test-case-subject-background, 10%);
 
         &::before {
             color: $scally-g-color-white;
@@ -288,7 +288,7 @@
 
     // Desk range
     @media (min-width: bp(desk)) and (max-width: bp(desk-large) - 0.05) {
-        background-color: darken($g-color-test-case-subject-background, 45%);
+        background-color: darken($g-color-test-case-subject-background, 5%);
 
         &::before {
             color: $scally-g-color-white;
@@ -298,11 +298,184 @@
 
     // Desk-large
     @media (min-width: bp(desk-large)) {
-        background-color: darken($g-color-test-case-subject-background, 50%);
+        background-color: $g-color-test-case-subject-background;
 
         &::before {
             color: $scally-g-color-white;
             content: "Desk-large"
         }
+    }
+}
+
+
+/**
+ * Z-index-system.
+ */
+
+$t-setting-z-index-system-layer-dimensions: 180;
+
+
+.t-settings__z-index-system {
+    height: rem($t-setting-z-index-system-layer-dimensions * 1.5 + 10);
+    font-family: Consolas, monospace, monospace;
+    letter-spacing: rem(0.3);
+    position: relative;
+
+
+    /**
+     * Each z-index layer.
+     */
+
+    div {
+        border: 1px solid $scally-g-color-white;
+        color: $scally-g-color-white;
+        height: rem($t-setting-z-index-system-layer-dimensions);
+        position: absolute;
+        top: rem(10);
+        transform: skew(45deg) rotate(45deg);
+        transform-origin: 0 0;
+        transition: margin 0.12s ease-in-out;
+        width: rem($t-setting-z-index-system-layer-dimensions);
+
+
+        /**
+         * Juts the layers out so its label can be read.
+         */
+
+        &:hover {
+            margin-left: -(rem(20));
+            margin-top: -(rem(40));
+        }
+
+
+        /**
+         * Each z-index layer label.
+         */
+
+        &::before {
+            background: $scally-g-color-black;
+            border: 1px solid $scally-g-color-white;
+            bottom: 0;
+            content: '';
+            display: block;
+            position: absolute;
+            padding: rem(2) rem(8);
+            transform: rotate(90deg) skew(0);
+            transform-origin: 9px 50%;
+            white-space: nowrap;
+        }
+    }
+
+
+    /**
+     * Dialog layer.
+     */
+
+    .t-settings__z-index-system--dialog {
+        background-color: darken($g-color-test-case-subject-background, 20%);
+        left: rem(120);
+        z-index: z(dialog);
+
+        &::before {
+            content: 'Dialog';
+        }
+
+
+        /**
+         * Nested Dialog close button layer. We make the layer a smaller size
+         * and position it vertically and horizontally in the center of its
+         * parent.
+         */
+
+        .t-settings__z-index-system--dialog-close-btn {
+            background-color: darken($g-color-test-case-subject-background, 25%);
+            height: rem($t-setting-z-index-system-layer-dimensions - 40);
+            left: 50%;
+            top: 50%;
+            transform: skew(0) translate(-50%, -50%);
+            width: rem($t-setting-z-index-system-layer-dimensions - 40);
+            z-index: z(dialog-elements, close-button);
+
+            // We don't want to jut out nested layers
+            &:hover {
+                margin: 0;
+            }
+
+            &::before {
+                content: 'Dialog close button';
+            }
+        }
+    }
+
+
+    /**
+     * Dialog underlay layer.
+     */
+
+    .t-settings__z-index-system--dialog-underlay {
+        background-color: darken($g-color-test-case-subject-background, 15%);
+        left: rem(100);
+        z-index: z(dialog-underlay);
+
+        &::before {
+            content: 'Dialog underlay';
+        }
+    }
+
+
+    /**
+     * Header layer.
+     */
+
+    .t-settings__z-index-system--header {
+       background-color: darken($g-color-test-case-subject-background, 10%);
+        left: rem(80);
+        z-index: z(header);
+
+        &::before {
+            content: 'Header';
+        }
+    }
+
+
+    /**
+     * Main layer.
+     */
+
+    .t-settings__z-index-system--main {
+       background-color: darken($g-color-test-case-subject-background, 5%);
+        left: rem(60);
+        z-index: z(main);
+
+        &::before {
+            content: 'Main';
+        }
+    }
+
+
+    /**
+     * Footer layer.
+     */
+
+    .t-settings__z-index-system--footer {
+       background-color: $g-color-test-case-subject-background;
+        left: rem(40);
+        z-index: z(footer);
+
+        &::before {
+            content: 'Footer';
+        }
+    }
+
+
+    /**
+     * Underneath layer.
+     *
+     * N.B. this layer won't be visible.
+     */
+
+    .t-settings__z-index-system--underneath {
+        left: rem(20);
+        z-index: z(underneath);
     }
 }

@@ -118,7 +118,7 @@
             "run": "<div class='l-grid l-grid--align-bottom'><div class='l-grid__item l-grid__item--3-col'><div>Item 1</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 2</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 3</div></div></div>"
         }]
         },{
-        "selector": "<code class='c-code-inline'>.l-grid--align-bottom</code> /  <code class='c-code-inline'>.l-grid--align-center</code>",
+        "selector": "<code class='c-code'>.l-grid--align-bottom</code> /  <code class='c-code'>.l-grid--align-center</code>",
         "multiple-selectors": true,
         "test": [{
             "description": "Bottom center alignment.",
@@ -137,14 +137,14 @@
             "run": "<div class='l-grid l-grid--align-right'><div class='l-grid__item l-grid__item--3-col'><div>Item 1</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 2</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 3</div></div></div>"
         }]
         },{
-        "selector": "<code class='c-code-inline'>.l-grid--align-right</code> /  <code class='c-code-inline'>.l-grid--align-middle</code>",
+        "selector": "<code class='c-code'>.l-grid--align-right</code> /  <code class='c-code'>.l-grid--align-middle</code>",
         "multiple-selectors": true,
         "test": [{
             "description": "Middle right alignment.",
             "run": "<div class='l-grid l-grid--align-right l-grid--align-middle'><div class='l-grid__item l-grid__item--3-col'><div>Item 1</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 2</div></div><div class='l-grid__item l-grid__item--3-col'><div>Item 3</div></div></div>"
         }]
         },{
-        "selector": "<code class='c-code-inline'>.l-grid--align-right</code> /  <code class='c-code-inline'>.l-grid--align-bottom</code>",
+        "selector": "<code class='c-code'>.l-grid--align-right</code> /  <code class='c-code'>.l-grid--align-bottom</code>",
         "multiple-selectors": true,
         "test": [{
             "description": "Bottom right alignment.",

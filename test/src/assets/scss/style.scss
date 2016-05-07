@@ -51,6 +51,17 @@
     @return map-get($scally-g-breakpoints, $breakpoint);
 }
 
+@function z($z-index-layer, $z-index-layer-nested: null) {
+    @if not map-has-key($scally-g-zindexes, $z-index-layer) {
+        @error "Sorry but `#{$z-index-layer}` doesn't exist as a `z-index` name in the 'Z-Index system' map.";
+    }
+    @if ($z-index-layer-nested != null) {
+        @return map-get(map-get($scally-g-zindexes, $z-index-layer), $z-index-layer-nested);
+    } @else {
+        @return map-get($scally-g-zindexes, $z-index-layer);
+    }
+}
+
 
 @import '../../../../src/normalise-reset';
 
@@ -77,11 +88,11 @@
 
 @import 'components/c-file-path';
 
-@import 'components/c-code-inline';
+@import 'components/c-code';
 
 
 /**
  * Tests.
  */
 
-@import 'tests'
+@import 'tests';

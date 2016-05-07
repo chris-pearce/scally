@@ -262,10 +262,24 @@
             "section-name": "Breakpoints",
             "tests": [
                 {
-                    "selector": "$scally-g-breakpoints: ('palm', 'lap', 'lap-mid', 'lap-large', 'desk', 'desk-large')",
-                    "description": "All Scally breakpoints.<br><br><em>Scale your viewport up and down to see the breakpoints (they're applied as media query ranges for testing purposes but Scally uses <code class='c-code-inline'>min-width</code> media queries).</em>",
+                    "selector": "$scally-g-breakpoints: (\n    'palm': (640 / 16) * 1em,\n    'lap': (641 / 16) * 1em,\n    'lap-mid': (768 / 16) * 1em,\n    'lap-large': (901 / 16) * 1em,\n    'desk': (1200 / 16) * 1em, \n    'desk-large': (1366 / 16) * 1em\n);",
+                    "selector-block": true,
+                    "description": "All Scally breakpoints.<br><br><em>Scale your viewport up and down to see the breakpoints (they're applied as media query ranges for testing purposes but Scally uses <code class='c-code'>min-width</code> media queries).</em>",
                     "run": "<div class='t-settings__breakpoints'></div>",
                     "remove-legend": true
+                }
+            ]
+        },
+
+
+        {
+            "section-name": "Z-Index system",
+            "tests": [
+                {
+                    "selector": "$scally-g-zindexes: (\n    'dialog-elements': (\n        'close-button': 1\n    ),\n    'dialog': 5,\n    'dialog-underlay': 4,\n    'header': 3,\n    'main': 2,\n    'footer': 1,\n    'underneath': -1\n);",
+                    "selector-block": true,
+                    "description": "Z-Index system.<br><br><em>Hover each z-index layer to better read its label.</em>",
+                    "run": "<div class='t-settings__z-index-system'><div class='t-settings__z-index-system t-settings__z-index-system--dialog'><div class='t-settings__z-index-system t-settings__z-index-system--dialog-close-btn'></div></div><div class='t-settings__z-index-system t-settings__z-index-system--dialog-underlay'></div><div class='t-settings__z-index-system t-settings__z-index-system--header'></div><div class='t-settings__z-index-system t-settings__z-index-system--main'></div><div class='t-settings__z-index-system t-settings__z-index-system--footer'></div><div class='t-settings__z-index-system t-settings__z-index-system--underneath'></div></div>"
                 }
             ]
         }

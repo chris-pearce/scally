@@ -19,13 +19,11 @@
                 <div class="l-container">
                     <div class="c-test-case__counter-master">
                         <div class="c-test-case__selector c-test-case__block">
-                            <h3>
-                                {{#if multiple-selectors}}
-                                    {{{ selector }}}
-                                {{else}}
-                                    <code class="c-code-inline">{{ selector }}</code>
-                                {{/if}}
-                            </h3>
+                            {{#if selector-block}}
+<pre class="c-code c-code--block"><code>{{{ selector }}}</code></pre>
+                            {{else}}
+                                <code class="c-code">{{ selector }}</code>
+                            {{/if}}
                         </div>
                     </div>
                 </div>
