@@ -43,7 +43,7 @@
  * 4.  Breakpoints (Global)
  * 5.  Z-Index system (Global)
  * 6.  HiDPI units (Global)
- * 7.  HTML textual `input`s (Global)
+ * 7.  HTML textual inputs (Global)
  * 8.  Selectors (Global)
  * 9.  Normalise and Reset (Local)
  * 10. Base (Local)
@@ -380,7 +380,7 @@ $scally-g-hidpi-dppx: 1.3 * 1dppx !default;
 
 
 
-/* 7. HTML textual `input`s (Global)
+/* 7. HTML textual inputs (Global)
    ========================================================================= */
 
 $scally-g-textual-inputs: 'input[type="text"],
