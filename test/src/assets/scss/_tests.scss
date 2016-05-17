@@ -491,3 +491,21 @@ $t-setting-z-index-system-layer-dimensions: 180;
         border: none;
     }
 }
+
+
+
+
+/* 1. Normalise and Reset
+   ========================================================================= */
+
+/**
+ * Testing the "Normalise and Reset" part of Scally.
+ */
+
+.t-normalise-reset__global-reset * {
+    background-color: $g-color-test-case-subject-background;
+
+    br {
+        margin-bottom: rem($scally-g-spacing-small);
+    }
+}

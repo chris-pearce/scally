@@ -170,6 +170,15 @@ module.exports = function(grunt) {
                     src: '**/*',
                     dest: '<%= app.dist %>/fonts'
                 }]
+            },
+            js: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= app.src %>/assets/js',
+                    src: '**/*',
+                    dest: '<%= app.dist %>/js'
+                }]
             }
         },
 

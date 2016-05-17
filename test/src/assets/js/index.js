@@ -1,0 +1,1 @@
+import generateHeadingAnchors from './generateHeadingAnchors';
