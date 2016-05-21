@@ -13,6 +13,3 @@
 
 
 ## Normalise and Reset
-
-* Root element and global resets
-  * Root element

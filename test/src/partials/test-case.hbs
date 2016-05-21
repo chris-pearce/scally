@@ -8,54 +8,59 @@
 
             {{!-- Section name --}}
             {{#if section-name}}
-                <h2 class="heading heading--size-3x-large">{{ section-name }}</h2>
+                <h2>{{ section-name }}</h2>
             {{/if}}
             {{!-- //Section name --}}
 
             {{!-- Loop through each test-case --}}
             {{#each this.tests}}
+                <div class="c-test-case">
 
-                {{!-- Selector(s) --}}
-                <div class="l-container">
-                    <div class="c-test-case__counter-master">
-                        <div class="c-test-case__selector c-test-case__block">
-                            {{#if selector-block}}
-<pre class="c-code c-code--block"><code>{{{ selector }}}</code></pre>
-                            {{else}}
-                                <code class="c-code">{{ selector }}</code>
-                            {{/if}}
+                    {{!-- Selector(s) --}}
+                    <div class="l-container">
+                        <div class="c-test-case__counter-master">
+                            <div class="c-test-case__selector c-test-case__block">
+                                {{#if selector-block}}
+    <pre class="c-code c-code--block"><code>{{{ selector }}}</code></pre>
+                                {{else}}
+                                    <code class="c-code">{{ selector }}</code>
+                                {{/if}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                {{!-- //Selector(s) --}}
+                    {{!-- //Selector(s) --}}
 
-                {{!-- Description --}}
-                <div class="l-container">
-                    <div class="c-test-case__counter-slave">
-                        <div class="c-test-case__test-description c-test-case__block">
-                            <div>{{{ description }}}</div>
+                    {{!-- Description --}}
+                    <div class="l-container">
+                        <div class="c-test-case__counter-slave">
+                            <div class="c-test-case__test-description c-test-case__block">
+                                <div>{{{ description }}}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                {{!-- //Description --}}
+                    {{!-- //Description --}}
 
-                {{!-- Run the test --}}
-                <div class="c-test-case__test-run{{#if remove-legend}} c-test-case__test-run--no-bg{{/if}}">
+                    {{!-- Run the test --}}
                     {{#if remove-legend}}
-                        {{{ run }}}
-                    {{else}}
                         <div class="l-container">
                             {{{ run }}}
                         </div>
+                    {{else}}
+                        <div class="c-test-case__test-run">
+                            <div class="c-test-case__test-run-inner {{#if remove-test-subject-bg-color-from-container}}c-test-case__test-run-inner--remove-test-subject-bg{{/if}} {{#if apply-top-btm-padding-to-test-area}}c-test-case__test-run-inner--padding-ends{{/if}}">
+                                {{{ run }}}
+                            </div>
+                        </div>
                     {{/if}}
-                </div>
-                {{!-- //Run the test --}}
+                    {{!-- //Run the test --}}
 
-                {{!-- Legend --}}
-                {{#unless remove-legend}}
-                    {{> test-case-legend}}
-                {{/unless}}
-                {{!-- //Legend --}}
+                    {{!-- Legend --}}
+                    {{#unless remove-legend}}
+                        {{> test-case-legend}}
+                    {{/unless}}
+                    {{!-- //Legend --}}
+
+                </div>
 
             {{/each}}
             {{!-- //Loop through each test-case --}}

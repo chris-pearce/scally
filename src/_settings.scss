@@ -91,40 +91,40 @@ $scally-g-color-link-hover: #ff0000 !default;
 /**
  * Base sizes.
  *
- * When the base font size is left at the default 15px the scale is:
+ * When the base font size is left at the default 16px the scale is:
  *
  * Decrease: 14, 13, 12
  * Increase: 18, 24, 28, 32, 40, 44
  */
 
-$scally-g-font-size: 16 !default;
+$scally-g-font-size-base: 16 !default;
 
 // Decrease
-$scally-g-font-size-small: $scally-g-font-size - 2 !default;
+$scally-g-font-size-small: $scally-g-font-size-base - 2 !default;
 
-$scally-g-font-size-x-small: $scally-g-font-size - 3 !default;
+$scally-g-font-size-x-small: $scally-g-font-size-base - 3 !default;
 
-$scally-g-font-size-2x-small: $scally-g-font-size - 4 !default;
+$scally-g-font-size-2x-small: $scally-g-font-size-base - 4 !default;
 
 // Increase
-$scally-g-font-size-large: $scally-g-font-size + 2 !default;
+$scally-g-font-size-large: $scally-g-font-size-base + 2 !default;
 
-$scally-g-font-size-x-large: $scally-g-font-size * 1.5 !default;
+$scally-g-font-size-x-large: $scally-g-font-size-base * 1.5 !default;
 
-$scally-g-font-size-2x-large: $scally-g-font-size * 1.75 !default;
+$scally-g-font-size-2x-large: $scally-g-font-size-base * 1.75 !default;
 
-$scally-g-font-size-3x-large: $scally-g-font-size * 2 !default;
+$scally-g-font-size-3x-large: $scally-g-font-size-base * 2 !default;
 
-$scally-g-font-size-4x-large: $scally-g-font-size * 2.5 !default;
+$scally-g-font-size-4x-large: $scally-g-font-size-base * 2.5 !default;
 
-$scally-g-font-size-5x-large: $scally-g-font-size * 2.75 !default;
+$scally-g-font-size-5x-large: $scally-g-font-size-base * 2.75 !default;
 
 
 /**
  * Line height.
  */
 
-$scally-g-line-height: $scally-g-font-size * 1.5 !default;
+$scally-g-line-height: $scally-g-font-size-base * 1.5 !default;
 
 
 /**
@@ -133,7 +133,7 @@ $scally-g-line-height: $scally-g-font-size * 1.5 !default;
  * N.B. non-over-ridable.
  */
 
-$scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size;
+$scally-g-line-height-ratio: $scally-g-line-height / $scally-g-font-size-base;
 
 
 /**
@@ -153,12 +153,12 @@ $scally-g-font-family-monospace: Consolas, monospace !default;
 /**
  * Weights.
  *
- * N.B. all the font weights are available when you're using webfonts i.e.
+ * N.B. all the font weights are available when you're using Webfonts i.e.
  * fonts brought in via the `@font-face` declaration. It's better to store each
- * each webfont weights in settings rather than trying to remember each of the
+ * each Webfont weights in settings rather than trying to remember each of the
  * numbers that the weights correspond to, plus it ensures that your project's
  * typography is applied consistency. You can use these settings for
- * non-webfonts i.e. system fonts but typically you'll only need to apply one
+ * non-Webfonts i.e. system fonts but typically you'll only need to apply one
  * weight which is **bold** and in that case using `font-weight: bold;` is
  * fine.
  */
@@ -501,8 +501,6 @@ $scally-base-hr-color: $scally-g-color-text-base !default;
 
 $scally-base-disabled-and-readonly-state-opacity-strength: 0.6 !default;
 
-$scally-base-target-ios-selector: '.target-ios' !default;
-
 
 
 
@@ -573,6 +571,8 @@ $scally-grid-item-span-10: 83.333% !default;
 
 $scally-grid-item-span-11: 91.666% !default;
 
+$scally-grid-item-span-12: 100% !default;
+
 
 /**
  * For all the grid item span amounts, turn on the ability to apply them at
@@ -634,6 +634,11 @@ $scally-grid-define-grid-item-span-10-breakpoints: $scally-g-global-breakpoints 
 $scally-grid-apply-grid-item-span-11-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-11-breakpoints: $scally-g-global-breakpoints !default;
+
+// Grid item span 12
+$scally-grid-apply-grid-item-span-12-at-breakpoints: false !default;
+
+$scally-grid-define-grid-item-span-12-breakpoints: $scally-g-global-breakpoints !default;
 
 
 

@@ -23,6 +23,7 @@
  * CONTENTS:
  *
  * 1. Settings
+ * 2. Normalise and Reset
  */
 
 
@@ -73,7 +74,7 @@
 
 // Font sizes
 .t-settings__typography-font-size {
-    font-size: rem($scally-g-font-size);
+    font-size: rem($scally-g-font-size-base);
 }
 
 .t-settings__typography-font-size-small {
@@ -177,8 +178,7 @@
  */
 
 .t-settings__spacing {
-    background-color: $g-color-test-case-subject-background;
-    height: rem(60);
+    height: rem($scally-g-spacing-base);
 }
 
 .t-settings__spacing--base {
@@ -242,7 +242,6 @@
 
 .t-settings__breakpoints {
     align-items: center;
-    background-color: $g-color-test-case-subject-background;
     display: flex;
     font-size: rem($scally-g-font-size-2x-large);
     height: rem(160);
@@ -428,7 +427,7 @@ $t-setting-z-index-system-layer-dimensions: 180;
      */
 
     .t-settings__z-index-system--header {
-       background-color: darken($g-color-test-case-subject-background, 10%);
+        background-color: darken($g-color-test-case-subject-background, 10%);
         left: rem(80);
         z-index: z(header);
 
@@ -443,7 +442,7 @@ $t-setting-z-index-system-layer-dimensions: 180;
      */
 
     .t-settings__z-index-system--main {
-       background-color: darken($g-color-test-case-subject-background, 5%);
+        background-color: darken($g-color-test-case-subject-background, 5%);
         left: rem(60);
         z-index: z(main);
 
@@ -458,7 +457,6 @@ $t-setting-z-index-system-layer-dimensions: 180;
      */
 
     .t-settings__z-index-system--footer {
-       background-color: $g-color-test-case-subject-background;
         left: rem(40);
         z-index: z(footer);
 
@@ -481,18 +479,6 @@ $t-setting-z-index-system-layer-dimensions: 180;
 }
 
 
-/**
- * HTML textual inputs.
- */
-
-.t-settings__html-textual-inputs {
-    #{$scally-g-textual-inputs} {
-        background: $g-color-test-case-subject-background;
-        border: none;
-    }
-}
-
-
 
 
 /* 1. Normalise and Reset
@@ -502,6 +488,11 @@ $t-setting-z-index-system-layer-dimensions: 180;
  * Testing the "Normalise and Reset" part of Scally.
  */
 
-.t-normalise-reset__apply-test-subject-bg-color * {
-    background-color: $g-color-test-case-subject-background;
+
+/**
+ * Block-level elements.
+ */
+
+.t-normalise-reset__block-level-elems-pre {
+    height: rem($scally-g-spacing-large);
 }

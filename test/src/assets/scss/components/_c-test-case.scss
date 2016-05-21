@@ -46,6 +46,8 @@ $c-test-case-test-subject-height: 300;
 
 /**
  * Generic container blocks.
+ *
+ * 1. Needed to make room for the counter pseudo elements.
  */
 
 .c-test-case__block {
@@ -56,6 +58,7 @@ $c-test-case-test-subject-height: 300;
     margin-bottom: rem($scally-g-spacing-base);
     margin-top: rem($scally-g-spacing-base);
     padding: rem($scally-g-spacing-base);
+    padding-left: rem($scally-g-spacing-5x-large - $scally-g-spacing-2x-small); // [1]
 }
 
 // Adjacent blocks get a thinner border width
@@ -65,76 +68,44 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * Where the test is run.
+ * When there is a legend apply the test canvas and test subject background
+ * colours.
+ */
+
+/**
+ * Apply the test canvas background colour.
  */
 
 .c-test-case__test-run {
     background-color: $g-color-test-case-canvas-background;
-
-    /**
-     * Scally: Container.
-     */
-
-    // .l-container {
-    //     background-color: $g-color-test-case-subject-background;
-    //     height: $c-test-case-test-subject-height * 1px;
-    // }
-
-    // Remove the above styles when the background canvas doesn't need a
-    // background colour
-    // &.c-test-case__test-run--no-bg .l-container {
-    //     background: none;
-    //     height: auto;
-    // }
-
-    /**
-     * Scally: Grid.
-     */
-
-    // Inner grid item including label
-    // .l-grid__item > div {
-    //     background-color: $g-color-test-case-subject-background;
-    //     font-family: $scally-g-font-family-monospace;
-    //     font-weight: normal;
-    //     padding: 1rem;
-    //     justify-content: center;
-    //     width: 100%;
-    // }
-
-    // Grid alignment modifiers
-    // .l-grid--align-middle,
-    // .l-grid--align-bottom,
-    // .l-grid--align-center,
-    // .l-grid--align-right {
-    //     height: $c-test-case-test-subject-height * 1px;
-
-    //     .l-grid__item > div {
-    //         height: $c-test-case-test-subject-height / 2 * 1px;
-    //     }
-    // }
-
-    // Nested grids
-    // .l-grid .l-grid .l-grid__item > div {
-    //     background-color: darken($g-color-test-case-subject-background, 7%);
-    //     height: $c-test-case-test-subject-height / 2 * 1px;
-    // }
-
-    /**
-     * Highlight form elements.
-     */
-
-    // #{$scally-g-textual-inputs},
-    // textarea {
-    //     border: 1px solid $g-color-test-case-canvas-background;
-    // }
 }
 
 /**
- * Modifier: remove the background colour on the test canvas.
+ * Apply the test subject background colour. We apply this to *everything*
+ * i.e. all of the test subjects inside the test subject container.
  */
 
-.c-test-case__test-run--no-bg {
+.c-test-case__test-run-inner *:not(br) {
+    background-color: $g-color-test-case-subject-background;
+}
+
+/**
+ * Sometimes we need a container around the test subjects in order to apply
+ * styles to them (see `_tests.scss`). We don't want the test subject
+ * background colour to apply so that we can see the test canvas background.
+ */
+
+.c-test-case__test-run-inner--remove-test-subject-bg > div {
     background: none;
+}
+
+/**
+ * Add top and bottom padding for certain test cases.
+ */
+
+.c-test-case__test-run-inner--padding-ends {
+    padding-bottom: rem($scally-g-spacing-base);
+    padding-top: rem($scally-g-spacing-base);
 }
 
 
@@ -193,7 +164,7 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
- * The CSS counter styles.
+ * The CSS counters.
  */
 
 /**
@@ -202,7 +173,8 @@ $c-test-case-test-subject-height: 300;
 
 .c-test-case__block::before {
     color: $g-color-medium-grey;
-    margin-right: rem($scally-g-spacing-small);
+    left: rem($scally-g-spacing-base);
+    position: absolute;
 }
 
 /**

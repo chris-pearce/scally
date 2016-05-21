@@ -44,8 +44,8 @@
             "section-name": "Typography",
             "tests": [
                 {
-                    "selector": "$scally-g-font-size",
-                    "description": "Font size.",
+                    "selector": "$scally-g-font-size-base",
+                    "description": "Base font size.",
                     "run": "<div class='t-settings__typography-font-size'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
                     "remove-legend": true
                 },
@@ -105,7 +105,7 @@
                 },
                 {
                     "selector": "$scally-g-line-height-ratio",
-                    "description": "Line height ratio.",
+                    "description": "Line height ratio.<br><br><em>Applied to the text.</em>",
                     "run": "<div class='t-settings__typography-line-height-ratio'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</div>",
                     "remove-legend": true
                 },
@@ -278,7 +278,8 @@
                     "selector": "$scally-g-zindexes: (\n    'dialog-elements': (\n        'close-button': 1\n    ),\n    'dialog': 5,\n    'dialog-underlay': 4,\n    'header': 3,\n    'main': 2,\n    'footer': 1,\n    'underneath': -1\n);",
                     "selector-block": true,
                     "description": "Z-Index system.<br><br><em>Hover each z-index layer to better read its label.</em>",
-                    "run": "<div class='t-settings__z-index-system'><div class='t-settings__z-index-system t-settings__z-index-system--dialog'><div class='t-settings__z-index-system t-settings__z-index-system--dialog-close-btn'></div></div><div class='t-settings__z-index-system t-settings__z-index-system--dialog-underlay'></div><div class='t-settings__z-index-system t-settings__z-index-system--header'></div><div class='t-settings__z-index-system t-settings__z-index-system--main'></div><div class='t-settings__z-index-system t-settings__z-index-system--footer'></div><div class='t-settings__z-index-system t-settings__z-index-system--underneath'></div></div>"
+                    "run": "<div class='t-settings__z-index-system'><div class='t-settings__z-index-system t-settings__z-index-system--dialog'><div class='t-settings__z-index-system t-settings__z-index-system--dialog-close-btn'></div></div><div class='t-settings__z-index-system t-settings__z-index-system--dialog-underlay'></div><div class='t-settings__z-index-system t-settings__z-index-system--header'></div><div class='t-settings__z-index-system t-settings__z-index-system--main'></div><div class='t-settings__z-index-system t-settings__z-index-system--footer'></div><div class='t-settings__z-index-system t-settings__z-index-system--underneath'></div></div>",
+                    "remove-test-subject-bg-color-from-container": true
                 }
             ]
         },
@@ -289,8 +290,8 @@
             "tests": [
                 {
                     "selector": "$scally-g-textual-inputs",
-                    "description": "Attribute selectors for all HTML textual inputs.",
-                    "run": "<div class='t-settings__html-textual-inputs'><input type='text'><br><br><input type='search'><br><br><input type='tel'><br><br><input type='url'><br><br><input type='email'><br><br><input type='password'><br><br><input type='month'><br><br><input type='week'><br><br><input type='time'><br><br><input type='date'><br><br><input type='datetime'><br><br><input type='datetime-local'><br><br><input type='number'></div>"
+                    "description": "Attribute selectors for all HTML textual inputs.<br><br><em>To improve readability <code class='c-code'>&lt;br></code> elements are used between each inline element.</em>",
+                    "run": "<input type='text' value='text input'><br><input type='search' value='search input'><br><input type='tel' value='tel input'><br><input type='url' value='url input'><br><input type='email' value='email input'><br><input type='password' value='password input'><br><input type='month'><br><input type='week'><br><input type='time'><br><input type='date'><br><input type='datetime'><br><input type='datetime-local'><br><input type='number'>"
                 }
             ]
         }
