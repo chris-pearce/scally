@@ -502,10 +502,6 @@ $t-setting-z-index-system-layer-dimensions: 180;
  * Testing the "Normalise and Reset" part of Scally.
  */
 
-.t-normalise-reset__global-reset * {
+.t-normalise-reset__apply-test-subject-bg-color * {
     background-color: $g-color-test-case-subject-background;
-
-    br {
-        margin-bottom: rem($scally-g-spacing-small);
-    }
 }
