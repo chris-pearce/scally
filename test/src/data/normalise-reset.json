@@ -43,6 +43,61 @@
                     "apply-top-btm-padding-to-test-area": true
                 }
             ]
+        },
+        {
+            "section-name": "Inline elements",
+            "tests": [
+                {
+                    "selector": "audio,\ncanvas,\nprogress,\nvideo",
+                    "selector-block": true,
+                    "description": "Add the correct display in IE 9-.",
+                    "run": "<audio controls></audio><canvas></canvas><progress value='70' max='100'></progress><video controls></video>"
+                },
+                {
+                    "selector": "a",
+                    "description": "Remove the grey background colour from active links in IE 10.<br>Remove gaps in links underline in iOS 8+ and Safari 8+.",
+                    "run": "<a href='#'>A link element</a>"
+                },
+                {
+                    "selector": "a:active\na:hover",
+                    "selector-block": true,
+                    "description": "Remove the outline on focused links when they are also active or hovered in all browsers.",
+                    "run": "<a href='#'>A link element</a>"
+                },
+                {
+                    "selector": "abbr[title]",
+                    "description": "Remove the bottom border in Firefox 39-.<br>Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.",
+                    "run": "<abbr title='A tooltip'>A abbr element</a>"
+                },
+                {
+                    "selector": "b\nstrong",
+                    "selector-block": true,
+                    "description": "Add the correct font weight in Chrome, Edge, and Safari.",
+                    "run": "<b>A b element</b><br><strong>A strong element</strong>"
+                },
+                {
+                    "selector": "dfn",
+                    "description": "Add the correct font size in all browsers.",
+                    "run": "<dfn>A dfn element</dfn>"
+                },
+                {
+                    "selector": "small",
+                    "description": "Add the correct font size in all browsers.",
+                    "run": "<small>A small element</small>"
+                },
+                {
+                    "selector": "sub\nsup",
+                    "selector-block": true,
+                    "description": "Prevent <code class='c-code'>&lt;sub></code> and <code class='c-code'>&lt;sup></code> affecting line height in all browsers.",
+                    "run": "<sub>A sub element</sub><br><sup>A sup element</sup>"
+                },
+                {
+                    "selector": "code\nkbd\npre\nsamp",
+                    "selector-block": true,
+                    "description": "Correct the inheritance and scaling of font size in all browsers.<br>Correct the odd <code class='c-code'>em</code> font sizing in all browsers.",
+                    "run": "<code>A code element</code><br><kbd>A kbd element</kbd><pre>A pre element</pre><samp>A samp element</samp>"
+                }
+            ]
         }
     ]
 
