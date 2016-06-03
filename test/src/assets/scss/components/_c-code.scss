@@ -1,17 +1,25 @@
 /* ============================================================================
-   COMPONENTS -> CODE INLINE
+   COMPONENTS -> CODE FORMATTING
    ========================================================================= */
 
 /**
- * Style inline code to stand out from normal text.
+ * Styles for code.
  */
 
 
-.c-code-inline {
+.c-code {
     background-color: $scally-g-color-white;
     border-radius: 3px;
     color: $scally-g-color-text-base;
     font-family: $scally-g-font-family-monospace;
     font-weight: normal;
     padding: rem(3) rem(6);
+}
+
+/**
+ * Modifier: block.
+ */
+
+.c-code--block {
+    padding: rem($scally-g-spacing-small);
 }

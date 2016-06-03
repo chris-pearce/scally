@@ -23,6 +23,7 @@
  * CONTENTS:
  *
  * 1. Settings
+ * 2. Normalise and Reset
  */
 
 
@@ -41,8 +42,8 @@
  */
 
 .t-settings__color {
-    height: rem(100);
-    width: rem(100);
+    height: rem(60);
+    width: rem(60);
 }
 
 .t-settings__color--white {
@@ -71,8 +72,9 @@
  * Typography.
  */
 
+// Font sizes
 .t-settings__typography-font-size {
-    font-size: rem($scally-g-font-size);
+    font-size: rem($scally-g-font-size-base);
 }
 
 .t-settings__typography-font-size-small {
@@ -81,6 +83,10 @@
 
 .t-settings__typography-font-size-x-small {
     font-size: rem($scally-g-font-size-x-small);
+}
+
+.t-settings__typography-font-size-2x-small {
+    font-size: rem($scally-g-font-size-2x-small);
 }
 
 .t-settings__typography-font-size-large {
@@ -107,10 +113,12 @@
     font-size: rem($scally-g-font-size-5x-large);
 }
 
+// Line height
 .t-settings__typography-line-height-ratio {
     line-height: $scally-g-line-height-ratio;
 }
 
+// Font families
 .t-settings__typography-font-family-base {
     font-family: $scally-g-font-family-base;
 }
@@ -123,6 +131,7 @@
     font-family: $scally-g-font-family-monospace;
 }
 
+// Font weights
 .t-settings__typography-font-weight-normal {
     font-weight: $scally-g-font-weight-normal;
 }
@@ -169,14 +178,321 @@
  */
 
 .t-settings__spacing {
-    background-color: $g-color-test-case-subject-background;
-    height: rem(60);
+    height: rem($scally-g-spacing-base);
 }
 
 .t-settings__spacing--base {
     margin-bottom: rem($scally-g-spacing-base);
 }
 
+// Small
 .t-settings__spacing--small {
     margin-bottom: rem($scally-g-spacing-small);
+}
+
+.t-settings__spacing--x-small {
+    margin-bottom: rem($scally-g-spacing-x-small);
+}
+
+.t-settings__spacing--2x-small {
+    margin-bottom: rem($scally-g-spacing-2x-small);
+}
+
+.t-settings__spacing--3x-small {
+    margin-bottom: rem($scally-g-spacing-3x-small);
+}
+
+.t-settings__spacing--4x-small {
+    margin-bottom: rem($scally-g-spacing-4x-small);
+}
+
+// Large
+.t-settings__spacing--large {
+    margin-bottom: rem($scally-g-spacing-large);
+}
+
+.t-settings__spacing--x-large {
+    margin-bottom: rem($scally-g-spacing-x-large);
+}
+
+.t-settings__spacing--2x-large {
+    margin-bottom: rem($scally-g-spacing-2x-large);
+}
+
+.t-settings__spacing--3x-large {
+    margin-bottom: rem($scally-g-spacing-3x-large);
+}
+
+.t-settings__spacing--4x-large {
+    margin-bottom: rem($scally-g-spacing-4x-large);
+}
+
+.t-settings__spacing--5x-large {
+    margin-bottom: rem($scally-g-spacing-5x-large);
+}
+
+.t-settings__spacing--6x-large {
+    margin-bottom: rem($scally-g-spacing-6x-large);
+}
+
+
+/**
+ * Breakpoints.
+ */
+
+.t-settings__breakpoints {
+    align-items: center;
+    display: flex;
+    font-size: rem($scally-g-font-size-2x-large);
+    height: rem(160);
+    justify-content: center;
+
+    // Palm range
+    @media (min-width: 0) and (max-width: bp(lap) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 30%);
+
+        &::before {
+            content: "Palm"
+        }
+    }
+
+    // Lap range
+    @media (min-width: bp(lap)) and (max-width: bp(lap-mid) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 25%);
+
+        &::before {
+            content: "Lap"
+        }
+    }
+
+    // Lap-mid range
+    @media (min-width: bp(lap-mid)) and (max-width: bp(lap-large) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 15%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Lap-mid"
+        }
+    }
+
+    // Lap-large range
+    @media (min-width: bp(lap-large)) and (max-width: bp(desk) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 10%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Lap-large"
+        }
+    }
+
+    // Desk range
+    @media (min-width: bp(desk)) and (max-width: bp(desk-large) - 0.05) {
+        background-color: darken($g-color-test-case-subject-background, 5%);
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Desk"
+        }
+    }
+
+    // Desk-large
+    @media (min-width: bp(desk-large)) {
+        background-color: $g-color-test-case-subject-background;
+
+        &::before {
+            color: $scally-g-color-white;
+            content: "Desk-large"
+        }
+    }
+}
+
+
+/**
+ * Z-index-system.
+ */
+
+$t-setting-z-index-system-layer-dimensions: 180;
+
+
+.t-settings__z-index-system {
+    height: rem($t-setting-z-index-system-layer-dimensions * 1.5 + 10);
+    font-family: Consolas, monospace, monospace;
+    letter-spacing: rem(0.3);
+    position: relative;
+
+
+    /**
+     * Each z-index layer.
+     */
+
+    div {
+        border: 1px solid $scally-g-color-white;
+        color: $scally-g-color-white;
+        height: rem($t-setting-z-index-system-layer-dimensions);
+        position: absolute;
+        top: rem(10);
+        transform: skew(45deg) rotate(45deg);
+        transform-origin: 0 0;
+        transition: margin 0.12s ease-in-out;
+        width: rem($t-setting-z-index-system-layer-dimensions);
+
+
+        /**
+         * Juts the layers out so its label can be read.
+         */
+
+        &:hover {
+            margin-left: -(rem(20));
+            margin-top: -(rem(40));
+        }
+
+
+        /**
+         * Each z-index layer label.
+         */
+
+        &::before {
+            background: $scally-g-color-black;
+            border: 1px solid $scally-g-color-white;
+            bottom: 0;
+            content: '';
+            display: block;
+            position: absolute;
+            padding: rem(2) rem(8);
+            transform: rotate(90deg) skew(0);
+            transform-origin: 9px 50%;
+            white-space: nowrap;
+        }
+    }
+
+
+    /**
+     * Dialog layer.
+     */
+
+    .t-settings__z-index-system--dialog {
+        background-color: darken($g-color-test-case-subject-background, 20%);
+        left: rem(120);
+        z-index: z(dialog);
+
+        &::before {
+            content: 'Dialog';
+        }
+
+
+        /**
+         * Nested Dialog close button layer. We make the layer a smaller size
+         * and position it vertically and horizontally in the center of its
+         * parent.
+         */
+
+        .t-settings__z-index-system--dialog-close-btn {
+            background-color: darken($g-color-test-case-subject-background, 25%);
+            height: rem($t-setting-z-index-system-layer-dimensions - 40);
+            left: 50%;
+            top: 50%;
+            transform: skew(0) translate(-50%, -50%);
+            width: rem($t-setting-z-index-system-layer-dimensions - 40);
+            z-index: z(dialog-elements, close-button);
+
+            // We don't want to jut out nested layers
+            &:hover {
+                margin: 0;
+            }
+
+            &::before {
+                content: 'Dialog close button';
+            }
+        }
+    }
+
+
+    /**
+     * Dialog underlay layer.
+     */
+
+    .t-settings__z-index-system--dialog-underlay {
+        background-color: darken($g-color-test-case-subject-background, 15%);
+        left: rem(100);
+        z-index: z(dialog-underlay);
+
+        &::before {
+            content: 'Dialog underlay';
+        }
+    }
+
+
+    /**
+     * Header layer.
+     */
+
+    .t-settings__z-index-system--header {
+        background-color: darken($g-color-test-case-subject-background, 10%);
+        left: rem(80);
+        z-index: z(header);
+
+        &::before {
+            content: 'Header';
+        }
+    }
+
+
+    /**
+     * Main layer.
+     */
+
+    .t-settings__z-index-system--main {
+        background-color: darken($g-color-test-case-subject-background, 5%);
+        left: rem(60);
+        z-index: z(main);
+
+        &::before {
+            content: 'Main';
+        }
+    }
+
+
+    /**
+     * Footer layer.
+     */
+
+    .t-settings__z-index-system--footer {
+        left: rem(40);
+        z-index: z(footer);
+
+        &::before {
+            content: 'Footer';
+        }
+    }
+
+
+    /**
+     * Underneath layer.
+     *
+     * N.B. this layer won't be visible.
+     */
+
+    .t-settings__z-index-system--underneath {
+        left: rem(20);
+        z-index: z(underneath);
+    }
+}
+
+
+
+
+/* 1. Normalise and Reset
+   ========================================================================= */
+
+/**
+ * Testing the "Normalise and Reset" part of Scally.
+ */
+
+
+/**
+ * Block-level elements.
+ */
+
+.t-normalise-reset__block-level-elems-pre {
+    height: rem($scally-g-spacing-large);
 }

@@ -1,15 +1,104 @@
 {
-    "name": "Normalise & Reset",
-    "intro": false,
+    "name": "Normalise and Reset",
     "docs-url": "#",
-    "source-code-url": "_normalise-reset.scss",
-    "tests": [{
-        "selector": "a",
-        "test": [{
-            "description": "Control <code class='c-code-inline'>color</code>, <code class='c-code-inline'>text-decoration</code> for both default and hover/focus states, and <code class='c-code-inline'>transition</code>.",
-            "run": "<a href='http://campaignmonitor.com'>A link</a>",
-            "remove-legend": true,
-            "remove-test-canvas-bg": true
-        }]
-    }]
+    "source-code-file-name": "_normalise-reset.scss",
+    "sections": [
+        {
+            "section-name": "Root element and global resets",
+            "tests": [
+                {
+                    "selector": "a,\nabbr,\naddress,\narticle,\naside,\nb,\nblockquote,\nbody,\ncaption,\ncite,\ncode,\ndd,\ndel,\ndetails,\ndfn,\ndialog,\ndiv,\ndl,\ndt,\nem,\nfieldset,\nfigcaption,\nfigure,\nfooter,\nform,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nheader,\nhtml,\ni,\niframe,\nimg,\nins,\nkbd,\nlabel,\nlegend,\nli,\nmain,\nmenu,\nnav,\nobject,\nol,\np,\npre,\nq,\ns,\nsamp,\nsection,\nsmall,\nspan,\nstrong,\nsub,\nsummary,\nsup,\ntable,\ntbody,\ntd,\ntfoot,\nth,\nthead,\ntime,\ntr,\nu,\nul,\nvar",
+                    "selector-block": true,
+                    "description": "Reset the <code class='c-code'>box-sizing</code> property to the more friendly <code class='c-code'>border-box</code> value.<br>Prevent iOS and IE text size adjust after device orientation change, without disabling user zoom.<br>Remove all margins, paddings, and borders, does not include the <code class='c-code'>&lt;input></code>, <code class='c-code'>&lt;button></code> and <code class='c-code'>&lt;textarea></code> elements.<br><br><em>The <code class='c-code'>&lt;html></code> and <code class='c-code'>&lt;body></code> elements can be tested within the <code class='c-code'>&lt;iframe></code> element. To improve readability <code class='c-code'>&lt;br></code> elements are used between each inline element.</em>",
+                    "run": "<a href='#'>A link element</a><br><abbr>A abbreviation element</abbr><br><address>A address element</address><article>A article element</article><aside>A aside element</aside><b>A b element</b><br><blockquote>A blockquote element</blockquote><cite>A cite element</cite><br><code>A code element</code><br><del>A del element</del><br><details><summary>A summary element</summary><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae molestiae dolorem earum, cumque odio aperiam.</div></details><dfn>A dfn element</dfn><br><dialog>A dialog element</dialog><div>A div element</div><dl><dt>A definition term element</dt><dd>A definition description element</dd><dd>A definition description element</dd></dl><em>A em element</em><br><fieldset>A fieldset element</fieldset><figcaption>A figcaption element</figcaption><figure>A figure element</figure><footer>A footer element</footer><form>A form element</form><h1>A h1 element</h1><h2>A h2 element</h2><h3>A h3 element</h3><h4>A h4 element</h4><h5>A h5 element</h5><h6>A h6 element</h6><header>A header element</header><i>A i element</i><br><iframe src='index.html'></iframe><br><img src='img/test-img-scally.png'><br><ins>A ins element</ins><br><kbd>A kbd element</kbd><br><label>A label element</label><br><legend>A legend element</legend><main>A main element</main><menu>A menu element</menu><nav>A nav element</nav><object>A object element</object><br><ol><li>A ordered list element</li><li>A ordered list element</li><li>A ordered list element</li></ol><p>A paragraph element</p><pre>A pre element</pre><q>A q element</q><br><s>A s element</s><br><samp>A samp element</samp><br><section>A section element</section><small>A small element</small><br><span>A span element</span><br><strong>A strong element</strong><br><sub>A sub element</sub><br><sup>A sup element</sup><br><table><caption>A caption element</caption><thead><tr><th>A table heading cell</th><th>A table heading cell</th></tr></thead><tbody><tr><td>A table cell</td><td>A table cell</td></tr></tbody><tfoot><tr><td>A table cell</td><td>A table cell</td></tr></tfoot></table><time>A time element</time><br><u>A u element</u><br><ul><li>A unordered list element</li><li>A unordered list element</li><li>A unordered list element</li></ul><var>A var element</var>"
+                }
+            ]
+        },
+        {
+            "section-name": "Block-level elements",
+            "tests": [
+                {
+                    "selector": "article,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary",
+                    "selector-block": true,
+                    "description": "Add the correct display cross browser.",
+                    "run": "<article>A article element</article><aside>A aside element</aside><details><summary>A summary element</summary><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae molestiae dolorem earum, cumque odio aperiam.</div></details><figcaption>A figcaption element</figcaption><figure>A figure element</figure><footer>A footer element</footer><header>A header element</header><main>A main element</main><menu>A menu element</menu><nav>A nav element</nav><section>A section element</section>"
+                },
+                {
+                    "selector": "template,\n[hidden]",
+                    "selector-block": true,
+                    "description": "Add the correct display in IE 10- for the <code class='c-code'>template</code> element and in IE for the <code class='c-code'>hidden</code> attribute.",
+                    "run": "<template>A template element</template><div hidden>A div element with <code class='c-code'>hidden</code> attribute</div>",
+                    "remove-legend": true
+                },
+                {
+                    "selector": "hr",
+                    "description": "Add the correct box sizing in Firefox.<br>Show the overflow in Edge and IE.",
+                    "run": "<hr>",
+                    "apply-top-btm-padding-to-test-area": true
+                },
+                {
+                    "selector": "pre",
+                    "description": "Contain overflow in all browsers.",
+                    "run": "<pre>   </pre>",
+                    "apply-top-btm-padding-to-test-area": true
+                }
+            ]
+        },
+        {
+            "section-name": "Inline elements",
+            "tests": [
+                {
+                    "selector": "audio,\ncanvas,\nprogress,\nvideo",
+                    "selector-block": true,
+                    "description": "Add the correct display in IE 9-.",
+                    "run": "<audio controls></audio><canvas></canvas><progress value='70' max='100'></progress><video controls></video>"
+                },
+                {
+                    "selector": "a",
+                    "description": "Remove the grey background colour from active links in IE 10.<br>Remove gaps in links underline in iOS 8+ and Safari 8+.",
+                    "run": "<a href='#'>A link element</a>"
+                },
+                {
+                    "selector": "a:active\na:hover",
+                    "selector-block": true,
+                    "description": "Remove the outline on focused links when they are also active or hovered in all browsers.",
+                    "run": "<a href='#'>A link element</a>"
+                },
+                {
+                    "selector": "abbr[title]",
+                    "description": "Remove the bottom border in Firefox 39-.<br>Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.",
+                    "run": "<abbr title='A tooltip'>A abbr element</a>"
+                },
+                {
+                    "selector": "b\nstrong",
+                    "selector-block": true,
+                    "description": "Add the correct font weight in Chrome, Edge, and Safari.",
+                    "run": "<b>A b element</b><br><strong>A strong element</strong>"
+                },
+                {
+                    "selector": "dfn",
+                    "description": "Add the correct font size in all browsers.",
+                    "run": "<dfn>A dfn element</dfn>"
+                },
+                {
+                    "selector": "small",
+                    "description": "Add the correct font size in all browsers.",
+                    "run": "<small>A small element</small>"
+                },
+                {
+                    "selector": "sub\nsup",
+                    "selector-block": true,
+                    "description": "Prevent <code class='c-code'>&lt;sub></code> and <code class='c-code'>&lt;sup></code> affecting line height in all browsers.",
+                    "run": "<sub>A sub element</sub><br><sup>A sup element</sup>"
+                },
+                {
+                    "selector": "code\nkbd\npre\nsamp",
+                    "selector-block": true,
+                    "description": "Correct the inheritance and scaling of font size in all browsers.<br>Correct the odd <code class='c-code'>em</code> font sizing in all browsers.",
+                    "run": "<code>A code element</code><br><kbd>A kbd element</kbd><pre>A pre element</pre><samp>A samp element</samp>"
+                }
+            ]
+        }
+    ]
+
  }
