@@ -59,7 +59,7 @@
                     "run": "<a href='#'>A link element</a>"
                 },
                 {
-                    "selector": "a:active\na:hover",
+                    "selector": "a:active,\na:hover",
                     "selector-block": true,
                     "description": "Remove the outline on focused links when they are also active or hovered in all browsers.",
                     "run": "<a href='#'>A link element</a>"
@@ -70,7 +70,7 @@
                     "run": "<abbr title='A tooltip'>A abbr element</a>"
                 },
                 {
-                    "selector": "b\nstrong",
+                    "selector": "b,\nstrong",
                     "selector-block": true,
                     "description": "Add the correct font weight in Chrome, Edge, and Safari.",
                     "run": "<b>A b element</b><br><strong>A strong element</strong>"
@@ -86,16 +86,147 @@
                     "run": "<small>A small element</small>"
                 },
                 {
-                    "selector": "sub\nsup",
+                    "selector": "sub,\nsup",
                     "selector-block": true,
                     "description": "Prevent <code class='c-code'>&lt;sub></code> and <code class='c-code'>&lt;sup></code> affecting line height in all browsers.",
                     "run": "<sub>A sub element</sub><br><sup>A sup element</sup>"
                 },
                 {
-                    "selector": "code\nkbd\npre\nsamp",
+                    "selector": "code,\nkbd,\npre,\nsamp",
                     "selector-block": true,
                     "description": "Correct the inheritance and scaling of font size in all browsers.<br>Correct the odd <code class='c-code'>em</code> font sizing in all browsers.",
                     "run": "<code>A code element</code><br><kbd>A kbd element</kbd><pre>A pre element</pre><samp>A samp element</samp>"
+                }
+            ]
+        },
+        {
+            "section-name": "Embedded, image and multimedia, elements",
+            "tests": [
+                {
+                    "selector": "audio,\ncanvas,\niframe,\nimg,\nsvg,\nvideo",
+                    "selector-block": true,
+                    "description": "Remove the gap between media elements and the bottom of their containers.",
+                    "run": "<audio controls></audio><canvas></canvas><iframe src='index.html'></iframe><img src='img/test-img-scally.png'><svg viewBox='0 0 251 92' width='251' height='92'><use xlink:href='img/logo.svg#logo' class='l-header__logo' /></svg><video controls></video>"
+                },
+                {
+                    "selector": "img",
+                    "description": "Remove the border on images inside links in IE 10-.",
+                    "run": "<img src='img/test-img-scally.png'>"
+                },
+                {
+                    "selector": "audio:not([controls])",
+                    "description": "Add the correct display in iOS 4-7.",
+                    "run": "<audio controls></audio>"
+                },
+                {
+                    "selector": "svg:not(:root)",
+                    "description": "Hide the overflow in IE.",
+                    "run": "<svg viewBox='0 0 251 92' width='251' height='92'><use xlink:href='img/logo.svg#logo' class='l-header__logo' /></svg>"
+                }
+            ]
+        },
+        {
+            "section-name": "Form elements",
+            "tests": [
+                {
+                    "selector": "button,\ninput,\nselect,\ntextarea",
+                    "selector-block": true,
+                    "description": "Change font properties to <code class='c-code'>inherit</code> in all browsers.<br>Remove the margin in Firefox and Safari.",
+                    "run": "<button>A button element</button><br><input type='text' value='A text input element'><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select><br><textarea>A textarea element</textarea>"
+                },
+                {
+                    "selector": "optgroup",
+                    "description": "Restore the font weight unset by the previous rule.",
+                    "run": "<select><option value=''>A select element</option><optgroup label='A optgroup element'><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></optgroup><option value='value4'>A option element</option><option value='value5'>A option element</option></select>"
+                },
+                {
+                    "selector": "button,\ninput",
+                    "selector-block": true,
+                    "description": "Show the overflow in Edge.<br>Show the overflow in IE (<code class='c-code'>input</code>).",
+                    "run": "<button>A button element</button><br><input type='text' value='A text input element'>"
+                },
+                {
+                    "selector": "button,\nselect",
+                    "selector-block": true,
+                    "description": "Remove the inheritance of text transform in Edge, Firefox, and IE.<br>Remove the inheritance of text transform in Firefox (<code class='c-code'>select</code>).",
+                    "run": "<button>A button element</button><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select>"
+                },
+                {
+                    "selector": "button,\nhtml [type='button'],\n[type='reset'],\n[type='submit']",
+                    "selector-block": true,
+                    "description": "Prevent a WebKit bug where (2) destroys native <code class='c-code'>&lt;audio></code> and <code class='c-code'>&lt;video></code>controls in Android 4.<br>Improve usability and consistency of cursor style between image-type <code class='c-code'>&lt;input></code> and others.<br>Correct the inability to style clickable types in iOS and Safari.",
+                    "run": "<button type='button'>A button element</button><br><input type='button' value='A input button element'><br><input type='reset' value='A input reset button element'><br><input type='submit' value='A input submit button element'>"
+                },
+                {
+                    "selector": "button::-moz-focus-inner,\n[type='button']::-moz-focus-inner,\n[type='reset']::-moz-focus-inner,\n[type='submit']::-moz-focus-inner",
+                    "selector-block": true,
+                    "description": "Remove the inner border and padding in Firefox.",
+                    "run": "<button type='button'>A button element</button><br><input type='button' value='A input button element'><br><input type='reset' value='A input reset button element'><br><input type='submit' value='A input submit button element'>"
+                },
+                {
+                    "selector": "button:-moz-focusring,\n[type='button']:-moz-focusring,\n[type='reset']:-moz-focusring,\n[type='submit']:-moz-focusring",
+                    "selector-block": true,
+                    "description": "Restore the focus styles unset by the previous rule if the boolean <code class='c-code'>$scally-normalise-reset-apply-focus-outline-style-for-all-browsers</code> setting is set to <code class='c-code'>true</code>.",
+                    "run": "<button type='button'>A button element</button><br><input type='button' value='A input button element'><br><input type='reset' value='A input reset button element'><br><input type='submit' value='A input submit button element'>"
+                },
+                {
+                    "selector": "fieldset",
+                    "description": "Chrome and Firefox set a <code class='c-code'>min-width: min-content;</code> on <code class='c-code'>&lt;fieldset></code>s, so we reset that to ensure it behaves more like a standard block element, <a href='http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content'>see</a>.",
+                    "run": "<fieldset>A fieldset element</fieldset>"
+                },
+                {
+                    "selector": "legend",
+                    "description": "Correct the text wrapping in Edge and IE.<br>Correct the colour inheritance from <code class='c-code'>&lt;fieldset></code> elements in IE.",
+                    "run": "<legend>A legend element</legend>"
+                },
+                {
+                    "selector": "label",
+                    "description": "Indicate that <code class='c-code'>&lt;label</code> will shift focus to the associated <code class='c-code'>&lt;input</code> element.",
+                    "run": "<label>A label element</label>"
+                },
+                {
+                    "selector": "textarea",
+                    "description": "Remove default vertical scrollbar in IE 10/11.",
+                    "run": "<textarea rows='5'>A textarea element</textarea>"
+                },
+                {
+                    "selector": "progress",
+                    "description": "Add the correct vertical alignment in Chrome, Firefox, and Opera.",
+                    "run": "<progress value='70' max='100'></progress>"
+                },
+                {
+                    "selector": "[type='checkbox'],\n[type='radio']",
+                    "selector-block": true,
+                    "description": "Add the correct box sizing in IE 10-.<br>Remove the padding in IE 10-.",
+                    "run": "<input type='checkbox'> A checkbox element<br><input type='radio'> A radio element"
+                },
+                {
+                    "selector": "::-webkit-input-placeholder",
+                    "description": "Correct the text style of placeholders in Chrome, Edge, and Safari.",
+                    "run": "<input type='text' placeholder='A text input element'>"
+                },
+                {
+                    "selector": "input[type='number']::-webkit-inner-spin-button,\ninput[type='number']::-webkit-outer-spin-button",
+                    "selector-block": true,
+                    "description": "Correct the cursor style of increment and decrement buttons in Chrome.",
+                    "run": "<input type='number' placeholder='A number input element'>"
+                },
+                {
+                    "selector": "input[type='search']::-webkit-search-cancel-button,\ninput[type='search']::-webkit-search-decoration",
+                    "selector-block": true,
+                    "description": "Remove the inner padding and cancel buttons in Chrome and Safari on OS X.",
+                    "run": "<input type='search' value='A search input element'>"
+                },
+                {
+                    "selector": "::-ms-clear,\n::-ms-reveal",
+                    "selector-block": true,
+                    "description": "Remove the clear field button (an 'X' icon) and the reveal password button (an 'eye' icon) that is generated by IE 10+ for textual inputs if the boolean <code class='c-code'>$scally-normalise-reset-apply-removal-of-clear-field-and-reveal-password-icon-for-ie10-textual-inputs</code> setting is set to <code class='c-code'>true</code>.",
+                    "run": "<input type='text' value='A text input element'><br><input type='password' value='A password input element'>"
+                },
+                {
+                    "selector": "::-webkit-file-upload-button",
+                    "description": "Correct the inability to style clickable types in iOS and Safari.<br>Change font properties to <code class='c-code'>inherit</code> in Safari.",
+                    "run": "<button>A button element</button>"
                 }
             ]
         }
