@@ -227,6 +227,58 @@
                     "selector": "::-webkit-file-upload-button",
                     "description": "Correct the inability to style clickable types in iOS and Safari.<br>Change font properties to <code class='c-code'>inherit</code> in Safari.",
                     "run": "<button>A button element</button>"
+                },
+                {
+                    "selector": ".target-ios [role='button']",
+                    "description": "<strong>For iOS devices.</strong> Fixes 'clickability' issue (and more generally, the firing of events such as focus as well) for traditionally non-focusable elements with <code class='c-code'>[role='button']</code>.<br><br><em>We isolate these rules behind a <code class='c-code'>.target-ios</code> class—or whatever name you apply to the <code class='c-code'>$scally-g-target-ios-selector</code> setting.</em>",
+                    "run": "<div class='target-ios'><button>A button element</button></div>",
+                    "remove-test-subject-bg-color-from-container": true
+                },
+                {
+                    "selector": "input[type='text'],\ninput[type='search'],\ninput[type='tel'],\ninput[type='url'],\ninput[type='email'],\ninput[type='password'],\ninput[type='month'],\ninput[type='week'],\ninput[type='time'],\ninput[type='date'],\ninput[type='datetime'],\ninput[type='datetime-local'],\ninput[type='number']",
+                    "selector-block": true,
+                    "description": "<strong>For iOS devices.</strong> Remove the top inner shadow from iOS inputs.",
+                    "run": "<div class='target-ios'><input type='text' value='text input'><br><input type='search' value='search input'><br><input type='tel' value='tel input'><br><input type='url' value='url input'><br><input type='email' value='email input'><br><input type='password' value='password input'><br><input type='month'><br><input type='week'><br><input type='time'><br><input type='date'><br><input type='datetime'><br><input type='datetime-local'><br><input type='number'></div>",
+                    "remove-test-subject-bg-color-from-container": true
+                },
+                {
+                    "selector": "[type='submit'],\n[type='button'],\n[type='image'],\n[type='reset']",
+                    "selector-block": true,
+                    "description": "<strong>For iOS devices.</strong> Remove rounded corners that iOS applies to all <code class='c-code'>&lt;input></code> buttons.",
+                    "run": "<div class='target-ios'><input type='submit' value='A input submit button element'><br><input type='button' value='A input button element'><br><input type='image' src='img/test-img-scally.png' width='251'><br><input type='reset' value='A input reset button element'></div>",
+                    "remove-test-subject-bg-color-from-container": true
+                }
+            ]
+        },
+        {
+            "section-name": "Interactions",
+            "tests": [
+                {
+                    "selector": "[tabindex='-1']:focus",
+                    "description": "Suppress the focus outline on links that cannot be access via a keyboard. This prevents an unwanted focus outline from appearing around elements that might still respond to pointer events.",
+                    "run": "<div tabindex='-1'>A div element programmatically set up to receive focus</div>"
+                },
+                {
+                    "selector": ":focus",
+                    "description": "Optional custom <code class='c-code'>:focus</code> styles for all browsers if the boolean <code class='c-code'>$scally-normalise-reset-apply-focus-outline-style-for-all-browsers</code> setting is set to <code class='c-code'>true</code>. If the boolean <code class='c-code'>$scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-is-applied-for-all-browsers</code> setting is set to <code class='c-code'>true</code> this will maintain the default focus ring that Webkit and Blink browsers apply.",
+                    "run": "<a href='#'>A link element</a><br><button>A button element</button><br><input type='text' value='A input element'><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select><br><textarea>A textarea element</textarea>"
+                },
+                {
+                    "selector": ":focus:not(:-moz-focusring)",
+                    "description": "Don't use outline on Mozilla browsers, if it's not needed.",
+                    "run": "<a href='#'>A link element</a><br><button>A button element</button><br><input type='text' value='A input element'><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select><br><textarea>A textarea element</textarea>"
+                },
+                {
+                    "selector": "@media (pointer: coarse) and (hover: none) {\n    :focus {…}\n}",
+                    "selector-block": true,
+                    "description": "Remove <code class='c-code'>:focus</code> styles for <code class='c-code'>coarse</code> input mechanisms, and on the <code class='c-code'>:hover</code> pseudo class.",
+                    "run": "<a href='#'>A link element</a><br><button>A button element</button><br><input type='text' value='A input element'><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select><br><textarea>A textarea element</textarea>"
+                },
+                {
+                    "selector": "a,\narea,\nbutton,\ninput,\nlabel,\nselect,\nsummary,\ntextarea,\n[tabindex]:not([tabindex='-1'])",
+                    "selector-block": true,
+                    "description": "Avoid 300ms click delay on touch devices that support the <code class='c-code'>touch-action</code> CSS property.",
+                    "run": "<a href='#'>A link element</a><br><map name='example-map-1'><area shape='circle' coords='200,250,25' href='index.html' /><area shape='default' /></map><button>A button element</button><br><input type='text' id='input-1' value='A input element'><br><label for='input-1'>A label element</label><br><select><option value=''>A select element</option><option value='value1'>A option element</option><option value='value2'>A option element</option><option value='value3'>A option element</option></select><br><summary>A summary element</summary><br><textarea>A textarea element</textarea>"
                 }
             ]
         }
