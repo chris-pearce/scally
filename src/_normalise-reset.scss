@@ -660,9 +660,9 @@ input[type="search"]::-webkit-search-decoration {
 
 
 /**
- * Optional way to normalise `:focus` styles for all browsers with the option
- * to apply Webkit and Blink proprietary focus ring (style of `auto` hides it,
- * when using mouse or touch).
+ * Optional custom `:focus` styles for all browsers, however, if you wish to
+ * keep the default focus ring that Webkit and Blink browsers apply then assign
+ * `$scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-is-applied-for-all-browsers` to `true`.
  */
 
 @if $scally-normalise-reset-apply-focus-outline-style-for-all-browsers {
@@ -670,6 +670,13 @@ input[type="search"]::-webkit-search-decoration {
         outline: $scally-normalise-reset-focus-outline-color
                  $scally-normalise-reset-focus-outline-style
                  $scally-normalise-reset-focus-outline-width;
+    }
+    @if $scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-is-applied-for-all-browsers {
+        @supports (outline-color: -webkit-focus-ring-color) {
+            :focus {
+                outline: -webkit-focus-ring-color auto 5px;
+            }
+        }
     }
 }
 
