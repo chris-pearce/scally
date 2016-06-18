@@ -439,11 +439,11 @@ $scally-normalise-reset-apply-webkit-and-blink-focusring-if-focus-outline-style-
  * `:focus` outline styles.
  */
 
-$scally-normalise-reset-focus-outline-color: currentColor !default;
+$scally-normalise-reset-focus-outline-color: Highlight !default;
 
-$scally-normalise-reset-focus-outline-style: dotted !default;
+$scally-normalise-reset-focus-outline-style: solid !default;
 
-$scally-normalise-reset-focus-outline-width: thin !default;
+$scally-normalise-reset-focus-outline-width: 2px !default;
 
 
 
