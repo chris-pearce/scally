@@ -15,6 +15,7 @@
     "grunt-gh-pages": "^1.0.0",
     "grunt-postcss": "^0.7.2",
     "grunt-sass": "^1.1.0",
+    "grunt-sassdoc": "^2.0.2",
     "grunt-svgmin": "^3.2.0",
     "postcss": "^5.0.17",
     "postcss-scss": "^0.1.5",
@@ -22,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url":  "git@github.com:chris-pearce/scally.git"
+    "url": "git@github.com:chris-pearce/scally.git"
   },
   "bugs": {
     "url": "https://github.com/chris-pearce/scally/issues"

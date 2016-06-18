@@ -1,4 +1,4 @@
-<article class="c-test-case">
+<article class="c-test-case" id="test-case-start">
 
     {{> test-case-header}}
 
@@ -6,11 +6,18 @@
     {{#each this.sections}}
         <div class="c-test-case__section">
 
-            {{!-- Section name --}}
+            {{!-- Section name and description --}}
             {{#if section-name}}
-                <h2>{{ section-name }}</h2>
+                <h2 class="c-test-case__section-heading heading heading--size-2x-large">{{ section-name }}</h2>
             {{/if}}
-            {{!-- //Section name --}}
+            {{#if section-description}}
+                {{#if section-description-block}}
+                    {{{ section-description }}}
+                {{else}}
+                    <p>{{ section-description }}</p>
+                {{/if}}
+            {{/if}}
+            {{!-- //Section name and description --}}
 
             {{!-- Loop through each test-case --}}
             {{#each this.tests}}
@@ -64,6 +71,12 @@
 
             {{/each}}
             {{!-- //Loop through each test-case --}}
+
+            {{!-- Back to top anchor --}}
+            <div class="c-test-case__back-to-top">
+                <a href="#test-case-start">Back to top</a>
+            </div>
+            {{!-- //Back to top anchor --}}
 
         </div>
     {{/each}}

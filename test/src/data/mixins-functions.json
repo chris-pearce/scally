@@ -1,0 +1,20 @@
+{
+    "name": "Mixins and Functions",
+    "docs-url": "#",
+    "source-code-file-name": "_mixins-functions.scss",
+    "intro": "All of Scally's mixins and functions. See the <a href='#'>SassDoc</a> documentation.",
+    "sections": [
+        {
+            "section-name": "Private mixins and functions",
+            "section-description": "Scally-only mixins and functions, not for Scally consumers although some can be used if the need arises.",
+            "tests": [
+                {
+                    "selector": "strip-unit(24px)",
+                    "description": "Remove a unit from a number.",
+                    "run": "<div class='t-settings__color t-settings__color--white'></div>",
+                    "remove-legend": true
+                }
+            ]
+        }
+    ]
+ }

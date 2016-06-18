@@ -45,6 +45,15 @@ $c-test-case-test-subject-height: 300;
 
 
 /**
+ * Test section heading.
+ */
+
+.c-test-case__section-heading {
+    margin-bottom: rem($scally-g-spacing-x-small);
+}
+
+
+/**
  * Generic container blocks.
  *
  * 1. Needed to make room for the counter pseudo elements.
@@ -160,6 +169,15 @@ $c-test-case-test-subject-height: 300;
 
 .c-test-case__legend-key--subject {
     background-color: $g-color-test-case-subject-background;
+}
+
+
+/**
+ * Back to top anchor.
+ */
+
+.c-test-case__back-to-top {
+    margin-top: rem($scally-g-spacing-base);
 }
 
 

@@ -57,6 +57,7 @@
 - Created a `scally.scss` file which is the main index file for the CSS
   library.
 - Added an `index.js` file for Scally's NPM module.
+- Removed `bower.json` in favour of only using NPM.
 - Removed unneeded `.scss-lint.yml` file as linting will be taken care of by
   [stylelint](http://stylelint.io/).
 

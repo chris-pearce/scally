@@ -38,8 +38,6 @@
                 }
             ]
         },
-
-
         {
             "section-name": "Typography",
             "tests": [
@@ -183,8 +181,6 @@
                 }
             ]
         },
-
-
         {
             "section-name": "Spacing",
             "tests": [
@@ -255,8 +251,6 @@
                 }
             ]
         },
-
-
         {
             "section-name": "Breakpoints",
             "tests": [
@@ -269,8 +263,6 @@
                 }
             ]
         },
-
-
         {
             "section-name": "Z-Index system",
             "tests": [
@@ -283,8 +275,6 @@
                 }
             ]
         },
-
-
         {
             "section-name": "HTML textual inputs",
             "tests": [
@@ -296,5 +286,4 @@
             ]
         }
     ]
-
  }

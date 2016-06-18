@@ -1,0 +1,886 @@
+/**
+ * All of Scally's mixins and functions.
+ *
+ * N.B. all mixins and functions to be written in SassDoc documentation system,
+ * see: http://sassdoc.com/.
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * CONTENTS:
+ *
+ * 1. Private mixins and functions
+ * 2. HiDPI background images (Mixin)
+ * 3. Convert pixels to `rem`s or `em`s (Function)
+ * 4. Apply at breakpoints (Mixin)
+ * 5. Retrieve from maps (Function)
+ * 6. Helpers (Mixin)
+ */
+
+
+
+
+/* 1. Private mixins and functions
+   ========================================================================= */
+
+/**
+ * Scally-only mixins and functions, not for Scally consumers although some can
+ * be used if the need arises.
+ */
+
+
+/// Remove a unit from a number.
+///
+/// @author Chris Pearce
+///
+/// @access private
+///
+/// @param {Number [unit]} $number — Number to remove unit from
+///
+/// @returns {Number}
+///
+/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     strip-unit(24px)
+///     strip-unit(2.3em)
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+
+
+
+/* 2. HiDPI background images (Mixin)
+   ========================================================================= */
+
+/// Easily apply HiDPI background images. We use a device pixel ratio ("dpr")
+/// of "1.3" which captures almost all HiDPI aware devices, see:
+/// https://gist.github.com/marcedwards/3446599.
+///
+/// N.B. Autoprefixer will take care of generating the non-standard
+/// `-webkit-device-pixel-ratio` for browsers/devices that need it, see:
+/// http://caniuse.com/#feat=css-media-resolution.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {String} $img-url — The image url path
+/// @param {Number [unit]} $img-width [auto] — The image width in `px`
+/// @param {Number [unit]} $img-height [auto] — The image height in `px`
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include hidpi-bg-img("path/to/image/image.png", 100px, 45px);
+///     }
+///     .element-2 {
+///         @include hidpi-bg-img("path/to/image/image.png", 32px);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         @media (min-resolution: 1.3dppx),
+///                (min-resolution: 124.8dpi) {
+///             background-image: url("path/to/image/image.png");
+///             background-size: 100px 45px;
+///         }
+///     }
+///     .element-2 {
+///         @media (min-resolution: 1.3dppx),
+///                (min-resolution: 124.8dpi) {
+///             background-image: url("path/to/image/image.png");
+///             background-size: 32px 32px;
+///         }
+///     }
+
+@mixin hidpi-bg-img($img-url, $img-width: auto, $img-height: auto) {
+    /* stylelint-disable */
+    @media (min-resolution: $scally-g-hidpi-dppx),
+           (min-resolution: $scally-g-hidpi-dpi) {
+    /* stylelint-enable */
+        background-image: url('#{$img-url}');
+        background-size: $img-width $img-height;
+    }
+}
+
+
+
+
+/* 3. Convert pixels to `rem`s or `em`s (Function)
+   ========================================================================= */
+
+/// Convert pixels to `em`s.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Number [unitless]} $value — The pixel value to be converted
+/// @param {Number [unitless]} $context [$scally-g-font-size-base] — The pixel
+/// value of the context
+///
+/// @requires strip-unit()
+///
+/// @returns {Number [unit]} - Calculated `em` value e.g. `1.45em`
+///
+/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     .element-1 {
+///         margin-left: em(20, 18);
+///     }
+///     .element-2 {
+///         margin-left: em(20);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         margin-left: 1.111em;
+///     }
+///     .element-2 {
+///         margin-left: 1.25em;
+///     }
+
+@function em($value, $context: $scally-g-font-size-base) {
+    @if type-of($value) != 'number' or type-of($context) != 'number' {
+        @error 'You have to enter only numbers for `$value` and `$context`.';
+    }
+    @return strip-unit($value) / strip-unit($context) * 1em;
+}
+
+
+/// Convert pixels to `rem`s.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Number [unitless]} $value — The pixel value to be converted
+///
+/// @requires strip-unit()
+///
+/// @returns {Number [unit]} - Calculated `rem` value e.g. `1.45rem`
+///
+/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     .element {
+///         margin-left: rem(20);
+///     }
+/// @example css - CSS Output
+///     .element {
+///         margin-left: 1.25rem;
+///     }
+
+@function rem($value) {
+    @if type-of($value) != 'number' {
+        /* stylelint-disable max-line-length */
+
+        @error 'You have to enter only a number for `$value`. You entered #{$value}`.';
+
+        /* stylelint-enable */
+    }
+    @return strip-unit($value) / strip-unit($scally-g-font-size-base) * 1rem;
+}
+
+
+
+
+/* 4. Apply at breakpoints
+   ========================================================================= */
+
+/**
+ * This mixin makes it really easy for a Scally consumer to apply certain parts
+ * of Scally at any width based breakpoint(s).
+ *
+ * N.B. the mixin does not support height based breakpoints or breakpoint
+ * ranges.
+ *
+ * The mixin can also be used outside of Scally in project styles but its main
+ * purpose is to allow Scally consumers to easily apply certain parts of Scally
+ * at any breakpoint(s), mainly the "Grid".
+ *
+ * The mixin will accept any of the named breakpoints set in "Settings ->
+ * Breakpoints" (which can be renamed and breakpoints redefined in your
+ * project) or any number (the pixel amount of the viewport). The breakpoints
+ * get converted to the `em` unit which is best practice in Responsive Web
+ * Design. You can also specify if you want a minimum or maximum width media
+ * query by passing in the "min" or "max" labels after you define your
+ * breakpoint, the default is minimum width media queries to favour the
+ * "Mobile-first" approach.
+ *
+ * Using this mixin requires you to "opt in" as Scally doesn't want to assume
+ * all of its consumers are building responsive UI's requiring the CSS this
+ * mixin generates. Opting in requires changing the relevant Boolean settings
+ * found in: "Settings". For example if you wanted the "Hide Visually" Helper
+ * to use this mixin you change its Boolean setting:
+ * `$scally-helper-hide-visually-apply-at-breakpoints` to `true` then define
+ * the breakpoints you need via its other setting:
+ * `$scally-helper-hide-visually-define-breakpoints`. So in the "Scally
+ * Overrides" section of your project "Settings" you will have something like
+ * this, depending on what breakpoints you choose:
+ *
+   $scally-helper-hide-visually-apply-at-breakpoints: true;
+   $scally-helper-hide-visually-define-breakpoints: (400 max, lap, desk);
+ *
+ * You define your breakpoints in a comma separated list enclosed in curly
+ * brackets with the "min" or "max" labels always coming *after* the
+ * breakpoint. If you want ALL of the named breakpoints defined here:
+ * "Settings -> Breakpoints" then you can simply pass in the word "all", like
+ * so:
+ *
+   $scally-helper-hide-visually-define-breakpoints: (all);
+ *
+ * Right now the mixin only allows "all" by itself i.e. you cannot add numbers
+ * (non-named breakpoints), so doing this will not work:
+ *
+   $scally-helper-hide-visually-define-breakpoints: (all, 900);
+ *
+ * Scally has a global breakpoint setting set in "Settings -> Breakpoints" so
+ * that you can easily share breakpoints across everything that uses the
+ * mixin. By default Scally doesn't apply any breakpoints to this setting, this
+ * is for the Scally consumer to apply if they need the ability for shared
+ * global breakpoints. So in the "Scally Overrides" section of your project
+ * "Settings" you could do this:
+ *
+   $scally-g-global-breakpoints: (lap, desk);
+ */
+
+/// Outputs minimum and maximum width media-queries for some of Scally's
+/// "Helpers" and all of Scally's "Grid column widths" at breakpoints defined
+/// by the consumers of Scally.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {String} $class-selector - Class selector used to generate the
+/// final class e.g. `.h-hide-visually` -> `.h-hide-visually-from-lap`.
+/// @param {List} $breakpoints - A list of breakpoints either named
+/// breakpoints e.g. `(palm, lap)`, integers e.g. `(400, 740)`, or "all" to
+/// generate all the named breakpoints e.g. `(all)`. Each breakpoint can be
+/// accompanied with a "max" or "min" limit label to tell the mixin to
+/// generate a `min-width` or `max-width` media query e.g.
+/// `(lap-large max, 460 max)`, the default is `min-width`.
+///
+/// @todo
+/// Allow number breakpoints to be passed in along with "all"
+/// Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     $scally-helper-hide-visually-define-breakpoints: (400 max, lap);
+///
+///     $scally-grid-col-4-define-breakpoints: (lap-large);
+/// @example css - CSS Output
+///     @media (max-width: 25em) {
+///         .h-hide-visually-up-to-400 {
+///             border: 0;
+///             clip: rect(0 0 0 0);
+///             height: 1px;
+///             margin: -1px ;
+///             overflow: hidden;
+///             padding: 0;
+///             position: absolute;
+///             width: 1px;
+///         }
+///     }
+///     @media (min-width: 40.0625em) {
+///         .h-hide-visually-from-lap {
+///             border: 0;
+///             clip: rect(0 0 0 0);
+///             height: 1px;
+///             margin: -1px ;
+///             overflow: hidden;
+///             padding: 0;
+///             position: absolute;
+///             width: 1px;
+///         }
+///     }
+///
+///     @media (min-width: 56.3125em) {
+///         .l-grid--col-2-from-lap-large {
+///             width: 16.6666%;
+///         }
+///     }
+
+@mixin apply-at-breakpoints($class-selector, $breakpoints: ()) {
+
+    // So we can pass in "all" which will generate all of the media queries
+    // using all of the named breakpoints from "Settings -> Breakpoints"
+    // N.B. you cannot pass in a limit when using this—the limit will use the
+    // default: `min-width` except for "Palm" which uses: `max-width`
+    $all-breakpoints: map-keys($scally-g-breakpoints);
+    @if $breakpoints == 'all' {
+        $breakpoints: $all-breakpoints;
+    }
+
+    // When defining a breakpoint with a limit: "max" or "min", it needs to
+    // be cast into a list of lists otherwise the mixin assumes there is a
+    // breakpoint called "max" or "min"
+    @if length($breakpoints) == 2 and index((min max), nth($breakpoints, 2)) {
+        $breakpoints-copy: $breakpoints;
+        $breakpoints: ();
+
+        /* stylelint-disable max-line-length */
+
+        $breakpoints: append($breakpoints, (nth($breakpoints-copy, 1) nth($breakpoints-copy, 2)));
+
+        /* stylelint-enable */
+    }
+
+    // Loop through all the breakpoints passed in from the Scally consumer side
+    @each $breakpoint in $breakpoints {
+
+        // The "max" or "min" limit used for the media feature part of the
+        // media query: `min-width` or `max-width`, default is always "min"
+        $limit-min: 'min';
+        $limit-max: 'max';
+        $limit: $limit-min;
+
+        // The "max" or "min" limit label that gets appended to the
+        // generated class selector
+        $limit-label: 'from';
+
+        // When defining a breakpoint with a limit—which is of type `list()`—
+        // we need to check this so we can separate the breakpoint and the
+        // limit parts, so they can be used in the relevant parts of the
+        // generated media query
+        @if type-of($breakpoint) == 'list' {
+            $limit: nth($breakpoint, 2);
+            $breakpoint: nth($breakpoint, 1);
+        }
+
+        // Palm is a special case as it needs to use a `max-width` media query
+        // as its viewport range is 0–640px
+        @if $breakpoint == 'palm' {
+            $limit: $limit-max;
+        }
+
+        // We have to check if the breakpoint is a number or a named
+        // breakpoint so that we can apply the relevant functions: `em()` and
+        // `bp()` so that we can generate the breakpoint value correctly
+        $generate-breakpoint: $breakpoint;
+
+        /* stylelint-disable block-closing-brace-newline-after */
+
+        @if type-of($breakpoint) == 'number' {
+            $breakpoint: strip-unit($breakpoint);
+            $generate-breakpoint: em($breakpoint, 16);
+        } @else {
+            $generate-breakpoint: bp($breakpoint);
+        }
+
+        /* stylelint-enable */
+
+        // Change the limit label when a "max" limit is used
+        @if $limit == $limit-max {
+            $limit-label: 'up-to';
+        }
+
+        // Construct the generated media query with the passed in limit and
+        // breakpoint
+        @media (#{$limit}-width: $generate-breakpoint) {
+            // The generated class selector split into 3 parts:
+            // [class-selector-passed-in]
+            // [limit-label(min/max)]
+            // [breakpoint(integer/named-breakpoint)]
+            // E.g.
+            // `.h-hide-visually-from-900`
+            // `.h-hide-visually-up-to-palm`
+
+            /* stylelint-disable max-line-length */
+
+            $generated-selector: '#{$class-selector}-#{$limit-label}-#{$breakpoint}';
+
+            /* stylelint-enable */
+
+            // The contents of the media query
+            #{$generated-selector} {
+                @content;
+            }
+        }
+    }
+}
+
+
+
+
+/* 5. Retrieve from maps
+   ========================================================================= */
+
+/**
+ * An easier way to apply keys from the Scally maps defined in "Settings"
+ * instead of using the native `map-get` function which can get tedious to
+ * type again and again.
+ *
+ * For example, if you wanted to apply a key from the "Z-Index system" map
+ * using the native `map-get` function you would have to do it like this:
+ *
+    z-index: map-get($scally-g-z-indexes, header);
+ *
+ * And when applying nested map keys, this:
+ *
+    z-index: map-get(map-get($scally-g-z-indexes, modal-elements), close-button);
+ *
+ * Instead we can apply it in a much nicer way:
+ *
+    z-index: z(header);
+ *
+ * And for a nested map key:
+ *
+    z-index: z(modal-elements, close-button);
+ */
+
+
+/// An easier way to apply keys from the "Breakpoints" map.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {String} $breakpoint — The breakpoint name which is the map key
+/// name
+///
+/// @returns {Number [unit]} - The breakpoint converted to an `em` unit, the
+/// conversion happens in the "Breakpoints" map values
+///
+/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     @media (max-width: bp(palm)) {
+///         background-color: crimson;
+///     }
+///     @media (min-width: bp(desk)) {
+///         background-color: crimson;
+///     }
+/// @example css - CSS Output
+///     @media (max-width: 40em) {
+///         background-color: crimson;
+///     }
+///     @media (min-width: 75em) {
+///         background-color: crimson;
+///     }
+
+@function bp($breakpoint) {
+    @if not map-has-key($scally-g-breakpoints, $breakpoint) {
+        /* stylelint-disable max-line-length */
+
+        @error 'Sorry but `#{$breakpoint}` doesn\'t exist as a breakpoint name in the \'Breakpoints\' map.';
+
+        /* stylelint-enable */
+    }
+    @return map-get($scally-g-breakpoints, $breakpoint);
+}
+
+
+/// An easier way to apply keys from the "Z-Index system" map.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {String} $z-index-layer — The `z-index` layer name which is the map
+/// key name
+/// @param {String} $z-index-layer-nested [null] — The nested `z-index` layer
+/// name which is the nested map key name
+///
+/// @returns {Number [unitless]} - The `z-index` layer number
+///
+/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+///
+/// @example scss - Usage
+///     .element-1 {
+///         z-index: z(header);
+///     }
+///     .element-2 {
+///         z-index: z(modal-elements, close-button);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         z-index: 3;
+///     }
+///     .element-2 {
+///         z-index: 1;
+///     }
+
+/* stylelint-disable */
+@function z($z-index-layer, $z-index-layer-nested: null) {
+    @if not map-has-key($scally-g-z-indexes, $z-index-layer) {
+        @error 'Sorry but `#{$z-index-layer}` doesn\'t exist as a `z-index` name in the \'Z-Index system\' map.';
+    }
+    @if ($z-index-layer-nested != null) {
+        @return map-get(map-get($scally-g-z-indexes, $z-index-layer), $z-index-layer-nested);
+    } @else {
+        @return map-get($scally-g-z-indexes, $z-index-layer);
+    }
+}
+/* stylelint-enable */
+
+
+
+
+/* 6. Helpers
+   ========================================================================= */
+
+/**
+ * Here are all the Helper mixins, see the Helpers intro comment block for
+ * more information.
+ */
+
+
+/// Makes an element expand to contain floated children.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include clear-fix();
+///     }
+///     .element-2 {
+///         @include clear-fix(true);
+///     }
+/// @example css - CSS Output
+///     .element-1::after {
+///         clear: both;
+///         content: "";
+///         display: table;
+///     }
+///     .element-2::after {
+///         clear: both !important;
+///         content: "" !important;
+///         display: table !important;
+///     }
+
+@mixin clear-fix($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+
+    &::after {
+        clear: both#{$important-keyword};
+        content: '#{$important-keyword}';
+        display: table#{$important-keyword};
+    }
+}
+
+
+/// Truncate some text using an ellipsis.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+/// @param {String} $display [block] — Set the display property of the element
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include text-truncate(false, inline-block);
+///     }
+///     .element-2 {
+///         @include text-truncate(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         display: inline-block;
+///         overflow: hidden;
+///         text-overflow: ellipsis;
+///         white-space: nowrap;
+///     }
+///     .element-2 {
+///         display: block !important;
+///         overflow: hidden !important;
+///         text-overflow: ellipsis !important;
+///         white-space: nowrap !important;
+///     }
+
+@mixin text-truncate($apply-important-keyword: false, $display: block) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    $display-property-value: if($display == block, 'block', $display);
+    display: #{$display-property-value}#{$important-keyword};
+    overflow: hidden#{$important-keyword};
+    text-overflow: ellipsis#{$important-keyword};
+    white-space: nowrap#{$important-keyword};
+}
+
+
+/// Make text on OS X look more consistent with other systems that do not
+/// render text using sub-pixel anti-aliasing.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include text-osx-font-smoothing();
+///     }
+///     .element-2 {
+///         @include text-osx-font-smoothing(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         -moz-osx-font-smoothing: grayscale;
+///         -webkit-font-smoothing: antialiased;
+///     }
+///     .element-2 {
+///         -moz-osx-font-smoothing: grayscale !important;
+///         -webkit-font-smoothing: antialiased !important;
+///     }
+
+@mixin text-osx-font-smoothing($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    -moz-osx-font-smoothing: grayscale#{$important-keyword};
+    -webkit-font-smoothing: antialiased#{$important-keyword};
+}
+
+
+/// Hide elements only visually but have it available for screen readers.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include hide-visually();
+///     }
+///     .element-2 {
+///         @include hide-visually(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         border: 0;
+///         clip: rect(0 0 0 0);
+///         height: 1px;
+///         margin: -1px ;
+///         overflow: hidden;
+///         padding: 0;
+///         position: absolute;
+///         width: 1px;
+///     }
+///     .element-2 {
+///         border: 0 !important;
+///         clip: rect(0 0 0 0) !important;
+///         height: 1px !important;
+///         margin: -1px !important;
+///         overflow: hidden !important;
+///         padding: 0 !important;
+///         position: absolute !important;
+///         width: 1px !important;
+///     }
+
+@mixin hide-visually($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    border: 0#{$important-keyword};
+
+    /* stylelint-disable function-whitespace-after */
+
+    clip: rect(0 0 0 0)#{$important-keyword};
+
+    /* stylelint-enable */
+
+    height: 1px#{$important-keyword};
+    margin: -1px #{$important-keyword};
+    overflow: hidden#{$important-keyword};
+    padding: 0#{$important-keyword};
+    position: absolute#{$important-keyword};
+    width: 1px#{$important-keyword};
+}
+
+
+/// Makes an element be aligned horizontally and vertically using Flexbox,
+/// must go on the parent of the element that needs the alignment.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include align-horizontally-and-vertically();
+///     }
+///     .element-2 {
+///         @include align-horizontally-and-vertically(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         align-items: center;
+///         display: flex;
+///         flex-flow: column;
+///         justify-content: center;
+///     }
+///     .element-2 {
+///         align-items: center !important;
+///         display: flex !important;
+///         flex-flow: column;
+///         justify-content: center !important;
+///     }
+
+@mixin align-horizontally-and-vertically($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    align-items: center#{$important-keyword};
+    display: flex#{$important-keyword};
+    flex-flow: column;
+    justify-content: center#{$important-keyword};
+}
+
+
+/// Makes an element be aligned horizontally and vertically using `position`
+/// and `transform`, must go on the element that needs the alignment and the
+/// elements parent must have `position: relative;`.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include align-horizontally-and-vertically-alt();
+///     }
+///     .element-2 {
+///         @include align-horizontally-and-vertically-alt(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         left: 50%;
+///         position: absolute;
+///         top: 50%;
+///         transform: translate(-50%, -50%);
+///     }
+///     .element-2 {
+///         left: 50% !important;
+///         position: absolute !important;
+///         top: 50% !important;
+///         transform: translate(-50%, -50%) !important;
+///     }
+
+@mixin align-horizontally-and-vertically-alt($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    left: 50%#{$important-keyword};
+    position: absolute#{$important-keyword};
+    top: 50%#{$important-keyword};
+
+    /* stylelint-disable function-whitespace-after */
+
+    transform: translate(-50%, -50%)#{$important-keyword};
+
+    /* stylelint-enable */
+}
+
+
+/// A container that retains the aspect ratio of its content when that content
+/// needs to adapt to the width of varying viewports.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+/// @param {List} $ratio [16 9] - The ratio of the content e.g. `3 1`, `4 3`.
+///
+/// @exception `$ratio` must be a list with two values
+///
+/// @example scss - Usage
+///     .element-1 {
+///         @include intrinsic-ratio-container(false, 3 1);
+///     }
+///     .element-2 {
+///         @include intrinsic-ratio-container(true);
+///     }
+/// @example css - CSS Output
+///     .element-1 {
+///         display: block;
+///         height: 0;
+///         overflow: hidden;
+///         padding-bottom: 33.333%;
+///         position: relative;
+///     }
+///     .element-2 {
+///         display: block !important;
+///         height: 0 !important;
+///         overflow: hidden !important;
+///         padding-bottom: 56.25% !important;
+///         position: relative !important;
+///     }
+
+@mixin intrinsic-ratio-container(
+    $apply-important-keyword: false, $ratio: 16 9) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+    @if length($ratio) < 2 or length($ratio) > 2 {
+        @error '#{inspect($ratio)} must be a list with two values.';
+    }
+    display: block#{$important-keyword};
+    height: 0#{$important-keyword};
+    overflow: hidden#{$important-keyword};
+
+    /* stylelint-disable max-line-length, function-whitespace-after */
+
+    padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1))#{$important-keyword};
+
+    /* stylelint-enable */
+
+    position: relative#{$important-keyword};
+}
+
+
+/// The content container for the "Intrinsic ratio container" mixin.
+///
+/// @author Chris Pearce
+///
+/// @access public
+///
+/// @param {boolean} $apply-important-keyword [false] — Whether to apply the
+/// `!important` keyword
+///
+/// @example scss - Usage
+///    .element-1 {
+///         @include intrinsic-ratio-content();
+///     }
+///     .element-2 {
+///         @include intrinsic-ratio-content(true);
+///     }
+/// @example css - CSS Output
+///    .element-1 {
+///         height: 100%;
+///         left: 0;
+///         position: absolute;
+///         top: 0;
+///         width: 100%;
+///     }
+///     .element-2 {
+///         height: 100% !important;
+///         left: 0 !important;
+///         position: absolute !important;
+///         top: 0 !important;
+///         width: 100% !important;
+///     }
+
+@mixin intrinsic-ratio-content($apply-important-keyword: false) {
+    $important-keyword: if($apply-important-keyword, ' !important', '');
+
+    height: 100%#{$important-keyword};
+    left: 0#{$important-keyword};
+    position: absolute#{$important-keyword};
+    top: 0#{$important-keyword};
+    width: 100%#{$important-keyword};
+}

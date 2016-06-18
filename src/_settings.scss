@@ -1,8 +1,3 @@
-/* ============================================================================
-   SETTINGS
-   ========================================================================= */
-
-
 /**
  * All of Scally's settings (Sass variables).
  *
@@ -348,7 +343,7 @@ $scally-g-global-breakpoints: (lap) !default;
  * **Mixins/Functions -> Retrieve from maps**.
  */
 
-$scally-g-zindexes: (
+$scally-g-z-indexes: (
     'dialog-elements': (
         'close-button': 1
     ),
@@ -585,32 +580,32 @@ $scally-grid-apply-grid-item-span-1-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-1-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  2
+// Grid item span 2
 $scally-grid-apply-grid-item-span-2-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-2-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  3
+// Grid item span 3
 $scally-grid-apply-grid-item-span-3-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-3-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  4
+// Grid item span 4
 $scally-grid-apply-grid-item-span-4-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-4-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  5
+// Grid item span 5
 $scally-grid-apply-grid-item-span-5-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-5-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  6
+// Grid item span 6
 $scally-grid-apply-grid-item-span-6-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-6-breakpoints: $scally-g-global-breakpoints !default;
 
-// Grid item span  7
+// Grid item span 7
 $scally-grid-apply-grid-item-span-7-at-breakpoints: false !default;
 
 $scally-grid-define-grid-item-span-7-breakpoints: $scally-g-global-breakpoints !default;
