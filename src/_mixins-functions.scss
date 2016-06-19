@@ -34,7 +34,7 @@
 ///
 /// @access private
 ///
-/// @param {Number [unit]} $number — Number to remove unit from
+/// @param {Number [unit]} $number Number to remove unit from
 ///
 /// @returns {Number}
 ///
@@ -97,10 +97,8 @@
 ///     }
 
 @mixin hidpi-bg-img($img-url, $img-width: auto, $img-height: auto) {
-    /* stylelint-disable */
     @media (min-resolution: $scally-g-hidpi-dppx),
            (min-resolution: $scally-g-hidpi-dpi) {
-    /* stylelint-enable */
         background-image: url('#{$img-url}');
         background-size: $img-width $img-height;
     }
@@ -176,11 +174,7 @@
 
 @function rem($value) {
     @if type-of($value) != 'number' {
-        /* stylelint-disable max-line-length */
-
         @error 'You have to enter only a number for `$value`. You entered #{$value}`.';
-
-        /* stylelint-enable */
     }
     @return strip-unit($value) / strip-unit($scally-g-font-size-base) * 1rem;
 }
@@ -322,12 +316,7 @@
     @if length($breakpoints) == 2 and index((min max), nth($breakpoints, 2)) {
         $breakpoints-copy: $breakpoints;
         $breakpoints: ();
-
-        /* stylelint-disable max-line-length */
-
         $breakpoints: append($breakpoints, (nth($breakpoints-copy, 1) nth($breakpoints-copy, 2)));
-
-        /* stylelint-enable */
     }
 
     // Loop through all the breakpoints passed in from the Scally consumer side
@@ -363,16 +352,12 @@
         // `bp()` so that we can generate the breakpoint value correctly
         $generate-breakpoint: $breakpoint;
 
-        /* stylelint-disable block-closing-brace-newline-after */
-
         @if type-of($breakpoint) == 'number' {
             $breakpoint: strip-unit($breakpoint);
             $generate-breakpoint: em($breakpoint, 16);
         } @else {
             $generate-breakpoint: bp($breakpoint);
         }
-
-        /* stylelint-enable */
 
         // Change the limit label when a "max" limit is used
         @if $limit == $limit-max {
@@ -390,11 +375,7 @@
             // `.h-hide-visually-from-900`
             // `.h-hide-visually-up-to-palm`
 
-            /* stylelint-disable max-line-length */
-
             $generated-selector: '#{$class-selector}-#{$limit-label}-#{$breakpoint}';
-
-            /* stylelint-enable */
 
             // The contents of the media query
             #{$generated-selector} {
@@ -465,11 +446,7 @@
 
 @function bp($breakpoint) {
     @if not map-has-key($scally-g-breakpoints, $breakpoint) {
-        /* stylelint-disable max-line-length */
-
         @error 'Sorry but `#{$breakpoint}` doesn\'t exist as a breakpoint name in the \'Breakpoints\' map.';
-
-        /* stylelint-enable */
     }
     @return map-get($scally-g-breakpoints, $breakpoint);
 }
@@ -505,7 +482,6 @@
 ///         z-index: 1;
 ///     }
 
-/* stylelint-disable */
 @function z($z-index-layer, $z-index-layer-nested: null) {
     @if not map-has-key($scally-g-z-indexes, $z-index-layer) {
         @error 'Sorry but `#{$z-index-layer}` doesn\'t exist as a `z-index` name in the \'Z-Index system\' map.';
@@ -516,7 +492,6 @@
         @return map-get($scally-g-z-indexes, $z-index-layer);
     }
 }
-/* stylelint-enable */
 
 
 
@@ -685,13 +660,7 @@
 @mixin hide-visually($apply-important-keyword: false) {
     $important-keyword: if($apply-important-keyword, ' !important', '');
     border: 0#{$important-keyword};
-
-    /* stylelint-disable function-whitespace-after */
-
     clip: rect(0 0 0 0)#{$important-keyword};
-
-    /* stylelint-enable */
-
     height: 1px#{$important-keyword};
     margin: -1px #{$important-keyword};
     overflow: hidden#{$important-keyword};
@@ -778,12 +747,7 @@
     left: 50%#{$important-keyword};
     position: absolute#{$important-keyword};
     top: 50%#{$important-keyword};
-
-    /* stylelint-disable function-whitespace-after */
-
     transform: translate(-50%, -50%)#{$important-keyword};
-
-    /* stylelint-enable */
 }
 
 
@@ -832,13 +796,7 @@
     display: block#{$important-keyword};
     height: 0#{$important-keyword};
     overflow: hidden#{$important-keyword};
-
-    /* stylelint-disable max-line-length, function-whitespace-after */
-
     padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1))#{$important-keyword};
-
-    /* stylelint-enable */
-
     position: relative#{$important-keyword};
 }
 
