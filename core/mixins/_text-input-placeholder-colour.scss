@@ -24,18 +24,18 @@
 
 @mixin text-input-placeholder-color($color: $color-text-input-placeholder) {
   // Webkit
-  ::-webkit-input-placeholder {color: $color;}
+  &::-webkit-input-placeholder {color: $color;}
 
   // Firefox 19+
-  ::-moz-placeholder {
+  &::-moz-placeholder {
     color: $color;
     opacity: 1;
   }
 
   // IE
-  :-ms-input-placeholder {color: $color;}
+  &:-ms-input-placeholder {color: $color;}
 
   // Standard
-  :input-placeholder {color: $color;}
-  ::input-placeholder {color: $color;}
+  &:input-placeholder {color: $color;}
+  &::input-placeholder {color: $color;}
 }
