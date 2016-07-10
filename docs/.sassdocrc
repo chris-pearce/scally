@@ -1,0 +1,16 @@
+{
+    "dest": "test",
+    "display": {
+        "access": [
+            "public",
+            "private"
+        ],
+        "alias": false,
+        "watermark": false
+    },
+    "groups": {
+        "undefined": "Ungrouped"
+    },
+    "package": "package.json",
+    "theme": "default"
+}

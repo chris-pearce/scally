@@ -37,7 +37,7 @@
  * 3.  Spacing (Global)
  * 4.  Breakpoints (Global)
  * 5.  Z-Index system (Global)
- * 6.  HiDPI units (Global)
+ * 6.  HiDPI (Global)
  * 7.  HTML textual inputs (Global)
  * 8.  Selectors (Global)
  * 9.  Normalise and Reset (Local)
@@ -276,7 +276,7 @@ $scally-g-spacing-6x-large: $scally-g-spacing-base * 4 !default;
  *
  * N.B. Scally uses a Sass map to apply all the breakpoints therefore we use a
  * Sass function to make it easier to apply the map keys, see:
- * **Mixins/Functions -> Retrieve from maps**.
+ * **Mixins and Functions -> Retrieve from maps**.
  */
 
 $scally-g-breakpoints: (
@@ -291,7 +291,7 @@ $scally-g-breakpoints: (
 
 /**
  * Apply the default breakpoint for the
- * **Mixins/Functions -> Apply at breakpoints** mixin.
+ * **Mixins and Functions -> Apply at breakpoints** mixin.
  */
 
 $scally-g-global-breakpoints: (lap) !default;
@@ -340,7 +340,7 @@ $scally-g-global-breakpoints: (lap) !default;
  * N.B. Scally uses a Sass map (and nested maps) to apply this Z-Index system
  * therefore we use a Sass function to make it easier to apply the map keys
  * and retrieve nested map keys, see:
- * **Mixins/Functions -> Retrieve from maps**.
+ * **Mixins and Functions -> Retrieve from maps**.
  */
 
 $scally-g-z-indexes: (
@@ -358,19 +358,29 @@ $scally-g-z-indexes: (
 
 
 
-/* 6. HiDPI units (Global)
+/* 6. HiDPI (Global)
    ========================================================================= */
 
 /**
- * HiDPI units, currently being used in:
- * **Mixins/Functions -> HiDPI background images**.
+ * The two HiDPI units required for full support, see:
+ * http://caniuse.com/#feat=css-media-resolution. Eventually the `dppx` unit
+ * will only be required.
+ *
+ * N.B. Autoprefixer will take care of generating the non-standard
+ * `-webkit-min-device-pixel-ratio` for browsers/devices that need it.
  */
 
-$scally-g-hidpi-dpr: 1.3 !default;
+$scally-g-hidpi-dppx: 2dppx !default;
 
-$scally-g-hidpi-dpi: ($scally-g-hidpi-dpr * 96) * 1dpi !default;
+$scally-g-hidpi-dpi: 192dpi !default;
 
-$scally-g-hidpi-dppx: 1.3 * 1dppx !default;
+
+/**
+ * Easily target HiDPI resolutions with this media query.
+ */
+
+$scally-g-hidpi-mq: '(min-resolution: #{$scally-g-hidpi-dpi}),
+                     (min-resolution: #{$scally-g-hidpi-dppx})' !default;
 
 
 
@@ -572,7 +582,8 @@ $scally-grid-item-span-12: 100% !default;
 /**
  * For all the grid item span amounts, turn on the ability to apply them at
  * breakpoints via the boolean settings, then define the breakpoints. See:
- * **Mixins/Functions -> Apply at breakpoints**, to understand how this works.
+ * **Mixins and Functions -> Apply at breakpoints**, to understand how this
+ * works.
  */
 
 // Grid item span 1
@@ -644,7 +655,8 @@ $scally-grid-define-grid-item-span-12-breakpoints: $scally-g-global-breakpoints 
 /**
  * For certain **Helpers** turn on the ability to apply them at breakpoints
  * via boolean settings, then define the breakpoints. See:
- * **Mixins/Functions -> Apply at breakpoints**, to understand how this works.
+ * **Mixins and Functions -> Apply at breakpoints**, to understand how this
+ * works.
  */
 
 

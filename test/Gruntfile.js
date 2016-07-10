@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(grunt) {
+
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
@@ -225,35 +226,6 @@ module.exports = function(grunt) {
             },
             src: ['**']
         }
-
-        // SassDoc
-        sassdoc: {
-            default: {
-                src: '../<%= app.src %>/_mixins-functions.scss',
-                dest: 'dist/test',
-                options: {
-                    verbose: true,
-                    display: {
-                        access: ['public'],
-                        alias: false,
-                        watermark: true
-                    },
-                    groups: {
-                        'undefined': 'General',
-                        config: 'Configuration',
-                        helpers: 'Helpers',
-                        output: 'Output',
-                        filters: 'Filters API'
-                    },
-                    //package: pkg,
-                    //basePath: 'https://github.com/pascalduez/SassyFilters/tree/master/stylesheets',
-                    theme: 'default',
-                    force: true,
-                    interactive: false,
-                    autofill: ['content', 'requires', 'throws']
-                }
-            }
-        }
     });
 
     // Register tasks and define them
@@ -269,7 +241,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-gh-pages');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-sassdoc');
     grunt.loadNpmTasks('grunt-svgmin');
 
     // Serve
@@ -295,11 +266,6 @@ module.exports = function(grunt) {
         'sass:dev',
         'postcss:dev',
         'cssnano:build'
-    ]);
-
-    // SassDoc
-    grunt.registerTask('sassdoc', [
-        'sassdoc'
     ]);
 
     // Test Scally

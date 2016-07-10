@@ -24,6 +24,7 @@
  *
  * 1. Settings
  * 2. Normalise and Reset
+ * 3. Mixins and Functions
  */
 
 
@@ -481,7 +482,7 @@ $t-setting-z-index-system-layer-dimensions: 180;
 
 
 
-/* 1. Normalise and Reset
+/* 2. Normalise and Reset
    ========================================================================= */
 
 /**
@@ -495,4 +496,37 @@ $t-setting-z-index-system-layer-dimensions: 180;
 
 .t-normalise-reset__block-level-elems-pre {
     height: rem($scally-g-spacing-large);
+}
+
+
+
+
+/* 3. Mixins and Functions
+   ========================================================================= */
+
+/**
+ * Testing the "Mixins and Functions" part of Scally.
+ */
+
+
+/**
+ * HiDPI background image (Mixin).
+ */
+
+.t-mixins-functions__hidpi-bg-img {
+    background-image: url('../img/test-hidpi@1x.png');
+    background-repeat: no-repeat;
+    @include hidpi-bg-img('../img/test-hidpi@2x.png', rem(134), rem(65));
+    width: rem(134);
+
+    &::after {
+        content: 'No HiDPI';
+        display: block;
+        padding-top: rem(70);
+        text-align: center;
+
+        @media #{$scally-g-hidpi-mq} {
+            content: 'HiDPI';
+        }
+    }
 }

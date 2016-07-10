@@ -9,12 +9,16 @@
  * CONTENTS:
  *
  * 1. Private mixins and functions
- * 2. HiDPI background images (Mixin)
+ * 2. HiDPI background image (Mixin)
  * 3. Convert pixels to `rem`s or `em`s (Function)
  * 4. Apply at breakpoints (Mixin)
  * 5. Retrieve from maps (Function)
  * 6. Helpers (Mixin)
  */
+
+////
+/// @author Chris Pearce
+////
 
 
 
@@ -23,22 +27,19 @@
    ========================================================================= */
 
 /**
- * Scally-only mixins and functions, not for Scally consumers although some can
- * be used if the need arises.
+ * Scally-only mixins and functions, NOT for Scally consumers.
  */
 
 
-/// Remove a unit from a number.
-///
-/// @author Chris Pearce
+/// Remove a unit (e.g. `em`, `px, `rem`) from a number.
 ///
 /// @access private
 ///
-/// @param {Number [unit]} $number Number to remove unit from
+/// @group functions
 ///
-/// @returns {Number}
+/// @param {Number} $number - The number to strip unit off.
 ///
-/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+/// @returns {Number} - The number without a unit: `24px` = `24`.
 ///
 /// @example scss - Usage
 ///     strip-unit(24px)
@@ -48,59 +49,83 @@
     @if type-of($number) == 'number' and not unitless($number) {
         @return $number / ($number * 0 + 1);
     }
+
     @return $number;
 }
 
 
 
 
-/* 2. HiDPI background images (Mixin)
+/* 2. HiDPI background image (Mixin)
    ========================================================================= */
 
-/// Easily apply HiDPI background images. We use a device pixel ratio ("dpr")
-/// of "1.3" which captures almost all HiDPI aware devices, see:
-/// https://gist.github.com/marcedwards/3446599.
+/// Easily apply a HiDPI background image. Autoprefixer will take care of
+/// generating the non-standard `-webkit-min-device-pixel-ratio` for
+/// browsers/devices that need it.
 ///
-/// N.B. Autoprefixer will take care of generating the non-standard
-/// `-webkit-device-pixel-ratio` for browsers/devices that need it, see:
-/// http://caniuse.com/#feat=css-media-resolution.
+/// @link http://caniuse.com/#feat=css-media-resolution - Browser support.
 ///
-/// @author Chris Pearce
-///
-/// @access public
-///
-/// @param {String} $img-url — The image url path
-/// @param {Number [unit]} $img-width [auto] — The image width in `px`
-/// @param {Number [unit]} $img-height [auto] — The image height in `px`
+/// @param {String} $file - The image filename and path if required.
+/// @param {Number} $width [auto] - The image width + its unit e.g. `px`, or
+/// the `em()` or `rem()` functions can be used.
+/// @param {Number} $height [$width] - Same as width but for the height and
+/// the height is optional, if empty it'll default to `$width`.
 ///
 /// @example scss - Usage
 ///     .element-1 {
-///         @include hidpi-bg-img("path/to/image/image.png", 100px, 45px);
+///         @include hidpi-bg-img('img/icons/tick@2x.png', 100px, 45px);
 ///     }
 ///     .element-2 {
-///         @include hidpi-bg-img("path/to/image/image.png", 32px);
+///         @include hidpi-bg-img('arrow@2x.png', 32px);
 ///     }
+///     .element-3 {
+///         @include hidpi-bg-img('delete@2x.png', rem(134), rem(65));
+///     }
+///
 /// @example css - CSS Output
 ///     .element-1 {
-///         @media (min-resolution: 1.3dppx),
-///                (min-resolution: 124.8dpi) {
-///             background-image: url("path/to/image/image.png");
+///         @media (min-resolution: 2dppx),
+///                (min-resolution: 192dpi) {
+///             background-image: url('img/icons/tick@2x.png');
 ///             background-size: 100px 45px;
 ///         }
 ///     }
 ///     .element-2 {
-///         @media (min-resolution: 1.3dppx),
-///                (min-resolution: 124.8dpi) {
-///             background-image: url("path/to/image/image.png");
+///         @media (min-resolution: 2dppx),
+///                (min-resolution: 192dpi) {
+///             background-image: url('arrow@2x.png');
 ///             background-size: 32px 32px;
 ///         }
 ///     }
+///     .element-3 {
+///         @media (min-resolution: 2dppx),
+///                (min-resolution: 192dpi) {
+///             background-image: url('delete@2x.png');
+///             background-size: 8.375rem 4.062rem;
+///         }
+///     }
 
-@mixin hidpi-bg-img($img-url, $img-width: auto, $img-height: auto) {
-    @media (min-resolution: $scally-g-hidpi-dppx),
-           (min-resolution: $scally-g-hidpi-dpi) {
-        background-image: url('#{$img-url}');
-        background-size: $img-width $img-height;
+@mixin hidpi-bg-img($file, $width: auto, $height: $width) {
+    @if type-of($file) != 'string' {
+        @error '⚠️ Sorry, but `$file` must be of type "string" e.g. ' +
+               '`arrow@2x.png`, you entered: `#{$file}` which is of type: ' +
+               '"#{type-of($file)}".';
+    // Data input validation if a `$width` has been passed in
+    } @elseif $width != 'auto' {
+        @if type-of($width) != 'number' {
+            @error '⚠️ Sorry, but `$width` must be of type "number", you ' +
+                   'entered: `#{$width}` which is of type: ' +
+                   '"#{type-of($width)}".';
+        } @elseif type-of($height) != 'number' {
+            @error '⚠️ Sorry, but `$height` must be of type "number", you ' +
+                   'entered: `#{$height}` which is of type: ' +
+                   '"#{type-of($height)}".';
+        }
+    }
+
+    @media #{$scally-g-hidpi-mq} {
+        background-image: url('#{$file}');
+        background-size: $width $height;
     }
 }
 
@@ -110,21 +135,15 @@
 /* 3. Convert pixels to `rem`s or `em`s (Function)
    ========================================================================= */
 
-/// Convert pixels to `em`s.
+/// Convert a pixel number to an `em` version.
 ///
-/// @author Chris Pearce
-///
-/// @access public
-///
-/// @param {Number [unitless]} $value — The pixel value to be converted
-/// @param {Number [unitless]} $context [$scally-g-font-size-base] — The pixel
+/// @param {Number} $value - The pixel value to be converted.
+/// @param {Number} $context [$scally-g-font-size-base] - The pixel vlue
 /// value of the context
 ///
 /// @requires strip-unit()
 ///
-/// @returns {Number [unit]} - Calculated `em` value e.g. `1.45em`
-///
-/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+/// @returns {Number} - Calculated `em` value e.g. `1.45em`
 ///
 /// @example scss - Usage
 ///     .element-1 {
@@ -133,6 +152,7 @@
 ///     .element-2 {
 ///         margin-left: em(20);
 ///     }
+///
 /// @example css - CSS Output
 ///     .element-1 {
 ///         margin-left: 1.111em;
@@ -142,7 +162,7 @@
 ///     }
 
 @function em($value, $context: $scally-g-font-size-base) {
-    @if type-of($value) != 'number' or type-of($context) != 'number' {
+    @if type-of($value) != 'number' {
         @error 'You have to enter only numbers for `$value` and `$context`.';
     }
     @return strip-unit($value) / strip-unit($context) * 1em;
@@ -151,17 +171,13 @@
 
 /// Convert pixels to `rem`s.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Number [unitless]} $value — The pixel value to be converted
+/// @param {Number [unitless]} $value - The pixel value to be converted.
 ///
 /// @requires strip-unit()
 ///
-/// @returns {Number [unit]} - Calculated `rem` value e.g. `1.45rem`
-///
-/// @todo Add @exception rules, see: https://gist.github.com/terkel/4373420
+/// @returns {Number [unit]} - The calculated `rem` value e.g. `1.45rem`
 ///
 /// @example scss - Usage
 ///     .element {
@@ -174,7 +190,7 @@
 
 @function rem($value) {
     @if type-of($value) != 'number' {
-        @error 'You have to enter only a number for `$value`. You entered #{$value}`.';
+        @error '⚠ Sorry, but `#{$value}` must be a number.';
     }
     @return strip-unit($value) / strip-unit($scally-g-font-size-base) * 1rem;
 }
@@ -245,8 +261,6 @@
 /// Outputs minimum and maximum width media-queries for some of Scally's
 /// "Helpers" and all of Scally's "Grid column widths" at breakpoints defined
 /// by the consumers of Scally.
-///
-/// @author Chris Pearce
 ///
 /// @access public
 ///
@@ -417,12 +431,9 @@
 
 /// An easier way to apply keys from the "Breakpoints" map.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {String} $breakpoint — The breakpoint name which is the map key
-/// name
+/// @param {String} $breakpoint The breakpoint name which is the map key name
 ///
 /// @returns {Number [unit]} - The breakpoint converted to an `em` unit, the
 /// conversion happens in the "Breakpoints" map values
@@ -454,13 +465,11 @@
 
 /// An easier way to apply keys from the "Z-Index system" map.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {String} $z-index-layer — The `z-index` layer name which is the map
+/// @param {String} $z-index-layer The `z-index` layer name which is the map
 /// key name
-/// @param {String} $z-index-layer-nested [null] — The nested `z-index` layer
+/// @param {String} $z-index-layer-nested [null] The nested `z-index` layer
 /// name which is the nested map key name
 ///
 /// @returns {Number [unitless]} - The `z-index` layer number
@@ -507,11 +516,9 @@
 
 /// Makes an element expand to contain floated children.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage
@@ -546,13 +553,11 @@
 
 /// Truncate some text using an ellipsis.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
-/// @param {String} $display [block] — Set the display property of the element
+/// @param {String} $display [block] Set the display property of the element
 ///
 /// @example scss - Usage
 ///     .element-1 {
@@ -588,11 +593,9 @@
 /// Make text on OS X look more consistent with other systems that do not
 /// render text using sub-pixel anti-aliasing.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage
@@ -621,11 +624,9 @@
 
 /// Hide elements only visually but have it available for screen readers.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage
@@ -673,11 +674,9 @@
 /// Makes an element be aligned horizontally and vertically using Flexbox,
 /// must go on the parent of the element that needs the alignment.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage
@@ -714,11 +713,9 @@
 /// and `transform`, must go on the element that needs the alignment and the
 /// elements parent must have `position: relative;`.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage
@@ -754,13 +751,11 @@
 /// A container that retains the aspect ratio of its content when that content
 /// needs to adapt to the width of varying viewports.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {Boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
-/// @param {List} $ratio [16 9] - The ratio of the content e.g. `3 1`, `4 3`.
+/// @param {List} $ratio [16 9] The ratio of the content e.g. `3 1`, `4 3`.
 ///
 /// @exception `$ratio` must be a list with two values
 ///
@@ -803,11 +798,9 @@
 
 /// The content container for the "Intrinsic ratio container" mixin.
 ///
-/// @author Chris Pearce
-///
 /// @access public
 ///
-/// @param {boolean} $apply-important-keyword [false] — Whether to apply the
+/// @param {Boolean} $apply-important-keyword [false] Whether to apply the
 /// `!important` keyword
 ///
 /// @example scss - Usage

@@ -5,13 +5,12 @@
     "intro": "All of Scally's mixins and functions. See the <a href='#'>SassDoc</a> documentation.",
     "sections": [
         {
-            "section-name": "Private mixins and functions",
-            "section-description": "Scally-only mixins and functions, not for Scally consumers although some can be used if the need arises.",
+            "section-name": "HiDPI background image",
             "tests": [
                 {
-                    "selector": "strip-unit(24px)",
-                    "description": "Remove a unit from a number.",
-                    "run": "<div class='t-settings__color t-settings__color--white'></div>",
+                    "selector": "@include hidpi-bg-img('img/test-hidpi@2x.png', 134px, 65px);",
+                    "description": "Easily apply a HiDPI background image. <a href='#'>SassDoc</a> documentation",
+                    "run": "<div class='t-mixins-functions__hidpi-bg-img'></div>",
                     "remove-legend": true
                 }
             ]

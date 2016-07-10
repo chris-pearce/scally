@@ -1,5 +1,10 @@
 {
   "name": "scally-docs",
   "version": "0.0.0",
-  "description": "Documentation for Scally"
+  "description": "Documentation for Scally",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-sassdoc": "^2.0.2",
+    "sassdoc": "^2.1.20"
+  }
 }
