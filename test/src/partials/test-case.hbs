@@ -8,7 +8,9 @@
 
             {{!-- Section name and description --}}
             {{#if section-name}}
-                <h2 class="c-test-case__section-heading heading heading--size-2x-large">{{ section-name }}</h2>
+                <h2 class="c-test-case__section-heading heading heading--size-2x-large js-toc-section-heading">
+                    {{{ section-name }}}
+                </h2>
             {{/if}}
             {{#if section-description}}
                 {{#if section-description-block}}

@@ -1,1 +1,1 @@
-import generateHeadingAnchors from './generateHeadingAnchors';
+

@@ -14,6 +14,34 @@
                     "remove-legend": true
                 }
             ]
+        },
+        {
+            "section-name": "Convert pixels to <code class='c-code'>rem</code>s or <code class='c-code'>em</code>s",
+            "tests": [
+                {
+                    "selector": "font-size: em(24);",
+                    "description": "Convert a pixel number to an <code class='c-code'>em</code> version. <a href='#'>SassDoc</a> documentation.",
+                    "run": "<div class='t-mixins-functions__px-to-em'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>",
+                    "remove-legend": true
+                },
+                {
+                    "selector": "font-size: rem(24px);",
+                    "description": "Convert a pixel number to an <code class='c-code'>rem</code> version. <a href='#'>SassDoc</a> documentation.",
+                    "run": "<div class='t-mixins-functions__px-to-rem'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>",
+                    "remove-legend": true
+                }
+            ]
+        },
+        {
+            "section-name": "Apply at breakpoints",
+            "tests": [
+                {
+                    "selector": "@include apply-at-breakpoints('.t-mixins-functions__apply-at-breakpoints', palm)",
+                    "description": "Easily apply certain parts of Scally at any width based breakpoint(s).<br><br><em>Scale your viewport up and down to see the background colour of the <code class='c-code'>&lt;div></code> below change, inspect the <code class='c-code'>&lt;div></code> via the developer tools to see the specific viewport generated classes.</em>",
+                    "run": "<div class='t-mixins-functions__apply-at-breakpoints t-mixins-functions__apply-at-breakpoints-up-to-palm'></div>",
+                    "remove-legend": true
+                }
+            ]
         }
     ]
  }

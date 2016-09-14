@@ -530,3 +530,34 @@ $t-setting-z-index-system-layer-dimensions: 180;
         }
     }
 }
+
+
+/**
+ * Convert pixels to `rem`s or `em`s (Function).
+ */
+
+// `em`
+.t-mixins-functions__px-to-em {
+    font-size: em(24px);
+}
+
+// `rem`
+.t-mixins-functions__px-to-rem {
+    font-size: rem(24px);
+}
+
+
+/**
+ * Apply at breakpoints (Mixin).
+ */
+
+$apply-at-bp-class: '.t-mixins-functions__apply-at-breakpoints';
+
+#{$apply-at-bp-class} {
+    background: hotpink;
+    height: rem(100);
+}
+
+@include apply-at-breakpoints($apply-at-bp-class, (0)) {
+    background: gold;
+}
