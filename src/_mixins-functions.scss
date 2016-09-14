@@ -71,6 +71,13 @@
 /// @param {Number} $height [$width] - Same as width but for the height and
 /// the height is optional, if empty it'll default to `$width`.
 ///
+/// @throws '`$file` must be of type "string"'
+/// @throws '`$width` must be of type "number"'
+/// @throws '`$width` must have a unit'
+/// @throws '`$height` must be of type "number"'
+/// @throws '`$height` must have a unit'
+/// @throws 'The `$scally-g-hidpi-mq` setting is required'
+///
 /// @example scss - Usage
 ///     .element-1 {
 ///         @include hidpi-bg-img('img/icons/tick@2x.png', 100px, 45px);
@@ -110,22 +117,30 @@
         @error '⚠️ Sorry, but `$file` must be of type "string" e.g. ' +
                '`arrow@2x.png`, you entered: `#{$file}` which is of type: ' +
                '"#{type-of($file)}".';
-    // Data input validation if a `$width` has been passed in
-    } @elseif $width != 'auto' {
-        @if type-of($width) != 'number' {
-            @error '⚠️ Sorry, but `$width` must be of type "number", you ' +
-                   'entered: `#{$width}` which is of type: ' +
-                   '"#{type-of($width)}".';
-        } @elseif type-of($height) != 'number' {
-            @error '⚠️ Sorry, but `$height` must be of type "number", you ' +
-                   'entered: `#{$height}` which is of type: ' +
-                   '"#{type-of($height)}".';
+    } @else if type-of($width) != 'number' and $width != 'auto' {
+        @error '⚠️ Sorry, but `$width` must be of type "number", you ' +
+               'entered: `#{$width}` which is of type: ' +
+               '"#{type-of($width)}".';
+    } @else if $width != 'auto' and unitless($width) {
+        @error '⚠️ Sorry, but `$width` must have a unit, you entered: ' +
+               '`#{$width}`, please add a unit, e.g. #{$width}px';
+    } @else if type-of($height) != 'number' and $height != 'auto' {
+        @error '⚠️ Sorry, but `$height` must be of type "number", you ' +
+               'entered: `#{$height}` which is of type: ' +
+               '"#{type-of($height)}".';
+    } @else if $height != 'auto' and unitless($height) {
+        @error '⚠️ Sorry, but `$height` must have a unit, you entered: ' +
+               '`#{$height}`, please add a unit, e.g. #{$height}px';
+    } @else if global-variable-exists(scally-g-hidpi-mq) {
+        @media #{$scally-g-hidpi-mq} {
+            background-image: url('#{$file}');
+            background-size: $width $height;
         }
-    }
-
-    @media #{$scally-g-hidpi-mq} {
-        background-image: url('#{$file}');
-        background-size: $width $height;
+    } @else {
+        @error '⚠️ Sorry, but the setting: `$scally-g-hidpi-mq` doesn\'t ' +
+               'exist, please make you\'re importing the Scally ' +
+               ' `_settings.scss` partial and the `$scally-g-hidpi-mq` ' +
+               'setting is in there as per the default set up.';
     }
 }
 
@@ -137,20 +152,26 @@
 
 /// Convert a pixel number to an `em` version.
 ///
-/// @param {Number} $value - The pixel value to be converted.
-/// @param {Number} $context [$scally-g-font-size-base] - The pixel vlue
-/// value of the context
+/// @param {Number} $value - The pixel value, can use the `px` unit or no `px`
+/// unit e.g. `24px` `24`.
+/// @param {Number} $context [$scally-g-font-size-base] - The pixel value
+/// value of the context, as above re using the `px` unit.
 ///
 /// @requires strip-unit()
 ///
-/// @returns {Number} - Calculated `em` value e.g. `1.45em`
+/// @returns {Number} - The pixel value converted to an `em` unit e.g.
+/// `1.45em`.
+///
+/// @throws '`$value` must be of type "number"'
+/// @throws '`$context` must be of type "number"'
+/// @throws 'The `strip-unit()` function is required'
 ///
 /// @example scss - Usage
 ///     .element-1 {
 ///         margin-left: em(20, 18);
 ///     }
 ///     .element-2 {
-///         margin-left: em(20);
+///         margin-left: em(20px);
 ///     }
 ///
 /// @example css - CSS Output
@@ -163,36 +184,60 @@
 
 @function em($value, $context: $scally-g-font-size-base) {
     @if type-of($value) != 'number' {
-        @error 'You have to enter only numbers for `$value` and `$context`.';
+        @error '⚠️ Sorry, but `$value` must be of type "number", you ' +
+               'entered: `#{$value}` which is of type: ' +
+               '"#{type-of($value)}".';
+    } @else if type-of($context) != 'number' {
+        @error '⚠️ Sorry, but `$context` must be of type "number", you ' +
+               'entered: `#{$context}` which is of type: ' +
+               '"#{type-of($context)}".';
+    } @else if function_exists(strip-unit) {
+        @return strip-unit($value) / strip-unit($context) * 1em;
+    } @else {
+        @error '⚠️ Sorry, but the `strip-unit()` function is required for ' +
+               'this function to work, please make sure you have this ' +
+               'function in the Scally `_mixins-functions.scss` partial as ' +
+               'per the default set up.'
     }
-    @return strip-unit($value) / strip-unit($context) * 1em;
 }
 
 
-/// Convert pixels to `rem`s.
+/// Convert a pixel number to an `rem` version.
 ///
-/// @access public
-///
-/// @param {Number [unitless]} $value - The pixel value to be converted.
+/// @param {Number} $value - The pixel value, can use the `px` unit or no `px`
+/// unit e.g. `24px` `24`.
 ///
 /// @requires strip-unit()
 ///
-/// @returns {Number [unit]} - The calculated `rem` value e.g. `1.45rem`
+/// @returns {Number} - The pixel value converted to an `rem` unit e.g.
+/// `1.45rem`.
+///
+/// @throws '`$value` must be of type "number"'
+/// @throws 'The `strip-unit()` function is required'
 ///
 /// @example scss - Usage
-///     .element {
+///     .element-1 {
 ///         margin-left: rem(20);
 ///     }
+///
 /// @example css - CSS Output
-///     .element {
+///     .element-1 {
 ///         margin-left: 1.25rem;
 ///     }
 
 @function rem($value) {
     @if type-of($value) != 'number' {
-        @error '⚠ Sorry, but `#{$value}` must be a number.';
+        @error '⚠️ Sorry, but `$value` must be of type "number", you ' +
+               'entered: `#{$value}` which is of type: ' +
+               '"#{type-of($value)}".';
+    } @else if function_exists(strip-unit) {
+        @return strip-unit($value) / $scally-g-font-size-base * 1rem;
+    } @else {
+        @error '⚠️ Sorry, but the `strip-unit()` function is required for ' +
+               'this function to work, please make sure you have this ' +
+               'function in the Scally `_mixins-functions.scss` partial as ' +
+               'per the default set up.';
     }
-    @return strip-unit($value) / strip-unit($scally-g-font-size-base) * 1rem;
 }
 
 
@@ -250,10 +295,10 @@
  *
  * Scally has a global breakpoint setting set in "Settings -> Breakpoints" so
  * that you can easily share breakpoints across everything that uses the
- * mixin. By default Scally doesn't apply any breakpoints to this setting, this
- * is for the Scally consumer to apply if they need the ability for shared
- * global breakpoints. So in the "Scally Overrides" section of your project
- * "Settings" you could do this:
+ * mixin. By default Scally applies the `lap` breakpoint to this setting, but
+ * this is for the Scally consumer to override if they need the ability for
+ * shared global breakpoints. So in the "Scally Overrides" section of your
+ * project "Settings" you could do this:
  *
    $scally-g-global-breakpoints: (lap, desk);
  */
@@ -273,14 +318,15 @@
 /// generate a `min-width` or `max-width` media query e.g.
 /// `(lap-large max, 460 max)`, the default is `min-width`.
 ///
-/// @todo
-/// Allow number breakpoints to be passed in along with "all"
-/// Add @exception rules, see: https://gist.github.com/terkel/4373420
+/// @todo Allow number breakpoints to be passed in along with "all"
 ///
 /// @example scss - Usage
-///     $scally-helper-hide-visually-define-breakpoints: (400 max, lap);
+///     $scally-helper-apply-hide-visually-at-breakpoints: true;
+///     $scally-helper-define-hide-visually-breakpoints: (400 max, lap);
 ///
-///     $scally-grid-col-4-define-breakpoints: (lap-large);
+///     $scally-grid-apply-grid-item-span-4-at-breakpoints: true;
+///     $scally-grid-define-grid-item-span-4-breakpoints: (lap-large);
+///
 /// @example css - CSS Output
 ///     @media (max-width: 25em) {
 ///         .h-hide-visually-up-to-400 {
@@ -308,12 +354,15 @@
 ///     }
 ///
 ///     @media (min-width: 56.3125em) {
-///         .l-grid--col-2-from-lap-large {
+///         .l-grid--col-4-from-lap-large {
 ///             width: 16.6666%;
 ///         }
 ///     }
 
 @mixin apply-at-breakpoints($class-selector, $breakpoints: ()) {
+
+    // Tests to write
+    // Number bp is greater than 1
 
     // So we can pass in "all" which will generate all of the media queries
     // using all of the named breakpoints from "Settings -> Breakpoints"
