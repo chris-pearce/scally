@@ -104,15 +104,15 @@ $scally-g-font-size-2x-small: $scally-g-font-size-base - 4 !default;
 // Increase
 $scally-g-font-size-large: $scally-g-font-size-base + 2 !default;
 
-$scally-g-font-size-x-large: $scally-g-font-size-base * 1.5 !default;
+$scally-g-font-size-x-large: ceil($scally-g-font-size-base * 1.5) !default;
 
-$scally-g-font-size-2x-large: $scally-g-font-size-base * 1.75 !default;
+$scally-g-font-size-2x-large: ceil($scally-g-font-size-base * 1.75) !default;
 
-$scally-g-font-size-3x-large: $scally-g-font-size-base * 2 !default;
+$scally-g-font-size-3x-large: ceil($scally-g-font-size-base * 2) !default;
 
-$scally-g-font-size-4x-large: $scally-g-font-size-base * 2.5 !default;
+$scally-g-font-size-4x-large: ceil($scally-g-font-size-base * 2.5) !default;
 
-$scally-g-font-size-5x-large: $scally-g-font-size-base * 2.75 !default;
+$scally-g-font-size-5x-large: ceil($scally-g-font-size-base * 2.75) !default;
 
 
 /**
@@ -195,30 +195,30 @@ $scally-g-font-weight-black: 900 !default;
 $scally-g-spacing-base: $scally-g-line-height !default;
 
 // Decrease
-$scally-g-spacing-small: $scally-g-spacing-base / 1.5 !default;
+$scally-g-spacing-small: floor($scally-g-spacing-base / 1.5) !default;
 
-$scally-g-spacing-x-small: $scally-g-spacing-base / 2 !default;
+$scally-g-spacing-x-small: floor($scally-g-spacing-base / 2) !default;
 
-$scally-g-spacing-2x-small: $scally-g-spacing-base / 3 !default;
+$scally-g-spacing-2x-small: floor($scally-g-spacing-base / 3) !default;
 
-$scally-g-spacing-3x-small: $scally-g-spacing-base / 4 !default;
+$scally-g-spacing-3x-small: floor($scally-g-spacing-base / 4) !default;
 
-$scally-g-spacing-4x-small: $scally-g-spacing-base / 6 !default;
+$scally-g-spacing-4x-small: floor($scally-g-spacing-base / 6) !default;
 
 // Increase
-$scally-g-spacing-large: $scally-g-spacing-base * 1.2 !default;
+$scally-g-spacing-large: ceil($scally-g-spacing-base * 1.2) !default;
 
-$scally-g-spacing-x-large: $scally-g-spacing-base * 1.4 !default;
+$scally-g-spacing-x-large: ceil($scally-g-spacing-base * 1.4) !default;
 
-$scally-g-spacing-2x-large: $scally-g-spacing-base * 1.6 !default;
+$scally-g-spacing-2x-large: ceil($scally-g-spacing-base * 1.6) !default;
 
-$scally-g-spacing-3x-large: $scally-g-spacing-base * 1.8 !default;
+$scally-g-spacing-3x-large: ceil($scally-g-spacing-base * 1.8) !default;
 
-$scally-g-spacing-4x-large: $scally-g-spacing-base * 2 !default;
+$scally-g-spacing-4x-large: ceil($scally-g-spacing-base * 2) !default;
 
-$scally-g-spacing-5x-large: $scally-g-spacing-base * 3 !default;
+$scally-g-spacing-5x-large: ceil($scally-g-spacing-base * 3) !default;
 
-$scally-g-spacing-6x-large: $scally-g-spacing-base * 4 !default;
+$scally-g-spacing-6x-large: ceil($scally-g-spacing-base * 4) !default;
 
 
 
