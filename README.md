@@ -1,3 +1,5 @@
+### ⇒⇒ Scally is no longer actively maintained. There may be a version 3 some day but I won't make any promises. To see a more modern version of Scally take a look at [Shell](https://github.com/campaignmonitor/shell), an open source CSS library I built for my employer: [Campaign Monitor](https://www.campaignmonitor.com/). ⇐⇐
+
 <img src="https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/v5mEk1ipcZgcLoK/logo.png" width="211">
 
 [![npm version](https://badge.fury.io/js/scally.svg)](http://badge.fury.io/js/scally)
@@ -32,7 +34,7 @@
 - [Contributing](#contributing)
   - [Keep it simple](#keep-it-simple)
   - [Submitting code to Scally](#submitting-code-to-scally)
-  - [Scally GitHub issues](#scally-gitHub-issues)
+  - [Scally GitHub issues](#scally-github-issues)
 - [Versioning](#versioning)
 - [Credits](#credits)
 - [License](#license)
