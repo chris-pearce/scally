@@ -1,4 +1,4 @@
-### ⇒⇒ Scally is no longer actively maintained. There may be a version 3 some day but I won't make any promises. To see a more modern version of Scally take a look at [Shell](https://github.com/campaignmonitor/shell), an open source CSS library I built for my employer: [Campaign Monitor](https://www.campaignmonitor.com/). ⇐⇐
+### ⇒⇒ Scally is no longer actively maintained. To see a more modern version take a look at my latest open source CSS library:  [backpack.css](https://github.com/chris-pearce/backpack.css). ⇐⇐
 
 <img src="https://s3.amazonaws.com/uploads.hipchat.com/22262/1524600/v5mEk1ipcZgcLoK/logo.png" width="211">
 
